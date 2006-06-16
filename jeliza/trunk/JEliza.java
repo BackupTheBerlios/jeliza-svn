@@ -15,14 +15,6 @@ import javax.servlet.http.*;
  */
 public class JEliza extends HttpServlet {
 
-	String name = "PC";
-
-	String nameCmd = "PC# ";
-
-	String user = "Du";
-
-	String userCmd = "Du# ";
-
 	String oldFra = "";
 
 	String oldAnt = "";
