@@ -71,7 +71,6 @@ public class Gehirn {
 	public String getAntWWW(String obj) {
 		java.lang.String strDatei = "http://de.wikipedia.org/wiki/"
 				+ obj.replace(" ", "_");
-		java.lang.String strLs = System.getProperty("line.separator");
 		java.io.InputStream file = null;
 		java.net.URL url = null;
 		try {
@@ -90,7 +89,9 @@ public class Gehirn {
 		String dasIst = null;
 		String all = "";
 		String tabu = "";
+		@SuppressWarnings("unused")
 		boolean tabi = false;
+		@SuppressWarnings("unused")
 		String obj2 = obj.trim().toLowerCase();
 		int xy = 0;
 		try {
@@ -165,7 +166,6 @@ public class Gehirn {
 	 */
 	public String getAntKategorie(String obj) {
 		java.lang.String strDatei = "gehirn/kategorien/software.ghn";
-		java.lang.String strLs = System.getProperty("line.separator");
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
@@ -251,7 +251,6 @@ public class Gehirn {
 	 */
 	public String getAlias(String obj) {
 		java.lang.String strDatei = "gehirn/alias.ghn";
-		java.lang.String strLs = System.getProperty("line.separator");
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
@@ -299,7 +298,6 @@ public class Gehirn {
 	 */
 	public String getAntBaseGehirn(String obj, String ant) {
 		java.lang.String strDatei = "gehirn/base.ghn";
-		java.lang.String strLs = System.getProperty("line.separator");
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
@@ -322,7 +320,7 @@ public class Gehirn {
 				if (line.startsWith("#")
 						&& obj.toLowerCase().indexOf(line.substring(1)) > -1) {
 					Object[] anws;
-					Vector anws2 = new Vector();
+					Vector<String> anws2 = new Vector<String>();
 					int z = 0;
 					java.lang.String line2 = br.readLine();
 					while (!line2.trim().startsWith("-")) {
@@ -365,7 +363,6 @@ public class Gehirn {
 	 */
 	public String getAntPublicGehirn(String obj, String ant) {
 		java.lang.String strDatei = "gehirn/allgemein.ghn";
-		java.lang.String strLs = System.getProperty("line.separator");
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
@@ -388,7 +385,7 @@ public class Gehirn {
 				if (line.startsWith("#")
 						&& obj.toLowerCase().indexOf(line.substring(1)) > -1) {
 					Object[] anws;
-					Vector anws2 = new Vector();
+					Vector<String> anws2 = new Vector<String>();
 					int z = 0;
 					java.lang.String line2 = br.readLine();
 					while (!line2.trim().startsWith("-")) {

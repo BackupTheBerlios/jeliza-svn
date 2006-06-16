@@ -85,14 +85,18 @@ public class JEliza extends HttpServlet {
 
 		session = request.getSession(true);
 
-		re = new Regeln(session);
+		if(session.getAttribute("regeln") == null) {
+			session.setAttribute("regeln", new Regeln());
+		}
+		
+		re = (Regeln) session.getAttribute("regeln");
 
 		String ofra = request.getParameter("fra");
 		String fra = request.getParameter("fra");
-		if (session.getAttribute("extra") != "0")
-			fra = (String) session.getAttribute("extra");
-		if (session.getAttribute("extra") != "0")
-			session.setAttribute("extra", "0");
+		if (re.naechsteFra != "0")
+			fra = re.naechsteFra;
+		if (re.naechsteFra != "0")
+			re.naechsteFra = "0";
 		String ant = "";
 		String oldfra = (String) session.getAttribute("oldfra");
 		String oldant = (String) session.getAttribute("oldant");
@@ -105,7 +109,7 @@ public class JEliza extends HttpServlet {
 		fra = fra.trim();
 
 		if (fra != "") {
-			session.setAttribute("extra", "0");
+			re.naechsteFra = "0";
 
 			ant = processQuestion(fra);
 

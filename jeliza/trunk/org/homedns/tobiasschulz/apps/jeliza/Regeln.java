@@ -6,8 +6,6 @@ import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-import javax.servlet.http.HttpSession;
-
 
 /**
  * Hilfsklasse des Java-Servlets JEliza, die mit Hilfe von 3 "Regeln" das
@@ -18,21 +16,12 @@ import javax.servlet.http.HttpSession;
  */
 public class Regeln {
 
+	
 	Gehirn hirn = new Gehirn();
 
 	public String outAll = "";
 
-	HttpSession session;
-
-	/**
-	 * Konstruktor
-	 * 
-	 * @param sess
-	 *            Die HTTP-Session-Variable
-	 */
-	public Regeln(HttpSession sess) {
-		session = sess;
-	}
+	public String naechsteFra = "0";
 
 	/**
 	 * "Regel" 1, eine Methode zum Beantworten der Frage des Users.
@@ -136,8 +125,10 @@ public class Regeln {
 						&& !fra.toLowerCase().contains(alias.toLowerCase())) {
 					ant = "Meintest du vielleicht " + alias
 							+ ", du hast nämlich " + tok + " eingegeben?";
-					session.setAttribute("extra", fra.toLowerCase().replace(
-							tok.toLowerCase(), alias.toLowerCase()));
+//					session.setAttribute("extra", fra.toLowerCase().replace(
+//							tok.toLowerCase(), alias.toLowerCase()));
+					naechsteFra = fra.toLowerCase().replace(
+							tok.toLowerCase(), alias.toLowerCase());
 					return ant;
 				}
 			}
