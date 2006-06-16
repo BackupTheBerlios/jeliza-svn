@@ -1,1 +1,0 @@
-/vserver/dagobert/var/www/intelligenz/jeliza/carts.jsp
