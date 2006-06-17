@@ -1,5 +1,11 @@
 package org.homedns.tobiasschulz.apps.jeliza;
 
+/**
+ * Hilfsklasse des Java-Servlets JEliza, die ein paar Hilfsmethoden bereitstellt
+ * 
+ * @author Tobias Schulz
+ * @version 0.2
+ */
 public class Util {
 
 	public static String s = "";

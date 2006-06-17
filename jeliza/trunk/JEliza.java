@@ -11,7 +11,7 @@ import javax.servlet.http.*;
  * versteht (verstehen sollte)
  * 
  * @author Tobias Schulz
- * @version 0.1
+ * @version 0.2
  */
 public class JEliza extends HttpServlet {
 

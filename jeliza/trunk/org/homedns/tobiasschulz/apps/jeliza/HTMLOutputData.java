@@ -1,4 +1,11 @@
 package org.homedns.tobiasschulz.apps.jeliza;
+
+/**
+ * Hilfsklasse des Java-Servlets JEliza, die nur ein paar Varaiblen enthält, die die grafische Oberfläche von JEliza beschreiben
+ * 
+ * @author Tobias Schulz
+ * @version 0.2
+ */
 public class HTMLOutputData {
 	public static String outHead = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
 			+ "<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">"

@@ -12,7 +12,7 @@ import java.util.Vector;
  * Gehirn-Dateien von JEliza bereitstellt.
  * 
  * @author Tobias Schulz
- * @version 0.1
+ * @version 0.2
  */
 public class Gehirn {
 

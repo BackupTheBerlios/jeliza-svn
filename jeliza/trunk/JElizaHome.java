@@ -7,7 +7,7 @@ import org.homedns.tobiasschulz.apps.jeliza.*;
  * wird nicht benötigt), daher der Name JElizaHome.
  * 
  * @author Tobias Schulz
- * @version 0.1
+ * @version 0.2
  */
 public class JElizaHome {
 
