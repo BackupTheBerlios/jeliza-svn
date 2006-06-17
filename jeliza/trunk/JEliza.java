@@ -74,71 +74,73 @@ public class JEliza extends HttpServlet {
 			throws IOException, ServletException {
 		response.setContentType("text/html");
 		out = response.getWriter();
-
 		session = request.getSession(true);
 
-		if(session.getAttribute("regeln") == null) {
+		if (session.getAttribute("regeln") == null) {
 			session.setAttribute("regeln", new Regeln());
 		}
-		
 		re = (Regeln) session.getAttribute("regeln");
 
-		String ofra = request.getParameter("fra");
-		String fra = request.getParameter("fra");
-		if (re.naechsteFra != "0")
-			fra = re.naechsteFra;
-		if (re.naechsteFra != "0")
-			re.naechsteFra = "0";
+		String ofra = "";
+		String fra = "";
 		String ant = "";
-		String oldfra = (String) session.getAttribute("oldfra");
-		String oldant = (String) session.getAttribute("oldant");
+		@SuppressWarnings("unused")
+		String oldfra = "";
+		@SuppressWarnings("unused")
+		String oldant = "";
+
+		oldfra = (String) session.getAttribute("oldfra");
+		oldant = (String) session.getAttribute("oldant");
+
+		ofra = request.getParameter("fra");
+		fra = request.getParameter("fra");
+		if (re.naechsteFra != "0") {
+			fra = re.naechsteFra;
+			re.naechsteFra = "0";
+		}
 		outBuf = (session.getAttribute("outBuf") != null) ? (String) session
 				.getAttribute("outBuf") : "";
 		if (fra == null || fra.length() < 2) {
 			fra = "";
 		}
-
 		fra = fra.trim();
 
-		if (fra != "") {
-			re.naechsteFra = "0";
-
-			ant = processQuestion(fra);
-
-			userSayln(ofra);
-			println(ant);
-			session.setAttribute("ant", ant);
-			session.setAttribute("oldant", ant);
-			session.setAttribute("oldfra", fra);
-			session.setAttribute("outBuf", outBuf);
-
-			Date dt = new Date();
-			// Festlegung des Formats:
-			SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-			SimpleDateFormat df2 = new SimpleDateFormat("dd.MM.yyyy");
-
-			if (!new File("/var/www/intelligenz/jeliza/log/log_"
-					+ df2.format(dt) + ".txt").exists()) {
-				new File("/var/www/intelligenz/jeliza/log/log_"
-						+ df2.format(dt) + ".txt").createNewFile();
-			}
-			String log = FileManager
-					.readFileIntoString("/var/www/intelligenz/jeliza/log/log_"
-							+ df2.format(dt) + ".txt");
-
-			log += df.format(dt);
-			log += " - " + request.getRemoteAddr() + " : ";
-			log += "Asking question '" + fra + "' ...";
-			log += "\n";
-			log += "                   ";
-			log += "Answer is: '" + ant + "' ...";
-			log += "\n";
-
-			FileManager.writeStringIntoFile(log,
-					"/var/www/intelligenz/jeliza/log/log_" + df2.format(dt)
-							+ ".txt");
-
+		if (fra == "") {
+			printIt(request, response);
+			return;
 		}
+
+		re.naechsteFra = "0";
+
+		ant = processQuestion(fra);
+		userSayln(ofra);
+		println(ant);
+		session.setAttribute("ant", ant);
+		session.setAttribute("oldant", ant);
+		session.setAttribute("oldfra", fra);
+		session.setAttribute("outBuf", outBuf);
+
+		Date dt = new Date();
+		SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+		SimpleDateFormat df2 = new SimpleDateFormat("dd.MM.yyyy");
+		if (!new File("/var/www/intelligenz/jeliza/log/log_" + df2.format(dt)
+				+ ".txt").exists()) {
+			new File("/var/www/intelligenz/jeliza/log/log_" + df2.format(dt)
+					+ ".txt").createNewFile();
+		}
+		String log = FileManager
+				.readFileIntoString("/var/www/intelligenz/jeliza/log/log_"
+						+ df2.format(dt) + ".txt");
+		log += df.format(dt);
+		log += " - " + request.getRemoteAddr() + " : ";
+		log += "Asking question '" + fra + "' ...";
+		log += "\n";
+		log += "                   ";
+		log += "Answer is: '" + ant + "' ...";
+		log += "\n";
+		FileManager.writeStringIntoFile(log,
+				"/var/www/intelligenz/jeliza/log/log_" + df2.format(dt)
+						+ ".txt");
 
 		printIt(request, response);
 	}
