@@ -29,6 +29,8 @@ public class JElizaHome {
 
 	String outAll = "";
 
+	FragenAntworter fragenAntworter = new FragenAntworter();
+	
 	/**
 	 * Mit der Methode println wird ein String, den JEliza sagt, in den
 	 * Ausgabepuffer geschrieben. Die Methode printIt senden dann den
@@ -70,7 +72,7 @@ public class JElizaHome {
 		try {
 			while((line = br.readLine()) != null) {
 				String fra = line;
-				String ant = processQuestion(fra);
+				String ant = fragenAntworter.processQuestion(fra, re, hirn);
 				System.out.println("JEliza: " + ant);
 				System.out.print("Mensch: ");
 			}

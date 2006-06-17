@@ -35,6 +35,8 @@ public class JEliza extends HttpServlet {
 
 	String outAll = "";
 
+	FragenAntworter fragenAntworter = new FragenAntworter();
+	
 	/**
 	 * Mit der Methode println wird ein String, den JEliza sagt, in den
 	 * Ausgabepuffer geschrieben. Die Methode printIt senden dann den
@@ -112,7 +114,7 @@ public class JEliza extends HttpServlet {
 
 		re.naechsteFra = "0";
 
-		ant = processQuestion(fra);
+		ant = fragenAntworter.processQuestion(fra, re, hirn);
 		userSayln(ofra);
 		println(ant);
 		session.setAttribute("ant", ant);
@@ -196,68 +198,5 @@ public class JEliza extends HttpServlet {
 		}
 	}
 
-	/**
-	 * Methode zum Beantworten der Frage des Users.
-	 * 
-	 * @see doGet
-	 * @param fra
-	 *            Die Frage
-	 * @return Die Antwort
-	 */
-	public String processQuestion(String fra) {
-		boolean fertig = false;
-		String ant = "Uff! Da bin ich überfragt!\nKontaktieren sie doch bitte meinen Programmierer "
-				+ "darüber,\n"
-				+ "indem sie im Gästebuch dieser Seite einen Eintrag mit dieser Frage hinterlassen!";
-
-		fra = Util.replace(fra, "?", "");
-		fra = Util.replace(fra, ".", "");
-		fra = Util.replace(fra, "!", "");
-
-		fra = fra.trim();
-
-		String s = "";
-
-		s = re.regel1(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		s = re.regel2(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		s = hirn.getAntPublicGehirn(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		s = hirn.getAntBaseGehirn(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		s = re.regel3(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		fertig = true;
-		if (fertig) {
-
-			ant = Util.replace(ant, "  ", " ");
-			oldFra = fra;
-			oldAnt = ant;
-
-			return ant;
-		}
-		return null;
-	}
 
 } // class JEliza
