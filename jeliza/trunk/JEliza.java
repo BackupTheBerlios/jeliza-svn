@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
- * versteht (verstehen sollte)
+ * versteht (verstehen sollte).
  * 
  * @author Tobias Schulz
  * @version 0.2
@@ -43,6 +43,7 @@ public class JEliza extends HttpServlet {
 	 * Ausgabepuffer!
 	 * 
 	 * @see printIt
+	 * @see userSayln
 	 * @param str
 	 *            Der String, den JEliza sagt
 	 */
@@ -56,6 +57,7 @@ public class JEliza extends HttpServlet {
 	 * senden dann den Ausgabepuffer!
 	 * 
 	 * @see printIt
+	 * @see println
 	 * @param str
 	 *            Der String, den der User sagt
 	 */
@@ -67,6 +69,7 @@ public class JEliza extends HttpServlet {
 	 * Methode zum beantworten der HTTP-GET-Anfrage. JEliza bantwortet die Frage
 	 * und sendet ein HTML-Dokument mit der Antwort.
 	 * 
+	 * @see printIt
 	 * @param request
 	 *            Der HTTP-Request
 	 * @param response

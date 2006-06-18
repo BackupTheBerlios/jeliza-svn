@@ -5,7 +5,6 @@ public class FragenAntworter {
 	/**
 	 * Methode zum Beantworten der Frage / Des Satzes des Users.
 	 * 
-	 * @see doGet
 	 * @param fra
 	 *            Die Frage
 	 * @return Die Antwort
