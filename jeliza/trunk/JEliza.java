@@ -15,6 +15,8 @@ import javax.servlet.http.*;
  */
 public class JEliza extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
+
 	String oldFra = "";
 
 	String oldAnt = "";
