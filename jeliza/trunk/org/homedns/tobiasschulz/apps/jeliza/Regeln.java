@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-
 /**
  * Hilfsklasse des Java-Servlets JEliza, die mit Hilfe von 3 "Regeln" das
  * Erstellen einer Antwort ermoeglicht
@@ -16,17 +15,28 @@ import java.util.Vector;
  */
 public class Regeln {
 
-	
-	Gehirn hirn = new Gehirn();
+	String absoluteUrl = "";
+
+	Gehirn hirn = new Gehirn(absoluteUrl);
 
 	public String outAll = "";
 
 	public String naechsteFra = "0";
 
 	/**
-	 * "Regel" 1, eine Methode zum Beantworten der Frage des Users.
-	 * Liefert die Bisherige Antwort zurueck, wenn keine Eigene erstellbar.
-	 * Antwortet auf einige einfache Fragen
+	 * Konstruktor
+	 * 
+	 * @param tmp
+	 *            Die Absolute URL zum JEliza-Stammordner
+	 */
+	public Regeln(String tmp) {
+		absoluteUrl = tmp;
+	}
+
+	/**
+	 * "Regel" 1, eine Methode zum Beantworten der Frage des Users. Liefert die
+	 * Bisherige Antwort zurueck, wenn keine Eigene erstellbar. Antwortet auf
+	 * einige einfache Fragen
 	 * 
 	 * @param fraParameter
 	 *            Die Frage
@@ -88,8 +98,8 @@ public class Regeln {
 	/**
 	 * "Regel" 2, eine Methode zum Beantworten der Frage des Users. Liefert die
 	 * bisherige Antwort zurueck, wenn keine Eigene erstellbar. Antwortet auf
-	 * Fragen mit "Wer", "Was", "Wie", "Warum", "Wieso", "Weshalb".
-	 * Benutzt bei "Was Ist" die Wikipedia
+	 * Fragen mit "Wer", "Was", "Wie", "Warum", "Wieso", "Weshalb". Benutzt bei
+	 * "Was Ist" die Wikipedia
 	 * 
 	 * @param fraParameter
 	 *            Die Frage
@@ -101,6 +111,7 @@ public class Regeln {
 		String ant = antParameter;
 		String fra = fraParameter;
 
+		@SuppressWarnings("unused")
 		Random r = new java.util.Random();
 
 		fra = Util.replace(fra, "ä", "ae");
@@ -117,6 +128,7 @@ public class Regeln {
 		fra = fra.toLowerCase();
 		{
 			StringTokenizer stoken = new StringTokenizer(fra, " ");
+			@SuppressWarnings("unused")
 			String obj = "";
 			while (stoken.hasMoreTokens()) {
 				String tok = stoken.nextToken();
@@ -125,10 +137,10 @@ public class Regeln {
 						&& !fra.toLowerCase().contains(alias.toLowerCase())) {
 					ant = "Meintest du vielleicht " + alias
 							+ ", du hast nämlich " + tok + " eingegeben?";
-//					session.setAttribute("extra", fra.toLowerCase().replace(
-//							tok.toLowerCase(), alias.toLowerCase()));
-					naechsteFra = fra.toLowerCase().replace(
-							tok.toLowerCase(), alias.toLowerCase());
+					// session.setAttribute("extra", fra.toLowerCase().replace(
+					// tok.toLowerCase(), alias.toLowerCase()));
+					naechsteFra = fra.toLowerCase().replace(tok.toLowerCase(),
+							alias.toLowerCase());
 					return ant;
 				}
 			}
@@ -334,7 +346,7 @@ public class Regeln {
 		fra = Util.replace(fra, ".", " . ");
 
 		int y = 0;
-		Vector nomen = new Vector();
+		Vector<String> nomen = new Vector<String>();
 		StringTokenizer stoken = new StringTokenizer(fra, " ");
 		while (stoken.hasMoreElements()) {
 			String token = stoken.nextToken();

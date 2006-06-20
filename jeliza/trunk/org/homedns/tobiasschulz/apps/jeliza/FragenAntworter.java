@@ -1,7 +1,7 @@
 package org.homedns.tobiasschulz.apps.jeliza;
 
 public class FragenAntworter {
-
+	
 	/**
 	 * Methode zum Beantworten der Frage / Des Satzes des Users.
 	 * 

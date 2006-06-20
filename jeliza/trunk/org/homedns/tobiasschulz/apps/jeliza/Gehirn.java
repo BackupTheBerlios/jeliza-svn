@@ -16,6 +16,18 @@ import java.util.Vector;
  */
 public class Gehirn {
 
+	String absoluteUrl = "";
+
+	/**
+	 * Konstruktor
+	 * 
+	 * @param tmp
+	 *            Die Absolute URL zum JEliza-Stammordner
+	 */
+	public Gehirn(String tmp) {
+		absoluteUrl = tmp;
+	}
+
 	/**
 	 * Sucht nach passenden Antworten in gehirn/fragen.ghn und liefert eine
 	 * zurueck. Liefert, wenn keinen Antwort gefunden wurde, null zurueck!
@@ -25,7 +37,7 @@ public class Gehirn {
 	 * @return Die Antwort
 	 */
 	public String getAnt(String obj) {
-		java.lang.String strDatei = "gehirn/fragen.ghn";
+		java.lang.String strDatei = absoluteUrl + "gehirn/fragen.ghn";
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
@@ -165,7 +177,7 @@ public class Gehirn {
 	 * @return Die Antwort
 	 */
 	public String getAntKategorie(String obj) {
-		java.lang.String strDatei = "gehirn/kategorien/software.ghn";
+		java.lang.String strDatei = absoluteUrl + "gehirn/kategorien/software.ghn";
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
@@ -250,12 +262,13 @@ public class Gehirn {
 	 * @return Der Alias
 	 */
 	public String getAlias(String obj) {
-		java.lang.String strDatei = "gehirn/alias.ghn";
+		java.lang.String strDatei = absoluteUrl + "gehirn/alias.ghn";
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
 		} catch (FileNotFoundException e1) {
-			return e1.getMessage();
+			return "\n\nKonnte Hirn nicht laden. Bitte benachrichtige meinem Entwickler " +
+					"unter tobischulz@arcor.de ! \n\n";
 		}
 
 		String dasIst[] = new String[200];
@@ -297,7 +310,7 @@ public class Gehirn {
 	 * @return Die Antwort
 	 */
 	public String getAntBaseGehirn(String obj, String ant) {
-		java.lang.String strDatei = "gehirn/base.ghn";
+		java.lang.String strDatei = absoluteUrl + "gehirn/base.ghn";
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
@@ -362,7 +375,7 @@ public class Gehirn {
 	 * @return Die Antwort
 	 */
 	public String getAntPublicGehirn(String obj, String ant) {
-		java.lang.String strDatei = "gehirn/allgemein.ghn";
+		java.lang.String strDatei = absoluteUrl + "gehirn/allgemein.ghn";
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));

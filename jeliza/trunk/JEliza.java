@@ -16,6 +16,8 @@ import javax.servlet.http.*;
 public class JEliza extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	
+	String absoluteUrl = "/var/kunden/webs/jeliza/intelligenz/jeliza/";
 
 	String oldFra = "";
 
@@ -31,7 +33,7 @@ public class JEliza extends HttpServlet {
 
 	HttpSession session;
 
-	Gehirn hirn = new Gehirn();
+	Gehirn hirn = new Gehirn(absoluteUrl);
 
 	String outBuf = "";
 
@@ -84,7 +86,7 @@ public class JEliza extends HttpServlet {
 		session = request.getSession(true);
 
 		if (session.getAttribute("regeln") == null) {
-			session.setAttribute("regeln", new Regeln());
+			session.setAttribute("regeln", new Regeln(absoluteUrl));
 		}
 		re = (Regeln) session.getAttribute("regeln");
 

@@ -11,6 +11,8 @@ import org.homedns.tobiasschulz.apps.jeliza.*;
  */
 public class JElizaHome {
 
+	String absoluteUrl = "";
+
 	String oldFra = "";
 
 	String oldAnt = "";
@@ -23,7 +25,7 @@ public class JElizaHome {
 
 	PrintWriter out;
 
-	Gehirn hirn = new Gehirn();
+	Gehirn hirn = new Gehirn(absoluteUrl);
 
 	String outBuf = "";
 
@@ -61,7 +63,7 @@ public class JElizaHome {
 	 * Der Standard-Konstruktor
 	 */
 	public JElizaHome() {
-		re = new Regeln();
+		re = new Regeln(absoluteUrl);
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
