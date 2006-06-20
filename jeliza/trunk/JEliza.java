@@ -33,7 +33,7 @@ public class JEliza extends HttpServlet {
 
 	HttpSession session;
 
-	Gehirn hirn = new Gehirn(absoluteUrl);
+	Gehirn hirn = null;
 
 	String outBuf = "";
 
@@ -84,6 +84,7 @@ public class JEliza extends HttpServlet {
 		response.setContentType("text/html");
 		out = response.getWriter();
 		session = request.getSession(true);
+		hirn = new Gehirn(absoluteUrl);
 
 		if (session.getAttribute("regeln") == null) {
 			session.setAttribute("regeln", new Regeln(absoluteUrl));
