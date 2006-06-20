@@ -31,6 +31,7 @@ public class Regeln {
 	 */
 	public Regeln(String tmp) {
 		absoluteUrl = tmp;
+		hirn = new Gehirn(absoluteUrl);
 	}
 
 	/**
