@@ -176,8 +176,9 @@ public class JEliza extends HttpServlet {
 		session.removeAttribute("ant");
 		session.removeAttribute("outBuf");
 
-		outAll = "<script>self.location.href="
-				+ "'http://tobiasschulz.homedns.org/intelligenz-jeliza.jsp';</script>";
+		outAll = "<script>\n" +
+				"self.location.href="
+				+ "'http://tobiasschulz.homedns.org/intelligenz-jeliza.jsp';\n</script>";
 
 		printIt(request, response);
 	}
@@ -203,6 +204,7 @@ public class JEliza extends HttpServlet {
 		} else {
 			out.println(outAll);
 			outAll = "";
+			re.outAll = outAll;
 		}
 	}
 
