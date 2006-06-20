@@ -115,7 +115,7 @@ public class JEliza extends HttpServlet {
 		}
 		fra = fra.trim();
 
-		if (fra == "") {
+		if (fra == "" || fra == "null") {
 			printIt(request, response);
 			return;
 		}

@@ -267,8 +267,9 @@ public class Gehirn {
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
 		} catch (FileNotFoundException e1) {
-			return "\n\nKonnte Hirn nicht laden. Bitte benachrichtige meinem Entwickler " +
-					"unter tobischulz@arcor.de ! \n\n";
+			return "\n\n<br><br>Konnte Hirn \"" + strDatei +
+					"\" nicht laden. Bitte benachrichtige meinem Entwickler " +
+					"unter tobischulz@arcor.de !<br><br> \n\n";
 		}
 
 		String dasIst[] = new String[200];
