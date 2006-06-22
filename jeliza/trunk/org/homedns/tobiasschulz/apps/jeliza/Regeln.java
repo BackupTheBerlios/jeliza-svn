@@ -227,7 +227,7 @@ public class Regeln {
 			}
 		}
 
-		if (fra.startsWith("was") || fra.startsWith("wer")) {
+		if (fra.startsWith("was")) {
 			StringTokenizer stoken = new StringTokenizer(fra, " ");
 			stoken.nextToken();
 			String obj = "";
@@ -238,6 +238,28 @@ public class Regeln {
 			obj = obj.toLowerCase();
 			String dasIst = "";
 			dasIst = hirn.getAnt("was " + obj);
+			if (dasIst == null) {
+				outAll = "<script>"
+						+ "window.setTimeout(self.location.href=\""
+						+ "http://tobiasschulz.homedns.org/intelligenz/jeliza/addWord.php?was=was "
+						+ obj + "\", 3000);" + "</script>";
+				dasIst = ant;
+			}
+
+			return dasIst;
+		}
+
+		if (fra.startsWith("wer")) {
+			StringTokenizer stoken = new StringTokenizer(fra, " ");
+			stoken.nextToken();
+			String obj = "";
+			while (stoken.hasMoreTokens()) {
+				obj += stoken.nextToken() + " ";
+			}
+			obj = obj.trim();
+			obj = obj.toLowerCase();
+			String dasIst = "";
+			dasIst = hirn.getAnt("wer " + obj);
 			if (dasIst == null) {
 				outAll = "<script>"
 						+ "window.setTimeout(self.location.href=\""
