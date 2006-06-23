@@ -11,7 +11,7 @@ import java.util.Vector;
  * Erstellen einer Antwort ermoeglicht
  * 
  * @author Tobias Schulz
- * @version 0.2
+ * @version 0.3
  */
 public class Regeln {
 

@@ -1,7 +1,14 @@
 package org.homedns.tobiasschulz.apps.jeliza;
 
+/**
+ * Hilfsklasse des Java-Servlets JEliza, die einen Wrapper für die Klassen
+ * Regeln und Gehirn darstellen
+ * 
+ * @author Tobias Schulz
+ * @version 0.3
+ */
 public class FragenAntworter {
-	
+
 	/**
 	 * Methode zum Beantworten der Frage / Des Satzes des Users.
 	 * 
