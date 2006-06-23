@@ -446,4 +446,128 @@ public class Regeln {
 
 		return ant;
 	}
+
+	/**
+	 * "Regel" 4, eine Methode zum Beantworten von Rechnungen (Gleichungen) und
+	 * Wetter-Fragen etc.
+	 * 
+	 * @param fraParameter
+	 *            Die Frage
+	 * @param antParameter
+	 *            Die bisherige Antwort
+	 * @return Die Antwort
+	 */
+	public String regel4(String fraParameter, String antParameter) {
+		String ant = antParameter;
+		String fra = fraParameter;
+
+		boolean isMath = false;
+		for (int x = 0; x < 9; x++) {
+			if (fra.contains("" + x)) {
+				isMath = true;
+			}
+		}
+
+		if (isMath) {
+
+			fra = fra.replace("?", "");
+			fra = fra.replace("!", "");
+			fra = fra.replace(",", ".");
+			fra = fra.replace(" mal ", "*");
+			fra = fra.replace(" und ", "+");
+			fra = fra.replace(" plus ", "+");
+			fra = fra.replace(" geteilt ", "/");
+			fra = fra.replace(" durch ", "");
+			fra = fra.replace(" minus ", "-");
+			fra = fra.replace("+", " + ");
+			fra = fra.replace("-", " - ");
+			fra = fra.replace("*", " * ");
+			fra = fra.replace("/", " / ");
+			fra = fra.replace("  ", " ");
+			fra = fra.replace("  ", " ");
+
+			// Vector<String> nomen = new Vector<String>();
+
+			String rechenArt = "";
+
+			double[] nums = new double[10];
+			int z = 0;
+			StringTokenizer stoken = new StringTokenizer(fra, " ");
+			while (stoken.hasMoreElements()) {
+				String token = stoken.nextToken();
+				if (token == "" || token == " " || token == null)
+					continue;
+				token = token.trim();
+				if (token == "?" || token == "!" || token == ".")
+					continue;
+				if (token.contains("+") || token.contains("-")
+						|| token.contains("*") || token.contains("/")) {
+					rechenArt = token;
+					continue;
+				}
+				try {
+					int y = -1;
+					for (char x = 'a'; x < 'z'; x++) {
+						if (token.indexOf(x) > -1) {
+							y = 2;
+							continue;
+						}
+					}
+					if (y > -1) {
+						continue;
+					}
+
+					nums[z] = Double.parseDouble(token);
+					z++;
+					continue;
+				} catch (NumberFormatException nfe) {
+					// Nur Zahlen sollen num1 hinzugefuegt werden
+					continue;
+				}
+			}
+			
+			if(rechenArt.trim() == "") {
+				return ant;
+			}
+
+			double sum = 0;
+
+			if (rechenArt.contains("+")) {
+				sum = nums[0];
+				for(int x = 1; x < nums.length; x++) {
+					sum += nums[x];
+				}
+			}
+
+			if (rechenArt.contains("-")) {
+				sum = nums[0];
+				for(int x = 1; x < nums.length; x++) {
+					sum -= nums[x];
+				}
+			}
+
+			if (rechenArt.contains("*")) {
+				sum = nums[0];
+				for(int x = 1; x < nums.length; x++) {
+					sum *= nums[x];
+				}
+			}
+
+			if (rechenArt.contains("/")) {
+				sum = nums[0];
+				for(int x = 1; x < nums.length; x++) {
+					sum /= nums[x];
+				}
+			}
+
+			ant = "Das Ergebnis ist " + sum + "!";
+			ant = ant.replace(".", ",");
+			return ant;
+		}
+
+		ant = ant.trim();
+
+		return ant;
+
+	}
 } // class Regeln

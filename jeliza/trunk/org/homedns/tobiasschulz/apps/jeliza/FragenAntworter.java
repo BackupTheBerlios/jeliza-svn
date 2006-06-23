@@ -29,6 +29,12 @@ public class FragenAntworter {
 			fertig = true;
 		}
 
+		s = re.regel4(fra, ant);
+		if (!fertig && s != ant) {
+			ant = s;
+			fertig = true;
+		}
+
 		s = re.regel2(fra, ant);
 		if (!fertig && s != ant) {
 			ant = s;
