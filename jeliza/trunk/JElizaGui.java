@@ -99,8 +99,7 @@ public class JElizaGui implements ActionListener {
 		fr.setForeground(Color.white);
 
 		jelizaText = new JTextArea();
-		jelizaText
-				.setText("Hallo!, "
+		jelizaText.setText("Hallo!, "
 						+ "Ich heisse JEliza und bin ein Computerprogramm. \n"
 						+ "Ich bin Anfang Juni 2006 \"geboren\" worden (zu dieser Zeit\n"
 						+ "gab es mich zu ersten mal zum Download).\n" + "\n"
