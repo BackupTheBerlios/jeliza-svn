@@ -113,8 +113,6 @@ public class JElizaGui implements ActionListener {
 		fr.add(jelizaText, "Center");
 
 		JPanel userPanel = new JPanel(new BorderLayout(10, 10));
-		userPanel.setBackground(Color.darkGray);
-		userPanel.setForeground(Color.white);
 		
 		userText = new JTextField();
 		userText.setText("");
