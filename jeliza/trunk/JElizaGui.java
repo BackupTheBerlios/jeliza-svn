@@ -40,33 +40,7 @@ public class JElizaGui implements ActionListener {
 
 	JTextField userText;
 
-	JTextArea jelizaText;
-
-	/**
-	 * Mit der Methode println wird ein String, den JEliza sagt, in den
-	 * Ausgabepuffer geschrieben. Die Methode printIt senden dann den
-	 * Ausgabepuffer!
-	 * 
-	 * @see printIt
-	 * @param str
-	 *            Der String, den JEliza sagt
-	 */
-	void println(String str) {
-		outBuf += "JEliza: <font color=\"red\">" + str + "</font><br>" + "\n";
-	}
-
-	/**
-	 * Mit der Methode println wird ein String, den der Benutzer, der mit JEliza
-	 * spricht, sagt, in den Ausgabepuffer geschrieben. Die Methode printIt
-	 * senden dann den Ausgabepuffer!
-	 * 
-	 * @see printIt
-	 * @param str
-	 *            Der String, den der User sagt
-	 */
-	void userSayln(String str) {
-		outBuf += "Mensch: <font color=\"green\">" + str + "</font><br>" + "\n";
-	}
+	JEditorPane jelizaText;
 
 	/**
 	 * Der Standard-Konstruktor
@@ -98,22 +72,25 @@ public class JElizaGui implements ActionListener {
 		fr.setBackground(Color.darkGray);
 		fr.setForeground(Color.white);
 
-		jelizaText = new JTextArea();
-		jelizaText.setText("Hallo!, "
-						+ "Ich heisse JEliza und bin ein Computerprogramm. \n"
-						+ "Ich bin Anfang Juni 2006 \"geboren\" worden (zu dieser Zeit\n"
-						+ "gab es mich zu ersten mal zum Download).\n" + "\n"
-						+ "Ich wuerde mich gerne mit dir etwas unterhalten!\n"
-						+ "Bitte benutze leichte Woerter und erwarte nicht\n"
-						+ "zu viel von mir.\n" + "\n"
-						+ "Ach ja! Bitte Antworte IMMER in ganzen Saetzen.\n"
-						+ "\n" + "Wie ist dein Name?");
+		jelizaText = new JEditorPane("text/html", "");
+		jelizaText.setEditable(false);
+		jelizaText.setText("<html><body>"
+				+ "Hallo!, <br>\n<br>\n"
+				+ "Ich heisse JEliza und bin ein Computerprogramm. <br>\n"
+				+ "Ich bin Anfang Juni 2006 \"geboren\" worden (zu dieser Zeit<br>\n"
+				+ "gab es mich zu ersten mal zum Download).<br>\n" + "<br>\n"
+				+ "Ich wuerde mich gerne mit dir etwas unterhalten!<br>\n"
+				+ "Bitte benutze leichte Woerter und erwarte nicht<br>\n"
+				+ "zu viel von mir.<br>\n" + "<br>\n"
+				+ "Ach ja! Bitte Antworte IMMER in ganzen Saetzen.<br>\n"
+				+ "<br>\n" + "Wie ist dein Name?"
+				+ "</body></html>");
 		jelizaText.setBackground(Color.darkGray);
 		jelizaText.setForeground(Color.white);
-		fr.add(jelizaText, "Center");
+		fr.add(new JScrollPane(jelizaText), "Center");
 
 		JPanel userPanel = new JPanel(new BorderLayout(10, 10));
-		
+
 		userText = new JTextField();
 		userText.setText("");
 		userText.addActionListener(this);
@@ -209,7 +186,9 @@ public class JElizaGui implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		String fra = userText.getText();
-		jelizaText.setText(fragenAntworter.processQuestion(fra, re, hirn));
+		String ant = fragenAntworter.processQuestion(fra, re, hirn);
+		ant = ant.replace("\n", "<br>\n");
+		jelizaText.setText("<html><body>" + ant + "</body></html>");
 		userText.setText("");
 		userText.requestFocus();
 	}
