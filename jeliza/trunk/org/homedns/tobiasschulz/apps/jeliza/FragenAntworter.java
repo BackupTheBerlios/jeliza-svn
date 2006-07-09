@@ -8,6 +8,10 @@ package org.homedns.tobiasschulz.apps.jeliza;
  * @version 0.3
  */
 public class FragenAntworter {
+	
+	public Regeln re = new Regeln(""); 
+
+	public String[] satzTeile = new String[4];
 
 	/**
 	 * Methode zum Beantworten der Frage / Des Satzes des Users.
@@ -16,12 +20,15 @@ public class FragenAntworter {
 	 *            Die Frage
 	 * @return Die Antwort
 	 */
-	public String processQuestion(String fra, Regeln re, Gehirn hirn) {
+	public String processQuestion(String fra, Regeln reParam, Gehirn hirn) {
+		re = reParam;
 		boolean fertig = false;
 		String ant = "Uff! Da bin ich überfragt!\nKontaktieren sie doch bitte meinen Programmierer "
 				+ "darüber,\n"
-				+ "indem sie im Gästebuch dieser Seite einen Eintrag mit dieser Frage hinterlassen!";
+				+ "indem sie eine Mail an tobischulz@arcor.de mit dieser Frage schicken!";
 
+		String ofra = fra.trim();
+		
 		fra = Util.replace(fra, "?", "");
 		fra = Util.replace(fra, ".", "");
 		fra = Util.replace(fra, "!", "");
@@ -36,6 +43,11 @@ public class FragenAntworter {
 			fertig = true;
 		}
 
+		s = re.parseSatz(ofra, ant);
+		if (!fertig && s != ant) {
+			ant = s;
+			fertig = true;
+		}
 		s = re.regel4(fra, ant);
 		if (!fertig && s != ant) {
 			ant = s;
@@ -47,6 +59,7 @@ public class FragenAntworter {
 			ant = s;
 			fertig = true;
 		}
+
 
 		s = hirn.getAntPublicGehirn(fra, ant);
 		if (!fertig && s != ant) {
@@ -65,6 +78,9 @@ public class FragenAntworter {
 			ant = s;
 			fertig = true;
 		}
+		
+		satzTeile[0] = re.subjekt;
+
 
 		fertig = true;
 		if (fertig) {

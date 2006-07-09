@@ -1,10 +1,10 @@
 package org.homedns.tobiasschulz.apps.jeliza;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Random;
-import java.util.StringTokenizer;
-import java.util.Vector;
+import java.io.*;
+import java.text.*;
+import java.util.*;
+import org.homedns.tobiasschulz.util.satzparser.*;
+import org.homedns.tobiasschulz.io.*;
 
 /**
  * Hilfsklasse des Java-Servlets JEliza, die mit Hilfe von 3 "Regeln" das
@@ -22,6 +22,16 @@ public class Regeln {
 	public String outAll = "";
 
 	public String naechsteFra = "0";
+
+	public String subjekt = "";
+
+	public String verb = "";
+
+	public String objekt = "";
+
+	public String fragewort = "";
+
+	public SatzParseManager spm = SatzParseManager.createNew();
 
 	/**
 	 * Konstruktor
@@ -525,8 +535,8 @@ public class Regeln {
 					continue;
 				}
 			}
-			
-			if(rechenArt.trim() == "") {
+
+			if (rechenArt.trim() == "") {
 				return ant;
 			}
 
@@ -534,28 +544,28 @@ public class Regeln {
 
 			if (rechenArt.contains("+")) {
 				sum = nums[0];
-				for(int x = 1; x < nums.length; x++) {
+				for (int x = 1; x < nums.length; x++) {
 					sum += nums[x];
 				}
 			}
 
 			if (rechenArt.contains("-")) {
 				sum = nums[0];
-				for(int x = 1; x < nums.length; x++) {
+				for (int x = 1; x < nums.length; x++) {
 					sum -= nums[x];
 				}
 			}
 
 			if (rechenArt.contains("*")) {
 				sum = nums[0];
-				for(int x = 1; x < nums.length; x++) {
+				for (int x = 1; x < nums.length; x++) {
 					sum *= nums[x];
 				}
 			}
 
 			if (rechenArt.contains("/")) {
 				sum = nums[0];
-				for(int x = 1; x < nums.length; x++) {
+				for (int x = 1; x < nums.length; x++) {
 					sum /= nums[x];
 				}
 			}
@@ -570,4 +580,202 @@ public class Regeln {
 		return ant;
 
 	}
+
+	/**
+	 * Eine Weitere Methode, die den Satz in Subjekt, Praedikat und Objekt
+	 * aufteilt und ihn so besser "versteht".
+	 * 
+	 * @param fraParameter
+	 *            Die Frage
+	 * @param antParameter
+	 *            Die bisherige Antwort
+	 * @return Die Antwort
+	 */
+	public String[] analyseSatz(String fraParameter, String antParameter) {
+		@SuppressWarnings("unused")
+		String ant = antParameter;
+		String fra = fraParameter;
+
+		if (fra.trim().length() == 0) {
+			return null;
+		}
+
+		VerbDataBase vdb = null;
+		System.out.println("---- Generating Verb Database ----");
+		try {
+			vdb = new VerbDataBase();
+			vdb.loadFromFile("verbs.txt");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		System.out.println("---- Parsing Sentence ----");
+
+		spm = SatzParseManager.parse(fra, vdb);
+
+		try {
+			subjekt = spm.getSubject();
+			if (subjekt == fra) {
+				return null;
+			}
+		} catch (SubjektNotFoundException e) {
+			return null;
+		}
+
+		try {
+			verb = spm.getPraedikat();
+			if (verb == fra) {
+				return null;
+			}
+		} catch (VerbNotFoundException e) {
+			return null;
+		}
+
+		try {
+			objekt = spm.getObjekt();
+			if (objekt == fra) {
+				return null;
+			}
+		} catch (ObjektNotFoundException e) {
+			return null;
+		}
+
+		fragewort = spm.getFrageWort();
+		if (objekt == fra) {
+			return null;
+		}
+
+		String[] tmp = { subjekt, verb, objekt, fragewort };
+
+		return tmp;
+	}
+
+	/**
+	 * Eine Weitere Methode, die den Satz in Subjekt, Praedikat und Objekt
+	 * aufteilt und ihn so besser "versteht".
+	 * 
+	 * @param fraParameter
+	 *            Die Frage
+	 * @param antParameter
+	 *            Die bisherige Antwort
+	 * @return Die Antwort
+	 */
+	public String parseSatz(String fraParameter, String antParameter) {
+		String ant = antParameter;
+		String fra = fraParameter;
+
+		if (fra.trim().length() == 0) {
+			return "Du hast nichts eingegeben...";
+		}
+
+		VerbDataBase vdb = null;
+		System.out.println("---- Generating Verb Database ----");
+		try {
+			vdb = new VerbDataBase();
+			vdb.loadFromFile("verbs.txt");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		System.out.println("---- Parsing Sentence ----");
+
+		spm = SatzParseManager.parse(fra, vdb);
+
+		try {
+			subjekt = spm.getSubject();
+			if (subjekt == fra) {
+				return ant;
+			}
+		} catch (SubjektNotFoundException e) {
+			return ant;
+		}
+
+		try {
+			verb = spm.getPraedikat();
+			if (verb == fra) {
+				return ant;
+			}
+		} catch (VerbNotFoundException e) {
+			return ant;
+		}
+
+		try {
+			objekt = spm.getObjekt();
+			if (objekt == fra) {
+				return ant;
+			}
+		} catch (ObjektNotFoundException e) {
+			return ant;
+		}
+
+		fragewort = spm.getFrageWort();
+		if (objekt == fra) {
+			return ant;
+		}
+
+		if (spm.satzType == SatzParseManager.EINFACHE_FRAGE) {
+			String yesno;
+			try {
+				yesno = FileManager.readFileIntoString(
+						absoluteUrl + "wortschatz/simple-ques/" + subjekt + "/"
+								+ verb + "/" + objekt).trim();
+			} catch (IOException e) {
+				return ant;
+			}
+
+			if (yesno.hashCode() == "true".hashCode()) {
+				return "Ja";
+			}
+		} else {
+			System.out.println("Satzart: " + spm.satzType);
+		}
+
+		if (spm.satzType == SatzParseManager.ERWEITERTE_FRAGE) {
+			String yesno;
+			try {
+				yesno = FileManager.readFileIntoString(
+						absoluteUrl + "wortschatz/ext-ques/" + fragewort + "/" + subjekt + "/"
+								+ verb + "/" + objekt).trim();
+			} catch (IOException e) {
+				return ant;
+			}
+
+			if (yesno.hashCode() == "true".hashCode()) {
+				return "Ja";
+			}
+		} else {
+			System.out.println("Satzart: " + spm.satzType);
+		}
+
+		if (spm.satzType == SatzParseManager.AUSSAGESATZ) {
+			try {
+				BufferedReader br = FileManager.openBufferedReader(absoluteUrl
+						+ "wortschatz/simple-sent/" + subjekt + "/" + verb
+						+ "/" + objekt);
+
+				String line = "";
+				String[] answers = new String[100];
+				int y = 0;
+				while ((line = br.readLine()) != null) {
+					answers[y] = line;
+					y++;
+				}
+
+				Random r = new Random();
+
+				ant = answers[r.nextInt(y)];
+				if (ant == null) {
+					ant = "Aehhh";
+				}
+				return ant;
+
+			} catch (IOException e) {
+				return ant;
+
+			}
+		} else {
+			System.out.println("Satzart: " + spm.satzType);
+		}
+
+		return ant;
+	}
+
 } // class Regeln

@@ -2,8 +2,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import javax.swing.*;
+import java.util.*;
 
+import javax.swing.*;
+import org.homedns.tobiasschulz.io.*;
+import org.homedns.tobiasschulz.util.satzparser.VerbDataBase;
 import org.homedns.tobiasschulz.apps.jeliza.*;
 
 /**
@@ -24,6 +27,8 @@ public class JElizaGui implements ActionListener {
 
 	String oldObj = "";
 
+	String neuWissen = "";
+
 	boolean isQuesAnt = false;
 
 	Regeln re;
@@ -36,11 +41,21 @@ public class JElizaGui implements ActionListener {
 
 	String outAll = "";
 
+	Gefuehl gefuehlHeute = new Gefuehl();
+
 	FragenAntworter fragenAntworter = new FragenAntworter();
 
 	JTextField userText;
 
 	JEditorPane jelizaText;
+
+	String gespraech = "";
+
+	JFrame fr;
+
+	JPanel sidebar = new JPanel(new GridLayout(14, 1, 5, 5));
+
+	JPanel oberSidebar = new JPanel(new BorderLayout(5, 5));
 
 	/**
 	 * Der Standard-Konstruktor
@@ -53,7 +68,7 @@ public class JElizaGui implements ActionListener {
 			e.printStackTrace();
 			System.exit(2);
 		} catch (InstantiationException e) {
-			System.out.println("Kann UIManager nicht instanzieren ...");
+			System.out.println("Kann UIManager nicht instanziieren ...");
 			e.printStackTrace();
 			System.err.println("Fahre trotz Fehler fort.");
 		} catch (IllegalAccessException e) {
@@ -67,47 +82,115 @@ public class JElizaGui implements ActionListener {
 			System.exit(2);
 		}
 
-		JFrame fr = new JFrame();
+		re = new Regeln(absoluteUrl);
+
+		fr = new JFrame();
 		fr.setLayout(new BorderLayout(5, 5));
-		fr.setBackground(Color.darkGray);
-		fr.setForeground(Color.white);
+		fr.setBackground(Color.white);
+		fr.setForeground(Color.darkGray);
+		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		jelizaText = new JEditorPane("text/html", "");
 		jelizaText.setEditable(false);
-		jelizaText.setText("<html><body>"
-				+ "Hallo!, <br>\n<br>\n"
-				+ "Ich heisse JEliza und bin ein Computerprogramm. <br>\n"
-				+ "Ich bin Anfang Juni 2006 \"geboren\" worden (zu dieser Zeit<br>\n"
-				+ "gab es mich zu ersten mal zum Download).<br>\n" + "<br>\n"
-				+ "Ich wuerde mich gerne mit dir etwas unterhalten!<br>\n"
-				+ "Bitte benutze leichte Woerter und erwarte nicht<br>\n"
-				+ "zu viel von mir.<br>\n" + "<br>\n"
-				+ "Ach ja! Bitte Antworte IMMER in ganzen Saetzen.<br>\n"
-				+ "<br>\n" + "Wie ist dein Name?"
-				+ "</body></html>");
-		jelizaText.setBackground(Color.darkGray);
-		jelizaText.setForeground(Color.white);
+		jelizaText.setText("<html><body>" + "Hallo!\n<br>" + "\n<br>"
+				+ "Bitte Antworte IMMER in ganzen Saetzen.<br>\n" + "<br>\n"
+				+ "Wie ist dein Name?" + "</body></html>");
+		jelizaText.setBackground(Color.white);
+		jelizaText.setForeground(Color.darkGray);
 		fr.add(new JScrollPane(jelizaText), "Center");
 
 		JPanel userPanel = new JPanel(new BorderLayout(10, 10));
+		JPanel bottomPanel = new JPanel(new BorderLayout(0, 0));
 
 		userText = new JTextField();
 		userText.setText("");
 		userText.addActionListener(this);
+		userText.setActionCommand("fra");
 		userPanel.add(userText, "Center");
 
 		JButton senden = new JButton("Fragen");
 		senden.addActionListener(this);
+		senden.setActionCommand("fra");
 		userPanel.add(senden, "East");
 
-		fr.add(userPanel, "South");
+		bottomPanel.add(userPanel, "North");
+		bottomPanel.add(new JLabel(
+				" Copyright 2006 by Tobias Schulz | License: "
+						+ "GNU Lesser General Public License (LGPL)"), "South");
 
-		re = new Regeln(absoluteUrl);
+		fr.add(bottomPanel, "South");
 
-		fr.setSize(500, 400);
-		fr.setVisible(true);
+		generateSidebar("");
+		oberSidebar.add(sidebar, "North");
+		fr.add(oberSidebar, "East");
+		
+		show();
 
 		userText.requestFocus();
+	}
+
+	/**
+	 * Generiert die Sidebar, die Rechts im Fenster angezeigt wird und Sachen
+	 * wie Gefuehle etc. anzeigt.
+	 */
+	private void generateSidebar(String fra) {
+		fr.remove(oberSidebar);
+		sidebar.removeAll();
+		oberSidebar.removeAll();
+
+		sidebar.add(new JLabel("Gefuehl heute:"));
+		gefuehlHeute.generateFeeling();
+		sidebar.add(new JTextField(gefuehlHeute.getFeeling()));
+
+		JButton save = new JButton("Gespraech Speichern");
+		save.addActionListener(this);
+		save.setActionCommand("save");
+		sidebar.add(save);
+
+		JButton open = new JButton("Gespraech Laden");
+		open.addActionListener(this);
+		open.setActionCommand("open");
+		sidebar.add(open);
+
+		JButton newtext = new JButton("Texte hinzufuegen");
+		newtext.addActionListener(this);
+		newtext.setActionCommand("newtext");
+		sidebar.add(newtext);
+
+		JButton genWissenDatenbank = new JButton("Datenbank generieren");
+		genWissenDatenbank.addActionListener(this);
+		genWissenDatenbank.setActionCommand("genWissenDatenbank");
+		sidebar.add(genWissenDatenbank);
+
+		String[] st = re.analyseSatz(fra, "");
+		if (st == null) {
+			st = new String[4];
+		}
+		sidebar.add(new JLabel("Subjekt im Satz:"));
+		sidebar.add(new JTextField(st[0]));
+		sidebar.add(new JLabel("Verb im Satz:"));
+		sidebar.add(new JTextField(st[1]));
+		sidebar.add(new JLabel("Objekt im Satz:"));
+		sidebar.add(new JTextField(st[2]));
+		sidebar.add(new JLabel("Fragewort im Satz:"));
+		sidebar.add(new JTextField(st[3]));
+
+		oberSidebar.add(sidebar, "North");
+		fr.add(oberSidebar, "East");
+		show();
+		fr.repaint();
+		oberSidebar.repaint();
+		sidebar.repaint();
+
+		System.out.println("Generated Sidebar");
+	}
+
+	/**
+	 * Macht das Fenster sichtbar.
+	 */
+	public void show() {
+		fr.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		fr.setVisible(true);
 	}
 
 	/**
@@ -120,77 +203,184 @@ public class JElizaGui implements ActionListener {
 		new JElizaGui();
 	}
 
-	/**
-	 * Methode zum Beantworten der Frage des Users.
-	 * 
-	 * @see doGet
-	 * @param fra
-	 *            Die Frage
-	 * @return Die Antwort
-	 */
-	public String processQuestion(String fra) {
-		boolean fertig = false;
-		String ant = "Uff! Da bin ich überfragt!\nKontaktieren sie doch bitte meinen Programmierer "
-				+ "darüber,\n"
-				+ "indem sie im Gästebuch dieser Seite einen Eintrag mit dieser Frage hinterlassen!";
-
-		fra = Util.replace(fra, "?", "");
-		fra = Util.replace(fra, ".", "");
-		fra = Util.replace(fra, "!", "");
-
-		fra = fra.trim();
-
-		String s = "";
-
-		s = re.regel1(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand() == "fra") {
+			String fra = userText.getText();
+			String ant = fragenAntworter.processQuestion(fra, re, hirn);
+			ant = ant.replace("\n", "<br>\n");
+			gespraech += "1::".concat(fra).concat("\n").concat("2::").concat(
+					ant).concat("\n");
+			jelizaText.setText("<html><body>"
+					+ gespraech.replace("1::", "<font color='red'>").replace(
+							"2::", "<font color='green'>").replace("\n",
+							"</font><br>\n") + "</body></html>");
+			userText.setText("");
+			generateSidebar(fra);
+			userText.requestFocus();
 		}
-
-		s = re.regel2(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (e.getActionCommand() == "save") {
+			saveTalking();
 		}
-
-		s = hirn.getAntPublicGehirn(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (e.getActionCommand() == "open") {
+			openTalking();
 		}
-
-		s = hirn.getAntBaseGehirn(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (e.getActionCommand() == "newtext") {
+			addTextWissen();
 		}
-
-		s = re.regel3(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (e.getActionCommand() == "genWissenDatenbank") {
+			genWissenDatenbank();
 		}
-
-		fertig = true;
-		if (fertig) {
-
-			ant = Util.replace(ant, "  ", " ");
-			oldFra = fra;
-			oldAnt = ant;
-
-			return ant;
-		}
-		return null;
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		String fra = userText.getText();
-		String ant = fragenAntworter.processQuestion(fra, re, hirn);
-		ant = ant.replace("\n", "<br>\n");
-		jelizaText.setText("<html><body>" + ant + "</body></html>");
-		userText.setText("");
-		userText.requestFocus();
+	/**
+	 * Speichert das Gespraech.
+	 */
+	private synchronized void saveTalking() {
+		JFileChooser fc = new JFileChooser();
+		fc.showSaveDialog(fr);
+		if (fc.getSelectedFile() == null
+				|| fc.getSelectedFile().toString() == "") {
+			return;
+		}
+		String file = fc.getSelectedFile() + "";
+		if (! file.endsWith(".gsp") ) {
+			file += ".gsp";
+		}
+		try {
+			FileManager.writeStringIntoFile(gespraech, file);
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(fr, "Konnte Gespraech nicht nach "
+					+ file + " speichern.");
+			return;
+		}
+		JOptionPane.showMessageDialog(fr, "Gespraech nach "
+				+ file + " gespeichert.");
+		fr.repaint();
+	}
+
+	/**
+	 * Öffnet ein Gespraech.
+	 */
+	private synchronized void openTalking() {
+		JFileChooser fc = new JFileChooser();
+		fc.showOpenDialog(fr);
+		if (fc.getSelectedFile() == null
+				|| fc.getSelectedFile().toString() == "") {
+			return;
+		}
+		try {
+			gespraech = FileManager.readFileIntoString(fc.getSelectedFile()
+					+ "");
+		} catch (IOException e) {
+			gespraech = "Konnte Gespraech laden.";
+			JOptionPane.showMessageDialog(fr, "Konnte Gespraech nicht von "
+					+ fc.getSelectedFile() + " laden.");
+			return;
+		}
+		JOptionPane.showMessageDialog(fr, "Gespraech von "
+				+ fc.getSelectedFile() + " geladen.");
+		jelizaText.setText("<html><body>"
+				+ gespraech.replace("1::", "<font color='red'>").replace("2::",
+						"<font color='green'>").replace("\n", "</font><br>\n")
+				+ "</body></html>");
+		fr.repaint();
+	}
+
+	/**
+	 * Fügt Texte dem Wissen hinzu.
+	 */
+	private synchronized void addTextWissen() {
+		long millis = Calendar.getInstance().getTimeInMillis();
+		try {
+			FileManager.copyFileBuffered(absoluteUrl + "text.vdb", absoluteUrl
+					+ "backup/text.vdb-ms-" + millis);
+		} catch (FileNotFoundException e1) {
+			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
+					+ absoluteUrl + "text.vdb"
+					+ " nicht laden. (File not found)");
+			return;
+		} catch (IOException e1) {
+			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
+					+ absoluteUrl + "text.vdb" + " nicht laden. (IO-Error)");
+			return;
+		}
+		JOptionPane.showMessageDialog(fr, "ACHTUNG: \n " + "\n"
+				+ "Es duerfen nur reine Text-Dateien (plain text), "
+				+ "die normalerweise mit '.txt' enden, hinzugefuegt werden.\n"
+				+ "\n" + "Ansonsten kann das Programm kaputt gehen.");
+		JFileChooser fc = new JFileChooser();
+		fc.showOpenDialog(fr);
+		if (fc.getSelectedFile() == null
+				|| fc.getSelectedFile().toString() == "") {
+			return;
+		}
+		try {
+			neuWissen = FileManager.readFileIntoString(fc.getSelectedFile()
+					+ "");
+		} catch (IOException e) {
+			neuWissen = "";
+			JOptionPane.showMessageDialog(fr, "Konnte Text "
+					+ fc.getSelectedFile() + " nicht laden.");
+			return;
+		}
+
+		InputStream is;
+		try {
+			is = new FileInputStream(absoluteUrl + "backup/text.vdb-ms-"
+					+ millis);
+			BufferedOutputStream os = new BufferedOutputStream(
+					new FileOutputStream(absoluteUrl + "text.vdb"));
+			os.write(neuWissen.getBytes());
+			int count = 0;
+			byte[] b = new byte[256];
+			while ((count = is.read(b)) != -1) {
+				os.write(b, 0, count);
+			}
+			is.close();
+			os.close();
+		} catch (FileNotFoundException e1) {
+			JOptionPane.showMessageDialog(fr, "Konnte Wissen " + absoluteUrl
+					+ "text.vdb" + " nicht speichern.");
+			return;
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(fr, "Konnte Wissen " + absoluteUrl
+					+ "text.vdb" + " nicht speichern.");
+			return;
+		}
+		JOptionPane.showMessageDialog(fr, "Wissen " + fc.getSelectedFile()
+				+ " hinzugefuegt.");
+		fr.repaint();
+	}
+
+	/**
+	 * Fügt Texte dem Wissen hinzu.
+	 */
+	private synchronized void genWissenDatenbank() {
+		long millis = Calendar.getInstance().getTimeInMillis();
+		try {
+			FileManager.copyFileBuffered(absoluteUrl + "text.vdb", absoluteUrl
+					+ "backup/text.vdb-ms-" + millis);
+		} catch (FileNotFoundException e1) {
+			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
+					+ absoluteUrl + "text.vdb"
+					+ " nicht laden. (File not found)");
+			return;
+		} catch (IOException e1) {
+			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
+					+ absoluteUrl + "text.vdb" + " nicht laden. (IO-Error)");
+			return;
+		}
+		VerbDataBase vdb = null;
+		System.out.println("---- Generating Verb Database ----");
+		try {
+			vdb = new VerbDataBase("text.vdb");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		System.out.println("---- Writing it into verbs.txt ----");
+		vdb.writeIntoFile("verbs.txt");
+		JOptionPane.showMessageDialog(fr, "Habe Datenbank neu generiert.");
+		fr.repaint();
 	}
 
 } // class JEliza
