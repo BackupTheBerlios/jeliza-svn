@@ -106,6 +106,7 @@ public class Gehirn {
 		@SuppressWarnings("unused")
 		String obj2 = obj.trim().toLowerCase();
 		int xy = 0;
+		boolean ueberspringNextLine = false;
 		try {
 			while (true) {
 				java.lang.String line = br.readLine();
@@ -113,7 +114,16 @@ public class Gehirn {
 					break;
 				String line2 = line.trim().toLowerCase();
 
+				if(ueberspringNextLine) {
+					ueberspringNextLine = false;
+					continue;
+				}
+
 				if (line2.contains("Portal".toLowerCase())) {
+					continue;
+				}
+				if (line2.contains("Es werden Kandidaten".toLowerCase())) {
+					ueberspringNextLine = true;
 					continue;
 				}
 				if (line2.contains("<div class=\"sideBox\"".toLowerCase())) {
