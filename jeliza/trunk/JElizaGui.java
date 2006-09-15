@@ -6,13 +6,14 @@ import java.util.*;
 
 import javax.swing.*;
 import org.homedns.tobiasschulz.io.*;
-import org.homedns.tobiasschulz.util.satzparser.VerbDataBase;
-import org.homedns.tobiasschulz.apps.jeliza.*;
+import org.homedns.tobiasschulz.util.satzparser.*;
+import org.homedns.tobiasschulz.apps.speech.*;
+import org.homedns.tobiasschulz.apps.jeliza.hirn.*;
 
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
  * versteht (verstehen sollte) Diese Version ist eine Standalone-version (TomCat
- * wird nicht benötigt), daher der Name JElizaHome.
+ * wird nicht benötigt), daher der Name JElizaGui.
  * 
  * @author Tobias Schulz
  * @version 0.3
@@ -27,23 +28,17 @@ public class JElizaGui implements ActionListener {
 
 	String oldObj = "";
 
+	Gehirn hirn = Gehirn.newGehirn(absoluteUrl);
+
 	String neuWissen = "";
 
 	boolean isQuesAnt = false;
 
-	Regeln re;
-
 	PrintWriter out;
-
-	Gehirn hirn = new Gehirn(absoluteUrl);
 
 	String outBuf = "";
 
 	String outAll = "";
-
-	Gefuehl gefuehlHeute = new Gefuehl();
-
-	FragenAntworter fragenAntworter = new FragenAntworter();
 
 	JTextField userText;
 
@@ -81,8 +76,6 @@ public class JElizaGui implements ActionListener {
 			e.printStackTrace();
 			System.exit(2);
 		}
-
-		re = new Regeln(absoluteUrl);
 
 		fr = new JFrame();
 		fr.setLayout(new BorderLayout(5, 5));
@@ -139,8 +132,8 @@ public class JElizaGui implements ActionListener {
 		oberSidebar.removeAll();
 
 		sidebar.add(new JLabel("Gefuehl heute:"));
-		gefuehlHeute.generateFeeling();
-		sidebar.add(new JTextField(gefuehlHeute.getFeeling()));
+		hirn.gefuehlHeute.generateFeeling();
+		sidebar.add(new JTextField(hirn.gefuehlHeute.getFeeling()));
 
 		JButton save = new JButton("Gespraech Speichern");
 		save.addActionListener(this);
@@ -162,7 +155,7 @@ public class JElizaGui implements ActionListener {
 		genWissenDatenbank.setActionCommand("genWissenDatenbank");
 		sidebar.add(genWissenDatenbank);
 
-		String[] st = re.analyseSatz(fra, "");
+		String[] st = hirn.re.analyseSatz(fra, "");
 		if (st == null) {
 			st = new String[4];
 		}
@@ -206,7 +199,7 @@ public class JElizaGui implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "fra") {
 			String fra = userText.getText();
-			String ant = fragenAntworter.processQuestion(fra, re, hirn);
+			String ant = hirn.fragenAntworter.processQuestion(fra, hirn.re, hirn);
 			ant = ant.replace("\n", "<br>\n");
 			gespraech += "1::".concat(fra).concat("\n").concat("2::").concat(
 					ant).concat("\n");
@@ -217,6 +210,7 @@ public class JElizaGui implements ActionListener {
 			userText.setText("");
 			generateSidebar(fra);
 			userText.requestFocus();
+			Speech.say(Speech.preprocessor(ant));
 		}
 		if (e.getActionCommand() == "save") {
 			saveTalking();

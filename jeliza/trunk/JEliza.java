@@ -2,6 +2,8 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import org.homedns.tobiasschulz.apps.jeliza.*;
+import org.homedns.tobiasschulz.apps.jeliza.hirn.Gehirn;
+import org.homedns.tobiasschulz.apps.jeliza.hirn.Answerer;
 import org.homedns.tobiasschulz.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -27,8 +29,6 @@ public class JEliza extends HttpServlet {
 
 	boolean isQuesAnt = false;
 
-	Regeln re;
-
 	PrintWriter out;
 
 	HttpSession session;
@@ -39,8 +39,6 @@ public class JEliza extends HttpServlet {
 
 	String outAll = "";
 
-	FragenAntworter fragenAntworter = new FragenAntworter();
-	
 	/**
 	 * Mit der Methode println wird ein String, den JEliza sagt, in den
 	 * Ausgabepuffer geschrieben. Die Methode printIt senden dann den
@@ -84,12 +82,12 @@ public class JEliza extends HttpServlet {
 		response.setContentType("text/html");
 		out = response.getWriter();
 		session = request.getSession(true);
-		hirn = new Gehirn(absoluteUrl);
+		hirn = Gehirn.newGehirn(absoluteUrl);
 
 		if (session.getAttribute("regeln") == null) {
-			session.setAttribute("regeln", new Regeln(absoluteUrl));
+			session.setAttribute("regeln", new Answerer(absoluteUrl));
 		}
-		re = (Regeln) session.getAttribute("regeln");
+		hirn.re = (Answerer) session.getAttribute("regeln");
 
 		String ofra = "";
 		String fra = "";
@@ -104,9 +102,9 @@ public class JEliza extends HttpServlet {
 
 		ofra = request.getParameter("fra");
 		fra = request.getParameter("fra");
-		if (re.naechsteFra != "0") {
-			fra = re.naechsteFra;
-			re.naechsteFra = "0";
+		if (hirn.re.naechsteFra != "0") {
+			fra = hirn.re.naechsteFra;
+			hirn.re.naechsteFra = "0";
 		}
 		outBuf = (session.getAttribute("outBuf") != null) ? (String) session
 				.getAttribute("outBuf") : "";
@@ -120,9 +118,9 @@ public class JEliza extends HttpServlet {
 			return;
 		}
 
-		re.naechsteFra = "0";
+		hirn.re.naechsteFra = "0";
 
-		ant = fragenAntworter.processQuestion(fra, re, hirn);
+		ant = hirn.fragenAntworter.processQuestion(fra, hirn.re, hirn);
 		userSayln(ofra);
 		println(ant);
 		session.setAttribute("ant", ant);
@@ -195,7 +193,7 @@ public class JEliza extends HttpServlet {
 	 */
 	public void printIt(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-		outAll = re.outAll;
+		outAll = hirn.re.outAll;
 		if (outAll.length() < 5) {
 			out.println(HTMLOutputData.outHead);
 			out.println(outBuf);
@@ -204,9 +202,8 @@ public class JEliza extends HttpServlet {
 		} else {
 			out.println(outAll);
 			outAll = "";
-			re.outAll = outAll;
+			hirn.re.outAll = outAll;
 		}
 	}
-
 
 } // class JEliza

@@ -1,5 +1,7 @@
 import java.io.*;
 import org.homedns.tobiasschulz.apps.jeliza.*;
+import org.homedns.tobiasschulz.apps.jeliza.hirn.Gehirn;
+import org.homedns.tobiasschulz.apps.jeliza.hirn.Answerer;
 
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
@@ -21,18 +23,14 @@ public class JElizaHome {
 
 	boolean isQuesAnt = false;
 
-	Regeln re;
-
 	PrintWriter out;
 
-	Gehirn hirn = new Gehirn(absoluteUrl);
+	Gehirn hirn = Gehirn.newGehirn(absoluteUrl);
 
 	String outBuf = "";
 
 	String outAll = "";
 
-	FragenAntworter fragenAntworter = new FragenAntworter();
-	
 	/**
 	 * Mit der Methode println wird ein String, den JEliza sagt, in den
 	 * Ausgabepuffer geschrieben. Die Methode printIt senden dann den
@@ -63,7 +61,7 @@ public class JElizaHome {
 	 * Der Standard-Konstruktor
 	 */
 	public JElizaHome() {
-		re = new Regeln(absoluteUrl);
+		hirn.re = new Answerer(absoluteUrl);
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -74,7 +72,7 @@ public class JElizaHome {
 		try {
 			while((line = br.readLine()) != null) {
 				String fra = line;
-				String ant = fragenAntworter.processQuestion(fra, re, hirn);
+				String ant = hirn.fragenAntworter.processQuestion(fra, hirn.re, hirn);
 				System.out.println("JEliza: " + ant);
 				System.out.print("Mensch: ");
 			}
@@ -113,15 +111,17 @@ public class JElizaHome {
 
 		fra = fra.trim();
 
-		String s = "";
+//		String s = "";
 
-		s = re.regel1(fra, ant);
+		ant = hirn.fragenAntworter.processQuestion(fra, hirn.re, hirn);
+
+/*		s = hirn.re.regel1(fra, ant);
 		if (!fertig && s != ant) {
 			ant = s;
 			fertig = true;
 		}
 
-		s = re.regel2(fra, ant);
+		s = hirn.re.regel2(fra, ant);
 		if (!fertig && s != ant) {
 			ant = s;
 			fertig = true;
@@ -139,11 +139,11 @@ public class JElizaHome {
 			fertig = true;
 		}
 
-		s = re.regel3(fra, ant);
+		s = hirn.re.regel3(fra, ant);
 		if (!fertig && s != ant) {
 			ant = s;
 			fertig = true;
-		}
+		} */
 
 		fertig = true;
 		if (fertig) {
