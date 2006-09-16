@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.*;
 import java.util.*;
 
@@ -9,6 +11,8 @@ import org.homedns.tobiasschulz.io.*;
 import org.homedns.tobiasschulz.util.satzparser.*;
 import org.homedns.tobiasschulz.apps.speech.*;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.*;
+
+import java.awt.event.WindowListener;
 
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
@@ -120,6 +124,18 @@ public class JElizaGui implements ActionListener {
 		show();
 
 		userText.requestFocus();
+		
+		fr.addWindowListener(new WindowAdapter() {
+
+			public void windowClosed(WindowEvent e) {
+				System.exit(0);
+			}
+
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+
+		});
 	}
 
 	/**
@@ -204,7 +220,9 @@ public class JElizaGui implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "fra") {
 			String fra = userText.getText();
-			String ant = hirn.fragenAntworter.processQuestion(fra, hirn.re, hirn);
+			Satz antwort = hirn.fragenAntworter.processQuestion(new Satz(fra, fra), hirn.re, hirn);
+			String ant = antwort.satzHtml;
+			String antPlain = antwort.satzPlain;
 			ant = ant.replace("\n", "<br>\n");
 			gespraech += "1::".concat(fra).concat("\n").concat("2::").concat(
 					ant).concat("\n");
@@ -215,7 +233,7 @@ public class JElizaGui implements ActionListener {
 			userText.setText("");
 			generateSidebar(fra);
 			userText.requestFocus();
-			Speech.say(Speech.preprocessor(ant));
+			Speech.say(Speech.preprocessor(antPlain.replace("          ", " . ")));
 		}
 		if (e.getActionCommand() == "save") {
 			saveTalking();

@@ -2,6 +2,7 @@ import java.io.*;
 import org.homedns.tobiasschulz.apps.jeliza.*;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.Gehirn;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.Answerer;
+import org.homedns.tobiasschulz.apps.jeliza.hirn.Satz;
 
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
@@ -72,7 +73,8 @@ public class JElizaHome {
 		try {
 			while((line = br.readLine()) != null) {
 				String fra = line;
-				String ant = hirn.fragenAntworter.processQuestion(fra, hirn.re, hirn);
+				String ant = 
+					hirn.fragenAntworter.processQuestion(new Satz(fra, fra), hirn.re, hirn).satzPlain;
 				System.out.println("JEliza: " + ant);
 				System.out.print("Mensch: ");
 			}
@@ -91,70 +93,5 @@ public class JElizaHome {
 		new JElizaHome();
 	}
 
-	/**
-	 * Methode zum Beantworten der Frage des Users.
-	 * 
-	 * @see doGet
-	 * @param fra
-	 *            Die Frage
-	 * @return Die Antwort
-	 */
-	public String processQuestion(String fra) {
-		boolean fertig = false;
-		String ant = "Uff! Da bin ich überfragt!\nKontaktieren sie doch bitte meinen Programmierer "
-				+ "darüber,\n"
-				+ "indem sie im Gästebuch dieser Seite einen Eintrag mit dieser Frage hinterlassen!";
-
-		fra = Util.replace(fra, "?", "");
-		fra = Util.replace(fra, ".", "");
-		fra = Util.replace(fra, "!", "");
-
-		fra = fra.trim();
-
-//		String s = "";
-
-		ant = hirn.fragenAntworter.processQuestion(fra, hirn.re, hirn);
-
-/*		s = hirn.re.regel1(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		s = hirn.re.regel2(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		s = hirn.getAntPublicGehirn(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		s = hirn.getAntBaseGehirn(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		}
-
-		s = hirn.re.regel3(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
-		} */
-
-		fertig = true;
-		if (fertig) {
-
-			ant = Util.replace(ant, "  ", " ");
-			oldFra = fra;
-			oldAnt = ant;
-
-			return ant;
-		}
-		return null;
-	}
 
 } // class JEliza

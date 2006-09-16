@@ -4,6 +4,7 @@ import java.util.*;
 import org.homedns.tobiasschulz.apps.jeliza.*;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.Gehirn;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.Answerer;
+import org.homedns.tobiasschulz.apps.jeliza.hirn.Satz;
 import org.homedns.tobiasschulz.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -120,7 +121,7 @@ public class JEliza extends HttpServlet {
 
 		hirn.re.naechsteFra = "0";
 
-		ant = hirn.fragenAntworter.processQuestion(fra, hirn.re, hirn);
+		ant = hirn.fragenAntworter.processQuestion(new Satz(fra, fra), hirn.re, hirn).satzHtml;
 		userSayln(ofra);
 		println(ant);
 		session.setAttribute("ant", ant);
