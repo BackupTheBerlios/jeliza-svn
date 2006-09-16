@@ -1,0 +1,28 @@
+rm -rf tmp
+mkdir tmp
+cd tmp
+
+for x in 0 1 2 3 4 5 6 7 8 9; do
+ for x in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49; do
+#  for x in 1 2 3 4 5 6; do
+    wget http://de.wikipedia.org/wiki/Spezial:Random
+#  done
+ done
+done
+
+mkdir 2
+
+for x in `ls`; do
+ mv $x 2/$x.html
+done
+
+for x in `ls 2/`; do
+ echo $x
+ lynx -dump "2/$x" 2>&1 | tee -a tmp > /dev/null
+done
+
+cd ..
+
+mkdir backup
+cp text.vdb "backup/before-$(date)"
+cat tmp/tmp | grep -v http | grep -v file | grep -v "^$" >> text.vdb

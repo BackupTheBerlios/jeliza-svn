@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true" kind="con"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/commons-el.jar" kind="lib"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/jasper-compiler.jar" kind="lib"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/jasper-compiler-jdt.jar" kind="lib"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/jasper-runtime.jar" kind="lib"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/jsp-api.jar" kind="lib"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/naming-factory.jar" kind="lib"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/naming-factory-dbcp.jar" kind="lib"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/naming-resources.jar" kind="lib"/>
+	<classpathentry path="/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/servlet-api.jar" kind="lib"/>
+	<classpathentry path="/media/hdb5/workspace/Eliza/trunk/tsclasses.jar" kind="lib"/>
+	<classpathentry path="" kind="output"/>
+</classpath>

@@ -1,0 +1,134 @@
+--18:55:17--  http://tobiasschulz.homedns.org/intelligenz/jeliza/gehirn/base.ghn
+           => `base.ghn.1'
+Auflösen des Hostnamen »tobiasschulz.homedns.org«.... 172.158.234.181
+Verbindungsaufbau zu tobiasschulz.homedns.org|172.158.234.181|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 200 OK
+Länge: 8.299 (8.1K) [text/plain]
+
+    0K ........                                              100%   22.35 KB/s
+
+18:55:17 (22.35 KB/s) - »base.ghn.1« gespeichert [8299/8299]
+
+--18:55:17--  http://tobiasschulz.homedns.org/intelligenz/jeliza/gehirn/kategorien
+           => `kategorien.1'
+Auflösen des Hostnamen »tobiasschulz.homedns.org«.... 172.158.234.181
+Verbindungsaufbau zu tobiasschulz.homedns.org|172.158.234.181|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 301 Moved Permanently
+Platz: http://tobiasschulz.homedns.org/intelligenz/jeliza/gehirn/kategorien/ [folge]
+--18:55:18--  http://tobiasschulz.homedns.org/intelligenz/jeliza/gehirn/kategorien/
+           => `index.html.1'
+Verbindungsaufbau zu tobiasschulz.homedns.org|172.158.234.181|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 200 OK
+Länge: nicht spezifiziert [text/html]
+
+    0K .                                                        50.23 MB/s
+
+18:55:18 (50.23 MB/s) - »index.html.1« gespeichert [1106]
+
+--18:55:18--  http://tobiasschulz.homedns.org/intelligenz/jeliza/gehirn/kategorien/software.ghn
+           => `software.ghn.1'
+Auflösen des Hostnamen »tobiasschulz.homedns.org«.... 172.158.234.181
+Verbindungsaufbau zu tobiasschulz.homedns.org|172.158.234.181|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 200 OK
+Länge: 427 [text/plain]
+
+    0K                                                       100%   37.02 MB/s
+
+18:55:19 (37.02 MB/s) - »software.ghn.1« gespeichert [427/427]
+
+--18:55:19--  http://tobiasschulz.homedns.org/intelligenz/jeliza/gehirn/alias.ghn
+           => `alias.ghn.1'
+Auflösen des Hostnamen »tobiasschulz.homedns.org«.... 172.158.234.181
+Verbindungsaufbau zu tobiasschulz.homedns.org|172.158.234.181|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 200 OK
+Länge: 178 [text/plain]
+
+    0K                                                       100%   15.43 MB/s
+
+18:55:19 (15.43 MB/s) - »alias.ghn.1« gespeichert [178/178]
+
+--18:55:19--  http://tobiasschulz.homedns.org/intelligenz/jeliza/gehirn/allgemein.ghn
+           => `allgemein.ghn.1'
+Auflösen des Hostnamen »tobiasschulz.homedns.org«.... 172.158.234.181
+Verbindungsaufbau zu tobiasschulz.homedns.org|172.158.234.181|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 200 OK
+Länge: 1.666 (1.6K) [text/plain]
+
+    0K .                                                     100%   55.06 KB/s
+
+18:55:20 (55.06 KB/s) - »allgemein.ghn.1« gespeichert [1666/1666]
+
+--18:55:20--  http://tobiasschulz.homedns.org/intelligenz/jeliza/gehirn/fragen.ghn
+           => `fragen.ghn.1'
+Auflösen des Hostnamen »tobiasschulz.homedns.org«.... 172.158.234.181
+Verbindungsaufbau zu tobiasschulz.homedns.org|172.158.234.181|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 200 OK
+Länge: 14.545 (14K) [text/plain]
+
+    0K .......... ....                                       100%   22.25 KB/s
+
+18:55:21 (22.25 KB/s) - »fragen.ghn.1« gespeichert [14545/14545]
+
+--18:55:21--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/
+           => `index.html'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:21 FEHLER 404: Not Found.
+
+--18:55:21--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/simple-ques
+           => `simple-ques'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:22 FEHLER 404: Not Found.
+
+--18:55:22--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/simple-ques/du
+           => `du'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:22 FEHLER 404: Not Found.
+
+--18:55:22--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/simple-ques/du/bist
+           => `bist'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:22 FEHLER 404: Not Found.
+
+--18:55:22--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/simple-ques/du/bist/doof
+           => `doof'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:23 FEHLER 404: Not Found.
+
+--18:55:23--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/simple-sent
+           => `simple-sent'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:23 FEHLER 404: Not Found.
+
+--18:55:23--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/simple-sent/du
+           => `du'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:23 FEHLER 404: Not Found.
+
+--18:55:23--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/simple-sent/du/bist
+           => `bist'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:24 FEHLER 404: Not Found.
+
+--18:55:24--  http://jeliza.berlios.de/intelligenz/jeliza/wortschatz/simple-sent/du/bist/doof
+           => `doof'
+Auflösen des Hostnamen »jeliza.berlios.de«.... 195.37.77.138
+Verbindungsaufbau zu jeliza.berlios.de|195.37.77.138|:80... verbunden.
+HTTP Anforderung gesendet, warte auf Antwort... 404 Not Found
+18:55:24 FEHLER 404: Not Found.
+

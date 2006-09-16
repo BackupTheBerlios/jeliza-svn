@@ -1,0 +1,510 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xad3dc941, pid=5805, tid=2897071024
+#
+# Java VM: Java HotSpot(TM) Client VM (1.6.0-beta2-b83 mixed mode)
+# Problematic frame:
+# C  [libfontmanager.so+0x2d941]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x085ce400):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=5818]
+
+siginfo:si_signo=11, si_errno=0, si_code=1, si_addr=0x0bc3d1f4
+
+Registers:
+EAX=0x0837b938, EBX=0xad4350a0, ECX=0x0837a9e4, EDX=0x0837b938
+ESP=0xacada5d0, EBP=0xacada628, ESI=0x00e3062f, EDI=0xacada670
+EIP=0xad3dc941, CR2=0x0bc3d1f4, EFLAGS=0x00010206
+
+Top of Stack: (sp=0xacada5d0)
+0xacada5d0:   acada670 0837a9e4 00000014 00000000
+0xacada5e0:   0000000c acada670 acada628 ad3dd0bc
+0xacada5f0:   0837a9e4 00000081 0837e2c8 0837b938
+0xacada600:   0837b938 0000000c 00e3062f 0837a9e4
+0xacada610:   00000000 fffffebb fffffeb9 ad4350a0
+0xacada620:   acada670 ad439580 acada648 ad3e1618
+0xacada630:   acada670 085e9840 acada788 00000000
+0xacada640:   acada670 0837b668 acada798 ad3e0bb1 
+
+Instructions: (pc=0xad3dc941)
+0xad3dc931:   24 89 45 e0 8b 4f 08 8b 56 1c 8b 75 e0 8b 41 1c
+0xad3dc941:   8b 04 b0 8b 75 e8 2b 04 b2 8b 75 e4 89 44 24 04 
+
+Stack: [0xaca8d000,0xacadd000),  sp=0xacada5d0,  free space=309k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libfontmanager.so+0x2d941]
+C  [libfontmanager.so+0x32618]
+C  [libfontmanager.so+0x31bb1]
+C  [libfontmanager.so+0x3444b]
+C  [libfontmanager.so+0x330c1]
+C  [libfontmanager.so+0x32ed3]
+C  [libfontmanager.so+0x1f2ae]
+C  [libfontmanager.so+0x1f67c]
+C  [libfontmanager.so+0x43394]  Java_sun_font_FileFont_getGlyphImage+0x134
+j  sun.font.FileFont.getGlyphImage(JI)J+0
+j  sun.font.FileFontStrike.getGlyphImagePtr(I)J+62
+j  sun.font.FileFontStrike.getGlyphAdvance(I)F+59
+j  sun.font.CompositeStrike.getGlyphAdvance(I)F+11
+j  sun.font.CompositeStrike.getCodePointAdvance(I)F+12
+J  sun.font.FontDesignMetrics.charsWidth([CII)I
+J  javax.swing.text.Utilities.getTabbedTextWidth(Ljavax/swing/text/View;Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;ILjavax/swing/text/TabExpander;I[I)I
+j  javax.swing.text.GlyphPainter1.getSpan(Ljavax/swing/text/GlyphView;IILjavax/swing/text/TabExpander;F)F+35
+j  javax.swing.text.GlyphView.getPreferredSpan(I)F+77
+j  javax.swing.text.FlowView$LogicalView.getPreferredSpan(I)F+32
+j  javax.swing.text.FlowView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+17
+j  javax.swing.text.html.ParagraphView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+3
+j  javax.swing.text.BoxView.checkRequests(I)V+86
+j  javax.swing.text.BoxView.getMinimumSpan(I)F+2
+j  javax.swing.text.html.ParagraphView.getMinimumSpan(I)F+11
+j  javax.swing.text.BoxView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+36
+j  javax.swing.text.html.BlockView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+31
+j  javax.swing.text.BoxView.checkRequests(I)V+86
+j  javax.swing.text.BoxView.getMinimumSpan(I)F+2
+j  javax.swing.text.html.BlockView.getMinimumSpan(I)F+2
+j  javax.swing.text.BoxView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+36
+j  javax.swing.text.html.BlockView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+31
+j  javax.swing.text.BoxView.checkRequests(I)V+86
+j  javax.swing.text.BoxView.setSpanOnAxis(IF)V+101
+j  javax.swing.text.BoxView.layout(II)V+4
+j  javax.swing.text.BoxView.setSize(FF)V+29
+j  javax.swing.plaf.basic.BasicTextUI$RootView.setSize(FF)V+13
+j  javax.swing.plaf.basic.BasicTextUI.getPreferredSize(Ljavax/swing/JComponent;)Ljava/awt/Dimension;+103
+j  javax.swing.JComponent.getPreferredSize()Ljava/awt/Dimension;+26
+j  javax.swing.JEditorPane.getPreferredSize()Ljava/awt/Dimension;+1
+j  javax.swing.ScrollPaneLayout.layoutContainer(Ljava/awt/Container;)V+428
+j  java.awt.Container.layout()V+11
+j  java.awt.Container.doLayout()V+1
+j  java.awt.Container.validateTree()V+30
+j  java.awt.Container.validateTree()V+77
+j  java.awt.Container.validateTree()V+77
+j  java.awt.Container.validateTree()V+77
+j  java.awt.Container.validateTree()V+77
+j  java.awt.Container.validate()V+61
+j  java.awt.Window.show()V+12
+j  java.awt.Component.show(Z)V+5
+j  java.awt.Component.setVisible(Z)V+2
+j  java.awt.Window.setVisible(Z)V+2
+j  JElizaGui.show()V+14
+j  JElizaGui.generateSidebar(Ljava/lang/String;)V+452
+j  JElizaGui.actionPerformed(Ljava/awt/event/ActionEvent;)V+199
+j  javax.swing.JTextField.fireActionPerformed()V+114
+j  javax.swing.JTextField.postActionEvent()V+1
+j  javax.swing.JTextField$NotifyAction.actionPerformed(Ljava/awt/event/ActionEvent;)V+18
+j  javax.swing.SwingUtilities.notifyAction(Ljavax/swing/Action;Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;Ljava/lang/Object;I)Z+132
+j  javax.swing.JComponent.processKeyBinding(Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;IZ)Z+72
+j  javax.swing.JComponent.processKeyBindings(Ljava/awt/event/KeyEvent;Z)Z+56
+j  javax.swing.JComponent.processKeyEvent(Ljava/awt/event/KeyEvent;)V+51
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+121
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+562
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.KeyboardFocusManager.redispatchEvent(Ljava/awt/Component;Ljava/awt/AWTEvent;)V+7
+j  java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Ljava/awt/event/KeyEvent;)Z+70
+j  java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Ljava/awt/event/KeyEvent;)Z+140
+j  java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Ljava/awt/Component;Ljava/awt/AWTEvent;)Z+157
+j  java.awt.DefaultKeyboardFocusManager.dispatchEvent(Ljava/awt/AWTEvent;)Z+1455
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+128
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+156
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x20203d]
+V  [libjvm.so+0x2f7418]
+V  [libjvm.so+0x201950]
+V  [libjvm.so+0x2019dd]
+V  [libjvm.so+0x26f565]
+V  [libjvm.so+0x37005f]
+V  [libjvm.so+0x2f8213]
+C  [libpthread.so.0+0x51ce]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.font.FileFont.getGlyphImage(JI)J+0
+j  sun.font.FileFontStrike.getGlyphImagePtr(I)J+62
+j  sun.font.FileFontStrike.getGlyphAdvance(I)F+59
+j  sun.font.CompositeStrike.getGlyphAdvance(I)F+11
+j  sun.font.CompositeStrike.getCodePointAdvance(I)F+12
+J  sun.font.FontDesignMetrics.charsWidth([CII)I
+J  javax.swing.text.Utilities.getTabbedTextWidth(Ljavax/swing/text/View;Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;ILjavax/swing/text/TabExpander;I[I)I
+j  javax.swing.text.GlyphPainter1.getSpan(Ljavax/swing/text/GlyphView;IILjavax/swing/text/TabExpander;F)F+35
+j  javax.swing.text.GlyphView.getPreferredSpan(I)F+77
+j  javax.swing.text.FlowView$LogicalView.getPreferredSpan(I)F+32
+j  javax.swing.text.FlowView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+17
+j  javax.swing.text.html.ParagraphView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+3
+j  javax.swing.text.BoxView.checkRequests(I)V+86
+j  javax.swing.text.BoxView.getMinimumSpan(I)F+2
+j  javax.swing.text.html.ParagraphView.getMinimumSpan(I)F+11
+j  javax.swing.text.BoxView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+36
+j  javax.swing.text.html.BlockView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+31
+j  javax.swing.text.BoxView.checkRequests(I)V+86
+j  javax.swing.text.BoxView.getMinimumSpan(I)F+2
+j  javax.swing.text.html.BlockView.getMinimumSpan(I)F+2
+j  javax.swing.text.BoxView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+36
+j  javax.swing.text.html.BlockView.calculateMinorAxisRequirements(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;+31
+j  javax.swing.text.BoxView.checkRequests(I)V+86
+j  javax.swing.text.BoxView.setSpanOnAxis(IF)V+101
+j  javax.swing.text.BoxView.layout(II)V+4
+j  javax.swing.text.BoxView.setSize(FF)V+29
+j  javax.swing.plaf.basic.BasicTextUI$RootView.setSize(FF)V+13
+j  javax.swing.plaf.basic.BasicTextUI.getPreferredSize(Ljavax/swing/JComponent;)Ljava/awt/Dimension;+103
+j  javax.swing.JComponent.getPreferredSize()Ljava/awt/Dimension;+26
+j  javax.swing.JEditorPane.getPreferredSize()Ljava/awt/Dimension;+1
+j  javax.swing.ScrollPaneLayout.layoutContainer(Ljava/awt/Container;)V+428
+j  java.awt.Container.layout()V+11
+j  java.awt.Container.doLayout()V+1
+j  java.awt.Container.validateTree()V+30
+j  java.awt.Container.validateTree()V+77
+j  java.awt.Container.validateTree()V+77
+j  java.awt.Container.validateTree()V+77
+j  java.awt.Container.validateTree()V+77
+j  java.awt.Container.validate()V+61
+j  java.awt.Window.show()V+12
+j  java.awt.Component.show(Z)V+5
+j  java.awt.Component.setVisible(Z)V+2
+j  java.awt.Window.setVisible(Z)V+2
+j  JElizaGui.show()V+14
+j  JElizaGui.generateSidebar(Ljava/lang/String;)V+452
+j  JElizaGui.actionPerformed(Ljava/awt/event/ActionEvent;)V+199
+j  javax.swing.JTextField.fireActionPerformed()V+114
+j  javax.swing.JTextField.postActionEvent()V+1
+j  javax.swing.JTextField$NotifyAction.actionPerformed(Ljava/awt/event/ActionEvent;)V+18
+j  javax.swing.SwingUtilities.notifyAction(Ljavax/swing/Action;Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;Ljava/lang/Object;I)Z+132
+j  javax.swing.JComponent.processKeyBinding(Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;IZ)Z+72
+j  javax.swing.JComponent.processKeyBindings(Ljava/awt/event/KeyEvent;Z)Z+56
+j  javax.swing.JComponent.processKeyEvent(Ljava/awt/event/KeyEvent;)V+51
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+121
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+562
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.KeyboardFocusManager.redispatchEvent(Ljava/awt/Component;Ljava/awt/AWTEvent;)V+7
+j  java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Ljava/awt/event/KeyEvent;)Z+70
+j  java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Ljava/awt/event/KeyEvent;)Z+140
+j  java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Ljava/awt/Component;Ljava/awt/AWTEvent;)Z+157
+j  java.awt.DefaultKeyboardFocusManager.dispatchEvent(Ljava/awt/AWTEvent;)Z+1455
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+128
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+156
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x08058800 JavaThread "DestroyJavaVM" [_thread_blocked, id=5806]
+  0x08694c00 JavaThread "TimerQueue" daemon [_thread_blocked, id=5819]
+=>0x085ce400 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=5818]
+  0x085cd800 JavaThread "AWT-Shutdown" [_thread_blocked, id=5817]
+  0x08407400 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=5816]
+  0x083ebc00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=5815]
+  0x080d1800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5813]
+  0x080cfc00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=5812]
+  0x080ce800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5811]
+  0x080a8400 JavaThread "Finalizer" daemon [_thread_blocked, id=5810]
+  0x080a7000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5809]
+
+Other Threads:
+  0x080a4000 VMThread [id=5808]
+  0x080d3000 WatcherThread [id=5814]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 403K [0xadc80000, 0xadd80000, 0xae160000)
+  eden space 896K,  37% used [0xadc80000, 0xadcd4c00, 0xadd60000)
+  from space 64K, 100% used [0xadd60000, 0xadd70000, 0xadd70000)
+  to   space 64K,   0% used [0xadd70000, 0xadd70000, 0xadd80000)
+ tenured generation   total 8268K, used 7474K [0xae160000, 0xae973000, 0xb1c80000)
+   the space 8268K,  90% used [0xae160000, 0xae8acbf0, 0xae8acc00, 0xae973000)
+ compacting perm gen  total 12288K, used 10244K [0xb1c80000, 0xb2880000, 0xb5c80000)
+   the space 12288K,  83% used [0xb1c80000, 0xb2681290, 0xb2681400, 0xb2880000)
+No shared spaces configured.
+
+Dynamic libraries:
+06000000-063f6000 r-xp 00000000 03:45 147518     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/client/libjvm.so
+063f6000-06413000 rwxp 003f6000 03:45 147518     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/client/libjvm.so
+06413000-0682e000 rwxp 06413000 00:00 0 
+08048000-08052000 r-xp 00000000 03:45 180865     /media/hdb5/opt/java/jdk-1.6/bin/java
+08052000-08053000 rwxp 00009000 03:45 180865     /media/hdb5/opt/java/jdk-1.6/bin/java
+08053000-086e1000 rwxp 08053000 00:00 0          [heap]
+abeae000-abeb1000 ---p abeae000 00:00 0 
+abeb1000-abefe000 rwxp abeb1000 00:00 0 
+abefe000-ac32f000 rwxs 00000000 00:07 26673184   /SYSV00000000 (deleted)
+ac9b0000-ac9c0000 r-xp 00000000 03:07 2376956    /lib/tls/libresolv-2.3.6.so
+ac9c0000-ac9c1000 rwxp 00010000 03:07 2376956    /lib/tls/libresolv-2.3.6.so
+ac9c1000-ac9c3000 rwxp ac9c1000 00:00 0 
+ac9c3000-ac9c7000 r-xp 00000000 03:07 2376949    /lib/tls/libnss_dns-2.3.6.so
+ac9c7000-ac9c8000 rwxp 00003000 03:07 2376949    /lib/tls/libnss_dns-2.3.6.so
+ac9de000-ac9ff000 rwxp ac9de000 00:00 0 
+ac9ff000-aca20000 rwxs 00000000 00:07 26837026   /SYSV00000000 (deleted)
+aca26000-aca86000 rwxs 00000000 00:07 26542101   /SYSV00000000 (deleted)
+aca86000-aca89000 r-xs 00016000 03:45 13861213   /media/hdb5/workspace/Eliza/trunk/tsclasses.jar
+aca89000-aca8d000 r-xs 000c8000 03:45 147489     /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/localedata.jar
+aca8d000-aca90000 ---p aca8d000 00:00 0 
+aca90000-acadd000 rwxp aca90000 00:00 0 
+acadd000-acae0000 ---p acadd000 00:00 0 
+acae0000-acb2d000 rwxp acae0000 00:00 0 
+acb2d000-acb34000 r-xs 00108000 03:45 147575     /media/hdb5/opt/java/jdk-1.6/jre/lib/resources.jar
+acb34000-acb36000 r-xp 00000000 03:07 1884456    /usr/lib/pango/1.5.0/modules/pango-basic-fc.so
+acb36000-acb37000 rwxp 00001000 03:07 1884456    /usr/lib/pango/1.5.0/modules/pango-basic-fc.so
+acb37000-acb9c000 r-xp 00000000 03:07 1753614    /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf
+acb9c000-acba3000 r-xp 00000000 03:45 147533     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libnio.so
+acba3000-acba4000 rwxp 00006000 03:45 147533     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libnio.so
+acba4000-acbb7000 r-xp 00000000 03:45 147532     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libnet.so
+acbb7000-acbb8000 rwxp 00013000 03:45 147532     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libnet.so
+acbb8000-acbc9000 r-xp 00000000 03:07 1574235    /usr/lib/gtk-2.0/2.4.0/engines/libubuntulooks.so
+acbc9000-acbca000 rwxp 00011000 03:07 1574235    /usr/lib/gtk-2.0/2.4.0/engines/libubuntulooks.so
+acbca000-acbe6000 r-xp 00000000 03:07 1540240    /usr/share/locale-langpack/de/LC_MESSAGES/gtk20-properties.mo
+acbe6000-accbd000 r-xp 00000000 03:07 1688837    /usr/lib/locale/de_DE.utf8/LC_COLLATE
+accbd000-accd9000 r-xp 00000000 03:07 1497046    /usr/lib/libexpat.so.1.0.0
+accd9000-accdc000 rwxp 0001c000 03:07 1497046    /usr/lib/libexpat.so.1.0.0
+accdc000-acd00000 r-xp 00000000 03:07 1502156    /usr/lib/libglitz.so.1.0.0
+acd00000-acd01000 rwxp 00024000 03:07 1502156    /usr/lib/libglitz.so.1.0.0
+acd01000-acd23000 r-xp 00000000 03:07 1497049    /usr/lib/libpng12.so.0.1.2.8
+acd23000-acd24000 rwxp 00022000 03:07 1497049    /usr/lib/libpng12.so.0.1.2.8
+acd24000-acd39000 r-xp 00000000 03:07 1497710    /usr/lib/libICE.so.6.3.0
+acd39000-acd3a000 rwxp 00014000 03:07 1497710    /usr/lib/libICE.so.6.3.0
+acd3a000-acd3c000 rwxp acd3a000 00:00 0 
+acd3c000-acd43000 r-xp 00000000 03:07 1497707    /usr/lib/libSM.so.6.0.0
+acd43000-acd44000 rwxp 00007000 03:07 1497707    /usr/lib/libSM.so.6.0.0
+acd44000-acd57000 r-xp 00000000 03:07 1491258    /usr/lib/libz.so.1.2.3
+acd57000-acd58000 rwxp 00012000 03:07 1491258    /usr/lib/libz.so.1.2.3
+acd58000-acdbe000 r-xp 00000000 03:07 1491673    /usr/lib/libfreetype.so.6.3.8
+acdbe000-acdc1000 rwxp 00066000 03:07 1491673    /usr/lib/libfreetype.so.6.3.8
+acdc1000-acde4000 r-xp 00000000 03:07 3375306    /usr/lib/libpangoft2-1.0.so.0.1201.2
+acde4000-acde5000 rwxp 00023000 03:07 3375306    /usr/lib/libpangoft2-1.0.so.0.1201.2
+acde5000-acde7000 r-xp 00000000 03:07 1500203    /usr/lib/libXrandr.so.2.0.0
+acde7000-acde8000 rwxp 00002000 03:07 1500203    /usr/lib/libXrandr.so.2.0.0
+acde8000-acdea000 r-xp 00000000 03:07 1493686    /usr/lib/libXinerama.so.1.0.0
+acdea000-acdeb000 rwxp 00001000 03:07 1493686    /usr/lib/libXinerama.so.1.0.0
+acdeb000-ace13000 r-xp 00000000 03:07 1497084    /usr/lib/libfontconfig.so.1.0.4
+ace13000-ace18000 rwxp 00027000 03:07 1497084    /usr/lib/libfontconfig.so.1.0.4
+ace18000-ace19000 rwxp ace18000 00:00 0 
+ace19000-ace78000 r-xp 00000000 03:07 1494881    /usr/lib/libcairo.so.2.9.0
+ace78000-ace7a000 rwxp 0005e000 03:07 1494881    /usr/lib/libcairo.so.2.9.0
+ace7a000-acefd000 r-xp 00000000 03:07 1492397    /usr/lib/libglib-2.0.so.0.1000.3
+acefd000-acefe000 rwxp 00082000 03:07 1492397    /usr/lib/libglib-2.0.so.0.1000.3
+acefe000-acf00000 r-xp 00000000 03:07 1492399    /usr/lib/libgmodule-2.0.so.0.1000.3
+acf00000-acf01000 rwxp 00002000 03:07 1492399    /usr/lib/libgmodule-2.0.so.0.1000.3
+acf01000-acf38000 r-xp 00000000 03:07 1492398    /usr/lib/libgobject-2.0.so.0.1000.3
+acf38000-acf39000 rwxp 00037000 03:07 1492398    /usr/lib/libgobject-2.0.so.0.1000.3
+acf39000-acf50000 r-xp 00000000 03:07 1499689    /usr/lib/libatk-1.0.so.0.1114.0
+acf50000-acf52000 rwxp 00016000 03:07 1499689    /usr/lib/libatk-1.0.so.0.1114.0
+acf52000-acf88000 r-xp 00000000 03:07 1492587    /usr/lib/libpango-1.0.so.0.1201.2
+acf88000-acf8a000 rwxp 00035000 03:07 1492587    /usr/lib/libpango-1.0.so.0.1201.2
+acf8a000-acf91000 r-xp 00000000 03:07 3375310    /usr/lib/libpangocairo-1.0.so.0.1201.2
+acf91000-acf92000 rwxp 00006000 03:07 3375310    /usr/lib/libpangocairo-1.0.so.0.1201.2
+acf92000-ad00c000 r-xp 00000000 03:07 3375320    /usr/lib/libgdk-x11-2.0.so.0.800.20
+ad00c000-ad00f000 rwxp 0007a000 03:07 3375320    /usr/lib/libgdk-x11-2.0.so.0.800.20
+ad00f000-ad023000 r-xp 00000000 03:07 3375318    /usr/lib/libgdk_pixbuf-2.0.so.0.800.20
+ad023000-ad024000 rwxp 00014000 03:07 3375318    /usr/lib/libgdk_pixbuf-2.0.so.0.800.20
+ad024000-ad2ed000 r-xp 00000000 03:07 3375322    /usr/lib/libgtk-x11-2.0.so.0.800.20
+ad2ed000-ad2f6000 rwxp 002c8000 03:07 3375322    /usr/lib/libgtk-x11-2.0.so.0.800.20
+ad2f6000-ad2f9000 rwxp ad2f6000 00:00 0 
+ad2f9000-ad2fc000 ---p ad2f9000 00:00 0 
+ad2fc000-ad349000 rwxp ad2fc000 00:00 0 
+ad349000-ad34d000 r-xp 00000000 03:07 1499700    /usr/lib/libXfixes.so.3.0.0
+ad34d000-ad34e000 rwxp 00003000 03:07 1499700    /usr/lib/libXfixes.so.3.0.0
+ad34e000-ad355000 r-xp 00000000 03:07 1497086    /usr/lib/libXrender.so.1.3.0
+ad355000-ad356000 rwxp 00006000 03:07 1497086    /usr/lib/libXrender.so.1.3.0
+ad356000-ad35e000 r-xp 00000000 03:07 1497088    /usr/lib/libXcursor.so.1.0.2
+ad35e000-ad35f000 rwxp 00007000 03:07 1497088    /usr/lib/libXcursor.so.1.0.2
+ad35f000-ad362000 ---p ad35f000 00:00 0 
+ad362000-ad3af000 rwxp ad362000 00:00 0 
+ad3af000-ad42b000 r-xp 00000000 03:45 147545     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libfontmanager.so
+ad42b000-ad436000 rwxp 0007b000 03:45 147545     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libfontmanager.so
+ad436000-ad43a000 rwxp ad436000 00:00 0 
+ad43a000-ad43c000 r-xp 00000000 03:07 1493539    /usr/lib/libXau.so.6.0.0
+ad43c000-ad43d000 rwxp 00001000 03:07 1493539    /usr/lib/libXau.so.6.0.0
+ad43d000-ad444000 r-xp 00000000 03:07 1500162    /usr/lib/libXi.so.6.0.0
+ad444000-ad445000 rwxp 00006000 03:07 1500162    /usr/lib/libXi.so.6.0.0
+ad445000-ad449000 r-xp 00000000 03:07 1497713    /usr/lib/libXtst.so.6.1.0
+ad449000-ad44a000 rwxp 00003000 03:07 1497713    /usr/lib/libXtst.so.6.1.0
+ad44a000-ad52b000 r-xp 00000000 03:07 1497721    /usr/lib/libX11.so.6.2.0
+ad52b000-ad52f000 rwxp 000e1000 03:07 1497721    /usr/lib/libX11.so.6.2.0
+ad52f000-ad530000 rwxp ad52f000 00:00 0 
+ad530000-ad53c000 r-xp 00000000 03:07 1500272    /usr/lib/libXext.so.6.4.0
+ad53c000-ad53d000 rwxp 0000c000 03:07 1500272    /usr/lib/libXext.so.6.4.0
+ad53e000-ad53f000 r-xp 00000000 03:07 1497454    /usr/lib/gconv/ISO8859-1.so
+ad53f000-ad540000 rwxp 00001000 03:07 1497454    /usr/lib/gconv/ISO8859-1.so
+ad540000-ad54b000 r-xp 00000000 03:07 1540237    /usr/share/locale-langpack/de/LC_MESSAGES/gtk20.mo
+ad54b000-ad54c000 r-xp 00000000 03:07 1688835    /usr/lib/locale/de_DE.utf8/LC_NUMERIC
+ad54c000-ad54d000 r-xp 00000000 03:07 1688836    /usr/lib/locale/de_DE.utf8/LC_TIME
+ad54d000-ad54e000 r-xp 00000000 03:07 1688838    /usr/lib/locale/de_DE.utf8/LC_MONETARY
+ad54e000-ad54f000 r-xp 00000000 03:07 1688840    /usr/lib/locale/de_DE.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+ad54f000-ad550000 r-xp 00000000 03:07 1688841    /usr/lib/locale/de_DE.utf8/LC_PAPER
+ad550000-ad551000 r-xp 00000000 03:07 1688842    /usr/lib/locale/de_DE.utf8/LC_NAME
+ad551000-ad552000 r-xp 00000000 03:07 1688843    /usr/lib/locale/de_DE.utf8/LC_ADDRESS
+ad552000-ad553000 r-xp 00000000 03:07 1688844    /usr/lib/locale/de_DE.utf8/LC_TELEPHONE
+ad553000-ad590000 r-xp 00000000 03:45 180260     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/xawt/libmawt.so
+ad590000-ad593000 rwxp 0003c000 03:45 180260     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/xawt/libmawt.so
+ad593000-ad659000 r-xp 00000000 03:45 147542     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libmlib_image.so
+ad659000-ad65a000 rwxp 000c5000 03:45 147542     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libmlib_image.so
+ad65a000-ad6d5000 r-xp 00000000 03:45 147543     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libawt.so
+ad6d5000-ad6dc000 rwxp 0007b000 03:45 147543     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libawt.so
+ad6dc000-ad700000 rwxp ad6dc000 00:00 0 
+ad700000-ad702000 r-xs 00019000 03:45 2720824    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/lwjgl_util.jar
+ad702000-ad705000 r-xs 00025000 03:45 2720823    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/lwjgl_test.jar
+ad705000-ad70b000 r-xs 0005d000 03:45 2720822    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/lwjgl.jar
+ad70b000-ad70f000 r-xs 00029000 03:45 2720821    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/jinput.jar
+ad70f000-ad719000 r-xs 00129000 03:45 2720820    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/j3d-examples.jar
+ad719000-ad71c000 r-xs 00016000 03:45 2720819    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/tsclasses.jar
+ad71c000-ad71e000 r-xs 00016000 03:45 7850861    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/servlet-api.jar
+ad71e000-ad720000 r-xs 0000a000 03:45 7850860    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/naming-resources.jar
+ad720000-ad722000 r-xs 00008000 03:45 7850859    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/naming-factory.jar
+ad722000-ad725000 r-xs 00023000 03:45 7850858    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/naming-factory-dbcp.jar
+ad725000-ad727000 r-xs 0000b000 03:45 7850857    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/jsp-api.jar
+ad727000-ad729000 r-xs 00011000 03:45 7850856    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/jasper-runtime.jar
+ad729000-ad734000 r-xs 0011e000 03:45 7850854    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/jasper-compiler-jdt.jar
+ad734000-ad739000 r-xs 0005f000 03:45 7850855    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/jasper-compiler.jar
+ad739000-ad745000 r-xs 00165000 03:45 2719749    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/j3dutils.jar
+ad745000-ad75f000 r-xs 001a2000 03:45 182910     /media/hdb5/opt/java/jdk-1.6/JMF-2.1.1e/lib/jmf.jar
+ad75f000-ad760000 ---p ad75f000 00:00 0 
+ad760000-ad7df000 rwxp ad760000 00:00 0 
+ad7df000-ad7e2000 ---p ad7df000 00:00 0 
+ad7e2000-ad82f000 rwxp ad7e2000 00:00 0 
+ad82f000-ad832000 ---p ad82f000 00:00 0 
+ad832000-ad8af000 rwxp ad832000 00:00 0 
+ad8af000-ad8b2000 ---p ad8af000 00:00 0 
+ad8b2000-ad8ff000 rwxp ad8b2000 00:00 0 
+ad8ff000-ad93a000 r-xp 00000000 03:07 1688834    /usr/lib/locale/de_DE.utf8/LC_CTYPE
+ad93a000-ad93d000 ---p ad93a000 00:00 0 
+ad93d000-ad98a000 rwxp ad93d000 00:00 0 
+ad98a000-ad98d000 ---p ad98a000 00:00 0 
+ad98d000-ad9da000 rwxp ad98d000 00:00 0 
+ad9da000-ad9db000 ---p ad9da000 00:00 0 
+ad9db000-ada8a000 rwxp ad9db000 00:00 0 
+ada8a000-adc00000 r-xs 02c2d000 03:45 1674234    /media/hdb5/opt/java/jdk-1.6/jre/lib/rt.jar
+adc00000-adc07000 rwxp adc00000 00:00 0 
+adc07000-adc21000 rwxp adc07000 00:00 0 
+adc21000-adc26000 rwxp adc21000 00:00 0 
+adc26000-adc3f000 rwxp adc26000 00:00 0 
+adc3f000-adc40000 rwxp adc3f000 00:00 0 
+adc40000-adc41000 rwxp adc40000 00:00 0 
+adc41000-adc46000 rwxp adc41000 00:00 0 
+adc46000-adc5f000 rwxp adc46000 00:00 0 
+adc5f000-adc65000 rwxp adc5f000 00:00 0 
+adc65000-adc7f000 rwxp adc65000 00:00 0 
+adc7f000-add80000 rwxp adc7f000 00:00 0 
+add80000-ae160000 rwxp add80000 00:00 0 
+ae160000-ae973000 rwxp ae160000 00:00 0 
+ae973000-b1c80000 rwxp ae973000 00:00 0 
+b1c80000-b2880000 rwxp b1c80000 00:00 0 
+b2880000-b5c80000 rwxp b2880000 00:00 0 
+b5c80000-b5c83000 r-xs 00019000 03:45 7850853    /media/hdb5/vserver/dagobert/usr/local/apache-tomcat-5.5.17/common/lib/commons-el.jar
+b5c83000-b5c8e000 r-xs 00281000 03:45 2719748    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/j3dcore.jar
+b5c8e000-b5c92000 rwxp b5c8e000 00:00 0 
+b5c92000-b5d0e000 rwxp b5c92000 00:00 0 
+b5d0e000-b5e06000 rwxp b5d0e000 00:00 0 
+b5e06000-b7d0e000 rwxp b5e06000 00:00 0 
+b7d0e000-b7d1d000 r-xp 00000000 03:45 147528     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libzip.so
+b7d1d000-b7d1f000 rwxp 0000e000 03:45 147528     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libzip.so
+b7d1f000-b7d42000 r-xp 00000000 03:45 147526     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libjava.so
+b7d42000-b7d44000 rwxp 00023000 03:45 147526     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libjava.so
+b7d44000-b7d4d000 r-xp 00000000 03:07 2376950    /lib/tls/libnss_files-2.3.6.so
+b7d4d000-b7d4e000 rwxp 00008000 03:07 2376950    /lib/tls/libnss_files-2.3.6.so
+b7d4e000-b7d56000 r-xp 00000000 03:07 2376952    /lib/tls/libnss_nis-2.3.6.so
+b7d56000-b7d57000 rwxp 00007000 03:07 2376952    /lib/tls/libnss_nis-2.3.6.so
+b7d57000-b7d69000 r-xp 00000000 03:07 2376947    /lib/tls/libnsl-2.3.6.so
+b7d69000-b7d6a000 rwxp 00012000 03:07 2376947    /lib/tls/libnsl-2.3.6.so
+b7d6a000-b7d6c000 rwxp b7d6a000 00:00 0 
+b7d6c000-b7d6d000 r-xp 00000000 03:07 1688845    /usr/lib/locale/de_DE.utf8/LC_MEASUREMENT
+b7d6d000-b7d6e000 r-xp 00000000 03:07 1688846    /usr/lib/locale/de_DE.utf8/LC_IDENTIFICATION
+b7d6e000-b7d79000 r-xp 00000000 03:45 147525     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libverify.so
+b7d79000-b7d7a000 rwxp 0000b000 03:45 147525     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/libverify.so
+b7d7a000-b7d82000 rwxs 00000000 00:11 465727     /tmp/hsperfdata_tobi/5805
+b7d82000-b7d88000 r-xp 00000000 03:07 2376957    /lib/tls/librt-2.3.6.so
+b7d88000-b7d89000 rwxp 00006000 03:07 2376957    /lib/tls/librt-2.3.6.so
+b7d89000-b7d8c000 ---p b7d89000 00:00 0 
+b7d8c000-b7dd9000 rwxp b7d8c000 00:00 0 
+b7dd9000-b7dfa000 r-xp 00000000 03:07 2376945    /lib/tls/libm-2.3.6.so
+b7dfa000-b7dfb000 rwxp 00020000 03:07 2376945    /lib/tls/libm-2.3.6.so
+b7dfb000-b7dfd000 rwxp b7dfb000 00:00 0 
+b7dfd000-b7f22000 r-xp 00000000 03:07 2376834    /lib/tls/libc-2.3.6.so
+b7f22000-b7f29000 rwxp 00125000 03:07 2376834    /lib/tls/libc-2.3.6.so
+b7f29000-b7f2c000 rwxp b7f29000 00:00 0 
+b7f2c000-b7f2e000 r-xp 00000000 03:07 2376944    /lib/tls/libdl-2.3.6.so
+b7f2e000-b7f2f000 rwxp 00001000 03:07 2376944    /lib/tls/libdl-2.3.6.so
+b7f2f000-b7f36000 r-xp 00000000 03:45 180258     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/jli/libjli.so
+b7f36000-b7f38000 rwxp 00006000 03:45 180258     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/jli/libjli.so
+b7f38000-b7f46000 r-xp 00000000 03:07 2376955    /lib/tls/libpthread-2.3.6.so
+b7f46000-b7f47000 rwxp 0000d000 03:07 2376955    /lib/tls/libpthread-2.3.6.so
+b7f47000-b7f49000 rwxp b7f47000 00:00 0 
+b7f49000-b7f4b000 r-xs 0004a000 03:45 2719750    /media/hdb5/opt/java/jdk-1.6/jre/lib/ext/vecmath.jar
+b7f4b000-b7f4c000 r-xs 0000d000 03:45 182912     /media/hdb5/opt/java/jdk-1.6/JMF-2.1.1e/lib/multiplayer.jar
+b7f4c000-b7f4d000 r-xs 00008000 03:45 182911     /media/hdb5/opt/java/jdk-1.6/JMF-2.1.1e/lib/mediaplayer.jar
+b7f4d000-b7f55000 r-xp 00000000 03:07 2376948    /lib/tls/libnss_compat-2.3.6.so
+b7f55000-b7f56000 rwxp 00007000 03:07 2376948    /lib/tls/libnss_compat-2.3.6.so
+b7f56000-b7f5c000 r-xp 00000000 03:45 147511     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/native_threads/libhpi.so
+b7f5c000-b7f5d000 rwxp 00006000 03:45 147511     /media/hdb5/opt/java/jdk-1.6/jre/lib/i386/native_threads/libhpi.so
+b7f5d000-b7f5e000 rwxp b7f5d000 00:00 0 
+b7f5e000-b7f5f000 r-xp b7f5e000 00:00 0 
+b7f5f000-b7f62000 rwxp b7f5f000 00:00 0 
+b7f62000-b7f77000 r-xp 00000000 03:07 2359468    /lib/ld-2.3.6.so
+b7f77000-b7f78000 rwxp 00014000 03:07 2359468    /lib/ld-2.3.6.so
+bf861000-bf877000 rwxp bf861000 00:00 0          [stack]
+ffffe000-fffff000 ---p 00000000 00:00 0          [vdso]
+
+VM Arguments:
+java_command: JElizaGui
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11:/usr/games
+USERNAME=tobi
+LD_LIBRARY_PATH=/media/hdb5/opt/java/jdk-1.6/jre/lib/i386/client:/media/hdb5/opt/java/jdk-1.6/jre/lib/i386:/media/hdb5/opt/java/jdk-1.6/jre/../lib/i386
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x39e4b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x39e4b0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x2f6b40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x2f6b40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x2f6b40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x2f89e0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x2f8400], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x2f8400], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x2f8400], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x2f8400], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR2: [libjvm.so+0x2f89e0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:testing/unstable
+
+uname:Linux 2.6.16-vs2.0.2-rc16 #1 PREEMPT Sat May 27 11:05:31 CEST 2006 i686
+libc:glibc 2.3.6 NPTL 2.3.6 
+rlimit: STACK 8192k, CORE 0k, NPROC infinity, NOFILE 1024, AS infinity
+load average:1,04 0,75 0,65
+
+CPU:total 1 family 6, cmov, cx8, fxsr, mmx, sse, mmxext, 3dnowext, 3dnow
+
+Memory: 4k page, physical 1036152k(65380k free), swap 8193108k(8132096k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.6.0-beta2-b83) for linux-x86, built on May  4 2006 00:39:38 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
