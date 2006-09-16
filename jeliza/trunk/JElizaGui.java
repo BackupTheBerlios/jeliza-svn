@@ -148,7 +148,6 @@ public class JElizaGui implements ActionListener {
 		oberSidebar.removeAll();
 
 		sidebar.add(new JLabel("Gefuehl heute:"));
-		hirn.gefuehlHeute.generateFeeling();
 		sidebar.add(new JTextField(hirn.gefuehlHeute.getFeeling()));
 
 		JButton save = new JButton("Gespraech Speichern");
@@ -225,12 +224,13 @@ public class JElizaGui implements ActionListener {
 			String antPlain = antwort.satzPlain;
 			ant = ant.replace("\n", "<br>\n");
 			gespraech += "1::".concat(fra).concat("\n").concat("2::").concat(
-					ant).concat("\n");
+					antPlain).concat("\n");
 			jelizaText.setText("<html><body>"
 					+ gespraech.replace("1::", "<font color='red'>").replace(
 							"2::", "<font color='green'>").replace("\n",
 							"</font><br>\n") + "</body></html>");
 			userText.setText("");
+			hirn.gefuehlHeute.setFeeling(antwort.gefuehl);
 			generateSidebar(fra);
 			userText.requestFocus();
 			Speech.say(Speech.preprocessor(antPlain.replace("          ", " . ")));
