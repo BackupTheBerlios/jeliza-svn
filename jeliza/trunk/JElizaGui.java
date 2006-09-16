@@ -48,7 +48,7 @@ public class JElizaGui implements ActionListener {
 
 	JFrame fr;
 
-	JPanel sidebar = new JPanel(new GridLayout(14, 1, 5, 5));
+	JPanel sidebar = new JPanel(new GridLayout(15, 1, 5, 5));
 
 	JPanel oberSidebar = new JPanel(new BorderLayout(5, 5));
 
@@ -150,6 +150,11 @@ public class JElizaGui implements ActionListener {
 		newtext.setActionCommand("newtext");
 		sidebar.add(newtext);
 
+		JButton newverb = new JButton("Verben hinzufuegen");
+		newverb.addActionListener(this);
+		newverb.setActionCommand("addVerb");
+		sidebar.add(newverb);
+
 		JButton genWissenDatenbank = new JButton("Datenbank generieren");
 		genWissenDatenbank.addActionListener(this);
 		genWissenDatenbank.setActionCommand("genWissenDatenbank");
@@ -223,6 +228,9 @@ public class JElizaGui implements ActionListener {
 		}
 		if (e.getActionCommand() == "genWissenDatenbank") {
 			genWissenDatenbank();
+		}
+		if (e.getActionCommand() == "addVerb") {
+			addVerb();
 		}
 	}
 
@@ -349,6 +357,30 @@ public class JElizaGui implements ActionListener {
 	/**
 	 * Fügt Texte dem Wissen hinzu.
 	 */
+	private synchronized void addVerb() {
+		long millis = Calendar.getInstance().getTimeInMillis();
+		String verbs = JOptionPane.showInputDialog(fr, "Verben ?\nbitte in allen Formen angeben, dh. z.b." +
+				"nicht nur 'sein', sondern auch 'bin', 'bist', 'ist', 'sind', 'seid', 'war'");
+		if (verbs == null || verbs == "") {
+			return;
+		}
+		try {
+			FileManager.writeStringIntoFile(FileManager.readFileIntoString("knownVerbs.txt") + " " + verbs,
+					"knownVerbs.txt");
+		} catch (IOException e) {
+			neuWissen = "";
+			JOptionPane.showMessageDialog(fr, "IO-Error: knownVerbs.txt");
+			return;
+		}
+
+		JOptionPane.showMessageDialog(fr, "Verben " + verbs
+				+ " hinzugefuegt.");
+		fr.repaint();
+	}
+
+	/**
+	 * Fügt Texte dem Wissen hinzu.
+	 */
 	private synchronized void genWissenDatenbank() {
 		long millis = Calendar.getInstance().getTimeInMillis();
 		try {
@@ -358,6 +390,7 @@ public class JElizaGui implements ActionListener {
 			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
 					+ absoluteUrl + "text.vdb"
 					+ " nicht laden. (File not found)");
+			e1.printStackTrace();
 			return;
 		} catch (IOException e1) {
 			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
