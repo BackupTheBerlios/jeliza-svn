@@ -15,7 +15,6 @@ public class Gefuehl {
 	public HashMap<String, Integer> wortToFeeling = new HashMap<String, Integer>();
 	
 	public String getFeeling() {
-		String tmp = "";
 		switch(feeling) {
 		case 1:
 			return "Sehr Gluecklich";
@@ -51,5 +50,9 @@ public class Gefuehl {
 		wortToFeeling.put("gern", 1);
 		wortToFeeling.put("umpf", 4);
 		wortToFeeling.put("RARR", 5);
+		wortToFeeling.put("du bist scheisse", 6);
+		wortToFeeling.put("du bist dumm", 6);
+		wortToFeeling.put("du bist bloed", 5);
+		wortToFeeling.put("du bist kacke", 6);
 	}
 }

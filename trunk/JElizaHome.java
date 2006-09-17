@@ -1,5 +1,4 @@
 import java.io.*;
-import org.homedns.tobiasschulz.apps.jeliza.*;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.Gehirn;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.Answerer;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.Satz;

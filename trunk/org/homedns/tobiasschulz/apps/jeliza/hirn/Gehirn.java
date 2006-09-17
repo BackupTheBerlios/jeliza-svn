@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -27,6 +28,8 @@ public class Gehirn {
 	public AnswerWrapper fragenAntworter = new AnswerWrapper();
 
 	public Answerer re = new Answerer(absoluteUrl);
+	
+	public ArrayList<Gedanke> gedanken = new ArrayList<Gedanke>();
 	
 	/**
 	 * Privater Konstruktor
@@ -121,7 +124,6 @@ public class Gehirn {
 				new java.io.InputStreamReader(file));
 		String definition = "";
 		String content = "";
-		boolean textBegins = true;
 		try {
 			while (true) {
 				String line = br.readLine();
@@ -132,7 +134,6 @@ public class Gehirn {
 					break;
 				}
 			}
-			int n = 0;
 			boolean nextLineUeberspringen = false;
 			int countOpenTables = 0;
 			while (true) {

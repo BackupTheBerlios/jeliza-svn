@@ -12,8 +12,6 @@ import org.homedns.tobiasschulz.util.satzparser.*;
 import org.homedns.tobiasschulz.apps.speech.*;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.*;
 
-import java.awt.event.WindowListener;
-
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
  * versteht (verstehen sollte) Diese Version ist eine Standalone-version (TomCat
@@ -81,7 +79,7 @@ public class JElizaGui implements ActionListener {
 			System.exit(2);
 		}
 
-		fr = new JFrame();
+		fr = new JFrame("JEliza");
 		fr.setLayout(new BorderLayout(5, 5));
 		fr.setBackground(Color.white);
 		fr.setForeground(Color.darkGray);
@@ -120,11 +118,11 @@ public class JElizaGui implements ActionListener {
 		generateSidebar("");
 		oberSidebar.add(sidebar, "North");
 		fr.add(oberSidebar, "East");
-		
+
 		show();
 
 		userText.requestFocus();
-		
+
 		fr.addWindowListener(new WindowAdapter() {
 
 			public void windowClosed(WindowEvent e) {
@@ -219,7 +217,8 @@ public class JElizaGui implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "fra") {
 			String fra = userText.getText();
-			Satz antwort = hirn.fragenAntworter.processQuestion(new Satz(fra, fra), hirn.re, hirn);
+			Satz antwort = hirn.fragenAntworter.processQuestion(new Satz(fra,
+					fra), hirn.re, hirn);
 			String ant = antwort.satzHtml;
 			String antPlain = antwort.satzPlain;
 			ant = ant.replace("\n", "<br>\n");
@@ -233,7 +232,8 @@ public class JElizaGui implements ActionListener {
 			hirn.gefuehlHeute.setFeeling(antwort.gefuehl);
 			generateSidebar(fra);
 			userText.requestFocus();
-			Speech.say(Speech.preprocessor(antPlain.replace("          ", " . ")));
+			Speech.say(Speech.preprocessor(antPlain
+					.replace("          ", " . ")));
 		}
 		if (e.getActionCommand() == "save") {
 			saveTalking();
@@ -263,7 +263,7 @@ public class JElizaGui implements ActionListener {
 			return;
 		}
 		String file = fc.getSelectedFile() + "";
-		if (! file.endsWith(".gsp") ) {
+		if (!file.endsWith(".gsp")) {
 			file += ".gsp";
 		}
 		try {
@@ -273,8 +273,8 @@ public class JElizaGui implements ActionListener {
 					+ file + " speichern.");
 			return;
 		}
-		JOptionPane.showMessageDialog(fr, "Gespraech nach "
-				+ file + " gespeichert.");
+		JOptionPane.showMessageDialog(fr, "Gespraech nach " + file
+				+ " gespeichert.");
 		fr.repaint();
 	}
 
@@ -376,23 +376,25 @@ public class JElizaGui implements ActionListener {
 	 * Fügt Texte dem Wissen hinzu.
 	 */
 	private synchronized void addVerb() {
-		long millis = Calendar.getInstance().getTimeInMillis();
-		String verbs = JOptionPane.showInputDialog(fr, "Verben ?\nbitte in allen Formen angeben, dh. z.b." +
-				"nicht nur 'sein', sondern auch 'bin', 'bist', 'ist', 'sind', 'seid', 'war'");
+		String verbs = JOptionPane
+				.showInputDialog(
+						fr,
+						"Verben ?\nbitte in allen Formen angeben, dh. z.b."
+								+ "nicht nur 'sein', sondern auch 'bin', 'bist', 'ist', 'sind', 'seid', 'war'");
 		if (verbs == null || verbs == "") {
 			return;
 		}
 		try {
-			FileManager.writeStringIntoFile(FileManager.readFileIntoString("knownVerbs.txt") + " " + verbs,
-					"knownVerbs.txt");
+			FileManager.writeStringIntoFile(FileManager
+					.readFileIntoString("knownVerbs.txt")
+					+ " " + verbs, "knownVerbs.txt");
 		} catch (IOException e) {
 			neuWissen = "";
 			JOptionPane.showMessageDialog(fr, "IO-Error: knownVerbs.txt");
 			return;
 		}
 
-		JOptionPane.showMessageDialog(fr, "Verben " + verbs
-				+ " hinzugefuegt.");
+		JOptionPane.showMessageDialog(fr, "Verben " + verbs + " hinzugefuegt.");
 		fr.repaint();
 	}
 

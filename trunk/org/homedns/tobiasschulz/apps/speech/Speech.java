@@ -7,7 +7,7 @@ public class Speech {
 	public static void say(String text) {
 		String[] tmp = { "say", text.replace("\n", " .  . ")};
 		try {
-			Process pr = Runtime.getRuntime().exec(tmp);
+			Runtime.getRuntime().exec(tmp);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

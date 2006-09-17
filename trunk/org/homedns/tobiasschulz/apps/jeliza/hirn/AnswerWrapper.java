@@ -1,5 +1,8 @@
 package org.homedns.tobiasschulz.apps.jeliza.hirn;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import org.homedns.tobiasschulz.apps.jeliza.Util;
 
 /**
@@ -111,8 +114,28 @@ public class AnswerWrapper {
 					feel = hirn.gefuehlHeute.wortToFeeling.get(tmp);
 				}
 			}
+			for (String tmp : hirn.gefuehlHeute.wortToFeeling.keySet()) {
+				if (fra.toLowerCase().contains(tmp.toLowerCase())) {
+					feel = hirn.gefuehlHeute.wortToFeeling.get(tmp);
+				}
+			}
+			
+			Gedanke ged = new Gedanke("", feel);
+			ArrayList<Gedanke> geds = new ArrayList<Gedanke>();
+			for (Integer in : ged.feelingToGedanke.keySet()) {
+				if (Integer.parseInt(in.toString()) == feel) {
+					geds.add(new Gedanke(ged.feelingToGedanke.get(in), feel));
+				}
+			}
+			if (geds.size() > 1) {
+				Random r = new Random();
+				int n = r.nextInt(geds.size() -1);
+				ged = geds.get(n);
+			} else {
+				ged = new Gedanke("", feel);
+			}
 
-			return new Satz(antPlain, ant, feel);
+			return new Satz(antPlain, ant, feel, ged);
 		}
 		return null;
 	}
