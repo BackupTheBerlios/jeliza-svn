@@ -10,6 +10,7 @@ import javax.swing.*;
 import org.homedns.tobiasschulz.io.*;
 import org.homedns.tobiasschulz.util.satzparser.*;
 import org.homedns.tobiasschulz.apps.speech.*;
+import org.homedns.tobiasschulz.apps.jeliza.Util;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.*;
 
 /**
@@ -79,7 +80,16 @@ public class JElizaGui implements ActionListener {
 			System.exit(2);
 		}
 
-		fr = new JFrame("JEliza");
+		String version;
+		try {
+			version = FileManager.readFileIntoString("version.ver");
+		} catch (HeadlessException e) {
+			version = "unknown";
+		} catch (IOException e) {
+			version = "unknown";
+		}
+
+		fr = new JFrame("JEliza version " + version);
 		fr.setLayout(new BorderLayout(5, 5));
 		fr.setBackground(Color.white);
 		fr.setForeground(Color.darkGray);
@@ -109,9 +119,8 @@ public class JElizaGui implements ActionListener {
 		userPanel.add(senden, "East");
 
 		bottomPanel.add(userPanel, "North");
-		bottomPanel.add(new JLabel(
-				" Copyright 2006 by Tobias Schulz | License: "
-						+ "GNU Lesser General Public License (LGPL)"), "South");
+		// bottomPanel.add(new JLabel(
+		// " "), "South");
 
 		fr.add(bottomPanel, "South");
 
@@ -158,10 +167,11 @@ public class JElizaGui implements ActionListener {
 		open.setActionCommand("open");
 		sidebar.add(open);
 
-		JButton newtext = new JButton("Texte hinzufuegen");
-		newtext.addActionListener(this);
-		newtext.setActionCommand("newtext");
-		sidebar.add(newtext);
+		/*
+		 * JButton newtext = new JButton("Texte hinzufuegen");
+		 * newtext.addActionListener(this); newtext.setActionCommand("newtext");
+		 * sidebar.add(newtext);
+		 */
 
 		JButton newverb = new JButton("Verben hinzufuegen");
 		newverb.addActionListener(this);
@@ -185,6 +195,8 @@ public class JElizaGui implements ActionListener {
 		sidebar.add(new JTextField(st[2]));
 		sidebar.add(new JLabel("Fragewort im Satz:"));
 		sidebar.add(new JTextField(st[3]));
+
+		fr.setJMenuBar(genJMenuBar());
 
 		oberSidebar.add(sidebar, "North");
 		fr.add(oberSidebar, "East");
@@ -250,6 +262,52 @@ public class JElizaGui implements ActionListener {
 		if (e.getActionCommand() == "addVerb") {
 			addVerb();
 		}
+		if (e.getActionCommand() == "help") {
+			displayHelp();
+		}
+	}
+
+	/**
+	 * Generates a JMenuBar
+	 */
+	private JMenuBar genJMenuBar() {
+		JMenuBar jmb = new JMenuBar();
+
+		JMenu file = new JMenu("Gespräch");
+		Util.mkJMenuItem(file, "Speichern ...", this, "save");
+		Util.mkJMenuItem(file, "Öffnen ...", this, "open");
+		jmb.add(file);
+
+		JMenu wissen = new JMenu("Wissens-Datenbank");
+		Util.mkJMenuItem(wissen, "Verb beibringen", this, "addVerb");
+		Util.mkJMenuItem(wissen, "-", this, "open");
+		Util.mkJMenuItem(wissen, "Datenbank generieren", this,
+				"genWissenDatenbank");
+		jmb.add(wissen);
+
+		JMenu help = new JMenu("?");
+		Util.mkJMenuItem(help, "Über", this, "help");
+		jmb.add(help);
+
+		return jmb;
+	}
+
+	/**
+	 * Displays a Help dialog
+	 */
+	private void displayHelp() {
+		String version;
+		try {
+			version = FileManager.readFileIntoString("version.ver");
+		} catch (HeadlessException e) {
+			version = "unknown";
+		} catch (IOException e) {
+			version = "unknown";
+		}
+		JOptionPane.showMessageDialog(fr, "JEliza\n" + "Version " + version
+				+ "\n" + "\n" + "Copyright 2006 by Tobias Schulz\n"
+				+ "License: " + "GNU Lesser General Public License (LGPL)",
+				"JEliza - Help!", JOptionPane.PLAIN_MESSAGE);
 	}
 
 	/**
@@ -384,6 +442,20 @@ public class JElizaGui implements ActionListener {
 		if (verbs == null || verbs == "") {
 			return;
 		}
+		verbs = Util.replace(verbs, "ä", "ae");
+		verbs = Util.replace(verbs, "ö", "oe");
+		verbs = Util.replace(verbs, "ü", "ue");
+		verbs = Util.replace(verbs, "ß", "ss");
+		verbs = Util.toASCII(verbs);
+
+		Scanner sc = new Scanner(verbs);
+		while (sc.hasNext()) {
+			String tmp = sc.next();
+			if (tmp.endsWith("en")) {
+				verbs += " " + tmp.substring(0, tmp.length() - 2) + "e";
+				verbs += " " + tmp.substring(0, tmp.length() - 2) + "st";
+			}
+		}
 		try {
 			FileManager.writeStringIntoFile(FileManager
 					.readFileIntoString("knownVerbs.txt")
@@ -394,7 +466,7 @@ public class JElizaGui implements ActionListener {
 			return;
 		}
 
-		JOptionPane.showMessageDialog(fr, "Verben " + verbs + " hinzugefuegt.");
+		JOptionPane.showMessageDialog(fr, "Verben hinzugefuegt.");
 		fr.repaint();
 	}
 

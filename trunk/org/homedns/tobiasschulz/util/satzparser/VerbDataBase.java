@@ -13,7 +13,7 @@ import org.homedns.tobiasschulz.io.FileManager;
  */
 public class VerbDataBase {
 
-	public Hashtable<String, String> data = new Hashtable<String, String>();
+	// public Hashtable<String, String> data = new Hashtable<String, String>();
 
 	public Hashtable<String, String> baseVerbs = new Hashtable<String, String>();
 
@@ -35,7 +35,7 @@ public class VerbDataBase {
 		baseVerbs.put("warst", "warst");
 		baseVerbs.put("waren", "waren");
 		baseVerbs.put("wart", "wart");
-		
+
 		Scanner sc = new Scanner(new FileInputStream("knownVerbs.txt"));
 
 		while (sc.hasNext()) {
@@ -43,156 +43,86 @@ public class VerbDataBase {
 			baseVerbs.put(t, t);
 		}
 
-		
-		
+		/*
+		 * 
+		 * 
+		 * InputStream in = new FileInputStream(str); Scanner scanner = new
+		 * Scanner(in);
+		 * 
+		 * System.out.println("--- Now scanning all words");
+		 * 
+		 * long words = 0; long allWords = 0; String pat;
+		 * 
+		 * while (scanner.hasNext()) { scanner.next(); allWords++; if ((allWords %
+		 * 250000) == 0) { System.out.println(allWords + " words found in
+		 * text"); System.gc(); } } System.out.println("--- There are " +
+		 * allWords + " words."); System.out.println("--- Now scanning for verbs
+		 * in this words");
+		 * 
+		 * in = new FileInputStream(str); scanner = new Scanner(in);
+		 * 
+		 * while (scanner.hasNext()) { pat =
+		 * scanner.next().toLowerCase().replace("\"", "").replace( "'",
+		 * "").replace("(", "").replace(")", "") .replace(",", "");
+		 * 
+		 * words++; if ((words % 250000) == 0) { double d = 100d / allWords; d *=
+		 * words; System.out.println(Math.round(d) + "% done"); System.gc(); try {
+		 * Thread.sleep(750); } catch (InterruptedException e) {
+		 * e.printStackTrace(); } }
+		 * 
+		 * if (pat.contains("[") || pat.contains("]") || pat.length() < 3) {
+		 * continue; }
+		 * 
+		 * if (pat.startsWith("ge") && pat.length() > 5) { data.put(pat, pat);
+		 * continue; }
+		 * 
+		 * if (pat.startsWith("aus") && pat.length() > 3) { data.put(pat, pat);
+		 * continue; }
+		 * 
+		 * if (pat.startsWith("auf") && pat.length() > 3) { data.put(pat, pat);
+		 * continue; }
+		 * 
+		 * if (pat.startsWith("ver") && pat.length() > 3) { data.put(pat, pat);
+		 * continue; }
+		 * 
+		 * if (pat.endsWith("den") && pat.length() > 3) { data.put(pat, pat);
+		 * continue; }
+		 * 
+		 * if (pat.endsWith("lle")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("ffe")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("hen")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("ben") && pat.length() > 3) { data.put(pat, pat);
+		 * continue; }
+		 * 
+		 * if (pat.endsWith("sen")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("ll")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("lle")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("ke")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("mme")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("be")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("ste")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("gt")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("gte")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("st")) { data.put(pat, pat); continue; }
+		 * 
+		 * if (pat.endsWith("rd")) { data.put(pat, pat); continue; } }
+		 * 
+		 */
 
-		InputStream in = new FileInputStream(str);
-		Scanner scanner = new Scanner(in);
-
-		System.out.println("--- Now scanning all words");
-
-		long words = 0;
-		long allWords = 0;
-		String pat;
-
-		while (scanner.hasNext()) {
-			scanner.next();
-			allWords++;
-			if ((allWords % 250000) == 0) {
-				System.out.println(allWords + " words found in text");
-				System.gc();
-			}
-		}
-		System.out.println("--- There are " + allWords + " words.");
-		System.out.println("--- Now scanning for verbs in this words");
-
-		in = new FileInputStream(str);
-		scanner = new Scanner(in);
-
-		while (scanner.hasNext()) {
-			pat = scanner.next().toLowerCase().replace("\"", "").replace(
-					"'", "").replace("(", "").replace(")", "")
-					.replace(",", "");
-
-			words++;
-			if ((words % 250000) == 0) {
-				double d = (1000l / allWords * words);
-				System.out.println(Math.round(d) + "% done");
-				System.out.println("100 / " + allWords + " * " + words + "% done");
-				System.gc();
-				try {
-					Thread.sleep(750);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-
-			if (pat.contains("[") || pat.contains("]") || pat.length() < 3) {
-				continue;
-			}
-
-			if (pat.startsWith("ge") && pat.length() > 5) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.startsWith("aus") && pat.length() > 3) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.startsWith("auf") && pat.length() > 3) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.startsWith("ver") && pat.length() > 3) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("den") && pat.length() > 3) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("lle")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("ffe")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("hen")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("ben") && pat.length() > 3) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("sen")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("ll")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("lle")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("ke")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("mme")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("be")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("ste")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("gt")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("gte")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("st")) {
-				data.put(pat, pat);
-				continue;
-			}
-
-			if (pat.endsWith("rd")) {
-				data.put(pat, pat);
-				continue;
-			}
-		}
-
-		System.out.println("--- " + (data.size() + baseVerbs.size()) + " Verbs found.");
+		System.out.println("--- " + (/* data.size() + */baseVerbs.size())
+				+ " Verbs found.");
 	}
 
 	/**
@@ -236,14 +166,17 @@ public class VerbDataBase {
 			String pat = scanner.next();
 			pat = pat.toLowerCase().trim();
 
-			data.put(pat, pat);
+			baseVerbs.put(pat, pat);
 		}
 
 	}
 
 	public boolean isVerb(String str) {
+		return isVerb(str, false);
+	}
+
+	public boolean isVerb(String str, boolean alreadyKonjugiert) {
 		str = str.trim().toLowerCase();
-		
 
 		/*
 		 * for(int x = 0; x < data.size(); x++) { }
@@ -251,26 +184,61 @@ public class VerbDataBase {
 		 * for(int x = 0; x < baseVerbs.size(); x++) {
 		 * if(baseVerbs.get(x).trim().toLowerCase().equals(str)) { return true; } }
 		 */
-		
-		System.out.println(str);
 
-		if ((data.get(str) == null ? "" : data.get(str)).trim().toLowerCase().hashCode()
-				== str.hashCode()) {
+		/*
+		 * if ((data.get(str) == null ? "" :
+		 * data.get(str)).trim().toLowerCase().hashCode() == str.hashCode()) {
+		 * return true; }
+		 */
+
+		if ((baseVerbs.get(str) == null ? "" : baseVerbs.get(str)).trim()
+				.toLowerCase().hashCode() == str.hashCode()) {
 			return true;
 		}
 
-		if ((baseVerbs.get(str) == null ? "" : baseVerbs.get(str)).trim().toLowerCase().hashCode()
-				== str.hashCode()) {
-			return true;
-		}
-
-		if (data.containsKey(str)) {
-			return true;
-		}
+		/*
+		 * if (data.containsKey(str)) { return true; }
+		 */
 
 		if (baseVerbs.containsKey(str)) {
 			return true;
 		}
+
+		if (!alreadyKonjugiert
+				&& (str.endsWith("en") || str.endsWith("e")
+						|| str.endsWith("st") || str.endsWith("en")
+						|| str.endsWith("t") || str.endsWith("te")
+						|| str.endsWith("ten") || str.endsWith("test") || str
+						.startsWith("ge"))) {
+			for (int x = 1; x < 3; x++) {
+				if (isVerb(str.substring(0, str.length() - x) + "e", true)) {
+					return true;
+				}
+				if (isVerb(str.substring(0, str.length() - x) + "st", true)) {
+					return true;
+				}
+				if (isVerb(str.substring(0, str.length() - x) + "en", true)) {
+					return true;
+				}
+				if (isVerb(str.substring(0, str.length() - x) + "t", true)) {
+					return true;
+				}
+				if (isVerb(str.substring(0, str.length() - x) + "te", true)) {
+					return true;
+				}
+				if (isVerb(str.substring(0, str.length() - x) + "ten", true)) {
+					return true;
+				}
+				if (isVerb(str.substring(0, str.length() - x) + "test", true)) {
+					return true;
+				}
+				if (isVerb("ge" + str.substring(0, str.length() - 2) + "t",
+						true)) {
+					return true;
+				}
+			}
+		}
+		alreadyKonjugiert = false;
 
 		return false;
 	}
@@ -278,12 +246,12 @@ public class VerbDataBase {
 	public void writeIntoFile(String file) {
 		StringBuffer tmp = new StringBuffer();
 
-		Enumeration keys = data.keys();
-		while (keys.hasMoreElements()) {
-			tmp.append(keys.nextElement()).append(" ");
-		}
+		/*
+		 * keys = data.keys(); while (keys.hasMoreElements()) {
+		 * tmp.append(keys.nextElement()).append(" "); }
+		 */
 
-		keys = baseVerbs.keys();
+		Enumeration keys = baseVerbs.keys();
 		while (keys.hasMoreElements()) {
 			tmp.append(keys.nextElement()).append(" ");
 		}

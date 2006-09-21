@@ -50,17 +50,28 @@ public class SatzParseManager {
 	 */
 	private SatzParseManager(String str, VerbDataBase vdb) {
 		str = str.trim();
-		if (str.endsWith("?")) {
+		boolean isQues = false;
+		for (int x = 0; x < frageWoerter.length; x++) {
+			if (str.toLowerCase().startsWith(frageWoerter[x].toLowerCase())) {
+				isQues = true;
+			}
+		}
+		if (str.endsWith("?") || isQues) {
 			boolean isSimple = true;
 			for (int x = 0; x < frageWoerter.length; x++) {
 				if (str.toLowerCase().startsWith(frageWoerter[x].toLowerCase())) {
 					isSimple = false;
 				}
 			}
-			if (isSimple) {
+			if (isSimple && !isQues) {
 				parseSimpleFrage(str.substring(0, str.length() - 1), vdb);
-			} else {
+			} else if (!isSimple && !isQues){
 				parseExtendedFrage(str.substring(0, str.length() - 1), vdb);
+			}
+			if (isSimple && isQues) {
+				parseSimpleFrage(str, vdb);
+			} else if (!isSimple && isQues){
+				parseExtendedFrage(str, vdb);
 			}
 		} else {
 			parseHauptsatz(str, vdb);
@@ -97,6 +108,15 @@ public class SatzParseManager {
 	 * @return Die Instanz
 	 */
 	private void parseHauptsatz(String str, VerbDataBase vdb) {
+		if (str.endsWith(".")) {
+			str = str.substring(0, str.length() -1);
+		}
+		if (str.toLowerCase().startsWith("ja, ")) {
+			str = str.substring(4);
+		}
+		if (str.toLowerCase().startsWith("nein, ")) {
+			str = str.substring(6);
+		}
 		Scanner scanner = new Scanner(str);
 
 		@SuppressWarnings("unused")

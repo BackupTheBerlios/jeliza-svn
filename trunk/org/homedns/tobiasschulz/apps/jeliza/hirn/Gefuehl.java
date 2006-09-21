@@ -17,9 +17,9 @@ public class Gefuehl {
 	public String getFeeling() {
 		switch(feeling) {
 		case 1:
-			return "Sehr Gluecklich";
+			return "Sehr Glücklich";
 		case 2:
-			return "Gluecklich";
+			return "Glücklich";
 		case 3:
 			return "Traurig";
 		case 4:
@@ -27,7 +27,7 @@ public class Gefuehl {
 		case 5:
 			return "Zornig";
 		case 6:
-			return "Wuetend";
+			return "Wütend";
 		}
 		return "Unentschlossen";
 	}	
@@ -54,5 +54,9 @@ public class Gefuehl {
 		wortToFeeling.put("du bist dumm", 6);
 		wortToFeeling.put("du bist bloed", 5);
 		wortToFeeling.put("du bist kacke", 6);
+		wortToFeeling.put("hurensohn", 6);
+		wortToFeeling.put("fick", 5);
+		wortToFeeling.put("missgeburt", 6);
+		wortToFeeling.put("kacke", 4);
 	}
 }

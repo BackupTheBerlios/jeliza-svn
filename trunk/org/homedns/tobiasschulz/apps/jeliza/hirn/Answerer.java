@@ -80,10 +80,12 @@ public class Answerer {
 		if (fra.indexOf("bis nachher") > -1)
 			return antExit;
 		if (fra.indexOf("danke") > -1)
-			return "Fuer was bekankst du dich?";
+			return "Fuer was bedankst du dich?";
 		if (fra.indexOf("bitte") > -1)
 			return "Warum sagst du bitte? Ich bin eine Maschine.";
 		if (fra.toLowerCase().indexOf("wieviel uhr") > -1)
+			return "Es ist genau (!) " + df2.format(dt);
+		if (fra.toLowerCase().indexOf("wie viel uhr") > -1)
 			return "Es ist genau (!) " + df2.format(dt);
 		if (fra.toLowerCase().indexOf("der wievielte") > -1)
 			return "Wir haben den " + df.format(dt) + "!";
@@ -441,11 +443,38 @@ public class Answerer {
 		ant = Util.replace(ant, " Mein", " dein");
 		ant = Util.replace(ant, " Mir ", " dir ");
 		ant = Util.replace(ant, " Mich ", " dich ");
+		
+		ant = Util.replace(ant, " wir ", " XiXhXrX ");
+		ant = Util.replace(ant, " Wir ", " XIXhXrX ");
+		ant = Util.replace(ant, " unser", " XuXnXsXeXrX");
+		ant = Util.replace(ant, "Unser", "XUXnXsXeXrX");
+		ant = Util.replace(ant, " unsere", " XeXuXrXeX ");
+		ant = Util.replace(ant, " uns", " XeXuXcXhX ");
+		
+		ant = Util.replace(ant, " ihr ", " wir ");
+		ant = Util.replace(ant, " Ihr ", " Wir ");
+		ant = Util.replace(ant, " euer", " unser");
+		ant = Util.replace(ant, " eure ", " unsere");
+		ant = Util.replace(ant, " euch ", " uns");
 
+		ant = Util.replace(ant, " XiXhXrX ", " ihr ");
+		ant = Util.replace(ant, " XIXhXrX ", " Ihr ");
+		ant = Util.replace(ant, " XuXnXsXeXrX", " euer");
+		ant = Util.replace(ant, "XUXnXsXeXrX", "Euer");
+		ant = Util.replace(ant, " XeXuXrXeX ", " eure");
+		ant = Util.replace(ant, " XeXuXcXhX ", " Euch");
+		
 		ant = Util.replace(ant, " XDXuX ", " ich ");
 		ant = Util.replace(ant, " XDXeXiXnX", " mein");
 		ant = Util.replace(ant, " XDXiXrX ", " mir ");
 		ant = Util.replace(ant, " XDXiXcXhX ", " mich ");
+
+		if (ant.toLowerCase().contains("du")) {
+			ant = Util.replace(ant, " heisse ", " heisst ");
+		}
+		if (ant.toLowerCase().contains("ihr")) {
+			ant = Util.replace(ant, " heissen ", " heisst ");
+		}
 
 		for (int x = 0; x < ichVerben.length; x++) {
 			ant = Util.replace(ant, " " + ichVerben2[x] + " ", " "

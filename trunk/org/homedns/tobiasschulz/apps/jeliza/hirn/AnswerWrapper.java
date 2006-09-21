@@ -33,6 +33,11 @@ public class AnswerWrapper {
 				+ "darüber,\n"
 				+ "indem sie eine Mail an tobischulz@arcor.de mit dieser Frage schicken!";
 
+		fra = Util.replace(fra, "ä", "ae");
+		fra = Util.replace(fra, "ö", "oe");
+		fra = Util.replace(fra, "ü", "ue");
+		fra = Util.replace(fra, "ß", "ss");
+
 		String ofra = fra.trim();
 
 		fra = Util.replace(fra, "?", "");

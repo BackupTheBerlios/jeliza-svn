@@ -1,5 +1,11 @@
 package org.homedns.tobiasschulz.apps.jeliza;
 
+import java.awt.event.ActionListener;
+
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
 /**
  * Hilfsklasse des Java-Servlets JEliza, die ein paar Hilfsmethoden bereitstellt
  * 
@@ -65,5 +71,22 @@ public class Util {
 		}
 
 		return ret;
+	}
+
+	/**
+	 * Creates a JMenuItem Object named "name" with ActionListener "al" and adds
+	 * it to "jm"
+	 */
+	public static void mkJMenuItem(JMenu jm, String name, ActionListener al, String com) {
+		if (name == "-") {
+			jm.addSeparator();
+			return;
+		}
+		JMenuItem jmi = new JMenuItem(name);
+		if (al != null) {
+			jmi.addActionListener(al);
+		}
+		jmi.setActionCommand(com);
+		jm.add(jmi);
 	}
 } // class Util
