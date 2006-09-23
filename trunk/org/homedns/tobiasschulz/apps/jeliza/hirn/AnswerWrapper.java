@@ -1,9 +1,12 @@
 package org.homedns.tobiasschulz.apps.jeliza.hirn;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 import org.homedns.tobiasschulz.apps.jeliza.Util;
+import org.homedns.tobiasschulz.util.satzparser.VerbDataBase;
 
 /**
  * Hilfsklasse des Java-Servlets JEliza, die einen Wrapper für die Klassen
@@ -33,12 +36,51 @@ public class AnswerWrapper {
 				+ "darüber,\n"
 				+ "indem sie eine Mail an tobischulz@arcor.de mit dieser Frage schicken!";
 
+		VerbDataBase vdb = null;
+		System.out.println("---- Generating Verb Database ----");
+		try {
+			vdb = new VerbDataBase();
+			vdb.loadFromFile("verbs.txt");
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
 		fra = Util.replace(fra, "ä", "ae");
 		fra = Util.replace(fra, "ö", "oe");
 		fra = Util.replace(fra, "ü", "ue");
 		fra = Util.replace(fra, "ß", "ss");
-		
+
 		fra = Util.wegMitAbkuerzungen(fra);
+
+		System.out.println(hirn.erSieEsGedaechtnis[0]
+				+ hirn.erSieEsGedaechtnis[1] + hirn.erSieEsGedaechtnis[2]);
+		String[] fs = fra.split(" ");
+		String q = "";
+		for (String st : fs) {
+			if (st.toLowerCase().hashCode() == "er".hashCode()) {
+				q += ((Genus.getGenus(hirn.erSieEsGedaechtnis[0]) != Genus.UNKNOWN) ? Genus
+						.getDerDieDas(Genus
+								.getGenus(hirn.erSieEsGedaechtnis[0]))
+						: "")
+						+ " " + hirn.erSieEsGedaechtnis[0];
+			} else if (st.toLowerCase().hashCode() == "sie".hashCode()) {
+				q += ((Genus.getGenus(hirn.erSieEsGedaechtnis[1]) != Genus.UNKNOWN) ? Genus
+						.getDerDieDas(Genus
+								.getGenus(hirn.erSieEsGedaechtnis[1]))
+						: "")
+						+ " " + hirn.erSieEsGedaechtnis[1];
+			} else if (st.toLowerCase().hashCode() == "es".hashCode()) {
+				q += ((Genus.getGenus(hirn.erSieEsGedaechtnis[2]) != Genus.UNKNOWN) ? Genus
+						.getDerDieDas(Genus
+								.getGenus(hirn.erSieEsGedaechtnis[2]))
+						: "")
+						+ " " + hirn.erSieEsGedaechtnis[2];
+			} else {
+				q += st;
+			}
+			q += " ";
+		}
+		fra = q.trim();
 
 		String ofra = fra.trim();
 
@@ -126,25 +168,66 @@ public class AnswerWrapper {
 					feel = hirn.gefuehlHeute.wortToFeeling.get(tmp);
 				}
 			}
-			
-			Gedanke ged = new Gedanke("", feel);
-			ArrayList<Gedanke> geds = new ArrayList<Gedanke>();
-			for (Integer in : ged.feelingToGedanke.keySet()) {
-				if (Integer.parseInt(in.toString()) == feel) {
-					geds.add(new Gedanke(ged.feelingToGedanke.get(in), feel));
+
+			woerter = fra.split(" ");
+			String vorher = "";
+			String warschon = "";
+			for (String st : woerter) {
+				if ((st.charAt(0) + "").toLowerCase() == (st.charAt(0) + "")
+						|| (st.toLowerCase() == "der"
+								|| st.toLowerCase() == "die" || st
+								.toLowerCase() == "das")) {
+					vorher = s;
+					continue;
 				}
-			}
-			if (geds.size() > 1) {
-				Random r = new Random();
-				int n = r.nextInt(geds.size() -1);
-				ged = geds.get(n);
-			} else {
-				ged = new Gedanke("", feel);
+				String[] tmp = { st, vorher + " " + st };
+				for (String str : tmp) {
+					str = str.trim();
+					String strLow = str.toLowerCase();
+					if (vdb.isVerb(str)) {
+						continue;
+					}
+					if (Genus.getGenus(strLow) != Genus.UNKNOWN
+							&& !warschon.toLowerCase().contains(
+									Genus.getErSieEs(Genus.getGenus(strLow))
+											.toLowerCase())) {
+						if (Genus.getErSieEs(Genus.getGenus(strLow))
+								.toLowerCase().hashCode() == "er".hashCode()) {
+							hirn.erSieEsGedaechtnis[0] = str;
+							warschon += Genus
+									.getErSieEs(Genus.getGenus(strLow))
+									.toLowerCase();
+							System.out.println(Genus.getErSieEs(Genus
+									.getGenus(str))
+									+ ": " + str);
+						}
+						if (Genus.getErSieEs(Genus.getGenus(strLow))
+								.toLowerCase().hashCode() == "sie".hashCode()) {
+							hirn.erSieEsGedaechtnis[1] = str;
+							warschon += Genus
+									.getErSieEs(Genus.getGenus(strLow))
+									.toLowerCase();
+							System.out.println(Genus.getErSieEs(Genus
+									.getGenus(str))
+									+ ": " + str);
+						}
+						if (Genus.getErSieEs(Genus.getGenus(strLow))
+								.toLowerCase().hashCode() == "es".hashCode()) {
+							hirn.erSieEsGedaechtnis[2] = str;
+							warschon += Genus
+									.getErSieEs(Genus.getGenus(strLow))
+									.toLowerCase();
+							System.out.println(Genus.getErSieEs(Genus
+									.getGenus(str))
+									+ ": " + str);
+						}
+					}
+				}
+				vorher = s;
 			}
 
-			return new Satz(antPlain, ant, feel, ged);
+			return new Satz(antPlain, ant, feel, hirn, ofra);
 		}
 		return null;
 	}
-
 }

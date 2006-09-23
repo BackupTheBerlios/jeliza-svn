@@ -231,6 +231,8 @@ public class JElizaGui implements ActionListener {
 			String fra = userText.getText();
 			Satz antwort = hirn.fragenAntworter.processQuestion(new Satz(fra,
 					fra), hirn.re, hirn);
+			hirn = antwort.hirn;
+			fra = antwort.istAntortAuf;
 			String ant = antwort.satzHtml;
 			String antPlain = antwort.satzPlain;
 			ant = ant.replace("\n", "<br>\n");

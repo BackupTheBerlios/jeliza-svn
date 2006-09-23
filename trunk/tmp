@@ -1,1 +1,52 @@
 Generated Sidebar
+---- Generating Verb Database ----
+ErSieEs
+---- Generating Verb Database ----
+---- Parsing Sentence ----
+Satzart: 0
+Satzart: 0
+Das Monument ist ekelig? Sehen das alle so?
+Das{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Monument{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+ist{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+ekelig{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Es: Monument
+er: ekelig
+-1
+---- Generating Verb Database ----
+---- Parsing Sentence ----
+Generated Sidebar
+---- Generating Verb Database ----
+ekeligSieMonument
+---- Generating Verb Database ----
+---- Parsing Sentence ----
+Satzart: 0
+Satzart: 0
+das Monument zeigt Leon beim wixxen? Warum?
+das{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Monument{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+zeigt{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Leon{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+beim{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+wixxen{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Es: Monument
+-1
+---- Generating Verb Database ----
+---- Parsing Sentence ----
+Generated Sidebar
+---- Generating Verb Database ----
+ekeligSieMonument
+---- Generating Verb Database ----
+---- Parsing Sentence ----
+Zeigt das Monument Leon beim Wixxen? Entspricht das deinen Vorstellungen?
+Zeigt{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+das{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Monument{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Leon{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+beim{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Wixxen{missgeburt=6, hurensohn=6, gern=1, RARR=5, du bist scheisse=6, bescheuert=3, kacke=4, super=1, fick=5, wahnsinnig=4, beleidig=5, hass=4, scheisse=4, du bist bloed=5, fuck=6, umpf=4, du bist kacke=6, du bist dumm=6, lieb=1, fick dich=6, schrecklich=3}
+Es: Monument
+-1
+---- Generating Verb Database ----
+---- Parsing Sentence ----
+Generated Sidebar

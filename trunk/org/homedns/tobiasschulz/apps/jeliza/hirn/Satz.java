@@ -6,9 +6,11 @@ public class Satz {
 	
 	public String satzPlain = "";
 	
+	public String istAntortAuf = "";
+	
 	public int gefuehl = 2;
 	
-	public Gedanke gedanke;
+	public Gehirn hirn;
 	
 	public Satz(String pl, String ht, Integer gef) {
 		satzPlain = pl;
@@ -17,14 +19,35 @@ public class Satz {
 			gefuehl = gef;
 		System.out.println(gef);
 	}
-	public Satz(String pl, String ht, Integer gef, Gedanke ged) {
+
+	public Satz(String pl, String ht, Integer gef, Gehirn h) {
 		satzPlain = pl;
 		satzHtml = ht;
 		if (gef != -1)
 			gefuehl = gef;
 		System.out.println(gef);
-		gedanke = ged;
+		hirn = h;
 	}
+
+	public Satz(String pl, String ht, Integer gef, String answerOf) {
+		satzPlain = pl;
+		satzHtml = ht;
+		if (gef != -1)
+			gefuehl = gef;
+		System.out.println(gef);
+		istAntortAuf = answerOf;
+	}
+
+	public Satz(String pl, String ht, Integer gef, Gehirn h, String answerOf) {
+		satzPlain = pl;
+		satzHtml = ht;
+		if (gef != -1)
+			gefuehl = gef;
+		System.out.println(gef);
+		hirn = h;
+		istAntortAuf = answerOf;
+	}
+
 	public Satz(String pl, String ht) {
 		satzPlain = pl;
 		satzHtml = ht;

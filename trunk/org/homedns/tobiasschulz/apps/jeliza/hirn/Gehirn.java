@@ -29,7 +29,7 @@ public class Gehirn {
 
 	public Answerer re = new Answerer(absoluteUrl);
 	
-	public ArrayList<Gedanke> gedanken = new ArrayList<Gedanke>();
+	public String[] erSieEsGedaechtnis = { "Er", "Sie", "Es" };
 	
 	/**
 	 * Privater Konstruktor
