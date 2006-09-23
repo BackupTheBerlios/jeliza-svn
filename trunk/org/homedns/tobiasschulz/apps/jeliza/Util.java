@@ -63,21 +63,46 @@ public class Util {
 					|| c == 'H' || c == 'I' || c == 'J' || c == 'K' || c == 'L'
 					|| c == 'M' || c == 'N' || c == 'O' || c == 'P' || c == 'Q'
 					|| c == 'R' || c == 'S' || c == 'T' || c == 'U' || c == 'V'
-					|| c == 'W' || c == 'X' || c == 'Y' || c == 'Z') {
+					|| c == 'W' || c == 'X' || c == 'Y' || c == 'Z' || c == '0'
+					|| c == '1' || c == '2' || c == '3' || c == '4' || c == '5'
+					|| c == '6' || c == '7' || c == '8' || c == '9') {
 				ret += c;
+			} else if (c == '„' || c == '“') {
+				ret += " ";
 			} else {
 				ret += "?";
 			}
+
+			
 		}
 
-		return ret;
+		return ret.replace(" ", " ");
+	}
+	
+	/**
+	 * Sorgt dafuer, dass weniger Abkuerungen enthalten sind
+	 */
+	public static String wegMitAbkuerzungen(String text) {
+		text = text.replace("ca.", "ca");
+		text = text.replace("etc.", "etc");
+		text = text.replace("usw.", "usw");
+		text = text.replace("o.a.", "oder auch");
+		text = text.replace("u.U.", "unter Umstaenden");
+		text = text.replace("z.B.", "zum Beispiel");
+		text = text.replace("u.u.", "unter Umstaenden");
+		text = text.replace("z.b.", "zum Beispiel");
+		text = text.replace("s.g.", "so genannten");
+		text = text.replace("s.g", "so genannten");
+		
+		return text;
 	}
 
 	/**
 	 * Creates a JMenuItem Object named "name" with ActionListener "al" and adds
 	 * it to "jm"
 	 */
-	public static void mkJMenuItem(JMenu jm, String name, ActionListener al, String com) {
+	public static void mkJMenuItem(JMenu jm, String name, ActionListener al,
+			String com) {
 		if (name == "-") {
 			jm.addSeparator();
 			return;

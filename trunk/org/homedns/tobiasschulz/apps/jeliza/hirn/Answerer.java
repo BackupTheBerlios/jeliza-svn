@@ -95,6 +95,9 @@ public class Answerer {
 			return "Wir haben den " + df.format(dt) + "!";
 		if (fra.toLowerCase().indexOf("den wievielte") > -1)
 			return "Wir haben den " + df.format(dt) + "!";
+		if (fra.toLowerCase().indexOf("ich heisse") > -1) {
+			addPerson(fra.substring(10).trim(), "heisse", "ich");
+		}
 
 		if (fra.startsWith("ja") && fra.length() < 4)
 			return antJa[r.nextInt(antJa.length)];
@@ -443,14 +446,14 @@ public class Answerer {
 		ant = Util.replace(ant, " Mein", " dein");
 		ant = Util.replace(ant, " Mir ", " dir ");
 		ant = Util.replace(ant, " Mich ", " dich ");
-		
+
 		ant = Util.replace(ant, " wir ", " XiXhXrX ");
 		ant = Util.replace(ant, " Wir ", " XIXhXrX ");
 		ant = Util.replace(ant, " unser", " XuXnXsXeXrX");
 		ant = Util.replace(ant, "Unser", "XUXnXsXeXrX");
 		ant = Util.replace(ant, " unsere", " XeXuXrXeX ");
 		ant = Util.replace(ant, " uns", " XeXuXcXhX ");
-		
+
 		ant = Util.replace(ant, " ihr ", " wir ");
 		ant = Util.replace(ant, " Ihr ", " Wir ");
 		ant = Util.replace(ant, " euer", " unser");
@@ -463,7 +466,7 @@ public class Answerer {
 		ant = Util.replace(ant, "XUXnXsXeXrX", "Euer");
 		ant = Util.replace(ant, " XeXuXrXeX ", " eure");
 		ant = Util.replace(ant, " XeXuXcXhX ", " Euch");
-		
+
 		ant = Util.replace(ant, " XDXuX ", " ich ");
 		ant = Util.replace(ant, " XDXeXiXnX", " mein");
 		ant = Util.replace(ant, " XDXiXrX ", " mir ");
@@ -753,7 +756,7 @@ public class Answerer {
 				return ant;
 			}
 		} catch (ObjektNotFoundException e) {
-			return ant;
+			objekt = "";
 		}
 
 		fragewort = spm.getFrageWort();
@@ -761,7 +764,20 @@ public class Answerer {
 			return ant;
 		}
 
+		if (objekt == "") {
+			objekt = "null";
+		}
+
+		String[] ja = { "Das finde ich auch !",
+				"Der Meinung bin ich auch.", "Das ist wohl so.",
+				"Warscheinlich.",
+				"Das war ja auch schon immer so,", "Klar",
+				"Das sagt mein Programmierer auch.", "Ich weiss.",
+				"Glaubst du, das weiss ich nicht?", "Natuerlich.",
+				"Ich bin nicht dieser Meinung." };
+
 		if (spm.satzType == SatzParseManager.EINFACHE_FRAGE) {
+			addPerson(subjekt, verb, objekt);
 			String yesno;
 			try {
 				yesno = FileManager.readFileIntoString(
@@ -774,16 +790,20 @@ public class Answerer {
 			if (yesno.hashCode() == "true".hashCode()) {
 				return "Ja";
 			}
+			if (yesno.hashCode() == "false".hashCode()) {
+				return "Nein!";
+			}
 		} else {
 			System.out.println("Satzart: " + spm.satzType);
 		}
 
 		if (spm.satzType == SatzParseManager.ERWEITERTE_FRAGE) {
+			addPerson(subjekt, verb, objekt);
 			String yesno;
 			try {
 				yesno = FileManager.readFileIntoString(
-						absoluteUrl + "wortschatz/ext-ques/" + fragewort + "/" + subjekt + "/"
-								+ verb + "/" + objekt).trim();
+						absoluteUrl + "wortschatz/ext-ques/" + fragewort + "/"
+								+ subjekt + "/" + verb + "/" + objekt).trim();
 			} catch (IOException e) {
 				return ant;
 			}
@@ -791,29 +811,42 @@ public class Answerer {
 			if (yesno.hashCode() == "true".hashCode()) {
 				return "Ja";
 			}
+			if (yesno.hashCode() == "false".hashCode()) {
+				return "Nein!";
+			}
 		} else {
 			System.out.println("Satzart: " + spm.satzType);
 		}
 
 		if (spm.satzType == SatzParseManager.AUSSAGESATZ) {
+			addPerson(subjekt, verb, objekt);
 			try {
 				BufferedReader br = FileManager.openBufferedReader(absoluteUrl
 						+ "wortschatz/simple-sent/" + subjekt + "/" + verb
 						+ "/" + objekt);
 
 				String line = "";
+				boolean isYes = false;
 				String[] answers = new String[100];
 				int y = 0;
 				while ((line = br.readLine()) != null) {
-					answers[y] = line;
+					answers[y] = line.trim();
+					if (line.trim().hashCode() == "true".hashCode()) {
+						isYes = true;
+					}
 					y++;
 				}
 
 				Random r = new Random();
 
-				ant = answers[r.nextInt(y)];
-				if (ant == null) {
-					ant = "Aehhh";
+				if (isYes) {
+					ant = ja[r.nextInt(ja.length - 1)];
+					return ant;
+				} else {
+					ant = answers[r.nextInt(y)];
+					if (ant == null) {
+						ant = "Äh";
+					}
 				}
 				return ant;
 
@@ -826,6 +859,16 @@ public class Answerer {
 		}
 
 		return ant;
+	}
+
+	public static void addPerson(String str, String verb, String obj) {
+		File f = new File("personen/" + str + "/" + verb + "/" + obj);
+		f.getParentFile().mkdirs();
+		try {
+			f.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 } // class Regeln

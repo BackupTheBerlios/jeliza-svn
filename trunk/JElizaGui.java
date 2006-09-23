@@ -254,7 +254,7 @@ public class JElizaGui implements ActionListener {
 			openTalking();
 		}
 		if (e.getActionCommand() == "newtext") {
-			addTextWissen();
+			scanText();
 		}
 		if (e.getActionCommand() == "genWissenDatenbank") {
 			genWissenDatenbank();
@@ -262,9 +262,151 @@ public class JElizaGui implements ActionListener {
 		if (e.getActionCommand() == "addVerb") {
 			addVerb();
 		}
+		if (e.getActionCommand() == "showPersons") {
+			showPersons();
+		}
 		if (e.getActionCommand() == "help") {
 			displayHelp();
 		}
+	}
+
+	/**
+	 * Fordert einen Text und ruft scan() auf.
+	 */
+	private void scanText() {
+		new Thread(new Runnable() {
+			public void run() {
+				final Dialog dia = new Dialog(fr, "Bekannte Personen / Dinge");
+				dia.setLayout(new BorderLayout(10, 10));
+				final JTextArea ar = new JTextArea(
+						"Bitte Text Eingeben.\nVerwende bitte kurze und "
+								+ "eindeutige Saetze.\n"
+								+ "Vermeide Nebensaetze.\n"
+								+ "\n"
+								+ "Achtung !!!!!! :\n"
+								+ "Beachten sie jeden Satz als vollstaendig unabhängig zu anderen.\n"
+								+ "\n"
+								+ "Also Nicht (!):\n"
+								+ "\"Yasmin flog los. Sie stuerzte nach 2 Minuten ab.\"\n"
+								+ "Sondern:\n"
+								+ "\"Yasmin flog los. Yasmin stuerzte 2 Minuten nach ihrem Start ab.\"\n");
+				dia.add(new JScrollPane(ar));
+				JButton cl = new JButton("Scannen");
+				cl.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String text = ar.getText();
+						try {
+							Thread.sleep(500);
+						} catch (InterruptedException e1) {
+							e1.printStackTrace();
+						}
+						ar.setEditable(false);
+						ar.setText("Bitte warten ...");
+						scan(text);
+						try {
+							Thread.sleep(1500);
+						} catch (InterruptedException e1) {
+							e1.printStackTrace();
+						}
+						dia.setVisible(false);
+					}
+				});
+				dia.add("South", cl);
+				dia.setSize(600, 400);
+				dia.setVisible(true);
+			}
+		}).start();
+	}
+
+	/**
+	 * Scannt einen Text nach Informationen und Speichert sie ab.
+	 */
+	private void scan(String text) {
+		ArrayList<String[]> al = new TextAnalyser().analyse(text);
+		for (String[] t : al) {
+			System.out.println(t[0] + " - " + t[1] + " " + t[2] + " " + t[3]);
+			String txt = "";
+			txt += "Ist folgende Information richtig?\n\n";
+			if (!t[0].contains("ques")) {
+				txt += "Subjekt : " + t[1] + "\n";
+				txt += "Verb(en) : " + t[2] + "\n";
+				txt += "Objekt/Rest : " + t[3] + "\n";
+				txt += "\n";
+				txt += "Also:\n";
+				txt += t[1] + " " + t[2] + " " + t[3] + " .";
+				txt += "\n\nKlick auf Ja, falls du diese Information zu meiner Datenbank hinzufuegen willst.";
+				if (JOptionPane.showConfirmDialog(fr, txt, "Ist das richtig?",
+						JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION) {
+					if (t[3] == "") {
+						t[3] = "null";
+					}
+					File f = new File("wortschatz/" + t[0] + "/" + t[1] + "/" + t[2] + "/" + t[3]);
+					f.getParentFile().mkdirs();
+					try {
+						FileManager.writeStringIntoFile("true", f.toString());
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			} else {
+				txt += "Subjekt : " + t[1] + "\n";
+				txt += "Verb(en) : " + t[2] + "\n";
+				txt += "Objekt/Rest : " + t[3] + "\n";
+				txt += "\n";
+				txt += "Also:\n";
+				txt += t[2] + " " + t[1] + " " + t[3] + " ?";
+				txt += "\n\nFalls du diese Information zu meiner Datenbank hinzufuegen willst, klicke" +
+						"auf Ja oder Nein, je nach dem, ob sie stimmt.\n" +
+						"Falls du diese Information verwerfen willst, klicke auf Abbrechen.";
+				int i = JOptionPane.showConfirmDialog(fr, txt, "Ist das richtig?",
+						JOptionPane.YES_NO_CANCEL_OPTION);
+				if (i == JOptionPane.YES_OPTION || i == JOptionPane.NO_OPTION) {
+					if (t[3] == "") {
+						t[3] = "null";
+					}
+					File f = new File("wortschatz/" + t[0] + "/" + t[1] + "/" + t[2] + "/" + t[3]);
+					f.getParentFile().mkdirs();
+					try {
+						if (i == JOptionPane.YES_OPTION) {
+							FileManager.writeStringIntoFile("true", f.toString());
+						}
+						if (i == JOptionPane.NO_OPTION) {
+							FileManager.writeStringIntoFile("false", f.toString());
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Zeigt einen Dialog mit einer Liste von bekannten Personen/Dingen an.
+	 */
+	private void showPersons() {
+		new Thread(new Runnable() {
+			public void run() {
+				final Dialog dia = new Dialog(fr, "Bekannte Personen / Dinge");
+				dia.setLayout(new BorderLayout(10, 10));
+				Box b = new Box(BoxLayout.Y_AXIS);
+				File f = new File("personen/");
+				String[] ps = f.list();
+				for (String p : ps) {
+					b.add(new JLabel(p));
+				}
+				dia.add(new JScrollPane(b));
+				JButton cl = new JButton("OK");
+				cl.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dia.setVisible(false);
+					}
+				});
+				dia.add("South", cl);
+				dia.setSize(400, 400);
+				dia.setVisible(true);
+			}
+		}).start();
 	}
 
 	/**
@@ -279,6 +421,11 @@ public class JElizaGui implements ActionListener {
 		jmb.add(file);
 
 		JMenu wissen = new JMenu("Wissens-Datenbank");
+		Util.mkJMenuItem(wissen, "Bekannte Personen / Dinge anzeigen", this,
+				"showPersons");
+		Util.mkJMenuItem(wissen, "-", this, "open");
+		Util.mkJMenuItem(wissen, "Informationen aus Text beibringen", this,
+				"newtext");
 		Util.mkJMenuItem(wissen, "Verb beibringen", this, "addVerb");
 		Util.mkJMenuItem(wissen, "-", this, "open");
 		Util.mkJMenuItem(wissen, "Datenbank generieren", this,

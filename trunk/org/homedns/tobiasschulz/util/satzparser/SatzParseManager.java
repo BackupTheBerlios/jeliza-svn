@@ -50,6 +50,9 @@ public class SatzParseManager {
 	 */
 	private SatzParseManager(String str, VerbDataBase vdb) {
 		str = str.trim();
+		if (vdb.isVerb(str.split(" ")[0]) && !str.endsWith("?")) {
+			str += "?";
+		}
 		boolean isQues = false;
 		for (int x = 0; x < frageWoerter.length; x++) {
 			if (str.toLowerCase().startsWith(frageWoerter[x].toLowerCase())) {
@@ -128,9 +131,8 @@ public class SatzParseManager {
 
 		while (scanner.hasNext()) {
 			String pat = scanner.next();
-			pat = pat.toLowerCase();
 
-			if (vdb.isVerb(pat)) {
+			if (vdb.isVerb(pat.toLowerCase())) {
 				strVerb += pat + " ";
 
 				mode = 1;
@@ -174,7 +176,6 @@ public class SatzParseManager {
 		strVerb = "";
 
 		String pat2 = scanner.next();
-		pat2 = pat2.toLowerCase();
 
 		strVerb = pat2 + " ";
 
@@ -183,15 +184,14 @@ public class SatzParseManager {
 
 			String pat = scanner.next();
 			String origPat = pat;
-			pat = pat.toLowerCase();
 
-			if (vdb.isVerb(pat)) {
+			if (vdb.isVerb(pat.toLowerCase())) {
 				strVerb += pat + " ";
 				mode = 1;
 				continue;
 			}
 
-			if (((short) (mode) == (short) (2) || (origPat.hashCode() != pat
+			if (((short) (mode) == (short) (2) || (origPat.hashCode() != pat.toLowerCase()
 					.hashCode()))
 					&& mode < 4) {
 				// System.out.println(origPat + origPat.hashCode());
@@ -232,7 +232,7 @@ public class SatzParseManager {
 
 		String pat2 = scanner.next();
 
-		strFrageWort = pat2.trim().toLowerCase();
+		strFrageWort = pat2.trim();
 		if (strFrageWort == "warum" || strFrageWort == "weshalb") {
 			strFrageWort = "wieso";
 		}
@@ -240,7 +240,6 @@ public class SatzParseManager {
 			return;
 		}
 		String pat3 = scanner.next();
-		pat3 = pat3.toLowerCase();
 
 		strVerb = pat3 + " ";
 
@@ -249,15 +248,14 @@ public class SatzParseManager {
 
 			String pat = scanner.next();
 			String origPat = pat;
-			pat = pat.toLowerCase();
 
-			if (vdb.isVerb(pat)) {
+			if (vdb.isVerb(pat.toLowerCase())) {
 				strVerb += pat + " ";
 				mode = 1;
 				continue;
 			}
 
-			if (((short) (mode) == (short) (2) || (origPat.hashCode() != pat
+			if (((short) (mode) == (short) (2) || (origPat.hashCode() != pat.toLowerCase()
 					.hashCode()))
 					&& mode < 4) {
 				strSubjekt += pat + " ";

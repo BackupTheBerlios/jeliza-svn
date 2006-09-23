@@ -37,6 +37,8 @@ public class AnswerWrapper {
 		fra = Util.replace(fra, "ö", "oe");
 		fra = Util.replace(fra, "ü", "ue");
 		fra = Util.replace(fra, "ß", "ss");
+		
+		fra = Util.wegMitAbkuerzungen(fra);
 
 		String ofra = fra.trim();
 
