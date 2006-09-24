@@ -754,9 +754,8 @@ public class Answerer {
 			objekt = "null";
 		}
 
-		String[] ja = { "Das finde ich auch !",
-				"Der Meinung bin ich auch.", "Das ist wohl so.",
-				"Warscheinlich.",
+		String[] ja = { "Das finde ich auch !", "Der Meinung bin ich auch.",
+				"Das ist wohl so.", "Warscheinlich.",
 				"Das war ja auch schon immer so,", "Klar",
 				"Das sagt mein Programmierer auch.", "Ich weiss.",
 				"Glaubst du, das weiss ich nicht?", "Natuerlich.",
@@ -764,13 +763,12 @@ public class Answerer {
 
 		if (spm.satzType == SatzParseManager.EINFACHE_FRAGE) {
 			addPerson(subjekt, verb, objekt);
-			String yesno;
+			String yesno = "";
 			try {
 				yesno = FileManager.readFileIntoString(
 						absoluteUrl + "wortschatz/simple-ques/" + subjekt + "/"
 								+ verb + "/" + objekt).trim();
 			} catch (IOException e) {
-				return ant;
 			}
 
 			if (yesno.hashCode() == "true".hashCode()) {
@@ -779,6 +777,20 @@ public class Answerer {
 			if (yesno.hashCode() == "false".hashCode()) {
 				return "Nein!";
 			}
+			try {
+				yesno = FileManager.readFileIntoString(
+						absoluteUrl + "wortschatz/simple-ques/" + subjekt.toLowerCase() + "/"
+								+ verb.toLowerCase() + "/" + objekt.toLowerCase()).trim();
+			} catch (IOException e) {
+			}
+
+			if (yesno.hashCode() == "true".hashCode()) {
+				return "Ja";
+			}
+			if (yesno.hashCode() == "false".hashCode()) {
+				return "Nein!";
+			}
+			return ant;
 		} else {
 			System.out.println("Satzart: " + spm.satzType);
 		}
@@ -806,6 +818,48 @@ public class Answerer {
 
 		if (spm.satzType == SatzParseManager.AUSSAGESATZ) {
 			addPerson(subjekt, verb, objekt);
+
+			String subj = subjekt.replace("nicht", "").replace("  ", "");
+			String obj = objekt.replace("nicht", "").replace("  ", "");
+
+			File f = new File("wortschatz/simple-sent/" + subjekt.toLowerCase() + "/" + verb.toLowerCase()
+					+ "/" + objekt.toLowerCase());
+			f.getParentFile().mkdirs();
+			try {
+				FileManager.writeStringIntoFile("true", f.toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			f = new File("wortschatz/simple-sent/" + subj.toLowerCase() + "/" + verb.toLowerCase() + "/"
+					+ obj.toLowerCase());
+			f.getParentFile().mkdirs();
+			try {
+				FileManager.writeStringIntoFile("true", f.toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			f = new File("wortschatz/simple-ques/" + subjekt.toLowerCase() + "/" + verb.toLowerCase() + "/"
+					+ objekt.toLowerCase());
+			f.getParentFile().mkdirs();
+			try {
+				FileManager.writeStringIntoFile("true", f.toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			if (subjekt.contains("nicht") || subjekt.contains("nicht")) {
+				f = new File("wortschatz/simple-ques/" + subj.toLowerCase() + "/" + verb.toLowerCase()
+						+ "/" + obj.toLowerCase());
+				f.getParentFile().mkdirs();
+				try {
+					FileManager.writeStringIntoFile("true", f.toString());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+
 			try {
 				BufferedReader br = FileManager.openBufferedReader(absoluteUrl
 						+ "wortschatz/simple-sent/" + subjekt + "/" + verb
