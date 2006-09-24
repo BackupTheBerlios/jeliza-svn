@@ -15,8 +15,7 @@ import org.homedns.tobiasschulz.apps.jeliza.hirn.*;
 
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
- * versteht (verstehen sollte) Diese Version ist eine Standalone-version (TomCat
- * wird nicht benötigt), daher der Name JElizaGui.
+ * versteht (verstehen sollte) 
  * 
  * @author Tobias Schulz
  * @version 0.3
@@ -55,10 +54,28 @@ public class JElizaGui implements ActionListener {
 
 	JPanel oberSidebar = new JPanel(new BorderLayout(5, 5));
 
+	public Dialog dia;
+
+	public Dialog dia2;
+
+	public Dialog dia3;
+
+	public Dialog dia4;
+
 	/**
 	 * Der Standard-Konstruktor
 	 */
 	public JElizaGui() {
+		Frame win = new Frame("Bitte warten ...");
+		TextArea tex = new TextArea("Lade Daten ...");
+		win.add(tex);
+		win.add("South", new Label("Copyright 2006 by Tobias Schulz"));
+		win.setSize(300, 200);
+		win.setLocation(300, 250);
+		win.setVisible(true);
+
+		sleep(500);
+
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException e) {
@@ -79,6 +96,14 @@ public class JElizaGui implements ActionListener {
 			e.printStackTrace();
 			System.exit(2);
 		}
+		
+		tex.setText("Generiere Wortschatz ...");
+
+		prepareShowWords();
+		
+		sleep(1500);
+		
+		tex.setText("Generiere grafische Oberflaeche ...");
 
 		String version;
 		try {
@@ -128,9 +153,7 @@ public class JElizaGui implements ActionListener {
 		oberSidebar.add(sidebar, "North");
 		fr.add(oberSidebar, "East");
 
-		show();
-
-		userText.requestFocus();
+		sleep(1000);
 
 		fr.addWindowListener(new WindowAdapter() {
 
@@ -143,6 +166,13 @@ public class JElizaGui implements ActionListener {
 			}
 
 		});
+
+		show();
+		userText.requestFocus();
+		
+		win.setVisible(false);
+		tex = null;
+		win = null;
 	}
 
 	/**
@@ -166,17 +196,6 @@ public class JElizaGui implements ActionListener {
 		open.addActionListener(this);
 		open.setActionCommand("open");
 		sidebar.add(open);
-
-		/*
-		 * JButton newtext = new JButton("Texte hinzufuegen");
-		 * newtext.addActionListener(this); newtext.setActionCommand("newtext");
-		 * sidebar.add(newtext);
-		 */
-
-		JButton newverb = new JButton("Verben hinzufuegen");
-		newverb.addActionListener(this);
-		newverb.setActionCommand("addVerb");
-		sidebar.add(newverb);
 
 		JButton genWissenDatenbank = new JButton("Datenbank generieren");
 		genWissenDatenbank.addActionListener(this);
@@ -264,8 +283,11 @@ public class JElizaGui implements ActionListener {
 		if (e.getActionCommand() == "addVerb") {
 			addVerb();
 		}
+		if (e.getActionCommand() == "addAdj") {
+			addAdj();
+		}
 		if (e.getActionCommand() == "showPersons") {
-			showPersons();
+			showWords();
 		}
 		if (e.getActionCommand() == "help") {
 			displayHelp();
@@ -342,7 +364,8 @@ public class JElizaGui implements ActionListener {
 					if (t[3] == "") {
 						t[3] = "null";
 					}
-					File f = new File("wortschatz/" + t[0] + "/" + t[1] + "/" + t[2] + "/" + t[3]);
+					File f = new File("wortschatz/" + t[0] + "/" + t[1] + "/"
+							+ t[2] + "/" + t[3]);
 					f.getParentFile().mkdirs();
 					try {
 						FileManager.writeStringIntoFile("true", f.toString());
@@ -357,23 +380,26 @@ public class JElizaGui implements ActionListener {
 				txt += "\n";
 				txt += "Also:\n";
 				txt += t[2] + " " + t[1] + " " + t[3] + " ?";
-				txt += "\n\nFalls du diese Information zu meiner Datenbank hinzufuegen willst, klicke" +
-						"auf Ja oder Nein, je nach dem, ob sie stimmt.\n" +
-						"Falls du diese Information verwerfen willst, klicke auf Abbrechen.";
-				int i = JOptionPane.showConfirmDialog(fr, txt, "Ist das richtig?",
-						JOptionPane.YES_NO_CANCEL_OPTION);
+				txt += "\n\nFalls du diese Information zu meiner Datenbank hinzufuegen willst, klicke"
+						+ "auf Ja oder Nein, je nach dem, ob sie stimmt.\n"
+						+ "Falls du diese Information verwerfen willst, klicke auf Abbrechen.";
+				int i = JOptionPane.showConfirmDialog(fr, txt,
+						"Ist das richtig?", JOptionPane.YES_NO_CANCEL_OPTION);
 				if (i == JOptionPane.YES_OPTION || i == JOptionPane.NO_OPTION) {
 					if (t[3] == "") {
 						t[3] = "null";
 					}
-					File f = new File("wortschatz/" + t[0] + "/" + t[1] + "/" + t[2] + "/" + t[3]);
+					File f = new File("wortschatz/" + t[0] + "/" + t[1] + "/"
+							+ t[2] + "/" + t[3]);
 					f.getParentFile().mkdirs();
 					try {
 						if (i == JOptionPane.YES_OPTION) {
-							FileManager.writeStringIntoFile("true", f.toString());
+							FileManager.writeStringIntoFile("true", f
+									.toString());
 						}
 						if (i == JOptionPane.NO_OPTION) {
-							FileManager.writeStringIntoFile("false", f.toString());
+							FileManager.writeStringIntoFile("false", f
+									.toString());
 						}
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -386,29 +412,122 @@ public class JElizaGui implements ActionListener {
 	/**
 	 * Zeigt einen Dialog mit einer Liste von bekannten Personen/Dingen an.
 	 */
-	private void showPersons() {
+	private void showWords() {
 		new Thread(new Runnable() {
 			public void run() {
-				final Dialog dia = new Dialog(fr, "Bekannte Personen / Dinge");
-				dia.setLayout(new BorderLayout(10, 10));
-				Box b = new Box(BoxLayout.Y_AXIS);
-				File f = new File("personen/");
-				String[] ps = f.list();
-				for (String p : ps) {
-					b.add(new JLabel(p));
-				}
-				dia.add(new JScrollPane(b));
-				JButton cl = new JButton("OK");
-				cl.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						dia.setVisible(false);
-					}
-				});
-				dia.add("South", cl);
-				dia.setSize(400, 400);
+				dia.setSize(300, 300);
+				dia.setLocation(0, 0);
 				dia.setVisible(true);
+
+				dia2.setSize(300, 300);
+				dia2.setLocation(0, 340);
+				dia2.setVisible(true);
+
+				dia3.setSize(300, 300);
+				dia3.setLocation(310, 0);
+				dia3.setVisible(true);
+
+				dia4.setSize(300, 300);
+				dia4.setLocation(310, 340);
+				dia4.setVisible(true);
 			}
 		}).start();
+	}
+
+	/**
+	 * Zeigt einen Dialog mit einer Liste von bekannten Personen/Dingen an.
+	 */
+	private void prepareShowWords() {
+		dia = new Dialog(fr, "Bekannte Personen");
+		dia.setLayout(new BorderLayout(10, 10));
+		Box b = new Box(BoxLayout.Y_AXIS);
+		File f = new File("personen/");
+		String[] ps = f.list();
+		for (String p : ps) {
+			b.add(new JLabel(p));
+		}
+		dia.add(new JScrollPane(b));
+		JButton cl = new JButton("OK");
+		cl.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dia.setVisible(false);
+			}
+		});
+		dia.add("South", cl);
+		dia.setSize(400, 400);
+		dia.setLocation(0, 0);
+		System.gc();
+
+		dia2 = new Dialog(fr, "Bekannte Nomen");
+		dia2.setLayout(new BorderLayout(10, 10));
+		Box b2 = new Box(BoxLayout.Y_AXIS);
+		VerbDataBase vdb = null;
+		System.out.println("---- Generating Verb Database ----");
+		try {
+			vdb = new VerbDataBase();
+			vdb.loadFromFile();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		Object[] arr = vdb.nomen.keySet().toArray();
+		Arrays.sort(arr);
+		System.gc();
+		for (Object p2 : arr) {
+			b2.add(new JLabel((String) p2));
+		}
+		dia2.add(new JScrollPane(b2));
+		JButton cl2 = new JButton("OK");
+		cl2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dia2.setVisible(false);
+			}
+		});
+		dia2.add("South", cl2);
+		dia2.setSize(400, 400);
+		dia2.setLocation(0, 410);
+		System.gc();
+
+		dia3 = new Dialog(fr, "Bekannte Verben");
+		dia3.setLayout(new BorderLayout(10, 10));
+		Box b3 = new Box(BoxLayout.Y_AXIS);
+		Object[] arr3 = vdb.verbs.keySet().toArray();
+		Arrays.sort(arr3);
+		System.gc();
+		for (Object p3 : arr3) {
+			b3.add(new JLabel((String) p3));
+		}
+		dia3.add(new JScrollPane(b3));
+		JButton cl3 = new JButton("OK");
+		cl3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dia3.setVisible(false);
+			}
+		});
+		dia3.add("South", cl3);
+		dia3.setSize(400, 400);
+		dia3.setLocation(410, 0);
+		System.gc();
+
+		dia4 = new Dialog(fr, "Bekannte Adjektive");
+		dia4.setLayout(new BorderLayout(10, 10));
+		Box b4 = new Box(BoxLayout.Y_AXIS);
+		Object[] arr4 = vdb.adj.keySet().toArray();
+		Arrays.sort(arr4);
+		System.gc();
+		for (Object p4 : arr4) {
+			b4.add(new JLabel((String) p4));
+		}
+		dia4.add(new JScrollPane(b4));
+		JButton cl4 = new JButton("OK");
+		cl4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dia4.setVisible(false);
+			}
+		});
+		dia4.add("South", cl4);
+		dia4.setSize(400, 400);
+		dia4.setLocation(410, 410);
+		System.gc();
 	}
 
 	/**
@@ -423,11 +542,12 @@ public class JElizaGui implements ActionListener {
 		jmb.add(file);
 
 		JMenu wissen = new JMenu("Wissens-Datenbank");
-		Util.mkJMenuItem(wissen, "Bekannte Personen / Dinge anzeigen", this,
+		Util.mkJMenuItem(wissen, "Bekannte Wörter anzeigen", this,
 				"showPersons");
 		Util.mkJMenuItem(wissen, "-", this, "open");
 		Util.mkJMenuItem(wissen, "Informationen aus Text beibringen", this,
 				"newtext");
+		Util.mkJMenuItem(wissen, "Adjektiv beibringen", this, "addAdj");
 		Util.mkJMenuItem(wissen, "Verb beibringen", this, "addVerb");
 		Util.mkJMenuItem(wissen, "-", this, "open");
 		Util.mkJMenuItem(wissen, "Datenbank generieren", this,
@@ -514,73 +634,7 @@ public class JElizaGui implements ActionListener {
 	}
 
 	/**
-	 * Fügt Texte dem Wissen hinzu.
-	 */
-	private synchronized void addTextWissen() {
-		long millis = Calendar.getInstance().getTimeInMillis();
-		try {
-			FileManager.copyFileBuffered(absoluteUrl + "text.vdb", absoluteUrl
-					+ "backup/text.vdb-ms-" + millis);
-		} catch (FileNotFoundException e1) {
-			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
-					+ absoluteUrl + "text.vdb"
-					+ " nicht laden. (File not found)");
-			return;
-		} catch (IOException e1) {
-			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
-					+ absoluteUrl + "text.vdb" + " nicht laden. (IO-Error)");
-			return;
-		}
-		JOptionPane.showMessageDialog(fr, "ACHTUNG: \n " + "\n"
-				+ "Es duerfen nur reine Text-Dateien (plain text), "
-				+ "die normalerweise mit '.txt' enden, hinzugefuegt werden.\n"
-				+ "\n" + "Ansonsten kann das Programm kaputt gehen.");
-		JFileChooser fc = new JFileChooser();
-		fc.showOpenDialog(fr);
-		if (fc.getSelectedFile() == null
-				|| fc.getSelectedFile().toString() == "") {
-			return;
-		}
-		try {
-			neuWissen = FileManager.readFileIntoString(fc.getSelectedFile()
-					+ "");
-		} catch (IOException e) {
-			neuWissen = "";
-			JOptionPane.showMessageDialog(fr, "Konnte Text "
-					+ fc.getSelectedFile() + " nicht laden.");
-			return;
-		}
-
-		InputStream is;
-		try {
-			is = new FileInputStream(absoluteUrl + "backup/text.vdb-ms-"
-					+ millis);
-			BufferedOutputStream os = new BufferedOutputStream(
-					new FileOutputStream(absoluteUrl + "text.vdb"));
-			os.write(neuWissen.getBytes());
-			int count = 0;
-			byte[] b = new byte[256];
-			while ((count = is.read(b)) != -1) {
-				os.write(b, 0, count);
-			}
-			is.close();
-			os.close();
-		} catch (FileNotFoundException e1) {
-			JOptionPane.showMessageDialog(fr, "Konnte Wissen " + absoluteUrl
-					+ "text.vdb" + " nicht speichern.");
-			return;
-		} catch (IOException e) {
-			JOptionPane.showMessageDialog(fr, "Konnte Wissen " + absoluteUrl
-					+ "text.vdb" + " nicht speichern.");
-			return;
-		}
-		JOptionPane.showMessageDialog(fr, "Wissen " + fc.getSelectedFile()
-				+ " hinzugefuegt.");
-		fr.repaint();
-	}
-
-	/**
-	 * Fügt Texte dem Wissen hinzu.
+	 * Fügt Verben hinzu.
 	 */
 	private synchronized void addVerb() {
 		String verbs = JOptionPane
@@ -620,24 +674,49 @@ public class JElizaGui implements ActionListener {
 	}
 
 	/**
+	 * Fügt Verben hinzu.
+	 */
+	private synchronized void addAdj() {
+		String adj = JOptionPane
+				.showInputDialog(
+						fr,
+						"Adjektive ?\nbitte in allen Formen angeben, dh. z.b."
+								+ "nicht nur 'schön', sondern 'schön', 'schöner' und 'schönsten'");
+		if (adj == null || adj == "") {
+			return;
+		}
+		adj = Util.replace(adj, "ä", "ae");
+		adj = Util.replace(adj, "ö", "oe");
+		adj = Util.replace(adj, "ü", "ue");
+		adj = Util.replace(adj, "ß", "ss");
+		adj = Util.replace(adj, "am", " ");
+		adj = Util.replace(adj, "  ", " ");
+		adj = Util.toASCII(adj);
+
+		Scanner sc = new Scanner(adj);
+		while (sc.hasNext()) {
+			String tmp = sc.next();
+			adj += " " + tmp + "er";
+			adj += " " + tmp + "sten";
+		}
+		try {
+			FileManager.writeStringIntoFile(FileManager
+					.readFileIntoString("knownAdj.txt")
+					+ " " + adj, "knownAdj.txt");
+		} catch (IOException e) {
+			neuWissen = "";
+			JOptionPane.showMessageDialog(fr, "IO-Error: knownAdj.txt");
+			return;
+		}
+
+		JOptionPane.showMessageDialog(fr, "Adjektive hinzugefuegt.");
+		fr.repaint();
+	}
+
+	/**
 	 * Fügt Texte dem Wissen hinzu.
 	 */
 	private synchronized void genWissenDatenbank() {
-		long millis = Calendar.getInstance().getTimeInMillis();
-		try {
-			FileManager.copyFileBuffered(absoluteUrl + "text.vdb", absoluteUrl
-					+ "backup/text.vdb-ms-" + millis);
-		} catch (FileNotFoundException e1) {
-			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
-					+ absoluteUrl + "text.vdb"
-					+ " nicht laden. (File not found)");
-			e1.printStackTrace();
-			return;
-		} catch (IOException e1) {
-			JOptionPane.showMessageDialog(fr, "Konnte bisheriges Wissen "
-					+ absoluteUrl + "text.vdb" + " nicht laden. (IO-Error)");
-			return;
-		}
 		VerbDataBase vdb = null;
 		System.out.println("---- Generating Verb Database ----");
 		try {
@@ -646,9 +725,17 @@ public class JElizaGui implements ActionListener {
 			e1.printStackTrace();
 		}
 		System.out.println("---- Writing it into verbs.txt ----");
-		vdb.writeIntoFile("verbs.txt");
+		vdb.writeIntoFile();
 		JOptionPane.showMessageDialog(fr, "Habe Datenbank neu generiert.");
 		fr.repaint();
+	}
+	
+	private void sleep(long x) {
+		try {
+			Thread.sleep(x);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 } // class JEliza

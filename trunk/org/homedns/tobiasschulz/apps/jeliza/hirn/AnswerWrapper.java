@@ -1,9 +1,6 @@
 package org.homedns.tobiasschulz.apps.jeliza.hirn;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.io.*;
 
 import org.homedns.tobiasschulz.apps.jeliza.Util;
 import org.homedns.tobiasschulz.util.satzparser.VerbDataBase;
@@ -40,7 +37,7 @@ public class AnswerWrapper {
 		System.out.println("---- Generating Verb Database ----");
 		try {
 			vdb = new VerbDataBase();
-			vdb.loadFromFile("verbs.txt");
+			vdb.loadFromFile();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -173,10 +170,11 @@ public class AnswerWrapper {
 			String vorher = "";
 			String warschon = "";
 			for (String st : woerter) {
-				if ((st.charAt(0) + "").toLowerCase() == (st.charAt(0) + "")
-						|| (st.toLowerCase() == "der"
-								|| st.toLowerCase() == "die" || st
-								.toLowerCase() == "das")) {
+				if (Character.toLowerCase(st.charAt(0)) == st.charAt(0)
+						|| (st.toLowerCase().hashCode() == "der".hashCode() || vdb.isAdj(st.toLowerCase())
+								|| st.toLowerCase().hashCode() == "die"
+										.hashCode() || st.toLowerCase()
+								.hashCode() == "das".hashCode())) {
 					vorher = s;
 					continue;
 				}
@@ -191,6 +189,10 @@ public class AnswerWrapper {
 							&& !warschon.toLowerCase().contains(
 									Genus.getErSieEs(Genus.getGenus(strLow))
 											.toLowerCase())) {
+						String[] w = strLow.split(" ");
+						if (w.length > 2) {
+							continue;
+						}
 						if (Genus.getErSieEs(Genus.getGenus(strLow))
 								.toLowerCase().hashCode() == "er".hashCode()) {
 							hirn.erSieEsGedaechtnis[0] = str;

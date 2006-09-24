@@ -21,8 +21,6 @@ public class Answerer {
 
 	public Gehirn hirn;
 
-	public String outAll = "";
-
 	public String naechsteFra = "0";
 
 	public String subjekt = "";
@@ -73,11 +71,15 @@ public class Answerer {
 
 		if (fra.indexOf("tschue") > -1)
 			return antExit;
+		if (fra.indexOf("Tschoe") > -1)
+			return antExit;
 		if (fra.indexOf("auf wiedersehen") > -1)
 			return antExit;
 		if (fra.indexOf("bis bald") > -1)
 			return antExit;
 		if (fra.indexOf("bis nachher") > -1)
+			return antExit;
+		if (fra.indexOf("auf bald") > -1)
 			return antExit;
 		if (fra.indexOf("danke") > -1)
 			return "Fuer was bedankst du dich?";
@@ -275,10 +277,6 @@ public class Answerer {
 			String dasIst = "";
 			dasIst = hirn.getAnt("was " + obj);
 			if (dasIst == null) {
-				outAll = "<script>"
-						+ "window.setTimeout(self.location.href=\""
-						+ "http://tobiasschulz.homedns.org/intelligenz/jeliza/addWord.php?was=was "
-						+ obj + "\", 3000);" + "</script>";
 				dasIst = ant;
 			}
 
@@ -297,10 +295,6 @@ public class Answerer {
 			String dasIst = "";
 			dasIst = hirn.getAnt("wer " + obj);
 			if (dasIst == null) {
-				outAll = "<script>"
-						+ "window.setTimeout(self.location.href=\""
-						+ "http://tobiasschulz.homedns.org/intelligenz/jeliza/addWord.php?was=was "
-						+ obj + "\", 3000);" + "</script>";
 				dasIst = ant;
 			}
 
@@ -320,10 +314,6 @@ public class Answerer {
 			String dasIst = "";
 			dasIst = hirn.getAnt("wieso " + obj);
 			if (dasIst == null) {
-				outAll = "<script>"
-						+ "window.setTimeout(self.location.href=\""
-						+ "http://tobiasschulz.homedns.org/intelligenz/jeliza/addWord.php?was=wieso "
-						+ obj + "\", 3000);" + "</script>";
 				dasIst = ant;
 			}
 
@@ -342,10 +332,6 @@ public class Answerer {
 			String dasIst = "";
 			dasIst = hirn.getAnt("wie " + obj);
 			if (dasIst == null) {
-				outAll = "<script>"
-						+ "window.setTimeout(self.location.href=\""
-						+ "http://tobiasschulz.homedns.org/intelligenz/jeliza/addWord.php?was=wie "
-						+ obj + "\", 3000);" + "</script>";
 				dasIst = ant;
 			}
 
@@ -657,7 +643,7 @@ public class Answerer {
 		System.out.println("---- Generating Verb Database ----");
 		try {
 			vdb = new VerbDataBase();
-			vdb.loadFromFile("verbs.txt");
+			vdb.loadFromFile();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -724,7 +710,7 @@ public class Answerer {
 		System.out.println("---- Generating Verb Database ----");
 		try {
 			vdb = new VerbDataBase();
-			vdb.loadFromFile("verbs.txt");
+			vdb.loadFromFile();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

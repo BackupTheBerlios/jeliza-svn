@@ -19,7 +19,7 @@ import javax.servlet.http.*;
 public class JEliza extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	String absoluteUrl = "/var/kunden/webs/jeliza/intelligenz/jeliza/";
 
 	String oldFra = "";
@@ -121,7 +121,8 @@ public class JEliza extends HttpServlet {
 
 		hirn.re.naechsteFra = "0";
 
-		ant = hirn.fragenAntworter.processQuestion(new Satz(fra, fra), hirn.re, hirn).satzHtml;
+		ant = hirn.fragenAntworter.processQuestion(new Satz(fra, fra), hirn.re,
+				hirn).satzHtml;
 		userSayln(ofra);
 		println(ant);
 		session.setAttribute("ant", ant);
@@ -175,8 +176,8 @@ public class JEliza extends HttpServlet {
 		session.removeAttribute("ant");
 		session.removeAttribute("outBuf");
 
-		outAll = "<script>\n" +
-				"self.location.href="
+		outAll = "<script>\n"
+				+ "self.location.href="
 				+ "'http://tobiasschulz.homedns.org/intelligenz-jeliza.jsp';\n</script>";
 
 		printIt(request, response);
@@ -194,17 +195,10 @@ public class JEliza extends HttpServlet {
 	 */
 	public void printIt(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-		outAll = hirn.re.outAll;
-		if (outAll.length() < 5) {
-			out.println(HTMLOutputData.outHead);
-			out.println(outBuf);
-			out.println(HTMLOutputData.outForm);
-			out.println(HTMLOutputData.outFoot);
-		} else {
-			out.println(outAll);
-			outAll = "";
-			hirn.re.outAll = outAll;
-		}
+		out.println(HTMLOutputData.outHead);
+		out.println(outBuf);
+		out.println(HTMLOutputData.outForm);
+		out.println(HTMLOutputData.outFoot);
 	}
 
 } // class JEliza

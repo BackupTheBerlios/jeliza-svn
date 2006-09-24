@@ -13,7 +13,7 @@ public class GernerateVerbDatabase {
 			e1.printStackTrace();
 		}
 		System.out.println("---- Writing it into verbs.txt ----");
-		vdb.writeIntoFile("verbs.txt");
+		vdb.writeIntoFile();
 	}
 
 }

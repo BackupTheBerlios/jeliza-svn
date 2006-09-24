@@ -1,13 +1,7 @@
 package org.homedns.tobiasschulz.apps.jeliza.hirn;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.StringTokenizer;
-import java.util.Vector;
+import java.io.*;
+import java.util.*;
 
 import org.homedns.tobiasschulz.apps.jeliza.Util;
 

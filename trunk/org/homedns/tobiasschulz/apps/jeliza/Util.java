@@ -2,9 +2,7 @@ package org.homedns.tobiasschulz.apps.jeliza;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
+import javax.swing.*;
 
 /**
  * Hilfsklasse des Java-Servlets JEliza, die ein paar Hilfsmethoden bereitstellt
