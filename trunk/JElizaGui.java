@@ -441,7 +441,7 @@ public class JElizaGui implements ActionListener {
 		dia = new Dialog(fr, "Bekannte Personen");
 		dia.setLayout(new BorderLayout(10, 10));
 		Box b = new Box(BoxLayout.Y_AXIS);
-		File f = new File("personen/");
+		File f = new File("personen" + File.separator);
 		String[] ps = f.list();
 		for (String p : ps) {
 			b.add(new JLabel(p));
@@ -717,6 +717,7 @@ public class JElizaGui implements ActionListener {
 	 * Fügt Texte dem Wissen hinzu.
 	 */
 	private synchronized void genWissenDatenbank() {
+		prepareShowWords();
 		VerbDataBase vdb = null;
 		System.out.println("---- Generating Verb Database ----");
 		try {
