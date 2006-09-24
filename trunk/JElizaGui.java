@@ -99,12 +99,6 @@ public class JElizaGui implements ActionListener {
 		
 		tex.setText("Generiere Wortschatz ...");
 
-		prepareShowWords();
-		
-		sleep(1500);
-		
-		tex.setText("Generiere grafische Oberflaeche ...");
-
 		String version;
 		try {
 			version = FileManager.readFileIntoString("version.ver");
@@ -119,6 +113,12 @@ public class JElizaGui implements ActionListener {
 		fr.setBackground(Color.white);
 		fr.setForeground(Color.darkGray);
 		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		prepareShowWords();
+		
+		sleep(1500);
+		
+		tex.setText("Generiere grafische Oberflaeche ...");
 
 		jelizaText = new JEditorPane("text/html", "");
 		jelizaText.setEditable(false);
