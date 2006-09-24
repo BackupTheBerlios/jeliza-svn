@@ -485,13 +485,19 @@ public class Answerer {
 		String[] antGrund = { "? Willst du das so?",
 				"? Entspricht das deinen Vorstellungen?", "? Langweilig...",
 				"? Gut.", "? Naja...", "? Dz Dz ...", "? Mmmmm...",
-				"? Schwafel nur weiter. Ich hoere dir mit Sicherheit zu!",
 				"? Wirklich? Schrecklich ...", "? Sehen das alle so?",
-				"? Koenntest du mir sagen warum?", "? Oh gott!", "? Warum?",
-				"? Weshalb?", "? Ist das Normal?",
-				"? Bist du sicher dass ich das verstehe?",
-				"? ich verstehe nicht ..." };
-		ant += antGrund[r.nextInt(antGrund.length)];
+				"? Oh gott!", "? Warum?",
+				"? Weshalb?", "? Ist das Normal?", };
+		String[] einzelAntwort = { "Das finde ich auch !", "Der Meinung bin ich auch.",
+				"Das ist wohl so.", "Das sagt mein Programmierer auch.", 
+				"Stimmt das wirklich?", "Wie kann das passieren.", "Schade.", "Traurig.",
+				"Glaubst du, das weiss ich nicht?"};
+
+		if (r.nextInt(10) < 7) {
+			ant += antGrund[r.nextInt(antGrund.length)];
+		} else  {
+			ant = einzelAntwort[r.nextInt(einzelAntwort.length)];
+		}
 
 		return ant;
 	}
@@ -756,10 +762,16 @@ public class Answerer {
 
 		String[] ja = { "Das finde ich auch !", "Der Meinung bin ich auch.",
 				"Das ist wohl so.", "Warscheinlich.",
-				"Das war ja auch schon immer so,", "Klar",
+				"Das war ja auch schon immer so", "Klar",
 				"Das sagt mein Programmierer auch.", "Ich weiss.",
-				"Glaubst du, das weiss ich nicht?", "Natuerlich.",
-				"Ich bin nicht dieser Meinung." };
+				"Stimmt das wirklich?", "Wie kann das passieren.", "Schade.","Traurig.",
+				"Glaubst du, das weiss ich nicht?", "Natuerlich." };
+
+		String[] einzelAntwort = { "Das finde ich auch !", "Der Meinung bin ich auch.",
+				"Das ist wohl so.", "Das sagt mein Programmierer auch.", "Ich weiss.",
+				"Stimmt das wirklich?", "Wie kann das passieren.", "Schade.","Traurig.",
+				"Super",
+				"Glaubst du, das weiss ich nicht?"};
 
 		if (spm.satzType == SatzParseManager.EINFACHE_FRAGE) {
 			addPerson(subjekt, verb, objekt);
@@ -880,7 +892,11 @@ public class Answerer {
 				Random r = new Random();
 
 				if (isYes) {
-					ant = ja[r.nextInt(ja.length - 1)];
+					if (r.nextInt(10) < 7) {
+						ant = ja[r.nextInt(ja.length - 1)];
+					} else {
+						ant = einzelAntwort[r.nextInt(einzelAntwort.length - 1)];
+					}
 					return ant;
 				} else {
 					ant = answers[r.nextInt(y)];
