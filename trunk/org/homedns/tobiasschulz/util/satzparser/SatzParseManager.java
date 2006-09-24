@@ -68,12 +68,12 @@ public class SatzParseManager {
 			}
 			if (isSimple && !isQues) {
 				parseSimpleFrage(str.substring(0, str.length() - 1), vdb);
-			} else if (!isSimple && !isQues){
+			} else if (!isSimple && !isQues) {
 				parseExtendedFrage(str.substring(0, str.length() - 1), vdb);
 			}
 			if (isSimple && isQues) {
 				parseSimpleFrage(str, vdb);
-			} else if (!isSimple && isQues){
+			} else if (!isSimple && isQues) {
 				parseExtendedFrage(str, vdb);
 			}
 		} else {
@@ -112,7 +112,7 @@ public class SatzParseManager {
 	 */
 	private void parseHauptsatz(String str, VerbDataBase vdb) {
 		if (str.endsWith(".")) {
-			str = str.substring(0, str.length() -1);
+			str = str.substring(0, str.length() - 1);
 		}
 		if (str.toLowerCase().startsWith("ja, ")) {
 			str = str.substring(4);
@@ -170,6 +170,7 @@ public class SatzParseManager {
 
 		@SuppressWarnings("unused")
 		short mode = 1;
+		boolean warSchonNomen = false;
 
 		strSubjekt = "";
 		strObjekt = "";
@@ -191,12 +192,15 @@ public class SatzParseManager {
 				continue;
 			}
 
-			if (((short) (mode) == (short) (2) || (origPat.hashCode() != pat.toLowerCase()
-					.hashCode()))
-					&& mode < 4) {
-				// System.out.println(origPat + origPat.hashCode());
-				// System.out.println(pat + pat.hashCode());
+			if (((/*(short) (mode) == (short) (2)
+					|| (short) (mode) == (short) (3)
+					||*/(short) (mode) <= (short) (5) ||  (origPat.hashCode() != pat.toLowerCase().hashCode())) && scanner
+					.hasNext() && !warSchonNomen)
+					&& mode < 5) {
 
+				if ((origPat.hashCode() != pat.toLowerCase().hashCode())) {
+					warSchonNomen = true;
+				}
 				strSubjekt += pat + " ";
 				continue;
 			}
@@ -255,8 +259,8 @@ public class SatzParseManager {
 				continue;
 			}
 
-			if (((short) (mode) == (short) (2) || (origPat.hashCode() != pat.toLowerCase()
-					.hashCode()))
+			if (((short) (mode) == (short) (2) || (origPat.hashCode() != pat
+					.toLowerCase().hashCode()))
 					&& mode < 4) {
 				strSubjekt += pat + " ";
 				continue;
