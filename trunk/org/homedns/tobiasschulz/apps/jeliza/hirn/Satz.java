@@ -17,7 +17,6 @@ public class Satz {
 		satzHtml = ht;
 		if (gef != -1)
 			gefuehl = gef;
-		System.out.println(gef);
 	}
 
 	public Satz(String pl, String ht, Integer gef, Gehirn h) {
@@ -25,7 +24,6 @@ public class Satz {
 		satzHtml = ht;
 		if (gef != -1)
 			gefuehl = gef;
-		System.out.println(gef);
 		hirn = h;
 	}
 
@@ -34,7 +32,6 @@ public class Satz {
 		satzHtml = ht;
 		if (gef != -1)
 			gefuehl = gef;
-		System.out.println(gef);
 		istAntortAuf = answerOf;
 	}
 
@@ -43,7 +40,6 @@ public class Satz {
 		satzHtml = ht;
 		if (gef != -1)
 			gefuehl = gef;
-		System.out.println(gef);
 		hirn = h;
 		istAntortAuf = answerOf;
 	}

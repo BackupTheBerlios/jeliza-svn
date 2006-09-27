@@ -10,13 +10,13 @@ import java.util.Scanner;
  */
 public class SatzParseManager {
 
-	public String strSubjekt = null;
+	public String strSubjekt = "";
 
-	public String strVerb = null;
+	public String strVerb = "";
 
-	public String strObjekt = null;
+	public String strObjekt = "";
 
-	public String strFrageWort = null;
+	public String strFrageWort = "";
 
 	public short satzType = 0;
 
@@ -28,6 +28,9 @@ public class SatzParseManager {
 
 	String[] frageWoerter = { "Was", "Wer", "Wie", "Wo", "Wann", "Wieso",
 			"Weshalb", "Warum" };
+
+	String[] anrede = { "Herr", "Frau", "Fraeulein", "Mr", "Mrs", "Mr.",
+			"Mrs.", "Herrn" };
 
 	/**
 	 * Konstruktor ist private, Klasse kann nur mit Methode parse() erzeugt
@@ -49,6 +52,10 @@ public class SatzParseManager {
 	 *            Der Satz
 	 */
 	private SatzParseManager(String str, VerbDataBase vdb) {
+		for (String tmp : anrede) {
+			str.replace(tmp.toLowerCase() + " ", tmp + " ");
+			str.replace(tmp + " ", tmp.toLowerCase() + " ");
+		}
 		str = str.trim();
 		if (vdb.isVerb(str.split(" ")[0]) && !str.endsWith("?")) {
 			str += "?";
@@ -79,6 +86,11 @@ public class SatzParseManager {
 		} else {
 			parseHauptsatz(str, vdb);
 		}
+		
+		strSubjekt = strSubjekt.replace("?", "").replace("!", "");
+		strVerb = strVerb.replace("?", "").replace("!", "");
+		strObjekt = strObjekt.replace("?", "").replace("!", "");
+		strFrageWort = strFrageWort.replace("?", "").replace("!", "");
 	}
 
 	/**
@@ -169,8 +181,17 @@ public class SatzParseManager {
 		Scanner scanner = new Scanner(str);
 
 		@SuppressWarnings("unused")
-		short mode = 1;
-		boolean warSchonNomen = false;
+		int mode = 0;
+		int maxNomen = 1;
+		int maxWoerterForSubj = 5;
+
+		for (String tmp : anrede) {
+			if (str.contains(tmp + " ")) {
+				maxWoerterForSubj++;
+				maxNomen++;
+			}
+			str.replace(tmp + " ", tmp.toLowerCase() + " ");
+		}
 
 		strSubjekt = "";
 		strObjekt = "";
@@ -192,17 +213,14 @@ public class SatzParseManager {
 				continue;
 			}
 
-			if (((/*(short) (mode) == (short) (2)
-					|| (short) (mode) == (short) (3)
-					||*/(short) (mode) <= (short) (5) ||  (origPat.hashCode() != pat.toLowerCase().hashCode())) && scanner
-					.hasNext() && !warSchonNomen)
-					&& mode < 5) {
-
-				if ((origPat.hashCode() != pat.toLowerCase().hashCode())) {
-					warSchonNomen = true;
+			if (mode <= maxWoerterForSubj && maxNomen > 0) {
+				if (scanner.hasNext()) {
+					if ((origPat.hashCode() != pat.toLowerCase().hashCode())) {
+						maxNomen--;
+					}
+					strSubjekt += pat + " ";
+					continue;
 				}
-				strSubjekt += pat + " ";
-				continue;
 			}
 
 			strObjekt += pat + " ";

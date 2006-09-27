@@ -15,7 +15,7 @@ import org.homedns.tobiasschulz.apps.jeliza.hirn.*;
 
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
- * versteht (verstehen sollte) 
+ * versteht (verstehen sollte)
  * 
  * @author Tobias Schulz
  * @version 0.3
@@ -96,7 +96,7 @@ public class JElizaGui implements ActionListener {
 			e.printStackTrace();
 			System.exit(2);
 		}
-		
+
 		tex.setText("Generiere Wortschatz ...");
 
 		String version;
@@ -115,16 +115,15 @@ public class JElizaGui implements ActionListener {
 		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		prepareShowWords();
-		
-		sleep(1500);
-		
+
 		tex.setText("Generiere grafische Oberflaeche ...");
 
 		jelizaText = new JEditorPane("text/html", "");
 		jelizaText.setEditable(false);
-		jelizaText.setText("<html><body>" + "Hallo!\n<br>" + "\n<br>"
-				+ "Bitte Antworte IMMER in ganzen Saetzen.<br>\n" + "<br>\n"
-				+ "Wie ist dein Name?" + "</body></html>");
+		jelizaText.setText("<html><body>" + "Guten Tag!\n<br>" + "\n<br>"
+				+ "Bitte Antworte <b>immer in ganzen Saetzen</b> und "
+				+ "<b>vermeide Nebensätze</b> !!<br>\n" + "<br>\n"
+				+ "Wie heißt du?" + "</body></html>");
 		jelizaText.setBackground(Color.white);
 		jelizaText.setForeground(Color.darkGray);
 		fr.add(new JScrollPane(jelizaText), "Center");
@@ -169,7 +168,7 @@ public class JElizaGui implements ActionListener {
 
 		show();
 		userText.requestFocus();
-		
+
 		win.setVisible(false);
 		tex = null;
 		win = null;
@@ -184,33 +183,26 @@ public class JElizaGui implements ActionListener {
 		sidebar.removeAll();
 		oberSidebar.removeAll();
 
-		sidebar.add(new JLabel("Gefuehl heute:"));
+		sidebar.add(new JLabel("Gefuehl im Moment:"));
 		sidebar.add(new JTextField(hirn.gefuehlHeute.getFeeling()));
-
-		JButton save = new JButton("Gespraech Speichern");
-		save.addActionListener(this);
-		save.setActionCommand("save");
-		sidebar.add(save);
-
-		JButton open = new JButton("Gespraech Laden");
-		open.addActionListener(this);
-		open.setActionCommand("open");
-		sidebar.add(open);
-
-		JButton genWissenDatenbank = new JButton("Datenbank generieren");
-		genWissenDatenbank.addActionListener(this);
-		genWissenDatenbank.setActionCommand("genWissenDatenbank");
-		sidebar.add(genWissenDatenbank);
 
 		String[] st = hirn.re.analyseSatz(fra, "");
 		if (st == null) {
 			st = new String[4];
 		}
+		if (st[2] != null) {
+			st[2] = st[2].replace("null", "");
+		}
+		sidebar.add(new JLabel("Name des Benutzers:"));
+		sidebar.add(new JTextField(System.getProperty("jeliza.user.name")));
+
+		sidebar.add(new JLabel(""));
+
 		sidebar.add(new JLabel("Subjekt im Satz:"));
 		sidebar.add(new JTextField(st[0]));
 		sidebar.add(new JLabel("Verb im Satz:"));
 		sidebar.add(new JTextField(st[1]));
-		sidebar.add(new JLabel("Objekt im Satz:"));
+		sidebar.add(new JLabel("Objekt / Rest des Satzes:"));
 		sidebar.add(new JTextField(st[2]));
 		sidebar.add(new JLabel("Fragewort im Satz:"));
 		sidebar.add(new JTextField(st[3]));
@@ -289,6 +281,9 @@ public class JElizaGui implements ActionListener {
 		if (e.getActionCommand() == "showPersons") {
 			showWords();
 		}
+		if (e.getActionCommand() == "searchForArtikels") {
+			searchForArtikels();
+		}
 		if (e.getActionCommand() == "help") {
 			displayHelp();
 		}
@@ -311,9 +306,12 @@ public class JElizaGui implements ActionListener {
 								+ "Beachten sie jeden Satz als vollstaendig unabhängig zu anderen.\n"
 								+ "\n"
 								+ "Also Nicht (!):\n"
-								+ "\"Yasmin flog los. Sie stuerzte nach 2 Minuten ab.\"\n"
+								+ "\"Tobias flog los. Er stuerzte nach 2 Minuten ab.\"\n"
 								+ "Sondern:\n"
-								+ "\"Yasmin flog los. Yasmin stuerzte 2 Minuten nach ihrem Start ab.\"\n");
+								+ "\"Tobias flog los. Tobias stuerzte 2 Minuten nach seinem Start ab.\"\n"
+								+ "\n\n"
+								+ "Lösche jetzt diesen Text aus dem Kasten und gib einen eigenen,\n"
+								+ "der den oben genaannten Kriterien entspricht, ein.");
 				dia.add(new JScrollPane(ar));
 				JButton cl = new JButton("Scannen");
 				cl.addActionListener(new ActionListener() {
@@ -364,14 +362,7 @@ public class JElizaGui implements ActionListener {
 					if (t[3] == "") {
 						t[3] = "null";
 					}
-					File f = new File("wortschatz/" + t[0] + "/" + t[1] + "/"
-							+ t[2] + "/" + t[3]);
-					f.getParentFile().mkdirs();
-					try {
-						FileManager.writeStringIntoFile("true", f.toString());
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+					hirn.addFakt(t[1], t[2], t[3], "", "true");
 				}
 			} else {
 				txt += "Subjekt : " + t[1] + "\n";
@@ -389,21 +380,8 @@ public class JElizaGui implements ActionListener {
 					if (t[3] == "") {
 						t[3] = "null";
 					}
-					File f = new File("wortschatz/" + t[0] + "/" + t[1] + "/"
-							+ t[2] + "/" + t[3]);
-					f.getParentFile().mkdirs();
-					try {
-						if (i == JOptionPane.YES_OPTION) {
-							FileManager.writeStringIntoFile("true", f
-									.toString());
-						}
-						if (i == JOptionPane.NO_OPTION) {
-							FileManager.writeStringIntoFile("false", f
-									.toString());
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+					hirn.addFakt(t[1], t[2], t[3], "",
+							(i == JOptionPane.YES_OPTION) ? "true" : "false");
 				}
 			}
 		}
@@ -430,6 +408,34 @@ public class JElizaGui implements ActionListener {
 				dia4.setSize(300, 300);
 				dia4.setLocation(310, 340);
 				dia4.setVisible(true);
+			}
+		}).start();
+	}
+
+	/**
+	 * Suche nach passendem Artikel für Nomen im WWW
+	 */
+	private void searchForArtikels() {
+		new Thread(new Runnable() {
+			public void run() {
+				VerbDataBase vdb = null;
+				try {
+					vdb = new VerbDataBase();
+					vdb.loadFromFile();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Object[] arr = vdb.nomen.keySet().toArray();
+				Arrays.sort(arr);
+				System.gc();
+				for (final Object p2 : arr) {
+					new Thread(new Runnable() {
+						public void run() {
+							Genus.getGenus((String) p2);
+						}
+					}).start();
+					sleep(800);
+				}
 			}
 		}).start();
 	}
@@ -462,7 +468,6 @@ public class JElizaGui implements ActionListener {
 		dia2.setLayout(new BorderLayout(10, 10));
 		Box b2 = new Box(BoxLayout.Y_AXIS);
 		VerbDataBase vdb = null;
-		System.out.println("---- Generating Verb Database ----");
 		try {
 			vdb = new VerbDataBase();
 			vdb.loadFromFile();
@@ -473,7 +478,12 @@ public class JElizaGui implements ActionListener {
 		Arrays.sort(arr);
 		System.gc();
 		for (Object p2 : arr) {
-			b2.add(new JLabel((String) p2));
+			String art = Genus.getDerDieDas(Genus.getGenus((String) p2, false));
+			if (art != "") {
+				b2.add(new JLabel(art + " " + (String) p2));
+			} else {
+				b2.add(new JLabel("??? " + (String) p2));
+			}
 		}
 		dia2.add(new JScrollPane(b2));
 		JButton cl2 = new JButton("OK");
@@ -549,6 +559,9 @@ public class JElizaGui implements ActionListener {
 				"newtext");
 		Util.mkJMenuItem(wissen, "Adjektiv beibringen", this, "addAdj");
 		Util.mkJMenuItem(wissen, "Verb beibringen", this, "addVerb");
+		Util.mkJMenuItem(wissen, "Im Internet nach Artikeln für "
+				+ "bekannte Nomen suchen", this, "searchForArtikels");
+
 		Util.mkJMenuItem(wissen, "-", this, "open");
 		Util.mkJMenuItem(wissen, "Datenbank generieren", this,
 				"genWissenDatenbank");
@@ -730,7 +743,7 @@ public class JElizaGui implements ActionListener {
 		JOptionPane.showMessageDialog(fr, "Habe Datenbank neu generiert.");
 		fr.repaint();
 	}
-	
+
 	private void sleep(long x) {
 		try {
 			Thread.sleep(x);

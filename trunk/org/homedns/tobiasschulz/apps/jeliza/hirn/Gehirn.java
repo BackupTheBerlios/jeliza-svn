@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 import org.homedns.tobiasschulz.apps.jeliza.Util;
+import org.homedns.tobiasschulz.io.FileManager;
 
 
 /**
@@ -153,11 +154,9 @@ public class Gehirn {
 			content = content.replace(re[1], "");
 			}
 
-			System.out.println(content);
 			definition = content.substring(content.indexOf("<p>"), content.indexOf("</p>"));
 			definition = Util.toASCII(definition);
 			
-			System.out.println(definition);
 
 			
 		} catch (IOException e) {
@@ -439,4 +438,76 @@ public class Gehirn {
 	void println(String str) {
 		System.out.println(str);
 	}
+	
+	/**
+	 * Fügt einen Fakt der Datenbank hinzu
+	 */
+	public void addFakt(String subjekt, String verben, String objekt, String fragw, String truefalse) {
+		if (subjekt == null || subjekt == "") {
+			subjekt = "null";
+		}
+		if (verben == null || verben == "") {
+			verben = "null";
+		}
+		if (objekt == null || objekt == "") {
+			objekt = "null";
+		}
+		String sub = subjekt.toLowerCase().trim();
+		String verb = verben.toLowerCase().trim();
+		String obj = objekt.toLowerCase().trim();
+		String subj = sub.replace("nicht", "").replace("  ", "");
+		String obje = obj.replace("nicht", "").replace("  ", "");
+
+
+		// Hauptsatz Bsp.: Till macht Unsinn
+		File f = new File("wortschatz/simple-sent/" + sub + "/"
+				+ verb + "/" + obj);
+		f.getParentFile().mkdirs();
+		try {
+			FileManager.writeStringIntoFile("true", f.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Einfache Frage Bsp.: Macht Till Unsinn?
+		f = new File("wortschatz/simple-ques/" + sub + "/"
+				+ verb + "/" + obj);
+		f.getParentFile().mkdirs();
+		try {
+			FileManager.writeStringIntoFile(truefalse, f.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Hauptsatz Bsp.: Till macht Unsinn (evtl. ohne "nicht)
+		f = new File("wortschatz/simple-sent/" + subj + "/"
+				+ verb + "/" + obje);
+		f.getParentFile().mkdirs();
+		try {
+			FileManager.writeStringIntoFile("true", f.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Einfache Frage Bsp.: Macht Till Unsinn? (evtl. ohne "nicht)
+		f = new File("wortschatz/simple-ques/" + subj + "/"
+				+ verb + "/" + obje);
+		f.getParentFile().mkdirs();
+		try {
+			FileManager.writeStringIntoFile(truefalse, f.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Was Frage Bsp.: Was macht Till?
+		f = new File("wortschatz/ext-ques/was/" + sub + "/"
+				+ verb + "/null");
+		f.getParentFile().mkdirs();
+		try {
+			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt + "!", f.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 } // class Gehirn

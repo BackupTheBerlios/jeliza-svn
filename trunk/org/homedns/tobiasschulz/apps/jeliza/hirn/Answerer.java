@@ -63,6 +63,12 @@ public class Answerer {
 				"Wie du meinst!" };
 		String[] antNein = { "Sicher?", "Wirklich nicht?", "Meinst du?",
 				"Warum?" };
+		String[] vorstellen = { "ich heisse", "mein name ist",
+				"man nennt mich", "ich nenne mich" };
+		String[] vorstellenAnt = { "Das ist mein Traumname!",
+				"Kein schlechter Name.", "So moechte ich auch heissen!",
+				"Solche Namen mag ich.", "Heisst du wirklich so?" };
+
 		Random r = new java.util.Random();
 
 		Date dt = new Date();
@@ -99,16 +105,31 @@ public class Answerer {
 			return "Wir haben den " + df.format(dt) + "!";
 		if (fra.toLowerCase().indexOf("ich heisse") > -1) {
 			addPerson(fra.substring(10).trim(), "heisse", "ich");
+			System.setProperty("jeliza.user.name", fra.substring(10).trim());
+		}
+		if (fra.toLowerCase().indexOf("mein name ist") > -1) {
+			addPerson(fra.substring(13).trim(), "heisse", "ich");
+			System.setProperty("jeliza.user.name", fra.substring(13).trim());
+		}
+		if (fra.toLowerCase().indexOf("man nennt mich") > -1) {
+			addPerson(fra.substring(14).trim(), "heisse", "ich");
+			System.setProperty("jeliza.user.name", fra.substring(14).trim());
 		}
 
 		if (fra.startsWith("ja") && fra.length() < 4)
 			return antJa[r.nextInt(antJa.length)];
 
 		if (fra.startsWith("nein") && fra.length() < 6)
-			return antNein[r.nextInt(antJa.length)];
+			return antNein[r.nextInt(antNein.length)];
 
 		if (fra.indexOf("eliza") > -1)
 			return "Ja ich bin JEliza. Oder was hast du gefragt?";
+
+		for (String tmp : vorstellen) {
+			if (fra.toLowerCase().startsWith(tmp)) {
+				ant = vorstellenAnt[r.nextInt(vorstellenAnt.length)];
+			}
+		}
 
 		return ant;
 
@@ -486,16 +507,16 @@ public class Answerer {
 				"? Entspricht das deinen Vorstellungen?", "? Langweilig...",
 				"? Gut.", "? Naja...", "? Dz Dz ...", "? Mmmmm...",
 				"? Wirklich? Schrecklich ...", "? Sehen das alle so?",
-				"? Oh gott!", "? Warum?",
-				"? Weshalb?", "? Ist das Normal?", };
-		String[] einzelAntwort = { "Das finde ich auch !", "Der Meinung bin ich auch.",
-				"Das ist wohl so.", "Das sagt mein Programmierer auch.", 
-				"Stimmt das wirklich?", "Wie kann das passieren.", "Schade.", "Traurig.",
-				"Glaubst du, das weiss ich nicht?"};
+				"? Oh gott!", "? Warum?", "? Weshalb?", "? Ist das Normal?", };
+		String[] einzelAntwort = { "Das finde ich auch !",
+				"Der Meinung bin ich auch.", "Das ist wohl so.",
+				"Das sagt mein Programmierer auch.", "Stimmt das wirklich?",
+				"Wie kann das passieren.", "Schade.", "Traurig.",
+				"Glaubst du, das weiss ich nicht?" };
 
 		if (r.nextInt(10) < 7) {
 			ant += antGrund[r.nextInt(antGrund.length)];
-		} else  {
+		} else {
 			ant = einzelAntwort[r.nextInt(einzelAntwort.length)];
 		}
 
@@ -646,14 +667,12 @@ public class Answerer {
 		}
 
 		VerbDataBase vdb = null;
-		System.out.println("---- Generating Verb Database ----");
 		try {
 			vdb = new VerbDataBase();
 			vdb.loadFromFile();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		System.out.println("---- Parsing Sentence ----");
 
 		spm = SatzParseManager.parse(fra, vdb);
 
@@ -681,7 +700,7 @@ public class Answerer {
 				return null;
 			}
 		} catch (ObjektNotFoundException e) {
-			return null;
+			objekt = "null";
 		}
 
 		fragewort = spm.getFrageWort();
@@ -713,14 +732,12 @@ public class Answerer {
 		}
 
 		VerbDataBase vdb = null;
-		System.out.println("---- Generating Verb Database ----");
 		try {
 			vdb = new VerbDataBase();
 			vdb.loadFromFile();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		System.out.println("---- Parsing Sentence ----");
 
 		spm = SatzParseManager.parse(fra, vdb);
 
@@ -764,14 +781,14 @@ public class Answerer {
 				"Das ist wohl so.", "Warscheinlich.",
 				"Das war ja auch schon immer so", "Klar",
 				"Das sagt mein Programmierer auch.", "Ich weiss.",
-				"Stimmt das wirklich?", "Wie kann das passieren.", "Schade.","Traurig.",
-				"Glaubst du, das weiss ich nicht?", "Natuerlich." };
+				"Stimmt das wirklich?", "Wie kann das passieren.", "Schade.",
+				"Traurig.", "Glaubst du, das weiss ich nicht?", "Natuerlich." };
 
-		String[] einzelAntwort = { "Das finde ich auch !", "Der Meinung bin ich auch.",
-				"Das ist wohl so.", "Das sagt mein Programmierer auch.", "Ich weiss.",
-				"Stimmt das wirklich?", "Wie kann das passieren.", "Schade.","Traurig.",
-				"Super",
-				"Glaubst du, das weiss ich nicht?"};
+		String[] einzelAntwort = { "Das finde ich auch !",
+				"Der Meinung bin ich auch.", "Das ist wohl so.",
+				"Das sagt mein Programmierer auch.", "Ich weiss.",
+				"Stimmt das wirklich?", "Wie kann das passieren.", "Schade.",
+				"Traurig.", "Super", "Glaubst du, das weiss ich nicht?" };
 
 		if (spm.satzType == SatzParseManager.EINFACHE_FRAGE) {
 			addPerson(subjekt, verb, objekt);
@@ -791,8 +808,10 @@ public class Answerer {
 			}
 			try {
 				yesno = FileManager.readFileIntoString(
-						absoluteUrl + "wortschatz/simple-ques/" + subjekt.toLowerCase() + "/"
-								+ verb.toLowerCase() + "/" + objekt.toLowerCase()).trim();
+						absoluteUrl + "wortschatz/simple-ques/"
+								+ subjekt.toLowerCase() + "/"
+								+ verb.toLowerCase() + "/"
+								+ objekt.toLowerCase()).trim();
 			} catch (IOException e) {
 			}
 
@@ -808,21 +827,17 @@ public class Answerer {
 		}
 
 		if (spm.satzType == SatzParseManager.ERWEITERTE_FRAGE) {
-			addPerson(subjekt, verb, objekt);
-			String yesno;
-			try {
-				yesno = FileManager.readFileIntoString(
-						absoluteUrl + "wortschatz/ext-ques/" + fragewort + "/"
-								+ subjekt + "/" + verb + "/" + objekt).trim();
-			} catch (IOException e) {
-				return ant;
-			}
+			if (fragewort.trim().toLowerCase().hashCode() == "was".hashCode()) {
+				try {
+					ant = FileManager
+							.readFileIntoString(
+									absoluteUrl + "wortschatz/ext-ques/was/" + subjekt + "/"
+											+ verb + "/null").trim();
+				} catch (IOException e) {
+					return ant;
+				}
 
-			if (yesno.hashCode() == "true".hashCode()) {
-				return "Ja";
-			}
-			if (yesno.hashCode() == "false".hashCode()) {
-				return "Nein!";
+				return ant;
 			}
 		} else {
 			System.out.println("Satzart: " + spm.satzType);
@@ -831,46 +846,7 @@ public class Answerer {
 		if (spm.satzType == SatzParseManager.AUSSAGESATZ) {
 			addPerson(subjekt, verb, objekt);
 
-			String subj = subjekt.replace("nicht", "").replace("  ", "");
-			String obj = objekt.replace("nicht", "").replace("  ", "");
-
-			File f = new File("wortschatz/simple-sent/" + subjekt.toLowerCase() + "/" + verb.toLowerCase()
-					+ "/" + objekt.toLowerCase());
-			f.getParentFile().mkdirs();
-			try {
-				FileManager.writeStringIntoFile("true", f.toString());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-			f = new File("wortschatz/simple-sent/" + subj.toLowerCase() + "/" + verb.toLowerCase() + "/"
-					+ obj.toLowerCase());
-			f.getParentFile().mkdirs();
-			try {
-				FileManager.writeStringIntoFile("true", f.toString());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-			f = new File("wortschatz/simple-ques/" + subjekt.toLowerCase() + "/" + verb.toLowerCase() + "/"
-					+ objekt.toLowerCase());
-			f.getParentFile().mkdirs();
-			try {
-				FileManager.writeStringIntoFile("true", f.toString());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-			if (subjekt.contains("nicht") || subjekt.contains("nicht")) {
-				f = new File("wortschatz/simple-ques/" + subj.toLowerCase() + "/" + verb.toLowerCase()
-						+ "/" + obj.toLowerCase());
-				f.getParentFile().mkdirs();
-				try {
-					FileManager.writeStringIntoFile("true", f.toString());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
+			hirn.addFakt(subjekt, verb, objekt, fragewort, "true");
 
 			try {
 				BufferedReader br = FileManager.openBufferedReader(absoluteUrl

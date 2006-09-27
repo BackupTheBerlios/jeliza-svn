@@ -1,9 +1,6 @@
 AI ; kuenstliche Intelligenz ; KI
 AIDS-Erreger ; HI-Virus ; HIV ; human immunodeficiency virus ; Virus der Immunschwaechekrankheit
-AKW ; Atomkraftwerk ; Atommeiler ; Atomreaktor ; Kernkraftwerk ; Kernreaktor ; Nuklearmeiler
-ALGOL ; Algorithmic Language
-AM ; Amplitudenmodulation
-APO ; Aussrparlamentarische Opposition
+Atomkraftwerk ; Atommeiler ; Atomreaktor ; Kernkraftwerk ; Kernreaktor ; Nuklearmeiler
 Aal ; Torpedo ; Unterwassergeschoss
 Aas ; Kadaver ; Tierleiche
 Aasgeier ; Ausbeuter ; Halsabschneider ; Parasit ; Profitmacher ; Wucherer

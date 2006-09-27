@@ -34,7 +34,6 @@ public class AnswerWrapper {
 				+ "indem sie eine Mail an tobischulz@arcor.de mit dieser Frage schicken!";
 
 		VerbDataBase vdb = null;
-		System.out.println("---- Generating Verb Database ----");
 		try {
 			vdb = new VerbDataBase();
 			vdb.loadFromFile();
@@ -49,8 +48,25 @@ public class AnswerWrapper {
 
 		fra = Util.wegMitAbkuerzungen(fra);
 
-		System.out.println(hirn.erSieEsGedaechtnis[0]
-				+ hirn.erSieEsGedaechtnis[1] + hirn.erSieEsGedaechtnis[2]);
+		System.out.println("* Generiere Antwort auf Frage");
+		System.out.println("  Frage:   \"" + fra + "\"");
+
+		if (hirn.erSieEsGedaechtnis[0].trim().toLowerCase().hashCode() != "er"
+				.hashCode()) {
+			System.out.println("  Folgende Woerter werden ersetzt:");
+			System.out.println("  Er  -> " + hirn.erSieEsGedaechtnis[0]);
+		}
+		if (hirn.erSieEsGedaechtnis[1].trim().toLowerCase().hashCode() != "sie"
+				.hashCode()) {
+			System.out.println("  Folgende Woerter werden ersetzt:");
+			System.out.println("  Sie -> " + hirn.erSieEsGedaechtnis[1]);
+		}
+		if (hirn.erSieEsGedaechtnis[2].trim().toLowerCase().hashCode() != "es"
+				.hashCode()) {
+			System.out.println("  Folgende Woerter werden ersetzt:");
+			System.out.println("  Es  -> " + hirn.erSieEsGedaechtnis[2]);
+		}
+
 		String[] fs = fra.split(" ");
 		String q = "";
 		for (String st : fs) {
@@ -142,21 +158,16 @@ public class AnswerWrapper {
 
 			int i = 0;
 			while ((i = antPlain.indexOf('<')) > -1) {
-				System.out.println(antPlain);
 				antPlain = antPlain.substring(0, i)
 						+ antPlain.substring(antPlain.indexOf('>', i));
 			}
 			antPlain = antPlain.replace("<", "");
 			antPlain = antPlain.replace(">", "          ");
-			System.out.println(antPlain);
 
 			String[] woerter = fra.split(" ");
 			int feel = -1;
 			for (String tmp : woerter) {
-				System.out.println(tmp + hirn.gefuehlHeute.wortToFeeling);
 				if (hirn.gefuehlHeute.wortToFeeling.containsKey(tmp)) {
-					System.out.println(tmp
-							+ hirn.gefuehlHeute.wortToFeeling.get(tmp));
 					feel = hirn.gefuehlHeute.wortToFeeling.get(tmp);
 				}
 			}
@@ -167,11 +178,17 @@ public class AnswerWrapper {
 			}
 
 			woerter = fra.split(" ");
+			for (String st : woerter) {
+				if (vdb.isNomen(st)) {
+					Genus.getGenus(st);
+				}
+			}
 			String vorher = "";
 			String warschon = "";
 			for (String st : woerter) {
 				if (Character.toLowerCase(st.charAt(0)) == st.charAt(0)
-						|| (st.toLowerCase().hashCode() == "der".hashCode() || vdb.isAdj(st.toLowerCase())
+						|| (st.toLowerCase().hashCode() == "der".hashCode()
+								|| vdb.isAdj(st.toLowerCase())
 								|| st.toLowerCase().hashCode() == "die"
 										.hashCode() || st.toLowerCase()
 								.hashCode() == "das".hashCode())) {
@@ -199,9 +216,6 @@ public class AnswerWrapper {
 							warschon += Genus
 									.getErSieEs(Genus.getGenus(strLow))
 									.toLowerCase();
-							System.out.println(Genus.getErSieEs(Genus
-									.getGenus(str))
-									+ ": " + str);
 						}
 						if (Genus.getErSieEs(Genus.getGenus(strLow))
 								.toLowerCase().hashCode() == "sie".hashCode()) {
@@ -209,9 +223,6 @@ public class AnswerWrapper {
 							warschon += Genus
 									.getErSieEs(Genus.getGenus(strLow))
 									.toLowerCase();
-							System.out.println(Genus.getErSieEs(Genus
-									.getGenus(str))
-									+ ": " + str);
 						}
 						if (Genus.getErSieEs(Genus.getGenus(strLow))
 								.toLowerCase().hashCode() == "es".hashCode()) {
@@ -219,14 +230,13 @@ public class AnswerWrapper {
 							warschon += Genus
 									.getErSieEs(Genus.getGenus(strLow))
 									.toLowerCase();
-							System.out.println(Genus.getErSieEs(Genus
-									.getGenus(str))
-									+ ": " + str);
 						}
 					}
 				}
 				vorher = s;
 			}
+
+			System.out.println("  Antwort: \"" + antPlain + "\"");
 
 			return new Satz(antPlain, ant, feel, hirn, ofra);
 		}
