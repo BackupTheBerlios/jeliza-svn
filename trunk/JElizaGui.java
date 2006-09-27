@@ -114,7 +114,13 @@ public class JElizaGui implements ActionListener {
 		fr.setForeground(Color.darkGray);
 		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		prepareShowWords();
+		new Thread(new Runnable() {
+
+			public void run() {
+				prepareShowWords();
+			}
+			
+		}).start();
 
 		tex.setText("Generiere grafische Oberflaeche ...");
 
