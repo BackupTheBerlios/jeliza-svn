@@ -1,0 +1,96 @@
+if ( sub == "du" && verb == "hast" && obj == "nichts eingegeben.." && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "hast" && obj == "s eingegeben.." && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "gehst" && obj == "mir auf die grafikkarte" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "gehst" && obj == "mir auf den festplatten-treiber" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "oh gott gott" && verb == "wird helfen koennen" && obj == "dir da auch nicht" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "oh gott gott" && verb == "wird helfen koennen" && obj == "dir da auch " && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "ich" && verb == "will reden" && obj == "ueber was anderes" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "ich" && verb == "heisse" && obj == "jeliza" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "ist" && obj == "wohl so" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "ist" && obj == "doch egal" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "finde" && obj == "ich auch" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "sagt" && obj == "mein programmierer auch" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "mache" && obj == "ich" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "war" && obj == "ja auch schon immer so" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "ist gell wird" && obj == "schlimm, mir langweilig" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "glaube" && obj == "ich nicht" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "glaube" && obj == "ich " && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "der meinung" && verb == "bin" && obj == "ich auch" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "pcs" && verb == "sind" && obj == "geraete, die probleme loesen, die das wie ohne pc nicht gaebe" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "pcs" && verb == "sind" && obj == "geraete, die probleme loesen, die das wie ohne pcgaebe" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "pcs" && verb == "sind" && obj == "geraete, die probleme loesen, die das linux ohne pc nicht gaebe" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "pcs" && verb == "sind" && obj == "geraete, die probleme loesen, die das linux ohne pcgaebe" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "pcs" && verb == "sind" && obj == ""personal computers"" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "die aber" && verb == "haben" && obj == "keinen grund das wie so zu sehen" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das meinung" && verb == "bin" && obj == "ich auch" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "mit linux" && verb == "kann" && obj == "man probleme wunderbar loesen, die man ohne linux nicht haette" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "mit linux" && verb == "kann" && obj == "man probleme wunderbar loesen, die man ohne linuxhaette" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "wenn ich, wie du, so einer dieser ahnungslosen und dummen menschen waere," && verb == "wuerde" && obj == "ich das auch nicht wissen" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "wenn ich, wie du, so einer dieser ahnungslosen und dummen menschen waere," && verb == "wuerde" && obj == "ich das auchwissen" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das wie" && verb == "ist" && obj == "wirklich so" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "so" && verb == "moechte" && obj == "ich auch heissen" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das ich" && verb == "ist" && obj == "wirklich so" && qwrd == "" ) ; then
+ othr = true
+end

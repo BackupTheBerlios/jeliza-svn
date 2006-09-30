@@ -1,0 +1,43 @@
+rm -rf tmp
+mkdir tmp
+cd tmp
+
+mkdir 2
+
+for x in `cat ../googleSearches.txt`; do
+
+  ( echo -n "$(echo -n "$(curl 'http://www.google.de/search?q='"${x}"'&ie=UTF-8&hl=de&btnI=Auf+gut+Gl%C3%BCck%21&meta=' \
+  -H "User-Agent: Firefox Gecko Linux" --head)")" > tmp2 ) 2>/dev/null &
+  
+  sleep 1.6
+  killall curl
+
+  awk '{ sub("\r$", ""); print }' tmp2 > tmp22
+  cat tmp22 | grep "Location: " | cut -d" " -f2,3,4,5 > tmp3
+  mkdir found-$x
+  mkdir 2/found-$x
+  cd found-$x
+  wget -T 2 "$(echo -n $(cat ../tmp3))"
+  cd ..
+  rm tmp2
+  rm tmp22
+  rm tmp3
+  touch tmp2
+  touch tmp22
+  touch tmp3
+done
+
+for x in `find . -type f`; do
+ mv $x 2/$x.html
+done
+
+for x in `ls 2/`; do
+ echo $x
+ lynx -dump "2/$x" 2>&1 | tee -a tmp > /dev/null
+done
+
+cd ..
+
+mkdir backup
+cp text.vdb "backup/before-$(date)"
+#cat tmp/tmp | grep -v http | grep -v file | grep -v "^$" >> text.vdb
