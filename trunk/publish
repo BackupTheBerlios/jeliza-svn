@@ -1,4 +1,0 @@
-svn commit -m "$1"
-
-tar cplzSf /tmp/jeliza-www.tar.gz *
-scp /tmp/jeliza-www.tar.gz tobiasschulz@shell.berlios.de:/home/groups/jeliza/htdocs/jeliza.gztar

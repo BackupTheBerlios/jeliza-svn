@@ -1,1 +1,0 @@
-grep -v "\[" text.vdb2 > text.vdb
