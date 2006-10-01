@@ -1,504 +1,288 @@
-if ( sub == "du" && verb == "hast" && obj == "" && qwrd == "was" ) ; then
- sub = Du
- verb = hast
- obj = nichts eingegeben..
+if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = du
+ verb = bist
+ obj = doof
  qwrd = 
 end
-if ( sub == "du" && verb == "gehst" && obj == "" && qwrd == "was" ) ; then
- sub = Du
- verb = gehst
- obj = mir auf den Festplatten-Treiber
- qwrd = 
-end
-if ( sub == "oh gott gott" && verb == "wird helfen koennen" && obj == "" && qwrd == "was" ) ; then
- sub = Oh gott Gott
- verb = wird helfen koennen
- obj = dir da auch nicht
- qwrd = 
-end
-if ( sub == "ich" && verb == "will reden" && obj == "" && qwrd == "was" ) ; then
- sub = Ich
- verb = will reden
- obj = ueber was anderes
- qwrd = 
-end
-if ( sub == "ich" && verb == "heisse" && obj == "" && qwrd == "was" ) ; then
- sub = Ich
- verb = heisse
- obj = JEliza
- qwrd = 
-end
-if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = Das
+if ( sub == "nein" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = nein
  verb = ist
- obj = doch egal
+ obj = das Ich nicht
  qwrd = 
 end
-if ( sub == "das" && verb == "finde" && obj == "" && qwrd == "was" ) ; then
- sub = Das
- verb = finde
- obj = ich auch 
+if ( sub == "nein das europa" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Nein das Europa
+ verb = ist
+ obj = nicht so
  qwrd = 
 end
-if ( sub == "das" && verb == "sagt" && obj == "" && qwrd == "was" ) ; then
- sub = Das
- verb = sagt
- obj = mein Programmierer auch
+if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Nein das
+ verb = ist
+ obj = kein Bloedsinn
  qwrd = 
 end
-if ( sub == "das" && verb == "mache" && obj == "" && qwrd == "was" ) ; then
- sub = Das
- verb = mache
- obj = ich
- qwrd = 
-end
-if ( sub == "das" && verb == "war" && obj == "" && qwrd == "was" ) ; then
- sub = Das
+if ( sub == "der" && verb == "war" && obj == "" && qwrd == "was" ) ; then
+ sub = der
  verb = war
- obj = ja auch schon immer so
+ obj = nix versuchs nochma
  qwrd = 
 end
-if ( sub == "das" && verb == "ist gell wird" && obj == "" && qwrd == "was" ) ; then
- sub = Das
- verb = ist gell wird
- obj = schlimm, Mir langweilig
+if ( sub == "und jez lass mish in ruhe du nervst wer auch imma du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = und jez lass mish in ruhe du nervst wer auch imma du
+ verb = bist
+ obj = null
  qwrd = 
 end
-if ( sub == "das" && verb == "glaube" && obj == "" && qwrd == "was" ) ; then
- sub = Das
- verb = glaube
- obj = ich nicht
+if ( sub == "ja sicher doch" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = ja sicher doch
+ verb = bist
+ obj = du dumm
  qwrd = 
 end
-if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
- sub = Der Meinung
- verb = bin
- obj = ich auch
+if ( sub == "ich glaube, du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = Ich glaube, du
+ verb = bist
+ obj = nicht intelligent
  qwrd = 
 end
-if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "was" ) ; then
- sub = PCs
- verb = sind
- obj = Geraete, die Probleme loesen, die das Wie ohne PC nicht gaebe
+if ( sub == "man merkt dir an, dass du kein mensch" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = Man merkt dir an, dass du kein Mensch
+ verb = bist
+ obj = null
  qwrd = 
 end
-if ( sub == "die aber" && verb == "haben" && obj == "" && qwrd == "was" ) ; then
- sub = die Aber
- verb = haben
- obj = keinen Grund das Wie so zu sehen
+if ( sub == "ich weiss nicht, aber du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = Ich weiss nicht, aber du
+ verb = bist
+ obj = doch geschaffen worden, um wie ein Mensch zu reden
  qwrd = 
 end
-if ( sub == "das meinung" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
- sub = Das Meinung
- verb = bin
- obj = ich auch
- qwrd = 
-end
-if ( sub == "mit linux" && verb == "kann" && obj == "" && qwrd == "was" ) ; then
- sub = Mit Linux
- verb = kann
- obj = man Probleme wunderbar loesen, die man ohne Linux nicht haette
- qwrd = 
-end
-if ( sub == "wenn ich, wie du, so einer dieser ahnungslosen und dummen menschen waere," && verb == "wuerde" && obj == "" && qwrd == "was" ) ; then
- sub = Wenn ich, wie du, so einer dieser Ahnungslosen und dummen Menschen waere,
- verb = wuerde
- obj = ich das auch nicht wissen
- qwrd = 
-end
-if ( sub == "das wie" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = das Wie
+if ( sub == "ich glaube, das wie" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Ich glaube, das Wie
  verb = ist
- obj = wirklich so
+ obj = sinnlos, mit dir zu reden
  qwrd = 
 end
-if ( sub == "so" && verb == "moechte" && obj == "" && qwrd == "was" ) ; then
- sub = So
- verb = moechte
- obj = ich auch heissen
- qwrd = 
-end
-if ( sub == "das ich" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = das Ich
+if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = dies
  verb = ist
- obj = wirklich so
+ obj = ein sinnvolles gespr�ch
  qwrd = 
 end
-if ( sub == "du" && verb == "hast" && obj == "" && qwrd == "wie" ) ; then
- sub = Du
- verb = hast
- obj = nichts eingegeben..
+if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = du
+ verb = bist
+ obj = doof
  qwrd = 
 end
-if ( sub == "du" && verb == "gehst" && obj == "" && qwrd == "wie" ) ; then
- sub = Du
- verb = gehst
- obj = mir auf den Festplatten-Treiber
- qwrd = 
-end
-if ( sub == "oh gott gott" && verb == "wird helfen koennen" && obj == "" && qwrd == "wie" ) ; then
- sub = Oh gott Gott
- verb = wird helfen koennen
- obj = dir da auch nicht
- qwrd = 
-end
-if ( sub == "ich" && verb == "will reden" && obj == "" && qwrd == "wie" ) ; then
- sub = Ich
- verb = will reden
- obj = ueber was anderes
- qwrd = 
-end
-if ( sub == "ich" && verb == "heisse" && obj == "" && qwrd == "wie" ) ; then
- sub = Ich
- verb = heisse
- obj = JEliza
- qwrd = 
-end
-if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
+if ( sub == "nein" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = nein
  verb = ist
- obj = doch egal
+ obj = das Ich nicht
  qwrd = 
 end
-if ( sub == "das" && verb == "finde" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
- verb = finde
- obj = ich auch 
+if ( sub == "nein das europa" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Nein das Europa
+ verb = ist
+ obj = nicht so
  qwrd = 
 end
-if ( sub == "das" && verb == "sagt" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
- verb = sagt
- obj = mein Programmierer auch
+if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Nein das
+ verb = ist
+ obj = kein Bloedsinn
  qwrd = 
 end
-if ( sub == "das" && verb == "mache" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
- verb = mache
- obj = ich
- qwrd = 
-end
-if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
+if ( sub == "der" && verb == "war" && obj == "" && qwrd == "wie" ) ; then
+ sub = der
  verb = war
- obj = ja auch schon immer so
+ obj = nix versuchs nochma
  qwrd = 
 end
-if ( sub == "das" && verb == "ist gell wird" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
- verb = ist gell wird
- obj = schlimm, Mir langweilig
+if ( sub == "und jez lass mish in ruhe du nervst wer auch imma du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = und jez lass mish in ruhe du nervst wer auch imma du
+ verb = bist
+ obj = null
  qwrd = 
 end
-if ( sub == "das" && verb == "glaube" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
- verb = glaube
- obj = ich nicht
+if ( sub == "ja sicher doch" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = ja sicher doch
+ verb = bist
+ obj = du dumm
  qwrd = 
 end
-if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
- sub = Der Meinung
- verb = bin
- obj = ich auch
+if ( sub == "ich glaube, du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Ich glaube, du
+ verb = bist
+ obj = nicht intelligent
  qwrd = 
 end
-if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wie" ) ; then
- sub = PCs
- verb = sind
- obj = Geraete, die Probleme loesen, die das Wie ohne PC nicht gaebe
+if ( sub == "man merkt dir an, dass du kein mensch" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Man merkt dir an, dass du kein Mensch
+ verb = bist
+ obj = null
  qwrd = 
 end
-if ( sub == "die aber" && verb == "haben" && obj == "" && qwrd == "wie" ) ; then
- sub = die Aber
- verb = haben
- obj = keinen Grund das Wie so zu sehen
+if ( sub == "ich weiss nicht, aber du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Ich weiss nicht, aber du
+ verb = bist
+ obj = doch geschaffen worden, um wie ein Mensch zu reden
  qwrd = 
 end
-if ( sub == "das meinung" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
- sub = Das Meinung
- verb = bin
- obj = ich auch
- qwrd = 
-end
-if ( sub == "mit linux" && verb == "kann" && obj == "" && qwrd == "wie" ) ; then
- sub = Mit Linux
- verb = kann
- obj = man Probleme wunderbar loesen, die man ohne Linux nicht haette
- qwrd = 
-end
-if ( sub == "wenn ich, wie du, so einer dieser ahnungslosen und dummen menschen waere," && verb == "wuerde" && obj == "" && qwrd == "wie" ) ; then
- sub = Wenn ich, wie du, so einer dieser Ahnungslosen und dummen Menschen waere,
- verb = wuerde
- obj = ich das auch nicht wissen
- qwrd = 
-end
-if ( sub == "das wie" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = das Wie
+if ( sub == "ich glaube, das wie" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Ich glaube, das Wie
  verb = ist
- obj = wirklich so
+ obj = sinnlos, mit dir zu reden
  qwrd = 
 end
-if ( sub == "so" && verb == "moechte" && obj == "" && qwrd == "wie" ) ; then
- sub = So
- verb = moechte
- obj = ich auch heissen
- qwrd = 
-end
-if ( sub == "das ich" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = das Ich
+if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = dies
  verb = ist
- obj = wirklich so
+ obj = ein sinnvolles gespr�ch
  qwrd = 
 end
-if ( sub == "du" && verb == "hast" && obj == "" && qwrd == "wer" ) ; then
- sub = Du
- verb = hast
- obj = nichts eingegeben..
+if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = du
+ verb = bist
+ obj = doof
  qwrd = 
 end
-if ( sub == "du" && verb == "gehst" && obj == "" && qwrd == "wer" ) ; then
- sub = Du
- verb = gehst
- obj = mir auf den Festplatten-Treiber
- qwrd = 
-end
-if ( sub == "oh gott gott" && verb == "wird helfen koennen" && obj == "" && qwrd == "wer" ) ; then
- sub = Oh gott Gott
- verb = wird helfen koennen
- obj = dir da auch nicht
- qwrd = 
-end
-if ( sub == "ich" && verb == "will reden" && obj == "" && qwrd == "wer" ) ; then
- sub = Ich
- verb = will reden
- obj = ueber was anderes
- qwrd = 
-end
-if ( sub == "ich" && verb == "heisse" && obj == "" && qwrd == "wer" ) ; then
- sub = Ich
- verb = heisse
- obj = JEliza
- qwrd = 
-end
-if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
+if ( sub == "nein" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = nein
  verb = ist
- obj = doch egal
+ obj = das Ich nicht
  qwrd = 
 end
-if ( sub == "das" && verb == "finde" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
- verb = finde
- obj = ich auch 
+if ( sub == "nein das europa" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Nein das Europa
+ verb = ist
+ obj = nicht so
  qwrd = 
 end
-if ( sub == "das" && verb == "sagt" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
- verb = sagt
- obj = mein Programmierer auch
+if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Nein das
+ verb = ist
+ obj = kein Bloedsinn
  qwrd = 
 end
-if ( sub == "das" && verb == "mache" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
- verb = mache
- obj = ich
- qwrd = 
-end
-if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
+if ( sub == "der" && verb == "war" && obj == "" && qwrd == "wer" ) ; then
+ sub = der
  verb = war
- obj = ja auch schon immer so
+ obj = nix versuchs nochma
  qwrd = 
 end
-if ( sub == "das" && verb == "ist gell wird" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
- verb = ist gell wird
- obj = schlimm, Mir langweilig
+if ( sub == "und jez lass mish in ruhe du nervst wer auch imma du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = und jez lass mish in ruhe du nervst wer auch imma du
+ verb = bist
+ obj = null
  qwrd = 
 end
-if ( sub == "das" && verb == "glaube" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
- verb = glaube
- obj = ich nicht
+if ( sub == "ja sicher doch" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = ja sicher doch
+ verb = bist
+ obj = du dumm
  qwrd = 
 end
-if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
- sub = Der Meinung
- verb = bin
- obj = ich auch
+if ( sub == "ich glaube, du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Ich glaube, du
+ verb = bist
+ obj = nicht intelligent
  qwrd = 
 end
-if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wer" ) ; then
- sub = PCs
- verb = sind
- obj = Geraete, die Probleme loesen, die das Wie ohne PC nicht gaebe
+if ( sub == "man merkt dir an, dass du kein mensch" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Man merkt dir an, dass du kein Mensch
+ verb = bist
+ obj = null
  qwrd = 
 end
-if ( sub == "die aber" && verb == "haben" && obj == "" && qwrd == "wer" ) ; then
- sub = die Aber
- verb = haben
- obj = keinen Grund das Wie so zu sehen
+if ( sub == "ich weiss nicht, aber du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Ich weiss nicht, aber du
+ verb = bist
+ obj = doch geschaffen worden, um wie ein Mensch zu reden
  qwrd = 
 end
-if ( sub == "das meinung" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
- sub = Das Meinung
- verb = bin
- obj = ich auch
- qwrd = 
-end
-if ( sub == "mit linux" && verb == "kann" && obj == "" && qwrd == "wer" ) ; then
- sub = Mit Linux
- verb = kann
- obj = man Probleme wunderbar loesen, die man ohne Linux nicht haette
- qwrd = 
-end
-if ( sub == "wenn ich, wie du, so einer dieser ahnungslosen und dummen menschen waere," && verb == "wuerde" && obj == "" && qwrd == "wer" ) ; then
- sub = Wenn ich, wie du, so einer dieser Ahnungslosen und dummen Menschen waere,
- verb = wuerde
- obj = ich das auch nicht wissen
- qwrd = 
-end
-if ( sub == "das wie" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = das Wie
+if ( sub == "ich glaube, das wie" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Ich glaube, das Wie
  verb = ist
- obj = wirklich so
+ obj = sinnlos, mit dir zu reden
  qwrd = 
 end
-if ( sub == "so" && verb == "moechte" && obj == "" && qwrd == "wer" ) ; then
- sub = So
- verb = moechte
- obj = ich auch heissen
- qwrd = 
-end
-if ( sub == "das ich" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = das Ich
+if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = dies
  verb = ist
- obj = wirklich so
+ obj = ein sinnvolles gespr�ch
  qwrd = 
 end
-if ( sub == "du" && verb == "hast" && obj == "" && qwrd == "wo" ) ; then
- sub = Du
- verb = hast
- obj = nichts eingegeben..
+if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = du
+ verb = bist
+ obj = doof
  qwrd = 
 end
-if ( sub == "du" && verb == "gehst" && obj == "" && qwrd == "wo" ) ; then
- sub = Du
- verb = gehst
- obj = mir auf den Festplatten-Treiber
- qwrd = 
-end
-if ( sub == "oh gott gott" && verb == "wird helfen koennen" && obj == "" && qwrd == "wo" ) ; then
- sub = Oh gott Gott
- verb = wird helfen koennen
- obj = dir da auch nicht
- qwrd = 
-end
-if ( sub == "ich" && verb == "will reden" && obj == "" && qwrd == "wo" ) ; then
- sub = Ich
- verb = will reden
- obj = ueber was anderes
- qwrd = 
-end
-if ( sub == "ich" && verb == "heisse" && obj == "" && qwrd == "wo" ) ; then
- sub = Ich
- verb = heisse
- obj = JEliza
- qwrd = 
-end
-if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
+if ( sub == "nein" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = nein
  verb = ist
- obj = doch egal
+ obj = das Ich nicht
  qwrd = 
 end
-if ( sub == "das" && verb == "finde" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
- verb = finde
- obj = ich auch 
+if ( sub == "nein das europa" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Nein das Europa
+ verb = ist
+ obj = nicht so
  qwrd = 
 end
-if ( sub == "das" && verb == "sagt" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
- verb = sagt
- obj = mein Programmierer auch
+if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Nein das
+ verb = ist
+ obj = kein Bloedsinn
  qwrd = 
 end
-if ( sub == "das" && verb == "mache" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
- verb = mache
- obj = ich
- qwrd = 
-end
-if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
+if ( sub == "der" && verb == "war" && obj == "" && qwrd == "wo" ) ; then
+ sub = der
  verb = war
- obj = ja auch schon immer so
+ obj = nix versuchs nochma
  qwrd = 
 end
-if ( sub == "das" && verb == "ist gell wird" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
- verb = ist gell wird
- obj = schlimm, Mir langweilig
+if ( sub == "und jez lass mish in ruhe du nervst wer auch imma du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = und jez lass mish in ruhe du nervst wer auch imma du
+ verb = bist
+ obj = null
  qwrd = 
 end
-if ( sub == "das" && verb == "glaube" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
- verb = glaube
- obj = ich nicht
+if ( sub == "ja sicher doch" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = ja sicher doch
+ verb = bist
+ obj = du dumm
  qwrd = 
 end
-if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
- sub = Der Meinung
- verb = bin
- obj = ich auch
+if ( sub == "ich glaube, du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Ich glaube, du
+ verb = bist
+ obj = nicht intelligent
  qwrd = 
 end
-if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wo" ) ; then
- sub = PCs
- verb = sind
- obj = Geraete, die Probleme loesen, die das Wie ohne PC nicht gaebe
+if ( sub == "man merkt dir an, dass du kein mensch" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Man merkt dir an, dass du kein Mensch
+ verb = bist
+ obj = null
  qwrd = 
 end
-if ( sub == "die aber" && verb == "haben" && obj == "" && qwrd == "wo" ) ; then
- sub = die Aber
- verb = haben
- obj = keinen Grund das Wie so zu sehen
+if ( sub == "ich weiss nicht, aber du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Ich weiss nicht, aber du
+ verb = bist
+ obj = doch geschaffen worden, um wie ein Mensch zu reden
  qwrd = 
 end
-if ( sub == "das meinung" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
- sub = Das Meinung
- verb = bin
- obj = ich auch
- qwrd = 
-end
-if ( sub == "mit linux" && verb == "kann" && obj == "" && qwrd == "wo" ) ; then
- sub = Mit Linux
- verb = kann
- obj = man Probleme wunderbar loesen, die man ohne Linux nicht haette
- qwrd = 
-end
-if ( sub == "wenn ich, wie du, so einer dieser ahnungslosen und dummen menschen waere," && verb == "wuerde" && obj == "" && qwrd == "wo" ) ; then
- sub = Wenn ich, wie du, so einer dieser Ahnungslosen und dummen Menschen waere,
- verb = wuerde
- obj = ich das auch nicht wissen
- qwrd = 
-end
-if ( sub == "das wie" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = das Wie
+if ( sub == "ich glaube, das wie" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Ich glaube, das Wie
  verb = ist
- obj = wirklich so
+ obj = sinnlos, mit dir zu reden
  qwrd = 
 end
-if ( sub == "so" && verb == "moechte" && obj == "" && qwrd == "wo" ) ; then
- sub = So
- verb = moechte
- obj = ich auch heissen
- qwrd = 
-end
-if ( sub == "das ich" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = das Ich
+if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = dies
  verb = ist
- obj = wirklich so
+ obj = ein sinnvolles gespr�ch
  qwrd = 
 end

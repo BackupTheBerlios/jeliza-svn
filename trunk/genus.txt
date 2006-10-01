@@ -6284,3 +6284,43 @@
 3-ich
 3-ich
 3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+1-nein ist das du nicht? wirklich? schrecklich ... ich
+2-sie
+2-sie
+2-sie
+2-mit solchen tussis die deinen die sie w�rens geb ish dich ned ab bye? warum? sie
+1-mich
+1-lass dich in ruhe und verarsch mich nicht? ist das normal? mich
+1-welcher programmierer? willst du das so? programmierer
+1-bot
+1-welcher
+1-welcher
+2-wie kann das passieren. ahnung
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+1-wie hei�t mein programmierer? entspricht das deinen vorstellungen? programmierer
+2-gibt das wie intelligentes leben? entspricht das deinen vorstellungen? wie
+3-ich
+3-ich
+3-ich
+2-du glaube, das wie ist sinnlos, mit mir zu reden? gut. wie
+2-das ist wohl so. ahnung
+2-bratwurst
+2-bratwurst
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
