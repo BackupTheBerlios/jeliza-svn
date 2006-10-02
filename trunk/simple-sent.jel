@@ -1,57 +1,33 @@
-if ( sub == "du" && verb == "bist" && obj == "dumm" && qwrd == "" ) ; then
+if ( sub == "ich" && verb == "bin" && obj == "da" && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "du" && verb == "bist" && obj == "schon bl�" && qwrd == "" ) ; then
+if ( sub == "ich" && verb == "bin" && obj == "ein programm, sonst nichts.." && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "du" && verb == "bist" && obj == "komisch" && qwrd == "" ) ; then
+if ( sub == "ich" && verb == "bin" && obj == "ein programm, sonst s.." && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "du" && verb == "bist" && obj == "doof" && qwrd == "" ) ; then
+if ( sub == "du" && verb == "bist" && obj == "bl�" && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "nein" && verb == "ist" && obj == "das ich nicht" && qwrd == "" ) ; then
+if ( sub == "gmx" && verb == "ist" && obj == "down" && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "nein" && verb == "ist" && obj == "das ich " && qwrd == "" ) ; then
+if ( sub == "das" && verb == "ist" && obj == "wohl so" && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "nein das europa" && verb == "ist" && obj == "nicht so" && qwrd == "" ) ; then
+if ( sub == "das" && verb == "ist" && obj == "schlimm, gell mir wird langweilig" && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "nein das europa" && verb == "ist" && obj == " so" && qwrd == "" ) ; then
+if ( sub == "das" && verb == "ist" && obj == "ja unglaublich" && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "nein das" && verb == "ist" && obj == "kein bloedsinn" && qwrd == "" ) ; then
+if ( sub == "das" && verb == "war" && obj == "ja auch schon immer so" && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "der" && verb == "war" && obj == "nix versuchs nochma" && qwrd == "" ) ; then
+if ( sub == "der meinung" && verb == "bin" && obj == "ich auch" && qwrd == "" ) ; then
  othr = true
 end
-if ( sub == "und jez lass mish in ruhe du nervst wer auch imma du" && verb == "bist" && obj == "null" && qwrd == "" ) ; then
- othr = true
-end
-if ( sub == "ja sicher doch" && verb == "bist" && obj == "du dumm" && qwrd == "" ) ; then
- othr = true
-end
-if ( sub == "ich glaube, du" && verb == "bist" && obj == "nicht intelligent" && qwrd == "" ) ; then
- othr = true
-end
-if ( sub == "ich glaube, du" && verb == "bist" && obj == " intelligent" && qwrd == "" ) ; then
- othr = true
-end
-if ( sub == "man merkt dir an, dass du kein mensch" && verb == "bist" && obj == "null" && qwrd == "" ) ; then
- othr = true
-end
-if ( sub == "ich weiss nicht, aber du" && verb == "bist" && obj == "doch geschaffen worden, um wie ein mensch zu reden" && qwrd == "" ) ; then
- othr = true
-end
-if ( sub == "ich weiss , aber du" && verb == "bist" && obj == "doch geschaffen worden, um wie ein mensch zu reden" && qwrd == "" ) ; then
- othr = true
-end
-if ( sub == "ich glaube, das wie" && verb == "ist" && obj == "sinnlos, mit dir zu reden" && qwrd == "" ) ; then
- othr = true
-end
-if ( sub == "dies" && verb == "ist" && obj == "ein sinnvolles gespr�ch" && qwrd == "" ) ; then
+if ( sub == "pcs" && verb == "sind" && obj == ""personal computers"" && qwrd == "" ) ; then
  othr = true
 end

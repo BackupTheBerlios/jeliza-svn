@@ -6324,3 +6324,32 @@
 3-ich
 3-ich
 3-ich
+1-hier
+1-hallo hier spricht jeliza, eine kuenstliche intelligenz? dz dz ... hier
+2-hallo hier spricht jeliza, eine kuenstliche intelligenz? dz dz ... intelligenz
+1-das finde ich auch ! hier
+2-das finde ich auch ! intelligenz
+1-hallo hier spricht jeliza, eine kuenstliche intelligenz? willst du das so? hier
+2-hallo hier spricht jeliza, eine kuenstliche intelligenz? willst du das so? intelligenz
+2-die intelligenz haben keinen grund das hallo so zu sehen? dz dz ... intelligenz
+3-ich
+3-ich
+3-ich
+1-stimmt das wirklich? ist
+1-ja aber dir wird langweilig was sind pcs? mmmmm... aber
+3-ich
+3-ich
+1-das finde ich auch ! ich
+3-ich
+3-ich
+3-ich
+3-bauum
+3-was ist ein bauum? weshalb? bauum
+1-baum
+3-wie kann das passieren. baum
+1-was ist ein computer? gut. computer
+1-schritt
+1-schritt
+1-woher
+1-woher
+2-woher bekommst ich meine information? sehen das alle so? information
