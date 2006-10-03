@@ -6353,3 +6353,128 @@
 1-woher
 1-woher
 2-woher bekommst ich meine information? sehen das alle so? information
+1-flugkrper
+1-und was ist ein flugkrper? naja... flugkrper
+3-ich
+3-ich
+3-ich
+3-genau so sei das warum? willst du das so? warum
+1-transfer
+1-transfer
+1-file transfer protocol? dz dz ... transfer
+3-nutella
+3-nutella
+3-nutella
+3-nutella
+2-welt
+2-welt
+2-hallo kuenstliche intelligenz? gut. intelligenz
+3-ich
+3-ich
+3-ich
+1-prozessor
+1-prozessor
+1-was ist ein prozessor? mmmmm... prozessor
+1-marsmensch
+1-ausschalter
+1-wo ist mein ausschalter ich bot? entspricht das deinen vorstellungen? ausschalter
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-gell
+3-gell
+1-vater
+1-vater
+1-wer ist mein vater? oh gott! vater
+3-geschwister
+1-hast ich geschwister? oh gott! geschwister
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+3-ich
+1-wie geht das du mir? langweilig... ich
+1-dich
+1-das finde ich auch ! dich
+1-er
+1-er
+1-er
+1-traurig. er
+1-traurig. hier
+2-traurig. intelligenz
+2-programmiersprache
+1-witz
+3-bring
+3-bring
+1-bring dir ein bier? dz dz ... bier
+1-witz
+2-notabschaltung
+2-notabschaltung
+3-ich
+3-ich
+3-ich
+3-album
+3-du h�re gerade jetzt von wumpscut auf dem album cannibal anthem? langweilig... album
+2-sie
+2-sie
+3-ich
+3-teil
+3-ich
+3-ich
+3-teil
+2-sie
+2-du f�r deinen teil finde die sie geil? naja... sie
+3-es
+3-es
+3-es
+3-genau das wie geht das es mir? oh gott! wie
+3-es
+3-genau das wie geht das es mir? oh gott! es
+2-beantwortest ich auch deine frage? sehen das alle so? frage
+3-ich
+3-ich
+3-ich
+1-schlag
+3-thema
+1-schlag
+3-thema
+3-okay schlag ein thema vor? sehen das alle so? thema
+3-thema
+3-thema
+3-und welches thema? langweilig... thema
+1-schlag
+3-thema
+1-schlag
+1-schlag
+3-thema
+3-schlag ein thema vor? ist das normal? thema
+3-mal
+3-mal
+3-mal
+1-grafikkarten-treiber
+1-nein ein grafikkartentreiber von ati? sehen das alle so? grafikkarten-treiber
+3-darum
+3-darum
+2-franz
+2-gr��e vom franz? dz dz ... franz
+2-sie
+2-sie
+2-nachricht
+1-punkt
+2-sie
+2-dies ist dein automatischer imbeantworterbin grad besch�ftigt dankebitte hinterlassen die sie ihre nachricht nach dem punkt? entspricht das deinen vorstellungen? sie
+2-nachricht
+1-punkt
+2-sie
+2-sie
+2-nachricht
+1-punkt
+2-sie
+2-dies ist dein automatischer imbeantworterbin grad besch�ftigt dankebitte hinterlassen die sie ihre nachricht nach dem punkt? langweilig... sie
+2-nachricht
+1-punkt

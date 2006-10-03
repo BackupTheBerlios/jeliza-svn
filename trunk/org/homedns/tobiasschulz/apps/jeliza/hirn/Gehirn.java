@@ -163,6 +163,10 @@ public class Gehirn {
 			println("Achtung!\nHirnfehler!\n\nIch habe einen Fehler!\n\nBitte kontaktieren sie meinen \nProgrammierer, indem sie in \ndas Gästebuch schreiben oder eine\nMail an tobischulz@arcor.de\n schreiben!\n\nFehler:\n"
 					+ e.getMessage());
 		}
+		
+		if (definition.toLowerCase().contains("artikel verschwunden")) {
+			return "Das weiss ich nicht!";
+		}
 
 		return definition;
 	}

@@ -29,6 +29,7 @@ public class AnswerWrapper {
 			final VerbDataBase vdb) {
 		String fra = fr.satzPlain;
 		re = reParam;
+		re.vdb = vdb;
 		boolean fertig = false;
 		String ant = "Uff! Da bin ich überfragt!\nKontaktieren sie doch bitte meinen Programmierer "
 				+ "darüber,\n"

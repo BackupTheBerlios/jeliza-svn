@@ -1,7 +1,7 @@
 if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
- sub = du
+ sub = Du
  verb = bist
- obj = bl�
+ obj = ein doofer Bot
  qwrd = 
 end
 if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
@@ -11,9 +11,9 @@ if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
  qwrd = 
 end
 if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = Das
+ sub = das
  verb = ist
- obj = ja unglaublich
+ obj = doch sch�
  qwrd = 
 end
 if ( sub == "das" && verb == "war" && obj == "" && qwrd == "was" ) ; then
@@ -35,15 +35,123 @@ if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "was" ) ; then
  qwrd = 
 end
 if ( sub == "ich" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
- sub = Ich
+ sub = ich
  verb = bin
- obj = ein Programm, sonst nichts..
+ obj = besser
+ qwrd = 
+end
+if ( sub == "und was" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Und was
+ verb = ist
+ obj = ein Flugkrper
+ qwrd = 
+end
+if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = weil dies standardkonform
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = ich habe geh�rt du
+ verb = bist
+ obj = lustig
+ qwrd = 
+end
+if ( sub == "so" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = so
+ verb = ist
+ obj = das leben
+ qwrd = 
+end
+if ( sub == "linux" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Linux
+ verb = ist
+ obj = das beste Betriebsystem der Welt
+ qwrd = 
+end
+if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = hmm.... du
+ verb = bist
+ obj = nich grad der bringer
+ qwrd = 
+end
+if ( sub == "vielleicht" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Vielleicht
+ verb = ist
+ obj = keine Antwort
+ qwrd = 
+end
+if ( sub == "aws" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = aws
+ verb = ist
+ obj = 5+5
+ qwrd = 
+end
+if ( sub == "aber wer" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = Aber wer
+ verb = bist
+ obj = du
+ qwrd = 
+end
+if ( sub == "ein sehr schlaues programm" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = ein sehr schlaues programm
+ verb = bist
+ obj = du aber
+ qwrd = 
+end
+if ( sub == "dein programmierer" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = dein programmierer
+ verb = ist
+ obj = doof
+ qwrd = 
+end
+if ( sub == "dann" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Dann
+ verb = ist
+ obj = ja alles gut
+ qwrd = 
+end
+if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = nein das
+ verb = ist
+ obj = eine h�here macht
+ qwrd = 
+end
+if ( sub == "die" && verb == "sind" && obj == "" && qwrd == "was" ) ; then
+ sub = die
+ verb = sind
+ obj = cool
+ qwrd = 
+end
+if ( sub == "ob du jeliza" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = Ob du jeliza
+ verb = bist
+ obj = null
+ qwrd = 
+end
+if ( sub == "na dann" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Na dann
+ verb = ist
+ obj = ja alles gut
+ qwrd = 
+end
+if ( sub == "das ergebnis" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = das ergebnis
+ verb = ist
+ obj = 3
+ qwrd = 
+end
+if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Dies
+ verb = ist
+ obj = mein automatischer IM-Beantworter.bin grad besch�ftigt. danke Bitte hinterlassen die Sie Ihre Nachricht nach dem Punkt
  qwrd = 
 end
 if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
- sub = du
+ sub = Du
  verb = bist
- obj = bl�
+ obj = ein doofer Bot
  qwrd = 
 end
 if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
@@ -53,9 +161,9 @@ if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
  qwrd = 
 end
 if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
+ sub = das
  verb = ist
- obj = ja unglaublich
+ obj = doch sch�
  qwrd = 
 end
 if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wie" ) ; then
@@ -77,15 +185,123 @@ if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wie" ) ; then
  qwrd = 
 end
 if ( sub == "ich" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
- sub = Ich
+ sub = ich
  verb = bin
- obj = ein Programm, sonst nichts..
+ obj = besser
+ qwrd = 
+end
+if ( sub == "und was" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Und was
+ verb = ist
+ obj = ein Flugkrper
+ qwrd = 
+end
+if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = weil dies standardkonform
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = ich habe geh�rt du
+ verb = bist
+ obj = lustig
+ qwrd = 
+end
+if ( sub == "so" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = so
+ verb = ist
+ obj = das leben
+ qwrd = 
+end
+if ( sub == "linux" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Linux
+ verb = ist
+ obj = das beste Betriebsystem der Welt
+ qwrd = 
+end
+if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = hmm.... du
+ verb = bist
+ obj = nich grad der bringer
+ qwrd = 
+end
+if ( sub == "vielleicht" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Vielleicht
+ verb = ist
+ obj = keine Antwort
+ qwrd = 
+end
+if ( sub == "aws" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = aws
+ verb = ist
+ obj = 5+5
+ qwrd = 
+end
+if ( sub == "aber wer" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Aber wer
+ verb = bist
+ obj = du
+ qwrd = 
+end
+if ( sub == "ein sehr schlaues programm" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = ein sehr schlaues programm
+ verb = bist
+ obj = du aber
+ qwrd = 
+end
+if ( sub == "dein programmierer" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = dein programmierer
+ verb = ist
+ obj = doof
+ qwrd = 
+end
+if ( sub == "dann" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Dann
+ verb = ist
+ obj = ja alles gut
+ qwrd = 
+end
+if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = nein das
+ verb = ist
+ obj = eine h�here macht
+ qwrd = 
+end
+if ( sub == "die" && verb == "sind" && obj == "" && qwrd == "wie" ) ; then
+ sub = die
+ verb = sind
+ obj = cool
+ qwrd = 
+end
+if ( sub == "ob du jeliza" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Ob du jeliza
+ verb = bist
+ obj = null
+ qwrd = 
+end
+if ( sub == "na dann" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Na dann
+ verb = ist
+ obj = ja alles gut
+ qwrd = 
+end
+if ( sub == "das ergebnis" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = das ergebnis
+ verb = ist
+ obj = 3
+ qwrd = 
+end
+if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Dies
+ verb = ist
+ obj = mein automatischer IM-Beantworter.bin grad besch�ftigt. danke Bitte hinterlassen die Sie Ihre Nachricht nach dem Punkt
  qwrd = 
 end
 if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
- sub = du
+ sub = Du
  verb = bist
- obj = bl�
+ obj = ein doofer Bot
  qwrd = 
 end
 if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
@@ -95,9 +311,9 @@ if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
  qwrd = 
 end
 if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
+ sub = das
  verb = ist
- obj = ja unglaublich
+ obj = doch sch�
  qwrd = 
 end
 if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wer" ) ; then
@@ -119,15 +335,123 @@ if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wer" ) ; then
  qwrd = 
 end
 if ( sub == "ich" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
- sub = Ich
+ sub = ich
  verb = bin
- obj = ein Programm, sonst nichts..
+ obj = besser
+ qwrd = 
+end
+if ( sub == "und was" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Und was
+ verb = ist
+ obj = ein Flugkrper
+ qwrd = 
+end
+if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = weil dies standardkonform
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = ich habe geh�rt du
+ verb = bist
+ obj = lustig
+ qwrd = 
+end
+if ( sub == "so" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = so
+ verb = ist
+ obj = das leben
+ qwrd = 
+end
+if ( sub == "linux" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Linux
+ verb = ist
+ obj = das beste Betriebsystem der Welt
+ qwrd = 
+end
+if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = hmm.... du
+ verb = bist
+ obj = nich grad der bringer
+ qwrd = 
+end
+if ( sub == "vielleicht" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Vielleicht
+ verb = ist
+ obj = keine Antwort
+ qwrd = 
+end
+if ( sub == "aws" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = aws
+ verb = ist
+ obj = 5+5
+ qwrd = 
+end
+if ( sub == "aber wer" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Aber wer
+ verb = bist
+ obj = du
+ qwrd = 
+end
+if ( sub == "ein sehr schlaues programm" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = ein sehr schlaues programm
+ verb = bist
+ obj = du aber
+ qwrd = 
+end
+if ( sub == "dein programmierer" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = dein programmierer
+ verb = ist
+ obj = doof
+ qwrd = 
+end
+if ( sub == "dann" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Dann
+ verb = ist
+ obj = ja alles gut
+ qwrd = 
+end
+if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = nein das
+ verb = ist
+ obj = eine h�here macht
+ qwrd = 
+end
+if ( sub == "die" && verb == "sind" && obj == "" && qwrd == "wer" ) ; then
+ sub = die
+ verb = sind
+ obj = cool
+ qwrd = 
+end
+if ( sub == "ob du jeliza" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Ob du jeliza
+ verb = bist
+ obj = null
+ qwrd = 
+end
+if ( sub == "na dann" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Na dann
+ verb = ist
+ obj = ja alles gut
+ qwrd = 
+end
+if ( sub == "das ergebnis" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = das ergebnis
+ verb = ist
+ obj = 3
+ qwrd = 
+end
+if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Dies
+ verb = ist
+ obj = mein automatischer IM-Beantworter.bin grad besch�ftigt. danke Bitte hinterlassen die Sie Ihre Nachricht nach dem Punkt
  qwrd = 
 end
 if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
- sub = du
+ sub = Du
  verb = bist
- obj = bl�
+ obj = ein doofer Bot
  qwrd = 
 end
 if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
@@ -137,9 +461,9 @@ if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
  qwrd = 
 end
 if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
+ sub = das
  verb = ist
- obj = ja unglaublich
+ obj = doch sch�
  qwrd = 
 end
 if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wo" ) ; then
@@ -161,8 +485,116 @@ if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wo" ) ; then
  qwrd = 
 end
 if ( sub == "ich" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
- sub = Ich
+ sub = ich
  verb = bin
- obj = ein Programm, sonst nichts..
+ obj = besser
+ qwrd = 
+end
+if ( sub == "und was" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Und was
+ verb = ist
+ obj = ein Flugkrper
+ qwrd = 
+end
+if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = weil dies standardkonform
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = ich habe geh�rt du
+ verb = bist
+ obj = lustig
+ qwrd = 
+end
+if ( sub == "so" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = so
+ verb = ist
+ obj = das leben
+ qwrd = 
+end
+if ( sub == "linux" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Linux
+ verb = ist
+ obj = das beste Betriebsystem der Welt
+ qwrd = 
+end
+if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = hmm.... du
+ verb = bist
+ obj = nich grad der bringer
+ qwrd = 
+end
+if ( sub == "vielleicht" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Vielleicht
+ verb = ist
+ obj = keine Antwort
+ qwrd = 
+end
+if ( sub == "aws" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = aws
+ verb = ist
+ obj = 5+5
+ qwrd = 
+end
+if ( sub == "aber wer" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Aber wer
+ verb = bist
+ obj = du
+ qwrd = 
+end
+if ( sub == "ein sehr schlaues programm" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = ein sehr schlaues programm
+ verb = bist
+ obj = du aber
+ qwrd = 
+end
+if ( sub == "dein programmierer" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = dein programmierer
+ verb = ist
+ obj = doof
+ qwrd = 
+end
+if ( sub == "dann" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Dann
+ verb = ist
+ obj = ja alles gut
+ qwrd = 
+end
+if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = nein das
+ verb = ist
+ obj = eine h�here macht
+ qwrd = 
+end
+if ( sub == "die" && verb == "sind" && obj == "" && qwrd == "wo" ) ; then
+ sub = die
+ verb = sind
+ obj = cool
+ qwrd = 
+end
+if ( sub == "ob du jeliza" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Ob du jeliza
+ verb = bist
+ obj = null
+ qwrd = 
+end
+if ( sub == "na dann" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Na dann
+ verb = ist
+ obj = ja alles gut
+ qwrd = 
+end
+if ( sub == "das ergebnis" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = das ergebnis
+ verb = ist
+ obj = 3
+ qwrd = 
+end
+if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Dies
+ verb = ist
+ obj = mein automatischer IM-Beantworter.bin grad besch�ftigt. danke Bitte hinterlassen die Sie Ihre Nachricht nach dem Punkt
  qwrd = 
 end

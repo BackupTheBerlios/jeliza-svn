@@ -7,7 +7,43 @@ end
 if ( sub == "ich" && verb == "bin" && obj == "ein programm, sonst s.." && qwrd == "" ) ; then
  othr = true
 end
+if ( sub == "ich" && verb == "bin" && obj == "bestimmt nicht langweilig.." && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "ich" && verb == "bin" && obj == "bestimmtlangweilig.." && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "ich" && verb == "bin" && obj == "besser" && qwrd == "" ) ; then
+ othr = true
+end
 if ( sub == "du" && verb == "bist" && obj == "bl�" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == "schlecht programmiert" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == "ein programm" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == "nicht sonderlich kommunikativ" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == " sonderlich kommunikativ" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == "cool" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == "eine sau coole typ" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == "sehr komisch" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == "dumm" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "du" && verb == "bist" && obj == "ein doofer bot" && qwrd == "" ) ; then
  othr = true
 end
 if ( sub == "gmx" && verb == "ist" && obj == "down" && qwrd == "" ) ; then
@@ -22,6 +58,12 @@ end
 if ( sub == "das" && verb == "ist" && obj == "ja unglaublich" && qwrd == "" ) ; then
  othr = true
 end
+if ( sub == "das" && verb == "ist" && obj == "es" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das" && verb == "ist" && obj == "doch sch�" && qwrd == "" ) ; then
+ othr = true
+end
 if ( sub == "das" && verb == "war" && obj == "ja auch schon immer so" && qwrd == "" ) ; then
  othr = true
 end
@@ -29,5 +71,62 @@ if ( sub == "der meinung" && verb == "bin" && obj == "ich auch" && qwrd == "" ) 
  othr = true
 end
 if ( sub == "pcs" && verb == "sind" && obj == ""personal computers"" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "und was" && verb == "ist" && obj == "ein flugkrper" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "null" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "lustig" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "so" && verb == "ist" && obj == "das leben" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "linux" && verb == "ist" && obj == "das beste betriebsystem der welt" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "hmm.... du" && verb == "bist" && obj == "nich grad der bringer" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "vielleicht" && verb == "ist" && obj == "keine antwort" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "aws" && verb == "ist" && obj == "5+5" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "aber wer" && verb == "bist" && obj == "du" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "ein sehr schlaues programm" && verb == "bist" && obj == "du aber" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "dein programmierer" && verb == "ist" && obj == "doof" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "dann" && verb == "ist" && obj == "der er so richtig bl�" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "dann" && verb == "ist" && obj == "ja alles gut" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "nein das" && verb == "ist" && obj == "eine h�here macht" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "die" && verb == "sind" && obj == "cool" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "ob du jeliza" && verb == "bist" && obj == "null" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "na dann" && verb == "ist" && obj == "ja alles gut" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "das ergebnis" && verb == "ist" && obj == "3" && qwrd == "" ) ; then
+ othr = true
+end
+if ( sub == "dies" && verb == "ist" && obj == "mein automatischer im-beantworter.bin grad besch�ftigt. danke bitte hinterlassen die sie ihre nachricht nach dem punkt" && qwrd == "" ) ; then
  othr = true
 end

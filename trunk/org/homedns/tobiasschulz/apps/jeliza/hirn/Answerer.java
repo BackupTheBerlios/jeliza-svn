@@ -35,6 +35,21 @@ public class Answerer {
 	public String fragewort = "";
 
 	public SatzParseManager spm = SatzParseManager.createNew();
+	
+	public VerbDataBase vdb = null;
+
+	String antExit = "Auf Wiedersehen.";
+	String[] antJa = { "Ach so.", "Gut.", "Warscheinlich hast du Recht!",
+			"Wie du meinst!" };
+	String[] antNein = { "Sicher?", "Wirklich nicht?", "Meinst du?",
+			"Warum?" };
+	String[] vorstellen = { "ich heisse", "mein name ist",
+			"man nennt mich", "ich nenne mich" };
+	String[] vorstellenAnt = { "Das ist mein Traumname!",
+			"Kein schlechter Name.", "So moechte ich auch heissen!",
+			"Solche Namen mag ich.", "Heisst du wirklich so?" };
+
+	Random r = new java.util.Random();
 
 	/**
 	 * Konstruktor
@@ -60,19 +75,6 @@ public class Answerer {
 	public String getSimple(String fraParameter, String antParameter) {
 		String ant = antParameter;
 		String fra = fraParameter;
-
-		String antExit = "Auf Wiedersehen.";
-		String[] antJa = { "Ach so.", "Gut.", "Warscheinlich hast du Recht!",
-				"Wie du meinst!" };
-		String[] antNein = { "Sicher?", "Wirklich nicht?", "Meinst du?",
-				"Warum?" };
-		String[] vorstellen = { "ich heisse", "mein name ist",
-				"man nennt mich", "ich nenne mich" };
-		String[] vorstellenAnt = { "Das ist mein Traumname!",
-				"Kein schlechter Name.", "So moechte ich auch heissen!",
-				"Solche Namen mag ich.", "Heisst du wirklich so?" };
-
-		Random r = new java.util.Random();
 
 		Date dt = new Date();
 		SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy");
@@ -628,6 +630,10 @@ public class Answerer {
 			if (rechenArt.contains("*")) {
 				sum = nums[0];
 				for (int x = 1; x < nums.length; x++) {
+					System.out.println(nums[x - 1]);
+					if ((Double)nums[x] == null || (Double)nums[x] == 0d) {
+						continue;
+					}
 					sum *= nums[x];
 				}
 			}
@@ -635,6 +641,9 @@ public class Answerer {
 			if (rechenArt.contains("/")) {
 				sum = nums[0];
 				for (int x = 1; x < nums.length; x++) {
+					if ((Double)nums[x] == null || (Double)nums[x] == 0d) {
+						continue;
+					}
 					sum /= nums[x];
 				}
 			}
@@ -732,14 +741,6 @@ public class Answerer {
 
 		if (fra.trim().length() == 0) {
 			return "Du hast nichts eingegeben...";
-		}
-
-		VerbDataBase vdb = null;
-		try {
-			vdb = new VerbDataBase();
-			vdb.loadFromFile();
-		} catch (IOException e1) {
-			e1.printStackTrace();
 		}
 
 		spm = SatzParseManager.parse(fra, vdb);
@@ -944,14 +945,6 @@ public class Answerer {
 
 		if (fra.trim().length() == 0) {
 			return "Du hast nichts eingegeben...";
-		}
-
-		VerbDataBase vdb = null;
-		try {
-			vdb = new VerbDataBase();
-			vdb.loadFromFile();
-		} catch (IOException e1) {
-			e1.printStackTrace();
 		}
 
 		spm = SatzParseManager.parse(fra, vdb);
