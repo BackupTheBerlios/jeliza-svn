@@ -10,27 +10,27 @@ public class UltraModel {
 
 	String dir = "";
 
-	public static String[] noKeys = "ja nein aber und oder" +
-	" doch der die das ich du er sie es" +
-	" meiner deiner seiner ihrer seiner mir dir" +
-	" ihm ihr ihm mich dich ihn sie es wir" +
-	" ihr sie unser euer ihrer uns euch ihnen" +
-	" uns euch sie mein meine meiner meines" +
-	" meinem meinen dein deine deiner deines deinem" +
-	" deinen sein seine seiner seines seinem seinen" +
-	" ihr ihre ihrer ihres ihrem ihren unser" +
-	" unsere unseres unserem unserer unseren euer" +
-	" eures eueres eurer euerer eure euere euren" +
-	" eueren der die das die dessen deren dessen" +
-	" deren derer dem der dem denen den die" +
-	" das die dieser diese dieses diese dieses" +
-	" dieser dieses dieser diesem dieser diesem" +
-	" diesen diesen diese dieses diese jemand" +
-	" niemand jemandes niemandes jemandem niemandem" +
-	" jemanden niemanden " +
-	" bin bist ist sind seid hab habe hast hat haben " +
-	" was wer wie wo wann warum wieso weshalb" +
-	" ein eine einer eins eines ".split(" ");
+	public static String[] noKeys = ("ja nein aber und oder"
+			+ " doch der die das ich du er sie es"
+			+ " meiner deiner seiner ihrer seiner mir dir"
+			+ " ihm ihr ihm mich dich ihn sie es wir"
+			+ " ihr sie unser euer ihrer uns euch ihnen"
+			+ " uns euch sie mein meine meiner meines"
+			+ " meinem meinen dein deine deiner deines deinem"
+			+ " deinen sein seine seiner seines seinem seinen"
+			+ " ihr ihre ihrer ihres ihrem ihren unser"
+			+ " unsere unseres unserem unserer unseren euer"
+			+ " eures eueres eurer euerer eure euere euren"
+			+ " eueren der die das die dessen deren dessen"
+			+ " deren derer dem der dem denen den die"
+			+ " das die dieser diese dieses diese dieses"
+			+ " dieser dieses dieser diesem dieser diesem"
+			+ " diesen diesen diese dieses diese jemand"
+			+ " niemand jemandes niemandes jemandem niemandem"
+			+ " jemanden niemanden "
+			+ " bin bist ist sind seid hab habe hast hat haben "
+			+ " was wer wie wo wann warum wieso weshalb"
+			+ " ein eine einer eins eines ").split(" ");
 
 	public UltraModel(UltraJEliza u) {
 		this.uj = u;
@@ -81,7 +81,8 @@ public class UltraModel {
 		} else if (type.equalsIgnoreCase("!")) {
 			try {
 				String[] lines = FileManager.readFileIntoString(
-						dir + File.separator + "jeliza.sat.brn").trim().split("\\|\\|");
+						dir + File.separator + "jeliza.sat.brn").trim().split(
+						"\\|\\|");
 				String line = "";
 
 				for (int x = 0; x < lines.length; x++) {
