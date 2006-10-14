@@ -15,11 +15,11 @@ import org.homedns.tobiasschulz.io.FileManager;
  */
 public class WortDataBase {
 
-	public Hashtable<String, String> verbs = new Hashtable<String, String>();
+	public Hashtable verbs = new Hashtable();
 
-	public Hashtable<String, String> nomen = new Hashtable<String, String>();
+	public Hashtable nomen = new Hashtable();
 
-	public Hashtable<String, String> adj = new Hashtable<String, String>();
+	public Hashtable adj = new Hashtable();
 
 	public Hashtable[] genus = new Hashtable[3];
 
@@ -38,7 +38,6 @@ public class WortDataBase {
 	 *            Die Text-Datei mit den Saetzen
 	 * @throws IOException
 	 */
-	@SuppressWarnings("unchecked")
 	public WortDataBase(String str) throws IOException {
 
 		verbs.put("bin", "bin");
@@ -52,34 +51,53 @@ public class WortDataBase {
 		verbs.put("wart", "wart");
 
 		// Verben
-		Scanner sc = new Scanner(new FileInputStream("knownVerbs.txt"));
+		String[] sc = FileManager.readFileIntoString("knownVerbs.txt").replace("\n", "").split(" ");
 
-		while (sc.hasNext()) {
-			String t = sc.next();
+		for (int x = 0; x < sc.length; x++) {
+			String t = sc[x];
 			verbs.put(t, t);
 		}
 
 		// System.out.println("--- " + (verbs.size()) + " Verbs found.");
 
 		// Adjektive
-		sc = new Scanner(FileManager.readFileIntoString("knownAdj.txt"));
+		sc = FileManager.readFileIntoString("knownAdj.txt").replace("\n", "").split(" ");
 
-		while (sc.hasNext()) {
-			String pat = sc.next();
+		for (int x = 0; x < sc.length; x++) {
+			String pat = sc[x];
 			pat = pat.trim();
 
 			adj.put(pat, pat);
 		}
 
-		genus[0] = new Hashtable<String, String>();
-		genus[1] = new Hashtable<String, String>();
-		genus[2] = new Hashtable<String, String>();
+		genus[0] = new Hashtable();
+		genus[1] = new Hashtable();
+		genus[2] = new Hashtable();
+
+		// Nomen
+		String dataBase;
+		dataBase = FileManager.readFileIntoString("nomen.txt");
+
+		sc = FileManager.readFileIntoString("knownAdj.txt").replace("\n", "").split(" ");
+
+		for (int y = 0; y < sc.length; y++) {
+			String pat = sc[y];
+			pat = pat.trim();
+
+			String[] k = pat.split(" ; ");
+			for (int x = 0; x < k.length; x++) {
+				String j = k[x];
+				if (j.charAt(0) != Character.toLowerCase(j.charAt(0))) {
+					nomen.put(j, j);
+				}
+			}
+		}
 
 		// Genus
 		BufferedReader br = new BufferedReader(new InputStreamReader(
 				new FileInputStream("genus.txt")));
 		String tmp = "";
-		final Stack<String> s = new Stack<String>();
+		final Stack s = new Stack();
 		while ((tmp = br.readLine()) != null) {
 			s.push(tmp.trim());
 		}
@@ -87,7 +105,7 @@ public class WortDataBase {
 			public void run() {
 				String tmpTh = "";
 				while (!s.isEmpty()) {
-					tmpTh = s.pop();
+					tmpTh = (String) s.pop();
 					String wert = tmpTh.substring(2);
 					if (tmpTh.startsWith("1-")) {
 						genus[0].put(wert, wert);
@@ -117,7 +135,6 @@ public class WortDataBase {
 	 * @throws IOException
 	 * @throws IOException
 	 */
-	@SuppressWarnings("unchecked")
 	public void loadFromFile() throws IOException {
 		verbs.put("bin", "bin");
 		verbs.put("bist", "bist");
@@ -129,18 +146,19 @@ public class WortDataBase {
 		verbs.put("waren", "waren");
 		verbs.put("wart", "wart");
 
-		genus[0] = new Hashtable<String, String>();
-		genus[1] = new Hashtable<String, String>();
-		genus[2] = new Hashtable<String, String>();
+		genus[0] = new Hashtable();
+		genus[1] = new Hashtable();
+		genus[2] = new Hashtable();
 
 		// Verben
 		String dataBase;
+		String[] sc = null;
 		dataBase = FileManager.readFileIntoString("verbs.txt");
 
-		Scanner scanner = new Scanner(dataBase);
+		sc = dataBase.replace("\n", "").split(" ");
 
-		while (scanner.hasNext()) {
-			String pat = scanner.next();
+		for (int x = 0; x < sc.length; x++) {
+			String pat = sc[x];
 			pat = pat.toLowerCase().trim();
 
 			verbs.put(pat, pat);
@@ -149,14 +167,15 @@ public class WortDataBase {
 		// Nomen
 		dataBase = FileManager.readFileIntoString("nomen.txt");
 
-		scanner = new Scanner(dataBase);
+		sc = dataBase.replace("\n", "").split(" ");
 
-		while (scanner.hasNext()) {
-			String pat = scanner.next();
+		for (int y = 0; y < sc.length; y++) {
+			String pat = sc[y];
 			pat = pat.trim();
 
 			String[] k = pat.split(" ; ");
-			for (String j : k) {
+			for (int x = 0; x < k.length; x++) {
+				String j = k[x];
 				if (j.charAt(0) != Character.toLowerCase(j.charAt(0))) {
 					nomen.put(j, j);
 				}
@@ -166,10 +185,10 @@ public class WortDataBase {
 		// Adjektive
 		dataBase = FileManager.readFileIntoString("adj.txt");
 
-		scanner = new Scanner(dataBase);
+		sc = dataBase.replace("\n", "").split(" ");
 
-		while (scanner.hasNext()) {
-			String pat = scanner.next();
+		for (int x = 0; x < sc.length; x++) {
+			String pat = sc[x];
 			pat = pat.trim();
 
 			adj.put(pat, pat);
@@ -201,7 +220,7 @@ public class WortDataBase {
 	public boolean isVerb(String str, boolean alreadyKonjugiert) {
 		str = str.trim().toLowerCase();
 
-		if ((verbs.get(str) == null ? "" : verbs.get(str)).trim().toLowerCase()
+		if (((String) (verbs.get(str) == null ? "" : verbs.get(str))).trim().toLowerCase()
 				.hashCode() == str.hashCode()) {
 			return true;
 		}
@@ -252,7 +271,7 @@ public class WortDataBase {
 	public boolean isNomen(String str) {
 		str = str.trim();
 
-		if ((nomen.get(str) == null ? "" : nomen.get(str)).trim().toLowerCase()
+		if (((String) (nomen.get(str) == null ? "" : nomen.get(str))).trim().toLowerCase()
 				.hashCode() == str.hashCode()) {
 			return true;
 		}
@@ -271,7 +290,7 @@ public class WortDataBase {
 	public boolean isAdj(String str) {
 		str = str.trim();
 
-		if ((adj.get(str) == null ? "" : adj.get(str)).trim().toLowerCase()
+		if (((String) (adj.get(str) == null ? "" : adj.get(str))).trim().toLowerCase()
 				.hashCode() == str.hashCode()) {
 			return true;
 		}
@@ -284,9 +303,25 @@ public class WortDataBase {
 			return true;
 		}
 
+		if (adj.containsKey(str.substring(0, str.length() - 1).toLowerCase())) {
+			return true;
+		}
+
+		if (str.length() > 3) {
+			if (adj.containsKey(str.substring(0, str.length() - 2)
+					.toLowerCase())) {
+				return true;
+			}
+
+			if (adj.containsKey(str.substring(0, str.length() - 3)
+					.toLowerCase())) {
+				return true;
+			}
+		}
+
 		if (str.endsWith("bar") || str.endsWith("haft") || str.endsWith("ig")
 				|| str.endsWith("isch") || str.endsWith("lich")
-				|| str.endsWith("sam")) {
+				|| str.endsWith("sam") || str.endsWith("iert")) {
 			return true;
 		}
 
@@ -296,10 +331,11 @@ public class WortDataBase {
 	public short getGenusFromDatabase(String str) {
 		str = str.trim();
 		short s = Genus.UNKNOWN;
-		for (Hashtable<String, String> gen : genus) {
+		for (int x = 0; x < genus.length; x++) {
+			Hashtable gen = genus[x];
 			s++;
 
-			if ((gen.get(str) == null ? "" : gen.get(str)).trim().toLowerCase()
+			if (((String) (gen.get(str) == null ? "" : gen.get(str))).trim().toLowerCase()
 					.hashCode() == str.hashCode()) {
 				return s;
 			}
@@ -321,7 +357,7 @@ public class WortDataBase {
 		{
 			StringBuffer tmp = new StringBuffer();
 
-			Enumeration<String> keys = verbs.keys();
+			Enumeration keys = verbs.keys();
 			while (keys.hasMoreElements()) {
 				tmp.append(keys.nextElement()).append(" ");
 			}
@@ -337,7 +373,7 @@ public class WortDataBase {
 		{
 			StringBuffer tmp = new StringBuffer();
 
-			Enumeration<String> keys = adj.keys();
+			Enumeration keys = adj.keys();
 			while (keys.hasMoreElements()) {
 				tmp.append(keys.nextElement()).append(" ");
 			}

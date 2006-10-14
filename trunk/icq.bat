@@ -1,0 +1,1 @@
+java -cp .;./tsclasses.jar;./org/homedns/tobiasschulz/apps/jeliza;./lib/jaimbot-lib-1.4.jar;./lib/log4j-1.2.13.jar;msn.jar JElizaICQ

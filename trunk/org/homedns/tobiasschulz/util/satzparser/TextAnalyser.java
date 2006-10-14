@@ -8,8 +8,8 @@ import org.homedns.tobiasschulz.io.FileManager;
 
 public class TextAnalyser {
 
-	public ArrayList<String[]> analyse(String text) {
-		ArrayList<String[]> saetze = new ArrayList<String[]>();
+	public ArrayList analyse(String text) {
+		ArrayList saetze = new ArrayList();
 		VerbDataBase vdb = new VerbDataBase();
 		try {
 			vdb.loadFromFile();
@@ -21,18 +21,19 @@ public class TextAnalyser {
 
 		text = Util.wegMitAbkuerzungen(text);
 
-		Scanner sc = new Scanner(text);
-		sc.useDelimiter("[.!\\?]");
+		String[] sc = text.replace("\n", "").split("[.!\\?]");
 
 		SatzParseManager spm;
 
-		while (sc.hasNext()) {
-			String tm = sc.next().trim();
+		for (int y = 0; y < sc.length; y++) {
+			String tm = sc[y].trim();
+
 			if (tm == "" || tm.contains(":")) {
 				continue;
 			}
 			String[] k = { tm };
-			for (String tmp : k) {
+			for (int x = 0; x < k.length; x++) {
+				String tmp = k[x];
 				if (tmp.contains(",")) {
 					tmp = tmp.substring(0, tmp.indexOf(",") + 1).replace(",",
 							"");
@@ -112,9 +113,10 @@ public class TextAnalyser {
 
 	public static void main(String[] args) {
 		try {
-			ArrayList<String[]> al = new TextAnalyser().analyse(FileManager
+			ArrayList al = new TextAnalyser().analyse(FileManager
 					.readFileIntoString("text.vdb"));
-			for (String[] t : al) {
+			for (int x = 0; x < al.size(); x++) {
+				String[] t = (String[]) al.get(x);
 				System.out.println(t[0] + " - " + t[1] + " " + t[2] + " "
 						+ t[3]);
 			}

@@ -1,8 +1,5 @@
 package org.homedns.tobiasschulz.apps.jeliza.hirn;
 
-import interpreter.base.AnswerPack;
-import interpreter.base.Interpreter;
-
 import java.io.*;
 import java.text.*;
 import java.util.*;
@@ -35,19 +32,39 @@ public class Answerer {
 	public String fragewort = "";
 
 	public SatzParseManager spm = SatzParseManager.createNew();
-	
+
 	public VerbDataBase vdb = null;
 
 	String antExit = "Auf Wiedersehen.";
+
 	String[] antJa = { "Ach so.", "Gut.", "Warscheinlich hast du Recht!",
 			"Wie du meinst!" };
-	String[] antNein = { "Sicher?", "Wirklich nicht?", "Meinst du?",
-			"Warum?" };
-	String[] vorstellen = { "ich heisse", "mein name ist",
-			"man nennt mich", "ich nenne mich" };
+
+	String[] antNein = { "Sicher?", "Wirklich nicht?", "Meinst du?", "Warum?" };
+
+	String[] vorstellen = { "ich heisse", "mein name ist", "man nennt mich",
+			"ich nenne mich" };
+
 	String[] vorstellenAnt = { "Das ist mein Traumname!",
 			"Kein schlechter Name.", "So moechte ich auch heissen!",
 			"Solche Namen mag ich.", "Heisst du wirklich so?" };
+
+	public static String[] pronomen = { "ich", "du", "er", "sie", "es", "meiner", "deiner",
+			"seiner", "ihrer", "seiner", "mir", "dir", "ihm", "ihr", "ihm",
+			"mich", "dich", "ihn", "sie", "es", "wir", "ihr", "sie", "unser",
+			"euer", "ihrer", "uns", "euch", "ihnen", "uns", "euch", "sie",
+			"mein", "meine", "meiner", "meines", "meinem", "meinen", "dein",
+			"deine", "deiner", "deines", "deinem", "deinen", "sein", "seine",
+			"seiner", "seines", "seinem", "seinen", "ihr", "ihre", "ihrer",
+			"ihres", "ihrem", "ihren", "unser", "unsere", "unseres", "unserem",
+			"unserer", "unseren", "euer", "eures", "eueres", "eurer", "euerer",
+			"eure", "euere", "euren", "eueren", "der", "die", "das", "die",
+			"dessen", "deren", "dessen", "deren", "derer", "dem", "der", "dem",
+			"denen", "den", "die", "das", "die", "dieser", "diese", "dieses",
+			"diese", "dieses", "dieser", "dieses", "dieser", "diesem",
+			"dieser", "diesem", "diesen", "diesen", "diese", "dieses", "diese",
+			"jemand", "niemand", "jemandes", "niemandes", "jemandem",
+			"niemandem", "jemanden", "niemanden" };
 
 	Random r = new java.util.Random();
 
@@ -127,15 +144,15 @@ public class Answerer {
 		if (fra.startsWith("nein") && fra.length() < 6)
 			return antNein[r.nextInt(antNein.length)];
 
-		if (fra.indexOf("eliza") > -1)
-			return "Ja ich bin JEliza. Oder was hast du gefragt?";
+/*		if (fra.indexOf("eliza") > -1)
+			return "Ja ich bin JEliza. Oder was hast du gefragt?";*/
 
-		for (String tmp : vorstellen) {
+/*		for (String tmp : vorstellen) {
 			if (fra.toLowerCase().startsWith(tmp)) {
 				ant = vorstellenAnt[r.nextInt(vorstellenAnt.length)];
 			}
-		}
-
+//		}*/
+		
 		return ant;
 
 	}
@@ -156,7 +173,6 @@ public class Answerer {
 		String ant = antParameter;
 		String fra = fraParameter;
 
-		@SuppressWarnings("unused")
 		Random r = new java.util.Random();
 
 		fra = Util.replace(fra, "ä", "ae");
@@ -173,7 +189,6 @@ public class Answerer {
 		fra = fra.toLowerCase();
 		{
 			StringTokenizer stoken = new StringTokenizer(fra, " ");
-			@SuppressWarnings("unused")
 			String obj = "";
 			while (stoken.hasMoreTokens()) {
 				String tok = stoken.nextToken();
@@ -291,79 +306,6 @@ public class Answerer {
 			}
 		}
 
-		if (fra.startsWith("was")) {
-			StringTokenizer stoken = new StringTokenizer(fra, " ");
-			stoken.nextToken();
-			String obj = "";
-			while (stoken.hasMoreTokens()) {
-				obj += stoken.nextToken() + " ";
-			}
-			obj = obj.trim();
-			obj = obj.toLowerCase();
-			String dasIst = "";
-			dasIst = hirn.getAnt("was " + obj);
-			if (dasIst == null) {
-				dasIst = ant;
-			}
-
-			return dasIst;
-		}
-
-		if (fra.startsWith("wer")) {
-			StringTokenizer stoken = new StringTokenizer(fra, " ");
-			stoken.nextToken();
-			String obj = "";
-			while (stoken.hasMoreTokens()) {
-				obj += stoken.nextToken() + " ";
-			}
-			obj = obj.trim();
-			obj = obj.toLowerCase();
-			String dasIst = "";
-			dasIst = hirn.getAnt("wer " + obj);
-			if (dasIst == null) {
-				dasIst = ant;
-			}
-
-			return dasIst;
-		}
-
-		if (fra.startsWith("wieso") || fra.startsWith("warum")
-				|| fra.startsWith("weshalb")) {
-			StringTokenizer stoken = new StringTokenizer(fra, " ");
-			stoken.nextToken();
-			String obj = "";
-			while (stoken.hasMoreTokens()) {
-				obj += stoken.nextToken() + " ";
-			}
-			obj = obj.trim();
-			obj = obj.toLowerCase();
-			String dasIst = "";
-			dasIst = hirn.getAnt("wieso " + obj);
-			if (dasIst == null) {
-				dasIst = ant;
-			}
-
-			return dasIst;
-		}
-
-		if (fra.startsWith("wie")) {
-			StringTokenizer stoken = new StringTokenizer(fra, " ");
-			stoken.nextToken();
-			String obj = "";
-			while (stoken.hasMoreTokens()) {
-				obj += stoken.nextToken() + " ";
-			}
-			obj = obj.trim();
-			obj = obj.toLowerCase();
-			String dasIst = "";
-			dasIst = hirn.getAnt("wie " + obj);
-			if (dasIst == null) {
-				dasIst = ant;
-			}
-
-			return dasIst;
-		}
-
 		return ant;
 	}
 
@@ -417,7 +359,7 @@ public class Answerer {
 		fra = Util.replace(fra, ".", " . ");
 
 		int y = 0;
-		Vector<String> nomen = new Vector<String>();
+		Vector nomen = new Vector();
 		StringTokenizer stoken = new StringTokenizer(fra, " ");
 		while (stoken.hasMoreElements()) {
 			String token = stoken.nextToken();
@@ -513,13 +455,28 @@ public class Answerer {
 				"? Gut.", "? Naja...", "? Dz Dz ...", "? Mmmmm...",
 				"? Wirklich? Schrecklich ...", "? Sehen das alle so?",
 				"? Oh gott!", "? Warum?", "? Weshalb?", "? Ist das Normal?", };
-		String[] einzelAntwort = { "Das finde ich auch !",
-				"Der Meinung bin ich auch.", "Das ist wohl so.",
-				"Das sagt mein Programmierer auch.", "Stimmt das wirklich?",
-				"Wie kann das passieren.", "Schade.", "Traurig.",
-				"Glaubst du, das weiss ich nicht?" };
+		String[] einzelAntwort = {
+				"Das finde ich auch !",
+				"Der Meinung bin ich auch.",
+				"Das ist wohl so.",
+				"Das sagt mein Programmierer auch.",
+				"Stimmt das wirklich?",
+				"Wie kann das passieren?",
+				"Schade.",
+				"Traurig.",
+				"Glaubst du, das weiss ich nicht?",
+				"Das ist ein sehr origineller Gedanke.",
+				"Es gibt nicht viele Leute, die sich auf diese Weise auszudruecken vermoegen.",
+				"Wie hast Du von mir erfahren?",
+				"Lass uns ein wenig philosophieren.",
+				"Lass uns ein wenig meditieren.\nOmmm\nOmmm\nOmmm",
+				"Gibt es irgendwas, worueber ich Bescheid wissen sollte?",
+				"Jetzt habe ich den Faden verloren.",
+				"Was willst Du mich wirklich fragen?",
+				"Was ist der Sinn des Lebens?",
+				"Du bist nicht gerade intelligent!", "Hast du den IQ 10?" };
 
-		if (r.nextInt(10) < 7) {
+		if (r.nextInt(10) < 2) {
 			ant += antGrund[r.nextInt(antGrund.length)];
 		} else {
 			ant = einzelAntwort[r.nextInt(einzelAntwort.length)];
@@ -631,7 +588,7 @@ public class Answerer {
 				sum = nums[0];
 				for (int x = 1; x < nums.length; x++) {
 					System.out.println(nums[x - 1]);
-					if ((Double)nums[x] == null || (Double)nums[x] == 0d) {
+					if (Double.toString(nums[x]) == null || Double.toString(nums[x]) == Double.toString(0d)) {
 						continue;
 					}
 					sum *= nums[x];
@@ -641,7 +598,7 @@ public class Answerer {
 			if (rechenArt.contains("/")) {
 				sum = nums[0];
 				for (int x = 1; x < nums.length; x++) {
-					if ((Double)nums[x] == null || (Double)nums[x] == 0d) {
+					if (Double.toString(nums[x]) == null || nums[x] == 0d) {
 						continue;
 					}
 					sum /= nums[x];
@@ -670,7 +627,6 @@ public class Answerer {
 	 * @return Die Antwort
 	 */
 	public String[] analyseSatz(String fraParameter, String antParameter) {
-		@SuppressWarnings("unused")
 		String ant = antParameter;
 		String fra = fraParameter;
 
@@ -943,7 +899,7 @@ public class Answerer {
 		String ant = antParameter;
 		String fra = fraParameter;
 
-		if (fra.trim().length() == 0) {
+/*		if (fra.trim().length() == 0) {
 			return "Du hast nichts eingegeben...";
 		}
 
@@ -995,16 +951,15 @@ public class Answerer {
 				"Traurig.", "Glaubst du, das weiss ich nicht?", "Natuerlich.",
 				"Das ist ja unglaublich.", "Das glaube ich nicht.",
 				"Faszinierend.", "Das ist doch Bloedsinn",
-				"Das kann gar nicht sein"};
+				"Das kann gar nicht sein" };
 
 		String[] einzelAntwort = { "Das finde ich auch !",
 				"Der Meinung bin ich auch.", "Das ist wohl so.",
 				"Das sagt mein Programmierer auch.", "Ich weiss.",
 				"Stimmt das wirklich?", "Wie kann das passieren?", "Schade.",
 				"Traurig.", "Super", "Glaubst du, das weiss ich nicht?",
-				"Das glaube ich nicht.",
-				"Faszinierend.", "Das ist doch Bloedsinn",
-				"Das kann gar nicht sein"};
+				"Das glaube ich nicht.", "Faszinierend.",
+				"Das ist doch Bloedsinn", "Das kann gar nicht sein" };
 
 		if (spm.satzType == SatzParseManager.EINFACHE_FRAGE) {
 			addPerson(subjekt, verb, objekt);
@@ -1038,7 +993,8 @@ public class Answerer {
 			}
 
 			AnswerPack ans = in.get(subjekt.toLowerCase(), verb.toLowerCase(),
-					objekt.toLowerCase().replace("null", ""), fragewort.toLowerCase());
+					objekt.toLowerCase().replace("null", ""), fragewort
+							.toLowerCase());
 
 			String ant2 = ans.sub + " " + ans.verb + " " + ans.obj;
 			ant2 = ant2.trim();
@@ -1053,8 +1009,6 @@ public class Answerer {
 		if (spm.satzType == SatzParseManager.AUSSAGESATZ) {
 			addPerson(subjekt, verb, objekt);
 
-			hirn.addFakt(subjekt, verb, objekt, fragewort, "true");
-
 			try {
 				in.useInterpreter("simple-sent.jel");
 			} catch (FileNotFoundException e) {
@@ -1063,8 +1017,10 @@ public class Answerer {
 
 			AnswerPack ans = in.get(subjekt.toLowerCase(), verb.toLowerCase(),
 					objekt.toLowerCase(), "");
-			
+
 			Random r = new Random();
+
+			hirn.addFakt(subjekt, verb, objekt, fragewort, "true");
 
 			if (ans.othr.trim().toLowerCase().hashCode() == "true".hashCode()) {
 				if (r.nextInt(10) < 7) {
@@ -1074,12 +1030,11 @@ public class Answerer {
 				}
 				return ant;
 			} else {
-				ant = ja[r.nextInt(ja.length - 1)];
+				return antParameter;
 			}
-			return ant;
 		} else {
 			System.out.println("Satzart: " + spm.satzType);
-		}
+		}*/
 
 		return ant;
 	}
@@ -1092,6 +1047,92 @@ public class Answerer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public String getFraOfThema(String fra, String ant) {
+		ArrayList infos = new ArrayList();
+
+		for (int x = 0; x < fra.split(" ").length; x++) {
+			String wort = fra.split(" ")[x];
+			if (wort.toLowerCase() == wort) {
+				continue;
+			}
+			
+			String w = "";
+			try {
+				w = FileManager.readFileIntoString("stichwort/"
+						+ wort.toLowerCase());
+			} catch (IOException e) {
+				continue;
+			}
+			for (int y = 0; y < w.split("\n").length; y++) {
+				String satz = w.split("\n")[y];
+				satz = satz.trim();
+				if (satz.length() < 2) {
+					continue;
+				}
+				infos.add(satz);
+				System.out.println("MA: " + satz);
+			}
+		}
+
+		Random r = new Random();
+
+		if (infos.size() > 0) {
+			ant = (String) infos.get(r.nextInt(infos.size()));
+		}
+		else {
+			return ant;
+		}
+
+		ant = Util.replace(ant, " Du ", " XDXuX ");
+		ant = Util.replace(ant, " Dein", " XDXeXiXnX");
+		ant = Util.replace(ant, " Dir ", " XDXiXrX ");
+		ant = Util.replace(ant, " Dich ", " XDXiXcXhX ");
+
+		ant = Util.replace(ant, " du ", " XDXuX ");
+		ant = Util.replace(ant, " dein", " XDXeXiXnX");
+		ant = Util.replace(ant, " dir ", " XDXiXrX ");
+		ant = Util.replace(ant, " dich ", " XDXiXcXhX ");
+
+		ant = Util.replace(ant, " ich ", " Du ");
+		ant = Util.replace(ant, " mein", " Dein");
+		ant = Util.replace(ant, " mir ", " Dir ");
+		ant = Util.replace(ant, " mich ", " Dich ");
+
+		ant = Util.replace(ant, " Ich ", " du ");
+		ant = Util.replace(ant, " Mein", " dein");
+		ant = Util.replace(ant, " Mir ", " dir ");
+		ant = Util.replace(ant, " Mich ", " dich ");
+
+		ant = Util.replace(ant, " wir ", " XiXhXrX ");
+		ant = Util.replace(ant, " Wir ", " XIXhXrX ");
+		ant = Util.replace(ant, " unser", " XuXnXsXeXrX");
+		ant = Util.replace(ant, "Unser", "XUXnXsXeXrX");
+		ant = Util.replace(ant, " unsere", " XeXuXrXeX ");
+		ant = Util.replace(ant, " uns", " XeXuXcXhX ");
+
+		ant = Util.replace(ant, " ihr ", " wir ");
+		ant = Util.replace(ant, " Ihr ", " Wir ");
+		ant = Util.replace(ant, " euer", " unser");
+		ant = Util.replace(ant, " eure ", " unsere");
+		ant = Util.replace(ant, " euch ", " uns");
+
+		ant = Util.replace(ant, " XiXhXrX ", " ihr ");
+		ant = Util.replace(ant, " XIXhXrX ", " Ihr ");
+		ant = Util.replace(ant, " XuXnXsXeXrX", " euer");
+		ant = Util.replace(ant, "XUXnXsXeXrX", "Euer");
+		ant = Util.replace(ant, " XeXuXrXeX ", " eure");
+		ant = Util.replace(ant, " XeXuXcXhX ", " Euch");
+
+		ant = Util.replace(ant, " XDXuX ", " ich ");
+		ant = Util.replace(ant, " XDXeXiXnX", " mein");
+		ant = Util.replace(ant, " XDXiXrX ", " mir ");
+		ant = Util.replace(ant, " XDXiXcXhX ", " mich ");
+
+		System.out.println(ant);
+
+		return ant;
 	}
 
 } // class Regeln

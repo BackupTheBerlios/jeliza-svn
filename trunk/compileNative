@@ -1,0 +1,9 @@
+export CLASSPATH=.
+for x in `find . -name "*.jar"`; do
+	export CLASSPATH=${CLASSPATH}:$x
+done
+
+gcj `find . -name "*.java"` -o jeliza.cgi --main=JElizaCgi -findirect-dispatch /usr/lib/libgcj.a -lm -lc 
+gcj `find . -name "*.java"` -o jeliza-home --main=JElizaHome -findirect-dispatch
+gcj `find . -name "*.java"` -o jeliza-ask --main=JElizaAsk -findirect-dispatch
+strip jeliza*

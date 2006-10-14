@@ -68,16 +68,17 @@ public class JElizaHome {
 		System.out.println("JEliza: Hallo, wie ist dein Name? Antworte bitte in ganzen Sätzen!");
 		System.out.print("Mensch: ");
 
+		VerbDataBase vdb = null;
+		try {
+			vdb = new VerbDataBase();
+			vdb.loadFromFile();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
 		String line = "";
 		try {
 			while((line = br.readLine()) != null) {
-				VerbDataBase vdb = null;
-				try {
-					vdb = new VerbDataBase();
-					vdb.loadFromFile();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
 
 				String fra = line;
 				String ant = 

@@ -8,21 +8,21 @@ public class Satz {
 	
 	public String istAntortAuf = "";
 	
-	public int gefuehl = 2;
+	public Integer gefuehl = new Integer(2);
 	
 	public Gehirn hirn;
 	
 	public Satz(String pl, String ht, Integer gef) {
 		satzPlain = pl;
 		satzHtml = ht;
-		if (gef != -1)
+		if (gef != new Integer(-1))
 			gefuehl = gef;
 	}
 
 	public Satz(String pl, String ht, Integer gef, Gehirn h) {
 		satzPlain = pl;
 		satzHtml = ht;
-		if (gef != -1)
+		if (gef != new Integer(-1))
 			gefuehl = gef;
 		hirn = h;
 	}
@@ -30,7 +30,7 @@ public class Satz {
 	public Satz(String pl, String ht, Integer gef, String answerOf) {
 		satzPlain = pl;
 		satzHtml = ht;
-		if (gef != -1)
+		if (gef != new Integer(-1))
 			gefuehl = gef;
 		istAntortAuf = answerOf;
 	}
@@ -38,7 +38,7 @@ public class Satz {
 	public Satz(String pl, String ht, Integer gef, Gehirn h, String answerOf) {
 		satzPlain = pl;
 		satzHtml = ht;
-		if (gef != -1)
+		if (gef != new Integer(-1))
 			gefuehl = gef;
 		hirn = h;
 		istAntortAuf = answerOf;
@@ -47,7 +47,7 @@ public class Satz {
 	public Satz(String pl, String ht) {
 		satzPlain = pl;
 		satzHtml = ht;
-		gefuehl = 2;
+		gefuehl = new Integer(2);
 	}
 	
 }

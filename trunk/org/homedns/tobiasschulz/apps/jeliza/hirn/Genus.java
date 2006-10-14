@@ -83,25 +83,29 @@ public class Genus {
 			e.printStackTrace();
 		}
 
-		for (String tmp : derdiedas) {
+		for (int x = 0; x < derdiedas.length; x++) {
+			String tmp = derdiedas[x];
 			if (tmp.toLowerCase().hashCode() == str.hashCode()) {
 				genus = Genus.UNKNOWN;
 			}
 		}
 
-		for (String tmp : m) {
+		for (int x = 0; x < m.length; x++) {
+			String tmp = m[x];
 			if (tmp.toLowerCase().hashCode() == str.hashCode()) {
 				genus = Genus.MAENNLICH;
 			}
 		}
 
-		for (String tmp : w) {
+		for (int x = 0; x < w.length; x++) {
+			String tmp = w[x];
 			if (tmp.toLowerCase().hashCode() == str.hashCode()) {
 				genus = Genus.WEIBLICH;
 			}
 		}
 
-		for (String tmp : s) {
+		for (int x = 0; x < s.length; x++) {
+			String tmp = s[x];
 			if (tmp.toLowerCase().hashCode() == str.hashCode()) {
 				genus = Genus.SAECHLICH;
 			}

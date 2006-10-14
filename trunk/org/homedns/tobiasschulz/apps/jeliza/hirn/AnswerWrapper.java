@@ -1,6 +1,8 @@
 package org.homedns.tobiasschulz.apps.jeliza.hirn;
 
-import java.io.*;
+import java.util.Iterator;
+
+import module.megajeliza.Saver;
 
 import org.homedns.tobiasschulz.apps.jeliza.Util;
 import org.homedns.tobiasschulz.util.satzparser.VerbDataBase;
@@ -18,6 +20,8 @@ public class AnswerWrapper {
 
 	public String[] satzTeile = new String[4];
 
+	Saver sa = new Saver();
+
 	/**
 	 * Methode zum Beantworten der Frage / Des Satzes des Users.
 	 * 
@@ -30,6 +34,11 @@ public class AnswerWrapper {
 		String fra = fr.satzPlain;
 		re = reParam;
 		re.vdb = vdb;
+		hirn.re = re;
+		if (System.getProperty("jeliza.name") != null) {
+			fra = fra.replace(System.getProperty("jeliza.name"), "JEliza");
+			fra = fra.replace(System.getProperty("jeliza.name").toLowerCase(), "JEliza");
+		}
 		boolean fertig = false;
 		String ant = "Uff! Da bin ich überfragt!\nKontaktieren sie doch bitte meinen Programmierer "
 				+ "darüber,\n"
@@ -63,8 +72,13 @@ public class AnswerWrapper {
 
 		String[] fs = fra.split(" ");
 		String q = "";
-		for (String st : fs) {
-			if (st.toLowerCase().hashCode() == "er".hashCode()) {
+		for (int x = 0; x < fs.length; x++) {
+			String st = fs[x];
+			if (st.toLowerCase().hashCode() == "er".hashCode()
+					|| st.toLowerCase().hashCode() == "sie".hashCode()
+					|| st.toLowerCase().hashCode() == "es".hashCode()) {
+				q += st;
+			} else if (st.toLowerCase().hashCode() == "er".hashCode()) {
 				q += ((Genus.getGenus(hirn.erSieEsGedaechtnis[0], vdb) != Genus.UNKNOWN) ? Genus
 						.getDerDieDas(Genus.getGenus(
 								hirn.erSieEsGedaechtnis[0], vdb))
@@ -105,40 +119,68 @@ public class AnswerWrapper {
 			fertig = true;
 		}
 
-		s = re.parseSatz(ofra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+/*		if (!fertig) {
+			s = re.parseSatz(ofra, ant);
+			if (!fertig && s != ant) {
+				ant = s;
+				fertig = true;
+			}
+		}*/
+
+		if (!fertig) {
+			s = re.getInformation(fra, ant);
+			if (!fertig && s != ant) {
+				ant = s;
+				fertig = true;
+			}
 		}
 
-		s = re.getInformation(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (!fertig) {
+			s = re.getQuestionWord(fra, ant);
+			if (!fertig && s != ant) {
+				ant = s;
+				fertig = true;
+			}
 		}
 
-		s = re.getQuestionWord(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (!fertig) {
+			s = hirn.mj.ask(ofra, ant);
+			if (!fertig && s != ant && s.trim().hashCode() != "".hashCode()) {
+				ant = s;
+				fertig = true;
+			}
 		}
 
-		s = hirn.getAntPublicGehirn(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (!fertig) {
+			s = hirn.getAntPublicGehirn(fra, ant);
+			if (!fertig && s != ant && s.trim().hashCode() != "".hashCode()) {
+				ant = s;
+				fertig = true;
+			}
 		}
 
-		s = hirn.getAntBaseGehirn(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (!fertig) {
+			s = re.getFraOfThema(fra, ant);
+			if (!fertig && s != ant) {
+				ant = s;
+				fertig = true;
+			}
 		}
 
-		s = re.getFra2Ant(fra, ant);
-		if (!fertig && s != ant) {
-			ant = s;
-			fertig = true;
+		if (!fertig) {
+			s = hirn.getAntBaseGehirn(fra, ant);
+			if (!fertig && s != ant) {
+				ant = s;
+				fertig = true;
+			}
+		}
+
+		if (!fertig) {
+			s = re.getFra2Ant(fra, ant);
+			if (!fertig && s != ant) {
+				ant = s;
+				fertig = true;
+			}
 		}
 
 		satzTeile[0] = re.subjekt;
@@ -160,26 +202,31 @@ public class AnswerWrapper {
 
 			String[] woerter = fra.split(" ");
 			int feel = -1;
-			for (String tmp : woerter) {
+			for (int x = 0; x < woerter.length; x++) {
+				String tmp = woerter[x];
 				if (hirn.gefuehlHeute.wortToFeeling.containsKey(tmp)) {
-					feel = hirn.gefuehlHeute.wortToFeeling.get(tmp);
+					feel = Integer.parseInt((String) hirn.gefuehlHeute.wortToFeeling.get(tmp));
 				}
 			}
-			for (String tmp : hirn.gefuehlHeute.wortToFeeling.keySet()) {
+			Iterator it = hirn.gefuehlHeute.wortToFeeling.keySet().iterator();
+			while (it.hasNext()) {
+				String tmp = (String) it.next();
 				if (fra.toLowerCase().contains(tmp.toLowerCase())) {
-					feel = hirn.gefuehlHeute.wortToFeeling.get(tmp);
+					feel = Integer.parseInt((String) hirn.gefuehlHeute.wortToFeeling.get(tmp));
 				}
 			}
-
+			
 			woerter = fra.split(" ");
-			for (String st : woerter) {
+			for (int x = 0; x < woerter.length; x++) {
+				String st = woerter[x];
 				if (vdb.isNomen(st)) {
 					Genus.getGenus(st, vdb);
 				}
 			}
 			String vorher = "";
 			String warschon = "";
-			for (String st : woerter) {
+			for (int x = 0; x < woerter.length; x++) {
+				String st = woerter[x];
 				if (st.length() < 2) {
 					continue;
 				}
@@ -193,7 +240,8 @@ public class AnswerWrapper {
 					continue;
 				}
 				String[] tmp = { st, vorher + " " + st };
-				for (String str : tmp) {
+				for (int y = 0; y < tmp.length; y++) {
+					String str = tmp[y];
 					str = str.trim();
 					String strLow = str.toLowerCase();
 					if (vdb.isVerb(str)) {
@@ -229,15 +277,24 @@ public class AnswerWrapper {
 			new Thread(new Runnable() {
 
 				public void run() {
-					interpreter.base.Compiler c = new interpreter.base.Compiler();
-					c.compile(vdb);
+//					interpreter.base.Compiler c = new interpreter.base.Compiler();
+//					c.compile(vdb);
 				}
-				
+
 			}).start();
 
 			System.out.println("  Antwort: \"" + antPlain + "\"");
 
-			return new Satz(antPlain, ant, feel, hirn, ofra);
+			if (System.getProperty("jeliza.name") != null) {
+				ant = ant.replace("JEliza", System.getProperty("jeliza.name"));
+				ant = ant.replace("jeliza", System.getProperty("jeliza.name").toLowerCase());
+				antPlain = antPlain.replace("JEliza", System.getProperty("jeliza.name"));
+				antPlain = antPlain.replace("jeliza", System.getProperty("jeliza.name").toLowerCase());
+			}
+			
+			sa.save();
+
+			return new Satz(antPlain, ant, new Integer(feel), hirn, ofra);
 		}
 		return null;
 	}

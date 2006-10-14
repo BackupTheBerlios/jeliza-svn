@@ -1,17 +1,22 @@
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.*;
 import java.util.*;
 
 import javax.swing.*;
+
+import jeliza.io.FileOp;
+
+import module.megajeliza.*;
+
 import org.homedns.tobiasschulz.io.*;
 import org.homedns.tobiasschulz.util.satzparser.*;
 import org.homedns.tobiasschulz.apps.speech.*;
 import org.homedns.tobiasschulz.apps.jeliza.Util;
 import org.homedns.tobiasschulz.apps.jeliza.hirn.*;
+
+import chat.base.JElizaICQ;
+import chat.base.JElizaIRC;
 
 /**
  * Das Java-Servlet JEliza, ein Programm, welches die Menschliche Sprache
@@ -50,9 +55,9 @@ public class JElizaGui implements ActionListener {
 
 	JFrame fr;
 
-	JPanel sidebar = new JPanel(new GridLayout(15, 1, 5, 5));
+	JPanel sidebar = null;
 
-	JPanel oberSidebar = new JPanel(new BorderLayout(5, 5));
+	JPanel oberSidebar = null;
 
 	public Dialog dia;
 
@@ -63,6 +68,16 @@ public class JElizaGui implements ActionListener {
 	public Dialog dia4;
 
 	VerbDataBase vdb = null;
+
+	JTabbedPane tabbedPane = null;
+
+	JPanel chatAlone = null;
+
+	JElizaICQ chatIcq = null;
+
+	JElizaIRC chatIrc = null;
+
+	public JComboBox profs = null;
 
 	/**
 	 * Der Standard-Konstruktor
@@ -75,6 +90,12 @@ public class JElizaGui implements ActionListener {
 		win.setSize(300, 200);
 		win.setLocation(300, 250);
 		win.setVisible(true);
+		
+		if (System.getProperty("jeliza.name") == null) {
+			System.setProperty("jeliza.name", "JEliza");
+		}
+
+		UltraJEliza.chProfile("default");
 
 		sleep(500);
 
@@ -117,11 +138,17 @@ public class JElizaGui implements ActionListener {
 			version = "unknown";
 		}
 
-		fr = new JFrame("JEliza version " + version);
+		fr = new JFrame(System.getProperty("jeliza.name", "JEliza")
+				+ " version " + version);
 		fr.setLayout(new BorderLayout(5, 5));
-		fr.setBackground(Color.white);
-		fr.setForeground(Color.darkGray);
 		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		chatIcq = new JElizaICQ(fr);
+		chatIrc = new JElizaIRC();
+		tabbedPane = new JTabbedPane();
+		chatAlone = new JPanel(new BorderLayout(5, 5));
+		sidebar = new JPanel(new GridLayout(15, 1, 5, 5));
+		oberSidebar = new JPanel(new BorderLayout(5, 5));
 
 		new Thread(new Runnable() {
 
@@ -141,7 +168,7 @@ public class JElizaGui implements ActionListener {
 				+ "Wie heißt du?" + "</body></html>");
 		jelizaText.setBackground(Color.white);
 		jelizaText.setForeground(Color.darkGray);
-		fr.add(new JScrollPane(jelizaText), "Center");
+		chatAlone.add(new JScrollPane(jelizaText), "Center");
 
 		JPanel userPanel = new JPanel(new BorderLayout(10, 10));
 		JPanel bottomPanel = new JPanel(new BorderLayout(0, 0));
@@ -158,14 +185,10 @@ public class JElizaGui implements ActionListener {
 		userPanel.add(senden, "East");
 
 		bottomPanel.add(userPanel, "North");
-		// bottomPanel.add(new JLabel(
-		// " "), "South");
 
-		fr.add(bottomPanel, "South");
+		chatAlone.add(bottomPanel, "South");
 
 		generateSidebar("");
-		// oberSidebar.add(sidebar, "North");
-		// fr.add(oberSidebar, "East");
 
 		fr.addWindowListener(new WindowAdapter() {
 
@@ -179,6 +202,32 @@ public class JElizaGui implements ActionListener {
 
 		});
 
+		tabbedPane.add(System.getProperty("jeliza.name", "JEliza"), chatAlone);
+		tabbedPane.add("ICQ Login", chatIcq.panel);
+		tabbedPane.add("IRC Login", chatIrc.panel);
+
+		fr.add("Center", tabbedPane);
+
+		JPanel pan = new JPanel(new BorderLayout());
+		profs = new JComboBox();
+		initProfileChhoser();
+		profs.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				String pro = ((String) profs.getSelectedItem()).replace(
+						"standard", "default");
+				UltraJEliza.newProfile(pro);
+				UltraJEliza.chProfile(pro);
+
+				JOptionPane.showMessageDialog(null, "Profil '" + pro
+						+ "' ausgewaehlt.");
+				initProfileChhoser();
+			}
+
+		});
+		pan.add(profs);
+		fr.add("North", pan);
+
 		show();
 		userText.requestFocus();
 
@@ -187,12 +236,35 @@ public class JElizaGui implements ActionListener {
 		win = null;
 	}
 
+	private void initProfileChhoser() {
+		profs.setEditable(true);
+		profs.removeAllItems();
+		profs.addItem(UltraJEliza.getCurrentProfile().replace("default",
+				"standard"));
+		try {
+			Iterator it = FileOp.listDirIterator(new File("megajeliza"));
+			while (it.hasNext()) {
+				String tmp = ((String) it.next()).trim();
+				if (tmp.equalsIgnoreCase(".") || tmp.equalsIgnoreCase("..")
+						|| tmp.equalsIgnoreCase("new")) {
+					continue;
+				}
+				if (tmp.equalsIgnoreCase(UltraJEliza.getCurrentProfile())) {
+					continue;
+				}
+				profs.addItem(tmp.replace("default", "standard"));
+			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+
 	/**
 	 * Generiert die Sidebar, die Rechts im Fenster angezeigt wird und Sachen
 	 * wie Gefuehle etc. anzeigt.
 	 */
 	private void generateSidebar(String fra) {
-		fr.remove(oberSidebar);
+		chatAlone.remove(oberSidebar);
 		sidebar.removeAll();
 		oberSidebar.removeAll();
 
@@ -223,8 +295,9 @@ public class JElizaGui implements ActionListener {
 		fr.setJMenuBar(genJMenuBar());
 
 		oberSidebar.add(sidebar, "North");
-		fr.add(oberSidebar, "East");
+		chatAlone.add(oberSidebar, "East");
 		show();
+		chatAlone.repaint();
 		fr.repaint();
 		oberSidebar.repaint();
 		sidebar.repaint();
@@ -265,7 +338,7 @@ public class JElizaGui implements ActionListener {
 							"2::", "<font color='green'>").replace("\n",
 							"</font><br>\n") + "</body></html>");
 			userText.setText("");
-			hirn.gefuehlHeute.setFeeling(antwort.gefuehl);
+			hirn.gefuehlHeute.setFeeling(antwort.gefuehl.intValue());
 			generateSidebar(fra);
 			userText.requestFocus();
 			Speech.say(Speech.preprocessor(antPlain
@@ -298,6 +371,7 @@ public class JElizaGui implements ActionListener {
 		if (e.getActionCommand() == "help") {
 			displayHelp();
 		}
+
 	}
 
 	/**
@@ -355,8 +429,9 @@ public class JElizaGui implements ActionListener {
 	 * Scannt einen Text nach Informationen und Speichert sie ab.
 	 */
 	private void scan(String text) {
-		ArrayList<String[]> al = new TextAnalyser().analyse(text);
-		for (String[] t : al) {
+		ArrayList al = new TextAnalyser().analyse(text);
+		for (int x = 0; x < al.size(); x++) {
+			String[] t = (String[]) al.get(x);
 			System.out.println(t[0] + " - " + t[1] + " " + t[2] + " " + t[3]);
 			String txt = "";
 			txt += "Ist folgende Information richtig?\n\n";
@@ -432,7 +507,8 @@ public class JElizaGui implements ActionListener {
 				Object[] arr = vdb.nomen.keySet().toArray();
 				Arrays.sort(arr);
 				System.gc();
-				for (final Object p2 : arr) {
+				for (int x = 0; x < arr.length; x++) {
+					final Object p2 = arr[x];
 					new Thread(new Runnable() {
 						public void run() {
 							Genus.getGenus((String) p2, vdb);
@@ -453,7 +529,8 @@ public class JElizaGui implements ActionListener {
 		Box b = new Box(BoxLayout.Y_AXIS);
 		File f = new File("personen" + File.separator);
 		String[] ps = f.list();
-		for (String p : ps) {
+		for (int x = 0; x < ps.length; x++) {
+			String p = ps[x];
 			b.add(new JLabel(p));
 		}
 		dia.add(new JScrollPane(b));
@@ -474,7 +551,8 @@ public class JElizaGui implements ActionListener {
 		Object[] arr = vdb.nomen.keySet().toArray();
 		Arrays.sort(arr);
 		System.gc();
-		for (Object p2 : arr) {
+		for (int x = 0; x < arr.length; x++) {
+			String p2 = (String) arr[x];
 			String art = Genus.getDerDieDas(Genus.getGenus((String) p2, false,
 					false, vdb));
 			if (art != "") {
@@ -505,7 +583,8 @@ public class JElizaGui implements ActionListener {
 		Object[] arr3 = vdb.verbs.keySet().toArray();
 		Arrays.sort(arr3);
 		System.gc();
-		for (Object p3 : arr3) {
+		for (int x = 0; x < arr3.length; x++) {
+			String p3 = (String) arr3[x];
 			b3.add(new JLabel((String) p3));
 		}
 		dia3.add(new JScrollPane(b3));
@@ -526,7 +605,8 @@ public class JElizaGui implements ActionListener {
 		Object[] arr4 = vdb.adj.keySet().toArray();
 		Arrays.sort(arr4);
 		System.gc();
-		for (Object p4 : arr4) {
+		for (int x = 0; x < arr4.length; x++) {
+			String p4 = (String) arr4[x];
 			b4.add(new JLabel((String) p4));
 		}
 		dia4.add(new JScrollPane(b4));
@@ -588,10 +668,18 @@ public class JElizaGui implements ActionListener {
 		} catch (IOException e) {
 			version = "unknown";
 		}
-		JOptionPane.showMessageDialog(fr, "JEliza\n" + "Version " + version
-				+ "\n" + "\n" + "Copyright 2006 by Tobias Schulz\n"
-				+ "License: " + "GNU Lesser General Public License (LGPL)",
-				"JEliza - Help!", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(fr, System.getProperty("jeliza.name",
+				"JEliza")
+				+ "\n"
+				+ "Version "
+				+ version
+				+ "\n"
+				+ "\n"
+				+ "Copyright 2006 by Tobias Schulz\n"
+				+ "License: "
+				+ "GNU Lesser General Public License (LGPL)", System
+				.getProperty("jeliza.name", "JEliza")
+				+ " - Help!", JOptionPane.PLAIN_MESSAGE);
 	}
 
 	/**
@@ -666,9 +754,10 @@ public class JElizaGui implements ActionListener {
 		verbs = Util.replace(verbs, "ß", "ss");
 		verbs = Util.toASCII(verbs);
 
-		Scanner sc = new Scanner(verbs);
-		while (sc.hasNext()) {
-			String tmp = sc.next();
+		String[] sc = verbs.replace("\n", "").split(" ");
+
+		for (int x = 0; x < sc.length; x++) {
+			String tmp = sc[x];
 			if (tmp.endsWith("en")) {
 				verbs += " " + tmp.substring(0, tmp.length() - 2) + "e";
 				verbs += " " + tmp.substring(0, tmp.length() - 2) + "st";
@@ -708,9 +797,10 @@ public class JElizaGui implements ActionListener {
 		adj = Util.replace(adj, "  ", " ");
 		adj = Util.toASCII(adj);
 
-		Scanner sc = new Scanner(adj);
-		while (sc.hasNext()) {
-			String tmp = sc.next();
+		String[] sc = adj.replace("\n", "").split(" ");
+
+		for (int x = 0; x < sc.length; x++) {
+			String tmp = sc[x];
 			adj += " " + tmp + "er";
 			adj += " " + tmp + "sten";
 		}

@@ -1,7 +1,5 @@
 package org.homedns.tobiasschulz.util.satzparser;
 
-import java.util.Scanner;
-
 /**
  * Klasse zum Auftrennen eines Satzes in Subjekt, Praedikat und Objekt.
  * 
@@ -52,7 +50,8 @@ public class SatzParseManager {
 	 *            Der Satz
 	 */
 	private SatzParseManager(String str, VerbDataBase vdb) {
-		for (String tmp : anrede) {
+		for (int x = 0; x < anrede.length; x++) {
+			String tmp = anrede[x];
 			str.replace(tmp.toLowerCase() + " ", tmp + " ");
 			str.replace(tmp + " ", tmp.toLowerCase() + " ");
 		}
@@ -132,17 +131,17 @@ public class SatzParseManager {
 		if (str.toLowerCase().startsWith("nein, ")) {
 			str = str.substring(6);
 		}
-		Scanner scanner = new Scanner(str);
 
-		@SuppressWarnings("unused")
 		short mode = 0;
 
 		strSubjekt = "";
 		strObjekt = "";
 		strVerb = "";
 
-		while (scanner.hasNext()) {
-			String pat = scanner.next();
+		String[] sc = str.replace("\n", "").split(" ");
+
+		for (int x = 0; x < sc.length; x++) {
+			String pat = sc[x];
 
 			if (vdb.isVerb(pat.toLowerCase())) {
 				strVerb += pat + " ";
@@ -178,14 +177,12 @@ public class SatzParseManager {
 	 * @return Die Instanz
 	 */
 	private void parseSimpleFrage(String str, VerbDataBase vdb) {
-		Scanner scanner = new Scanner(str);
-
-		@SuppressWarnings("unused")
 		int mode = 0;
 		int maxNomen = 1;
 		int maxWoerterForSubj = 5;
 
-		for (String tmp : anrede) {
+		for (int x = 0; x < anrede.length; x++) {
+			String tmp = anrede[x];
 			if (str.contains(tmp + " ")) {
 				maxWoerterForSubj++;
 				maxNomen++;
@@ -197,14 +194,16 @@ public class SatzParseManager {
 		strObjekt = "";
 		strVerb = "";
 
-		String pat2 = scanner.next();
+		String[] sc = str.replace("\n", "").split(" ");
+
+		String pat2 = sc[0];
 
 		strVerb = pat2 + " ";
 
-		while (scanner.hasNext()) {
+		for (int x = 1; x < sc.length; x++) {
+			String pat = sc[x];
 			mode++;
 
-			String pat = scanner.next();
 			String origPat = pat;
 
 			if (vdb.isVerb(pat.toLowerCase())) {
@@ -214,7 +213,7 @@ public class SatzParseManager {
 			}
 
 			if (mode <= maxWoerterForSubj && maxNomen > 0) {
-				if (scanner.hasNext()) {
+				if (x != sc.length) {
 					if ((origPat.hashCode() != pat.toLowerCase().hashCode())) {
 						maxNomen--;
 					}
@@ -243,32 +242,31 @@ public class SatzParseManager {
 	private void parseExtendedFrage(String str, VerbDataBase vdb) {
 		satzType = ERWEITERTE_FRAGE;
 
-		Scanner scanner = new Scanner(str);
-
-		@SuppressWarnings("unused")
 		short mode = 1;
 
 		strSubjekt = "";
 		strObjekt = "";
 		strVerb = "";
 
-		String pat2 = scanner.next();
+		String[] sc = str.replace("\n", "").split(" ");
+
+		String pat2 = sc[0];
 
 		strFrageWort = pat2.trim();
 		if (strFrageWort == "warum" || strFrageWort == "weshalb") {
 			strFrageWort = "wieso";
 		}
-		if (!scanner.hasNext()) {
+		if (sc.length == 1) {
 			return;
 		}
-		String pat3 = scanner.next();
+		String pat3 = sc[1];
 
 		strVerb = pat3 + " ";
 
-		while (scanner.hasNext()) {
+		for (int x = 2; x < sc.length; x++) {
+			String pat = sc[x];
 			mode++;
 
-			String pat = scanner.next();
 			String origPat = pat;
 
 			if (vdb.isVerb(pat.toLowerCase())) {

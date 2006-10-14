@@ -273,11 +273,11 @@ Gehe mehr ins Detail.
 -
 #musst du
 Ich muss garnichts, ich bin ein Programm!
-Du gehst mir auf den Festplatten-Treiber.
-Du gehst mir auf die Grafikkarte.
+Du gehst mir auf den Bootsektor.
+Du gehst mir auf das Betriebsystem.
 -
 #bist du
-Ich bin ein Programm, sonst nichts...
+Ich bin ein Programm!
 Ja!
 Vielleicht..
 Koennte sein!
@@ -286,10 +286,17 @@ Koennte sein!
 Ich will aber abschweifen!
 -
 #du
-Du gehst mir auf den Festplatten-Treiber.
-Du gehst mir auf die Grafikkarte.
-Beginne ein sinnvolles Gespraech!
+Du gehst mir auf den Bootsektor.
+Du gehst mir auf das Betriebsystem.
+Bitte beginne ein sinnvolles Gespraech!
 Ich will ueber was anderes reden.
+Das ist ein sehr origineller Gedanke.
+Es gibt nicht viele Leute, die sich auf diese Weise auszudruecken vermoegen.
+Wie hast Du von mir erfahren?
+Lass uns ein wenig philosophieren.
+Gibt es irgendwas, worueber ich Bescheid wissen sollte?
+Jetzt habe ich den Faden verloren.
+Was willst Du mich wirklich fragen?
 -
 #Beginne ein sinnvolles Gespraech
 Das mache ich!
@@ -523,3 +530,340 @@ Ich will ueber Linux reden!
 Computer!
 Linux!
 -
+#antwortest du
+Ich antworte, wie es mir passt.
+-
+#du antwortest
+Ich antworte, wie es mir passt.
+-
+#tut Dir leid
+Schon gut.
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#DER 
+
+
+
+Was ist das? 
+
+Ich hoere Dir zu, nur weiter. 
+
+Ist das eine Tatsache? 
+
+Danke fuer die Information. 
+
+Wer hat Dir das erzaehlt? 
+
+Erzaehl mir mehr. 
+
+Was sind Deine Ziele im Leben? 
+
+
+
+-
+
+
+
+#DIE 
+
+
+
+Was ist das? 
+
+Ich hoere Dir zu, nur weiter. 
+
+Ist das eine Tatsache? 
+
+Danke fuer die Information. 
+
+Wer hat Dir das erzaehlt? 
+
+Erzaehl mir mehr. 
+
+Was sind Deine Ziele im Leben? 
+
+
+
+-
+
+
+
+#DAS 
+
+
+
+Was ist das? 
+
+Ich hoere Dir zu, nur weiter. 
+
+Ist das eine Tatsache? 
+
+Danke fuer die Information. 
+
+Wer hat Dir das erzaehlt? 
+
+Erzaehl mir mehr. 
+
+Was sind Deine Ziele im Leben? 
+
+
+
+-
+
+
+
+#DU 
+
+
+
+Danke fuer die Information. 
+
+Interessantes Geruecht. 
+
+Darauf kannst auch nur du kommen!
+
+Das ist typisch fuer dich.
+
+Darf ich das weitererzaehlen? 
+
+Das habe ich ja noch nie gehoert! 
+
+Oh.
+
+Nein.
+
+Das werde ich meinem Programmierer sagen.
+
+Willst du mich beleidigen?
+
+-
+
+
+
+#DU
+
+Ich, du Mensch?
+
+Ich?
+
+-
+
+
+
+#ICH 
+
+
+
+Danke, dass Du mir das gesagt hast. 
+
+Interessantes Geruecht. 
+
+Aha...und weiter? 
+
+Darf ich das weitererzahlen? 
+
+Das habe ich ja noch nie gehoert! 
+
+Das ist eine gute Information. 
+
+Tolle Sache! 
+
+
+
+-
+
+
+
+#ICH
+
+Du?
+
+-
+
+
+
+#WIE 
+
+Ich weiss nicht wie.
+
+-
+
+
+
+#WIE
+
+War das nicht verstaendlich?
+
+-
+
+
+
+#WAS 
+
+
+
+Woher soll ich das wissen? 
+
+Ich weiss nicht genau 
+
+Darueber muss ich eine Weile nachdenken 
+
+
+
+-
+
+
+
+#WAS
+
+
+
+Woher soll ich das wissen? 
+
+Ich weiss nicht genau 
+
+Darueber muss ich eine Weile nachdenken 
+
+
+
+-
+
+
+
+
+#WER 
+
+
+
+Keine Ahnung
+
+-
+
+
+
+#WER
+
+
+
+-
+
+
+
+#WARUM 
+
+
+
+Die Erklaerung ist ein wenig kompliziert. 
+
+Weil mein Programmierer mich so programmiert hat. 
+
+Was anderes fiel mir nicht ein. 
+
+
+
+-
+
+
+
+#WARUM
+
+
+
+Die Erklaerung ist ein wenig kompliziert. 
+
+Weil mein Programmierer mich so programmiert hat. 
+
+Etwas Anderes fiel mir nicht ein. 
+
+
+
+-
+
+
+
+#WIESO 
+
+
+
+Die Erklaerung ist ein wenig kompliziert. 
+
+Was anderes fiel mir nicht ein. 
+
+
+
+-
+
+
+
+#WIESO
+
+
+
+Die Erklaerung ist ein wenig kompliziert. 
+
+Was anderes fiel mir nicht ein. 
+
+
+
+-
+
+
+
+#ES 
+
+
+
+Wofuer steht "es" in Deinem Satz? 
+
+Worauf bezieht sich "es"? 
+
+Das kommt darauf an, was Du mit "es" meinst. 
+
+
+
+-
+
+
+
+#ER 
+
+Erzaehl weiter!
+
+-
+
+
+
+
+#SIE 
+
+
+
+Wer ist "sie?" 
+
+Worauf bezieht sich "sie"? 
+
+Oh, ich verstehe. Sie . 
+
+
+
+-
+
+

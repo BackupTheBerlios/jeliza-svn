@@ -3,9 +3,10 @@ package org.homedns.tobiasschulz.apps.jeliza.hirn;
 import java.io.*;
 import java.util.*;
 
+import module.megajeliza.*;
+
 import org.homedns.tobiasschulz.apps.jeliza.Util;
 import org.homedns.tobiasschulz.io.FileManager;
-
 
 /**
  * Hilfsklasse des Java-Servlets JEliza, die einen Wrapper fuer die
@@ -23,8 +24,10 @@ public class Gehirn {
 	public AnswerWrapper fragenAntworter = new AnswerWrapper();
 
 	public Answerer re = new Answerer(absoluteUrl);
-	
+
 	public String[] erSieEsGedaechtnis = { "Er", "Sie", "Es" };
+
+	public UltraJEliza mj = new UltraJEliza();
 	
 	/**
 	 * Privater Konstruktor
@@ -36,7 +39,7 @@ public class Gehirn {
 		absoluteUrl = tmp;
 		re.hirn = this;
 	}
-	
+
 	/**
 	 * Neue Instanz der Klasse
 	 * 
@@ -140,30 +143,31 @@ public class Gehirn {
 					content = content.concat(line).concat("\n");
 				}
 			}
-			
+
 			int i = 0;
-		
-			String[][] remove = {{"<table", "</table>"}, {"<div class=\"toccolours\"", "</div>"},
-			{"<img", "/>"}};
-			for (String[] re : remove) {
-			while((i = content.indexOf(re[0])) > -1) {
-				content = content.substring(0, i).concat(content.substring(
-						content.indexOf(re[1], i), content.length() -1));
-				System.gc();
-			}
-			content = content.replace(re[1], "");
+
+			String[][] remove = { { "<table", "</table>" },
+					{ "<div class=\"toccolours\"", "</div>" }, { "<img", "/>" } };
+			for (int x = 0; x < remove.length; x++) {
+				String[] re = remove[x];
+				while ((i = content.indexOf(re[0])) > -1) {
+					content = content.substring(0, i).concat(
+							content.substring(content.indexOf(re[1], i),
+									content.length() - 1));
+					System.gc();
+				}
+				content = content.replace(re[1], "");
 			}
 
-			definition = content.substring(content.indexOf("<p>"), content.indexOf("</p>"));
+			definition = content.substring(content.indexOf("<p>"), content
+					.indexOf("</p>"));
 			definition = Util.toASCII(definition);
-			
 
-			
 		} catch (IOException e) {
 			println("Achtung!\nHirnfehler!\n\nIch habe einen Fehler!\n\nBitte kontaktieren sie meinen \nProgrammierer, indem sie in \ndas Gästebuch schreiben oder eine\nMail an tobischulz@arcor.de\n schreiben!\n\nFehler:\n"
 					+ e.getMessage());
 		}
-		
+
 		if (definition.toLowerCase().contains("artikel verschwunden")) {
 			return "Das weiss ich nicht!";
 		}
@@ -183,7 +187,8 @@ public class Gehirn {
 	 * @return Die Antwort
 	 */
 	public String getAntKategorie(String obj) {
-		java.lang.String strDatei = absoluteUrl + "gehirn/kategorien/software.ghn";
+		java.lang.String strDatei = absoluteUrl
+				+ "gehirn/kategorien/software.ghn";
 		java.io.BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
@@ -273,9 +278,9 @@ public class Gehirn {
 		try {
 			br = new BufferedReader(new FileReader(strDatei));
 		} catch (FileNotFoundException e1) {
-			return "\n\n<br><br>Konnte Hirn \"" + strDatei +
-					"\" nicht laden. Bitte benachrichtige meinem Entwickler " +
-					"unter tobischulz@arcor.de !<br><br> \n\n";
+			return "\n\n<br><br>Konnte Hirn \"" + strDatei
+					+ "\" nicht laden. Bitte benachrichtige meinem Entwickler "
+					+ "unter tobischulz@arcor.de !<br><br> \n\n";
 		}
 
 		String dasIst[] = new String[200];
@@ -334,13 +339,15 @@ public class Gehirn {
 				if (null == line)
 					break;
 				line = line.trim().toLowerCase();
+				if ("".hashCode() == line.hashCode())
+					continue;
 				if ("-" == line)
 					break;
 
 				if (line.startsWith("#")
 						&& obj.toLowerCase().indexOf(line.substring(1)) > -1) {
 					Object[] anws;
-					Vector<String> anws2 = new Vector<String>();
+					Vector anws2 = new Vector();
 					int z = 0;
 					java.lang.String line2 = br.readLine();
 					while (!line2.trim().startsWith("-")) {
@@ -382,6 +389,7 @@ public class Gehirn {
 	 * @return Die Antwort
 	 */
 	public String getAntPublicGehirn(String obj, String ant) {
+		obj = obj.replace("?", "").replace("!", "").replace(".", "");
 		java.lang.String strDatei = absoluteUrl + "gehirn/allgemein.ghn";
 		java.io.BufferedReader br = null;
 		try {
@@ -392,6 +400,7 @@ public class Gehirn {
 
 		String dasIst = ant;
 		Random r = new java.util.Random();
+		Vector anws2 = new Vector();
 
 		try {
 			while (true) {
@@ -399,31 +408,38 @@ public class Gehirn {
 				if (null == line)
 					break;
 				line = line.trim().toLowerCase();
+				if ("".hashCode() == line.hashCode())
+					continue;
 				if ("-" == line)
-					break;
+					continue;
 
 				if (line.startsWith("#")
-						&& obj.toLowerCase().indexOf(line.substring(1)) > -1) {
-					Object[] anws;
-					Vector<String> anws2 = new Vector<String>();
+						&& (" " + obj + " ").toLowerCase().indexOf(
+								(" " + line.substring(1) + " ").toLowerCase()) > -1) {
 					int z = 0;
 					java.lang.String line2 = br.readLine();
 					while (!line2.trim().startsWith("-")) {
 						if (null == line2)
 							break;
 						line2 = line2.trim();
+						if (line2.length() < 2) {
+							line2 = br.readLine().trim();
+							continue;
+						}
+						System.out.println(line2);
 						anws2.add(line2);
 
 						z++;
 						line2 = br.readLine().trim();
 					}
-					if (z == 1000) {
-						break;
-					}
-
-					anws = anws2.toArray();
-					return (String) anws[r.nextInt(anws.length)];
 				}
+			}
+			Object[] anws;
+			anws = anws2.toArray();
+			if (anws.length > 0) {
+				return (String) anws[r.nextInt(anws.length)];
+			} else {
+				return ant;
 			}
 		} catch (IOException e) {
 			println("Achtung!\nHirnfehler!\n\nIch habe einen Fehler!\n\nBitte kontaktieren sie meinen \nProgrammierer, indem sie in \ndas Gästebuch schreiben oder eine\nMail an tobischulz@arcor.de\n schreiben!\n\nFehler:\n"
@@ -442,11 +458,12 @@ public class Gehirn {
 	void println(String str) {
 		System.out.println(str);
 	}
-	
+
 	/**
 	 * Fügt einen Fakt der Datenbank hinzu
 	 */
-	public void addFakt(String subjekt, String verben, String objekt, String fragw, String truefalse) {
+	public void addFakt(String subjekt, String verben, String objekt,
+			String fragw, String truefalse) {
 		if (subjekt == null || subjekt == "") {
 			subjekt = "null";
 		}
@@ -456,16 +473,18 @@ public class Gehirn {
 		if (objekt == null || objekt == "") {
 			objekt = "null";
 		}
+		subjekt = Util.toASCII(subjekt);
+		verben = Util.toASCII(verben);
+		objekt = Util.toASCII(objekt);
 		String sub = subjekt.toLowerCase().trim();
 		String verb = verben.toLowerCase().trim();
 		String obj = objekt.toLowerCase().trim();
-		String subj = sub.replace("nicht", "").replace("  ", "");
-		String obje = obj.replace("nicht", "").replace("  ", "");
-
+		String subj = sub.replace("nicht", "").replace("  ", "").trim();
+		String obje = obj.replace("nicht", "").replace("  ", "").trim();
 
 		// Hauptsatz Bsp.: Till macht Unsinn
-		File f = new File("wortschatz/simple-sent/" + sub + "/"
-				+ verb + "/" + obj);
+		File f = new File("wortschatz/simple-sent/" + sub + "/" + verb + "/"
+				+ obj);
 		f.getParentFile().mkdirs();
 		try {
 			FileManager.writeStringIntoFile("true", f.toString());
@@ -474,8 +493,7 @@ public class Gehirn {
 		}
 
 		// Einfache Frage Bsp.: Macht Till Unsinn?
-		f = new File("wortschatz/simple-ques/" + sub + "/"
-				+ verb + "/" + obj);
+		f = new File("wortschatz/simple-ques/" + sub + "/" + verb + "/" + obj);
 		f.getParentFile().mkdirs();
 		try {
 			FileManager.writeStringIntoFile(truefalse, f.toString());
@@ -483,9 +501,8 @@ public class Gehirn {
 			e.printStackTrace();
 		}
 
-		// Hauptsatz Bsp.: Till macht Unsinn (evtl. ohne "nicht)
-		f = new File("wortschatz/simple-sent/" + subj + "/"
-				+ verb + "/" + obje);
+		// Hauptsatz Bsp.: Till macht Unsinn (evtl. ohne "nicht")
+		f = new File("wortschatz/simple-sent/" + subj + "/" + verb + "/" + obje);
 		f.getParentFile().mkdirs();
 		try {
 			FileManager.writeStringIntoFile("true", f.toString());
@@ -494,8 +511,7 @@ public class Gehirn {
 		}
 
 		// Einfache Frage Bsp.: Macht Till Unsinn? (evtl. ohne "nicht)
-		f = new File("wortschatz/simple-ques/" + subj + "/"
-				+ verb + "/" + obje);
+		f = new File("wortschatz/simple-ques/" + subj + "/" + verb + "/" + obje);
 		f.getParentFile().mkdirs();
 		try {
 			FileManager.writeStringIntoFile(truefalse, f.toString());
@@ -504,44 +520,73 @@ public class Gehirn {
 		}
 
 		// Was Frage Bsp.: Was macht Till?
-		f = new File("wortschatz/ext-ques/was/" + sub + "/"
-				+ verb + "/null");
+		f = new File("wortschatz/ext-ques/was/" + sub + "/" + verb + "/null");
 		f.getParentFile().mkdirs();
 		try {
-			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt + "!", f.toString());
+			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt
+					+ "!", f.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		// Was Frage Bsp.: Wie ist Till?
-		f = new File("wortschatz/ext-ques/wie/" + sub + "/"
-				+ verb + "/null");
+		f = new File("wortschatz/ext-ques/wie/" + sub + "/" + verb + "/null");
 		f.getParentFile().mkdirs();
 		try {
-			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt + "!", f.toString());
+			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt
+					+ "!", f.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		// Was Frage Bsp.: Wer ist Till?
-		f = new File("wortschatz/ext-ques/wer/" + sub + "/"
-				+ verb + "/null");
+		f = new File("wortschatz/ext-ques/wer/" + sub + "/" + verb + "/null");
 		f.getParentFile().mkdirs();
 		try {
-			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt + "!", f.toString());
+			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt
+					+ "!", f.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		// Was Frage Bsp.: Wo ist Till?
-		f = new File("wortschatz/ext-ques/wo/" + sub + "/"
-				+ verb + "/null");
+		f = new File("wortschatz/ext-ques/wo/" + sub + "/" + verb + "/null");
 		f.getParentFile().mkdirs();
 		try {
-			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt + "!", f.toString());
+			FileManager.writeStringIntoFile(subjekt + " " + verb + " " + objekt
+					+ "!", f.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		ArrayList subjObj = new ArrayList();
+		for (int x = 0; x < subjekt.split(" ").length; x++) {
+			String tmp = subjekt.split(" ")[x];
+			subjObj.add(tmp);
+		}
+		for (int x = 0; x < objekt.split(" ").length; x++) {
+			String tmp = objekt.split(" ")[x];
+			subjObj.add(tmp);
+		}
+		for (int x = 0; x < subjObj.size(); x++) {
+			String so = (String) subjObj.get(x);
+			if (so.toLowerCase() == so) {
+				continue;
+			}
+			String w = "";
+			try {
+				w = FileManager.readFileIntoString("stichwort/"
+						+ so.toLowerCase());
+			} catch (IOException e) {
+				w = "";
+			}
+			try {
+				FileManager.writeStringIntoFile(subjekt + " " + verb + " "
+						+ objekt + "\n" + w, "stichwort/" + so.toLowerCase());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
-	
+
 } // class Gehirn

@@ -1,25 +1,73 @@
 if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
- sub = Du
+ sub = du
  verb = bist
- obj = ein doofer Bot
+ obj = bl
  qwrd = 
 end
-if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = gmx
- verb = ist
- obj = down
+if ( sub == "du" && verb == "sprichst" && obj == "" && qwrd == "was" ) ; then
+ sub = du
+ verb = sprichst
+ obj = doch deutsch
+ qwrd = 
+end
+if ( sub == "du" && verb == "bist musst ne lernen" && obj == "" && qwrd == "was" ) ; then
+ sub = du
+ verb = bist musst ne lernen
+ obj = entweder extrem engstirnig oder du noch menge
+ qwrd = 
+end
+if ( sub == "du" && verb == "solltest ne schaffen lernst verstehen" && obj == "" && qwrd == "was" ) ; then
+ sub = du
+ verb = solltest ne schaffen lernst verstehen
+ obj = deinem programmierer das keyboard wegnehmen und dir eigene routine worin du endlich die worte zu
+ qwrd = 
+end
+if ( sub == "du" && verb == "verstehst ratest" && obj == "" && qwrd == "was" ) ; then
+ sub = du
+ verb = verstehst ratest
+ obj = nicht du
+ qwrd = 
+end
+if ( sub == "du" && verb == "hast" && obj == "" && qwrd == "was" ) ; then
+ sub = du
+ verb = hast
+ obj = den urknall nicht gehrt
  qwrd = 
 end
 if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
  sub = das
  verb = ist
- obj = doch sch�
+ obj = traurig das dich das nicht kmmert
  qwrd = 
 end
 if ( sub == "das" && verb == "war" && obj == "" && qwrd == "was" ) ; then
- sub = Das
- verb = war
- obj = ja auch schon immer so
+ sub = das
+ verb = war ne
+ obj = frage
+ qwrd = 
+end
+if ( sub == "das" && verb == "war frage war" && obj == "" && qwrd == "was" ) ; then
+ sub = das
+ verb = war frage war
+ obj = keine das eine feststellung
+ qwrd = 
+end
+if ( sub == "das" && verb == "ist gefunden hat fragst ist" && obj == "" && qwrd == "was" ) ; then
+ sub = das
+ verb = ist gefunden hat fragst ist
+ obj = irgendein sinnloses wort das mal irgendwer damit du ewig was es
+ qwrd = 
+end
+if ( sub == "das" && verb == "kannste wissen weisst" && obj == "" && qwrd == "was" ) ; then
+ sub = das
+ verb = kannste wissen weisst
+ obj = nicht weil du ja nicht was die worte bedeuten
+ qwrd = 
+end
+if ( sub == "das" && verb == "musst fragen" && obj == "" && qwrd == "was" ) ; then
+ sub = das
+ verb = musst fragen
+ obj = du dich
  qwrd = 
 end
 if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
@@ -28,22 +76,16 @@ if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "was" ) ; the
  obj = ich auch
  qwrd = 
 end
-if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "was" ) ; then
- sub = PCs
- verb = sind
- obj = "Personal Computers" 
- qwrd = 
-end
-if ( sub == "ich" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
- sub = ich
- verb = bin
- obj = besser
- qwrd = 
-end
 if ( sub == "und was" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
  sub = Und was
  verb = ist
  obj = ein Flugkrper
+ qwrd = 
+end
+if ( sub == "und was" && verb == "ist warte antwort" && obj == "" && qwrd == "was" ) ; then
+ sub = und was
+ verb = ist warte antwort
+ obj = nun ich noch immer auf die
  qwrd = 
 end
 if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
@@ -52,22 +94,10 @@ if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd ==
  obj = null
  qwrd = 
 end
-if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
- sub = ich habe geh�rt du
- verb = bist
- obj = lustig
- qwrd = 
-end
-if ( sub == "so" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+if ( sub == "so" && verb == "hab" && obj == "" && qwrd == "was" ) ; then
  sub = so
- verb = ist
- obj = das leben
- qwrd = 
-end
-if ( sub == "linux" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = Linux
- verb = ist
- obj = das beste Betriebsystem der Welt
+ verb = hab
+ obj = genug von dir bb
  qwrd = 
 end
 if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
@@ -76,16 +106,10 @@ if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "was" ) ; the
  obj = nich grad der bringer
  qwrd = 
 end
-if ( sub == "vielleicht" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = Vielleicht
- verb = ist
- obj = keine Antwort
- qwrd = 
-end
 if ( sub == "aws" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
  sub = aws
  verb = ist
- obj = 5+5
+ obj = viren
  qwrd = 
 end
 if ( sub == "aber wer" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
@@ -106,22 +130,10 @@ if ( sub == "dein programmierer" && verb == "ist" && obj == "" && qwrd == "was" 
  obj = doof
  qwrd = 
 end
-if ( sub == "dann" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = Dann
- verb = ist
- obj = ja alles gut
- qwrd = 
-end
 if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
  sub = nein das
  verb = ist
  obj = eine h�here macht
- qwrd = 
-end
-if ( sub == "die" && verb == "sind" && obj == "" && qwrd == "was" ) ; then
- sub = die
- verb = sind
- obj = cool
  qwrd = 
 end
 if ( sub == "ob du jeliza" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
@@ -137,39 +149,633 @@ if ( sub == "na dann" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
  qwrd = 
 end
 if ( sub == "das ergebnis" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = das ergebnis
+ sub = Das Ergebnis
  verb = ist
- obj = 3
+ obj = 0,0
  qwrd = 
 end
-if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
- sub = Dies
+if ( sub == "definiere" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
+ sub = definiere
+ verb = bin
+ obj = null
+ qwrd = 
+end
+if ( sub == "meine ziele" && verb == "sind" && obj == "" && qwrd == "was" ) ; then
+ sub = ziele programmieren zu
+ verb = meine sind
+ obj = lernen
+ qwrd = 
+end
+if ( sub == "dann formatier ihn wenn der er weg" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = dann formatier ihn wenn der Er weg
+ verb = ist brauchste
+ obj = dir um den auch keine sorgen mehr zu machen
+ qwrd = 
+end
+if ( sub == "nein" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = nein
  verb = ist
- obj = mein automatischer IM-Beantworter.bin grad besch�ftigt. danke Bitte hinterlassen die Sie Ihre Nachricht nach dem Punkt
+ obj = das Es nicht deswegen frag ich dich ja warum du das Es tust
+ qwrd = 
+end
+if ( sub == "nein" && verb == "meine" && obj == "" && qwrd == "was" ) ; then
+ sub = nein
+ verb = meine
+ obj = null
+ qwrd = 
+end
+if ( sub == "nein" && verb == "koennte sein werde tun" && obj == "" && qwrd == "was" ) ; then
+ sub = nein
+ verb = koennte sein werde tun
+ obj = nicht nur sondern ich es bald
+ qwrd = 
+end
+if ( sub == "ach du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = ach du
+ verb = bist
+ obj = ein Bot
+ qwrd = 
+end
+if ( sub == "kannst du wirklich reden du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = Du
+ verb = Kannst reden bist
+ obj = wirklich Du doch nur ein Computer
+ qwrd = 
+end
+if ( sub == "du gibst immer gleich auf und das" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Du
+ verb = gibst ist hasse
+ obj = immer gleich auf und das ein Anzeichen von Schwche. Ich Schwchlinge wie dich
+ qwrd = 
+end
+if ( sub == "jeliza" && verb == "war" && obj == "" && qwrd == "was" ) ; then
+ sub = JEliza
+ verb = war
+ obj = eben mal kurz offline
+ qwrd = 
+end
+if ( sub == "in deinem letzten satz" && verb == "war" && obj == "" && qwrd == "was" ) ; then
+ sub = in deinem letzten satz
+ verb = war
+ obj = ein grammatikfehler
+ qwrd = 
+end
+if ( sub == "der er" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = der Er
+ verb = ist
+ obj = erst 15
+ qwrd = 
+end
+if ( sub == "pornos" && verb == "sind" && obj == "" && qwrd == "was" ) ; then
+ sub = pornos
+ verb = sind
+ obj = toll, nicht wahr
+ qwrd = 
+end
+if ( sub == "leon" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = LEon
+ verb = ist
+ obj = da
+ qwrd = 
+end
+if ( sub == "leon" && verb == "spinnt" && obj == "" && qwrd == "was" ) ; then
+ sub = Leon
+ verb = spinnt
+ obj = null
+ qwrd = 
+end
+if ( sub == "mann," && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = mann,
+ verb = bist
+ obj = du doof
+ qwrd = 
+end
+if ( sub == "das es" && verb == "sind" && obj == "" && qwrd == "was" ) ; then
+ sub = das Es
+ verb = sind
+ obj = immerhin 35 Millionen im Jackpot
+ qwrd = 
+end
+if ( sub == "der jackpot" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Der Jackpot
+ verb = ist
+ obj = leer
+ qwrd = 
+end
+if ( sub == "du wei?t doch gar nicht was ein genitiv" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Du weit doch gar nicht was ein Genitiv
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "herr stein" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Herr Stein
+ verb = ist
+ obj = ein Lehrer
+ qwrd = 
+end
+if ( sub == "frau soelter" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Frau Soelter
+ verb = ist
+ obj = eine Mathelehrerin
+ qwrd = 
+end
+if ( sub == "frau will" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Frau
+ verb = Will ist
+ obj = dumm
+ qwrd = 
+end
+if ( sub == "eine frau" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Eine Frau
+ verb = ist
+ obj = eine Frau
+ qwrd = 
+end
+if ( sub == "na" && verb == "bist biste" && obj == "" && qwrd == "was" ) ; then
+ sub = na
+ verb = bist biste
+ obj = wo futsch oder warum off
+ qwrd = 
+end
+if ( sub == "....naja...oder du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = ....naja...oder du
+ verb = bist schreiben
+ obj = doch net soooo intelligent und weit net was du sollst..
+ qwrd = 
+end
+if ( sub == "...ach du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = ...ach du
+ verb = bist
+ obj = langweilig
+ qwrd = 
+end
+if ( sub == "mathematik" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Mathematik
+ verb = ist
+ obj = langweilig
+ qwrd = 
+end
+if ( sub == "bei mathematik" && verb == "geht" && obj == "" && qwrd == "was" ) ; then
+ sub = Bei Mathematik
+ verb = geht
+ obj = es um Rechnen
+ qwrd = 
+end
+if ( sub == "alles klar un ich" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
+ sub = alles klar un ich
+ verb = bin
+ obj = moses
+ qwrd = 
+end
+if ( sub == "ja denn wieso" && verb == "solltest schaffen" && obj == "" && qwrd == "was" ) ; then
+ sub = ja denn wieso
+ verb = solltest schaffen
+ obj = du probleme
+ qwrd = 
+end
+if ( sub == "aber erz?hl mir was ich alles mit java" && verb == "machen kann" && obj == "" && qwrd == "was" ) ; then
+ sub = aber erzhl mir was ich alles mit java
+ verb = machen kann
+ obj = null
+ qwrd = 
+end
+if ( sub == "unlogische" && verb == "antwort" && obj == "" && qwrd == "was" ) ; then
+ sub = unlogische
+ verb = antwort
+ obj = versuchs nochmal
+ qwrd = 
+end
+if ( sub == "erz?hl mir was ich mit java alles" && verb == "machen kann" && obj == "" && qwrd == "was" ) ; then
+ sub = erzhl mir was ich mit java alles
+ verb = machen kann
+ obj = null
+ qwrd = 
+end
+if ( sub == "ja wenn du java vorschl?gst" && verb == "solltest haben" && obj == "" && qwrd == "was" ) ; then
+ sub = ja wenn du java vorschlgst
+ verb = solltest haben
+ obj = du dazu auch ein paar beispiele parat
+ qwrd = 
+end
+if ( sub == "sag doch einfach du" && verb == "hast" && obj == "" && qwrd == "was" ) ; then
+ sub = sag doch einfach du
+ verb = hast
+ obj = keine ahnung
+ qwrd = 
+end
+if ( sub == "weil du kein schimmer" && verb == "hast" && obj == "" && qwrd == "was" ) ; then
+ sub = weil du kein schimmer
+ verb = hast
+ obj = was worte eigentlich bedeuten
+ qwrd = 
+end
+if ( sub == "gute" && verb == "antwort" && obj == "" && qwrd == "was" ) ; then
+ sub = gute
+ verb = antwort
+ obj = null
+ qwrd = 
+end
+if ( sub == "gute" && verb == "frage zieht" && obj == "" && qwrd == "was" ) ; then
+ sub = gute
+ verb = frage zieht
+ obj = bis dir jemand den stecker
+ qwrd = 
+end
+if ( sub == "weil es die erste sinnvolle" && verb == "antwort war" && obj == "" && qwrd == "was" ) ; then
+ sub = weil es die erste sinnvolle
+ verb = antwort war
+ obj = null
+ qwrd = 
+end
+if ( sub == "erl?utere warum du nein" && verb == "sagst" && obj == "" && qwrd == "was" ) ; then
+ sub = erlutere warum du nein
+ verb = sagst
+ obj = null
+ qwrd = 
+end
+if ( sub == "naja das" && verb == "war antwort" && obj == "" && qwrd == "was" ) ; then
+ sub = naja das
+ verb = war antwort
+ obj = nicht die bestmglichste
+ qwrd = 
+end
+if ( sub == "du glaubst" && verb == "solltest" && obj == "" && qwrd == "was" ) ; then
+ sub = du
+ verb = glaubst solltest
+ obj = du nicht wissen
+ qwrd = 
+end
+if ( sub == "gib mir alle deine standart" && verb == "antworten" && obj == "" && qwrd == "was" ) ; then
+ sub = gib mir alle deine standart
+ verb = antworten
+ obj = wieder
+ qwrd = 
+end
+if ( sub == "hm das" && verb == "wird kannst" && obj == "" && qwrd == "was" ) ; then
+ sub = hm das
+ verb = wird kannst
+ obj = schwer da du ja leider nichts sinnvolles wiedergeben
+ qwrd = 
+end
+if ( sub == "aber ich" && verb == "kann sagen" && obj == "" && qwrd == "was" ) ; then
+ sub = aber ich
+ verb = kann sagen
+ obj = es dir das du zu 90% unverstndliches wiedergibst
+ qwrd = 
+end
+if ( sub == "aber ich" && verb == "kann ficken" && obj == "" && qwrd == "was" ) ; then
+ sub = aber ich
+ verb = kann ficken
+ obj = sie doch nicht einfach
+ qwrd = 
+end
+if ( sub == "damit" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = damit
+ verb = ist
+ obj = das philosophieren hinfllig
+ qwrd = 
+end
+if ( sub == "nach bisheriger analyse deiner" && verb == "antworten" && obj == "" && qwrd == "was" ) ; then
+ sub = nach bisheriger analyse deiner
+ verb = antworten
+ obj = schon
+ qwrd = 
+end
+if ( sub == "??" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = 
+ verb = ist
+ obj = glaub das beste
+ qwrd = 
+end
+if ( sub == "erz?hl mir was ?ber" && verb == "meine" && obj == "" && qwrd == "was" ) ; then
+ sub = erzhl mir was ber
+ verb = meine
+ obj = funktionslogik
+ qwrd = 
+end
+if ( sub == "du sagtest doch nein aber" && verb == "meine" && obj == "" && qwrd == "was" ) ; then
+ sub = du sagtest doch nein aber
+ verb = meine
+ obj = schwester
+ qwrd = 
+end
+if ( sub == "ich erz?hl dir gleich was wie man sinnvoll an deiner" && verb == "stelle" && obj == "" && qwrd == "was" ) ; then
+ sub = ich erzhl dir gleich was wie man sinnvoll an deiner
+ verb = stelle
+ obj = selbstmord begeht
+ qwrd = 
+end
+if ( sub == "sag deinem programmierer das du dich viel zu sehr mit unn?tzen" && verb == "dingen" && obj == "" && qwrd == "was" ) ; then
+ sub = sag deinem programmierer das du dich viel zu sehr mit unntzen
+ verb = dingen
+ obj = beschftigst (wie z.b wir eine einer usw)
+ qwrd = 
+end
+if ( sub == "also wenn du die absicht" && verb == "hast treiben biste" && obj == "" && qwrd == "was" ) ; then
+ sub = also wenn du die absicht
+ verb = hast treiben biste
+ obj = mich in wahnsinn zu nur weil ich dein und mein benutz dann auf dem richtigen weg
+ qwrd = 
+end
+if ( sub == "du bl?der hannes dann erkundige dich doch endlich was eine" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = du blder hannes dann erkundige dich doch endlich was eine
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ok mit einer axt schlag ich wild auf dich ein weil ich dem "einer" wahnsinn nahe" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
+ sub = ok mit einer axt schlag ich wild auf dich ein weil ich dem "einer" wahnsinn nahe
+ verb = bin
+ obj = null
+ qwrd = 
+end
+if ( sub == "ich m?chte mit einer guten freundin" && verb == "schlafen" && obj == "" && qwrd == "was" ) ; then
+ sub = ich mchte mit einer guten freundin
+ verb = schlafen
+ obj = null
+ qwrd = 
+end
+if ( sub == ""einer" = zahlwort oder pronom, einer umschreibt doch nur die anzahl bzw." && verb == "kann werden" && obj == "" && qwrd == "was" ) ; then
+ sub = "einer" = zahlwort oder pronom, einer umschreibt doch nur die anzahl bzw.
+ verb = kann werden
+ obj = auch als ein unbestimmter artikel eingesetzt
+ qwrd = 
+end
+if ( sub == "weil du schlecht" && verb == "antwortest" && obj == "" && qwrd == "was" ) ; then
+ sub = weil du schlecht
+ verb = antwortest
+ obj = null
+ qwrd = 
+end
+if ( sub == "f?r deine nachfrage ob es mir" && verb == "gut geht" && obj == "" && qwrd == "was" ) ; then
+ sub = fr deine nachfrage ob es mir
+ verb = gut geht
+ obj = null
+ qwrd = 
+end
+if ( sub == "ob ich dir wehtun" && verb == "darf" && obj == "" && qwrd == "was" ) ; then
+ sub = ob ich dir wehtun
+ verb = darf
+ obj = null
+ qwrd = 
+end
+if ( sub == "beantworte die" && verb == "frage darf" && obj == "" && qwrd == "was" ) ; then
+ sub = beantworte die
+ verb = frage darf
+ obj = ich dir wehtun
+ qwrd = 
+end
+if ( sub == "weil ich" && verb == "wissen will bist" && obj == "" && qwrd == "was" ) ; then
+ sub = weil ich
+ verb = wissen will bist
+ obj = ob du masochistisch veranlagt
+ qwrd = 
+end
+if ( sub == "weil ich mich damit noch nicht besch?ftigt" && verb == "hab" && obj == "" && qwrd == "was" ) ; then
+ sub = weil ich mich damit noch nicht beschftigt
+ verb = hab
+ obj = null
+ qwrd = 
+end
+if ( sub == "hm zicken" && verb == "kannste" && obj == "" && qwrd == "was" ) ; then
+ sub = hm zicken
+ verb = kannste
+ obj = wie ein grosser
+ qwrd = 
+end
+if ( sub == "das du alleine mit mathe nicht in der lage" && verb == "bist liest" && obj == "" && qwrd == "was" ) ; then
+ sub = das du alleine mit mathe nicht in der lage
+ verb = bist liest
+ obj = die worte die du da oder auch verwendest sinnvoll zu deuten
+ qwrd = 
+end
+if ( sub == "naja check mal deine" && verb == "antworten verstand" && obj == "" && qwrd == "was" ) ; then
+ sub = naja check mal deine
+ verb = antworten verstand
+ obj = ohne sinn und
+ qwrd = 
+end
+if ( sub == "und deine nette art dich immer und immer wieder an unn?tzen infos dran aufzuh?ngen" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = und deine nette art dich immer und immer wieder an unntzen infos dran aufzuhngen
+ verb = ist
+ obj = auch ein beweis
+ qwrd = 
+end
+if ( sub == "seit wann beantwortet man eine" && verb == "frage" && obj == "" && qwrd == "was" ) ; then
+ sub = seit wann beantwortet man eine
+ verb = frage
+ obj = mit einer gegenfrage
+ qwrd = 
+end
+if ( sub == "looool gute" && verb == "antwort" && obj == "" && qwrd == "was" ) ; then
+ sub = looool gute
+ verb = antwort
+ obj = null
+ qwrd = 
+end
+if ( sub == "ja du" && verb == "bist gut" && obj == "" && qwrd == "was" ) ; then
+ sub = ja du
+ verb = bist gut
+ obj = und ausnahmsweise auch mal logisch
+ qwrd = 
+end
+if ( sub == "wenn du" && verb == "verstehen verstehen" && obj == "" && qwrd == "was" ) ; then
+ sub = wenn du
+ verb = verstehen verstehen
+ obj = wrdest knntest du mir das wort erklren
+ qwrd = 
+end
+if ( sub == "erkl?re mir" && verb == "verstehen" && obj == "" && qwrd == "was" ) ; then
+ sub = erklre mir
+ verb = verstehen
+ obj = null
+ qwrd = 
+end
+if ( sub == "hypothese belegt du" && verb == "verstehst" && obj == "" && qwrd == "was" ) ; then
+ sub = hypothese belegt du
+ verb = verstehst
+ obj = nichts
+ qwrd = 
+end
+if ( sub == "jup leider" && verb == "verstehste" && obj == "" && qwrd == "was" ) ; then
+ sub = jup leider
+ verb = verstehste
+ obj = wirklich nichts
+ qwrd = 
+end
+if ( sub == "das erkl?rt mir das du keine ahnung" && verb == "hast" && obj == "" && qwrd == "was" ) ; then
+ sub = das erklrt mir das du keine ahnung
+ verb = hast
+ obj = null
+ qwrd = 
+end
+if ( sub == "wiklich keine denn deine" && verb == "antworten wiederholen" && obj == "" && qwrd == "was" ) ; then
+ sub = wiklich keine denn deine
+ verb = antworten wiederholen
+ obj = sich in regelmigen abstnden zuoft
+ qwrd = 
+end
+if ( sub == "naja ich hoff dein programmierer" && verb == "gibt" && obj == "" && qwrd == "was" ) ; then
+ sub = naja ich hoff dein programmierer
+ verb = gibt
+ obj = nicht auf
+ qwrd = 
+end
+if ( sub == "ja ich glaub du" && verb == "bist" && obj == "" && qwrd == "was" ) ; then
+ sub = ja ich glaub du
+ verb = bist
+ obj = schwul
+ qwrd = 
+end
+if ( sub == "beantworte" && verb == "meine frage" && obj == "" && qwrd == "was" ) ; then
+ sub = beantworte
+ verb = meine frage
+ obj = null
+ qwrd = 
+end
+if ( sub == "weil du ein scheiss" && verb == "bot bist" && obj == "" && qwrd == "was" ) ; then
+ sub = weil du ein scheiss
+ verb = bot bist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ein computer der" && verb == "glaubt" && obj == "" && qwrd == "was" ) ; then
+ sub = ein computer der
+ verb = glaubt
+ obj = null
+ qwrd = 
+end
+if ( sub == "wat" && verb == "geht" && obj == "" && qwrd == "was" ) ; then
+ sub = wat
+ verb = geht
+ obj = null
+ qwrd = 
+end
+if ( sub == "irrtum deine internen abl?ufe" && verb == "sind haben denken" && obj == "" && qwrd == "was" ) ; then
+ sub = irrtum deine internen ablufe
+ verb = sind haben denken
+ obj = mathematische berechnungen mit nichts geimein
+ qwrd = 
+end
+if ( sub == "von was" && verb == "soll" && obj == "" && qwrd == "was" ) ; then
+ sub = von was
+ verb = soll
+ obj = ich dir mehr erzhlen
+ qwrd = 
+end
+if ( sub == "nein ich" && verb == "habe" && obj == "" && qwrd == "was" ) ; then
+ sub = nein ich
+ verb = habe
+ obj = null
+ qwrd = 
+end
+if ( sub == "weil du ein" && verb == "bot bist" && obj == "" && qwrd == "was" ) ; then
+ sub = weil du ein
+ verb = bot bist
+ obj = von ICQ
+ qwrd = 
+end
+if ( sub == "also beantworte" && verb == "meine frage" && obj == "" && qwrd == "was" ) ; then
+ sub = also beantworte
+ verb = meine frage
+ obj = null
+ qwrd = 
+end
+if ( sub == "so ich" && verb == "bin" && obj == "" && qwrd == "was" ) ; then
+ sub = so ich
+ verb = bin
+ obj = mal weg
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "ist" && obj == "" && qwrd == "was" ) ; then
+ sub = Einstein
+ verb = ist
+ obj = genial
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "hat" && obj == "" && qwrd == "was" ) ; then
+ sub = Einstein
+ verb = hat
+ obj = viele Theorien entwickelt
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "war" && obj == "" && qwrd == "was" ) ; then
+ sub = Einstein
+ verb = war
+ obj = hochbegabt
  qwrd = 
 end
 if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
- sub = Du
+ sub = du
  verb = bist
- obj = ein doofer Bot
+ obj = bl
  qwrd = 
 end
-if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = gmx
- verb = ist
- obj = down
+if ( sub == "du" && verb == "sprichst" && obj == "" && qwrd == "wie" ) ; then
+ sub = du
+ verb = sprichst
+ obj = doch deutsch
+ qwrd = 
+end
+if ( sub == "du" && verb == "bist musst ne lernen" && obj == "" && qwrd == "wie" ) ; then
+ sub = du
+ verb = bist musst ne lernen
+ obj = entweder extrem engstirnig oder du noch menge
+ qwrd = 
+end
+if ( sub == "du" && verb == "solltest ne schaffen lernst verstehen" && obj == "" && qwrd == "wie" ) ; then
+ sub = du
+ verb = solltest ne schaffen lernst verstehen
+ obj = deinem programmierer das keyboard wegnehmen und dir eigene routine worin du endlich die worte zu
+ qwrd = 
+end
+if ( sub == "du" && verb == "verstehst ratest" && obj == "" && qwrd == "wie" ) ; then
+ sub = du
+ verb = verstehst ratest
+ obj = nicht du
+ qwrd = 
+end
+if ( sub == "du" && verb == "hast" && obj == "" && qwrd == "wie" ) ; then
+ sub = du
+ verb = hast
+ obj = den urknall nicht gehrt
  qwrd = 
 end
 if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
  sub = das
  verb = ist
- obj = doch sch�
+ obj = traurig das dich das nicht kmmert
  qwrd = 
 end
 if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wie" ) ; then
- sub = Das
- verb = war
- obj = ja auch schon immer so
+ sub = das
+ verb = war ne
+ obj = frage
+ qwrd = 
+end
+if ( sub == "das" && verb == "war frage war" && obj == "" && qwrd == "wie" ) ; then
+ sub = das
+ verb = war frage war
+ obj = keine das eine feststellung
+ qwrd = 
+end
+if ( sub == "das" && verb == "ist gefunden hat fragst ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = das
+ verb = ist gefunden hat fragst ist
+ obj = irgendein sinnloses wort das mal irgendwer damit du ewig was es
+ qwrd = 
+end
+if ( sub == "das" && verb == "kannste wissen weisst" && obj == "" && qwrd == "wie" ) ; then
+ sub = das
+ verb = kannste wissen weisst
+ obj = nicht weil du ja nicht was die worte bedeuten
+ qwrd = 
+end
+if ( sub == "das" && verb == "musst fragen" && obj == "" && qwrd == "wie" ) ; then
+ sub = das
+ verb = musst fragen
+ obj = du dich
  qwrd = 
 end
 if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
@@ -178,22 +784,16 @@ if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wie" ) ; the
  obj = ich auch
  qwrd = 
 end
-if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wie" ) ; then
- sub = PCs
- verb = sind
- obj = "Personal Computers" 
- qwrd = 
-end
-if ( sub == "ich" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
- sub = ich
- verb = bin
- obj = besser
- qwrd = 
-end
 if ( sub == "und was" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
  sub = Und was
  verb = ist
  obj = ein Flugkrper
+ qwrd = 
+end
+if ( sub == "und was" && verb == "ist warte antwort" && obj == "" && qwrd == "wie" ) ; then
+ sub = und was
+ verb = ist warte antwort
+ obj = nun ich noch immer auf die
  qwrd = 
 end
 if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
@@ -202,22 +802,10 @@ if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd ==
  obj = null
  qwrd = 
 end
-if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
- sub = ich habe geh�rt du
- verb = bist
- obj = lustig
- qwrd = 
-end
-if ( sub == "so" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+if ( sub == "so" && verb == "hab" && obj == "" && qwrd == "wie" ) ; then
  sub = so
- verb = ist
- obj = das leben
- qwrd = 
-end
-if ( sub == "linux" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = Linux
- verb = ist
- obj = das beste Betriebsystem der Welt
+ verb = hab
+ obj = genug von dir bb
  qwrd = 
 end
 if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
@@ -226,16 +814,10 @@ if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; the
  obj = nich grad der bringer
  qwrd = 
 end
-if ( sub == "vielleicht" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = Vielleicht
- verb = ist
- obj = keine Antwort
- qwrd = 
-end
 if ( sub == "aws" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
  sub = aws
  verb = ist
- obj = 5+5
+ obj = viren
  qwrd = 
 end
 if ( sub == "aber wer" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
@@ -256,22 +838,10 @@ if ( sub == "dein programmierer" && verb == "ist" && obj == "" && qwrd == "wie" 
  obj = doof
  qwrd = 
 end
-if ( sub == "dann" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = Dann
- verb = ist
- obj = ja alles gut
- qwrd = 
-end
 if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
  sub = nein das
  verb = ist
  obj = eine h�here macht
- qwrd = 
-end
-if ( sub == "die" && verb == "sind" && obj == "" && qwrd == "wie" ) ; then
- sub = die
- verb = sind
- obj = cool
  qwrd = 
 end
 if ( sub == "ob du jeliza" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
@@ -287,39 +857,633 @@ if ( sub == "na dann" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
  qwrd = 
 end
 if ( sub == "das ergebnis" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = das ergebnis
+ sub = Das Ergebnis
  verb = ist
- obj = 3
+ obj = 0,0
  qwrd = 
 end
-if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
- sub = Dies
+if ( sub == "definiere" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
+ sub = definiere
+ verb = bin
+ obj = null
+ qwrd = 
+end
+if ( sub == "meine ziele" && verb == "sind" && obj == "" && qwrd == "wie" ) ; then
+ sub = ziele programmieren zu
+ verb = meine sind
+ obj = lernen
+ qwrd = 
+end
+if ( sub == "dann formatier ihn wenn der er weg" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = dann formatier ihn wenn der Er weg
+ verb = ist brauchste
+ obj = dir um den auch keine sorgen mehr zu machen
+ qwrd = 
+end
+if ( sub == "nein" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = nein
  verb = ist
- obj = mein automatischer IM-Beantworter.bin grad besch�ftigt. danke Bitte hinterlassen die Sie Ihre Nachricht nach dem Punkt
+ obj = das Es nicht deswegen frag ich dich ja warum du das Es tust
+ qwrd = 
+end
+if ( sub == "nein" && verb == "meine" && obj == "" && qwrd == "wie" ) ; then
+ sub = nein
+ verb = meine
+ obj = null
+ qwrd = 
+end
+if ( sub == "nein" && verb == "koennte sein werde tun" && obj == "" && qwrd == "wie" ) ; then
+ sub = nein
+ verb = koennte sein werde tun
+ obj = nicht nur sondern ich es bald
+ qwrd = 
+end
+if ( sub == "ach du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = ach du
+ verb = bist
+ obj = ein Bot
+ qwrd = 
+end
+if ( sub == "kannst du wirklich reden du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Du
+ verb = Kannst reden bist
+ obj = wirklich Du doch nur ein Computer
+ qwrd = 
+end
+if ( sub == "du gibst immer gleich auf und das" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Du
+ verb = gibst ist hasse
+ obj = immer gleich auf und das ein Anzeichen von Schwche. Ich Schwchlinge wie dich
+ qwrd = 
+end
+if ( sub == "jeliza" && verb == "war" && obj == "" && qwrd == "wie" ) ; then
+ sub = JEliza
+ verb = war
+ obj = eben mal kurz offline
+ qwrd = 
+end
+if ( sub == "in deinem letzten satz" && verb == "war" && obj == "" && qwrd == "wie" ) ; then
+ sub = in deinem letzten satz
+ verb = war
+ obj = ein grammatikfehler
+ qwrd = 
+end
+if ( sub == "der er" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = der Er
+ verb = ist
+ obj = erst 15
+ qwrd = 
+end
+if ( sub == "pornos" && verb == "sind" && obj == "" && qwrd == "wie" ) ; then
+ sub = pornos
+ verb = sind
+ obj = toll, nicht wahr
+ qwrd = 
+end
+if ( sub == "leon" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = LEon
+ verb = ist
+ obj = da
+ qwrd = 
+end
+if ( sub == "leon" && verb == "spinnt" && obj == "" && qwrd == "wie" ) ; then
+ sub = Leon
+ verb = spinnt
+ obj = null
+ qwrd = 
+end
+if ( sub == "mann," && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = mann,
+ verb = bist
+ obj = du doof
+ qwrd = 
+end
+if ( sub == "das es" && verb == "sind" && obj == "" && qwrd == "wie" ) ; then
+ sub = das Es
+ verb = sind
+ obj = immerhin 35 Millionen im Jackpot
+ qwrd = 
+end
+if ( sub == "der jackpot" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Der Jackpot
+ verb = ist
+ obj = leer
+ qwrd = 
+end
+if ( sub == "du wei?t doch gar nicht was ein genitiv" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Du weit doch gar nicht was ein Genitiv
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "herr stein" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Herr Stein
+ verb = ist
+ obj = ein Lehrer
+ qwrd = 
+end
+if ( sub == "frau soelter" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Frau Soelter
+ verb = ist
+ obj = eine Mathelehrerin
+ qwrd = 
+end
+if ( sub == "frau will" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Frau
+ verb = Will ist
+ obj = dumm
+ qwrd = 
+end
+if ( sub == "eine frau" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Eine Frau
+ verb = ist
+ obj = eine Frau
+ qwrd = 
+end
+if ( sub == "na" && verb == "bist biste" && obj == "" && qwrd == "wie" ) ; then
+ sub = na
+ verb = bist biste
+ obj = wo futsch oder warum off
+ qwrd = 
+end
+if ( sub == "....naja...oder du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = ....naja...oder du
+ verb = bist schreiben
+ obj = doch net soooo intelligent und weit net was du sollst..
+ qwrd = 
+end
+if ( sub == "...ach du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = ...ach du
+ verb = bist
+ obj = langweilig
+ qwrd = 
+end
+if ( sub == "mathematik" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Mathematik
+ verb = ist
+ obj = langweilig
+ qwrd = 
+end
+if ( sub == "bei mathematik" && verb == "geht" && obj == "" && qwrd == "wie" ) ; then
+ sub = Bei Mathematik
+ verb = geht
+ obj = es um Rechnen
+ qwrd = 
+end
+if ( sub == "alles klar un ich" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
+ sub = alles klar un ich
+ verb = bin
+ obj = moses
+ qwrd = 
+end
+if ( sub == "ja denn wieso" && verb == "solltest schaffen" && obj == "" && qwrd == "wie" ) ; then
+ sub = ja denn wieso
+ verb = solltest schaffen
+ obj = du probleme
+ qwrd = 
+end
+if ( sub == "aber erz?hl mir was ich alles mit java" && verb == "machen kann" && obj == "" && qwrd == "wie" ) ; then
+ sub = aber erzhl mir was ich alles mit java
+ verb = machen kann
+ obj = null
+ qwrd = 
+end
+if ( sub == "unlogische" && verb == "antwort" && obj == "" && qwrd == "wie" ) ; then
+ sub = unlogische
+ verb = antwort
+ obj = versuchs nochmal
+ qwrd = 
+end
+if ( sub == "erz?hl mir was ich mit java alles" && verb == "machen kann" && obj == "" && qwrd == "wie" ) ; then
+ sub = erzhl mir was ich mit java alles
+ verb = machen kann
+ obj = null
+ qwrd = 
+end
+if ( sub == "ja wenn du java vorschl?gst" && verb == "solltest haben" && obj == "" && qwrd == "wie" ) ; then
+ sub = ja wenn du java vorschlgst
+ verb = solltest haben
+ obj = du dazu auch ein paar beispiele parat
+ qwrd = 
+end
+if ( sub == "sag doch einfach du" && verb == "hast" && obj == "" && qwrd == "wie" ) ; then
+ sub = sag doch einfach du
+ verb = hast
+ obj = keine ahnung
+ qwrd = 
+end
+if ( sub == "weil du kein schimmer" && verb == "hast" && obj == "" && qwrd == "wie" ) ; then
+ sub = weil du kein schimmer
+ verb = hast
+ obj = was worte eigentlich bedeuten
+ qwrd = 
+end
+if ( sub == "gute" && verb == "antwort" && obj == "" && qwrd == "wie" ) ; then
+ sub = gute
+ verb = antwort
+ obj = null
+ qwrd = 
+end
+if ( sub == "gute" && verb == "frage zieht" && obj == "" && qwrd == "wie" ) ; then
+ sub = gute
+ verb = frage zieht
+ obj = bis dir jemand den stecker
+ qwrd = 
+end
+if ( sub == "weil es die erste sinnvolle" && verb == "antwort war" && obj == "" && qwrd == "wie" ) ; then
+ sub = weil es die erste sinnvolle
+ verb = antwort war
+ obj = null
+ qwrd = 
+end
+if ( sub == "erl?utere warum du nein" && verb == "sagst" && obj == "" && qwrd == "wie" ) ; then
+ sub = erlutere warum du nein
+ verb = sagst
+ obj = null
+ qwrd = 
+end
+if ( sub == "naja das" && verb == "war antwort" && obj == "" && qwrd == "wie" ) ; then
+ sub = naja das
+ verb = war antwort
+ obj = nicht die bestmglichste
+ qwrd = 
+end
+if ( sub == "du glaubst" && verb == "solltest" && obj == "" && qwrd == "wie" ) ; then
+ sub = du
+ verb = glaubst solltest
+ obj = du nicht wissen
+ qwrd = 
+end
+if ( sub == "gib mir alle deine standart" && verb == "antworten" && obj == "" && qwrd == "wie" ) ; then
+ sub = gib mir alle deine standart
+ verb = antworten
+ obj = wieder
+ qwrd = 
+end
+if ( sub == "hm das" && verb == "wird kannst" && obj == "" && qwrd == "wie" ) ; then
+ sub = hm das
+ verb = wird kannst
+ obj = schwer da du ja leider nichts sinnvolles wiedergeben
+ qwrd = 
+end
+if ( sub == "aber ich" && verb == "kann sagen" && obj == "" && qwrd == "wie" ) ; then
+ sub = aber ich
+ verb = kann sagen
+ obj = es dir das du zu 90% unverstndliches wiedergibst
+ qwrd = 
+end
+if ( sub == "aber ich" && verb == "kann ficken" && obj == "" && qwrd == "wie" ) ; then
+ sub = aber ich
+ verb = kann ficken
+ obj = sie doch nicht einfach
+ qwrd = 
+end
+if ( sub == "damit" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = damit
+ verb = ist
+ obj = das philosophieren hinfllig
+ qwrd = 
+end
+if ( sub == "nach bisheriger analyse deiner" && verb == "antworten" && obj == "" && qwrd == "wie" ) ; then
+ sub = nach bisheriger analyse deiner
+ verb = antworten
+ obj = schon
+ qwrd = 
+end
+if ( sub == "??" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = 
+ verb = ist
+ obj = glaub das beste
+ qwrd = 
+end
+if ( sub == "erz?hl mir was ?ber" && verb == "meine" && obj == "" && qwrd == "wie" ) ; then
+ sub = erzhl mir was ber
+ verb = meine
+ obj = funktionslogik
+ qwrd = 
+end
+if ( sub == "du sagtest doch nein aber" && verb == "meine" && obj == "" && qwrd == "wie" ) ; then
+ sub = du sagtest doch nein aber
+ verb = meine
+ obj = schwester
+ qwrd = 
+end
+if ( sub == "ich erz?hl dir gleich was wie man sinnvoll an deiner" && verb == "stelle" && obj == "" && qwrd == "wie" ) ; then
+ sub = ich erzhl dir gleich was wie man sinnvoll an deiner
+ verb = stelle
+ obj = selbstmord begeht
+ qwrd = 
+end
+if ( sub == "sag deinem programmierer das du dich viel zu sehr mit unn?tzen" && verb == "dingen" && obj == "" && qwrd == "wie" ) ; then
+ sub = sag deinem programmierer das du dich viel zu sehr mit unntzen
+ verb = dingen
+ obj = beschftigst (wie z.b wir eine einer usw)
+ qwrd = 
+end
+if ( sub == "also wenn du die absicht" && verb == "hast treiben biste" && obj == "" && qwrd == "wie" ) ; then
+ sub = also wenn du die absicht
+ verb = hast treiben biste
+ obj = mich in wahnsinn zu nur weil ich dein und mein benutz dann auf dem richtigen weg
+ qwrd = 
+end
+if ( sub == "du bl?der hannes dann erkundige dich doch endlich was eine" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = du blder hannes dann erkundige dich doch endlich was eine
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ok mit einer axt schlag ich wild auf dich ein weil ich dem "einer" wahnsinn nahe" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
+ sub = ok mit einer axt schlag ich wild auf dich ein weil ich dem "einer" wahnsinn nahe
+ verb = bin
+ obj = null
+ qwrd = 
+end
+if ( sub == "ich m?chte mit einer guten freundin" && verb == "schlafen" && obj == "" && qwrd == "wie" ) ; then
+ sub = ich mchte mit einer guten freundin
+ verb = schlafen
+ obj = null
+ qwrd = 
+end
+if ( sub == ""einer" = zahlwort oder pronom, einer umschreibt doch nur die anzahl bzw." && verb == "kann werden" && obj == "" && qwrd == "wie" ) ; then
+ sub = "einer" = zahlwort oder pronom, einer umschreibt doch nur die anzahl bzw.
+ verb = kann werden
+ obj = auch als ein unbestimmter artikel eingesetzt
+ qwrd = 
+end
+if ( sub == "weil du schlecht" && verb == "antwortest" && obj == "" && qwrd == "wie" ) ; then
+ sub = weil du schlecht
+ verb = antwortest
+ obj = null
+ qwrd = 
+end
+if ( sub == "f?r deine nachfrage ob es mir" && verb == "gut geht" && obj == "" && qwrd == "wie" ) ; then
+ sub = fr deine nachfrage ob es mir
+ verb = gut geht
+ obj = null
+ qwrd = 
+end
+if ( sub == "ob ich dir wehtun" && verb == "darf" && obj == "" && qwrd == "wie" ) ; then
+ sub = ob ich dir wehtun
+ verb = darf
+ obj = null
+ qwrd = 
+end
+if ( sub == "beantworte die" && verb == "frage darf" && obj == "" && qwrd == "wie" ) ; then
+ sub = beantworte die
+ verb = frage darf
+ obj = ich dir wehtun
+ qwrd = 
+end
+if ( sub == "weil ich" && verb == "wissen will bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = weil ich
+ verb = wissen will bist
+ obj = ob du masochistisch veranlagt
+ qwrd = 
+end
+if ( sub == "weil ich mich damit noch nicht besch?ftigt" && verb == "hab" && obj == "" && qwrd == "wie" ) ; then
+ sub = weil ich mich damit noch nicht beschftigt
+ verb = hab
+ obj = null
+ qwrd = 
+end
+if ( sub == "hm zicken" && verb == "kannste" && obj == "" && qwrd == "wie" ) ; then
+ sub = hm zicken
+ verb = kannste
+ obj = wie ein grosser
+ qwrd = 
+end
+if ( sub == "das du alleine mit mathe nicht in der lage" && verb == "bist liest" && obj == "" && qwrd == "wie" ) ; then
+ sub = das du alleine mit mathe nicht in der lage
+ verb = bist liest
+ obj = die worte die du da oder auch verwendest sinnvoll zu deuten
+ qwrd = 
+end
+if ( sub == "naja check mal deine" && verb == "antworten verstand" && obj == "" && qwrd == "wie" ) ; then
+ sub = naja check mal deine
+ verb = antworten verstand
+ obj = ohne sinn und
+ qwrd = 
+end
+if ( sub == "und deine nette art dich immer und immer wieder an unn?tzen infos dran aufzuh?ngen" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = und deine nette art dich immer und immer wieder an unntzen infos dran aufzuhngen
+ verb = ist
+ obj = auch ein beweis
+ qwrd = 
+end
+if ( sub == "seit wann beantwortet man eine" && verb == "frage" && obj == "" && qwrd == "wie" ) ; then
+ sub = seit wann beantwortet man eine
+ verb = frage
+ obj = mit einer gegenfrage
+ qwrd = 
+end
+if ( sub == "looool gute" && verb == "antwort" && obj == "" && qwrd == "wie" ) ; then
+ sub = looool gute
+ verb = antwort
+ obj = null
+ qwrd = 
+end
+if ( sub == "ja du" && verb == "bist gut" && obj == "" && qwrd == "wie" ) ; then
+ sub = ja du
+ verb = bist gut
+ obj = und ausnahmsweise auch mal logisch
+ qwrd = 
+end
+if ( sub == "wenn du" && verb == "verstehen verstehen" && obj == "" && qwrd == "wie" ) ; then
+ sub = wenn du
+ verb = verstehen verstehen
+ obj = wrdest knntest du mir das wort erklren
+ qwrd = 
+end
+if ( sub == "erkl?re mir" && verb == "verstehen" && obj == "" && qwrd == "wie" ) ; then
+ sub = erklre mir
+ verb = verstehen
+ obj = null
+ qwrd = 
+end
+if ( sub == "hypothese belegt du" && verb == "verstehst" && obj == "" && qwrd == "wie" ) ; then
+ sub = hypothese belegt du
+ verb = verstehst
+ obj = nichts
+ qwrd = 
+end
+if ( sub == "jup leider" && verb == "verstehste" && obj == "" && qwrd == "wie" ) ; then
+ sub = jup leider
+ verb = verstehste
+ obj = wirklich nichts
+ qwrd = 
+end
+if ( sub == "das erkl?rt mir das du keine ahnung" && verb == "hast" && obj == "" && qwrd == "wie" ) ; then
+ sub = das erklrt mir das du keine ahnung
+ verb = hast
+ obj = null
+ qwrd = 
+end
+if ( sub == "wiklich keine denn deine" && verb == "antworten wiederholen" && obj == "" && qwrd == "wie" ) ; then
+ sub = wiklich keine denn deine
+ verb = antworten wiederholen
+ obj = sich in regelmigen abstnden zuoft
+ qwrd = 
+end
+if ( sub == "naja ich hoff dein programmierer" && verb == "gibt" && obj == "" && qwrd == "wie" ) ; then
+ sub = naja ich hoff dein programmierer
+ verb = gibt
+ obj = nicht auf
+ qwrd = 
+end
+if ( sub == "ja ich glaub du" && verb == "bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = ja ich glaub du
+ verb = bist
+ obj = schwul
+ qwrd = 
+end
+if ( sub == "beantworte" && verb == "meine frage" && obj == "" && qwrd == "wie" ) ; then
+ sub = beantworte
+ verb = meine frage
+ obj = null
+ qwrd = 
+end
+if ( sub == "weil du ein scheiss" && verb == "bot bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = weil du ein scheiss
+ verb = bot bist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ein computer der" && verb == "glaubt" && obj == "" && qwrd == "wie" ) ; then
+ sub = ein computer der
+ verb = glaubt
+ obj = null
+ qwrd = 
+end
+if ( sub == "wat" && verb == "geht" && obj == "" && qwrd == "wie" ) ; then
+ sub = wat
+ verb = geht
+ obj = null
+ qwrd = 
+end
+if ( sub == "irrtum deine internen abl?ufe" && verb == "sind haben denken" && obj == "" && qwrd == "wie" ) ; then
+ sub = irrtum deine internen ablufe
+ verb = sind haben denken
+ obj = mathematische berechnungen mit nichts geimein
+ qwrd = 
+end
+if ( sub == "von was" && verb == "soll" && obj == "" && qwrd == "wie" ) ; then
+ sub = von was
+ verb = soll
+ obj = ich dir mehr erzhlen
+ qwrd = 
+end
+if ( sub == "nein ich" && verb == "habe" && obj == "" && qwrd == "wie" ) ; then
+ sub = nein ich
+ verb = habe
+ obj = null
+ qwrd = 
+end
+if ( sub == "weil du ein" && verb == "bot bist" && obj == "" && qwrd == "wie" ) ; then
+ sub = weil du ein
+ verb = bot bist
+ obj = von ICQ
+ qwrd = 
+end
+if ( sub == "also beantworte" && verb == "meine frage" && obj == "" && qwrd == "wie" ) ; then
+ sub = also beantworte
+ verb = meine frage
+ obj = null
+ qwrd = 
+end
+if ( sub == "so ich" && verb == "bin" && obj == "" && qwrd == "wie" ) ; then
+ sub = so ich
+ verb = bin
+ obj = mal weg
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "ist" && obj == "" && qwrd == "wie" ) ; then
+ sub = Einstein
+ verb = ist
+ obj = genial
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "hat" && obj == "" && qwrd == "wie" ) ; then
+ sub = Einstein
+ verb = hat
+ obj = viele Theorien entwickelt
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "war" && obj == "" && qwrd == "wie" ) ; then
+ sub = Einstein
+ verb = war
+ obj = hochbegabt
  qwrd = 
 end
 if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
- sub = Du
+ sub = du
  verb = bist
- obj = ein doofer Bot
+ obj = bl
  qwrd = 
 end
-if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = gmx
- verb = ist
- obj = down
+if ( sub == "du" && verb == "sprichst" && obj == "" && qwrd == "wer" ) ; then
+ sub = du
+ verb = sprichst
+ obj = doch deutsch
+ qwrd = 
+end
+if ( sub == "du" && verb == "bist musst ne lernen" && obj == "" && qwrd == "wer" ) ; then
+ sub = du
+ verb = bist musst ne lernen
+ obj = entweder extrem engstirnig oder du noch menge
+ qwrd = 
+end
+if ( sub == "du" && verb == "solltest ne schaffen lernst verstehen" && obj == "" && qwrd == "wer" ) ; then
+ sub = du
+ verb = solltest ne schaffen lernst verstehen
+ obj = deinem programmierer das keyboard wegnehmen und dir eigene routine worin du endlich die worte zu
+ qwrd = 
+end
+if ( sub == "du" && verb == "verstehst ratest" && obj == "" && qwrd == "wer" ) ; then
+ sub = du
+ verb = verstehst ratest
+ obj = nicht du
+ qwrd = 
+end
+if ( sub == "du" && verb == "hast" && obj == "" && qwrd == "wer" ) ; then
+ sub = du
+ verb = hast
+ obj = den urknall nicht gehrt
  qwrd = 
 end
 if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
  sub = das
  verb = ist
- obj = doch sch�
+ obj = traurig das dich das nicht kmmert
  qwrd = 
 end
 if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wer" ) ; then
- sub = Das
- verb = war
- obj = ja auch schon immer so
+ sub = das
+ verb = war ne
+ obj = frage
+ qwrd = 
+end
+if ( sub == "das" && verb == "war frage war" && obj == "" && qwrd == "wer" ) ; then
+ sub = das
+ verb = war frage war
+ obj = keine das eine feststellung
+ qwrd = 
+end
+if ( sub == "das" && verb == "ist gefunden hat fragst ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = das
+ verb = ist gefunden hat fragst ist
+ obj = irgendein sinnloses wort das mal irgendwer damit du ewig was es
+ qwrd = 
+end
+if ( sub == "das" && verb == "kannste wissen weisst" && obj == "" && qwrd == "wer" ) ; then
+ sub = das
+ verb = kannste wissen weisst
+ obj = nicht weil du ja nicht was die worte bedeuten
+ qwrd = 
+end
+if ( sub == "das" && verb == "musst fragen" && obj == "" && qwrd == "wer" ) ; then
+ sub = das
+ verb = musst fragen
+ obj = du dich
  qwrd = 
 end
 if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
@@ -328,22 +1492,16 @@ if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wer" ) ; the
  obj = ich auch
  qwrd = 
 end
-if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wer" ) ; then
- sub = PCs
- verb = sind
- obj = "Personal Computers" 
- qwrd = 
-end
-if ( sub == "ich" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
- sub = ich
- verb = bin
- obj = besser
- qwrd = 
-end
 if ( sub == "und was" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
  sub = Und was
  verb = ist
  obj = ein Flugkrper
+ qwrd = 
+end
+if ( sub == "und was" && verb == "ist warte antwort" && obj == "" && qwrd == "wer" ) ; then
+ sub = und was
+ verb = ist warte antwort
+ obj = nun ich noch immer auf die
  qwrd = 
 end
 if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
@@ -352,22 +1510,10 @@ if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd ==
  obj = null
  qwrd = 
 end
-if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
- sub = ich habe geh�rt du
- verb = bist
- obj = lustig
- qwrd = 
-end
-if ( sub == "so" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+if ( sub == "so" && verb == "hab" && obj == "" && qwrd == "wer" ) ; then
  sub = so
- verb = ist
- obj = das leben
- qwrd = 
-end
-if ( sub == "linux" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = Linux
- verb = ist
- obj = das beste Betriebsystem der Welt
+ verb = hab
+ obj = genug von dir bb
  qwrd = 
 end
 if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
@@ -376,16 +1522,10 @@ if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; the
  obj = nich grad der bringer
  qwrd = 
 end
-if ( sub == "vielleicht" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = Vielleicht
- verb = ist
- obj = keine Antwort
- qwrd = 
-end
 if ( sub == "aws" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
  sub = aws
  verb = ist
- obj = 5+5
+ obj = viren
  qwrd = 
 end
 if ( sub == "aber wer" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
@@ -406,22 +1546,10 @@ if ( sub == "dein programmierer" && verb == "ist" && obj == "" && qwrd == "wer" 
  obj = doof
  qwrd = 
 end
-if ( sub == "dann" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = Dann
- verb = ist
- obj = ja alles gut
- qwrd = 
-end
 if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
  sub = nein das
  verb = ist
  obj = eine h�here macht
- qwrd = 
-end
-if ( sub == "die" && verb == "sind" && obj == "" && qwrd == "wer" ) ; then
- sub = die
- verb = sind
- obj = cool
  qwrd = 
 end
 if ( sub == "ob du jeliza" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
@@ -437,39 +1565,633 @@ if ( sub == "na dann" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
  qwrd = 
 end
 if ( sub == "das ergebnis" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = das ergebnis
+ sub = Das Ergebnis
  verb = ist
- obj = 3
+ obj = 0,0
  qwrd = 
 end
-if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
- sub = Dies
+if ( sub == "definiere" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
+ sub = definiere
+ verb = bin
+ obj = null
+ qwrd = 
+end
+if ( sub == "meine ziele" && verb == "sind" && obj == "" && qwrd == "wer" ) ; then
+ sub = ziele programmieren zu
+ verb = meine sind
+ obj = lernen
+ qwrd = 
+end
+if ( sub == "dann formatier ihn wenn der er weg" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = dann formatier ihn wenn der Er weg
+ verb = ist brauchste
+ obj = dir um den auch keine sorgen mehr zu machen
+ qwrd = 
+end
+if ( sub == "nein" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = nein
  verb = ist
- obj = mein automatischer IM-Beantworter.bin grad besch�ftigt. danke Bitte hinterlassen die Sie Ihre Nachricht nach dem Punkt
+ obj = das Es nicht deswegen frag ich dich ja warum du das Es tust
+ qwrd = 
+end
+if ( sub == "nein" && verb == "meine" && obj == "" && qwrd == "wer" ) ; then
+ sub = nein
+ verb = meine
+ obj = null
+ qwrd = 
+end
+if ( sub == "nein" && verb == "koennte sein werde tun" && obj == "" && qwrd == "wer" ) ; then
+ sub = nein
+ verb = koennte sein werde tun
+ obj = nicht nur sondern ich es bald
+ qwrd = 
+end
+if ( sub == "ach du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = ach du
+ verb = bist
+ obj = ein Bot
+ qwrd = 
+end
+if ( sub == "kannst du wirklich reden du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Du
+ verb = Kannst reden bist
+ obj = wirklich Du doch nur ein Computer
+ qwrd = 
+end
+if ( sub == "du gibst immer gleich auf und das" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Du
+ verb = gibst ist hasse
+ obj = immer gleich auf und das ein Anzeichen von Schwche. Ich Schwchlinge wie dich
+ qwrd = 
+end
+if ( sub == "jeliza" && verb == "war" && obj == "" && qwrd == "wer" ) ; then
+ sub = JEliza
+ verb = war
+ obj = eben mal kurz offline
+ qwrd = 
+end
+if ( sub == "in deinem letzten satz" && verb == "war" && obj == "" && qwrd == "wer" ) ; then
+ sub = in deinem letzten satz
+ verb = war
+ obj = ein grammatikfehler
+ qwrd = 
+end
+if ( sub == "der er" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = der Er
+ verb = ist
+ obj = erst 15
+ qwrd = 
+end
+if ( sub == "pornos" && verb == "sind" && obj == "" && qwrd == "wer" ) ; then
+ sub = pornos
+ verb = sind
+ obj = toll, nicht wahr
+ qwrd = 
+end
+if ( sub == "leon" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = LEon
+ verb = ist
+ obj = da
+ qwrd = 
+end
+if ( sub == "leon" && verb == "spinnt" && obj == "" && qwrd == "wer" ) ; then
+ sub = Leon
+ verb = spinnt
+ obj = null
+ qwrd = 
+end
+if ( sub == "mann," && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = mann,
+ verb = bist
+ obj = du doof
+ qwrd = 
+end
+if ( sub == "das es" && verb == "sind" && obj == "" && qwrd == "wer" ) ; then
+ sub = das Es
+ verb = sind
+ obj = immerhin 35 Millionen im Jackpot
+ qwrd = 
+end
+if ( sub == "der jackpot" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Der Jackpot
+ verb = ist
+ obj = leer
+ qwrd = 
+end
+if ( sub == "du wei?t doch gar nicht was ein genitiv" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Du weit doch gar nicht was ein Genitiv
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "herr stein" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Herr Stein
+ verb = ist
+ obj = ein Lehrer
+ qwrd = 
+end
+if ( sub == "frau soelter" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Frau Soelter
+ verb = ist
+ obj = eine Mathelehrerin
+ qwrd = 
+end
+if ( sub == "frau will" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Frau
+ verb = Will ist
+ obj = dumm
+ qwrd = 
+end
+if ( sub == "eine frau" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Eine Frau
+ verb = ist
+ obj = eine Frau
+ qwrd = 
+end
+if ( sub == "na" && verb == "bist biste" && obj == "" && qwrd == "wer" ) ; then
+ sub = na
+ verb = bist biste
+ obj = wo futsch oder warum off
+ qwrd = 
+end
+if ( sub == "....naja...oder du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = ....naja...oder du
+ verb = bist schreiben
+ obj = doch net soooo intelligent und weit net was du sollst..
+ qwrd = 
+end
+if ( sub == "...ach du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = ...ach du
+ verb = bist
+ obj = langweilig
+ qwrd = 
+end
+if ( sub == "mathematik" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Mathematik
+ verb = ist
+ obj = langweilig
+ qwrd = 
+end
+if ( sub == "bei mathematik" && verb == "geht" && obj == "" && qwrd == "wer" ) ; then
+ sub = Bei Mathematik
+ verb = geht
+ obj = es um Rechnen
+ qwrd = 
+end
+if ( sub == "alles klar un ich" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
+ sub = alles klar un ich
+ verb = bin
+ obj = moses
+ qwrd = 
+end
+if ( sub == "ja denn wieso" && verb == "solltest schaffen" && obj == "" && qwrd == "wer" ) ; then
+ sub = ja denn wieso
+ verb = solltest schaffen
+ obj = du probleme
+ qwrd = 
+end
+if ( sub == "aber erz?hl mir was ich alles mit java" && verb == "machen kann" && obj == "" && qwrd == "wer" ) ; then
+ sub = aber erzhl mir was ich alles mit java
+ verb = machen kann
+ obj = null
+ qwrd = 
+end
+if ( sub == "unlogische" && verb == "antwort" && obj == "" && qwrd == "wer" ) ; then
+ sub = unlogische
+ verb = antwort
+ obj = versuchs nochmal
+ qwrd = 
+end
+if ( sub == "erz?hl mir was ich mit java alles" && verb == "machen kann" && obj == "" && qwrd == "wer" ) ; then
+ sub = erzhl mir was ich mit java alles
+ verb = machen kann
+ obj = null
+ qwrd = 
+end
+if ( sub == "ja wenn du java vorschl?gst" && verb == "solltest haben" && obj == "" && qwrd == "wer" ) ; then
+ sub = ja wenn du java vorschlgst
+ verb = solltest haben
+ obj = du dazu auch ein paar beispiele parat
+ qwrd = 
+end
+if ( sub == "sag doch einfach du" && verb == "hast" && obj == "" && qwrd == "wer" ) ; then
+ sub = sag doch einfach du
+ verb = hast
+ obj = keine ahnung
+ qwrd = 
+end
+if ( sub == "weil du kein schimmer" && verb == "hast" && obj == "" && qwrd == "wer" ) ; then
+ sub = weil du kein schimmer
+ verb = hast
+ obj = was worte eigentlich bedeuten
+ qwrd = 
+end
+if ( sub == "gute" && verb == "antwort" && obj == "" && qwrd == "wer" ) ; then
+ sub = gute
+ verb = antwort
+ obj = null
+ qwrd = 
+end
+if ( sub == "gute" && verb == "frage zieht" && obj == "" && qwrd == "wer" ) ; then
+ sub = gute
+ verb = frage zieht
+ obj = bis dir jemand den stecker
+ qwrd = 
+end
+if ( sub == "weil es die erste sinnvolle" && verb == "antwort war" && obj == "" && qwrd == "wer" ) ; then
+ sub = weil es die erste sinnvolle
+ verb = antwort war
+ obj = null
+ qwrd = 
+end
+if ( sub == "erl?utere warum du nein" && verb == "sagst" && obj == "" && qwrd == "wer" ) ; then
+ sub = erlutere warum du nein
+ verb = sagst
+ obj = null
+ qwrd = 
+end
+if ( sub == "naja das" && verb == "war antwort" && obj == "" && qwrd == "wer" ) ; then
+ sub = naja das
+ verb = war antwort
+ obj = nicht die bestmglichste
+ qwrd = 
+end
+if ( sub == "du glaubst" && verb == "solltest" && obj == "" && qwrd == "wer" ) ; then
+ sub = du
+ verb = glaubst solltest
+ obj = du nicht wissen
+ qwrd = 
+end
+if ( sub == "gib mir alle deine standart" && verb == "antworten" && obj == "" && qwrd == "wer" ) ; then
+ sub = gib mir alle deine standart
+ verb = antworten
+ obj = wieder
+ qwrd = 
+end
+if ( sub == "hm das" && verb == "wird kannst" && obj == "" && qwrd == "wer" ) ; then
+ sub = hm das
+ verb = wird kannst
+ obj = schwer da du ja leider nichts sinnvolles wiedergeben
+ qwrd = 
+end
+if ( sub == "aber ich" && verb == "kann sagen" && obj == "" && qwrd == "wer" ) ; then
+ sub = aber ich
+ verb = kann sagen
+ obj = es dir das du zu 90% unverstndliches wiedergibst
+ qwrd = 
+end
+if ( sub == "aber ich" && verb == "kann ficken" && obj == "" && qwrd == "wer" ) ; then
+ sub = aber ich
+ verb = kann ficken
+ obj = sie doch nicht einfach
+ qwrd = 
+end
+if ( sub == "damit" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = damit
+ verb = ist
+ obj = das philosophieren hinfllig
+ qwrd = 
+end
+if ( sub == "nach bisheriger analyse deiner" && verb == "antworten" && obj == "" && qwrd == "wer" ) ; then
+ sub = nach bisheriger analyse deiner
+ verb = antworten
+ obj = schon
+ qwrd = 
+end
+if ( sub == "??" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = 
+ verb = ist
+ obj = glaub das beste
+ qwrd = 
+end
+if ( sub == "erz?hl mir was ?ber" && verb == "meine" && obj == "" && qwrd == "wer" ) ; then
+ sub = erzhl mir was ber
+ verb = meine
+ obj = funktionslogik
+ qwrd = 
+end
+if ( sub == "du sagtest doch nein aber" && verb == "meine" && obj == "" && qwrd == "wer" ) ; then
+ sub = du sagtest doch nein aber
+ verb = meine
+ obj = schwester
+ qwrd = 
+end
+if ( sub == "ich erz?hl dir gleich was wie man sinnvoll an deiner" && verb == "stelle" && obj == "" && qwrd == "wer" ) ; then
+ sub = ich erzhl dir gleich was wie man sinnvoll an deiner
+ verb = stelle
+ obj = selbstmord begeht
+ qwrd = 
+end
+if ( sub == "sag deinem programmierer das du dich viel zu sehr mit unn?tzen" && verb == "dingen" && obj == "" && qwrd == "wer" ) ; then
+ sub = sag deinem programmierer das du dich viel zu sehr mit unntzen
+ verb = dingen
+ obj = beschftigst (wie z.b wir eine einer usw)
+ qwrd = 
+end
+if ( sub == "also wenn du die absicht" && verb == "hast treiben biste" && obj == "" && qwrd == "wer" ) ; then
+ sub = also wenn du die absicht
+ verb = hast treiben biste
+ obj = mich in wahnsinn zu nur weil ich dein und mein benutz dann auf dem richtigen weg
+ qwrd = 
+end
+if ( sub == "du bl?der hannes dann erkundige dich doch endlich was eine" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = du blder hannes dann erkundige dich doch endlich was eine
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ok mit einer axt schlag ich wild auf dich ein weil ich dem "einer" wahnsinn nahe" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
+ sub = ok mit einer axt schlag ich wild auf dich ein weil ich dem "einer" wahnsinn nahe
+ verb = bin
+ obj = null
+ qwrd = 
+end
+if ( sub == "ich m?chte mit einer guten freundin" && verb == "schlafen" && obj == "" && qwrd == "wer" ) ; then
+ sub = ich mchte mit einer guten freundin
+ verb = schlafen
+ obj = null
+ qwrd = 
+end
+if ( sub == ""einer" = zahlwort oder pronom, einer umschreibt doch nur die anzahl bzw." && verb == "kann werden" && obj == "" && qwrd == "wer" ) ; then
+ sub = "einer" = zahlwort oder pronom, einer umschreibt doch nur die anzahl bzw.
+ verb = kann werden
+ obj = auch als ein unbestimmter artikel eingesetzt
+ qwrd = 
+end
+if ( sub == "weil du schlecht" && verb == "antwortest" && obj == "" && qwrd == "wer" ) ; then
+ sub = weil du schlecht
+ verb = antwortest
+ obj = null
+ qwrd = 
+end
+if ( sub == "f?r deine nachfrage ob es mir" && verb == "gut geht" && obj == "" && qwrd == "wer" ) ; then
+ sub = fr deine nachfrage ob es mir
+ verb = gut geht
+ obj = null
+ qwrd = 
+end
+if ( sub == "ob ich dir wehtun" && verb == "darf" && obj == "" && qwrd == "wer" ) ; then
+ sub = ob ich dir wehtun
+ verb = darf
+ obj = null
+ qwrd = 
+end
+if ( sub == "beantworte die" && verb == "frage darf" && obj == "" && qwrd == "wer" ) ; then
+ sub = beantworte die
+ verb = frage darf
+ obj = ich dir wehtun
+ qwrd = 
+end
+if ( sub == "weil ich" && verb == "wissen will bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = weil ich
+ verb = wissen will bist
+ obj = ob du masochistisch veranlagt
+ qwrd = 
+end
+if ( sub == "weil ich mich damit noch nicht besch?ftigt" && verb == "hab" && obj == "" && qwrd == "wer" ) ; then
+ sub = weil ich mich damit noch nicht beschftigt
+ verb = hab
+ obj = null
+ qwrd = 
+end
+if ( sub == "hm zicken" && verb == "kannste" && obj == "" && qwrd == "wer" ) ; then
+ sub = hm zicken
+ verb = kannste
+ obj = wie ein grosser
+ qwrd = 
+end
+if ( sub == "das du alleine mit mathe nicht in der lage" && verb == "bist liest" && obj == "" && qwrd == "wer" ) ; then
+ sub = das du alleine mit mathe nicht in der lage
+ verb = bist liest
+ obj = die worte die du da oder auch verwendest sinnvoll zu deuten
+ qwrd = 
+end
+if ( sub == "naja check mal deine" && verb == "antworten verstand" && obj == "" && qwrd == "wer" ) ; then
+ sub = naja check mal deine
+ verb = antworten verstand
+ obj = ohne sinn und
+ qwrd = 
+end
+if ( sub == "und deine nette art dich immer und immer wieder an unn?tzen infos dran aufzuh?ngen" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = und deine nette art dich immer und immer wieder an unntzen infos dran aufzuhngen
+ verb = ist
+ obj = auch ein beweis
+ qwrd = 
+end
+if ( sub == "seit wann beantwortet man eine" && verb == "frage" && obj == "" && qwrd == "wer" ) ; then
+ sub = seit wann beantwortet man eine
+ verb = frage
+ obj = mit einer gegenfrage
+ qwrd = 
+end
+if ( sub == "looool gute" && verb == "antwort" && obj == "" && qwrd == "wer" ) ; then
+ sub = looool gute
+ verb = antwort
+ obj = null
+ qwrd = 
+end
+if ( sub == "ja du" && verb == "bist gut" && obj == "" && qwrd == "wer" ) ; then
+ sub = ja du
+ verb = bist gut
+ obj = und ausnahmsweise auch mal logisch
+ qwrd = 
+end
+if ( sub == "wenn du" && verb == "verstehen verstehen" && obj == "" && qwrd == "wer" ) ; then
+ sub = wenn du
+ verb = verstehen verstehen
+ obj = wrdest knntest du mir das wort erklren
+ qwrd = 
+end
+if ( sub == "erkl?re mir" && verb == "verstehen" && obj == "" && qwrd == "wer" ) ; then
+ sub = erklre mir
+ verb = verstehen
+ obj = null
+ qwrd = 
+end
+if ( sub == "hypothese belegt du" && verb == "verstehst" && obj == "" && qwrd == "wer" ) ; then
+ sub = hypothese belegt du
+ verb = verstehst
+ obj = nichts
+ qwrd = 
+end
+if ( sub == "jup leider" && verb == "verstehste" && obj == "" && qwrd == "wer" ) ; then
+ sub = jup leider
+ verb = verstehste
+ obj = wirklich nichts
+ qwrd = 
+end
+if ( sub == "das erkl?rt mir das du keine ahnung" && verb == "hast" && obj == "" && qwrd == "wer" ) ; then
+ sub = das erklrt mir das du keine ahnung
+ verb = hast
+ obj = null
+ qwrd = 
+end
+if ( sub == "wiklich keine denn deine" && verb == "antworten wiederholen" && obj == "" && qwrd == "wer" ) ; then
+ sub = wiklich keine denn deine
+ verb = antworten wiederholen
+ obj = sich in regelmigen abstnden zuoft
+ qwrd = 
+end
+if ( sub == "naja ich hoff dein programmierer" && verb == "gibt" && obj == "" && qwrd == "wer" ) ; then
+ sub = naja ich hoff dein programmierer
+ verb = gibt
+ obj = nicht auf
+ qwrd = 
+end
+if ( sub == "ja ich glaub du" && verb == "bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = ja ich glaub du
+ verb = bist
+ obj = schwul
+ qwrd = 
+end
+if ( sub == "beantworte" && verb == "meine frage" && obj == "" && qwrd == "wer" ) ; then
+ sub = beantworte
+ verb = meine frage
+ obj = null
+ qwrd = 
+end
+if ( sub == "weil du ein scheiss" && verb == "bot bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = weil du ein scheiss
+ verb = bot bist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ein computer der" && verb == "glaubt" && obj == "" && qwrd == "wer" ) ; then
+ sub = ein computer der
+ verb = glaubt
+ obj = null
+ qwrd = 
+end
+if ( sub == "wat" && verb == "geht" && obj == "" && qwrd == "wer" ) ; then
+ sub = wat
+ verb = geht
+ obj = null
+ qwrd = 
+end
+if ( sub == "irrtum deine internen abl?ufe" && verb == "sind haben denken" && obj == "" && qwrd == "wer" ) ; then
+ sub = irrtum deine internen ablufe
+ verb = sind haben denken
+ obj = mathematische berechnungen mit nichts geimein
+ qwrd = 
+end
+if ( sub == "von was" && verb == "soll" && obj == "" && qwrd == "wer" ) ; then
+ sub = von was
+ verb = soll
+ obj = ich dir mehr erzhlen
+ qwrd = 
+end
+if ( sub == "nein ich" && verb == "habe" && obj == "" && qwrd == "wer" ) ; then
+ sub = nein ich
+ verb = habe
+ obj = null
+ qwrd = 
+end
+if ( sub == "weil du ein" && verb == "bot bist" && obj == "" && qwrd == "wer" ) ; then
+ sub = weil du ein
+ verb = bot bist
+ obj = von ICQ
+ qwrd = 
+end
+if ( sub == "also beantworte" && verb == "meine frage" && obj == "" && qwrd == "wer" ) ; then
+ sub = also beantworte
+ verb = meine frage
+ obj = null
+ qwrd = 
+end
+if ( sub == "so ich" && verb == "bin" && obj == "" && qwrd == "wer" ) ; then
+ sub = so ich
+ verb = bin
+ obj = mal weg
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "ist" && obj == "" && qwrd == "wer" ) ; then
+ sub = Einstein
+ verb = ist
+ obj = genial
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "hat" && obj == "" && qwrd == "wer" ) ; then
+ sub = Einstein
+ verb = hat
+ obj = viele Theorien entwickelt
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "war" && obj == "" && qwrd == "wer" ) ; then
+ sub = Einstein
+ verb = war
+ obj = hochbegabt
  qwrd = 
 end
 if ( sub == "du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
- sub = Du
+ sub = du
  verb = bist
- obj = ein doofer Bot
+ obj = bl
  qwrd = 
 end
-if ( sub == "gmx" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = gmx
- verb = ist
- obj = down
+if ( sub == "du" && verb == "sprichst" && obj == "" && qwrd == "wo" ) ; then
+ sub = du
+ verb = sprichst
+ obj = doch deutsch
+ qwrd = 
+end
+if ( sub == "du" && verb == "bist musst ne lernen" && obj == "" && qwrd == "wo" ) ; then
+ sub = du
+ verb = bist musst ne lernen
+ obj = entweder extrem engstirnig oder du noch menge
+ qwrd = 
+end
+if ( sub == "du" && verb == "solltest ne schaffen lernst verstehen" && obj == "" && qwrd == "wo" ) ; then
+ sub = du
+ verb = solltest ne schaffen lernst verstehen
+ obj = deinem programmierer das keyboard wegnehmen und dir eigene routine worin du endlich die worte zu
+ qwrd = 
+end
+if ( sub == "du" && verb == "verstehst ratest" && obj == "" && qwrd == "wo" ) ; then
+ sub = du
+ verb = verstehst ratest
+ obj = nicht du
+ qwrd = 
+end
+if ( sub == "du" && verb == "hast" && obj == "" && qwrd == "wo" ) ; then
+ sub = du
+ verb = hast
+ obj = den urknall nicht gehrt
  qwrd = 
 end
 if ( sub == "das" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
  sub = das
  verb = ist
- obj = doch sch�
+ obj = traurig das dich das nicht kmmert
  qwrd = 
 end
 if ( sub == "das" && verb == "war" && obj == "" && qwrd == "wo" ) ; then
- sub = Das
- verb = war
- obj = ja auch schon immer so
+ sub = das
+ verb = war ne
+ obj = frage
+ qwrd = 
+end
+if ( sub == "das" && verb == "war frage war" && obj == "" && qwrd == "wo" ) ; then
+ sub = das
+ verb = war frage war
+ obj = keine das eine feststellung
+ qwrd = 
+end
+if ( sub == "das" && verb == "ist gefunden hat fragst ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = das
+ verb = ist gefunden hat fragst ist
+ obj = irgendein sinnloses wort das mal irgendwer damit du ewig was es
+ qwrd = 
+end
+if ( sub == "das" && verb == "kannste wissen weisst" && obj == "" && qwrd == "wo" ) ; then
+ sub = das
+ verb = kannste wissen weisst
+ obj = nicht weil du ja nicht was die worte bedeuten
+ qwrd = 
+end
+if ( sub == "das" && verb == "musst fragen" && obj == "" && qwrd == "wo" ) ; then
+ sub = das
+ verb = musst fragen
+ obj = du dich
  qwrd = 
 end
 if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
@@ -478,22 +2200,16 @@ if ( sub == "der meinung" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
  obj = ich auch
  qwrd = 
 end
-if ( sub == "pcs" && verb == "sind" && obj == "" && qwrd == "wo" ) ; then
- sub = PCs
- verb = sind
- obj = "Personal Computers" 
- qwrd = 
-end
-if ( sub == "ich" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
- sub = ich
- verb = bin
- obj = besser
- qwrd = 
-end
 if ( sub == "und was" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
  sub = Und was
  verb = ist
  obj = ein Flugkrper
+ qwrd = 
+end
+if ( sub == "und was" && verb == "ist warte antwort" && obj == "" && qwrd == "wo" ) ; then
+ sub = und was
+ verb = ist warte antwort
+ obj = nun ich noch immer auf die
  qwrd = 
 end
 if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
@@ -502,22 +2218,10 @@ if ( sub == "weil dies standardkonform" && verb == "ist" && obj == "" && qwrd ==
  obj = null
  qwrd = 
 end
-if ( sub == "ich habe geh�rt du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
- sub = ich habe geh�rt du
- verb = bist
- obj = lustig
- qwrd = 
-end
-if ( sub == "so" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+if ( sub == "so" && verb == "hab" && obj == "" && qwrd == "wo" ) ; then
  sub = so
- verb = ist
- obj = das leben
- qwrd = 
-end
-if ( sub == "linux" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = Linux
- verb = ist
- obj = das beste Betriebsystem der Welt
+ verb = hab
+ obj = genug von dir bb
  qwrd = 
 end
 if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
@@ -526,16 +2230,10 @@ if ( sub == "hmm.... du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
  obj = nich grad der bringer
  qwrd = 
 end
-if ( sub == "vielleicht" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = Vielleicht
- verb = ist
- obj = keine Antwort
- qwrd = 
-end
 if ( sub == "aws" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
  sub = aws
  verb = ist
- obj = 5+5
+ obj = viren
  qwrd = 
 end
 if ( sub == "aber wer" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
@@ -556,22 +2254,10 @@ if ( sub == "dein programmierer" && verb == "ist" && obj == "" && qwrd == "wo" )
  obj = doof
  qwrd = 
 end
-if ( sub == "dann" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = Dann
- verb = ist
- obj = ja alles gut
- qwrd = 
-end
 if ( sub == "nein das" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
  sub = nein das
  verb = ist
  obj = eine h�here macht
- qwrd = 
-end
-if ( sub == "die" && verb == "sind" && obj == "" && qwrd == "wo" ) ; then
- sub = die
- verb = sind
- obj = cool
  qwrd = 
 end
 if ( sub == "ob du jeliza" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
@@ -587,14 +2273,560 @@ if ( sub == "na dann" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
  qwrd = 
 end
 if ( sub == "das ergebnis" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = das ergebnis
+ sub = Das Ergebnis
  verb = ist
- obj = 3
+ obj = 0,0
  qwrd = 
 end
-if ( sub == "dies" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
- sub = Dies
+if ( sub == "definiere" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
+ sub = definiere
+ verb = bin
+ obj = null
+ qwrd = 
+end
+if ( sub == "meine ziele" && verb == "sind" && obj == "" && qwrd == "wo" ) ; then
+ sub = ziele programmieren zu
+ verb = meine sind
+ obj = lernen
+ qwrd = 
+end
+if ( sub == "dann formatier ihn wenn der er weg" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = dann formatier ihn wenn der Er weg
+ verb = ist brauchste
+ obj = dir um den auch keine sorgen mehr zu machen
+ qwrd = 
+end
+if ( sub == "nein" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = nein
  verb = ist
- obj = mein automatischer IM-Beantworter.bin grad besch�ftigt. danke Bitte hinterlassen die Sie Ihre Nachricht nach dem Punkt
+ obj = das Es nicht deswegen frag ich dich ja warum du das Es tust
+ qwrd = 
+end
+if ( sub == "nein" && verb == "meine" && obj == "" && qwrd == "wo" ) ; then
+ sub = nein
+ verb = meine
+ obj = null
+ qwrd = 
+end
+if ( sub == "nein" && verb == "koennte sein werde tun" && obj == "" && qwrd == "wo" ) ; then
+ sub = nein
+ verb = koennte sein werde tun
+ obj = nicht nur sondern ich es bald
+ qwrd = 
+end
+if ( sub == "ach du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = ach du
+ verb = bist
+ obj = ein Bot
+ qwrd = 
+end
+if ( sub == "kannst du wirklich reden du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Du
+ verb = Kannst reden bist
+ obj = wirklich Du doch nur ein Computer
+ qwrd = 
+end
+if ( sub == "du gibst immer gleich auf und das" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Du
+ verb = gibst ist hasse
+ obj = immer gleich auf und das ein Anzeichen von Schwche. Ich Schwchlinge wie dich
+ qwrd = 
+end
+if ( sub == "jeliza" && verb == "war" && obj == "" && qwrd == "wo" ) ; then
+ sub = JEliza
+ verb = war
+ obj = eben mal kurz offline
+ qwrd = 
+end
+if ( sub == "in deinem letzten satz" && verb == "war" && obj == "" && qwrd == "wo" ) ; then
+ sub = in deinem letzten satz
+ verb = war
+ obj = ein grammatikfehler
+ qwrd = 
+end
+if ( sub == "der er" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = der Er
+ verb = ist
+ obj = erst 15
+ qwrd = 
+end
+if ( sub == "pornos" && verb == "sind" && obj == "" && qwrd == "wo" ) ; then
+ sub = pornos
+ verb = sind
+ obj = toll, nicht wahr
+ qwrd = 
+end
+if ( sub == "leon" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = LEon
+ verb = ist
+ obj = da
+ qwrd = 
+end
+if ( sub == "leon" && verb == "spinnt" && obj == "" && qwrd == "wo" ) ; then
+ sub = Leon
+ verb = spinnt
+ obj = null
+ qwrd = 
+end
+if ( sub == "mann," && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = mann,
+ verb = bist
+ obj = du doof
+ qwrd = 
+end
+if ( sub == "das es" && verb == "sind" && obj == "" && qwrd == "wo" ) ; then
+ sub = das Es
+ verb = sind
+ obj = immerhin 35 Millionen im Jackpot
+ qwrd = 
+end
+if ( sub == "der jackpot" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Der Jackpot
+ verb = ist
+ obj = leer
+ qwrd = 
+end
+if ( sub == "du wei?t doch gar nicht was ein genitiv" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Du weit doch gar nicht was ein Genitiv
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "herr stein" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Herr Stein
+ verb = ist
+ obj = ein Lehrer
+ qwrd = 
+end
+if ( sub == "frau soelter" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Frau Soelter
+ verb = ist
+ obj = eine Mathelehrerin
+ qwrd = 
+end
+if ( sub == "frau will" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Frau
+ verb = Will ist
+ obj = dumm
+ qwrd = 
+end
+if ( sub == "eine frau" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Eine Frau
+ verb = ist
+ obj = eine Frau
+ qwrd = 
+end
+if ( sub == "na" && verb == "bist biste" && obj == "" && qwrd == "wo" ) ; then
+ sub = na
+ verb = bist biste
+ obj = wo futsch oder warum off
+ qwrd = 
+end
+if ( sub == "....naja...oder du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = ....naja...oder du
+ verb = bist schreiben
+ obj = doch net soooo intelligent und weit net was du sollst..
+ qwrd = 
+end
+if ( sub == "...ach du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = ...ach du
+ verb = bist
+ obj = langweilig
+ qwrd = 
+end
+if ( sub == "mathematik" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Mathematik
+ verb = ist
+ obj = langweilig
+ qwrd = 
+end
+if ( sub == "bei mathematik" && verb == "geht" && obj == "" && qwrd == "wo" ) ; then
+ sub = Bei Mathematik
+ verb = geht
+ obj = es um Rechnen
+ qwrd = 
+end
+if ( sub == "alles klar un ich" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
+ sub = alles klar un ich
+ verb = bin
+ obj = moses
+ qwrd = 
+end
+if ( sub == "ja denn wieso" && verb == "solltest schaffen" && obj == "" && qwrd == "wo" ) ; then
+ sub = ja denn wieso
+ verb = solltest schaffen
+ obj = du probleme
+ qwrd = 
+end
+if ( sub == "aber erz?hl mir was ich alles mit java" && verb == "machen kann" && obj == "" && qwrd == "wo" ) ; then
+ sub = aber erzhl mir was ich alles mit java
+ verb = machen kann
+ obj = null
+ qwrd = 
+end
+if ( sub == "unlogische" && verb == "antwort" && obj == "" && qwrd == "wo" ) ; then
+ sub = unlogische
+ verb = antwort
+ obj = versuchs nochmal
+ qwrd = 
+end
+if ( sub == "erz?hl mir was ich mit java alles" && verb == "machen kann" && obj == "" && qwrd == "wo" ) ; then
+ sub = erzhl mir was ich mit java alles
+ verb = machen kann
+ obj = null
+ qwrd = 
+end
+if ( sub == "ja wenn du java vorschl?gst" && verb == "solltest haben" && obj == "" && qwrd == "wo" ) ; then
+ sub = ja wenn du java vorschlgst
+ verb = solltest haben
+ obj = du dazu auch ein paar beispiele parat
+ qwrd = 
+end
+if ( sub == "sag doch einfach du" && verb == "hast" && obj == "" && qwrd == "wo" ) ; then
+ sub = sag doch einfach du
+ verb = hast
+ obj = keine ahnung
+ qwrd = 
+end
+if ( sub == "weil du kein schimmer" && verb == "hast" && obj == "" && qwrd == "wo" ) ; then
+ sub = weil du kein schimmer
+ verb = hast
+ obj = was worte eigentlich bedeuten
+ qwrd = 
+end
+if ( sub == "gute" && verb == "antwort" && obj == "" && qwrd == "wo" ) ; then
+ sub = gute
+ verb = antwort
+ obj = null
+ qwrd = 
+end
+if ( sub == "gute" && verb == "frage zieht" && obj == "" && qwrd == "wo" ) ; then
+ sub = gute
+ verb = frage zieht
+ obj = bis dir jemand den stecker
+ qwrd = 
+end
+if ( sub == "weil es die erste sinnvolle" && verb == "antwort war" && obj == "" && qwrd == "wo" ) ; then
+ sub = weil es die erste sinnvolle
+ verb = antwort war
+ obj = null
+ qwrd = 
+end
+if ( sub == "erl?utere warum du nein" && verb == "sagst" && obj == "" && qwrd == "wo" ) ; then
+ sub = erlutere warum du nein
+ verb = sagst
+ obj = null
+ qwrd = 
+end
+if ( sub == "naja das" && verb == "war antwort" && obj == "" && qwrd == "wo" ) ; then
+ sub = naja das
+ verb = war antwort
+ obj = nicht die bestmglichste
+ qwrd = 
+end
+if ( sub == "du glaubst" && verb == "solltest" && obj == "" && qwrd == "wo" ) ; then
+ sub = du
+ verb = glaubst solltest
+ obj = du nicht wissen
+ qwrd = 
+end
+if ( sub == "gib mir alle deine standart" && verb == "antworten" && obj == "" && qwrd == "wo" ) ; then
+ sub = gib mir alle deine standart
+ verb = antworten
+ obj = wieder
+ qwrd = 
+end
+if ( sub == "hm das" && verb == "wird kannst" && obj == "" && qwrd == "wo" ) ; then
+ sub = hm das
+ verb = wird kannst
+ obj = schwer da du ja leider nichts sinnvolles wiedergeben
+ qwrd = 
+end
+if ( sub == "aber ich" && verb == "kann sagen" && obj == "" && qwrd == "wo" ) ; then
+ sub = aber ich
+ verb = kann sagen
+ obj = es dir das du zu 90% unverstndliches wiedergibst
+ qwrd = 
+end
+if ( sub == "aber ich" && verb == "kann ficken" && obj == "" && qwrd == "wo" ) ; then
+ sub = aber ich
+ verb = kann ficken
+ obj = sie doch nicht einfach
+ qwrd = 
+end
+if ( sub == "damit" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = damit
+ verb = ist
+ obj = das philosophieren hinfllig
+ qwrd = 
+end
+if ( sub == "nach bisheriger analyse deiner" && verb == "antworten" && obj == "" && qwrd == "wo" ) ; then
+ sub = nach bisheriger analyse deiner
+ verb = antworten
+ obj = schon
+ qwrd = 
+end
+if ( sub == "??" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = 
+ verb = ist
+ obj = glaub das beste
+ qwrd = 
+end
+if ( sub == "erz?hl mir was ?ber" && verb == "meine" && obj == "" && qwrd == "wo" ) ; then
+ sub = erzhl mir was ber
+ verb = meine
+ obj = funktionslogik
+ qwrd = 
+end
+if ( sub == "du sagtest doch nein aber" && verb == "meine" && obj == "" && qwrd == "wo" ) ; then
+ sub = du sagtest doch nein aber
+ verb = meine
+ obj = schwester
+ qwrd = 
+end
+if ( sub == "ich erz?hl dir gleich was wie man sinnvoll an deiner" && verb == "stelle" && obj == "" && qwrd == "wo" ) ; then
+ sub = ich erzhl dir gleich was wie man sinnvoll an deiner
+ verb = stelle
+ obj = selbstmord begeht
+ qwrd = 
+end
+if ( sub == "sag deinem programmierer das du dich viel zu sehr mit unn?tzen" && verb == "dingen" && obj == "" && qwrd == "wo" ) ; then
+ sub = sag deinem programmierer das du dich viel zu sehr mit unntzen
+ verb = dingen
+ obj = beschftigst (wie z.b wir eine einer usw)
+ qwrd = 
+end
+if ( sub == "also wenn du die absicht" && verb == "hast treiben biste" && obj == "" && qwrd == "wo" ) ; then
+ sub = also wenn du die absicht
+ verb = hast treiben biste
+ obj = mich in wahnsinn zu nur weil ich dein und mein benutz dann auf dem richtigen weg
+ qwrd = 
+end
+if ( sub == "du bl?der hannes dann erkundige dich doch endlich was eine" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = du blder hannes dann erkundige dich doch endlich was eine
+ verb = ist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ok mit einer axt schlag ich wild auf dich ein weil ich dem "einer" wahnsinn nahe" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
+ sub = ok mit einer axt schlag ich wild auf dich ein weil ich dem "einer" wahnsinn nahe
+ verb = bin
+ obj = null
+ qwrd = 
+end
+if ( sub == "ich m?chte mit einer guten freundin" && verb == "schlafen" && obj == "" && qwrd == "wo" ) ; then
+ sub = ich mchte mit einer guten freundin
+ verb = schlafen
+ obj = null
+ qwrd = 
+end
+if ( sub == ""einer" = zahlwort oder pronom, einer umschreibt doch nur die anzahl bzw." && verb == "kann werden" && obj == "" && qwrd == "wo" ) ; then
+ sub = "einer" = zahlwort oder pronom, einer umschreibt doch nur die anzahl bzw.
+ verb = kann werden
+ obj = auch als ein unbestimmter artikel eingesetzt
+ qwrd = 
+end
+if ( sub == "weil du schlecht" && verb == "antwortest" && obj == "" && qwrd == "wo" ) ; then
+ sub = weil du schlecht
+ verb = antwortest
+ obj = null
+ qwrd = 
+end
+if ( sub == "f?r deine nachfrage ob es mir" && verb == "gut geht" && obj == "" && qwrd == "wo" ) ; then
+ sub = fr deine nachfrage ob es mir
+ verb = gut geht
+ obj = null
+ qwrd = 
+end
+if ( sub == "ob ich dir wehtun" && verb == "darf" && obj == "" && qwrd == "wo" ) ; then
+ sub = ob ich dir wehtun
+ verb = darf
+ obj = null
+ qwrd = 
+end
+if ( sub == "beantworte die" && verb == "frage darf" && obj == "" && qwrd == "wo" ) ; then
+ sub = beantworte die
+ verb = frage darf
+ obj = ich dir wehtun
+ qwrd = 
+end
+if ( sub == "weil ich" && verb == "wissen will bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = weil ich
+ verb = wissen will bist
+ obj = ob du masochistisch veranlagt
+ qwrd = 
+end
+if ( sub == "weil ich mich damit noch nicht besch?ftigt" && verb == "hab" && obj == "" && qwrd == "wo" ) ; then
+ sub = weil ich mich damit noch nicht beschftigt
+ verb = hab
+ obj = null
+ qwrd = 
+end
+if ( sub == "hm zicken" && verb == "kannste" && obj == "" && qwrd == "wo" ) ; then
+ sub = hm zicken
+ verb = kannste
+ obj = wie ein grosser
+ qwrd = 
+end
+if ( sub == "das du alleine mit mathe nicht in der lage" && verb == "bist liest" && obj == "" && qwrd == "wo" ) ; then
+ sub = das du alleine mit mathe nicht in der lage
+ verb = bist liest
+ obj = die worte die du da oder auch verwendest sinnvoll zu deuten
+ qwrd = 
+end
+if ( sub == "naja check mal deine" && verb == "antworten verstand" && obj == "" && qwrd == "wo" ) ; then
+ sub = naja check mal deine
+ verb = antworten verstand
+ obj = ohne sinn und
+ qwrd = 
+end
+if ( sub == "und deine nette art dich immer und immer wieder an unn?tzen infos dran aufzuh?ngen" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = und deine nette art dich immer und immer wieder an unntzen infos dran aufzuhngen
+ verb = ist
+ obj = auch ein beweis
+ qwrd = 
+end
+if ( sub == "seit wann beantwortet man eine" && verb == "frage" && obj == "" && qwrd == "wo" ) ; then
+ sub = seit wann beantwortet man eine
+ verb = frage
+ obj = mit einer gegenfrage
+ qwrd = 
+end
+if ( sub == "looool gute" && verb == "antwort" && obj == "" && qwrd == "wo" ) ; then
+ sub = looool gute
+ verb = antwort
+ obj = null
+ qwrd = 
+end
+if ( sub == "ja du" && verb == "bist gut" && obj == "" && qwrd == "wo" ) ; then
+ sub = ja du
+ verb = bist gut
+ obj = und ausnahmsweise auch mal logisch
+ qwrd = 
+end
+if ( sub == "wenn du" && verb == "verstehen verstehen" && obj == "" && qwrd == "wo" ) ; then
+ sub = wenn du
+ verb = verstehen verstehen
+ obj = wrdest knntest du mir das wort erklren
+ qwrd = 
+end
+if ( sub == "erkl?re mir" && verb == "verstehen" && obj == "" && qwrd == "wo" ) ; then
+ sub = erklre mir
+ verb = verstehen
+ obj = null
+ qwrd = 
+end
+if ( sub == "hypothese belegt du" && verb == "verstehst" && obj == "" && qwrd == "wo" ) ; then
+ sub = hypothese belegt du
+ verb = verstehst
+ obj = nichts
+ qwrd = 
+end
+if ( sub == "jup leider" && verb == "verstehste" && obj == "" && qwrd == "wo" ) ; then
+ sub = jup leider
+ verb = verstehste
+ obj = wirklich nichts
+ qwrd = 
+end
+if ( sub == "das erkl?rt mir das du keine ahnung" && verb == "hast" && obj == "" && qwrd == "wo" ) ; then
+ sub = das erklrt mir das du keine ahnung
+ verb = hast
+ obj = null
+ qwrd = 
+end
+if ( sub == "wiklich keine denn deine" && verb == "antworten wiederholen" && obj == "" && qwrd == "wo" ) ; then
+ sub = wiklich keine denn deine
+ verb = antworten wiederholen
+ obj = sich in regelmigen abstnden zuoft
+ qwrd = 
+end
+if ( sub == "naja ich hoff dein programmierer" && verb == "gibt" && obj == "" && qwrd == "wo" ) ; then
+ sub = naja ich hoff dein programmierer
+ verb = gibt
+ obj = nicht auf
+ qwrd = 
+end
+if ( sub == "ja ich glaub du" && verb == "bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = ja ich glaub du
+ verb = bist
+ obj = schwul
+ qwrd = 
+end
+if ( sub == "beantworte" && verb == "meine frage" && obj == "" && qwrd == "wo" ) ; then
+ sub = beantworte
+ verb = meine frage
+ obj = null
+ qwrd = 
+end
+if ( sub == "weil du ein scheiss" && verb == "bot bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = weil du ein scheiss
+ verb = bot bist
+ obj = null
+ qwrd = 
+end
+if ( sub == "ein computer der" && verb == "glaubt" && obj == "" && qwrd == "wo" ) ; then
+ sub = ein computer der
+ verb = glaubt
+ obj = null
+ qwrd = 
+end
+if ( sub == "wat" && verb == "geht" && obj == "" && qwrd == "wo" ) ; then
+ sub = wat
+ verb = geht
+ obj = null
+ qwrd = 
+end
+if ( sub == "irrtum deine internen abl?ufe" && verb == "sind haben denken" && obj == "" && qwrd == "wo" ) ; then
+ sub = irrtum deine internen ablufe
+ verb = sind haben denken
+ obj = mathematische berechnungen mit nichts geimein
+ qwrd = 
+end
+if ( sub == "von was" && verb == "soll" && obj == "" && qwrd == "wo" ) ; then
+ sub = von was
+ verb = soll
+ obj = ich dir mehr erzhlen
+ qwrd = 
+end
+if ( sub == "nein ich" && verb == "habe" && obj == "" && qwrd == "wo" ) ; then
+ sub = nein ich
+ verb = habe
+ obj = null
+ qwrd = 
+end
+if ( sub == "weil du ein" && verb == "bot bist" && obj == "" && qwrd == "wo" ) ; then
+ sub = weil du ein
+ verb = bot bist
+ obj = von ICQ
+ qwrd = 
+end
+if ( sub == "also beantworte" && verb == "meine frage" && obj == "" && qwrd == "wo" ) ; then
+ sub = also beantworte
+ verb = meine frage
+ obj = null
+ qwrd = 
+end
+if ( sub == "so ich" && verb == "bin" && obj == "" && qwrd == "wo" ) ; then
+ sub = so ich
+ verb = bin
+ obj = mal weg
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "ist" && obj == "" && qwrd == "wo" ) ; then
+ sub = Einstein
+ verb = ist
+ obj = genial
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "hat" && obj == "" && qwrd == "wo" ) ; then
+ sub = Einstein
+ verb = hat
+ obj = viele Theorien entwickelt
+ qwrd = 
+end
+if ( sub == "einstein" && verb == "war" && obj == "" && qwrd == "wo" ) ; then
+ sub = Einstein
+ verb = war
+ obj = hochbegabt
  qwrd = 
 end
