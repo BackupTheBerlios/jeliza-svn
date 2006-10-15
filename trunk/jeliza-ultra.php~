@@ -171,16 +171,24 @@ function getAntUltra($fra) {
 					if (isKey(strtolower($key)) 
 							&& substr_count(strtolower($tmp), 
 							strtolower(' ' . trim($key) . ' ')) > 0) {
-						echo $key . '';
+//						echo $key . '';
 						$goodKeys++;
 						if ($goodKeys > $bestKeyCount) {
 							$bestKeyCount = $goodKeys;
 						}
 					}
 			}
-	
-			$ants[] = $goodKeys . '#' . trim($tmp);
+
 //			echo $goodKeys . "##" . trim($tmp) . "<br />\n"; 
+			if ($goodKeys > 3) {
+				if ($bestKeyCount == $goodKeys) {
+					$bestKeyCount = $bestKeyCount = 2;
+				}
+				$goodKeys = $goodKeys - 2;
+				$ants[] = $goodKeys . '#' . trim($tmp);
+			} else {
+				$ants[] = $goodKeys . '#' . trim($tmp);
+			}			
 		}
 	}
 	

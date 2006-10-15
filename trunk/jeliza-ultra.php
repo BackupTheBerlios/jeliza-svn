@@ -115,6 +115,9 @@ function learn($satz) {
 	if (isQues(trim($satz))) {
 		return;
 	}
+	if (strlen($satz) < 5) {
+		return;
+	}
 
 	$satz = ichToDu($satz);
 
@@ -178,9 +181,17 @@ function getAntUltra($fra) {
 						}
 					}
 			}
-	
-			$ants[] = $goodKeys . '#' . trim($tmp);
+
 //			echo $goodKeys . "##" . trim($tmp) . "<br />\n"; 
+			if ($goodKeys > 3) {
+				if ($bestKeyCount == $goodKeys) {
+					$bestKeyCount = $bestKeyCount = 2;
+				}
+				$goodKeys = $goodKeys - 2;
+				$ants[] = $goodKeys . '#' . trim($tmp);
+			} else {
+				$ants[] = $goodKeys . '#' . trim($tmp);
+			}			
 		}
 	}
 	
