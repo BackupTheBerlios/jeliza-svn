@@ -1,0 +1,4 @@
+cd /srv/myServer
+
+nice /bin/java -Xmx2500M -Xms2500M -Djava.library.path=.:.:./swt/org.eclipse.core.runtime.compatibility_3.1.0.jar:./swt/org.eclipse.core.runtime_3.1.1.jar:./swt/org.eclipse.swt_3.1.0.jar:./swt/org.eclipse.swt.gtk.linux.x86_3.1.1.jar:./swt/org.eclipse.jface_3.1.1.jar:./swt/org.eclipse.jface.text_3.1.1.jar::org.eclipse.swt.gtk.linux.x86_3.1.1.jar:./swt:./swt/libswt-pi-gtk-3139.so Server -XX:NewSize=1250m -XX:MaxNewSize=1250m -XX:SurvivorRatio=14 2> log/error_log.txt | tee -a log/access_log.txt 
+

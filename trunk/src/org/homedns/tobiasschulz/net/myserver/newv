@@ -1,0 +1,11 @@
+#!/bin/sh
+
+V=`cat vers`
+
+if [ "$V" = "" ]; then V=1; fi
+
+NV=$[$V + 1]
+
+echo -n "$NV" > vers
+echo "$NV" 
+

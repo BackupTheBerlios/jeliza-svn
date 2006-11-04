@@ -1,0 +1,29 @@
+##### Java-Server-Konfiguartionsdatei  #####
+
+# ~~~~~~~~~~~> Global #
+
+# Der Hostname
+host.name=tobiasschulz.homedns.org
+
+# Der normale Port 
+host.port=80
+
+# Der Port fuer die Admin-Oberflaeche
+host.admin.port=8888
+
+# Der Ordner mit den Dateien; muss ein "/" am Ende enthalten!!; unter Windows "/" statt "\" benutzen!!
+host.dir=/srv/www/
+
+# ~~~~~~~~~~~> Interne Serverseiten #
+
+# HTML-Tags am Anfang, vor Inhalt
+server.page.start=<html><head></head><body style="padding:10px;" background="/xxxxserverxxxxicoxxxx/bg.gif" bgcolor="#ddffff">
+
+# HTML-Tags am Ende, nach Inhalt
+server.page.end=<hr><small>powered by TobiServer, <a href="mailto:tobidonald@arcor.de">e-Mail</a></small><hr></body></html>
+
+# ~~~~~~~~~~~> Externe Programme #
+
+# Der PHP-Interpreter
+ext.php.binary=./php
+

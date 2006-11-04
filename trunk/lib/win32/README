@@ -1,0 +1,12 @@
+SWT Binaries/Sources for Win32
+==============================
+
+Copyright on this code belongs to the Eclipse foundation, and all code
+is covered by the Common Public Licence (see COPYING in base directory
+for details).
+
+This directory contains a modified version of the SWT sources, I had
+to do the following in order to get it to compile natively with GCJ:
+
+swt.custom.TableCursor  void traverse() - changed return type to boolean to match override
+
