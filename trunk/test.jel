@@ -1,3 +1,0 @@
-if ( sub == "Till" && verb == "ist" && obj == "da" && qwrd == "" ) ; then
- sub = Ja
-end

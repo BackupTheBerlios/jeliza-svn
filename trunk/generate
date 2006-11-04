@@ -1,3 +1,0 @@
-cd /media/hdb5/workspace/Eliza/trunk
-
-java -Xmx2000000000 -Xms2000000000 org/homedns/tobiasschulz/util/satzparser/GernerateVerbDatabase text.vdb

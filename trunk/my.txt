@@ -1,9 +1,0 @@
-125138652                  : Hi
-JEliza                     : Hallo, du Mensch!
-125138652                  : Na Du Arschloch?
-JEliza                     : Ich will ueber was anderes reden.
-125138652                  : Kannst Du wirklich reden? Du bist doch nur ein Computer
-JEliza                     : Faszinierend.
-125138652                  : Machs gut
-JEliza                     : Verstanden.
-

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry path="" kind="src"/>
-	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true" kind="con"/>
-	<classpathentry path="jaimbot-lib-1.4.jar" kind="lib"/>
-	<classpathentry path="" kind="output"/>
-</classpath>
