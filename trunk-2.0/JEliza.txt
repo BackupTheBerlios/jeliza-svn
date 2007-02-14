@@ -1,0 +1,10 @@
+hallo              
+hallo              
+hi              
+hallo              
+              
+?text=ich+weiss+noch+nicht+genug%2c+um+sinnvoll+zu+antworten%21%0d%0a%09%09%09%09%09%09%09&fra=hallo              
+t=%0d%0a%09%09%09%09%09%09%09&fra=hallo              
+t=%0d%0a%09%09%09%09%09%09%09&fra=hi              
+hi              
+hallo              

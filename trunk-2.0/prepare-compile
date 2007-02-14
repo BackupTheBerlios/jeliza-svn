@@ -1,0 +1,13 @@
+#!/bin/sh
+
+for x in $(find src/jeliza "*.cpp"); do 
+	echo -n "echo '"
+	echo -n 'c++ -I. -L. $(CFLAGS) -c '
+	echo -n $x
+	echo "'"
+	echo -n 'c++ -I. -L. $(CFLAGS) -c '
+	echo -n $x
+	echo 
+done
+
+echo "sh wait-while-compile.sh"

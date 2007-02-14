@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html id="htmlTag" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" 
+lang="de">
+	<head>
+		<title id="titleTag" lang="de-de">
+			JEliza Online v2.0
+		</title>
+
+		<style type="text/css">
+			body { font-family: sans-serif; font-size: 0.9em; }
+			table { border: 1px solid gray; background-color: #DDDDDD; width: 550px; }
+		</style>
+	</head>
+	<body style="background-color: white;">
+
+		<script type="text/javascript">
+		function sende() {
+			var Eingabe = "/ask/" + document.fo.fra.value;
+			var x = 1;
+			while (x < 50) {
+				Eingabe = Eingabe.replace(/ /, "00");
+				x++;
+			}
+			self.location.href = Eingabe;
+			return false;
+		}
+		</script>
+		
+		<form name="fo" id="fo" onSubmit="return sende()">
+		<table cellspacing="0" cellpadding="5">
+			<tr>
+				<th align="left">
+					JEliza Online
+				</th>
+				<th align="right">
+					2.0
+				</th>
+
+			</tr>
+			<tr>
+				<th colspan="2">
+					<textarea style="width: 540px; height: 300px; border: 1px solid gray;" id="text" 
+							name="text">
+${ANSWER}
+							</textarea>
+				</th>
+			</tr>
+			<tr>
+				<th align="left">
+
+					<input type="text" style="width: 450px !important; border: 1px solid gray;" id="fra" name="fra" />
+				</th>
+				<th align="right">
+					<input type="button" style="border: 1px solid gray;" value="Senden" onClick="sende()" />
+				</th>
+			</tr>
+		</table>
+		</form>
+
+
+	</body>
+</html>
+
+
