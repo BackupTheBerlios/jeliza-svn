@@ -42,9 +42,9 @@ using namespace std;
 int main() {
 	JEliza jeliza;
 	
-	cout << "-> Programm gestartet" << endl;
+	cout << "-> Program started" << endl;
 	while (true) {
-		cout << "-> Bitte Frage eingeben:" << endl << "-> ";
+		cout << "-> Please enter a question:" << endl << "-> ";
 		string fra = "";
 		getline(cin, fra);
 		long time1 = time(NULL);
@@ -60,8 +60,8 @@ int main() {
 		// cout << time2 << endl << time1 << endl;
 		double sec = unterschied;
 		
-		cout << "-> Benoetigte Zeit: " << sec << " Sekunden" << endl;
-		cout << "=> " << bestReply << endl;
+		cout << "-> Time: " << sec << " Sekunden" << endl;
+		cout << "-> Answer => " << bestReply << endl;
 		cout << endl;
 	}
 	return 0;

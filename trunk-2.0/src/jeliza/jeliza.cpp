@@ -187,9 +187,9 @@ public:
 			list<string>& answers = ants;
 //			Util::split(ants, "~~#-#-#~~", answers);
 			
-			cout << endl;
-			cout << "   Moegliche Antworten, nach Warscheinlichkeit geordnet:" << endl;
-			cout << "   -----------------------------------------------------" << endl;
+//			cout << endl;
+//			cout << "   Moegliche Antworten, nach Warscheinlichkeit geordnet:" << endl;
+//			cout << "   -----------------------------------------------------" << endl;
 			list<string>::iterator theIterator;
 			int b = 0;
 			for (theIterator = answers.begin(); theIterator != answers.end(); theIterator++) {
@@ -200,10 +200,10 @@ public:
 				if (b >= 20) {
 					break;
 				}
-				cout << "   " << b + 1 << ". Moegliche Antwort: " << it << endl;
+//				cout << "   " << b + 1 << ". Moegliche Antwort: " << it << endl;
 				b++;
 			}
-			cout << endl;
+//			cout << endl;
 		}
 		else {
 			answer = "Ich weiss noch nicht genug, um sinnvoll zu antworten!";
