@@ -50,7 +50,7 @@ public:
     JEliza() 
     : m_sentenceCount(0), m_sents(new StringArray(m_sentenceCount)), m_file(searchConfigFile()) 
     {
-    	cout << "-> Konfigurationsdatei: " << m_file << endl;
+    	cout << "-> config file: " << m_file << endl;
     	cout << endl;
     }
     
@@ -206,7 +206,7 @@ public:
 //			cout << endl;
 		}
 		else {
-			answer = "Ich weiss noch nicht genug, um sinnvoll zu antworten!";
+			answer = "I don't know enough to answer!";
 			cout << endl;
 		}
 		

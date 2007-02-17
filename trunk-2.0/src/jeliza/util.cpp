@@ -144,6 +144,7 @@ public:
 		str = Util::tausche(str, "i", "you");
 		str = Util::tausche(str, "my", "your");
 		str = Util::tausche(str, "mine", "yours");
+		str = Util::tausche(str, "am", "are");
 		
 		return str;
 	}
