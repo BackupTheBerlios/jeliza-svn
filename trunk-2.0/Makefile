@@ -1,5 +1,5 @@
 # DEBUG=-DDEBUG
-CFLAGS=-g -Wall -fPIC -DPIC -O3 -Os
+CFLAGS=-g -Wall -fPIC -DPIC -O3 -Os  -Isrc/socket
 LD_LIBRARY_PATH=.:./lib
 
 ##	g++ $(CFLAGS) -o server server.o lib/* -lm --library PocoUtil --library PocoNet --library PocoXML --library PocoFoundation --library PocoUtild --library PocoNetd --library PocoXMLd --library PocoFoundationd --library uuid --library pthread $(DEBUG)
