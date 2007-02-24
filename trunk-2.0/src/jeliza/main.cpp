@@ -31,15 +31,29 @@
 
 #include <time.h>
 #include <vector>
+#include <getopt.h>
 
 #include "jeliza.cpp"
 #include "util.cpp"
 #include "arrays.cpp"
+#include "server.cpp"
 
 using namespace std;
 
 
-int main() {
+int helpText() 
+{
+  return 0;
+  
+}
+int version() 
+{
+  return 0;
+}
+
+
+
+int consoleJEliza() {
 	JEliza jeliza;
 	
 	cout << "-> Program started" << endl;
@@ -66,4 +80,64 @@ int main() {
 	}
 	return 0;
 }
+
+int main(int argc, char** argv) {
+const struct option long_options[] = {
+	{ "help", no_argument,       0, 'h' },
+	{ "server", require_argument,       0, 's' },
+	{ "console", no_argument, 0, 'c' },
+	{ "version", no_argument,       0, 'v' },
+	0
+		};
+
+	int result = 0;
+	int console = 2;
+	int server = 3;
+	int help = 4;
+	int ver = 5;
+	int port = 9001;
+	int index = 0;
+	
+	
+	int method = server;
+	
+	while (result = getopt_long(argc, argv, "hs:cv", long_options, &index)) {
+		switch (result) {
+		case 'h':
+		  method = help;
+		  break;
+		case 's':
+		  method = server;
+		  port = index;
+		  break;
+		case 'c':
+		  method = console;
+		  break;
+		case 'v':
+		  method = ver;
+		  break;
+		default:
+		  method = server;
+		}
+	}
+	
+	if (method == server) {
+	  return serverJEliza(port);
+	}
+	if (method == help) {
+	  return helpText();
+	}
+	if (method == ver) {
+	  return version();
+	}
+	if (method == console) {
+	  return consoleJEliza();
+	}
+	
+	
+	
+	return 0;	
+}
+
+
 

@@ -40,7 +40,14 @@
 
 using namespace std;
 
-
+/*
+ * The JEliza class
+ * 
+ * JEliza is a conversation simulator.
+ * 
+ * This class is the main class of jeliza. To use it, you have to create an instance of
+ * "JEliza".
+ */
 class JEliza {
 public:
 	int m_sentenceCount;
@@ -130,6 +137,9 @@ public:
 		delete(sentences);
 	}
 	
+	/*
+	 * The answering algorithm
+	 */
 	string ask(string frage) {
 		frage = Util::umwandlung(frage);
 		frage = Util::replace(frage, string("?"), string(""));

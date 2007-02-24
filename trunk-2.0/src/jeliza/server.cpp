@@ -125,12 +125,12 @@ MySocket::MySocket(ISocketHandler& h) : TcpSocket(h)
 
 static	bool quit = false;
 
-int main()
+int serverJEliza(int port)
 {
 	SocketHandler h;
 	ListenSocket<MySocket> l(h);
 
-	if (l.Bind(9001))
+	if (l.Bind(port))
 	{
 		exit(-1);
 	}

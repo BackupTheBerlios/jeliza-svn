@@ -39,6 +39,9 @@
 
 using namespace std;
 
+/*
+ * An Array of type "Typ"
+ */
 template<typename Typ>
 class MyArray {
     std::vector<Typ> m_vector;
@@ -80,6 +83,9 @@ public:
     }
 };
 
+/*
+ * An Array of strings
+ */
 class StringArray {
     std::vector<string> m_vector;
     int m_lastindex;
