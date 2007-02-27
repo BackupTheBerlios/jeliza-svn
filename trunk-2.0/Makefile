@@ -1,16 +1,19 @@
 # DEBUG=-DDEBUG
-CFLAGS=-g -Wall -fPIC -DPIC -O3 -Os  -Isrc/socket
+#CFLAGS=-g -Wall -fPIC -DPIC -O3 -Os  -Isrc/socket
+CFLAGS=-g -Wall -fPIC -DPIC -Isrc/socket
 LD_LIBRARY_PATH=.:./lib
 
 ##	g++ $(CFLAGS) -o server server.o lib/* -lm --library PocoUtil --library PocoNet --library PocoXML --library PocoFoundation --library PocoUtild --library PocoNetd --library PocoXMLd --library PocoFoundationd --library uuid --library pthread $(DEBUG)
 
-all:	clean jeliza 
+all:	clean socket jeliza 
 
-jeliza: socket jeliza.o
+update:	clean jeliza
+
+jeliza: jeliza.o
 #	g++ $(CFLAGS) -o jeliza jeliza.o main.o util.o arrays.o string_compare.o -lm $(DEBUG)
 
-	mv main.o main.o.bak
-	mv server.o server.o.bak
+	mv main.o main.o.bak ; true
+	mv server.o server.o.bak ; true
 	g++ -shared -o libjeliza.so -Wl,-soname,libjeliza.so *.o 
 	strip libjeliza.so
 	mv libjeliza.so ./lib
@@ -26,10 +29,11 @@ jeliza: socket jeliza.o
 ##	g++ $(CFLAGS) -L$(LD_LIBRARY_PATH) -o server server.o compile_tmp/*.o -lm --library jeliza -luuid -lpthread $(DEBUG)
 #	mv main.o.bak main.o
 	
-	strip jeliza ; mv jeliza bin
+	##############strip jeliza
+	mv jeliza bin
 ##	strip server ; mv server bin
 	rm -f *.o *~
-	rm -rf dist
+	rm -rf dist/linux
 	mkdir -p dist/linux
 	cp -r bin dist/linux
 	cp -r lib dist/linux

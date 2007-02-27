@@ -6,20 +6,20 @@
  * Copyright 2006 by Tobias Schulz
  * WWW: http://jeliza.ch.to/
  * 
- * JEliza is free software; you can redistribute it and/or      
- * modify it under the terms of the GNU Lesser General Public    
+ * JEliza is free software; you can redistribute it and/or	  
+ * modify it under the terms of the GNU General Public	
  * License as published by the Free Software Foundation; either  
- * version 2.1 of the License, or (at your option) any later     
- * version.                                                      
- *                                                               
+ * version 2.1 of the License, or (at your option) any later	 
+ * version.													  
+ *															   
  * JEliza is distributed in the hope that it will be useful, but 
- * WITHOUT ANY WARRANTY; without even the implied warranty of    
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          
- * See the GNU Lesser General Public License for more details.   
- *                                                               
- * You should have received a copy of the GNU LGPL               
- * along with JEliza (file "lgpl.txt") ; if not, write           
- * to the Free Software Foundation, Inc., 51 Franklin St,        
+ * WITHOUT ANY WARRANTY; without even the implied warranty of	
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.		  
+ * See the GNU General Public License for more details.   
+ *															   
+ * You should have received a copy of the GNU GPL			   
+ * along with JEliza (file "gpl.txt") ; if not, write		   
+ * to the Free Software Foundation, Inc., 51 Franklin St,		
  * Fifth Floor, Boston, MA  02110-1301  USA
  * 
  */
@@ -39,61 +39,75 @@ using namespace std;
 
 class Util {
 public:
-    static void split (string& text, string separators, vector<string>& words) {
-        int n = text.length();
-        int start, stop;
-    
-        start = text.find_first_not_of(separators);
-        while ((start >= 0) && (start < n)) {
-            stop = text.find_first_of(separators, start);
-            if ((stop < 0) || (stop > n)) stop = n;
-            words.push_back(text.substr(start, stop - start));
-            start = text.find_first_not_of(separators, stop+1);
-        }
-    }
-    
-    static string toLower (string& text) {
-        string str = "";
-        
-        for (string::size_type x = 0; x < text.size(); x++) {
-            str += tolower(text[x]);
-        }
-        return str;
-    }
-    
-//    static string toLower (const string text) {
-//        toLower(static_cast<string>(text));
-//    }
-    
-    static string strip (string text) {
-        string txt = replace(text, string("\n"), string(""));
-        return txt;
-    }
-    
-//    static string strip (const string text) const {
-//        strip(static_cast<string>(text));
-//    }
-    
-    static string replace (string& in, const string rep, const string wit) {
+	static void split (string& text, string separators, vector<string>& words) {
+		int n = text.length();
+		int start, stop;
+	
+		start = text.find_first_not_of(separators);
+		while ((start >= 0) && (start < n)) {
+			stop = text.find_first_of(separators, start);
+			if ((stop < 0) || (stop > n)) stop = n;
+			words.push_back(text.substr(start, stop - start));
+			start = text.find_first_not_of(separators, stop+1);
+		}
+	}
+	
+	static string toLower (string& text) {
+		string str = "";
+		
+		for (string::size_type x = 0; x < text.size(); x++) {
+			str += tolower(text[x]);
+		}
+		return str;
+	}
+	
+//	static string toLower (const string text) {
+//		toLower(static_cast<string>(text));
+//	}
+	
+	static string strip (string text) {
+		string txt = replace(text, string("\n"), string(""));
+		return txt;
+	}
+	
+//	static string strip (const string text) const {
+//		strip(static_cast<string>(text));
+//	}
+	
+	static string replace (string& in, const string rep, const string wit) {
 		int pos;
 		while (true) {
 			pos = in.find(rep);
-		    if (pos == -1) {
+			if (pos == -1) {
 				break;
-		    } else {
+			} else {
 				in.erase(pos, rep.length());
 				in.insert(pos, wit);
-		    }
+			}
 		}
 		return in;
 	}
 
-//    static string replace (string& in, string rep, string wit) {
+	static bool contains (string in, string rep) {
+		in = string(in.c_str());
+		string rep2 = string(rep.c_str());
+		
+		string input = string(in.c_str());
+		string input2 = string(input.c_str());
+		string in2 = replace(input, rep2, "");
+//		cout << endl << "input" << input << endl << "in2" << in2 << endl << endl;
+		if (input2.size() == in2.size()) {
+			return 0;
+		}
+		return 1;
+	}
+
+//	static string replace (string& in, string rep, string wit) {
 //		return replace(in, static_cast<const string>(rep), static_cast<const string>(wit));
 //	}
 
 /*
-    	string text = string(txt);
+		string text = string(txt);
 		size_t pos = text.find(fnd);
 		while (pos != string::npos) {
 			text.replace(pos, pos + fnd.length(), rep);
@@ -148,7 +162,7 @@ public:
 		
 		return str;
 	}
-    
+	
 };
 
 #endif
