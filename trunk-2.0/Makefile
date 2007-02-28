@@ -2,16 +2,18 @@
 #CFLAGS=-g -Wall -fPIC -DPIC -O3 -Os  -Isrc/socket
 CFLAGS=-g -Wall -fPIC -DPIC -Isrc/socket
 LD_LIBRARY_PATH=.:./lib
+WIN_LD_LIBRARY_PATH=.:./lib:/media/hdb5/data/Dev-Cpp/lib
 
 ##	g++ $(CFLAGS) -o server server.o lib/* -lm --library PocoUtil --library PocoNet --library PocoXML --library PocoFoundation --library PocoUtild --library PocoNetd --library PocoXMLd --library PocoFoundationd --library uuid --library pthread $(DEBUG)
 
-all:	clean socket jeliza 
+all:	clean socket jeliza clean winsocket winjeliza 
+
+win:	clean winsocket winjeliza 
 
 update:	clean jeliza
+winupdate:	clean winjeliza
 
 jeliza: jeliza.o
-#	g++ $(CFLAGS) -o jeliza jeliza.o main.o util.o arrays.o string_compare.o -lm $(DEBUG)
-
 	mv main.o main.o.bak ; true
 	mv server.o server.o.bak ; true
 	g++ -shared -o libjeliza.so -Wl,-soname,libjeliza.so *.o 
@@ -20,24 +22,18 @@ jeliza: jeliza.o
 	mv server.o.bak server.o
 	mv main.o.bak main.o
 	
-#	mv server.o server.o.bak
-##	g++ $(CFLAGS) -o jeliza main.o -lm --library jeliza $(DEBUG)
 	g++ $(CFLAGS) -L$(LD_LIBRARY_PATH) -o jeliza main.o compile_tmp/*.o -lm --library jeliza -luuid -lpthread $(DEBUG)
-#	mv server.o.bak server.o
 	
-#	mv main.o main.o.bak
-##	g++ $(CFLAGS) -L$(LD_LIBRARY_PATH) -o server server.o compile_tmp/*.o -lm --library jeliza -luuid -lpthread $(DEBUG)
-#	mv main.o.bak main.o
-	
-	##############strip jeliza
+	strip jeliza
 	mv jeliza bin
-##	strip server ; mv server bin
 	rm -f *.o *~
 	rm -rf dist/linux
 	mkdir -p dist/linux
 	cp -r bin dist/linux
+	rm dist/windows/bin/jeliza.exe ; true
 	cp -r lib dist/linux
 	cp jeliza.inc.html dist/linux
+	cp JEliza.txt dist/linux
 	@echo "jeliza is up to date"
 
 jeliza.o:
@@ -53,6 +49,44 @@ socket:
 	rm -rf compile_tmp
 	mkdir compile_tmp
 	mv *.o compile_tmp
+	rm -f *.o
+
+winjeliza: winjeliza.o
+#	mv main.o main.o.bak ; true
+#	mv server.o server.o.bak ; true
+#	i586-mingw32msvc-g++ -shared -o libjeliza.so -Wl,-soname,libjeliza.so *.o 
+#strip libjeliza.so
+#	mv libjeliza.so ./lib
+#	mv server.o.bak server.o
+#	mv main.o.bak main.o
+	
+	i586-mingw32msvc-g++ $(CFLAGS) -L$(WIN_LD_LIBRARY_PATH) -o jeliza.exe main.o compile_tmp_win/*.o -lm -luuid --library pthread -lwsock32 -lrpcrt4 -lole32 $(DEBUG)
+	
+	i586-mingw32msvc-strip jeliza.exe
+	mv jeliza.exe bin
+	rm -f *.o *~
+	rm -rf dist/windows
+	mkdir -p dist/windows
+	cp -r bin dist/windows
+	rm dist/windows/bin/jeliza ; true
+	cp jeliza.inc.html dist/windows
+	cp JEliza.txt dist/windows
+	@echo "jeliza is up to date"
+
+winjeliza.o:
+	i586-mingw32msvc-c++ -I. -L. $(CFLAGS) -c src/jeliza/arrays.cpp
+	i586-mingw32msvc-c++ -I. -L. $(CFLAGS) -c src/jeliza/jeliza.cpp
+	i586-mingw32msvc-c++ -I. -L. $(CFLAGS) -c src/jeliza/main.cpp
+	i586-mingw32msvc-c++ -I. -L. $(CFLAGS) -c src/jeliza/server.cpp
+	i586-mingw32msvc-c++ -I. -L. $(CFLAGS) -c src/jeliza/string_compare.cpp
+	i586-mingw32msvc-c++ -I. -L. $(CFLAGS) -c src/jeliza/util.cpp
+
+winsocket:
+	rm -f *.o
+	cd src/socket ; i586-mingw32msvc-c++ -I. -L. $(CFLAGS) -c *.cpp ; mv *.o ../.. ; cd ../..
+	rm -rf compile_tmp_win
+	mkdir compile_tmp_win
+	mv *.o compile_tmp_win
 	rm -f *.o
 
 clean:
