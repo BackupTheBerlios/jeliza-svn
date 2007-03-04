@@ -143,7 +143,8 @@ distribution: packlinux clean
 	find tmp_dist/ -name "*~*" -exec rm -rf '{}' \; ; true
 	find tmp_dist/ -name "*~*" -exec rm -rf '{}' \; ; true
 	
-	rm -rf ../distribution ; true
+	rm -rf ../distribution/*.zip ; true
+	rm -rf ../distribution/*.gz ; true
 	mkdir ../distribution ; true
 	
 	cd tmp_dist ; cd windows ; zip -r ../../../distribution/win.zip *
