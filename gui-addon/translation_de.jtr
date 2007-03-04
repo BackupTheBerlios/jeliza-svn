@@ -1,0 +1,39 @@
+0001 -> JEliza (Copyright 2006 by Tobias Schulz)
+0002 -> Spracheinstellungen
+0003 -> Eingabesprache
+0004 -> Ausgabesprache
+0005 -> Allgemeine Aktionen
+0006 -> Datenbank regenerieren
+0007 -> Datenbank loeschen
+0008 -> Lade Wissen der Online Variante
+0009 -> Lade Standard-Wissen
+0010 -> Fragen
+0011 -> &Gespraech Oeffnen
+0012 -> &Gespraech Speichern
+0013 -> &Wissen Importieren
+0014 -> &Wissen Speichern
+0015 -> &Ueber
+0016 -> &Datei
+0017 -> &Help
+
+0018 -> | JEliza ist freie Software. Sie koennen dieses Programm unter  |
+0018 -> | den Bedingungen der GNU General Public License, wie           |
+0018 -> | von der Free Software Foundation veroeffentlicht, weitergeben |
+0018 -> | und/oder modifizieren, entweder gemaess Version 2.1 der       |
+0018 -> | Lizenz oder (nach Ihrer Option) jeder spaeteren Version.      |
+0018 -> |                                                               |
+0018 -> | Die Veroeffentlichung JElizas erfolgt in der Hoffnung, dass   |
+0018 -> | es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, |
+0018 -> | sogar OHNE die implizierte Garantie der MARKTREIFE oder der   |
+0018 -> | VERWENDBARKEIT FUER EINEN BESTIMMTEN ZWECK.                   |
+0018 -> | Details finden Sie in der GNU General Public License.         |
+0018 -> |                                                               |
+0018 -> | Sie sollten ein Exemplar der GNU General Public               |
+0018 -> | License zusammen mit JEliza (Datei gpl.txt) erhalten haben.   |
+0018 -> | Falls nicht, schreiben Sie an die Free Software Foundation,   |
+0018 -> | Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA |
+
+0019 -> Sprache/Language
+
+0020 -> Bitte lesen sie diesen Text sorgfaeltig durch!
+
