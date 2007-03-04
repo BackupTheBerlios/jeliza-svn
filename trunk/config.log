@@ -632,8 +632,8 @@ configure:6982: $? = 0
 configure:6996: result: yes
 configure:7003: checking for _doprnt
 configure:7059: gcc -o conftest -g -O2   conftest.c  >&5
-/tmp/ccIFLGx0.o: In function `main':
-/media/hdb5/workspace/JEliza/trunk/trunk-2.0/conftest.c:80: undefined reference to `_doprnt'
+/tmp/ccElsIH4.o: In function `main':
+/media/hdb5/workspace/JEliza/trunk/trunk/conftest.c:80: undefined reference to `_doprnt'
 collect2: ld returned 1 exit status
 configure:7065: $? = 1
 configure: failed program was:
@@ -995,7 +995,7 @@ host_alias=''
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='/media/hdb5/workspace/JEliza/trunk/trunk-2.0/install-sh'
+install_sh='/media/hdb5/workspace/JEliza/trunk/trunk/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'

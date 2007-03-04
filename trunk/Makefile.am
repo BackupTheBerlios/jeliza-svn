@@ -114,8 +114,9 @@ distribution: packlinux clean
 	cp -r dist/windows tmp_dist
 	mv tmp_dist/windows/bin/jeliza.exe tmp_dist/windows/ ; true
 	i586-mingw32msvc-strip tmp_dist/windows/jeliza.exe
-	cp ../../gui-addon/JElizaWX.exe tmp_dist/windows
-	cp ../../gui-addon/transla* tmp_dist/windows
+	cp ../gui-addon/JElizaWX.exe tmp_dist/windows
+	cp ../gui-addon/transla* tmp_dist/windows
+	cp ../gui-addon/version.ver tmp_dist/windows
 	cp JEliza.txt tmp_dist/windows
 	cp gpl.txt tmp_dist/windows
 	cp jeliza.inc.html tmp_dist/windows
@@ -142,11 +143,11 @@ distribution: packlinux clean
 	find tmp_dist/ -name "*~*" -exec rm -rf '{}' \; ; true
 	find tmp_dist/ -name "*~*" -exec rm -rf '{}' \; ; true
 	
-	rm -rf distribution ; true
-	mkdir distribution ; true
+	rm -rf ../distribution ; true
+	mkdir ../distribution ; true
 	
-	cd tmp_dist ; cd windows ; zip -r ../../distribution/win.zip *
-	cd tmp_dist ; cd linux ; tar cplzSf ../../distribution/linux.tar.gz *
-	cd tmp_dist ; cd src ; zip -r ../../distribution/src.zip *
+	cd tmp_dist ; cd windows ; zip -r ../../../distribution/win.zip *
+	cd tmp_dist ; cd linux ; tar cplzSf ../../../distribution/linux.tar.gz *
+	cd tmp_dist ; cd src ; zip -r ../../../distribution/src.zip *
 	
 
