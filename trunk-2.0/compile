@@ -1,8 +1,0 @@
-#!/bin/sh
-
-for f in $(find . -name "*.cpp"); do
-	echo "c++ ${CFLAGS} -c ${f}"
-	c++ -Iinclude . ${CFLAGS} -c ${f}
-done
-
-
