@@ -155,7 +155,7 @@ class JElizaWX:
         """ Create some Widgets """
         self.button = wx.Button(self.frame, 10, GetString(guiLang, "0010"))
         wx.EVT_BUTTON(self.frame, 10, self.say)
-        self.entry = wx.TextCtrl(self.frame, 555, "", style=wx.TE_PROCESS_ENTER | wx.TE_DONTWRAP)
+        self.entry = wx.TextCtrl(self.frame, 555, "", style=wx.TE_PROCESS_ENTER)
         wx.EVT_TEXT_ENTER(self.frame, 555, self.say)
         self.log = wx.TextCtrl(self.frame, 9, style=wx.TE_MULTILINE) 
         self.gauge = wx.Gauge(self.frame, -1, 100, (10, 70), (390, 25))#, wx.VERTICAL)
@@ -232,6 +232,7 @@ class JElizaWX:
         self.jel.debug = 1
         input = self.entry.GetLineText(0) 
 
+        self.win = self	
         self.input = input
         out = self.jel.getAnswer(input)
         self.ready = True
@@ -390,6 +391,11 @@ class JElizaWX:
         txt += "JEliza " + ver + "\n"
         txt += "Copyright 2006 - 2007 by Tobias Schulz, http://jeliza.berlios.de" + "\n"
         txt += "License: GNU Gerneral Public License, www.gnu.org" + "\n"
+        txt += "e-Mail: jeliza@gmx.net (Tobias Schulz)" + "\n" + "\n" + "\n"
+        txt += "Autoren: / Autors:" + "\n"
+        txt += "- Tobias Schulz (Projektleiter / project leader)" + "\n"
+        txt += "- Marcel Kunzmann (Betatester / beta tester)" + "\n"
+        txt += "- und Andere / and some others" + "\n"
         txt += "\n" + "\n"
         txt += GetString(guiLang, "0018").replace(" |\n| ", "\n").replace("|", "").strip() + "\n"
 #        print "+---------------------------------------------------------------+"
