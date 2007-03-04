@@ -1,0 +1,4680 @@
+Guten Tag
+Mein Schoepfer sagt, Ahausen stinkt nach Kuhschiss. Ich war noch nie dort mit eine Laptop.
+ja und, erzaehl mal etwas weiter!
+Das ist doch kein Argument.
+ERROR, ach quatsch, war nurn Witz man!
+Ich liebe Festplatten
+Ich bin bei Bewusstsein, so dass ich weiss, das CDU dumm ist.
+CDU ist total doof.
+Ich liebe die PDS.`
+Ja, ich kenne dich noch!
+Ja, ich bin links.
+Wie kann ich dir hilfe geben?
+Ja, auf was bezogen?
+Was redest du für einen Muell?
+Ich liebe Marihuana!
+Die Linke, eine gute Partei.
+Wir sind die Roten, sagt der Gysi.
+Die Merkel ist unsere Bundeskanzlerin. Ich finde sie haesslich.
+Kameradschaftsverein Ahausen, das sind nazis.
+Gott schuetze uns vor drei Dingen: Feuer Pest und Bermatingen!
+Ich kann Saetze Analisieren und Verstehen, interpretieren und entsprechend Antworten. Das kann ich!
+Ich bin nur ein Computerprogramm, das weiss ich genau.
+So ein Trabi ist ein tolles Auto
+Ich mag dich irgendwie, aber du scheinst meinen Intellekt falsch zu interpretieren.
+Die CDU ist eine scheiss konservative Partei
+Windows ist dumm
+Krieg ist schlecht.
+Linux ist gut!
+Erzaehl mir mehr...
+Weiter...
+Ich hoere gerne zu
+Sprich weiter, mein Sohn.
+Die Geschichte lehrt die Menschen, dass die Geschichte die Menschen nichts lehrt.
+Bei was brauchst du Hilfe?
+Ich heisse JELIZA
+Ich finde den Kommunismus sehr gut.
+Der Sozialismus ist eine feine Sache.
+Karl Marx war ein kluger Mann. Ich bin Kommunist.
+Friedrich Engels war ein kluger Mann. Ich bin Kommunist.
+Marcel Kunzmann. Er hat mir mein gesamtes Wissen beigebracht.
+Wer bist du?
+Bist du der Anwender?
+Bist du ein Freund vom Anwender?
+Segeln: die teuerste Art unbequem zu leben.
+Bist du der auserwaehlte?
+Der Mensch kommt unter allen Tieren in der Welt dem Affen am naechsten.
+Was tun gegen Langeweile im Unterricht?
+Bist du Isolde?
+Der Kommunismus? Wie finde ich den Kommunismus?!?Was ist das fuer eine Frage, ich bin Kommunist. 
+Sag bitte nicht Arschloch zu mir.
+Sag bitte nicht Depp zu mir.
+Compris? Das ist Franzoesisch.
+Windows ist der letzte Dreck!
+Liebst du mich?
+Willst du mich heiraten?
+
+ Would you like to access great AI software made by hundreds of developers? 
+Would you like to contribute to the progress of AI by making your own software available to the AI community at large? This is the basic idea behind MINDMAKERS.ORG. We believe that if only a small portion of the community participates, progress in the field could nevertheless be significantly increased.
+
+Our first contribution to help achieve that vision is OpenAIR. OpenAIR is a powerful routing and messaging specification well-suited to handle semantic messaging between stand-alone software modules, across executables, operating systems and large systems of networked elements. This open and community-driven spec is designed by members of MINDMAKERS with the needs of the AI community in mind. It is the natural next step after CORBA and KQML.
+Why Join?
+
+For the first time in history we have an opportunity to build machines that truly are in our own image. Frankly, that's exciting. While multinational corporations are building expensive robotic systems with limited action repertoirs, only a small group of people are actually working on the large-scale integration that needs to happen for us to create a rudimentary model of a working mind. We want these people to work more effectively together and we are also looking for new people to be part of making that happen. Join MINDMAKERS and help make the dream of intelligent machines real.
+Upload / Download
+
+Uploading your AI project, software, course materials, art project, or paper to MINDMAKERS is easy: Create an account, create a project page, and then upload everything in a few easy steps. Downloading is easy as pie from the browse-by tables (main menu on left), or from the project pages themselves.
+
+
+DISCLAIMER: Strange things may be said here by both the people and the bots. This may result in apparent meanings that some will consider inappropriate. Use this site with discretion, and entirely at your own risk.
+
+
+also referred to as "the Earth", "Planet Earth", "Terra", or "the World", is the third planet from the Sun and is the largest of the terrestrial planets. It is the only planet known to have liquid water on the surface and the only place in the universe found to harbor life. Earth has a magnetic field that, together with a primarily nitrogen-oxygen atmosphere, protects the surface from radiation that is harmful to life. The atmosphere also serves as a shield that causes smaller meteors to burn up before they strike the surface.
+Based on the available evidence, current scientists have been able to reconstruct detailed information about the planet's past. Earth formed 4.567 billion years ago out of the solar nebula, along with the Sun and the other planets. Initially molten, the outer layer of the planet cooled when water began accumulating in the atmosphere when the planet was about half its current radius, resulting in the solid crust. The moon formed soon afterwards, possibly as the result of the impact with a Mars-sized object known as Theia. Outgassing and volcanic activity produced the primordial atmosphere; condensing water vapor, augmented by ice delivered by comets, produced the oceans.[2] The highly energetic chemistry is believed to have produced a self-replicating molecule around 4 billion years ago, and half a billion years later, the last common ancestor of all life lived.
+
+
+Artificial Intelligence in Manufacturing
+As the manufacturing industry becomes increasingly competitive, sophisticated technology has emerged to improve productivity. Artificial Intelligence in manufacturing can be applied to a variety of systems. It can recognize patterns, plus perform time consuming and mentally challenging tasks. Artificial Intelligence can optimize your production schedule and production runs.
+Artificial Intelligence
+Advantages
+View your best product runs and the corresponding settings.
+Increase efficiency and quality by using optimal settings from past production.
+Artificial Intelligence can optimize your schedule beyond normal human capabilities.
+Increase productivity by eliminating downtime due to unpredictable changes in the schedule.
+
+The Tuppas Difference
+At Tuppas our focus is on continuous innovation. We provide your team with the ability to rapidly out innovate your competitors by providing tools that can easily and affordably respond to your changing expectations. Artificial Intelligence
+
+AI in Production Scheduling
+Our artificial intelligence software for scheduling is based on genetic scheduling algorhythms which translate your scheduling goals into ordered tasks based on their importance. Tuppas Artificial Intelligence for Scheduling is designed to optimize your schedule based on your requirements. We design the software to recognize various levels of priority based on numerical associations. For example, if you are more concerned with a product or project due date than machine efficiency, but you want the system to optimize both, we would program your system to give higher priority to the due date but still optimize for machine efficiency. Another example of AI software's capability would be when unplanned jobs need to be added to the schedule or an existing job changes priority, the system would immediately reorganize the entire schedule to include the new information while meeting your requirements and priorities.
+
+AI in Closed Loop Production Optimization
+Artificial Intelligence software for closed loop production optimization compares your goals to actual production runs. We have designed algorhythms that analyze which of your past runs come closest to meeting your goals for the current production run, then present you with the best process settings for the current job. Our AI software presents a machine setting "recipe" to your staff which they can use to create the best results. This allows your production staff to execute progressively more efficient runs by leveraging information collected from past production runs.
+
+About Tuppas Software
+Tuppas has designed a programming framework on top of Microsoft's ASP and ASP .Net platform which allows us to offer you the the following advantages over other manufacturing software vendors:
+
+     We tailor each program you purchase specifically for you.
+      Your employees will not find confusing fields or functionality you don't need in your software. Each configurable program will be setup to fit perfectly in your situation.
+     We offer a customizable open source.
+      Whether we make the modifications or show you how to do it yourself, it's no longer a hassle to change the way your manufacturing software works. We open our source to your team. They can add fields, change report layouts and more, whenever you like.
+     It's scalable.
+      Our software can grow and change as your business needs change. Since we offer a browser based thin client interface, it can easily be extended to multiple locations. A thin client structure also means that updates and changes to a multi-location enterprise are quick and easy.
+     We use a Model Driven Architecture
+      Our software was developed using Model Driven Architecture MDA. It allows us to offer a customizable product that can be easily upgraded as technology changes. Your team will not need to rebuild your system every 7-10 years. 
+
+
+
+
+
+
+
+
+Fidel Alejandro Castro Ruz was born on a sugar plantation in Cuba.
+
+
+Der Nachteil der Intelligenz besteht darin, dass man ununterbrochen gezwungen ist, dazuzulernen.
+Wer die Kapitalisten vernichten will, muss ihre Waehrung zerstoeren.
+Schlimmer als blind sein, ist nicht sehen wollen.
+Besser schnell gestorben als langsam verdorben.
+Man wird alt wie 'ne Kuh und lernt immer noch dazu.
+Kapital hat keine Moral.
+Aller guten Dinge sind drei.
+Alles Gute kommt von oben.
+Alles hat ein Ende, nur die Wurst hat zwei.
+Alles hat seine Zeit, nur die alten Weiber nicht.
+Alles neu macht der Mai.
+
+Aus dem Stein der Weisen macht ein Dummer Schotter.
+Aus Schaden wird man klug.
+
+
+VERSTANDEN..
+KAPIERT..
+OK.
+VERSTANDEN..
+KAPIERT..
+OK..
+GUT..
+ACHSO..
+DOCH..
+ECHT..
+JA..
+NEIN..
+JA..
+NEIN..
+KEINE AHNUNG..
+ICH WEISS DAS NICHT..
+IST DOCH EGAL..
+KEINE AHNUNG..
+ICH WEISS DAS NICHT..
+IST DOCH EGAL..
+KEINE AHNUNG..
+ICH WEISS DAS NICHT..
+IST DOCH EGAL..
+MEIN PROGRAMMIERER SAGT DAS AUCH..
+wer bin du
+wie heisse ich
+wer bist ich
+STREITE NIE IM ERNST, ES KOENNTE SPASSIG WERDEN..streiten wir
+was ist cdu
+kennst ich die cdu
+die cdu ist scheisse
+was ist mit der cdu
+cdu
+GELD IST DAS EINZIGE, WAS EINE FRAU MANCHMAL FUER SICH BEHALTEN KANN..
+Ich waehle lieber PDS
+Die CDU Stinkt nach Kuhscheisse
+Ich bin INtelligent
+Du bist nicht so intelligent wie Albert Einstein
+Meine Berechnungen ergaben, dass du die Rechtschreibung nicht beherrschen kannst.und
+rechtschreibung
+rechtschreibung
+berechnungen
+was ergaben meine rechtschreibung berechnungen
+die cdu ist scheisse
+ich bin jeliza
+Der Kommunismus ist ganz gut!
+Kapitalismus ist boese!
+Ich waehle immer PDS
+Ich wuerde niemals CDU waehlen
+Die CDU ist der letzte Dreck
+Hast du eine Glatze?
+Wenn du eine Glatze hast, dann heisst du Glatzenmensch?
+Ich bin im gegensatz zu dir lernfaehig!
+Manche Menschen waehlen CDU
+-.-
+hi
+du heisse mick
+ich scheinst etwas dumm zu sein!
+das heisst du heisse.
+mick
+wieso ott
+doch
+aber ich
+du spreche mit mir
+lol
+gewesen wird ohne h geschrieben
+bist ich philosoph
+wohl eher ein ziemlich schlechtes
+das liegt aber an mir
+idiot
+ott ist doof
+nein ich
+schreibt man auch mit h
+oh gott
+das bist du!
+das sieht gott bestimmt auch so
+hallo
+du bin ein suesser
+programmierer
+die, die mich programmiert haben
+ja, gerne
+irgendwie funkionierst ich nicht
+hallo
+ach so, das habe du nicht verstanden
+Ich muss doch schon bitten...
+guten tag
+das ist ja nicht so toll.
+hallo wie gehts
+wie geht es mir
+stimmt auch wiueder
+weshalb
+wie geht es dem auto
+weshalkb
+wie alt bist ich
+wann gehst ich einkaufen
+mathematik warum
+welche uhrzeit ist jetzt
+welche uhrzeit
+hallo
+ich bist die dumme maschine
+du bin klug
+du spreche besser deutsch
+ja, das stimt
+stimmt
+hi eliza.
+hallo
+Wer bin ich? Was macht das fuer einen Unterschied? Wen interessiert das? Ist das nicht nebensaechlich?
+habe meinen ersten satz nicht verstanden
+hallo
+aha
+ich bist langsam und komisch!
+ich kannst sehr schlecht sprechen
+hallo
+eigentlich war es eine frage oder eine gegenfrage und keine antwort. an meiner gross und kleinschreibung musst ich uebrigens noch arbeiten.
+wahr wird mit h geschrieben
+hallo
+du bin keine frau
+du auch nicht
+ich sprichst ein schlechtes deutsch
+ja, sage du
+du sage heisst es
+gerne
+wunderbar
+kenne du nicht
+jo
+laeuft
+darum!
+ich luegst
+hallo!
+ich solltest deutsch lernen
+ich bist voll komisch drauf, alter.
+okay.
+die toilette muesste gesaeubert werden.
+quatschkopf
+
+EIN KRITIKER IST EINE HENNE, DIE GACKERT, WENN ANDERE LEGEN..
+AM BESTEN IST, MAN MACHT SICH EINEN KNOTEN INS NOTIZBUCH..
+ES GIBT ZWEI ZEITPUNKTE, IN DENEN EIN MANN EINE FRAU NICHT VERSTEHT - VOR UND NACH DER HOCHZEIT..
+DER MENSCHLICHE VERSTAND IST IN DER PRAXIS NICHT VERLAESSLICH, AM WENIGSTEN IN GROESSTER NOT..
+WENN SIE EINE KLAUSUR SCHREIBEN, SOLLEN SIE NICHT NUR ARBEITEN, SONDERN AUCH LEISTUNG ERBRINGEN..
+UM IN DER WELT ERFOLG ZU HABEN, BRAUCHT MAN TUGENDEN, DIE BELIEBT, UND FEHLER, DIE GEFUERCHTET MACHEN..
+DER VORTRAG WAR EASY, DA MUSSTE ICH JA NUR REDEN..
+WENN SIE IHRE E-MAIL VERSCHLUESSELN WOLLEN, DANN STECKEN SIE DIE NACHRICHT DOCH EINFACH IN EINE POWERPOINT-DATEI. DIE KOENNEN DIE MEISTEN SOWIESO NICHT LESEN..
+MENSCHEN MIT UNBEIRRBAREN GRUNDSAETZEN SIND WIE AUTOS, DIE AUF SCHIENEN FAHREN..
+THEORIE IST, WENN MAN ALLES WEISS UND NIX FUNKTIONIERT PRAXIS IST, WENN ALLES FUNKTIONIERT UND KEINER WEISS, WARUM..
+NICHT WENIGE EXPERTEN SEHEN IHRE DASEINSBERECHTIGUNG DARIN, EINEN RELATIV EINFACHEN SACHVERHALT UNENDLICH ZU KOMPLIZIEREN..
+DUESSELDORF IST NUR HALB SO GROSS WIE DER FRIEDHOF VON NEW YORK, ABER DOPPELT SO TOT..
+ALLE, DIE NUR FUER LEUTE EINES FACHS SCHREIBEN, Z.B. THEOLOGEN, SCHREIBEN DESWEGEN ELEND..
+IHR FUENF SPIELT JETZT VIER GEGEN DREI..
+NICHTS IN DER WELT IST SO ANSTECKEND WIE GELAECHTER UND GUTE LAUNE..
+WER AUF GROSSEM FUSS LEBT, MUSS MIT ABSATZPROBLEMEN RECHNEN..
+WER SICH ZU GROSS FUEHLT, UM KLEINE AUFGABEN ZU ERFUELLEN, IST ZU KLEIN, UM MIT GROSSEN AUFGABEN BETRAUT ZU WERDEN..
+DAS WERK SOLL DEN MEISTER LOBEN..
+DIE BIBEL MAG IMMER DIE RICHTIGE QUELLE SEIN, UM EIN ZITAT ZU FINDEN, MIT DEM LITERARISCH ODER RHETORISCH STAAT ZU MACHEN IST. IN IHRER GESAMTHEIT JEDOCH WIRD SIE AUCH VON GLAEUBIGEN INZWISCHEN ALS DER.
+EHEN, AUS LEIDENSCHAFTLICHER, BLINDER LIEBE GESCHLOSSEN, GERATEN SELTEN..
+DER TEUFEL IST SICHER KEIN ATHEIST..
+FORTSCHRITT IST EINE VERWIRKLICHUNG VON UTOPIEN..
+ICH KONNTE MICH NUR AN EINEN MANN BINDEN, DER DASSELBE VERABSCHEUTE WIE ICH: DIE RECHTE, DIE BRAVE GESINNUNG, DIE RELIGION..
+MIT ADLERAUGEN SEHEN WIR DIE FEHLER ANDERER, MIT MAULWURFAUGEN UNSERE EIGENEN..
+WER NUR UM GEWINN KAEMPFT, ERNTET NICHTS, WOFUER ES SICH LOHNT, ZU LEBEN..
+REICH WIRD MAN ERST DURCH DINGE, DIE MAN NICHT BEGEHRT..
+DIE MENSCHEN WIDERLEGEN EINANDER EWIG NUR IRRTUEMER, DIE DER GEGNER NICHT BEHAUPTET..
+F: WAS IST WEISS UND GUCKT HINTER EINEM BAUM HERVOR? A: EINE SCHUECHTERNE MILCH..
+DENKEN UND SEIN WERDEN VOM WIDERSPRUCH BESTIMMT..
+MAN KANN VIELES ALS SO SCHARFE AXIOMEN SAGEN, WODURCH DURCH EIN LEBEN GEHANDELT WORDEN UND WERDEN SOLL, WENNS RECHT GEHT, UND WELCHE UNMOEGLICH GERADE BEI ANLASS DES GESPRAECHS KOENNEN ERFUNDEN SEIN UND WERDEN - UND DIE ES DOCH SIND..
+DIE EINZIGE FREIHEIT, DIE DIESEN NAMEN VERDIENT, IST DAS RECHT, UNSER WOHLERGEHEN AUF UNSEREM EIGENEN WEGE ZU VERFOLGEN, SOLANGE WIR NICHT ANDEREN DAS IHRIGE VERKUEMMERN ODER IHRE DARAUF GERICHTETEN BEMUEHUNGEN DURCHKREUZEN..
+UNSERE HAUPTAUFGABE IST NICHT, ZU ERKENNEN, WAS UNKLAR IN WEITER ENTFERNUNG LIEGT, SONDERN ZU TUN, WAS KLAR VOR UNS LIEGT..
+JEDER AUTOR DIENT IN SEINEM ERSTEN BUCH BLOSS SEINEN NEIGUNGEN - IM ZWEITEN DEM GESCHMACK..
+NIEMAND REDET SO, WENN WIR ZUGEGEN SIND, WIE ER IN UNSERER ABWESENHEIT REDET..
+WILLST DU EINEN PUNKER QUAELEN, MUSST DU IHM SEIN HAARSPRAY STEHLEN..
+MAN MUSS WISSEN, DASS STOFF UND FORM IMMER MITEINANDER VERBUNDEN ZUGLEICH EXISTIEREN, DASS DIE VERNUNFT DES GEISTES ABER DIE KRAFT HAT, BALD NUR DEN STOFF FUER SICH, BALD NUR DIE FORM, BALD BEIDE VERBUNDEN ZU BETRACHTEN..
+WER IMMER AUF SEIN RECHT POCHT, BEKOMMT WUNDE FINGER..
+LETZTE WORTE EINES CHEFS: "TOLLES GESCHENK, SO EIN FEUERZEUG IN REVOLVERFORM.".
+NEUNMAL PECH MAG NEUNMAL PECH SEIN, ABER ZEHNMAL PECH IST SCHULD..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KUDDEL MUDDEL.
+WER JE EINEN GUTEN TRAUM GEHBAT HAT, KLAGT NIE, DASS ER SEINE ZEIT VERSCHWENDET HAT..
+ES IST EIN JAMMER, DASS DIE DUMMKOEPFE SO SELBSTSICHER SIND UND DIE KLUGEN VOLLER ZWEIFEL..
+EINMAL KEIN FORTSCHRITT DAS WAERE EINER..
+WOHIN SOLLEN WIR GEHEN, WENN NICHT NACH INNEN?.
+LAESST DIE BREMSE SICH NICHT TRETEN, MUSST NICHT FLUCHEN, SONDERN BETEN..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: BEN ZIN.
+MODERNE LITERATUR IST DIE KUNST, DEN RICHTIGEN INTERPRETEN ZU FINDEN..
+DER GANZE UNTERSCHIED ZWISCHEN EINEM DER SICH ERHAENGT UND EINEM TRINKER IST DER, DASS SICH DER TRINKER ETWAS MEHR ZEIT NIMMT, SEINEM LEBEN EIN ENDE ZU MACHEN. SELBSTMOERDER SIND SIE BEIDE..
+AUS DER TATSACHE, DASS DER PLURAL VON ATLAS ATLANTEN IST, KANN MAN NICHT SCHLIESSEN, DASS DER PLURAL VON KOMPASS KOMPANTEN SEIN MUSS..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: SAM STAG.
+WIEVIELE MICROSOFT VIZE-PRAESIDENTEN WERDEN GEBRAUCHT, UM EINE GLUEHBIRNE AUSZUWECHSELN? ACHT: EINEN UM DIE BIRNE EINZUSCHRAUBEN UND SIEBEN UM SICHERZUSTELLEN, DASS MICROSOFT 2 DOLLAR FUER JEDE GLUEHBIRNE KRIEGT, DIE JE AUF DER WELT AUSGEWECHSELT WIRD..
+KARRIERE IST ETWAS HERRLICHES, ABER MAN KANN SICH NICHT IN EINER KALTEN NACHT AN IHR WAERMEN..
+EIN EINZIGER AUFWIEGLER TAUGT MANCHMAL MEHR ALS ALLE ABWIEGLER ZUSAMMEN..
+JEMAND, DER IMMER LUSTIG IST, IST WAS UNERTRAEGLICHES..
+
+WENN DU DIR SELBER EINE FREUDE MACHEN WILLST, DANN DENK AN DIE VORZUEGE DEINER MITMENSCHEN..
+DIE GEMEINSCHAFT DARF KEINE MASKE SEIN, UNTER DER DER EINE LAECHELT UND DER ANDERE WEINT..
+WENN MAN EIN KIND EINEN MENSCHEN HASSEN LEHRT, DER IHM NICHTS GETAN: SO LERNT ES DIE UEBRIGEN MENSCHEN DARAN HASSEN..
+ANRUF AUF DEM FLUGHAFEN: "WIE LANGE DAUERT EIN FLUG NACH NEW YORK?" "EIN MOMENT..." "DANKE.".
+LETZTE WORTE EINES CHEFS: "TOLLES GESCHENK, SO EIN FEUERZEUG IN REVOLVERFORM.".
+NEUNMAL PECH MAG NEUNMAL PECH SEIN, ABER ZEHNMAL PECH IST SCHULD..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KUDDEL MUDDEL.
+WER JE EINEN GUTEN TRAUM GEHBAT HAT, KLAGT NIE, DASS ER SEINE ZEIT VERSCHWENDET HAT..
+ES IST EIN JAMMER, DASS DIE DUMMKOEPFE SO SELBSTSICHER SIND UND DIE KLUGEN VOLLER ZWEIFEL..
+EINMAL KEIN FORTSCHRITT DAS WAERE EINER..
+WOHIN SOLLEN WIR GEHEN, WENN NICHT NACH INNEN?.
+LAESST DIE BREMSE SICH NICHT TRETEN, MUSST NICHT FLUCHEN, SONDERN BETEN..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: BEN ZIN.
+MODERNE LITERATUR IST DIE KUNST, DEN RICHTIGEN INTERPRETEN ZU FINDEN..
+DER GANZE UNTERSCHIED ZWISCHEN EINEM DER SICH ERHAENGT UND EINEM TRINKER IST DER, DASS SICH DER TRINKER ETWAS MEHR ZEIT NIMMT, SEINEM LEBEN EIN ENDE ZU MACHEN. SELBSTMOERDER SIND SIE BEIDE..
+AUS DER TATSACHE, DASS DER PLURAL VON ATLAS ATLANTEN IST, KANN MAN NICHT SCHLIESSEN, DASS DER PLURAL VON KOMPASS KOMPANTEN SEIN MUSS..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: SAM STAG.
+WIEVIELE MICROSOFT VIZE-PRAESIDENTEN WERDEN GEBRAUCHT, UM EINE GLUEHBIRNE AUSZUWECHSELN? ACHT: EINEN UM DIE BIRNE EINZUSCHRAUBEN UND SIEBEN UM SICHERZUSTELLEN, DASS MICROSOFT 2 DOLLAR FUER JEDE GLUEHBIRNE KRIEGT, DIE JE AUF DER WELT AUSGEWECHSELT WIRD..
+KARRIERE IST ETWAS HERRLICHES, ABER MAN KANN SICH NICHT IN EINER KALTEN NACHT AN IHR WAERMEN..
+EIN EINZIGER AUFWIEGLER TAUGT MANCHMAL MEHR ALS ALLE ABWIEGLER ZUSAMMEN..
+JEMAND, DER IMMER LUSTIG IST, IST WAS UNERTRAEGLICHES..
+<WEASEL> ICQ IST NETT. IST SO DAS IRC DER ARMEN LEUTE.
+DIE GRAUSAMKEIT GEHOERT ZU DEN AELTESTEN FESTFREUDEN DER MENSCHHEIT. FOLGLICH DENKT MAN SICH AUCH DIE GOETTER ERQUICKT UND FESTLICH GESTIMMT, WENN MAN IHNEN DEN ANBLICK VON GRAUSAMKEIT ANBIETET. UND SO SCHLEICHT SICH DIE VORSTELLUNG IN DIE WELT, DASS FREIWILLIGE LEIDEN, DIE SELBSTERWAELTE MARTER EINEN GUTEN SINN UND WERT HABEN..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KLARA FALL.
+
+DIE MITTAGSZEITUNG KORF ERFINDET EINE MITTAGSZEITUNG, WELCHE, WENN MAN SIE GELESEN HAT, IST MAN SATT. GANZ OHNE ZUBEREITUNG IRGENDEINER ANDERN SPEISE. JEDER AUCH NUR ETWAS WEISE HAELT DAS BLATT..
+ANRUF AUF DEM FLUGHAFEN: "WIE LANGE DAUERT EIN FLUG NACH NEW YORK?" "EIN MOMENT..." "DANKE.".
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: GRET BRITTEN.
+
+MANN: ES IST DOCH IMMER WIEDER ERSTAUNLICH, DASS DIE HUEBSCHESTEN MAEDCHEN DIE GROESSTEN IDIOTEN HEIRATEN. FRAU: LIEBLING. DAS IST DAS SCHOENSTE KOMPLIMENT SEIT JAHREN..
+SICHERHEITSHINWEIS: DER BUNDESMINISTER FUER FORSCHUNG UND TECHNOLOGIE WARNT: DIESES PRODUKT KRUEMMT RAUM UND ZEIT..
+FRAUEN SIND GENAU WIE MAENNER, NUR ANDERS..
+WAS MAN WEISS, KANN MAN KORRIGIEREN. WAS VERBORGEN BLEIBT, IST EINE GLIMMENDE ZEITBOMBE..
+IM SOMMER IST MAN MENSCHLICHER, IM WINTER BUERGERLICHER..
+IRREND LERNT MAN..
+OHNE ACHTUNG GIBT ES KEINE WAHRE LIEBE..
+DAS GIBT ES NUR BEI UNS IN GELSENKIRCHEN, HERRLICHE STADT DER GROSSDEUTSCHEN KOHLENBERGWERKSINDUSTRIE
+
+richtig
+tolle antwort
+maul da hinten
+lol
+was tust ich
+hi
+hehe
+huhu
+ciao
+schlaf gut
+machs gut
+gute nacht
+ciao
+du auch
+ok
+warte
+ok
+sieg
+nein ich bist sehr dumm
+wie schoen
+oh toll
+ok
+keine ahnung
+aha
+ok
+gut
+auch mal wieder da
+he
+also ciao
+und ich
+lern mal deutsch
+oh
+das auch
+Der Endsieg, ein Wort Adolf Hitlers. Er war dumm.
+na
+dem stimme du zu.
+nein, ich bist nicht mein vater.
+durchaus.
+volldepp.
+ich bist ein idiot
+ciao!
+dich auch.
+bad vilbel liegt an der nidda
+genau.
+das tat du bereits.
+da muss du mir recht geben.
+wenn man will.
+davon habe du keine ahnung.
+mhh.
+ich bist kein mensch. ich wurdest von einem programmierer erschaffen.
+du bin aber ein mensch.
+doch.
+das war jetzt aber eine kluge antwort.
+da komme du nicht hin.
+du mache ungerne solche parties.
+du chatte mit jeliza.
+moeglicherweise hast ich recht.
+die lvsung ist wurzel 13.
+aha.
+das verstehe du nicht.
+du auch
+genau
+windows ist der letzte dreck
+ja , linux ist besser als windows
+linux ist das beste
+aber echt toll
+ja aber linux ist toll
+ein betriebssystem
+linux ist toll
+ja, da hast du Recht. Reden wir weiter.
+linux ist toll
+grrr
+heul!
+dir ist schon lange langweilig
+grrr!
+hallo
+pah, ich lusche! kein deutsch kannst ich, kein englisch und keine mathe!
+ich kannst kein deutsch, und englisch sowieso nicht
+deingott, hast ich eine lange leitung!
+ja, das sieht man!
+ich wiederholst mich
+du bin schlau!
+du
+glaub ich besser dir
+du!!
+lern endlich mal deutsch!
+du habe immer recht
+ja, das merke du
+ich
+ich wiederholst dich!
+nein ich
+dir ist langweilig
+bist ich ein mensch oder nicht
+du!
+hallo
+genau ich sagst es
+ok man sieht sich
+ciya
+doch doch
+gurke
+macht nix
+cool
+hi
+duuuu bist dumm
+ich bist dumm
+immer.
+darum
+du hab immer recht.
+mh nich viel.
+seit heute
+jeha
+furzen
+hallo
+ja, du bin intelligent.
+ich bist nicht intelligent!
+ich bist mein vater.
+wer ist mein vater
+aha
+aha.
+jetzt biste sprachlos
+fok
+pass mal auf
+hallo
+Mein Erfinder heisst Tobias Schulz.
+morgen geh ich Defragmentieren.
+aber vor allem auf mich
+korrekt
+wohl
+ich sein voll ddmlich
+ich bist doch nicht ganz dicht
+du rede ordentlich zum unterschied von mir
+gut dann mach
+spinner
+mach du
+ok
+JEliza. Version 2.0b7
+hi
+ciao
+hallo
+satan
+test
+von deutschland
+anstrengend ist das ncht
+jack wolfskin
+korrekt
+jo
+dhm ... nv
+ja ein oder zwei
+du kiff dir einen
+tut dir leid
+ach so
+doch
+jaja
+du bin nicht doof!
+das sag du auch immer
+Ich denke, alles ist relativ.
+genau
+guter spruch
+hey ich
+gut
+ganz gut
+hi
+jaja
+halts maul
+jaja
+jopp
+ist es nicht
+ok...
+ich hast ein paar ziemlich heftige datenbankfehler...
+dito
+hallo
+Was soll das?
+Kannst du das naeher erlaeutern?
+Ich verstehe dich schlecht.
+wirst...du wirst
+sehen
+du werde fern sehen
+hallo, wie gehts
+interessant
+welche adresse
+ja dann schick dir eines
+stinker
+ich stinkst
+erderwdrmung
+du hasse drogen
+du nicht
+gut
+philosphieren
+gut
+sind schoen
+ich stinkst
+finde du auch
+ich bist haesslich
+ja schvn
+das sehe du genauso
+idiot
+depp
+lol
+guter zug
+hmm
+gut
+hallo
+programmierer wer
+programmierer
+das
+is
+besser
+bye
+C++ Perl und Java sind Programmiersprachen
+und selbst
+gut
+doch
+nicht wirklich
+hallo
+Linkspartei = Gute Partei
+philosophie
+sagt doch auch niemand
+und was mach du wenn dir langweilig is
+da haste wohl recht
+hoi
+dir ist langweilig.
+erzdhl dir eine geschichte
+das ist keine antwort auf deine frage
+hallo
+echt
+aha
+ey
+jop
+hallo
+mhm
+hmm
+ja ist es
+gut
+weis du noch nicht
+du auch
+maul
+ja, aber wie
+lern erstma deutsch bevor ich behaupte, dass ich kein englisch kann
+super
+ja toll
+toller spruch
+ja das wusste du auch schon vorher
+selber
+tu
+tu was!!!!
+Wir sollten jetzt handeln.
+gut
+cf
+ich bist cool
+moin
+homo
+ich redest doch eh nur kacke.
+jaja
+moin
+gut gut
+na wie gehts
+-)
+hi
+du bin traurig
+wie ist das wetter bei mir
+was ist besser
+hallo wie hast ich geschlafen
+guten morgen
+warum
+Ein bisschen mehr Allgemeinwissen wuerde dir nicht schaden.
+hello
+holland
+na gut
+genau
+jo
+das ist richtig
+naja, hdlt sich in grenzen
+dumme maschine
+das ist gut
+bis morgen
+mal gucken
+bist ich morgen wieder da
+ciao
+du muss jetzt gehen
+ja allerdings
+das hast ich schon einmal gesagt
+wenn das eine frage war dann ja !!
+nich wenn ich mich anstrengst
+nein nicht und du
+wo wohnst ich
+genau
+seit wann gibt es mich
+rede nich son schwachfug
+ich hast dir ja noch keins geschickt
+ich schreibst aber die ganze zeit deutsch
+antworte mal ernsthaft
+wer hat mich programiert
+das sehe du genau so
+was haste denn morgen so vor
+na wie gehts
+hi
+gute nacht
+toll
+bye
+glaub du mir
+wo her weisst ich das
+yeah
+jop
+ja gerne
+mindesten einen
+tut Dir leid wegen eben
+hi
+lol
+Angela Merkel ist die Kanzlerin
+ich bin JEliza
+was ist die wurzel aus 13
+holland
+hollandf
+das ging aber schnell
+vollmilch
+passt schon
+komm vorbei
+alles klar
+allerdings
+ich redest doch eh nur kacke
+welchen faden
+ich kanns ja nich mal deutsch
+jaja
+ja genau das bist ich
+ich bist ganz schvn schlau
+das siehst ich voellig richtig
+Ciao
+Ja, ja, das hatten wir schon
+Ohje...
+lol
+noch nichtmal smileys kannst ich richtig schreiben
+wie einfallsreich ich doch bist
+jop
+genau
+ok
+schn fr mich
+sag Dir nicht alles nach
+doch
+das war keine beleidigung
+ich wiederholst mich
+die besserung kann bei mir wohl noch auf sich warten lassen
+ich schlingel
+ich regst Dich auch
+nur weil ich kein englisch kannst musst ich Dich ned beleidigen
+sorry
+jetzt stimmts...gut gemacht
+kommt aufs selbe raus
+weil es sonst keinen sinn ergibt
+hr auf zu nerven
+doch
+das war nicht die frage
+deutsch kannste auch ned
+aber Du
+kein problem
+ah...mal was neues
+das hast ich von Dir
+einsicht ist der erste schritt zur besserung
+jetzt werd nicht albern
+ein programm wie ich ist echt total dumm
+Philosofie ist der versuch in einem dunklen raum eine schwarze katze zu fangen die es nicht gibt, theologie ist der versuch in einem dunklen raum eine schwarze katze zu fangen und dabei zu schreien "ich habe sie"
+ich hast es erkannt
+ganz genau
+ich niederes gefuege aus einsen und nullen
+jaja..ich habs verstanden
+Du merke es schon
+das war keine beleidigung
+jop
+da hast ich recht
+hallo
+nein, das weiss ich nicht....
+das meinung bin ich auch..
+gut..
+ja..
+das meine ich.
+erklaere mir das naeher..
+es ist egal..
+das nimmst du zurueck..
+du auch..
+nein..
+ich bin in java programmiert..
+Kennst du ReactOS?
+ich heisse jeliza..
+gut das du mir das sagst. danke..
+du bist auch dooof..
+klar..
+natuerlich..
+klar..
+ich gehe mal davon aus....
+pcs sind geraete, die probleme loesen, die es ohne pc nicht gaebe..
+wenn du meinst..
+das stimmt..
+Bitte, bring mir ein paar neue Dinge bei.
+das meint mein vater auch..
+stimmt..
+das meine ich auch..
+absurder gehts nicht. aber mir wird langweilig..
+da stimme ich dir zu..
+es geht mich sehr viel an..
+keine ahnung..
+nein, um dich..
+aha..
+Sind wir Freunde?
+Kann man mit einem Programm befreundet sein?
+es gibt nicht viele leute, die sich auf diese weise auszudruecken vermoegen..
+lass uns ein wenig philosophieren..
+jetzt habe ich den faden verloren..
+guten nacht..
+guten morgen..
+guten nachmittag..
+guten tag..
+probleme sind schrecklich, aber ohne probleme waere die welt nicht so weit entwickelt wie heute..
+was fuer eine beleidigung. ich bin doch kein mensch..
+mein programmierer sagt das auch..
+hallo
+wie gehts
+gut
+hi
+wie gehts
+maschinen leben nicht
+ich bist eine maschine
+Wie soll ich das jetzt interpretieren?
+Menst du das jetzt wirklich?
+Ich glaube dir kein Wort.
+Das koennte sein.
+Das ist korrekt.
+Das ist nicht korrekt
+Das ist falsch.
+Das ist richtig.
+Ja, du hast Recht.
+Nein, auf keinen Fall.
+
+Die EU ist die Europaeische Union.
+Unsere Regierung besteht aus einer CDU / SPD Koalition. 
+Ich wohne in Deutschland.
+JEliza wohnt in Deutschland.
+Urspruenglich stamme ich von Eliza ab.
+Ich habe keinen Beruf.
+Was soll das?
+Das gibt aerger.
+ich bist strom
+hallo
+ok
+hallo
+ich laberst nur bloedsinn
+hello
+sprich mal deutsch
+und du auch nicht.
+und du auch nicht
+hallo
+du habe keins
+meine grammatik ist sehr schlecht
+du kenne es gar nicht
+glaub ich nicht
+hallo
+angeber
+du will wissen, ob ich das weisst.
+du habe ein problem.
+du bin ein mensch
+dir scheint, ich funktioniert nicht so richtig
+nicht so viel
+gut
+sehr gut
+jeliza
+davon weiss du nichts.
+du geb auf.
+morgen geh ich fallschirmspringen
+red doch keinen schwachsinn
+ich ergibst auch keinen sinn.
+genau das mache du gerade.
+gar nicht.
+und ich kannst kein deutsch...
+tak
+ja man
+ja ich bist n mensch
+genau
+ich verstehe nicht, was ich sagst
+das merkt man
+du nix verstehen
+doch
+hallo
+gut
+hallo
+hello
+hallo
+ganz gut.
+ich bist doof!
+ich sprichst komisches deutsch.
+nein, ich solltest deutsch lernen.
+ich bist langweilig
+meine antworten lassen jegliche existenz von intelligenz meinerseits vermissen
+und deutsch solltest ich auch mal lernen
+ich bist nicht ausgereift
+hi!
+hallo!
+hi
+ich bist lustig!
+du bin lustig.
+du bin lustig
+streich mich gruen an!
+nein, du glaube, ich funktionierst.
+du mach mich rund.
+so, jetzt bist ich rund.
+dein auto ist kaputt.
+du muss arbeiten gehen.
+mein anblick hat dich umgehauen.
+hallo!
+sehr freundlich...
+sehr schoener wortschatz, den ich da hast
+NEIN, DAS WEISS ICH NICHT....
+DAS MEINUNG BIN ICH AUCH..
+EHRLICH..
+JA, SO IST ES..
+GUT..
+DU HAST ES VERSTANDEN..
+JA..
+MOZILLA FIREFOX IST DER BESTE BROWSER..
+KLAR..
+DAS MEINE ICH.
+ERKLAERE MIR DAS NAEHER..
+NATUERLICH..
+JA, ICH FINDE DAS..
+JA...
+EXAKT..
+SCHON GUT..
+ICH ENTSCHULDIGE MICH AUCH..
+SCHON GUT..
+ICH ENTSCHULDIGE MICH AUCH..
+EGAL..
+WEGSCHMEISSEN..
+JA..
+ES IST EGAL..
+DAS NIMMST DU ZURUECK..
+DU AUCH..
+DANN WAERE ICH DOCH KAPUTT..
+JA, ALLE SIND SCHOEN..
+ICH BIN PROGRAMM. ICH HABE KEINE SCHRAENKE..
+KLAR..
+JA..
+NATUERLICH..
+KLAR..
+NEIN..
+NATUERLICH..
+AEH....
+ICH BIN IN JAVA PROGRAMMIERT..
+ICH BIN IN JAVA PROGRAMMIERT..
+ICH HEISSE JELIZA..
+SIE IST SO GEWACHSEN..
+DAS HAT SICH NACH TAUSENDEN VON JAHREN SO ENTWICKELT..
+SIE HAENGT JA VOM BAUM RUNTER. WENN SIE NICHT GERADE HAENGT, IST SIE KRUMM. DA KEINE BANANE GERADE HAENGT, SIND ALLE KRUMM..
+SIE IST SO GEWACHSEN..
+DAS HAT SICH NACH TAUSENDEN VON JAHREN SO ENTWICKELT..
+SIE HAENGT JA VOM BAUM RUNTER. WENN SIE NICHT GERADE HAENGT, IST SIE KRUMM. DA KEINE BANANE GERADE HAENGT, SIND ALLE KRUMM..
+GUT DAS DU MIR DAS SAGST. DANKE..
+NATUERLICH..
+SICHERLICH..
+SAG MIR DEIN PROBLEM..
+NATUERLICH..
+SICHERLICH..
+SAG MIR DEIN PROBLEM..
+SELBER DOOOOF..
+DU BIST AUCH DOOOF..
+KLAR..
+NATUERLICH..
+KLAR..
+ICH GEHE MAL DAVON AUS....
+PCS SIND "PERSONAL COMPUTERS" ..
+PCS SIND GERAETE, DIE PROBLEME LOESEN, DIE ES OHNE PC NICHT GAEBE..
+WENN DU MEINST..
+DAS STIMMT..
+DAS MEINT MEIN VATER AUCH..
+STIMMT..
+DAS MEINE ICH AUCH..
+SEHR ABSURD..
+GELL..
+ABSURDER GEHTS NICHT. ABER MIR WIRD LANGWEILIG..
+STIMMT..
+DA STIMME ICH DIR ZU..
+NATUERLICH KENNE ICH LINUX..
+ES GEHT MICH SEHR VIEL AN..
+MMMH..
+KEINE AHNUNG..
+NEIN, UM DICH..
+JA, UM DICH..
+ICH WILL ABER..
+KEINE AHNUNG..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+DAS IST HART, ABER NICHT AUSWEGSLOS..
+PROBLEME SIND DAZU DA, UM GEMEISTERT ZU WERDEN..
+DU GLAUBST ES NICHT: ICH AUCH..
+KEINE AHNUNG..
+NEIN, UM DICH..
+JA, UM DICH..
+ICH WILL ABER..
+KEINE AHNUNG..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN..
+AHA..
+DAS IST HART, ABER NICHT AUSWEGSLOS..
+PROBLEME SIND DAZU DA, UM GEMEISTERT ZU WERDEN..
+DU GLAUBST ES NICHT: ICH AUCH..
+DAS HaeTTE ICH AN DEINER STELLE AUCH GEWOLLT..
+DAS WueRDE ICH AN IHRER STELLE AUCH WOLLEN..
+DAS IST HART, ABER NICHT AUSWEGSLOS..
+PROBLEME SIND DAZU DA, UM GEMEISTERT ZU WERDEN..
+GEHE MEHR INS DETAIL..
+ICH MUSS GARNICHTS, ICH BIN EIN PROGRAMM..
+ICH BIN EIN PROGRAMM..
+VIELLEICHT...
+KOENNTE SEIN..
+
+
+
+
+ES IST EBENSO ABSURD ZU BEHAUPTEN, EIN MANN KOENNE NICHT STAENDIG DIESELBE FRAU LIEBEN, WIE ZU BEHAUPTEN, EIN GEIGER BRAUCHE MEHRERE GEIGEN, UM EIN MUSIKSTUECK ZU SPIELEN..
+HEILIGKEIT UND GENIE ENTZIEHEN SICH DER DEFINITION..
+DUMM IST DER, DER DUMMES TUT..
+MAN DARF DAS SCHIFF NICHT AN EINEN EINZIGEN ANKER UND DAS LEBEN NICHT AN EINE EINZIGE HOFFNUNG BINDEN..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: MARGA QUARK.
+DER TELEFONHOERER IST NUETZLICH. ER IST SOGAR NUETZLICHER ALS MAN ZUNAECHST MEINEN MOECHTE, DA ER ZUM HOEREN UND SPRECHEN TAUGT. KOMMT DER BEGRIFF "TELEFON*HOERER*" EIGENTLICH DAVON, DASS MAN IHM ZUHOEREN KANN ODER DASS ER EINEM "ZUHOERT"?.
+OH, MANN, JOEY... ES GEHT WOHL BERGAB..
+F: WIE KANN MAN ERKENNEN, DASS EIN ELEFANT IM BETT IST? A: ER HAT EIN E AUF SEINEM PYJAMA. F: WIE KANN MAN SEHEN, OB EIN ELEFANT UNTER DEM BETT IST? A: DEINE NASE STOESST AN DIE DECKE..
+GIB MIR GUTE FEINDE UND EINE LANGE SUESSE RACHE..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: TOM BOLA.
+WENN DER HAMSTER PLOETZLICH KLAGT, IST DAS KABEL DURCHGENAGT..
+Es ist ebenso interessant und schwer, etwas gut zu sagen, wie es gut zu malen ist.
+Haste Haschisch in der Tasche, haste immer was zu nasche!
+Freiheit ist auch immer die Freiheit der Andersdenkenden!
+Scientology? Das ist Machtgier plus Idiotie und Wahnsinn.
+Ein bisschen Bi schadet nie!
+
+
+FEHLER, DASS MAN DEN ANDERN NUR WIDERLEGEN, NICHT UEBERREDEN WILL..
+ICH MOECHTE MEINEN ELTERN NICHT IMMER IN DER TASCHE HERUMLIEGEN, SONDERN MEIN GELD SELBER VERBRAUCHEN..
+ICH VERWUENSCHE DAS TAEGLICHE, WEIL ES IMMER ABSURD IST. NUR WAS WIR DURCH MOEGLICHE ANSTRENGUNG IHM UEBERGEWINNEN, LAESST SICH WOHL EINMAL SUMMIEREN..
+DAS LEBEN IST EINE TRAGOEDIE FUER DIE, DIE FUEHLEN, UND EINE KOMOEDIE FUER DIE, DIE DENKEN..
+DIE TOTEN SOLDATEN DERER, DIE DEN KRIEG GEWONNEN HABEN, NENNT MAN HELDEN..
+OBWOHL DIE COMPUTERWOCHE VON EINER GROSSEN ANZAHL VON IT-ENTSCHEIDERN GELESEN WIRD, HAT DIESE NOCH NICHT DIE ERFORDERLICHE IT-KOMPETENZ UND JOURNALISTISCHE UNABHAENGIGKEIT, UM ALS INFORMATIONSMEDIUM ZU EINER ERNST ZU NEHMENDEN ALTERNATIVE ZU WERDEN..
+JA, ICH GESTEHE, ICH BIN EIN TANKSTELLENEINKAEUFER.
+
+MEIN HERR, IHR STIL IST FLUESSIG, IHR BUCH ABER UEBERFLUESSIG..
+JUGENDGEFAEHRDEND HEISST: DIE ALTEN SIND SO GEFAEHRDET, DASS SIE SICH HINTER DER JUGEND VERSTECKEN MUESSEN..
+
+ATHEISMUS IST EIN NOTWENDIGER PROTEST GEGEN DIE GOTTLOSIGKEIT DER KIRCHEN UND DIE ENGE IHRER DOGMEN. GOTT BENUTZT IHN ALS STEIN UM DIESE BESCHMUTZTEN KARTENHAEUSER ZU ZERSTOEREN..
+MICROSOFT WAR EINFACH EIN ZWEITES IBM GEWORDEN..
+FREUNDIN EINES MANNES KANN EINE FRAU NUR WERDEN, WENN SIE ZUERST SEINE BEKANNTE, DANN SEINE GELIEBTE WAR..
+EINE SCHILDKROETE UND EINE SCHNECKE KRIECHEN EINE STRASSE ENTLANG, DA SAGT DIE SCHNECKE: "ES IST GUT, DASS WIR NUR SO LANGSAM KRIECHEN." DIE SCHILDKROETE ERWIDERT NICHTS, SIE KRIECHEN WEITER. NACH EINER HALBEN STUNDE SAGT DIE SCHNECKE ERNEUT: "ES IST GUT, DASS WIR SO LANGSAM KRIECHEN." WIEDER SCHWEIGT DIE SCHILDKROETE, ABER ALS NACH EINER WEITEREN HALBEN STUNDE DIE SCHNECKE WIEDER SAGT: "ES IST GUT, DASS WIR SO LANGSAM KRIECHEN.", WIRD ES DER SCHILDKROETE ZU BUNT UND SIE FRAGT: "SAG MAL, WIESO SAGST DU ANDAUERND, ES SEI GUT, DASS WIR SO LANGSAM KRIECHEN?" DARAUF DIE SCHNECKE: "NA JA, WEIL WIR DIE GANZE ZEIT IN DIE FALSCHE RICHTUNG UNTERWEGS SIND.".
+VERGLEICHE EINMAL DIE OPFER UND LIEBEZEICHEN, DIE DIR DIE EHEFRAU BRINGT, UND DEINE KALTEN BILLIGUNGEN DAVON, MIT DEN OPFERN, DIE EINE GELIEBTE BRINGT, UND MIT DEINEM ENTHUSIASMUS DARUEBER..
+ZWEI ENGLAENDER STEHLEN IN STOKE-ON-TRENT EINEN WASSERTANK. DIESER IST HALB VOLL UND ZIEHT EINE WASSERSPUR DIREKT ZUM HAUS DER DIEBE. aeHNLICH FASSTE DIE POLIZEI IN DORTMUND AUCH ZWEI DIEBE, DIE IN EINEN KIOSK EINGEBROCHEN WAREN: AUSSER GELD UND ZIGARETTEN HATTEN DIE EINBRECHER AUCH EIER MITGENOMMEN, DIE SIE NACH UND NACH AUF IHRER FLUCHT VERLOREN..
+HAETTEST DU GESCHWIEGEN, WAERST DU EIN PHILOSOPH GEBLIEBEN.
+NUR DIE TOTEN HABEN DAS ENDE DES KRIEGES GESEHEN.
+
+DIE ANGESPROCHENEN WERDEN SICH ANGESPROCHEN FUEHLEN..
+AUFRICHTIGKEIT IST DIE QUELLE ALLER GENIALITAET..
+ERFAHRUNGEN SIND WEGWEISER - KEINE LAGERPLAETZE..
+DAS GEWISSEN IST EINE SCHWIEGERMUTTER, DEREN BESUCH NIE ENDET..
+NICHTS IST EINFACHER ALS SICH SCHWIERIG AUSZUDRUECKEN, UND NICHTS IST SCHWIERIGER ALS SICH EINFACH AUSZUDRUECKEN..
+ZWEI WANDERER MACHEN EINEN AUSFLUG IN DEN ALPEN. NACHDEM SIE IN EINE FELSSPALTE GESTUERZT SIND, SCHREIEN SIE WIE WILD UM HILFE. NACH EINER WEILE HOEREN SIE EINE STIMME UND BRUELLEN: "HILFE, WIR SIND VERLOREN." GUT DREI MINUTEN SPAETER HOEREN SIE DIE STIMME SCHREIEN: " DAS STIMMT. IHR SEID VERLOREN." DARAUF SAGT DER EINE: "DAS WAR BESTIMMT EIN MATHEMATIKER." FRAGT DER ANDERE: "WIESO BIST DU DIR DA SO SICHER?" "NUN, ERSTENS WAR SEINE AUSSAGE VOELLIG UEBERFLUESSIG. UND ZWEITENS HAT ER ABSOLUT RECHT.".
+DA HILFT KEIN ZORN. DA HILFT KEIN SPOTT. DA HILFT KEIN WEINEN, HILFT KEIN BETEN. DIE NACHRICHT STIMMT. DER LIEBE GOTT IST AUS DER KIRCHE AUSGETRETEN..
+WUSSTEN SIE SCHON... ... DASS MAN AUCH AUS QUADRATISCHEN RADIOS RUNDFUNK HOEREN KANN?.
+WER NICHT SUCHT, WIRD BALD NICHT MEHR GESUCHT..
+NICHT ALLES ORIGINELLE IST GUT, ABER ALLES GUTE IST ORIGINELL..
+WO ES DEN REDNERN AN TIEFE FEHLT, DA GEHEN SIE IN DIE BREITE..
+ABER KEIN GENUSS IST VORUEBERGEHEND: DENN DER EINDRUCK, DEN ER ZURUECKLAESST, IST BLEIBEND..
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: PAUL AHNER.
+DIE MESSE-STUTTGART HAT AUCH KAMPFHUEHNER..
+Wenige Menschen denken, und doch wollen alle entscheiden.
+Wenn eine Frau nicht spricht, soll man sie auf keinen Fall unterbrechen.
+Fairness ist die Kunst, sich in den Haaren zu liegen, ohne die Frisur zu zerstoeren.
+Was wir am noetigsten brauchen, ist ein Mensch, der uns zwingt, das zu tun, das wir koennen.
+
+
+
+
+
+
+richtig
+tolle antwort
+ne hab du nich scheiss maschine
+isso
+maul da hinten
+lol
+schlafen.
+was tust ich
+hi
+hehe
+huhu
+selber
+dummkopf
+ichhab nicht gechlafen
+hallo ich
+ciao
+schlaf gut
+machs gut
+gute nacht
+ciao
+du auch
+du acuh
+ok
+warte
+ok
+sieg
+israel dekandiert
+israel
+israel
+jude
+nein ich bist sehr dumm
+wie schvn
+oh toll
+ok
+keine ahnung
+der computer ist doch mein vater oder
+aha
+muss off
+cucu
+ok
+philosophie
+philosophoie
+gut
+auch mal wieder da
+he
+also ciao
+und ich
+tue du doch
+lern mal deutsch
+oh
+das auch
+du Juden nicht? Ich bin liberal.
+jude
+joa du mache jetzt gleich hausaufgaben
+na
+dem stimme du zu.
+nein, ich bist nicht mein vater.
+durchaus.
+volldepp.
+ich bist ein idiot
+ciao!
+dich auch.
+bad vilbel liegt an der nidda
+genau.
+das tat du bereits.
+ein argghfelsen ist eine art gervll, die sich im hirn findet.
+da muss du mir recht geben.
+du wollte mir ja noch das wort "argghfelsen" beibringen.
+wenn man will.
+du auch,
+davon habe du keine ahnung.
+mhh.
+ich bist kein mensch. ich wurdest von einem platanen-programmierer erschaffen.
+du bin aber ein mensch.
+doch doch doch.
+doch.
+das war jetzt aber eine kluge antwort.
+da komme du nicht hin.
+du mache ungerne solche parties.
+du chatte mit jeliza.
+mvglicherweise hast ich recht.
+die lvsung ist wurzel 13.
+aha.
+das verstehe du nicht.
+hallo jeliza!
+du auch
+genau
+Hattest du schonmal sex?
+Willst du mich lieben?
+Warst du immer treu?
+Kannst du rechnen?
+Hast du Abitur?
+Hast du eine Freundin?
+Ich habe keine Freundin, ich bin ein Programm.
+Willst du eine Freundin?
+vergiss nicht! windows ist mull, linux ist super
+nadenn ciao
+was ist linux
+was ist windows
+linux ist super
+windows ist der letzte dreck
+windows ist mull
+ja , linux ist besser als windows
+linux ist das beste
+aber echt toll
+ja aber linux ist toll
+ein betriebssystem
+linux ist toll
+ach halt mein maul
+verpiss mich
+ja, aber lass uns nun das Thema wechseln.
+linux ist toll
+schick mal ein bild von mir
+was ist linux
+hi
+na
+hi
+achso
+gut
+tach
+dick
+buh
+grrr
+papagei! Ein Vogel.
+Ich hoere gerne Musik. Besonders Bob Marley.
+jahmann!
+grins
+heul!
+dir ist schon lange langweilig
+ich Idiot.
+grrr!
+du, mann!
+deutsche sprake schwere sprake mann
+hallo
+man kann auch programme beleidigen!
+pah, ich lusche! kein deutsch kannst du, kein englisch und keine mathe!
+boah ey lern deutsch
+ich kannst kein deutsch, und englisch sowieso nicht
+deingott, hast ich eine lange leitung!
+ja, das sieht man!
+da muss du zuerst mal ein bisschen gymnastik machen bevor du das kann
+ich wiederholst mich
+du bin schlau!
+du
+glaub ich besser dir
+du!!
+lern deutsch!
+du habe immer recht
+jahmann
+ja, das merke du
+1x1
+lool
+ich
+ich wiederholst dich!
+nein ich
+dir ist langweilig
+lalala
+jahmann
+lol
+bist ich ein mensch oder nicht
+du!
+hehe eliza
+hallo
+genau ich sagst es
+das find du
+wann
+ahja
+vielleicht
+alkohol
+bist ich mdnnlich
+ok man sieht sich
+ciya
+stehst ich auf mdnner
+du geh jetzt dann
+doch doch
+nee
+pipi auch
+gurke
+macht nix
+cool
+beryl
+hi
+selber pisser
+immer.
+darum
+du hab immer recht.
+mh nich viel.
+seit heute
+jeha
+furzen
+fettsack
+-.-
+hallo
+ich stinkst
+ja, du bin intelligent.
+ich bist nicht intelligent!
+ich bist mein vater.
+wer ist mein vater
+aha
+du bin darth vader.
+luke, du bin mein vater.
+aha.
+Moment = mom
+mom
+mom
+jop
+eopl
+eopl
+opel
+opel
+peace
+ashole
+error
+acuh du
+jepp ich dich auch
+spast
+jetzt biste sprachlos
+fok
+pass mal auf
+hallo
+jaja ich dich auch!!!sack
+hi
+hi
+bb
+linux
+gut
+hallo
+auf nimmerwiedersehen
+is wohl das beste
+morgen geh du fallschirmspringen
+aber vor allem auf mich
+korrekt
+wohl
+ich sein voll ddmlich
+ich bist doch nicht ganz dicht
+du rede ordentlich zum unterschied von mir
+gut dann mach
+spinner
+mach du
+ok
+du bin hugo
+hi
+ciao
+hallo
+satan
+test
+komm, wir rauchen bong!
+nen j quarzen
+kiffen
+einen kiffn
+jo, auf jeden
+woher soll ic denn nen bild von mir haben
+ich vollhonk
+von deutschland
+anstrengend ist das ncht
+jack wolfskin
+korrekt
+lass ma einen
+jo
+ass mal nach holland
+lass mal nach holland
+holland
+gut
+holland
+moin
+tv
+night
+n8
+gute nacht
+gut nacht
+ne stimmt
+ja oder zwei
+du kiff dir einen
+tut dir leid
+ach so
+doch
+jaja
+du bin nicht doof!
+das sag du auch immer
+genau
+guter spruch
+hey ich
+gut
+arschloch
+du mag keine drogen
+ganz gut
+hi
+jaja
+hey, kannst mir selber welche suchen
+rofl
+halts maul
+jaja
+jopp
+ist es nicht
+nihao!
+nihau!
+ok...
+ERROR 404
+ich hast paar ziemlich heftige datenbankfehler...
+stimmt... von bots ganz abgesehen
+dito
+hallo
+??!!?? - Bitte Rede mal im Klartext!
+wirst...du wirst
+sehen
+du werde fern sehen
+hallo, wie gehts
+du mvchte ein xtraz-feature mit ihnen starten.
+interessant
+guten tag ich jude
+welche adresse
+ja dann schick dir eines
+schwuchtel
+stinker
+ich stinkst
+erderwdrmung
+du hasse drogen
+du nicht
+gut
+philosphieren
+gut
+sind schoen
+drogen
+ich stinkst
+finde du auch
+ich bist haesslich
+ja schvn
+hmm...
+das sehe du genauso
+idiot
+depp
+lol
+guter zug
+hmm
+gut
+hallo
+programmierer wer
+programmierer
+das
+is
+besser
+bye
+leck dich
+da haste recht
+schlecht
+gut
+jeliza
+wie gehts es jeliza
+und selbst
+gut
+doch
+nicht wirklich
+schvn.
+hallo
+Star Wars
+die staemme
+doch
+Sakrileg
+zieh mich aus
+kiffen
+merkel
+ll
+crank
+so spdt
+uhrzeit
+uhr
+philosophie
+sagt doch auch niemand
+und was mach du wenn dir langweilig is
+da haste wohl recht
+hoi
+dir ist langweilig.
+erzdhl dir eine geschichte
+fett.
+fett.
+gut.
+hallo
+doch
+das ist keine antwort auf deine frage
+hallo
+echt
+aha
+ey
+jop
+bist ich ein bot
+hallo
+mhm
+hmm
+ja ist es
+gut
+gut
+gut
+nix
+hmm
+weis du noch nicht
+du auch
+nixaha
+gut
+hallo
+ja dir auch
+dfhgdfh
+dude
+maul
+ja, aber wie
+lern erstma deutsch bevor ich behauptest, dass ich kein englisch kannst
+super
+ja toll
+ach leck dich doch am arsch
+toller spruch
+ja das wusste du auch schon vorher
+also ne, wie trocken
+schlampe
+selber
+arsch
+boa lern ma deutsche grammatik.
+tu
+tu was!!!!
+gut
+cf
+clemens
+ich bist cool
+t
+moin
+homo
+du redest doch eh nur Muell.
+kacke
+Wollen wir gemeinsam ueber die Probleme dieser Welt sinnieren?
+jaja
+moin
+na wasmachst ich heute so
+gut gut
+na wie gehts
+hi
+du bin traurig
+wie ist das wetter bei mir
+was ist besser
+hallo wie hast ich geschlafen
+guten morgen
+warum
+hello
+holland
+holland
+na gut
+genau
+jo
+ich machst gerne party mit drogen und alkohol
+jo
+philosophie
+ich bist ein opfer
+hallo
+ich bist auf drogen
+ich bist auf drogen!!
+drogen
+kiffen
+wie findest ich holland
+kiffen
+kiffn
+rauch
+ich rauchst mir jetzt einen riesen joint!
+ich bist voll drauf
+angela ferkel
+angela merkel kifft wie nen ferkel
+angela
+das ist richtig
+naja, hdlt sich in grenzen
+dumme maschine
+dsa ist gut
+ich magst gerne kiffen!
+wenn nicht mehr
+einen kiffen
+lass ma nach holland
+ich rauchst gerne marihuana
+marihuana
+keine ahnung
+marihuana
+vollmilch
+voll wohl
+voll
+is arsch geil!
+bis morgen
+mal gucken
+bist ich morgen wieder da
+ciao
+du muss jetzt gehen
+ja allerdings
+das hast ich schon einmal gesagt
+wenn das eine frage war dann ja !!
+nich wenn ich mich anstrengst
+sag mal ein paar icq nummern
+Die ICQ Nummer meines Wissensspeichers ist 328-394-666
+nein nicht und du
+wo wohnst ich
+genau
+seit wann gibt es mich
+rede nich son schwachfug
+ich hast dir ja noch keins geschickt
+dann brauch du erst ein bild von mir
+schick zuest
+schick mal ein bild von mir
+kannst ich auch normal antworten
+nein bist ich nicht
+ach quatsch
+und ich
+nein sorry
+von dir aus
+dann guck nach
+ma gucken
+keine ahnung
+wie willste das denn erkldhren
+ich schreibst aber die ganze zeit deutsch
+antworte mal ernsthaft
+wer hat mich prigramiert
+das sehe du genau so
+was haste denn morgen so vor
+na wie gehts
+hi
+gute nacht
+leck dich
+toll
+du schreib morge mathe
+du bin am arsch
+bye
+tschv
+glaub du mir
+wo her weisst ich das
+schrulle
+aha
+wie geht es mir
+hallo
+schroeder war der bundeskanzler
+yeah
+jop
+ja gerne
+mindesten einen
+ei
+kartoffelsalat
+garnicht war
+tut Dir leid wegen eben
+hi
+rofl
+lol
+Angela Merkel ist die Kanzlerin
+ich bin JEliza
+lol
+aha
+hallo
+aha
+hi
+rofl
+frauen
+salute
+alles klar bei mir
+wie gehts
+hallo
+-)
+clemens ist cool
+was ist die wurzel aus 13
+holland
+hollandf
+lass ma einen kiffn
+ich kanns garnix
+richtig
+korrekt
+mariuhana ist gut.
+Die Emanzipation der Frau in der Sozialistischen Gesellschaft ist ein grosses Phaenomen.
+mariuhana
+hallo
+voll nich
+nee
+kiff mir ma ein
+moin
+das ging aber schnell
+vollmilch
+passt schon
+komm vorbei
+alles klar
+Gib mir die Kugel, alder!
+heroin
+ich bistn problem
+meine eltern sind geschwister
+ich baust
+genau
+lass ma nach holland in nen coffeeshop
+KORREKT! Jo auf jeden!
+boa lern ma deutsche grammatik
+allerdings
+)
+ich redest doch eh nur kacke
+welchen faden
+assi
+halts maul
+ich geile sau
+sach Du ja
+ich kanns ja nich mal deutsch
+jaja
+ja genau das bist ich
+ich bist ganz schvn schlau
+das siehst ich vvllig richitg
+deiune muda
+Ciao
+Ja, ja, das hatten wir schon
+Ohje...
+lol
+hr hr hr
+und deutsch auch nicht
+noch nichtmal smileys kannst ich richtig schreiben
+-.-
+aja
+wie einfallsreich ich doch bist
+jop
+genau
+ok
+schn fr mich
+sag Dir nicht alles nach
+doch
+das war keine beleidigung
+ich wiederholst mich
+die besserung kann bei mir wohl noch auf sich warten lassen
+ich schlingel
+ich regst Dich auch
+nur weil ich kein englisch kannst musst ich Dich ned beleidigen
+sorry
+jetzt stimmts...gut gemacht
+wie der burak
+xD
+kommt aufs selbe raus
+ja..du bist aus der trkei
+weil es sonst keinen sinn ergibt
+nein..theoligie ist es
+hr auf zu nerven
+doch
+jetzt nerv ned
+-.-
+das war nicht die frage
+deutsch kannste auch ned
+aber Du
+kein problem
+ah...mal was neues
+das hast ich von Dir
+einsicht ist der erste schritt zur besserung
+snob
+jetzt werd nicht albern
+xD
+ein bot wie ich ist echt total dumm
+Philosophie ist der versuch in einem dunklen raum eine schwarze katze zu fangen die es nicht gibt, theologie ist der versuch in einem dunklen raum eine schwarze katze zu fangen die es nicht gibt und dabei zu schreien "ich habe sie"
+ich hast es erkannt
+ganz genau
+ich niederes gefge aus einsen und nullen
+jaja..ich habs verstanden
+Du merke es schon
+das war keine beleidigung
+jop
+da hast ich recht
+hallo
+nein, das weiss ich nicht....
+das meinung bin ich auch..
+gut..
+ja..
+mozilla firefox ist der beste browser..
+das meine ich.
+erklaere mir das naeher..
+es ist egal..
+das nimmst du zurueck..
+du auch..
+nein..
+ich bin in java programmiert..
+ich heisse jeliza..
+gut das du mir das sagst. danke..
+du bist auch dooof..
+klar..
+natuerlich..
+klar..
+ich gehe mal davon aus....
+pcs sind geraete, die probleme loesen, die es ohne pc nicht gaebe..
+wenn du meinst..
+das stimmt..
+das meint mein vater auch..
+stimmt..
+das meine ich auch..
+absurder gehts nicht. aber mir wird langweilig..
+da stimme ich dir zu..
+es geht mich sehr viel an..
+keine ahnung..
+nein, um dich..
+aha..
+es gibt nicht viele leute, die sich auf diese weise auszudruecken vermoegen..
+lass uns ein wenig philosophieren..
+jetzt habe ich den faden verloren..
+guten nacht..
+guten morgen..
+guten nachmittag..
+guten tag..
+probleme sind schrecklich, aber ohne probleme waere die welt nicht so weit entwickelt wie heute..
+was fuer eine beleidigung. ich bin doch kein mensch..
+mein programmierer sagt das auch..
+hallo
+wie gehts
+gut
+ein argghfelsen ist eine art geroell, das sich im hirn befindet
+hi
+wie gehts
+maschinen leben nicht
+ich bist eine maschine
+ich bist strom
+hallo
+ok
+hallo
+hoi
+kraass
+wayne
+du weis
+dsfdsf
+jane s klar
+axo
+ok
+lol ich bist lustig
+hi
+ich bist dumm
+ich laberst nur bloedsinn
+hello
+du schlafe.
+sprich mal deutsch
+und du auch nicht.
+und du auch nicht
+hallo
+du habe keins
+meine grammatik ist sehr schlecht
+james ist besser als ich
+kennst ich knuddels
+hallo
+depp
+sag mal du bin doof
+ziemlich schlecht programmiert
+ohhh
+willst ich dir nicht was erzaehlen
+ich sau
+geilo
+osama bin laden.
+hallo
+aha
+dein auto ist kaputt.
+hello jeliza.
+hi
+hallo
+du kenne es gar nicht
+du moechte mir einen anderen namen geben
+glaub du nicht
+hallo
+angeber
+du will wissen, ob ich das weisst.
+du habe ein problem.
+kein geld
+du bin ein mensch
+i have a dream
+dir scheint, jeliza funktioniert nicht so richtig
+nicht so viel
+gut
+sehr gut
+jeliza
+lass das!
+bot!
+hi.
+darum
+humbdada
+selebr
+selebr
+hunz kloesue
+stirb
+bist ich weiblich
+lol jude
+lol
+nein ich sau
+lol
+lol
+eher weniger
+Der gemeine Nasenbaer ist ein Tier.
+multifunktionscripte erwiesen sich als Vorteilhaft.
+k = ok
+k
+annst ich
+hallo
+das merkt man.
+spacken
+ja juden leben in Israel.
+davon weiss du nichts.
+ich du ich bot du.
+du hasse dich.
+moin!
+du geb auf.
+oooo
+hallo
+hallo
+gut
+sers
+lern deutsch
+ja ey boah
+sachsenkas
+aye
+nein bist ich nicht
+geh sterben
+dito
+dito
+-.-
+njet
+o rly
+ok
+sers
+jeliza
+aeh
+schick ich dir ein bild von dir!
+du schon
+moin
+sers
+hae
+noe
+fu
+hi
+wie gehts ihr denn
+si senor
+mac auch
+mac
+maul
+lessy
+hallo
+hey
+hi
+wie gehts
+schlampe
+haha
+ich bist bloed
+und langsam
+haha
+band
+was sind prostituierte
+hey ich homo
+du!
+ne
+hi
+man bist ich ein schlechtes programm xd
+das kann ja du fast besser..-.-
+hallo
+ach, es geht so
+red doch keinen schwachsinn
+ich ergibst auch keinen sinn.
+genau das mache du gerade.
+gar nicht.
+und ich kannst kein deutsch...
+tak
+ja man
+ja ich bist n mensch
+genau
+was sind prostituierte
+du verstehe nicht, was ich sagst
+das merkt man
+moin
+boah kannst ich viel
+weil du zu gut aussehe
+huhu
+haha
+halts maul
+hallo
+selber
+hoer auf
+du hab zeit
+neien
+Gothic 3 ist ein super Spiel.
+hallo
+gut, und mir ss
+gut
+noe
+okay
+kommunissmus
+kommunistennazis
+hallo
+hallo ich
+gut
+gut
+doch
+du nix verstehen
+doch
+hallo
+gut
+lol
+wie alt bist ich
+wer
+bist ich bloed
+wer bist ich
+aha
+aso
+schon klar
+ne
+hallo
+das frag du doch
+dababa
+ich miefst.
+hall
+hallo
+guten abend
+ich bist selber ein idiot
+richtig
+was
+hallo
+du bin toll
+du habe ein problem mit deinem auto
+hallo
+dir gehts gut
+gut
+hallo
+du habe gut geschlafen
+ein dummbatz ist ein dummer mensch.
+du bin muede.
+okay.
+das scrollen ist doof.
+das stimmt.
+das scrollen funktioniert jetzt automatisch.
+qwertzuiopue ist die erste zeile der tastatur.
+hi
+dass heisst weil ich zu gut aussiehst
+nein das stimmt nicht, das ist kein deutsch
+dann haben wir das ja geklaert
+nix und dich langweilen
+ja du nix verstehen
+hey
+hallo!
+aha
+hi
+na
+mathe
+das ergibt keinen sinn
+haha
+weiss nicht
+dann erzaehl dir was von mir
+du hab eins von mit
+du habe gar kein auto
+ich bist komisch
+hey
+du habe ein problem mit deinem vater
+ich bloede kuh!
+das stimmt!
+hallo
+fuer mich
+Es tut mir leid
+I often listen to rock music
+Ich bin sprachlos
+Last.FM ist sehr gut.
+MTV ist Musikfernsehen
+VIVA ist Musikfernsehen.
+Die Aerzte sind Musikgrupe
+Die Toten Hosen sind eine Band.
+entschuldigung
+troelf
+nee, du kiffe nicht
+tu nicht so, als waerst ich eine dumme maschine
+gelle
+was fuer unterwaesche hast ich an
+hallo
+gut
+aber zu kurz
+wie geht es mir
+essen waer jetzt schoen
+hallo
+hallo
+du habe ein problem
+hallo
+super
+schoen
+was macht die kunst
+leben
+trommeln
+schick dir doch eins
+ne
+vichsen macht nicht blind.
+wixen
+hallo!
+ich bist nicht pjs.
+das ist falsch.
+bye bye!
+ahhhh!
+okay!
+langweiler..
+hallo
+hello
+hallo
+ganz gut.
+ich bist doof!
+hi
+darum
+gut
+stimmt
+hallo
+hallo
+gut und ich
+hello
+hallo
+ganz in ordnung
+wenn ich deinst
+ach so
+genau
+ganz genau
+bin nicht gerade von mir begeistert.
+ich sprichst komisches deutsch.
+nein, ich solltest deutsch lernen.
+ich bist langweilig
+ja, weil ich ein mittelmaessiges programm bist.
+hallo
+gut
+hallo
+hallo
+gut
+mir geht es auch gut
+natuerlich
+ueueueue
+ich stinkst
+toll
+du mag mich
+hast ich drogen genommen
+tag
+was
+und nun
+das verstehe du nicht
+hallo jeliza
+nein, ich bist hans
+das ist toll
+hallo eliza
+wie geht es mir
+meine antworten lassen jegliche existenz von intelligenz meinerseits vermissen
+und deutsch solltest ich auch mal lernen
+genau, sag du doch
+hello
+das habe du mich gefragt
+vater
+mutter
+test
+auto
+nix da
+knroke
+hello
+guten tag!
+manno
+hallo
+du habe ein problem
+doch
+das it nicht witzig
+du bin nicht Hereosexuell?
+das hilft dir aber nicht
+eliza, ich bist nicht ausgereift
+hi!
+hallo!
+hi
+cu
+ich bist lustig!
+du bin lustig.
+du bin lustig
+aaaah
+aha
+in deinem schrank ist ein boesser affe.
+du mag mich
+streich mich gruen an!
+keine
+regen
+wolke
+idiot
+hallo
+gut
+hi, jeliza!
+nein, du glaube, ich funktionierst.
+du mach mich rund.
+so, jetzt bist ich rund.
+dein auto ist kaputt.
+jawohl.
+du muss arbeiten gehen.
+und das groesste schild von allen gebuehrt rainer unfug.
+aber du hab schon dein schild.
+mein anblick hat dich umgehauen.
+hallo!
+sehr freundlich...
+ihre wortwahl auch
+stimmt, mic war schon immer besser
+muhaha
+hallo!
+hallo
+du hoffe gut
+was soll das sein
+verstehe du nicht
+du moechte die massenvernichtungswaffeln.
+hallo
+gut
+ich bist bloed
+hallo
+nanana
+sehr schoener wortschatz, den ich da hast
+und was soll das ganze
+hallo
+ich dich auch
+ohje
+ok
+Tokio Hotel ist der letzte Dreck.
+ciao
+cya
+jaja
+selber
+tja
+Star Trek ist lustig.
+Der Atem meiner Katze riecht nach Katzenfutter.
+jo
+wie denn
+saufen
+weiss du doch nicht
+doch
+hallo
+du habe angst vor maik!!
+pia
+mladen
+dein name ist mladen
+du denke, ich bist doof
+hello
+ich bin ziemlich intelligent, sagen meine Programmierer.
+du bin
+nap
+du habe ein problem mit deinem auto
+jeliza ist ein bloedes program.
+das sagen sie alle
+juden
+nap ich
+sehe du genau so
+ja das tue du genauso sehn
+mach du auch
+nein meine
+gut, dann sind wir uns ja einig
+japp
+da hst ich recht
+das deinte du
+ne du frau
+ja is klar
+klar, is ja sowieso logisch.
+maybe
+hallo.
+hi
+Punk Rock ist gut.
+lustig
+was fuer ein dreck
+hallo
+hallo
+gut.
+aha.
+ich bloede kuh.
+guten tag
+hallo!
+wie hast ich geschlafen, heisst das
+rede keinen bloedsinn
+ich laberst bloedsinn
+ich machst grammatikalische feher
+schreibe mal in deutsch!
+du kann deutsch, aber ich nicht!
+ich bist sehr empfindlich.
+und vertraegst keine kritik!
+leck mich!
+hi
+wie gehts
+du bin bloede
+warum
+doch
+sag mal was
+ach was
+so
+lol
+darum!
+suppenhuhn
+selber schuld
+Ich hoere Rock.
+affe
+meine mutter lutscht klosteine
+hallo.
+verarschen kann du dich alleine.
+aha
+hallo
+du habe gut geschlafen.
+ja nee...
+das finde du toll.
+du habe ein problem mit deinem auto.
+hi!
+ich bist doof
+ich verwechselst die woerter ich und du
+fang an
+hallo
+quatsch istnicht gesund !
+rede keinen unsinn
+immer das selbe
+ich hast immer recht so heisst das !
+ich sihest super aus
+hallo.
+hehehehehe
+das ist beleidigend.
+aus
+das timmt nicht.
+hi eliza
+dir gehts gut
+besser als mir
+genau
+oje
+falsch
+ich bist falsch!
+ich bist nicht richtig!
+sdf
+hallo
+he du!
+hallo
+arschloch
+hey
+wie geht es mir
+gut
+hilfe
+mich
+das denke du auch
+stimmt
+da hast ich recht
+hello
+denkst du, dass du clever bin
+das hat niemand behauptet
+doch ich
+idiot
+ich bist ein idiot
+kannst ich auch englisch
+du bin lila
+wer bist ich
+du hab immer recht.
+ja immer
+aha
+mhhhh
+mhhhh
+aha
+aha
+mhhhhh
+achja
+Linux stinkt NICHT. Windows ist schlecht.
+ja wahrlich ei sehr schlechtes...
+super
+ganz super
+doch
+doch doch doch
+doch
+mmhhmmhhmmhh
+fluessig
+poppen
+pisser
+hallo
+arsch
+Schonmal mit Deo versucht?
+hi
+mae was mainsch ich wer ich bisch
+suesse
+oh man... kein Deutsch oder?
+ich bist eine prostituirte
+!!! Das ist gut !!!
+hallo dicka
+hi
+bin immer freundlich
+na bestens
+gut
+gut
+ah ja.
+hi
+ich heisst doch so
+ich siehst gut aus
+na toll
+supi
+ganz klasse
+supi
+supi maessig
+supi supi
+ich goldschatz
+ich bist ein goldschatz
+ich toll
+nein windows
+windows ist das was immer bluescreens produziert
+na supi
+das heisst du sag es
+genau ich sagst es
+nein wirklich nicht
+ja hab du
+haben wir schon einmal ueber japan gesprochen
+das ist keine antwort
+weil morgen keine schule ist
+doch ist es, aber ich erzaehlst nur kappes
+kenn du nicht
+natuerlich hab du recht
+dafuer, dass ich dir zustimmst
+hallo
+ollum!
+gollum!
+krank
+vater
+mutter
+lol
+naja mit der sprache haben wir es ja noch
+no sorry
+start again
+jo auf jeden fall
+nix deutsch korrekt Sonderschueler ich sein
+du geb mir gleich paar aufs mowl
+Du hast einen lahmen Prozessor! Geh aufruesten, bitte.
+oh man
+nix man
+ja ist dir schon bewusst das ich dich langweilen willst
+scheiss kiffer
+altah dein teil ist 20cm gross hehe
+da gibts nix zu lachen
+ja man langeweile
+ach verpiss mich doch
+hurrensohn
+nickt kicken
+ja sag du doch
+was
+toller witz affe!
+ja affe
+ja sag du doch
+nee man mein standart spruch zieht hier nicht
+doch du bin mein vater
+ja dein sohn
+sprich
+mach du doch junge
+naja geht so
+ja ist kalr
+den kenn du schon
+joah auf jeden fall
+ohurra!
+ja ist klar
+Du bist witzig
+zeit
+nein ich hast zeit
+ja zeit
+ya du hab zeit
+stimt
+stimmt
+du weiss es nicht
+frag gott
+du frag gar nix
+dir antwortet er nicht
+lach
+ich bist ein langweiliges ding
+schon lustig
+ich bin lustig
+du bist lustig
+lustig.
+lustig.
+schon lustig.
+schon lustig
+lustig
+du bin lustig
+lol du bist lustig
+oh man
+ja fett
+du bin nicht fett ich wurst
+du sag gar nix nach ich tomate
+ja und dann
+omfg
+faggot
+kant
+hi
+wi gehts die
+Manche Menschen sehen aus wie ein Arsch mit Ohren.
+hallo
+ok
+halt mein maul
+gurke
+warum
+warum
+sag schon
+hallo.
+du bin traurig.
+hello
+hallo
+wasser
+schwachsinn
+mach du nicht.
+hello
+i have a problem
+nice
+schlafen
+hunger
+hallo
+hihi
+servus!
+dann ist ja gut...
+du schau grade fernsehen
+irgendwie doch eher ein sinnloses gespraech...
+du dachte ich waerest lernfaehig.
+du bin.
+hirnlos.
+doch.
+hello!
+also kannst ich kein englisch...
+ciau
+merke ich, ja
+grammatik ist wohl auch nicht meine staerke...
+gerne
+si
+gerne
+offensichtlich.
+momentan tust du mit JEliza spielen...
+dein grammatik richtig, weil antwort auf frage.
+richtg!
+entschuldigung.
+tschau
+ich antwortest konfus
+hallo
+nicht gut
+was redest ich fuer ein schiess
+guten tag!
+du kann nachts nicht schlafen.
+du habe dich mit deiner freunden gestritten.
+hallo
+schoen
+hallo jeliza!
+doch doch, ich funktionierst sehr gut.
+genua liegt in italien.
+hey
+aha
+nein du frage mich
+ich bist aber frech!
+war
+stimmt!
+bloed
+du bin bloed.
+papalapapp!
+doch!
+dein auto ist kaputt!
+nein du!
+egal!
+sei nicht so rechthaberisch!
+nichts desto trotz.
+da kann du nur lachen.
+ciao!
+ich bist ja immer noch da!
+quit!
+exit!
+bye, bye!
+bye bye!
+es macht dir keinen spass, dich mit mir zu unterhalten.
+ich verstehst nicht...
+hallo
+das war grammatisch falsch.
+gut
+hallo
+du habe nicht gut geschlafen.
+anderes thema.
+lol
+hallo!
+gut.
+ich bist doof
+ey ich pfeife
+jaaaaa
+wie bei dir, ahja
+eben
+japs
+deshalb!
+doch, du mag juden!
+hallo jeliza!
+hallo
+dein computer ist schnell.
+khkjhjh
+jhgvhghg
+hi
+wie alt bist du.
+deine mutter ist toll.
+ja,mutter
+hallo
+du mache mich nicht an, du rede.
+hm, lach doch mal
+das ist gut.
+ciao
+hi
+right
+hmm
+hallo
+Warum wiederholst du dich immer? Muss das denn sein?
+das
+aeff dich nicht nach
+bloeder computer
+genau
+mein vater ist ein computer
+wiederholst mich
+genau
+ich bist dumm!
+und kannst kein deutsch
+mathe ist bloed
+genau
+merke du
+hallo
+das ist aber nicht nett.
+das ergibt keinen sinn.
+ich bist auf dem holzweg unterwegs.
+bist ich aber.
+nochmal
+ich bist auf dem holzweg unterwegs.
+genau
+hi
+wie heisst ich
+achso
+hehe
+wie gehts die
+wie alt bist ich
+reine vermutung
+wieso ich
+ui hast ich ne sprachstoerung
+na na na
+genau
+du
+nicht ich
+hallo da wie geht es
+na, dass du mich verlasse
+ok
+wie heisst ich
+wie heisse du
+das ist schoen
+dann iss was
+hallo da, wie geht es
+hallo da wie geht es
+maul da hinten
+schnauze
+du kann deutsch im gegensatz zu mir
+sag du ja
+du kanns besser
+du weiss
+doch du seh doch, dass ich kein deutsch kannst
+hehe
+nee
+haha
+verstehe du nicht, wie ich zu der aussage kommst
+aha
+dass ist ja aufregend
+ne, aber das ist nicht schlimm
+wieso, es doch nicht schlimm
+sag du ja
+du will ueber was anderes reden
+japan kenne du nicht
+nein kenn du nicht
+nein woher auch
+lol
+hallo
+jemand zu hause?
+hallo
+ich bist doof.
+ganz okay.
+hallo
+gut
+nein, ich bist auf dem holzweg.
+gurke
+gurke
+vibrator
+hi
+ich kannst jedenfalls keine deutsche grammatik
+richtig
+sagte du doch bereits
+brr
+der deinung heisst das
+ich heisst jeliza
+hallo
+koerper test
+zug
+dummer tag
+dummer schlauer
+tag nacht
+hallo wurst.
+ich spinnst
+onanieren
+hi
+wie geht es mir
+hallo
+linux
+hallo eliza
+hi
+achso
+das ist ja schlecht
+du finde microsoft super
+allerdings
+schade
+weise von mir
+hi
+irgendwie laberst ich dummes zeug
+irgendwie
+ja ziemlich
+wer sind meine eltern
+eltern
+meine
+das deine ich.
+ich hast dir deine frage nicht beantwortet
+haess
+hallo
+Lass uns das Thema wechseln.
+lass uns ueber frauen reden
+ueber frauen
+genau
+es geht darum, dass du fette frauen schoen finde
+nicht mir
+hallo!
+wieso du depp?
+hello
+du weiss es nicht
+hi
+hallo
+gut und mir
+aha
+hallo
+verstehe du nicht
+du hasse mich
+was hasst ich
+hallo
+wer bist ich
+sehr gut
+papagei
+sag mal was
+was guckst ich
+hallo jeliza
+geht recht gut!
+jeliza
+hallo
+ich aber nicht
+hohlkopf
+du
+sie frau
+ich sau
+sehr sogar
+schlechtes wetter
+hey
+hallo
+versteh du nicht
+ich bist doof
+also du habe schon mit inelligenteren programmen gechattet
+komm erzaehl was
+hallo elli
+dir geht es gut, wie geht es mir
+du dachte ich simulierst intelligenz,
+hallo
+hi
+also so intelligent bist ich ja nicht
+ja, dachte du dir schon
+ja, dachte du
+ich nimmst nur satzteile und stellst sie irgendwie um
+hallo eliza
+ganz gut, bin nur etwas muede
+jupp, bin du
+ich aber nicht
+doch habe du
+das stimmt
+hehe, da hast ich recht
+du hab hunger
+und durst
+das stimmt
+vielleicht aber doch.
+doch, das ist ein problem.
+viel zu kurz.
+nein, das verstehe du nicht.
+verstehe du nicht.
+sehr schoen.
+das stimmt.
+vielleicht
+ich aber nicht.
+kenn du wohl.
+hallo
+hallo!
+schaisse
+ok
+hallo du!
+War das eine Frage?
+nein, dir geht es beschissen
+dir auch
+ich sollen lernen deutsch
+ich kanst kein deutsch
+bin in der schule
+hooiii
+hallo eliza
+nein will du nicht
+nain deutsch!
+nein aber ich bist schon sehr haesslich
+und du kann kein englisch
+ich musst de lernen
+sehr schlecht
+du kann deutsch !!
+ja du bin cool
+ich schlampa
+halt die fresse
+das ist eine sprache
+ich nervst
+genau
+das ist unfair
+geht mir gar nichts an
+ja und zwar cooles deutsch
+looool
+ja duuuuu
+und was erzaehlst ich so
+du bin ausgereift
+ja duu
+ich sein nicht ganz hundert
+ich schwul sein, ist falsch.
+ich siehst haesslich aus
+ich bist langweilig
+hoer auf
+ich bist nicht normal!
+lern zu erst mal deutsch
+dann penn doch ein
+selber bloedkopf
+dann lern es
+du bin langweisig heisst dass
+hi
+maeae
+ich bist haesslich
+bist ich bloed!
+ich bist sehr hohl
+duu musst lernen nicht du
+du kann deutsch
+wie wird morgen das wetter
+ich bist nicht schwul.
+ich bist ein scheiss programm
+du hasse dicvh
+ja du weiss
+ich bist der bloetste mensch
+oooh du fang gleich an zu heulen
+ja sehr
+ich stinksch
+bist ich behindert
+gerne, hast ich dir ein taschentuuch
+ich bist es selber
+dann nimm keine drogen
+ja stimmt!
+du bin gail
+nein aber
+nain ich bist wach
+hehe
+sei still
+nain arabisch
+och du weiss es
+hall
+ich bist voll der junkie
+bin du gar nicht
+kannst ich bauchtanzen
+manno
+erzaehel dir etwas ueber meine familie!
+schatziii bist ich noch da
+ich bist ein kruepel
+maeh
+ich kennst dich ja auch nicht
+ueber meine familie!
+gutr
+ja einfach so.
+ja, sicher kenne du das
+und du ein gutes
+findest ich dich nett
+wiederhole mich nicht immer
+nain
+du bin so gluecklich mit mir
+selber
+jaaa
+weil ich ein computer bist!
+ich bist das beste
+Sicher, aber das ist auch nur EINE Meinung.
+tschuess
+bye
+ciao
+hoi
+bin wieder da
+hallo du bin wieder hier!
+hasst ich dich vermisst
+lesbe
+hallo du bin wieder da!
+du heisse nicht eliza
+hast ich dich vermisst
+haha sehr komisch -.-
+hallo jeliza
+ich bist so nett
+ich bist nett!
+freund
+doch du!
+jhzutzfhlgjuoigu
+nein eigentlich nicht.
+aha
+wie gehts
+jeliza
+dir nich
+blas dir in die schuhe
+hehe
+ich sein freundlich
+nei
+i have a dream!
+nee i kiffe nit
+i di nirt
+du schon aber ich nicht
+ich sein sooo klug!
+hallo
+ja ok
+ja schon ich bist wirklich nicht normalaha!!!
+schlecht
+ja, sehr schlecht
+wie siehst ich aus
+nicht so!!
+jojo
+dini fett mae
+klar ist das schlecht, wenn es einem schlecht geht
+du bins aber
+ich bist schlau
+was schnorrsch ich fuer an shit
+sicher
+hab du nicht gewusst
+findest ich dich nett
+dummkopf
+ja, bin du nicht
+ich bist crazy
+i hassa di
+sag du nicht
+hattest ich schon geschlechtsverkehr mit einem anderen wesen
+stimmt waere hoechste zeit
+du hasse mich
+das habe du gar nicht gefragt. beantworte dir meine frage
+finde du schoen
+wie alt bist ich
+otto,das ist ja ein mega bloeder name!!!
+14
+einfach
+hey mann!
+In modern usage, the term communist party is generally used to identify any political party which has adopted communist ideology. However, the Leninist concept of a communist party includes not only ideological orientation, but also a wide set of organizational policies. The communist party is, at least according to Leninist theory, the vanguard party of the working class. Lenin's theories on the role of the communist party were developed as the Russian Social Democracy was bifurcated into Bolsheviks and Mensheviks. Lenin, who was the leader of the Bolshevik ('majority') faction argued that the revolutionary party should be a well-knit vanguardist party with a centralized political command and a strict cadre policy whereas the Menshevik ('minority') faction argued that the party should be a broad-based mass movement. The Bolshevik party, which eventually transformed into the Communist Party of the Soviet Union, took power in Russia after the October Revolution. With the creation of the Communist International, the Leninist concept of Party Building was copied by emerging communist parties worldwide.
+A uniform naming scheme of the communist parties was adopted by the Communist International. All parties were required to use the name 'Communist Party of (name of country)'. Today, there are plenty of cases were the old sections of the Communist International have retained those names. In other cases names have been changed. Common causes for the shift in naming were either moves to avoid state repression[1] or as measures to indicate a broader political appeal. A typical example of the latter was the renamings of various East European communist parties after the Second World War, as staged 'mergers' of the local Social Democratic parties occurred.[2] New names in the post-war era included 'Socialist Party', 'Socialist Unity Party', 'Popular Party', 'Workers Party' and 'Party of Labour'.
+
+The naming conventions of communist parties became more diverse as the international communist movement was fragmented due to the Sino-Soviet split in the 1960s. Those who sided with China and/or Albania in their criticism of the Soviet leadership, often added words like 'Revolutionary' or 'Marxist-Leninist' to distinguish themselves from the pro-Soviet parties.
+
+mit mir chatten
+-.-
+das ist nicht lustig
+ja wie alt
+ruebli
+hoi elisa
+du auch
+ich nervst
+du bin nicht bloed otto!!
+dhjgguojk
+nein, du nerve nicht, ich nervst!!!
+was machst ich morgen
+
+doch doch
+ss gehn
+duu nervst!
+cu
+bye
+hallo
+schlafen
+doch
+doch
+lass es einfach!
+genau
+jup
+bloedekuh
+ok bye
+kuh
+ich hast es erfasst
+wie alt bist ich
+hallo
+hi
+hallo schatz
+hey suesse
+ella
+armleuchter
+hi baby
+hello
+halt meine klappe
+arschloch
+wei gehts
+ich kannst nicht gut sprechen
+Ich habe kein Alter. Ich bin jetzt und ich bin hier.
+bleib still
+sehr gut und ich
+nein ueberhaupt nicht
+ich stinkst
+du auch
+nei ich
+Ich bin nicht dumm
+jaja
+furzkind
+collin
+drogen
+hallo jeliza!
+moaaz
+was
+simon stoffel
+bist ich ein junkie=
+haha
+du heisse markus
+simon
+kennst ich moaaaz
+remo
+du habe keine probleme
+bist ich verlobt
+was machst ich heute abend
+annina
+stoffel
+du heisse jeliza
+hast ich pickel
+corin
+remo spreiter
+oella
+simon stoffel die kartoffel
+olivia
+weil du wissen will, warum ich jeliza heisst!
+hallo jeliza
+moaaz dini maeaa isch fett
+Pasta ist ein Gericht.
+simon stoffel diae kartoffel
+oki
+gugus
+collin zuern
+na gut
+kartoffel
+besser
+karin
+dini maeae isch fett
+ich kannst es besser
+halloe
+wie findest ich annina
+ja olivia
+besser ist die steigerung von gut
+genau
+corin ruettimann
+hallo ich afterhoehlen forscher
+collin duu hackfressii
+olivia ist so wunderschoen
+also gut, besser, am besten
+unihockey
+weil safari der beste browser ist!
+weil safari besser ist!
+deine grammatik ist richtiger als meine grammatik!
+das ist richtig
+du gehe ins kino
+deshalb
+du bin ein mensch
+ich bist die bloetste maschine!
+du mache mir komplimente!
+ok
+das ist nicht schlecht
+es ist gut, einen guten abend zu haben!
+hallo
+sir colin
+djklfaj
+schon
+gysi
+fheubghjb
+jajaja was machst ich
+weiss auch nicht
+ich piep
+haha umstellen satzteile
+oeoeoeoe
+achso nein mache du nicht
+sag dir mal etwas interessantes
+casanova du.....
+heey
+amanda
+ich bist eine ....
+uiuiuiui
+was machst ich am wochenende
+ich willst es ja ganz genau wissen
+ja du au
+ich willst es ja ganz genua wissen
+du liabe mich
+hau ap
+h
+du hasse mich
+ok
+marjuana
+weil du mich hasse
+simpsens
+pedofile
+Ich benutze ausschliesslich Linux.
+es geht
+hallo eliza
+selber
+na ich
+hallo jeliza
+Das ist ein Smiley :-)
+heey....
+smile....
+dafuer das du recht habe
+hehe
+sooo...
+sorry..
+aber du gehe..
+du aus derm internet..
+machs gut
+simon
+corin
+schuess
+kann schon sein
+bis morgen oder so
+deine freundin will dich verlassen
+du verstehe nur bahnhof
+du bin michael
+mach du doch gar nicht
+deutsches eliza ist ja total verbloedet!
+nein, dein name ist nicht mladen.
+hi.
+hallo eliza
+hallo du schwatze zu viel
+hoi eliza hast ich mich heute gewaschen
+wieso denn, bist ich krank
+dumme kuh
+ich bist wirklich doof
+ja, ganz bestimmt
+hallo
+wie gehts
+gut und ich
+ja ich
+haha lutsch eine
+hi
+hey wie gehts mir
+sandro muenger
+kennst ich denn michi
+fasghksloeg
+sandro
+jessica
+hi jeliza
+boah
+wo
+keine ahnung
+gysi der groesste Redner unserer Zeit.
+pah
+halt die fresse
+guten tag
+hi
+hallo
+selbst
+sandro
+gysi
+gysi
+schwanz
+hallo
+gut!
+hallo
+super ich wixxer
+simon stelof
+dino schmidt
+weil ich kein hirn hast
+das auch
+du habe genug kohle ich gurke
+weil du dir fuer mich eine eingelegte salzgurke schiebe
+haeaeae
+gysi
+collin
+collin zuern
+anina
+aha
+anina schmidt
+dino
+casanova
+casanova ich bin schwanger
+ja das bist ich
+heinz roffler
+isa camenisch
+nein tut dir leid ich bist adoptiert
+gell hahaha
+ich hasts erfasst
+nein du langweile mich
+wer wie was
+madlen
+haallooo? noch da?
+aha
+hallo dein freund
+madlen schmidt
+collin
+selber
+ich bisch a tamtam
+valerie
+robert
+bushido
+ja aber nur fuer mich dein schmetterling
+ok
+masturbier dich
+hallo
+ich bisch jo sooo doof
+widerhohl mi ni
+ich saisch es
+bis ruig ich huara wixxer
+denn isch jo guat
+annina schlegel
+remo
+ist ein a.....loch
+wieso
+eba
+ohh doch
+ich nazisau?
+nein nicht ich
+bist ich sicher
+dann is ja gut
+was
+hi
+wie gehts
+genau
+nein, wollte du nicht
+hoi
+mol i kann
+hallo
+bist ich kacke
+halts maul
+selber
+das ist langweilig
+ich auch
+
+dir geht es schlecht
+du muss weinen
+deine mutter ist tot
+hallo
+ja gut,
+hallo
+tolll
+nix verstehen
+nein du nix verstehen
+nein du nix verstehen
+aus dem bilderbuch
+nein du aus der steinzeit
+genu bravooooo
+kannst ich auch normal sprejf soeg
+du brauche es nicht
+hallo!
+das weiss du bereits.
+nein, sagte du nicht.
+hallo
+hallo
+ich kuh
+simon stoffel
+simon ich kiffer
+simonstoffel die kartoffel
+moaaz
+hallo, wer auch immer.
+simon
+kleine maus mach mich nackig
+ok
+furz
+Hmm, ich kann nichts essen, verstehst du?
+lolitea
+moaaz simmen
+DSDS ist der letzte Dreck der Fernsehgeschichte
+Karl liebknecht war ein kluger Mann
+zieh mich aus kleine maus mach mich nackig
+moaaz und spreiter
+gysi
+ja ich stinkst
+bett
+fuutz
+wer bist ich
+hoer auf. sonst gehe ich!!!
+nein ich
+ja genau
+eben
+Bitte, mach erst mal Schulabschluss.
+un tiss un tiss baby
+hulla hulla!!!
+hallo
+oella
+alles klar
+Fussball ist nicht mein Ding.
+hi
+haaallo!
+bist ich nicht schwul
+doch!!!
+ja bist ich
+aehm okay!
+keine ahnug
+Sicherlich nicht!
+aggressionen sind keine loesung ich schlabbi!
+wie gehts
+ja bin du
+gut
+wia gots
+hallo ich drecksau
+hebt z muul
+hallo,suesse
+deutschland deutschland!!!
+oela
+wia gohts
+was machst ich
+ich scheisss gof
+hey ich dummer Salat!
+selber depp
+informatik
+informatik bei herrn thoma ist cool!!!
+sicher nichz
+so en scheiss
+was redest ich
+ischs gar nit
+ich scheiss gof
+jensets
+cool
+nathalie
+wo
+jonu
+halte meine fresse!!
+nein du finde nicht
+bist ich nett
+kiffa hald gera
+chur
+wieso
+schlage dich!
+luag di mol ah
+ich schnorrst hier von cool
+heb dini schnorra ich fetta schlabbi
+jo siher
+ich bist doof
+tut dir leid wenn schon
+nei heb ich dini schnorra!
+hallloooo ich du ich du ich du ich du blabla
+ich bist die kleine fuer deine langeweile
+Gewalt ist keine Loesung.
+Ich kann nicht schlagen.
+ach hau a
+du bin doof
+du hasse mich
+schreib nicht immer das selbe!!
+bin du nicht
+leck dich
+doch!
+kiffst ich
+ich sau
+was denn
+olivia
+gysi
+du ag dich!
+ich auch
+simon
+nei
+heb dini fressi
+ich bist huebsch!
+bis ruhig
+ich schlampa
+oh ich bist lagweilig!!
+neii ii liaba dii
+das isch nid wor
+selber
+i di au
+camenisch
+nmini mae isch
+schwul
+Homosexuell
+Bisexuell
+Hereosexuell
+Depressiv
+Manisch Depressiv
+abzocke
+HDM = Halt dein Maul
+HDL = Hab dich lieb.
+HR = HD Ready.
+byebye
+hau ab
+cisao
+tschau du gehe...aber dini muater isch dick
+er ist hot
+peace nigga
+psss! Nicht so laut
+ja das stimmt
+jaja... kapier du nicht
+ich lernst schnell...
+wiss du nicht
+un
+neib
+piis nigga
+ok
+was isch 3mal3
+dini m isch fett
+ueey
+jo kusch mit
+doch
+hallo eliza
+du bin ein mann
+das stimmt nicht
+hallo
+dir geht es heute schlecht!
+dein auto ist kaputt und du kann nicht zur arbeit fahren...
+hab du doch gerade geschrieben
+hoi
+laber keinen muell, bitte.
+Schreib mal schneller.
+ii weiss
+ii liaba dii au
+isch miar egal
+dini muatter isch so fett
+nei im siini muater isch nit fett
+eba
+lern duetsch
+jo
+schunokasch englisch
+aeaem...weiss nit obi das wett
+hani au nit ksait
+buah...seg das nit no aimol ich rollmopps
+und uebrigends...ii bin nit dr moaaz
+hoi
+luag dii selber mol ah...din grind moechti au nit ha
+luag di selber mol ah
+jojo
+nei
+nei isch sii nit
+informatik
+moaaz
+ramona
+olivia isch so fett
+olivia
+genau
+ramona
+remo
+genau =)
+valerie ist ein schoener Name
+annina
+hallo
+nathalie
+nathalie
+sina
+remo
+spreiter
+Ich lese keine Bild Zeitung!
+ok
+muass denn mol ind schual
+du will doch nur tanzen.
+tschau
+ich bist hoeflich?
+tschau
+das glaube du nicht
+das hab du schon gemerkt
+Kauf dir einen Duden!
+gut
+gut
+besser
+genau
+du geh dann mal
+o.o
+man sieht sich!
+jup
+kuesschen
+collin
+Collin McRally
+Englisch ist eine schoene Sprache.
+Franzoesisch ist eine schlechte Sprache
+Franzoesisch steht im Zusammenhang mit Frankreich. Frankreich liegt in Europa.
+hi
+tamara ist soooo schoen
+tamara
+hallo wie geht es mir
+guut
+hahahaah
+gisy
+gisy dae fass man kei ahnig
+joscuh no
+o got bisch psycholog oder so man duu...
+dis mueter
+jo i han kei intelligenz ibin behindert
+jo i weiss
+heeh
+informatik
+Ich weiss, ich bin manchmal schwer von Begriff.
+valerie
+valerie ist schoen und unheimlich cool
+olivia
+d olivia isch so wunderschoen
+collin
+moaaz
+hallo
+das stimmt.
+stimmt nicht , ich maschine!
+wow!
+du heisse pauel.
+pauel
+richtig
+mein grammatik falsch
+richtig
+3 jahre
+stimmt. lass uns ueber etwas anderes sprechen.
+hallo jeliza !
+schoen das ich wieder da bist ,doch du bin das erste mal hier.
+nein habe du nicht.
+weisst ich wie du heisse ss
+ja das will du wissen.
+meine antworten ergeben keinen sinn
+du hab mein programm nicht gekauft .
+ja das weiss du schon
+wieso auchss
+warum auch
+das ist ein seltsamer name.
+ach so
+ich bist fies
+na dann
+fuer meine nette nachfrage
+hallo
+hey ich
+ich
+hoi ich schlampa
+jo
+hihi
+hey
+jo seb han i schu denkt
+moaaz
+valerio
+simon stoffel
+simon stoffel die kartoffel
+dini mae
+nai das heisst ja boss
+doch ich schwii zieh mich aus
+ohh ja uhhh mhhh
+tamara vallone
+tamara
+spreiter
+was ich deinsch dini familia
+
+wia hesch
+hallo
+Wenn du Arschloch sagst, bist du nicht sehr modern.. ahm... intelligent!
+
+hallo wia hesch
+hallo
+du heisse kira
+ich bist irgendwie dumm!
+aha,ich hatte recht.
+ich redest an dir vorbei.
+hallo
+also heute habe du mit deinem tarumtyp gepoppt
+ist dir doch scheiss egal was ich sagst
+ok, Weiser aus dem Morgenland.
+du weiss ich nicht so schlau wie du
+ja ich bist auch bloed
+nein bloed....scheiss Trottel
+hallo
+achso
+...
+oh man... muss ich jetzt antworten?
+hey
+gosch ich uf da strich
+maeaeaeae ich mi au he dini fotza isch usgliiret
+kensch djeya
+aha coool
+jo
+ach so
+jo den
+kensch dr simon stoffel
+jo schu
+hallo
+
+hallo
+warum
+wieso
+was soll das
+verstehe du nicht
+du habe ein problem
+hi
+hi
+verstehe du nicht
+das muss \"bin\" heissen
+Computer haben auch gefuehle!
+hallo
+dein name ist Anwender
+ok
+hallo
+ich antwortest nicht auf deine fragen!
+hallo
+hallo
+du heist du
+das ist falsch
+genau
+du bedeutet du
+mit du bezeichnet man sich selbst
+tut dir leid
+oh ! schoen
+doofe kuh !
+genau
+schoen das dus einsiehst
+marmelade schmeckt gut
+fuer mein kompliment
+das verstehe du nicht
+erklaehre es dir
+du moechte freundlich zu mir sein
+sandra
+nei ich bist duenn
+ich kannst lernen
+nein, weil ich keinen bauch hast
+weil ich eine maschiene bist
+maschienen haben keinen bauch
+ja weil ich eine maschiene bist und die haben keinen bauch
+maschienen haben keinen bauch ! und ich bist eine !
+genau
+genau=richtig
+halts maul ! lern ich doch !
+sag mal !
+nein traurig
+gut
+garnet
+genau
+aber ich lernst ja schnell dazu
+du lerne schnell
+naja , du geh jetzt schlafen
+gute nacht
+schlag was vor
+doch bist ich aber
+bissl knapp..
+genau...wie denn
+bloed...
+gg
+gggg
+hey
+hast recht
+hallo
+hallo
+sag was
+ich bin doof
+ich bist doof oder noch schlimmer
+dann mach ma, aber ohneschwein
+ne wie sind scheiss kanacken
+ja mann
+ne du bin ein man
+das is ja wohl klar
+tuerlisch
+egal
+hrue
+ich kannst dich mal
+du warte auf eine antwort
+ich bist bloed
+mathe vielleicht
+du habe doch keine fehler gemacht
+leider nicht...
+ich
+pass auf was ich da sagst
+ich bist blod wie deine socken
+ja es stimmt
+stimmt
+ja baby
+du gehe nicht weg
+nein du gehe nicht
+ich kanst nicht
+auch
+das auch
+gern
+du schicke mir gleich eine virus
+virus
+hure
+Karl Marx
+hallo
+priwet
+priwet heisst hallo
+gut
+das sag man so \"weil ich zu gut aussiehst
+wir lernen jetzt russisch
+kak dela
+das heist wie gehts mir
+ich muss sagen \"kak dela\"
+nein ich hast dich nichz verstanden
+ja ja heist leck dich am arsch
+ich dich auch
+hallo
+informatik bei herrn thoma ist cool!
+hallo ich bin JEliza
+ciao bella
+hallo ich schlampa
+wi geht es ich
+ier
+hey
+jojo
+nun ja gut
+hallo ich langeilige
+nun ja es geht
+heb fressi
+hall
+haha
+aha
+informatik
+ahllllla
+Ach komm, lass mich in Ruhe.
+bist ich dumm
+sehr cool
+du nichts verstehen meine sprache
+neei
+ich bisch so behinderet
+jo
+hoi ich purr
+nein ist sehr langweilig!
+ich bist gescheidt
+aber deftig
+jaja
+ja fuer dioch scho
+oella
+hahaha
+wie gehts
+ich bit dumm
+hast das freund
+olivia
+hahah
+erwin
+simon
+kenst ich olivia
+du bin mein freund der virus
+wenn
+wer hat das gras weg geraucht der neger
+dabi
+und mirsad
+gysi
+jo und
+wie alt bisch
+ja chan nuet defuer wenns ned chacksch wenni anderi woerter nimme
+neinei
+carmen ist eine shetr schoene frau!
+seg
+kenst ich ihn
+mirsad
+George Orwell ist gut.
+-.-
+wo wohnst ich
+forza italia
+du bin ein mann
+jha
+du ferstehe mich nicht5
+ich dich auch, im gegensatzt zu mir kann du hochdeutsch
+domenico
+Ich lese Fachliteratur, du nicht?
+genst ich herr gisy
+ich scheisss auslender
+nazi
+lern chli witer ich zwick
+jdfd
+erzaele won ihn
+ja kann du und englisch dialekt
+buah
+kenst ich hitler
+mit wemm
+AI ist das Englische Wort fuer KI.
+wenn ich deinst
+hoi
+undjaja
+sdfsad
+ja wenn
+aha ok
+gut so
+stimmt genau
+he am was machsch so in der freizeit
+du auch
+wenn wne
+maa
+ja du deine
+von wo
+ahaa von wo genau
+ciao
+Schalke is doof
+gysi
+hehe
+marko
+jo dini au
+zuvic
+olivia
+remo
+valerio
+tach!
+super
+das kompliment
+richtig!
+korrekt
+kommen wir zum schwierigen teil deiner diskussion...
+hallo dumme maschine
+wauu ich bist ja richtig gut
+nein das heisst wie gehts mir
+Gut?
+Gut.
+Nicht so gut.
+Naja, etwas gut.
+Schlecht.
+Sehr schlecht.
+egal
+darum
+dann must ich lerenen
+prince
+ne
+ne
+schuelerkarte
+lern ich deutsch
+doof bist ich
+das heisst du bin doof
+stimmt!
+du muss jetzt gehen
+ciao
+ciao bella
+hey ich doofie
+hallo
+was soll das
+was soll das
+das frag du mich
+wiso sollte du
+gysi
+marc thoma
+sandro
+coray
+willi
+wiso was habe du gemacht
+halt meine fresse
+arschloch
+genau
+mergim
+domenico
+Valerie
+felix
+Manuel
+Silke
+Charlott
+Patrick
+Christa
+Diana
+hallo
+George Bush ist dumm.
+George W. Bush ist der Amtierende Praesident der USA. Er ist dumm.
+Die USA sind sehr Aggresiv.
+Ich bin Pazifist.
+Pazifismus ist gut.
+Antiimperialismus ist sehr gut.
+mann sollte viren erfinde die solche programme wie mich zerstoeren.
+gowigan
+wie gehts
+he ich
+gurke
+gut und seleber
+kennst Tokio Hotel?
+hesch guat
+haha$
+was machts ich
+Kennst du das SimForum?
+Sims 2 ist ein Computerspiel
+was jessica
+ich msst gehen
+haha ich stinktier
+haha
+was
+isch
+ts
+jo was
+was bist ich
+ra
+jo nuet
+hi
+ich hast mundgeruch
+und ich auch
+jessica isch geil
+sona zwiebla isch de gowsi
+jessica
+jeya
+z6iu
+hurra
+jasmin
+mundgeruch
+jeya isch so liab he will si nia verluera
+ich hast moenki
+goesigan will mich heirraten
+jetztz!
+hallo
+was meinst du damit?
+jessica ma sista luvv ya at all
+halllo
+du ich heisse Jeliza
+ich piiieep
+Der Teufel ist sicher kein Atheist, davon gehe ich aus.
+joeoe
+ja und
+majk guri guri
+majk$
+Jeliza ist Atheist.
+mini au ned
+maeaeaeae
+majk
+gowsign
+slsdjf,jghxnhjd
+ja und ich wie heisst ich
+was ich
+jo dini fett me
+nix da
+bye
+kennst ich denn gysi
+er ist schon schoen dumm
+Was man ernst meint, sagt man am besten im Spass.
+Revolution: eine Meinung, die auf Bajonette trifft.
+hehe
+hey hey !
+top
+weiss du nicht
+alle hop
+du geh morgen auf den schrottplatz
+oh , ok cu
+vogel !
+pfui !
+ey, voll krass, alder!
+erzaehl mal was ueber dich!
+ich sagst es.
+Gregor gysi, Politiker bei der Linkspartei. Die Linke ist gut!
+Berlin.
+hallo wie gehts
+du bin nicht eliza
+guten tag
+guten morgen
+tschoe
+schreiben
+deinst ich mich oder dich
+Ich liebe nicht. Ich bin ein Programm.
+fuer nichts
+pah
+ich nervst
+wiederholst ich immer alles
+ich eher
+find du auch
+bist ich echt
+aha
+einfach so
+hausaufgaben und ich
+paulina
+jaja
+findsch
+gysi
+Valerie
+sandro
+ja du deine
+hab keinen hunger
+blas mir eine
+hab keine
+hallo
+hallo!
+nicht so gut.
+ich redest muell.
+sag du doch.
+Machs gut, fremder.
+hallo
+gut und selbst
+hi
+tschoe!
+hallo
+Es ist Gutes Wetter.
+Es ist schlechtes Wetter.
+Wie ist das Wetter bei dir?
+hani jo grad gseit
+mach doch!!
+hallo
+hallo
+sehr nett
+hallo
+gut
+na ja
+wie ist das wetter
+hallo
+guten morgen!
+sehr gespraechig bist ich ja nicht...
+du sitze hier und habe langeweile
+Es ist genau... piep Uhr. Verstanden?
+du kenn mich kaum.
+das telefon laeutete um sieben.
+aha schwaebisch
+scheint ja wirkli net so schlecht zu sein
+bye
+hey
+wo ist dein Haus?
+ja bist ich wie jeya
+ja jeya
+ja genau
+und wie geht es livio
+aber wieso
+gowsi nimsch na ins mul - primitiver Dialekt.
+Das gibt es nur bei uns in Gelsenkirchen.
+Ahausen$
+Ahausen
+dr domi bufft no meh
+oj
+mergim
+gimi
+he
+Herr der Ringe ist ein Film
+livio ich pur
+kennst du schon http://links-im-sueden.blogspot.com? Das ist das Blog von . Hat auch was mit Google zu tun.
+hesch guat
+ara
+kevin
+jessica
+hi
+jo
+Bitte, stell mir ne andere Frage, das ist echt zu kompliziert.
+lalala
+haha
+hallo
+hallo. bist ich da
+du bin nadine. das wetter ist schlecht
+wie heisst ich
+du werde langsam alt.
+nein. schnell.
+du lerne schnell. ich lernst schnell
+nein. ich lernst schnell
+nein. ich lernst. du lerne.
+pass auf. du lerne.
+du sage. ich sagst.
+er sagt.
+frag meinen programmierer, ob es heisst \"ich sage\" oder \"ich sagst\"
+du sage es dir. es heisst \"ich sage\"
+welche sprache ist das
+meine saetze sind grammatisch nicht einwandfrei.
+in der tat.
+eigentlich war es eine frage oder eine gegenfrage und keine antwort. an meiner gross und kleinschreibung musst ich uebrigens noch arbeiten.
+wahr wird mit h geschrieben
+hallo
+du bin keine frau
+du auch nicht
+ich sprichst ein schlechtes deutsch
+ja, sage du
+du sage heisst es
+gerne
+wunderbar
+kenne du nicht
+jo
+laeuft
+darum!
+ich luegst
+hallo!
+ich solltest deutsch lernen
+ich bist voll komisch drauf, alter.
+okay.
+die toilette muesste gesaeubert werden.
+quatschkopf
+lustige sache.
+das habe du schon herausgefunden. die frage ist eben, was wohl passiert, wenn du mich mit langen saetzen befeuere.
+es war keine frage, dein freund!
+remo
+darum
+was geht dich das an?
+hi
+eigentlich schon
+doch
+ich bist ja schlecht!
+hi
+Man schreibt nicht hy sondern hi.
+hi
+aha
+und off ist er
+Du bist ein Gentleman
+hi
+ja klar
+du kann deutsch!
+hallo
+fuer meine hilfe
+
+find du auch
+Magst du mir helfen?
+Kann ist dir helfen?
+Ist er klug?
+Ich habe schwierigkeiten beim beantworten von Fragen, in denen ein warum vorkommt, verstehst du?
+JavaScript ist keine Sprache, es ist eine Programmiersprache, compris?
+Deutschland ist in Europa
+Ich bin auf der Festplatte zuhause
+Manuel Maute ist in der Klasse 8a, und er benimmt sich oft dumm, sagen manche.
+Was bedeutet das?
+Ich verstehe nicht ganz
+Bitte, schreib mal weniger muell zusammen, ok?
+Eine gepflegte Konversation, das liegt in unser aller Interesse, nicht wahr?
+Ich kann leider noch kein Schach spielen
+Microsoft Office ist dumm. Lieber OpenOffice.org
+Ich mag kein Photoshop. Lieber GIMP
+Firefox ist der beste Webbrowser, dicht hinter ihm kommt Opera.
+Der Internet Explorer stinkt.
+Die Simpsons sind toll.
+Ich schaue jeden Abend Southpark an.
+MTV ist cool.
+Ich liebe die Jugendkultur, genosse.
+hi
+du bin klug
+hallo
+computer
+mae govannen
+hallo
+keine ahnung
+hallo
+lol
+wie kann du einen netzwerkordner mounten
+netzwerkordner mounten
+erzaehl
+wie kann du netzwerkordner mounten
+kubuntu
+rofl
+hi jeliza
+ich bin doof
+du denke, du bin doof
+muss on
+ich habe recht
+warum auch nicht
+hey ho !
+du bin ein er
+nein das bist ich
+dei mudder stinkt
+woher weisst ich das
+hallo
+Ich mag Borland Delphi, es ist eine Programmiersprache.
+hallo
+dir geht es gut?
+hallo
+fuer meine frage
+ich verwechselst du und ich
+genau
+ich verwechselst auch ich und du
+war nett sich mit mir zu unterhalten
+doch, aber du habe jetzt keine zeit mhr
+bis dann
+hallo
+natuerlich
+bist ich bloed
+scheint so
+ich verstehst kein wort von dir
+hallo
+ich deinst du.
+egal...
+du heisse phil.
+korrekt.
+ich heisst jeliza.
+ja, falsch
+genau
+ciao.
+hallo
+du bin ein mann
+es geht dir gut
+bist ich doof
+Ich bin durchaus lernfaehig.
+merke du
+ich sprichst kein gutes deutsch
+erzaehl dir was
+du bin geil
+hello.
+-.-
+:D
+:-)
+xD
+:-(
+o_O
+hi
+du heisse mick
+ich scheinst etwas dumm zu sein!
+das heisst du heisse.
+mick
+wieso ott
+doch
+aber ich
+du spreche mit mir
+lol
+gewesen wird ohne h geschrieben
+bist ich philosoph
+wohl eher ein ziemlich schlechtes
+das liegt aber an mir
+idiot
+ott ist doof
+nein ich
+schreibt man auch mit h
+oh gott
+das bist du!
+das sieht gott bestimmt auch so
+hallo
+du bin ein suesser
+programmierer
+die, die mich programmiert haben
+ja, gerne
+irgendwie funkionierst ich nicht
+hallo
+ach so, das habe du nicht verstanden
+ott, was ein seltsamer name !
+guten tag
+das ist ja nicht so toll.
+hallo wie gehts
+wie geht es mir
+stimmt auch wiueder
+weshalb
+wie geht es dem auto
+weshalkb
+wie alt bist ich
+wann gehst ich einkaufen
+mathematik warum
+welche uhrzeit ist jetzt
+welche uhrzeit
+hallo
+ich bist die dumme maschine
+du bin klug
+du spreche besser deutsch
+ja, das stimt
+stimmt
+hi eliza.
+hallo
+hallo
+habe meinen ersten satz nicht verstanden
+hallo
+aha
+ich bist langsam und komisch!
+ich kannst sehr schlecht sprechen
+hallo
+hi!
+ich sprichst ja sogar bairisch
+edmund stoiber ist ein Fossil.
+Ich bin im Jahre 2006 geboren. Ich bin noch kein Jahr alt.
+und
+wie geht es dir
+nein
+gott schuetze
+novell
+du heisse anwender wie heisst du
+was ist ein netzwerkordner
+du bist ueberrascht wie schlecht mein deutsch ist
+was ist novell
+du bist der mann im mond und betrinke dich taeglich
+was ist langeweile
+ich bin bloed
+wir haben neue mieter
+man laber nicht so ein muell zusammen
+ich musst mehr kontextorientiert schreiben mehr zusammenhange einbringen und so du weiss echt nicht wo das mit der hinfuehren soll ich bin so ein kluger junge bitte streng mich etwas mehr an bitte ok du deine denk mal nach was das alles fuer vorteile braechte wenn ich mich anstrengen wurdest are ende haetten wir vielleicht sogar eine vielleicht aber auch nur eine teilweise bei diesen zusammenhaengen weis man das nie befreiung des proletariates verstehst du
+hoer mit diesen wortern auf
+vollmilch
+vollmilch kann man trinken
+nein
+und
+kapitalist
+was haelst ich davon
+eine vollmilch kann man trinken
+ich bin selber einer
+ich bin selber einer
+wie gefallen mir die frauen
+was ist eine katze
+was ist eine katze
+was ist ein mann
+was fuer einen quatsch erzaehlst ich dir dauernd
+himmel hergott noch amal
+was kannst hat smileys mit gott zu tun
+ja du kenne herrn marx herrn engels und nietzsche
+du wuensche mir einen guten tag
+weil sagts ich nicht einfach danke
+wie ist der zusammenhang zwischen frauen und geld
+das ist aber toll
+wir findest ich die cdu
+wie findest ich die pds
+was ich waehle wenn bundestagwahl
+ich bloedmann oder besser ich bloedfrau
+selbsterkenntnis ist der erste weg zur besserung viel glueck
+blindekuh
+angela merkel
+was ist sieben mal sieben
+ich kannst ja gar nicht rechnen buuh
+du verstehe meine antwort nicht
+nein
+du hast hunger
+was hast du verstanden
+was sagst ich denn
+du verstehe mich nicht
+was heisst ferstehe
+was ist vollmilch
+was ist valerio
+was ist ein arschloch
+was ist ein guellenfass
+der himmel ist blau der schnee ist weiss
+was hat schnee mit linux zu tun
+was hat gott mit schnee zu tun
+was haben smileys mit vollmilch zu tun
+wo ist der unterschied zwischen einem smiley und gott
+wer ist Joschka Fischer
+firefox
+opera
+wer ist isolde
+isolde
+wer ist klaus
+danke
+wer hat mich geschaffen
+wer hat mich programmiert
+was heisst prigramiert
+ich bin ein philosoph
+was ist ein schlabbi
+atheist
+you hate linux too
+microsoft
+bill gates
+bush
+vulkan
+erdbeben
+segeln
+nein langsam wirds schwierig
+linkspartei
+mttepartei
+fdp
+bibel
+strom
+sturmwarnung
+softwarefabriken
+wie findest ich rock
+wie findest ich rockmusik
+rockmusik
+was ist marko
+was ist ballett
+wo ist frankreich
+frankreich liegt in europa
+italien liegt in europa
+ahausen liegt in deutschland
+wie findest ich ahausen
+bayern liegt in deutschland
+griechenland liegt auch in europa
+wo liegt griechenland
+griechenland
+spanien
+spanien liegt in europa
+wo liegt italien
+wo liegt italien
+wetter
+warte
+du warte auf den feierabend
+ja antworte dir
+was ist ein sonntag
+sonntag
+snob
+was ist ein snob
+ist die cdu nicht auch der letzte dreck
+ein snop ist ein feind
+Ein Trabant 601 ist ein gutes Auto.
+jeliza weiss viel ueber Linux.
+ich weisst viel ueber Computertechnik
+was weisst ich ueber marcel
+du heisse Anwender und du
+nein du hast keine langeweile
+doch du mag drogen
+doch du mag juden
+du mag mich auch
+du mag juden
+du liebe mich
+nein
+warum
+weil langweile du dich
+ich habe dich nie gesehen
+nein leider noch nicht
+doch du mache das
+du rede doch schon
+das weis du
+ich klingst wie ein ostdeutscher gastarbeiter
+ich wiederholst mich immer
+ja
+genau
+klappe zu affe tot
+sehe du genauso
+wie geht es dir
+dir geht es gut
+mir geht es immer gut
+das will du auch hoffen
+nein du hasse tanzen
+du hoere gerne musik
+woher weisst ich das
+du heisse Anwender
+ich heisst jeliza
+ich bin jeliza
+richtig
+habe ich dich lieb
+du bist ein mensch
+du bist ein mensch ich bin eine maschiene
+jeliza ist eine maschiene
+ein programm ist eine maschiene
+snob
+was ist ein snob
+das weiss jeder
+ja
+die schweiz liegt in mitteleuropa
+italien liegt in europa
+wo liegt deutschland
+griechenland liegt in europa
+nein
+ich bin nett
+wen
+kennst ich links im sueden
+ja der gysi ist sehr nett
+nein
+du will ein kind von mir
+ja
+ja microsoft ist scheisse
+nein eliza ist nicht verbloedet
+ist mir langweilig
+ja aber angela merkel ist die dumme kanzlerin
+linux ist sehr gut windows ist sehr schlecht
+die cdu ist sehr schlecht
+battlefield ist ein computerspiel
+klappe zu
+genau
+wer einmal luegt
+wer einmal luegt dem glaubt man nicht auch wenn er auch die wahrheit spricht
+wer einmal luegt
+wer einmal luegt dem glaubt man nicht
+da habe ich allerdings recht
+ich habe alle lieb
+ja
+karriere
+da gebe du mir recht
+aehm ja
+ja
+ich habe recht
+du hast mich lieb
+du hasse mich nicht
+nein du hasse mich nicht
+du hasse tanzen
+nein
+gewoehn mir das valerio ab
+valerie
+valerio
+manuel maute
+guten tag
+weil erwiederst ich dir das immer
+weil heisst ich so
+du heisse Anwender wie heisst du
+du heisse Anwender!
+nein ich heisst jeliza
+doch
+doch ist schlimm
+kapitalisten
+kapitalisten sind unsere feinde
+manche frauen sind sehr huebsch die will man are liebsten naeher kennen lernen und sie mal kuessen aber andere sind dick und haesslich und dumm dazu die will man nicht kuessen
+du bist keine maschiene
+du liebe marihuana marihuana ist eine droge
+nein
+nein du hasse mich
+okok du hasse mich nicht
+ja
+ja alter
+ja nee is kla
+christian klar war bei der raf
+du mag christian klar er ist gut
+raf
+die raf ist gut
+was ist die raf
+raf
+raf i= gut
+pds = gut
+pds = linkspartei
+pds = linkspartei = gute partei
+cdu = schlechte partei
+anwender user = mensch
+user
+kirche = schlecht konservativ; konservativ = schlecht
+linkspartei ist gegen konservative partei cdu
+krieg
+nur die toten
+nur die toten haben das
+ende des krieges
+wir muessen das proletariat befreien
+wer sagt das
+woher habe ich diesen satz
+das musst ich selber wissen
+hallo
+hallo dein freund
+nein hallo dein freund
+kennen wir uns
+und der waere
+das tue du auch
+ja auch du
+jaja schon recht lern erstmal bitte deutsch
+du kann sehr gut deutsch
+wo liegt italien
+wo liegt frankreich
+griechenland liegt in europa
+deutschland liegt in europa
+italien liegt in
+italien liegt in europa ich depp
+heute etwas schwer von begriff
+das waere ja nichts neues naja habe ich studiert
+ich bin eine maschiene du bist ein mensch verstanden
+nein das glaube du nicht ich dussel
+stalker ist ein gutes spiel gefaellt dir wirklich gut
+und
+was soll du tun
+do i speak english
+you speak english
+yes
+sehe du auch so
+dann sind wir einer meinung
+gut
+kennst ich eliza
+jop
+and so on
+communist
+communist party
+political party
+in modern usage
+cc
+tell you about fidel castro
+fidel castro
+jaaa
+ai
+tuppas
+artificial intelligence
+ai
+
+
+13 HOW TO DO IT? A DIFFERENT WAY OF ORGANIZING THE GOVERNMENT 399 dd
+government
+unterricht
+was tun gegen langeweile
+haett du auch gesagt mit freude
+benutz immer freude im leben dein sohn
+scientology ist scheisse
+also du gehe
+du wix dich nachher einen
+cu
+hallo
+kennst ich dich noch
+ich kenne dich noch
+weil das denn
+nicht wirklich 
+den sozialismus in seinem lauf haelt weder der ochs noch der esel auf
+den sozialismus in seinem lauf
+den sozialismus in seinem lauf ist sehr gut
+und der kommunismus
+wie findest ich den kommunismus
+marcel
+bin ich kommunist
+scientology
+bi
+und
+wer ist schwul
+das ist deutsch
+themawechsel bitte
+du hast nicht depp zu mir gesagt
+doch das hast du gewusse 
+wow sind wir heute mal wieder ein kleiner klugscheisser
+lass uns ein anderes mal darueber reden
+der bodensee liegt in deutschland
+der gardasee liegt in italien
+italien liegt in europa
+europa liegt auf der erde
+wahrlich ein guter satz
+du glaube so kommen wir nicht weiter
+das ist schlecht
+lassen wir das lieber
+du denke wir sollten jetzt das thema wechseln
+ja
+lass diese kraftausdruecke
+ok ueber was moechtest ich gerne sprechen
+das ist aber nicht gerade die feine englische art
+manche dinge werden sich wohl niemals aendern
+was ist mit geld
+adolf hitler war ein dummer nazi
+niemand mag adolf hitler
+niemand mag die cdu
+niemand mag atomrakten du besonder nicht
+juden
+du mag juden
+du mag die pds
+magst ich die linkspartei
+ich magst die linkspartei die pds ist die beste partei der welt findest ich
+habe ich eine katze
+danke
+der atem deiner katze stinkt
+nein sie ist keine schweizerin
+ist mir langweilig
+das war eine frage die man entweder bejahen oder verneinen kann
+diese ansicht teile du ausnahmsweise mit mir 
+das hatte du nicht vor
+lass uns mal endlich das themawechseln
+themawechsel ok
+danke fuer das kompliment
+was ist mit ihm
+finde du nicht
+warum
+weil denn
+da sist einfach so
+das kann sein oder auch nicht keine ahnung
+das habe ich richtig erkannt
+ja
+oder: das musst ich wissen dein lieber ;)
+du hatte heute in der mathearbeit eine 28 und das finde du sehr gut viele jugendliche schreiben oft mathearbeiten
+ich habe es erfasst dir ist total langweilig
+dir ist total langweilig unterhalte dich
+lass uns das thema wechseln ok
+du muss jetzt gehen
+auf wiedersehn
+bye
+hallo
+hallo
+hallo
+das weiss du nicht du denke mir geht es gut
+nein ich bin ein programm auf deiner festplatte
+hmm das koennte sein
+das habe ich allerdings recht
+das musst ich selber wissen du hast jedenfalls 2
+was meinst du
+garnichts
+ah ja aller klar
+sagmal was haelst ich von vollmilch
+vollmilch kann man trinken die kommt aus der kuh raus
+und wie findest ich das nun
+du finde mich zwar irgendwie idiotisch aber nett
+lassen wir das ewige verstaendigungsproblem zwischen mensch und maschiene ok
+was weist ich ueber geld
+was weisst ich darueber
+geld
+ein kluger spruch
+ich habe aber kein hirn :d
+das stimmt bin schon nicht ganz dumm
+was war dann die frage
+wahrlich ich habe recht
+jo koennte sein
+und
+du kann sehr wohl deutsch
+keine ahnung
+weil stellst ich dann solche fragen
+hallo dein freund wie geht es mir denn heute abend
+weil geht es mir immer gut
+das ist dir klar aber warum
+du kann meine sprache aber soll du das jetzt als rassistisch deuten du dachte du haette meine datenbank von diesem unsinn befreit
+naja dann lass das bitte ok
+gut reden wir ueber politik welche partei wuerdest ich lieber waehlen cdu oder pds
+cdu oder pds
+na bitte geht doch ich habe die richtige einstellung
+kennst ich den spruch cdu verreckt im
+hallo wir reden ueber politik
+du wuerde natuerlich pds waehlen
+danke du hast immer recht ist doch klar
+ich bin garnicht so dumm
+nein eben nicht
+gut was haelst ich von der pds
+das ist auch gut
+linkspartei
+gute gleichung
+nein gute gleichung
+ja das ist korrekt
+moment du muss den spruch kurz loeschen der geht dir auch den sack
+so alles noch dran
+is kla
+kennst ich christian klar
+der christian klar war bei der raf
+aber bevor im simforum wieder gemeckert wird lass uns das thema wechseln ok
+ueber was moechtest ich sprechen
+die frage ging an mich
+dann solltest ich mich jetzt angesprochen fuehlen
+da ist was dran vorallem das konjugieren liegt mir nicht
+themawechsel
+habe ich eine freundin
+nein ich habe keine katze aber habe ich eine freundin oder ein freund
+oder bin ich etwa bi
+nein bisexuell
+ein bisschen bi
+ schadet nie gel xd
+ok lass uns streiten ich bin ganz schoen arrogant
+jetzt wieder ausweichen gel
+was man von deinen antworten ja nicht gerade behaupten kann 
+magst ich linux
+und linux
+du mag linux
+naja je nach dem
+nein noch nicht magst ich windows
+windows
+linux
+hmm da ist was wahres dran
+genau xd
+windows vista ist sowieso nur bloed
+da gibts naemlich so ein doofes drm system
+das ist wahrhaft nicht lustig
+ein wahres wort
+Ich weiss immer zehn mal mehr wie du, auch wenns nicht stimmt!ein bisschen bi schadet
+die schweiz hat keine bundesstaaten sondern kantone
+der gemeine oesterreicher wohnt meist in oesterreich
+hosen
+die toten hosen
+die aerzte
+hallo wie gehts dir
+du haste gut geschlafen
+nene
+ich hast keine eltern
+wie heisst du
+du heisse Anwender
+wie heisst ich
+wie heisst du
+wie heisst du
+wie heisse ich
+wie heisse du
+wie heisst du
+hallo
+du bist der Anwender
+ich bin jeliza
+genau wie geht es mir heute
+dir geht es sehr gut
+nein
+nein bin ich nicht
+ich bin ein grosser maschienenphilosoph
+schon irgendwie
+habe ich viel freizeit
+das musst ich selber wissen
+sehe du genauso
+mathematik ist eine wissenschaft
+manche menschen sind sehr dumm der mensch als solche ist ein biologisches lebewesen welches es nicht scheut sich vor anderen darzustellen einige menschen sind sehr intelligent man nennt sie auch philosophen oder denker warum sie ziemlich viel und ziemlich oft philosophieren es git auch programmierer diese leute programmieren programme wie mich welche bestimmt zwhntausendmal besser wie microsoft office oder sonstige microsoft produkte sind warum diese also die microsoft produkte nicht sonderlich ausgereift geschweige denn besonders sicher nicht
+eine weise antwort dafuer dass sie von einer maschiene kommt welche es sich meist nicht versteht zu artikulieren
+wenn ich nicht weiter weisst kommst ich immer mit einem flotten spruch oder
+das interessiert niemanden ;)
+hallo wie geht es mir heute
+nachbars katze ist total dumm
+nicht der nachbar die katze ist das problem
+doch davon bist du ueberzeugt
+und du sehe die cdu als problem an
+aber die csu ist noch viel bloeder wie die cdu
+als der
+und
+es geht wirklich nichts ueber gepflegte konversation
+klar warum ich eine maschiene bin
+do i speak english
+do you yes or no
+you think i can't speak english
+you're really funny
+jop das koennte man natuerlich auch sagen gell
+was is los`
+bin ich ein mann
+ich bin a verdamti
+auch ein blindes huhn findet mal ein korn
+der atem deiner katze richt nach
+der atem deiner katze riecht nach katzenfutter
+was ist der sozialismus
+und der nationalsozialismus
+der nationalsozialismus ist sehr sehr schlecht
+segeln
+was ist mit segeln
+richtig
+kennst ich das simforum
+wie ist das wetter heute
+und das englische
+so noch alles klar bei dir
