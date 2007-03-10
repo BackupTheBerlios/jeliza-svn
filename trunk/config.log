@@ -632,7 +632,7 @@ configure:6982: $? = 0
 configure:6996: result: yes
 configure:7003: checking for _doprnt
 configure:7059: gcc -o conftest -g -O2   conftest.c  >&5
-/tmp/ccGlIvWI.o: In function `main':
+/tmp/ccCh4pMo.o: In function `main':
 /media/hdb5/workspace/JEliza/trunk/trunk/conftest.c:80: undefined reference to `_doprnt'
 collect2: ld returned 1 exit status
 configure:7065: $? = 1

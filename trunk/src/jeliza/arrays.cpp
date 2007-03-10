@@ -45,14 +45,15 @@ using namespace std;
 template<typename Typ>
 class MyArray {
     std::vector<Typ> m_vector;
+    int m_lastindex;
     
 public:
 //    typedef std::vector<Typ>::size_type size_type;
     typedef int size_type;
     
     // explicit MyArray (size_type groesse)
-    MyArray (size_type groesse)
-    : m_vector(groesse)
+    explicit MyArray (size_type groesse)
+    : m_vector(groesse), m_lastindex(0)
     {}
     
     MyArray (const MyArray& ma)
@@ -79,7 +80,12 @@ public:
     }
 
     void add (Typ t) {
-        m_vector[m_vector.size()] = t;
+        m_vector[m_lastindex] = t;
+        m_lastindex++;
+    }
+
+    void set (int x, Typ t) {
+        m_vector[x] = t;
     }
 };
 

@@ -34,7 +34,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = jeliza$(EXEEXT)
+bin_PROGRAMS = jeliza$(EXEEXT) grammartest$(EXEEXT) bytelang$(EXEEXT)
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(top_srcdir)/configure AUTHORS COPYING \
@@ -51,7 +51,23 @@ CONFIG_CLEAN_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
-am_jeliza_OBJECTS = jeliza-CircularBuffer.$(OBJEXT) \
+am_bytelang_OBJECTS = bytelang-jeliza.$(OBJEXT) \
+	bytelang-bytelanguage.$(OBJEXT) bytelang-arrays.$(OBJEXT) \
+	bytelang-string_compare.$(OBJEXT) bytelang-util.$(OBJEXT)
+bytelang_OBJECTS = $(am_bytelang_OBJECTS)
+bytelang_DEPENDENCIES =
+am_grammartest_OBJECTS = grammartest-jeliza.$(OBJEXT) \
+	grammartest-speechsyntax.$(OBJEXT) \
+	grammartest-arrays.$(OBJEXT) \
+	grammartest-string_compare.$(OBJEXT) \
+	grammartest-util.$(OBJEXT)
+grammartest_OBJECTS = $(am_grammartest_OBJECTS)
+grammartest_DEPENDENCIES =
+am_jeliza_OBJECTS = jeliza-jeliza.$(OBJEXT) \
+	jeliza-speechsyntax.$(OBJEXT) jeliza-arrays.$(OBJEXT) \
+	jeliza-main.$(OBJEXT) jeliza-server.$(OBJEXT) \
+	jeliza-string_compare.$(OBJEXT) jeliza-util.$(OBJEXT) \
+	jeliza-CircularBuffer.$(OBJEXT) \
 	jeliza-ISocketHandler.$(OBJEXT) \
 	jeliza-HttpDebugSocket.$(OBJEXT) jeliza-TcpSocket.$(OBJEXT) \
 	jeliza-ResolvServer.$(OBJEXT) jeliza-Mutex.$(OBJEXT) \
@@ -72,10 +88,7 @@ am_jeliza_OBJECTS = jeliza-CircularBuffer.$(OBJEXT) \
 	jeliza-SocketThread.$(OBJEXT) jeliza-HttpPutSocket.$(OBJEXT) \
 	jeliza-Uid.$(OBJEXT) jeliza-PoolSocket.$(OBJEXT) \
 	jeliza-Ipv4Address.$(OBJEXT) jeliza-HTTPSocket.$(OBJEXT) \
-	jeliza-socket_include.$(OBJEXT) jeliza-NullCrypt.$(OBJEXT) \
-	jeliza-jeliza.$(OBJEXT) jeliza-arrays.$(OBJEXT) \
-	jeliza-main.$(OBJEXT) jeliza-server.$(OBJEXT) \
-	jeliza-string_compare.$(OBJEXT) jeliza-util.$(OBJEXT)
+	jeliza-socket_include.$(OBJEXT) jeliza-NullCrypt.$(OBJEXT)
 jeliza_OBJECTS = $(am_jeliza_OBJECTS)
 jeliza_DEPENDENCIES =
 DEFAULT_INCLUDES = -I. -I$(srcdir)
@@ -90,8 +103,9 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(jeliza_SOURCES)
-DIST_SOURCES = $(jeliza_SOURCES)
+SOURCES = $(bytelang_SOURCES) $(grammartest_SOURCES) $(jeliza_SOURCES)
+DIST_SOURCES = $(bytelang_SOURCES) $(grammartest_SOURCES) \
+	$(jeliza_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -193,7 +207,35 @@ AM_CPPFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
 jeliza_LDADD = -lm -luuid -lpthread
 jeliza_CFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
 jeliza_CPPFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
-jeliza_SOURCES = ./src/socket/CircularBuffer.cpp \
+jeliza_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/speechsyntax.cpp \
+	./src/jeliza/arrays.cpp ./src/jeliza/main.cpp \
+	./src/jeliza/server.cpp ./src/jeliza/string_compare.cpp \
+	./src/jeliza/util.cpp ./src/socket/HttpdCookies.h \
+	./src/socket/ListenSocket.h ./src/socket/ICrypt.h \
+	./src/socket/MinderHandler.h ./src/socket/MemFile.h \
+	./src/socket/SocketThread.h ./src/socket/Event.h \
+	./src/socket/PoolSocket.h ./src/socket/HttpClientSocket.h \
+	./src/socket/Ipv4Address.h ./src/socket/HTTPSocket.h \
+	./src/socket/NullCrypt.h ./src/socket/StdLog.h \
+	./src/socket/CircularBuffer.h ./src/socket/SocketAddress.h \
+	./src/socket/Mutex.h ./src/socket/IEventOwner.h \
+	./src/socket/HttpdForm.h ./src/socket/SocketHandler.h \
+	./src/socket/MinderSocket.h ./src/socket/Lock.h \
+	./src/socket/HttpPostSocket.h ./src/socket/EventTime.h \
+	./src/socket/UdpSocket.h ./src/socket/MinionSocket.h \
+	./src/socket/CTcpSocket.h ./src/socket/Utility.h \
+	./src/socket/Thread.h ./src/socket/Parse.h ./src/socket/File.h \
+	./src/socket/EventHandler.h ./src/socket/HttpPutSocket.h \
+	./src/socket/Uid.h ./src/socket/SctpSocket.h \
+	./src/socket/Base64.h ./src/socket/IFile.h \
+	./src/socket/IEventHandler.h ./src/socket/Socket.h \
+	./src/socket/Ipv6Address.h ./src/socket/socket_include.h \
+	./src/socket/HttpdSocket.h ./src/socket/ISocketHandler.h \
+	./src/socket/HttpDebugSocket.h ./src/socket/TcpSocket.h \
+	./src/socket/ResolvServer.h ./src/socket/ResolvSocket.h \
+	./src/socket/StdoutLog.h ./src/socket/HttpGetSocket.h \
+	./src/jeliza/SocketHandler.h ./src/jeliza/TcpSocket.h \
+	./src/jeliza/ListenSocket.h ./src/socket/CircularBuffer.cpp \
 	./src/socket/ISocketHandler.cpp \
 	./src/socket/HttpDebugSocket.cpp ./src/socket/TcpSocket.cpp \
 	./src/socket/ResolvServer.cpp ./src/socket/Mutex.cpp \
@@ -214,36 +256,15 @@ jeliza_SOURCES = ./src/socket/CircularBuffer.cpp \
 	./src/socket/SocketThread.cpp ./src/socket/HttpPutSocket.cpp \
 	./src/socket/Uid.cpp ./src/socket/PoolSocket.cpp \
 	./src/socket/Ipv4Address.cpp ./src/socket/HTTPSocket.cpp \
-	./src/socket/socket_include.cpp ./src/socket/NullCrypt.cpp \
-	./src/jeliza/jeliza.cpp ./src/jeliza/arrays.cpp \
-	./src/jeliza/main.cpp ./src/jeliza/server.cpp \
-	./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp \
-	./src/socket/HttpdCookies.h ./src/socket/ListenSocket.h \
-	./src/socket/ICrypt.h ./src/socket/MinderHandler.h \
-	./src/socket/MemFile.h ./src/socket/SocketThread.h \
-	./src/socket/Event.h ./src/socket/PoolSocket.h \
-	./src/socket/HttpClientSocket.h ./src/socket/Ipv4Address.h \
-	./src/socket/HTTPSocket.h ./src/socket/NullCrypt.h \
-	./src/socket/StdLog.h ./src/socket/CircularBuffer.h \
-	./src/socket/SocketAddress.h ./src/socket/Mutex.h \
-	./src/socket/IEventOwner.h ./src/socket/HttpdForm.h \
-	./src/socket/SocketHandler.h ./src/socket/MinderSocket.h \
-	./src/socket/Lock.h ./src/socket/HttpPostSocket.h \
-	./src/socket/EventTime.h ./src/socket/UdpSocket.h \
-	./src/socket/MinionSocket.h ./src/socket/CTcpSocket.h \
-	./src/socket/Utility.h ./src/socket/Thread.h \
-	./src/socket/Parse.h ./src/socket/File.h \
-	./src/socket/EventHandler.h ./src/socket/HttpPutSocket.h \
-	./src/socket/Uid.h ./src/socket/SctpSocket.h \
-	./src/socket/Base64.h ./src/socket/IFile.h \
-	./src/socket/IEventHandler.h ./src/socket/Socket.h \
-	./src/socket/Ipv6Address.h ./src/socket/socket_include.h \
-	./src/socket/HttpdSocket.h ./src/socket/ISocketHandler.h \
-	./src/socket/HttpDebugSocket.h ./src/socket/TcpSocket.h \
-	./src/socket/ResolvServer.h ./src/socket/ResolvSocket.h \
-	./src/socket/StdoutLog.h ./src/socket/HttpGetSocket.h \
-	./src/jeliza/SocketHandler.h ./src/jeliza/TcpSocket.h \
-	./src/jeliza/ListenSocket.h
+	./src/socket/socket_include.cpp ./src/socket/NullCrypt.cpp
+grammartest_LDADD = -lm
+grammartest_CFLAGS = -g -Wall -fPIC -DPIC
+grammartest_CPPFLAGS = -g -Wall -fPIC -DPIC
+grammartest_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/speechsyntax.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
+bytelang_LDADD = -lm
+bytelang_CFLAGS = -g -Wall -fPIC -DPIC
+bytelang_CPPFLAGS = -g -Wall -fPIC -DPIC
+bytelang_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/bytelanguage.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
 LD_LIBRARY_PATH = .:./lib
 WIN_LD_LIBRARY_PATH = .:./lib:/media/hdb5/data/Dev-Cpp/lib
 all: all-am
@@ -306,6 +327,12 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+bytelang$(EXEEXT): $(bytelang_OBJECTS) $(bytelang_DEPENDENCIES) 
+	@rm -f bytelang$(EXEEXT)
+	$(CXXLINK) $(bytelang_LDFLAGS) $(bytelang_OBJECTS) $(bytelang_LDADD) $(LIBS)
+grammartest$(EXEEXT): $(grammartest_OBJECTS) $(grammartest_DEPENDENCIES) 
+	@rm -f grammartest$(EXEEXT)
+	$(CXXLINK) $(grammartest_LDFLAGS) $(grammartest_OBJECTS) $(grammartest_LDADD) $(LIBS)
 jeliza$(EXEEXT): $(jeliza_OBJECTS) $(jeliza_DEPENDENCIES) 
 	@rm -f jeliza$(EXEEXT)
 	$(CXXLINK) $(jeliza_LDFLAGS) $(jeliza_OBJECTS) $(jeliza_LDADD) $(LIBS)
@@ -316,6 +343,16 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bytelang-arrays.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bytelang-bytelanguage.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bytelang-jeliza.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bytelang-string_compare.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bytelang-util.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/grammartest-arrays.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/grammartest-jeliza.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/grammartest-speechsyntax.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/grammartest-string_compare.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/grammartest-util.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-Base64.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-CTcpSocket.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-CircularBuffer.Po@am__quote@
@@ -362,6 +399,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-server.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-socket_include.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-speechsyntax.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-string_compare.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jeliza-util.Po@am__quote@
 
@@ -378,6 +416,244 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+bytelang-jeliza.o: ./src/jeliza/jeliza.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-jeliza.o -MD -MP -MF "$(DEPDIR)/bytelang-jeliza.Tpo" -c -o bytelang-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-jeliza.Tpo" "$(DEPDIR)/bytelang-jeliza.Po"; else rm -f "$(DEPDIR)/bytelang-jeliza.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='bytelang-jeliza.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp
+
+bytelang-jeliza.obj: ./src/jeliza/jeliza.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-jeliza.obj -MD -MP -MF "$(DEPDIR)/bytelang-jeliza.Tpo" -c -o bytelang-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-jeliza.Tpo" "$(DEPDIR)/bytelang-jeliza.Po"; else rm -f "$(DEPDIR)/bytelang-jeliza.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='bytelang-jeliza.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`
+
+bytelang-bytelanguage.o: ./src/jeliza/bytelanguage.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-bytelanguage.o -MD -MP -MF "$(DEPDIR)/bytelang-bytelanguage.Tpo" -c -o bytelang-bytelanguage.o `test -f './src/jeliza/bytelanguage.cpp' || echo '$(srcdir)/'`./src/jeliza/bytelanguage.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-bytelanguage.Tpo" "$(DEPDIR)/bytelang-bytelanguage.Po"; else rm -f "$(DEPDIR)/bytelang-bytelanguage.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/bytelanguage.cpp' object='bytelang-bytelanguage.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-bytelanguage.o `test -f './src/jeliza/bytelanguage.cpp' || echo '$(srcdir)/'`./src/jeliza/bytelanguage.cpp
+
+bytelang-bytelanguage.obj: ./src/jeliza/bytelanguage.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-bytelanguage.obj -MD -MP -MF "$(DEPDIR)/bytelang-bytelanguage.Tpo" -c -o bytelang-bytelanguage.obj `if test -f './src/jeliza/bytelanguage.cpp'; then $(CYGPATH_W) './src/jeliza/bytelanguage.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/bytelanguage.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-bytelanguage.Tpo" "$(DEPDIR)/bytelang-bytelanguage.Po"; else rm -f "$(DEPDIR)/bytelang-bytelanguage.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/bytelanguage.cpp' object='bytelang-bytelanguage.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-bytelanguage.obj `if test -f './src/jeliza/bytelanguage.cpp'; then $(CYGPATH_W) './src/jeliza/bytelanguage.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/bytelanguage.cpp'; fi`
+
+bytelang-arrays.o: ./src/jeliza/arrays.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-arrays.o -MD -MP -MF "$(DEPDIR)/bytelang-arrays.Tpo" -c -o bytelang-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-arrays.Tpo" "$(DEPDIR)/bytelang-arrays.Po"; else rm -f "$(DEPDIR)/bytelang-arrays.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/arrays.cpp' object='bytelang-arrays.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp
+
+bytelang-arrays.obj: ./src/jeliza/arrays.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-arrays.obj -MD -MP -MF "$(DEPDIR)/bytelang-arrays.Tpo" -c -o bytelang-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-arrays.Tpo" "$(DEPDIR)/bytelang-arrays.Po"; else rm -f "$(DEPDIR)/bytelang-arrays.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/arrays.cpp' object='bytelang-arrays.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`
+
+bytelang-string_compare.o: ./src/jeliza/string_compare.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-string_compare.o -MD -MP -MF "$(DEPDIR)/bytelang-string_compare.Tpo" -c -o bytelang-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-string_compare.Tpo" "$(DEPDIR)/bytelang-string_compare.Po"; else rm -f "$(DEPDIR)/bytelang-string_compare.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/string_compare.cpp' object='bytelang-string_compare.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp
+
+bytelang-string_compare.obj: ./src/jeliza/string_compare.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-string_compare.obj -MD -MP -MF "$(DEPDIR)/bytelang-string_compare.Tpo" -c -o bytelang-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-string_compare.Tpo" "$(DEPDIR)/bytelang-string_compare.Po"; else rm -f "$(DEPDIR)/bytelang-string_compare.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/string_compare.cpp' object='bytelang-string_compare.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`
+
+bytelang-util.o: ./src/jeliza/util.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-util.o -MD -MP -MF "$(DEPDIR)/bytelang-util.Tpo" -c -o bytelang-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-util.Tpo" "$(DEPDIR)/bytelang-util.Po"; else rm -f "$(DEPDIR)/bytelang-util.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/util.cpp' object='bytelang-util.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp
+
+bytelang-util.obj: ./src/jeliza/util.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bytelang-util.obj -MD -MP -MF "$(DEPDIR)/bytelang-util.Tpo" -c -o bytelang-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/bytelang-util.Tpo" "$(DEPDIR)/bytelang-util.Po"; else rm -f "$(DEPDIR)/bytelang-util.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/util.cpp' object='bytelang-util.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bytelang_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bytelang-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`
+
+grammartest-jeliza.o: ./src/jeliza/jeliza.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-jeliza.o -MD -MP -MF "$(DEPDIR)/grammartest-jeliza.Tpo" -c -o grammartest-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-jeliza.Tpo" "$(DEPDIR)/grammartest-jeliza.Po"; else rm -f "$(DEPDIR)/grammartest-jeliza.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='grammartest-jeliza.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp
+
+grammartest-jeliza.obj: ./src/jeliza/jeliza.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-jeliza.obj -MD -MP -MF "$(DEPDIR)/grammartest-jeliza.Tpo" -c -o grammartest-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-jeliza.Tpo" "$(DEPDIR)/grammartest-jeliza.Po"; else rm -f "$(DEPDIR)/grammartest-jeliza.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='grammartest-jeliza.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`
+
+grammartest-speechsyntax.o: ./src/jeliza/speechsyntax.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-speechsyntax.o -MD -MP -MF "$(DEPDIR)/grammartest-speechsyntax.Tpo" -c -o grammartest-speechsyntax.o `test -f './src/jeliza/speechsyntax.cpp' || echo '$(srcdir)/'`./src/jeliza/speechsyntax.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-speechsyntax.Tpo" "$(DEPDIR)/grammartest-speechsyntax.Po"; else rm -f "$(DEPDIR)/grammartest-speechsyntax.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/speechsyntax.cpp' object='grammartest-speechsyntax.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-speechsyntax.o `test -f './src/jeliza/speechsyntax.cpp' || echo '$(srcdir)/'`./src/jeliza/speechsyntax.cpp
+
+grammartest-speechsyntax.obj: ./src/jeliza/speechsyntax.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-speechsyntax.obj -MD -MP -MF "$(DEPDIR)/grammartest-speechsyntax.Tpo" -c -o grammartest-speechsyntax.obj `if test -f './src/jeliza/speechsyntax.cpp'; then $(CYGPATH_W) './src/jeliza/speechsyntax.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/speechsyntax.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-speechsyntax.Tpo" "$(DEPDIR)/grammartest-speechsyntax.Po"; else rm -f "$(DEPDIR)/grammartest-speechsyntax.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/speechsyntax.cpp' object='grammartest-speechsyntax.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-speechsyntax.obj `if test -f './src/jeliza/speechsyntax.cpp'; then $(CYGPATH_W) './src/jeliza/speechsyntax.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/speechsyntax.cpp'; fi`
+
+grammartest-arrays.o: ./src/jeliza/arrays.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-arrays.o -MD -MP -MF "$(DEPDIR)/grammartest-arrays.Tpo" -c -o grammartest-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-arrays.Tpo" "$(DEPDIR)/grammartest-arrays.Po"; else rm -f "$(DEPDIR)/grammartest-arrays.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/arrays.cpp' object='grammartest-arrays.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp
+
+grammartest-arrays.obj: ./src/jeliza/arrays.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-arrays.obj -MD -MP -MF "$(DEPDIR)/grammartest-arrays.Tpo" -c -o grammartest-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-arrays.Tpo" "$(DEPDIR)/grammartest-arrays.Po"; else rm -f "$(DEPDIR)/grammartest-arrays.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/arrays.cpp' object='grammartest-arrays.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`
+
+grammartest-string_compare.o: ./src/jeliza/string_compare.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-string_compare.o -MD -MP -MF "$(DEPDIR)/grammartest-string_compare.Tpo" -c -o grammartest-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-string_compare.Tpo" "$(DEPDIR)/grammartest-string_compare.Po"; else rm -f "$(DEPDIR)/grammartest-string_compare.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/string_compare.cpp' object='grammartest-string_compare.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp
+
+grammartest-string_compare.obj: ./src/jeliza/string_compare.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-string_compare.obj -MD -MP -MF "$(DEPDIR)/grammartest-string_compare.Tpo" -c -o grammartest-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-string_compare.Tpo" "$(DEPDIR)/grammartest-string_compare.Po"; else rm -f "$(DEPDIR)/grammartest-string_compare.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/string_compare.cpp' object='grammartest-string_compare.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`
+
+grammartest-util.o: ./src/jeliza/util.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-util.o -MD -MP -MF "$(DEPDIR)/grammartest-util.Tpo" -c -o grammartest-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-util.Tpo" "$(DEPDIR)/grammartest-util.Po"; else rm -f "$(DEPDIR)/grammartest-util.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/util.cpp' object='grammartest-util.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp
+
+grammartest-util.obj: ./src/jeliza/util.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT grammartest-util.obj -MD -MP -MF "$(DEPDIR)/grammartest-util.Tpo" -c -o grammartest-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/grammartest-util.Tpo" "$(DEPDIR)/grammartest-util.Po"; else rm -f "$(DEPDIR)/grammartest-util.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/util.cpp' object='grammartest-util.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(grammartest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o grammartest-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`
+
+jeliza-jeliza.o: ./src/jeliza/jeliza.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-jeliza.o -MD -MP -MF "$(DEPDIR)/jeliza-jeliza.Tpo" -c -o jeliza-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-jeliza.Tpo" "$(DEPDIR)/jeliza-jeliza.Po"; else rm -f "$(DEPDIR)/jeliza-jeliza.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='jeliza-jeliza.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp
+
+jeliza-jeliza.obj: ./src/jeliza/jeliza.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-jeliza.obj -MD -MP -MF "$(DEPDIR)/jeliza-jeliza.Tpo" -c -o jeliza-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-jeliza.Tpo" "$(DEPDIR)/jeliza-jeliza.Po"; else rm -f "$(DEPDIR)/jeliza-jeliza.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='jeliza-jeliza.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`
+
+jeliza-speechsyntax.o: ./src/jeliza/speechsyntax.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-speechsyntax.o -MD -MP -MF "$(DEPDIR)/jeliza-speechsyntax.Tpo" -c -o jeliza-speechsyntax.o `test -f './src/jeliza/speechsyntax.cpp' || echo '$(srcdir)/'`./src/jeliza/speechsyntax.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-speechsyntax.Tpo" "$(DEPDIR)/jeliza-speechsyntax.Po"; else rm -f "$(DEPDIR)/jeliza-speechsyntax.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/speechsyntax.cpp' object='jeliza-speechsyntax.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-speechsyntax.o `test -f './src/jeliza/speechsyntax.cpp' || echo '$(srcdir)/'`./src/jeliza/speechsyntax.cpp
+
+jeliza-speechsyntax.obj: ./src/jeliza/speechsyntax.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-speechsyntax.obj -MD -MP -MF "$(DEPDIR)/jeliza-speechsyntax.Tpo" -c -o jeliza-speechsyntax.obj `if test -f './src/jeliza/speechsyntax.cpp'; then $(CYGPATH_W) './src/jeliza/speechsyntax.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/speechsyntax.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-speechsyntax.Tpo" "$(DEPDIR)/jeliza-speechsyntax.Po"; else rm -f "$(DEPDIR)/jeliza-speechsyntax.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/speechsyntax.cpp' object='jeliza-speechsyntax.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-speechsyntax.obj `if test -f './src/jeliza/speechsyntax.cpp'; then $(CYGPATH_W) './src/jeliza/speechsyntax.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/speechsyntax.cpp'; fi`
+
+jeliza-arrays.o: ./src/jeliza/arrays.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-arrays.o -MD -MP -MF "$(DEPDIR)/jeliza-arrays.Tpo" -c -o jeliza-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-arrays.Tpo" "$(DEPDIR)/jeliza-arrays.Po"; else rm -f "$(DEPDIR)/jeliza-arrays.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/arrays.cpp' object='jeliza-arrays.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp
+
+jeliza-arrays.obj: ./src/jeliza/arrays.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-arrays.obj -MD -MP -MF "$(DEPDIR)/jeliza-arrays.Tpo" -c -o jeliza-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-arrays.Tpo" "$(DEPDIR)/jeliza-arrays.Po"; else rm -f "$(DEPDIR)/jeliza-arrays.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/arrays.cpp' object='jeliza-arrays.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`
+
+jeliza-main.o: ./src/jeliza/main.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-main.o -MD -MP -MF "$(DEPDIR)/jeliza-main.Tpo" -c -o jeliza-main.o `test -f './src/jeliza/main.cpp' || echo '$(srcdir)/'`./src/jeliza/main.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-main.Tpo" "$(DEPDIR)/jeliza-main.Po"; else rm -f "$(DEPDIR)/jeliza-main.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/main.cpp' object='jeliza-main.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-main.o `test -f './src/jeliza/main.cpp' || echo '$(srcdir)/'`./src/jeliza/main.cpp
+
+jeliza-main.obj: ./src/jeliza/main.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-main.obj -MD -MP -MF "$(DEPDIR)/jeliza-main.Tpo" -c -o jeliza-main.obj `if test -f './src/jeliza/main.cpp'; then $(CYGPATH_W) './src/jeliza/main.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/main.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-main.Tpo" "$(DEPDIR)/jeliza-main.Po"; else rm -f "$(DEPDIR)/jeliza-main.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/main.cpp' object='jeliza-main.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-main.obj `if test -f './src/jeliza/main.cpp'; then $(CYGPATH_W) './src/jeliza/main.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/main.cpp'; fi`
+
+jeliza-server.o: ./src/jeliza/server.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-server.o -MD -MP -MF "$(DEPDIR)/jeliza-server.Tpo" -c -o jeliza-server.o `test -f './src/jeliza/server.cpp' || echo '$(srcdir)/'`./src/jeliza/server.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-server.Tpo" "$(DEPDIR)/jeliza-server.Po"; else rm -f "$(DEPDIR)/jeliza-server.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/server.cpp' object='jeliza-server.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-server.o `test -f './src/jeliza/server.cpp' || echo '$(srcdir)/'`./src/jeliza/server.cpp
+
+jeliza-server.obj: ./src/jeliza/server.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-server.obj -MD -MP -MF "$(DEPDIR)/jeliza-server.Tpo" -c -o jeliza-server.obj `if test -f './src/jeliza/server.cpp'; then $(CYGPATH_W) './src/jeliza/server.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/server.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-server.Tpo" "$(DEPDIR)/jeliza-server.Po"; else rm -f "$(DEPDIR)/jeliza-server.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/server.cpp' object='jeliza-server.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-server.obj `if test -f './src/jeliza/server.cpp'; then $(CYGPATH_W) './src/jeliza/server.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/server.cpp'; fi`
+
+jeliza-string_compare.o: ./src/jeliza/string_compare.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-string_compare.o -MD -MP -MF "$(DEPDIR)/jeliza-string_compare.Tpo" -c -o jeliza-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-string_compare.Tpo" "$(DEPDIR)/jeliza-string_compare.Po"; else rm -f "$(DEPDIR)/jeliza-string_compare.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/string_compare.cpp' object='jeliza-string_compare.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp
+
+jeliza-string_compare.obj: ./src/jeliza/string_compare.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-string_compare.obj -MD -MP -MF "$(DEPDIR)/jeliza-string_compare.Tpo" -c -o jeliza-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-string_compare.Tpo" "$(DEPDIR)/jeliza-string_compare.Po"; else rm -f "$(DEPDIR)/jeliza-string_compare.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/string_compare.cpp' object='jeliza-string_compare.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`
+
+jeliza-util.o: ./src/jeliza/util.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-util.o -MD -MP -MF "$(DEPDIR)/jeliza-util.Tpo" -c -o jeliza-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-util.Tpo" "$(DEPDIR)/jeliza-util.Po"; else rm -f "$(DEPDIR)/jeliza-util.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/util.cpp' object='jeliza-util.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp
+
+jeliza-util.obj: ./src/jeliza/util.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-util.obj -MD -MP -MF "$(DEPDIR)/jeliza-util.Tpo" -c -o jeliza-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-util.Tpo" "$(DEPDIR)/jeliza-util.Po"; else rm -f "$(DEPDIR)/jeliza-util.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/util.cpp' object='jeliza-util.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`
 
 jeliza-CircularBuffer.o: ./src/socket/CircularBuffer.cpp
 @am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-CircularBuffer.o -MD -MP -MF "$(DEPDIR)/jeliza-CircularBuffer.Tpo" -c -o jeliza-CircularBuffer.o `test -f './src/socket/CircularBuffer.cpp' || echo '$(srcdir)/'`./src/socket/CircularBuffer.cpp; \
@@ -966,90 +1242,6 @@ jeliza-NullCrypt.obj: ./src/socket/NullCrypt.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/socket/NullCrypt.cpp' object='jeliza-NullCrypt.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-NullCrypt.obj `if test -f './src/socket/NullCrypt.cpp'; then $(CYGPATH_W) './src/socket/NullCrypt.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/socket/NullCrypt.cpp'; fi`
-
-jeliza-jeliza.o: ./src/jeliza/jeliza.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-jeliza.o -MD -MP -MF "$(DEPDIR)/jeliza-jeliza.Tpo" -c -o jeliza-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-jeliza.Tpo" "$(DEPDIR)/jeliza-jeliza.Po"; else rm -f "$(DEPDIR)/jeliza-jeliza.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='jeliza-jeliza.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp
-
-jeliza-jeliza.obj: ./src/jeliza/jeliza.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-jeliza.obj -MD -MP -MF "$(DEPDIR)/jeliza-jeliza.Tpo" -c -o jeliza-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-jeliza.Tpo" "$(DEPDIR)/jeliza-jeliza.Po"; else rm -f "$(DEPDIR)/jeliza-jeliza.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='jeliza-jeliza.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`
-
-jeliza-arrays.o: ./src/jeliza/arrays.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-arrays.o -MD -MP -MF "$(DEPDIR)/jeliza-arrays.Tpo" -c -o jeliza-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-arrays.Tpo" "$(DEPDIR)/jeliza-arrays.Po"; else rm -f "$(DEPDIR)/jeliza-arrays.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/arrays.cpp' object='jeliza-arrays.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp
-
-jeliza-arrays.obj: ./src/jeliza/arrays.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-arrays.obj -MD -MP -MF "$(DEPDIR)/jeliza-arrays.Tpo" -c -o jeliza-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-arrays.Tpo" "$(DEPDIR)/jeliza-arrays.Po"; else rm -f "$(DEPDIR)/jeliza-arrays.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/arrays.cpp' object='jeliza-arrays.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`
-
-jeliza-main.o: ./src/jeliza/main.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-main.o -MD -MP -MF "$(DEPDIR)/jeliza-main.Tpo" -c -o jeliza-main.o `test -f './src/jeliza/main.cpp' || echo '$(srcdir)/'`./src/jeliza/main.cpp; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-main.Tpo" "$(DEPDIR)/jeliza-main.Po"; else rm -f "$(DEPDIR)/jeliza-main.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/main.cpp' object='jeliza-main.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-main.o `test -f './src/jeliza/main.cpp' || echo '$(srcdir)/'`./src/jeliza/main.cpp
-
-jeliza-main.obj: ./src/jeliza/main.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-main.obj -MD -MP -MF "$(DEPDIR)/jeliza-main.Tpo" -c -o jeliza-main.obj `if test -f './src/jeliza/main.cpp'; then $(CYGPATH_W) './src/jeliza/main.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/main.cpp'; fi`; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-main.Tpo" "$(DEPDIR)/jeliza-main.Po"; else rm -f "$(DEPDIR)/jeliza-main.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/main.cpp' object='jeliza-main.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-main.obj `if test -f './src/jeliza/main.cpp'; then $(CYGPATH_W) './src/jeliza/main.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/main.cpp'; fi`
-
-jeliza-server.o: ./src/jeliza/server.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-server.o -MD -MP -MF "$(DEPDIR)/jeliza-server.Tpo" -c -o jeliza-server.o `test -f './src/jeliza/server.cpp' || echo '$(srcdir)/'`./src/jeliza/server.cpp; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-server.Tpo" "$(DEPDIR)/jeliza-server.Po"; else rm -f "$(DEPDIR)/jeliza-server.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/server.cpp' object='jeliza-server.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-server.o `test -f './src/jeliza/server.cpp' || echo '$(srcdir)/'`./src/jeliza/server.cpp
-
-jeliza-server.obj: ./src/jeliza/server.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-server.obj -MD -MP -MF "$(DEPDIR)/jeliza-server.Tpo" -c -o jeliza-server.obj `if test -f './src/jeliza/server.cpp'; then $(CYGPATH_W) './src/jeliza/server.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/server.cpp'; fi`; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-server.Tpo" "$(DEPDIR)/jeliza-server.Po"; else rm -f "$(DEPDIR)/jeliza-server.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/server.cpp' object='jeliza-server.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-server.obj `if test -f './src/jeliza/server.cpp'; then $(CYGPATH_W) './src/jeliza/server.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/server.cpp'; fi`
-
-jeliza-string_compare.o: ./src/jeliza/string_compare.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-string_compare.o -MD -MP -MF "$(DEPDIR)/jeliza-string_compare.Tpo" -c -o jeliza-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-string_compare.Tpo" "$(DEPDIR)/jeliza-string_compare.Po"; else rm -f "$(DEPDIR)/jeliza-string_compare.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/string_compare.cpp' object='jeliza-string_compare.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp
-
-jeliza-string_compare.obj: ./src/jeliza/string_compare.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-string_compare.obj -MD -MP -MF "$(DEPDIR)/jeliza-string_compare.Tpo" -c -o jeliza-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-string_compare.Tpo" "$(DEPDIR)/jeliza-string_compare.Po"; else rm -f "$(DEPDIR)/jeliza-string_compare.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/string_compare.cpp' object='jeliza-string_compare.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`
-
-jeliza-util.o: ./src/jeliza/util.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-util.o -MD -MP -MF "$(DEPDIR)/jeliza-util.Tpo" -c -o jeliza-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-util.Tpo" "$(DEPDIR)/jeliza-util.Po"; else rm -f "$(DEPDIR)/jeliza-util.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/util.cpp' object='jeliza-util.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp
-
-jeliza-util.obj: ./src/jeliza/util.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jeliza-util.obj -MD -MP -MF "$(DEPDIR)/jeliza-util.Tpo" -c -o jeliza-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jeliza-util.Tpo" "$(DEPDIR)/jeliza-util.Po"; else rm -f "$(DEPDIR)/jeliza-util.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/util.cpp' object='jeliza-util.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jeliza_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jeliza-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`
 uninstall-info-am:
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
@@ -1454,12 +1646,16 @@ distribution: packlinux clean
 	find tmp_dist/ -name "*~*" -exec rm -rf '{}' \; ; true
 	find tmp_dist/ -name "*~*" -exec rm -rf '{}' \; ; true
 
-	rm -rf ../distribution ; true
+	rm -rf ../distribution/*.zip ; true
+	rm -rf ../distribution/*.gz ; true
 	mkdir ../distribution ; true
 
 	cd tmp_dist ; cd windows ; zip -r ../../../distribution/win.zip *
 	cd tmp_dist ; cd linux ; tar cplzSf ../../../distribution/linux.tar.gz *
 	cd tmp_dist ; cd src ; zip -r ../../../distribution/src.zip *
+
+java:
+	find javagui -name "*.java" -exec javac '{}' \;
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
