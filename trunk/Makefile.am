@@ -1,6 +1,6 @@
 CFLAGS=-g -Wall -fPIC -DPIC -Isrc/socket
 AM_CPPFLAGS=-g -Wall -fPIC -DPIC -Isrc/socket
-bin_PROGRAMS = jeliza grammartest bytelang
+bin_PROGRAMS = jeliza grammartest bytelang jelizagtk
 jeliza_LDADD =  -lm -luuid -lpthread
 jeliza_CFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
 jeliza_CPPFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
@@ -10,6 +10,11 @@ grammartest_LDADD =  -lm
 grammartest_CFLAGS = -g -Wall -fPIC -DPIC
 grammartest_CPPFLAGS = -g -Wall -fPIC -DPIC
 grammartest_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/speechsyntax.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
+
+jelizagtk_LDADD = -lm -lgtkmm-2.4  -lgdkmm-2.4  -latkmm-1.6  -lpangomm-1.4  -lcairomm-1.0  -lglibmm-2.4  -lsigc-2.0   -latk-1.0  -lgdk_pixbuf-2.0  -lpangocairo-1.0  -lcairo  -lpangoft2-1.0  -lfontconfig  -lfreetype  -lz  -lpango-1.0  -lm  -lgobject-2.0  -lgmodule-2.0  -lglib-2.0  -lglade-2.0 -lglademm-2.4
+jelizagtk_CFLAGS = -g -Wall -fPIC -DPIC 
+jelizagtk_CPPFLAGS = -g -Wall -fPIC -DPIC -I/usr/include/gtkmm-2.4  -I/usr/lib/gtkmm-2.4/include  -I/usr/include/glibmm-2.4  -I/usr/lib/glibmm-2.4/include  -I/usr/include/gdkmm-2.4  -I/usr/lib/gdkmm-2.4/include  -I/usr/include/pangomm-1.4  -I/usr/include/atkmm-1.6  -I/usr/include/gtk-2.0  -I/usr/include/sigc++-2.0  -I/usr/lib/sigc++-2.0/include  -I/usr/include/glib-2.0  -I/usr/lib/glib-2.0/include  -I/usr/lib/gtk-2.0/include  -I/usr/include/cairomm-1.0  -I/usr/include/pango-1.0  -I/usr/include/cairo  -I/usr/include/freetype2  -I/usr/include/atk-1.0  -I/usr/include/libglademm-2.4
+jelizagtk_SOURCES = ./src/jeliza/jeliza.cpp ./src/gtkgui/jelizagtk.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
 
 bytelang_LDADD =  -lm
 bytelang_CFLAGS = -g -Wall -fPIC -DPIC

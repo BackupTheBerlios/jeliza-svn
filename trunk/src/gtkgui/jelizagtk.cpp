@@ -39,25 +39,12 @@
 #include "../jeliza/arrays.cpp"
 
 #include <gtkmm.h>
+#include <libglademm.h> 
 
 using namespace std;
+using namespace Gtk; 
 
-class MyWindow : public Gtk::Window {
-public:
-	
-	Gtk::VBox   	m_vbox;
-	Gtk::HBox   	m_hbox;
-//	Gtk::Label  	m_label1;
-//	Gtk::Label  	m_label2;
-//	Gtk::Label  	m_label3;
-	Gtk::Entry  	m_entry; 
-	Gtk::TextView  	m_textview; 
-	Gtk::Button  	m_ask; 
-	
-	MyWindow();
-};    
-
-void AskJEliza(MyWindow* mw) {
+/*void AskJEliza() {
 	JEliza jeliza(1);
 	jeliza.init();
 	string fra = mw->m_entry.get_text();
@@ -68,38 +55,473 @@ void AskJEliza(MyWindow* mw) {
 	mw->m_entry.set_text("");
 	
 	cout << "asked" << endl;
+}*/
+
+
+class MainWindow : public Gtk::Window {
+    public:
+        //zugriff auf glade-datei
+        Glib::RefPtr<Gnome::Glade::Xml> &refXml;
+       
+        /*
+            wir wollen die fenster informationen aus einer glade-datei laden.
+            mittels 'get_widget_derived' (s. main.cpp) kann auf eine abgeleitete
+            klasse zugegriffen werden. zum instanziieren ruft 'get_widget_derived'
+            einen CTor auf, welcher eben diese signatur haben muss. 'base' ist
+            hierbei der c-typ (gtk+) und enthaelt bereits alle relervanten
+            informationen ueber das fenster. 'refXml' ist hierbei wichtig, da
+            wir damit die member der klasse aus der glade-datei herauslesen und
+            den klassenmembern zuweisen koennen (siehe implementierung des ctor)
+        */
+        
+	MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &refXml);
+};
+
+
+string toASCII(string all) {
+	string ascii = " \n\r!\"#$%&'()*+,-./0123456789:;<=>?    @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_    `abcdefghijklmnopqrstuvwxyz{|}~";
+	
+	string allAscii = "";
+	for (int x = 0; x < all.size(); x++) {
+		char array[2];
+		array[0] = all[x];
+		array[1] = '\0';
+		string y(array);
+		if (Util::contains(ascii, y)) {
+			allAscii += y;
+		}
+	}
+	
+	return allAscii;
 }
 
-MyWindow::MyWindow()
-: Gtk::Window(), m_vbox(false, 1), m_hbox(false, 5), m_ask("  Fragen  ")
-{
-	// Text der Titelleiste setzen
-	set_title("JEliza 2.1");
+class Data2 {
+public:
+	Gtk::FileChooserDialog* dlg;
+	MainWindow* win;
+};
+
+void on_open_activate(Data2& data) {
+	Gtk::FileChooserDialog dialog("Wortschatz oeffnen", Gtk::FILE_CHOOSER_ACTION_OPEN);
+	dialog.set_transient_for(*data.win);
 	
-	m_hbox.pack_start(m_entry, Gtk::PACK_EXPAND_WIDGET);
-	m_hbox.pack_start(m_ask, Gtk::PACK_SHRINK);
+	dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
+	dialog.add_button(Gtk::Stock::OPEN, Gtk::RESPONSE_OK);
+
 	
-	m_vbox.pack_start(m_textview, Gtk::PACK_EXPAND_WIDGET);
-	m_vbox.pack_start(m_hbox, Gtk::PACK_SHRINK);
+	Gtk::FileFilter filter_any;
+	filter_any.set_name("Alle Dateien");
+	filter_any.add_pattern("*");
+	dialog.add_filter(filter_any);
+	data.dlg = &dialog;
 	
-	// die vertikale Box an das Fenster uebergeben
-	add(m_vbox);
+	JEliza jeliza(1);
+	jeliza.init();
+	string buffer;
+	ofstream o("JEliza.txt", ios::app | ios::ate);
 	
-	m_ask.signal_clicked().connect(sigc::bind<MyWindow*>(sigc::ptr_fun(&AskJEliza), this)); 
+	std::string filename;
+	if (data.dlg->run() == Gtk::RESPONSE_OK) { // RESPONSE_ACCEPT
+		filename = data.dlg->get_filename();
+		Gtk::MessageDialog dia3(*data.win, Glib::ustring(filename + "\nWird nun in die Datenbank geladen"));
+		dia3.run(); 
+		
+		ifstream in(filename.c_str());
+		
+		while (in) {
+			getline(in, buffer);
+			o << Util::strip(buffer) << "\n" << endl;
+		}
+		
+		in.close();
+	}
 	
-	// sorgt dafuer, dass alle Widgets angezeigt werden
-	show_all_children();
+	o.close();
+	Gtk::MessageDialog dia3(*data.win, Glib::ustring(filename + ":\nErfolgreich geladen!"));
+	dia3.run(); 
 }
 
+void on_save_activate(Data2& data) {  
+	Gtk::FileChooserDialog dialog("Wortschatz oeffnen", Gtk::FILE_CHOOSER_ACTION_SAVE);
+	dialog.set_transient_for(*data.win);
+	
+	dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
+	dialog.add_button(Gtk::Stock::OPEN, Gtk::RESPONSE_OK);
+
+	
+	Gtk::FileFilter filter_any;
+	filter_any.set_name("Alle Dateien");
+	filter_any.add_pattern("*");
+	dialog.add_filter(filter_any);
+	data.dlg = &dialog;
+	
+	JEliza jeliza(1);
+	jeliza.init();
+	string buffer;
+	
+	
+	std::string filename;
+	if (data.dlg->run() == Gtk::RESPONSE_OK) { // RESPONSE_ACCEPT
+		filename = data.dlg->get_filename();
+		Gtk::MessageDialog dia3(*data.win, Glib::ustring("Die Datenbank wird nun nach \n" + filename + "\nexportiert"));
+		dia3.run(); 
+		
+		ifstream in("JEliza.txt");
+		ofstream o(filename.c_str());
+		
+		while (in) {
+			getline(in, buffer);
+			o << Util::strip(buffer) << "\n" << endl;
+		}
+		
+		in.close();
+		o.close();
+	}
+	
+//	o.close();
+	Gtk::MessageDialog dia3(*data.win, Glib::ustring(filename + ":\nErfolgreich exportiert!"));
+	dia3.run(); 
+}
+
+void on_close_activate(Data2& data) {  
+	data.win->hide();
+}
+
+void on_cut_activate() {  
+}
+
+void on_copy_activate() {  
+}
+
+void on_paste_activate() {  
+}
+
+void on_delete_activate() {  
+}
+
+class Data3 {
+public:
+	Gtk::Dialog* dialog;
+	MainWindow* win;
+	Gtk::TextView* tv;
+	Gtk::TextView* talk;
+	Glib::RefPtr<Gtk::TextBuffer> buf;
+};
+
+void on_einstellungen_activate(Data3& data) {  
+	ifstream in("JEliza.txt");
+	string buffer;
+	string all = "";
+	while (in) {
+		getline(in, buffer);
+		all += Util::replace(buffer, string("\r"), string(""));
+		all += "\n";
+	}
+	in.close();
+	all = toASCII(all);
+	
+	data.buf = data.tv->get_buffer();
+	data.buf->set_text(all);
+	data.tv->set_buffer(data.buf);
+	
+	data.dialog->show();
+	data.dialog->show_all_children();
+	
+//	if (data.dialog->run() == Gtk::RESPONSE_OK) {
+//	}
+}
+
+void on_okbutton1_clicked(Data3& data) {
+	data.dialog->hide();
+
+	data.buf = data.tv->get_buffer();
+	
+	ofstream o("JEliza.txt");
+	
+	string all;
+	Gtk::TextBuffer::iterator iter = data.buf->begin();
+	while (iter != data.buf->end()) {
+		all += *iter;
+		++iter;
+	}
+	
+	all = toASCII(all);
+	o << all << endl;
+	o.close();
+}
+
+void on_cancelbutton1_clicked(Data3& data) {
+	data.dialog->hide();
+}
+
+void on_info_activate(Data3& data) {  
+	Gtk::AboutDialog ad;
+	
+	
+	vector<string> v1(2);
+	v1.push_back("Tobias Schulz");
+	v1.push_back("Marcel Kunzmann");
+	ad.set_authors(v1);
+	
+	ad.set_copyright("Tobias Schulz & Marcel Kunzmann");
+	
+	string tmp1 = "";
+	tmp1 += "JEliza is free software; you can redistribute it and/or ";
+	tmp1 += "modify it under the terms of the GNU General Public ";
+	tmp1 += "License as published by the Free Software Foundation; either ";
+	tmp1 += "version 2.1 of the License, or (at your option) any later ";
+	tmp1 += "version. ";
+	tmp1 += "\n\n";
+	tmp1 += "JEliza is distributed in the hope that it will be useful, but ";
+	tmp1 += "WITHOUT ANY WARRANTY; without even the implied warranty of ";
+	tmp1 += "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. ";
+	tmp1 += "See the GNU General Public License for more details. ";
+	tmp1 += "\n\n";
+	tmp1 += "You should have received a copy of the GNU GPL ";
+	tmp1 += "along with JEliza (file \"gpl.txt\") ; if not, write ";
+	tmp1 += "to the Free Software Foundation, Inc., 51 Franklin St, ";
+	tmp1 += "Fifth Floor, Boston, MA  02110-1301  USA";
+	ad.set_license(tmp1);
+	ad.set_wrap_license(true);
+	
+	ad.set_name("JEliza");
+	
+	ad.set_version("2.1");
+	
+	ad.set_website("http://jeliza.berlios.de/");
+	ad.set_website_label("http://jeliza.berlios.de/");
+	
+	
+	ad.run(); 
+}
+
+void on_new_database_activate(Data3& data) {  
+	ofstream o("JEliza.txt");
+	o << "" << endl;
+	o.close();
+}
+	
+
+void on_new_talk_activate(Data3& data) {  
+	data.talk->get_buffer()->set_text("");
+}
+	
+class Data1 {
+public:
+	Gtk::Entry* entry;
+	Gtk::TextView* textview;
+	MainWindow* win;
+};
+
+void on_Ask_clicked(Data1& data) {
+//	Gtk::MessageDialog dia3(*data.win, Glib::ustring("OK"));
+//	dia3.run(); 
+	Glib::ustring msg;
+	
+	JEliza jeliza(1);
+	jeliza.init();
+	
+	if(!data.entry) {
+		Gtk::MessageDialog dia4(*data.win, Glib::ustring("JEliza Error 1"));
+		dia4.run(); 
+	}
+	string fra = data.entry->get_text();
+	msg = fra;
+//	Gtk::MessageDialog dia(*data.win, msg);
+//	dia.run(); 
+	
+	
+	string bestReply = jeliza.ask(fra);
+	msg = bestReply;
+//	Gtk::MessageDialog dia2(*data.win, msg);
+//	dia2.run(); 
+	jeliza.learn(fra, fra);
+	
+	data.textview->get_buffer()->set_text(data.textview->get_buffer()->get_text() + "Mensch: " + fra + "\nJEliza: " + bestReply + "\n");
+	data.entry->set_text("");
+	
+	cout << "asked" << endl;
+	
+	
+//	Glib::ustring msg = "Der Text des Entries hat sich ge\xC3\xA4ndert. Neuer Text: ";
+//	
+//	Gtk::MessageDialog dia(*mw, msg);
+//	dia.run(); 
+//	cout << "asked" << endl;
+}
+
+MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref) 
+: Window(base), refXml(ref)
+{ 
+	Gtk::Button* btn_on_Ask_clicked;
+	refXml->get_widget("Ask", btn_on_Ask_clicked);
+
+	Gtk::Entry* entry;
+	refXml->get_widget("entry", entry);
+	
+	Gtk::TextView* textview;
+	refXml->get_widget("textview2", textview);
 
 
+	Data1 d1;
+	d1.entry = entry;
+	d1.textview = textview;
+	d1.win = this;
+	
 
+	Gtk::MenuItem* mi;
+	refXml->get_widget("open", mi);
+
+	Gtk::MenuItem* mi2;
+	refXml->get_widget("save", mi2);
+
+	Gtk::MenuItem* mi3;
+	refXml->get_widget("close", mi3);
+
+	Gtk::MenuItem* mi4;
+	refXml->get_widget("einstellungen-menuitem", mi4);
+
+	Gtk::MenuItem* mi5;
+	refXml->get_widget("info", mi5);
+
+	Gtk::MenuItem* mi6;
+	refXml->get_widget("new_database", mi6);
+
+	Gtk::MenuItem* mi7;
+	refXml->get_widget("new_talk", mi7);
+
+	Data2 d2;
+	d2.win = this;
+	
+	
+	Gtk::Dialog* dialog;
+	refXml->get_widget("einstellungen", dialog);
+	
+	Gtk::TextView* tv2;
+	refXml->get_widget("jelizafilecontent", tv2);
+	
+	Data3 d3;
+	d3.win = this;
+	d3.dialog = dialog;
+	d3.tv = tv2;
+	d3.talk = textview;
+	
+	Gtk::Button* okbutton1;
+	refXml->get_widget("okbutton1", okbutton1);
+	
+	Gtk::Button* cancelbutton1;
+	refXml->get_widget("cancelbutton1", cancelbutton1);
+	
+	
+
+
+	if(btn_on_Ask_clicked) {
+		btn_on_Ask_clicked->signal_clicked().connect(sigc::bind<Data1>(sigc::ptr_fun(&on_Ask_clicked), d1)); 
+	}
+
+	if(entry) {
+		entry->signal_activate().connect(sigc::bind<Data1>(sigc::ptr_fun(&on_Ask_clicked), d1)); 
+	}
+
+	if(mi) {
+		mi->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_open_activate), d2)); 
+	}
+	
+	if(mi2) {
+		mi2->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_save_activate), d2)); 
+	}
+		
+	if(mi3) {
+		mi3->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_close_activate), d2)); 
+	}
+		
+	if(mi4) {
+		mi4->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_einstellungen_activate), d3)); 
+	}
+
+	if(mi5) {
+		mi5->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_info_activate), d3)); 
+	}
+
+	if(mi6) {
+		mi6->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_new_database_activate), d3)); 
+	}
+
+	if(mi7) {
+		mi7->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_new_talk_activate), d3)); 
+	}
+
+	if(okbutton1) {
+		okbutton1->signal_clicked().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_okbutton1_clicked), d3)); 
+	}
+
+	if(cancelbutton1) {
+		cancelbutton1->signal_clicked().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_cancelbutton1_clicked), d3)); 
+	}
+}
 
 int main(int argc, char *argv[])
 {
-    Gtk::Main main_obj(argc, argv);
-    MyWindow window_obj;
-    main_obj.run(window_obj);
-    return 0;
+	ifstream in("JEliza.txt");
+	string buffer;
+	string all = "";
+	while (in) {
+		getline(in, buffer);
+		buffer = Util::strip(buffer);
+		all += Util::replace(buffer, string("\r"), string(""));
+		all += "\n";
+	}
+	in.close();
+	
+	ofstream o("JEliza.txt");
+	o << toASCII(all) << endl;
+	o.close();
+
+	
+	Main mainApplication(argc, argv);
+	
+        try {
+		/*
+			gladedatei oeffnen, um fensterinformationen herauszulesen
+			der zweite parameter gibt an, dass wir lediglich das fenster
+			mit diesem namen instanziieren wollen. wuerden wir diesen
+			parameter weglassen, so wuerden saemtliche, in der datei
+			definierten, fenster instanziiert werden
+		*/
+		Glib::RefPtr<Gnome::Glade::Xml> refXml = Gnome::Glade::Xml::create("jeliza-glade.glade"); // , "MainWindow"
+		MainWindow* mainWindow(0);
+		
+		/*
+			um auf eine instanz zugreifen zu koennen, nutzt man die element-
+			funktion 'get_widget'. Da wir jedoch eine von Gtk::Window
+			abgeleitete Klasse nutzen, muessen wir 'get_widget_derived'
+			aufrufen.
+		*/
+		refXml->get_widget_derived("MainWindow", mainWindow);
+		
+		//wenn es eine entsprechende instanz gibt...
+		if(mainWindow) {
+			Main::run(*mainWindow); //...dann koennen wir das fenster nun anzeigen
+		}
+		else {
+			/*
+			...oder es konnte es aus irgendwelchen gruenden nicht
+			nicht dem zeiger 'mainWindow' zugewiesen werden?
+			*/
+			cout << "Hauptfenster konnte nicht geladen werden!" << endl;
+			return 1;
+		}
+	/*
+		falls beim parsen der glade-datei ein problem gibt, dann wird
+		eine exception geschmissen, die wir abfangen sollten
+	*/
+	} catch(Gnome::Glade::Xml::Error& xmlError) {
+		cout << xmlError.what() << endl;
+		cin.get();
+		return 1;
+	}
+    return 0; 
+	
+	
 }
 
