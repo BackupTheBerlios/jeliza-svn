@@ -52,6 +52,35 @@ public:
 		}
 	}
 	
+	static void SplitString (string text, string separators, vector<string>& words, bool includeEmpties) {
+		vector<string> ret;
+		text = " " + text + " ";
+		separators = Util::strip(separators);
+		text = Util::replace(text, " " + separators + " ", " #escxds#dscddwe#acs#ewaWAQaqA ");
+		separators = Util::strip(" #escxds#dscddwe#acs#ewaWAQaqA ");
+		
+		vector<string> h;
+		Util::split(text, " ", h);
+		string temp = "";
+		
+		for (int x = 0; x < h.size(); x++) {
+			string u = h[x];
+			
+			if (u == separators) {
+				ret.push_back(temp);
+				temp = "";
+			} else if (temp.size() == 0) {
+				temp += u;
+			} else {
+				temp += " " + u;
+			}
+		}
+		ret.push_back(temp);
+		
+		words = ret;
+//		return ret;
+	}
+	
 	static string toLower (string& text) {
 		string str = "";
 		
@@ -65,8 +94,31 @@ public:
 //		toLower(static_cast<string>(text));
 //	}
 	
+	static void trim(string& str) {
+		string::size_type pos = str.find_last_not_of(' ');
+		if(pos != string::npos) {
+			str.erase(pos + 1);
+			pos = str.find_first_not_of(' ');
+			if(pos != string::npos)  {
+				str.erase(0, pos);
+			}
+		}
+		else {
+			str.erase(str.begin(), str.end());
+		}
+	}
+	
 	static string strip (string text) {
 		string txt = replace(text, string("\n"), string(""));
+		txt = replace(txt, string("\r"), string(""));
+		
+		string txt2 = txt;
+		Util::trim(txt);
+		while (txt != txt2) {
+			txt2 = txt;
+			Util::trim(txt);
+		}		
+		
 		return txt;
 	}
 	
@@ -146,10 +198,11 @@ public:
 		str = Util::tausche(str, "mich", "dich");
 		str = Util::tausche(str, "bin", "bist");
 		
-		str = Util::replace(str, "hab", "habe");
-		str = Util::replace(str, "habee", "habe");
+		//str = Util::replace(str, "habe", "hab");
+//		str = Util::replace(str, "habee", "habe");
 		
 		str = Util::tausche(str, "habe", "hast");
+		//str = Util::replace(str, "hab", "habe");
 		
 		str = Util::replace(str, "wieso", "warum");
 		str = Util::replace(str, "weshalb", "warum");

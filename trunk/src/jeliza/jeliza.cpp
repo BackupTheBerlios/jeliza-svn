@@ -157,80 +157,69 @@ public:
 	string ask(string frage) {
 		frage = Util::umwandlung(frage);
 		frage = Util::replace(frage, string("?"), string(""));
+		frage = Util::strip(frage);
 		
 		vector<string> woerter;
 		Util::split(frage, " ", woerter);
 		
-		int best = -1;
-		list<string> ants;
-		
-		// for (int x = 0; x < 351; x++) {
-		// 	ants[x] = StringArray(20);
-		// }
+		long double best = -1;
+		vector<string>* replies = new vector<string>();
 
 		for (int z = 0; z < m_sentenceCount; z++) {
 			string sentence = (*m_sents)[z];
+			sentence = Util::strip(sentence);
+			if (sentence.size() == 0) {
+				continue;
+			}
 			
 			vector<string> woerter2;
 			Util::split(sentence, " ", woerter2);
 			string last = "";
 			
+			long double points = 0.0;
+			long double hatWasGebracht = 0.0;
+					
 			for (unsigned int a = 0; a < woerter2.size(); a++) {
 				string wort2 = woerter2[a];
-					
+				
+				long double points2 = 0;
+				
 				for (unsigned int y = 0; y < woerter.size(); y++) {
 					string wort = woerter[y];
-//					cout << "Wort: " << wort << endl;
 			
 					StringCompare sc(wort, wort2);
-					int points = sc.getPoints();
-					
-					// cout << "Points: " << points << "Wort1: " << wort << " Wort2: " << wort2 << endl;
-
-//						cout << ants << endl;
-					if (points >= best && last != sentence) {
-						best = points;
-						ants.push_front(sentence);
-						last = sentence;
-						// cout << "Points: " << points << "Wort1: " << wort << " Wort2: " << wort2 << endl;
-//						cout << ants << endl;
-					}
-					else if (best == -1 && last != sentence) {
-						ants.push_back(sentence);
-						last = sentence;
-					}
-					// ants[points].add(sentence);
-					
+					points2 += sc.getPoints();
 				}
+				
+				points2 = points2 / woerter.size();
+				
+				if (points2 > best) {
+					best = points2 / 100 * 99;
+					
+					for (int f = 0; f < points2 / 20; f++) {
+						replies->push_back(sentence);
+					}
+				}
+				
+					
 			}
+			
 		}
 		
 		string answer = "";
-		if (best > 0) {
-//			cout << ants << endl;
-			list<string>& answers = ants;
-//			Util::split(ants, "~~#-#-#~~", answers);
-			
-//			cout << endl;
-//			cout << "   Moegliche Antworten, nach Warscheinlichkeit geordnet:" << endl;
-//			cout << "   -----------------------------------------------------" << endl;
-			list<string>::iterator theIterator;
-			int b = 0;
-			for (theIterator = answers.begin(); theIterator != answers.end(); theIterator++) {
-				string it = *theIterator;
-				if (b == 0) {
-					answer = it;
-				}
-				if (b >= 20) {
-					break;
-				}
-//				cout << "   " << b + 1 << ". Moegliche Antwort: " << it << endl;
-				b++;
-			}
-//			cout << endl;
+		if (replies->size() > 0) {
+			srand((unsigned) time(NULL));
+			int ran = rand() % replies->size();
+			answer = (*replies)[ran];
+		}
+		else if (m_sentenceCount > 0) {
+			srand((unsigned) time(NULL));
+			int ran = rand() % m_sentenceCount;
+			answer = (*m_sents)[ran];
+			cout << endl;
 		}
 		else {
-			answer = "I don't know enough to answer!";
+			answer = "Erzähl mir mehr darüber!";
 			cout << endl;
 		}
 		

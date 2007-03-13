@@ -47,7 +47,7 @@ using namespace std;
 
 
 class StringCompare {
-	int points;
+	long double points;
 	
 public:
 	StringCompare (string s1, string s2) 
@@ -55,11 +55,11 @@ public:
 	{
 	}
 	
-	int getPoints() {
+	long double getPoints() {
 		return points;
 	}
 	
-    int compare (string s1, string s2) {
+    long double compare (string s1, string s2) {
         int x = -1;
         int acc = 0;
         int accBest = 0;
@@ -142,18 +142,18 @@ public:
         }
         
         if (s1 == s2) {
-            return 350;
+            return 1000.0;
         }
         
 ////        cout << "acc     " << acc << endl;
 ////        cout << "accBest " << accBest << endl;
         
-        int res = 0;
+        long double res = 0.0;
         if (accBest > 0 and acc > 0) {
             res = 100 / accBest * acc;
         }
         if (res > 100) {
-            res = 100;
+            res = 100.0;
         }
         
         return res;

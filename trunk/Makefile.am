@@ -1,15 +1,20 @@
 CFLAGS=-g -Wall -fPIC -DPIC -Isrc/socket
 AM_CPPFLAGS=-g -Wall -fPIC -DPIC -Isrc/socket
-bin_PROGRAMS = jeliza grammartest bytelang jelizagtk
+bin_PROGRAMS = jeliza grammartest bytelang jelizagtk test
 jeliza_LDADD =  -lm -luuid -lpthread
 jeliza_CFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
 jeliza_CPPFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
-jeliza_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/speechsyntax.cpp ./src/jeliza/arrays.cpp ./src/jeliza/main.cpp ./src/jeliza/server.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp ./src/socket/HttpdCookies.h ./src/socket/ListenSocket.h ./src/socket/ICrypt.h ./src/socket/MinderHandler.h ./src/socket/MemFile.h ./src/socket/SocketThread.h ./src/socket/Event.h ./src/socket/PoolSocket.h ./src/socket/HttpClientSocket.h ./src/socket/Ipv4Address.h ./src/socket/HTTPSocket.h ./src/socket/NullCrypt.h ./src/socket/StdLog.h ./src/socket/CircularBuffer.h ./src/socket/SocketAddress.h ./src/socket/Mutex.h ./src/socket/IEventOwner.h ./src/socket/HttpdForm.h ./src/socket/SocketHandler.h ./src/socket/MinderSocket.h ./src/socket/Lock.h ./src/socket/HttpPostSocket.h ./src/socket/EventTime.h ./src/socket/UdpSocket.h ./src/socket/MinionSocket.h ./src/socket/CTcpSocket.h ./src/socket/Utility.h ./src/socket/Thread.h ./src/socket/Parse.h ./src/socket/File.h ./src/socket/EventHandler.h ./src/socket/HttpPutSocket.h ./src/socket/Uid.h ./src/socket/SctpSocket.h ./src/socket/Base64.h ./src/socket/IFile.h ./src/socket/IEventHandler.h ./src/socket/Socket.h ./src/socket/Ipv6Address.h ./src/socket/socket_include.h ./src/socket/HttpdSocket.h ./src/socket/ISocketHandler.h ./src/socket/HttpDebugSocket.h ./src/socket/TcpSocket.h ./src/socket/ResolvServer.h ./src/socket/ResolvSocket.h ./src/socket/StdoutLog.h ./src/socket/HttpGetSocket.h ./src/jeliza/SocketHandler.h ./src/jeliza/TcpSocket.h ./src/jeliza/ListenSocket.h ./src/socket/CircularBuffer.cpp ./src/socket/ISocketHandler.cpp ./src/socket/HttpDebugSocket.cpp ./src/socket/TcpSocket.cpp ./src/socket/ResolvServer.cpp ./src/socket/Mutex.cpp ./src/socket/ResolvSocket.cpp ./src/socket/SocketHandler.cpp ./src/socket/Lock.cpp ./src/socket/HttpPostSocket.cpp ./src/socket/EventTime.cpp ./src/socket/MinionSocket.cpp ./src/socket/CTcpSocket.cpp ./src/socket/Parse.cpp ./src/socket/Event.cpp ./src/socket/SctpSocket.cpp ./src/socket/Base64.cpp ./src/socket/HttpClientSocket.cpp ./src/socket/Socket.cpp ./src/socket/Ipv6Address.cpp ./src/socket/HttpdSocket.cpp ./src/socket/IEventOwner.cpp ./src/socket/HttpdForm.cpp ./src/socket/StdoutLog.cpp ./src/socket/MinderSocket.cpp ./src/socket/HttpGetSocket.cpp ./src/socket/HttpdCookies.cpp ./src/socket/UdpSocket.cpp ./src/socket/Utility.cpp ./src/socket/Thread.cpp ./src/socket/MinderHandler.cpp ./src/socket/MemFile.cpp ./src/socket/File.cpp ./src/socket/EventHandler.cpp ./src/socket/SocketThread.cpp ./src/socket/HttpPutSocket.cpp ./src/socket/Uid.cpp ./src/socket/PoolSocket.cpp ./src/socket/Ipv4Address.cpp ./src/socket/HTTPSocket.cpp ./src/socket/socket_include.cpp ./src/socket/NullCrypt.cpp
+jeliza_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/arrays.cpp ./src/jeliza/main.cpp ./src/jeliza/server.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp ./src/socket/HttpdCookies.h ./src/socket/ListenSocket.h ./src/socket/ICrypt.h ./src/socket/MinderHandler.h ./src/socket/MemFile.h ./src/socket/SocketThread.h ./src/socket/Event.h ./src/socket/PoolSocket.h ./src/socket/HttpClientSocket.h ./src/socket/Ipv4Address.h ./src/socket/HTTPSocket.h ./src/socket/NullCrypt.h ./src/socket/StdLog.h ./src/socket/CircularBuffer.h ./src/socket/SocketAddress.h ./src/socket/Mutex.h ./src/socket/IEventOwner.h ./src/socket/HttpdForm.h ./src/socket/SocketHandler.h ./src/socket/MinderSocket.h ./src/socket/Lock.h ./src/socket/HttpPostSocket.h ./src/socket/EventTime.h ./src/socket/UdpSocket.h ./src/socket/MinionSocket.h ./src/socket/CTcpSocket.h ./src/socket/Utility.h ./src/socket/Thread.h ./src/socket/Parse.h ./src/socket/File.h ./src/socket/EventHandler.h ./src/socket/HttpPutSocket.h ./src/socket/Uid.h ./src/socket/SctpSocket.h ./src/socket/Base64.h ./src/socket/IFile.h ./src/socket/IEventHandler.h ./src/socket/Socket.h ./src/socket/Ipv6Address.h ./src/socket/socket_include.h ./src/socket/HttpdSocket.h ./src/socket/ISocketHandler.h ./src/socket/HttpDebugSocket.h ./src/socket/TcpSocket.h ./src/socket/ResolvServer.h ./src/socket/ResolvSocket.h ./src/socket/StdoutLog.h ./src/socket/HttpGetSocket.h ./src/jeliza/SocketHandler.h ./src/jeliza/TcpSocket.h ./src/jeliza/ListenSocket.h ./src/socket/CircularBuffer.cpp ./src/socket/ISocketHandler.cpp ./src/socket/HttpDebugSocket.cpp ./src/socket/TcpSocket.cpp ./src/socket/ResolvServer.cpp ./src/socket/Mutex.cpp ./src/socket/ResolvSocket.cpp ./src/socket/SocketHandler.cpp ./src/socket/Lock.cpp ./src/socket/HttpPostSocket.cpp ./src/socket/EventTime.cpp ./src/socket/MinionSocket.cpp ./src/socket/CTcpSocket.cpp ./src/socket/Parse.cpp ./src/socket/Event.cpp ./src/socket/SctpSocket.cpp ./src/socket/Base64.cpp ./src/socket/HttpClientSocket.cpp ./src/socket/Socket.cpp ./src/socket/Ipv6Address.cpp ./src/socket/HttpdSocket.cpp ./src/socket/IEventOwner.cpp ./src/socket/HttpdForm.cpp ./src/socket/StdoutLog.cpp ./src/socket/MinderSocket.cpp ./src/socket/HttpGetSocket.cpp ./src/socket/HttpdCookies.cpp ./src/socket/UdpSocket.cpp ./src/socket/Utility.cpp ./src/socket/Thread.cpp ./src/socket/MinderHandler.cpp ./src/socket/MemFile.cpp ./src/socket/File.cpp ./src/socket/EventHandler.cpp ./src/socket/SocketThread.cpp ./src/socket/HttpPutSocket.cpp ./src/socket/Uid.cpp ./src/socket/PoolSocket.cpp ./src/socket/Ipv4Address.cpp ./src/socket/HTTPSocket.cpp ./src/socket/socket_include.cpp ./src/socket/NullCrypt.cpp
 
 grammartest_LDADD =  -lm
 grammartest_CFLAGS = -g -Wall -fPIC -DPIC
 grammartest_CPPFLAGS = -g -Wall -fPIC -DPIC
 grammartest_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/speechsyntax.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
+
+test_LDADD =  -lm
+test_CFLAGS = -g -Wall -fPIC -DPIC
+test_CPPFLAGS = -g -Wall -fPIC -DPIC
+test_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/test.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
 
 jelizagtk_LDADD = -lm -lgtkmm-2.4  -lgdkmm-2.4  -latkmm-1.6  -lpangomm-1.4  -lcairomm-1.0  -lglibmm-2.4  -lsigc-2.0   -latk-1.0  -lgdk_pixbuf-2.0  -lpangocairo-1.0  -lcairo  -lpangoft2-1.0  -lfontconfig  -lfreetype  -lz  -lpango-1.0  -lm  -lgobject-2.0  -lgmodule-2.0  -lglib-2.0  -lglade-2.0 -lglademm-2.4
 jelizagtk_CFLAGS = -g -Wall -fPIC -DPIC 
@@ -126,18 +131,22 @@ distribution: packlinux clean
 	rm -rf tmp_dist
 	mkdir tmp_dist
 
-	cp -r dist/windows tmp_dist
-	mv tmp_dist/windows/bin/jeliza.exe tmp_dist/windows/ ; true
-	i586-mingw32msvc-strip tmp_dist/windows/jeliza.exe
-	cp ../gui-addon/JElizaWX.exe tmp_dist/windows
-	cp ../gui-addon/transla* tmp_dist/windows
-	cp ../gui-addon/version.ver tmp_dist/windows
+	cp -r bin/gtk-jeliza tmp_dist/windows
+#	mkdir tmp_dist/windows
+#	mv tmp_dist/windows/bin/jeliza.exe tmp_dist/windows/ ; true
+#	i586-mingw32msvc-strip tmp_dist/windows/jeliza.exe
+#	cp ../gui-addon/JElizaWX.exe tmp_dist/windows
+#	cp ../gui-addon/transla* tmp_dist/windows
+#	cp ../gui-addon/version.ver tmp_dist/windows
 	cp JEliza.txt tmp_dist/windows
 	cp gpl.txt tmp_dist/windows
-	cp jeliza.inc.html tmp_dist/windows
+	cp Benutzerhandbuch.*  tmp_dist/windows
+#	cp jeliza.inc.html tmp_dist/windows
 
-	cp -r dist/linux tmp_dist
+	mkdir tmp_dist/linux
+	cp dist/linux/bin/jeliza tmp_dist/linux
 	strip tmp_dist/linux/jeliza
+	cp jelizagtk tmp_dist/linux/
 	cp JEliza.txt tmp_dist/linux
 	cp gpl.txt tmp_dist/linux
 	cp jeliza.inc.html tmp_dist/linux
@@ -147,6 +156,7 @@ distribution: packlinux clean
 	rm -rf tmp_dist/src/compile_tmp* ; true
 	rm -rf tmp_dist/src/tmp_dist ; true
 	rm -rf tmp_dist/src/dist/* ; true
+	rm -rf tmp_dist/src/gtk/* ; true
 	rm -rf tmp_dist/src/distribution ; true
 	rm -rf tmp_dist/src/lib/* ; true
 	rm -rf tmp_dist/src/bin/* ; true
