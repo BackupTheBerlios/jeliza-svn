@@ -237,7 +237,10 @@ void on_einstellungen_activate(Data3& data) {
 	string all = "";
 	while (in) {
 		getline(in, buffer);
-		all += Util::replace(buffer, string("\r"), string(""));
+		buffer = Util::strip(buffer);
+		buffer = Util::replace(buffer, string("\r"), string(""));
+		buffer = Util::replace(buffer, string("\n"), string(""));
+		all += buffer;
 		all += "\n";
 	}
 	in.close();
