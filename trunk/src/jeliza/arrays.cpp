@@ -93,10 +93,10 @@ public:
  * An Array of strings
  */
 class StringArray {
+public:
     std::vector<string> m_vector;
     int m_lastindex;
     
-public:
     typedef int size_type;
     
     explicit StringArray (size_type groesse)

@@ -1791,6 +1791,7 @@ distribution: packlinux clean
 	strip tmp_dist/linux/jeliza
 	cp jelizagtk tmp_dist/linux/
 	cp JEliza.txt tmp_dist/linux
+	cp *.txt tmp_dist/linux
 	cp gpl.txt tmp_dist/linux
 	cp jeliza.inc.html tmp_dist/linux
 
