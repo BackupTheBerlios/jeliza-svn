@@ -37,7 +37,7 @@
 #include "util.cpp"
 #include "arrays.cpp"
 #include "string_compare.cpp"
-#include "jeliza.cpp"
+#include "jeliza.h"
 
 using namespace std;
 
@@ -99,7 +99,7 @@ namespace test {
 		long double points2 = 0;
 		long double points3 = 0;
 
-		for (int x = 0; x < verbs.size(); x++) {
+		/*for (int x = 0; x < verbs.size(); x++) {
 			string buffer = verbs[x];
 			if (buffer.size() > 1) {
 				points2 = 0;
@@ -123,13 +123,13 @@ namespace test {
 					verb = tempverb;
 				}
 			}
-		}
-	
-		if (woerter.size() < 15 && bestVerb > 40) {
+		}*/
+//		cout << verb << s << endl;
+		if (woerter.size() < 3) {
 			vector<string> k;
 			Util::SplitString(s, verb, k, false);
 			
-			k[0] = Util::strip(k[0]);
+/*			k[0] = Util::strip(k[0]);
 			k[1] = Util::strip(k[1]);
 			s = Util::strip(s);
 			verb = Util::strip(verb);
@@ -146,7 +146,11 @@ namespace test {
 			if (k[1].size() > 1) {
 				o2 << verb << "|" << k[1] << endl;
 				cout << verb << "|" << k[1] << endl;
-			}
+			}*/
+			
+//			if (k.size() == 1) {
+			cout << s << endl;
+//			}
 		}
 
 	}
@@ -155,7 +159,7 @@ namespace test {
 		JEliza jel(1);
 		jel.init();
 		
-		StringArray* sentences = jel.getSentences("file");
+//		StringArray* sentences = jel.getSentences("file");
 		
 		ofstream o1("subject-verb.txt");
 		ofstream o2("verb-object.txt");
@@ -170,8 +174,11 @@ namespace test {
 			verbs.push_back(buffer);
 		}
 		
-		for (int x = 0; x < jel.m_sentenceCount; x++) {
-			string s = (*sentences)[x];
+		ifstream in2("JEliza.txt");
+		
+		string s;
+		while (in2) {
+			getline(in2, s);
 			s = Util::strip(s);
 			
 			if (s.size() < 3) {
@@ -180,7 +187,7 @@ namespace test {
 			
 			SentenceToSubVerbObj(s, verbs, o1, o2);
 		}
-		delete (sentences);
+		//delete (sentences);
 		
 		o1.close();
 		o2.close();

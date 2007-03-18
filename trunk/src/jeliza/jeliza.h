@@ -117,16 +117,17 @@ public:
 	int m_sentenceCount;
 	string m_file;
 	static JElizaData m_jd;
+	bool m_schonVorbereitet;
     
 	JEliza() 
-	: m_sentenceCount(0), m_file(searchConfigFile())
+	: m_sentenceCount(0), m_file(searchConfigFile()), m_schonVorbereitet(false)
 	{
 		cout << "-> config file: " << m_file << endl;
 		cout << endl;
 	}
     
 	JEliza(int dummy) 
-	: m_sentenceCount(0), m_file(searchConfigFile())
+	: m_sentenceCount(0), m_file(searchConfigFile()), m_schonVorbereitet(false)
 	{
 	}
 	

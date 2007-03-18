@@ -337,6 +337,8 @@ public:
 };
 
 void on_Ask_clicked(Data1& data) {
+	global_jeliza->vorbereite();
+	
 	Glib::ustring msg;
 	
 	if(!data.entry) {
@@ -361,10 +363,12 @@ void on_Ask_clicked(Data1& data) {
 }
 
 void fs_on_Ask_clicked(Data4& data) {
+	global_jeliza->vorbereite();
+	
 	Glib::ustring msg;
 	
 	if(!data.entry) {
-		Gtk::MessageDialog dia4(*data.win, Glib::ustring("JEliza Error 1"));
+		Gtk::MessageDialog dia4(*data.win, Glib::ustring("JEliza Error 2"));
 		dia4.run(); 
 	}
 	string fra = data.entry->get_text();
@@ -399,8 +403,6 @@ void on_fullscreen_mode_activate(Data4& data) {
 MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref) 
 : Window(base), refXml(ref)
 { 
-	global_jeliza->vorbereite();
-	
 	Gtk::Button* btn_on_Ask_clicked;
 	refXml->get_widget("Ask", btn_on_Ask_clicked);
 
@@ -588,9 +590,9 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 		fs_end->signal_clicked().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_end_clicked), d4)); 
 	}
 	
-	if(fs_entry) {
-		fs_entry->signal_activate().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_on_Ask_clicked), d4)); 
-	}
+//	if(fs_entry) {
+//		fs_entry->signal_activate().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_on_Ask_clicked), d4)); 
+//	}
 
 	if(about_ok) {
 		about_ok->signal_clicked().connect(sigc::bind<Data5>(sigc::ptr_fun(&on_about_ok_clicked), d5)); 

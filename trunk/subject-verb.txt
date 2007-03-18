@@ -1660,7 +1660,4 @@ wie|geht
 ich|bin
 wie gehts mir ich|machine?
 ja|stimmt
-wer|bin
-ja das merkt|man
-ich|bin
-ja|klar
+wer hat mir mein gesamtes|wissen

@@ -145,6 +145,12 @@ void JEliza::vorbereiteSentence(string sent, string art) {
  * Liest alle Subjekt-Verb bzw. Verb-Objekt Paare ein und ruft vorbereiteSentence() und vorbereiteSent() auf
  */
 void JEliza::vorbereite() {
+	if (m_schonVorbereitet) {
+		cout << "- Schon vorbereitet" << endl;
+		return;
+	}
+	m_schonVorbereitet = true;
+	
 	cout << endl << "- Vorbereite..." << endl;
 	string b;
 	ifstream j("subject-verb.txt");
@@ -239,6 +245,15 @@ void JEliza::generiere(string sent) {
 		
 		if (ok) {
 			generiereSentence((*JEliza::m_jd.m_sent_sent)[a], ss, sFrageZeichen, last);
+		}
+	}
+	
+	string b;
+	ifstream j("JEliza.txt");
+	while (j) {
+		getline(j, b);
+		if (Util::strip(b).size() > 0) {
+			JEliza::m_jd.m_sents->push_back(Util::strip(b));
 		}
 	}
 	
