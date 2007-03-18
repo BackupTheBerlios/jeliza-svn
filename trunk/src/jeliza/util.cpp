@@ -63,7 +63,7 @@ public:
 		Util::split(text, " ", h);
 		string temp = "";
 		
-		for (int x = 0; x < h.size(); x++) {
+		for (unsigned int x = 0; x < h.size(); x++) {
 			string u = h[x];
 			
 			if (u == separators) {

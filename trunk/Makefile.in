@@ -216,26 +216,27 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 AM_CPPFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
 jeliza_LDADD = -lm -luuid -lpthread
+jeliza_LDFLAGS = -pg        
 jeliza_CFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
-jeliza_CPPFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
-jeliza_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/arrays.cpp \
-	./src/jeliza/main.cpp ./src/jeliza/server.cpp \
-	./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp \
-	./src/socket/HttpdCookies.h ./src/socket/ListenSocket.h \
-	./src/socket/ICrypt.h ./src/socket/MinderHandler.h \
-	./src/socket/MemFile.h ./src/socket/SocketThread.h \
-	./src/socket/Event.h ./src/socket/PoolSocket.h \
-	./src/socket/HttpClientSocket.h ./src/socket/Ipv4Address.h \
-	./src/socket/HTTPSocket.h ./src/socket/NullCrypt.h \
-	./src/socket/StdLog.h ./src/socket/CircularBuffer.h \
-	./src/socket/SocketAddress.h ./src/socket/Mutex.h \
-	./src/socket/IEventOwner.h ./src/socket/HttpdForm.h \
-	./src/socket/SocketHandler.h ./src/socket/MinderSocket.h \
-	./src/socket/Lock.h ./src/socket/HttpPostSocket.h \
-	./src/socket/EventTime.h ./src/socket/UdpSocket.h \
-	./src/socket/MinionSocket.h ./src/socket/CTcpSocket.h \
-	./src/socket/Utility.h ./src/socket/Thread.h \
-	./src/socket/Parse.h ./src/socket/File.h \
+jeliza_CPPFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket              -pg
+jeliza_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/jeliza.h \
+	./src/jeliza/arrays.cpp ./src/jeliza/main.cpp \
+	./src/jeliza/server.cpp ./src/jeliza/string_compare.cpp \
+	./src/jeliza/util.cpp ./src/socket/HttpdCookies.h \
+	./src/socket/ListenSocket.h ./src/socket/ICrypt.h \
+	./src/socket/MinderHandler.h ./src/socket/MemFile.h \
+	./src/socket/SocketThread.h ./src/socket/Event.h \
+	./src/socket/PoolSocket.h ./src/socket/HttpClientSocket.h \
+	./src/socket/Ipv4Address.h ./src/socket/HTTPSocket.h \
+	./src/socket/NullCrypt.h ./src/socket/StdLog.h \
+	./src/socket/CircularBuffer.h ./src/socket/SocketAddress.h \
+	./src/socket/Mutex.h ./src/socket/IEventOwner.h \
+	./src/socket/HttpdForm.h ./src/socket/SocketHandler.h \
+	./src/socket/MinderSocket.h ./src/socket/Lock.h \
+	./src/socket/HttpPostSocket.h ./src/socket/EventTime.h \
+	./src/socket/UdpSocket.h ./src/socket/MinionSocket.h \
+	./src/socket/CTcpSocket.h ./src/socket/Utility.h \
+	./src/socket/Thread.h ./src/socket/Parse.h ./src/socket/File.h \
 	./src/socket/EventHandler.h ./src/socket/HttpPutSocket.h \
 	./src/socket/Uid.h ./src/socket/SctpSocket.h \
 	./src/socket/Base64.h ./src/socket/IFile.h \
@@ -271,19 +272,20 @@ jeliza_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/arrays.cpp \
 grammartest_LDADD = -lm
 grammartest_CFLAGS = -g -Wall -fPIC -DPIC
 grammartest_CPPFLAGS = -g -Wall -fPIC -DPIC
-grammartest_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/speechsyntax.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
+grammartest_SOURCES = ./src/jeliza/jeliza.h ./src/jeliza/jeliza.cpp ./src/jeliza/speechsyntax.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
 test_LDADD = -lm
 test_CFLAGS = -g -Wall -fPIC -DPIC
 test_CPPFLAGS = -g -Wall -fPIC -DPIC
-test_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/test.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
+test_SOURCES = ./src/jeliza/jeliza.h  ./src/jeliza/jeliza.cpp ./src/jeliza/test.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
 jelizagtk_LDADD = -lm -lgtkmm-2.4  -lgdkmm-2.4  -latkmm-1.6  -lpangomm-1.4  -lcairomm-1.0  -lglibmm-2.4  -lsigc-2.0   -latk-1.0  -lgdk_pixbuf-2.0  -lpangocairo-1.0  -lcairo  -lpangoft2-1.0  -lfontconfig  -lfreetype  -lz  -lpango-1.0  -lm  -lgobject-2.0  -lgmodule-2.0  -lglib-2.0  -lglade-2.0 -lglademm-2.4
+jelizagtk_LDFLAGS = -pg        
 jelizagtk_CFLAGS = -g -Wall -fPIC -DPIC 
-jelizagtk_CPPFLAGS = -g -Wall -fPIC -DPIC -I/usr/include/gtkmm-2.4  -I/usr/lib/gtkmm-2.4/include  -I/usr/include/glibmm-2.4  -I/usr/lib/glibmm-2.4/include  -I/usr/include/gdkmm-2.4  -I/usr/lib/gdkmm-2.4/include  -I/usr/include/pangomm-1.4  -I/usr/include/atkmm-1.6  -I/usr/include/gtk-2.0  -I/usr/include/sigc++-2.0  -I/usr/lib/sigc++-2.0/include  -I/usr/include/glib-2.0  -I/usr/lib/glib-2.0/include  -I/usr/lib/gtk-2.0/include  -I/usr/include/cairomm-1.0  -I/usr/include/pango-1.0  -I/usr/include/cairo  -I/usr/include/freetype2  -I/usr/include/atk-1.0  -I/usr/include/libglademm-2.4
-jelizagtk_SOURCES = ./src/jeliza/jeliza.cpp ./src/gtkgui/jelizagtk.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
+jelizagtk_CPPFLAGS = -pg             -g -Wall -fPIC -DPIC -I/usr/include/gtkmm-2.4 -I./src/jeliza/  -I/usr/lib/gtkmm-2.4/include  -I/usr/include/glibmm-2.4  -I/usr/lib/glibmm-2.4/include  -I/usr/include/gdkmm-2.4  -I/usr/lib/gdkmm-2.4/include  -I/usr/include/pangomm-1.4  -I/usr/include/atkmm-1.6  -I/usr/include/gtk-2.0  -I/usr/include/sigc++-2.0  -I/usr/lib/sigc++-2.0/include  -I/usr/include/glib-2.0  -I/usr/lib/glib-2.0/include  -I/usr/lib/gtk-2.0/include  -I/usr/include/cairomm-1.0  -I/usr/include/pango-1.0  -I/usr/include/cairo  -I/usr/include/freetype2  -I/usr/include/atk-1.0  -I/usr/include/libglademm-2.4
+jelizagtk_SOURCES = ./src/jeliza/jeliza.h ./src/jeliza/jeliza.cpp ./src/gtkgui/jelizagtk.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
 bytelang_LDADD = -lm
 bytelang_CFLAGS = -g -Wall -fPIC -DPIC
 bytelang_CPPFLAGS = -g -Wall -fPIC -DPIC
-bytelang_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/bytelanguage.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
+bytelang_SOURCES = ./src/jeliza/jeliza.h  ./src/jeliza/jeliza.cpp ./src/jeliza/bytelanguage.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp 
 LD_LIBRARY_PATH = .:./lib
 WIN_LD_LIBRARY_PATH = .:./lib:/media/hdb5/data/Dev-Cpp/lib
 all: all-am

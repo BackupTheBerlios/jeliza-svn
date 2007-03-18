@@ -1,0 +1,84 @@
+N -> tante
+N -> supermarkt
+
+... -> N
+... -> V
+	
+V -> erreicht
+V -> will
+	
+K -> weil
+
+DET -> der
+DET -> die
+DET -> das
+DET -> the
+	
+DET -> den
+DET -> dem
+DET -> dieser
+DET -> diese
+DET -> dieses
+DET -> diesen
+	
+TR -> und
+TR -> oder
+TR -> and
+TR -> or
+
+M -> einem
+M -> einen
+M -> eines
+M -> eins
+M -> ein
+M -> eine
+M -> einer
+M -> etwas
+M -> viel
+M -> a
+M -> 1
+M -> 2
+M -> 3
+M -> 4
+M -> 5
+M -> 6
+M -> 7
+M -> 8
+M -> 9
+M -> 0
+	
+PP -> mir
+PP -> dir
+PP -> ihm
+PP -> ihr
+PP -> uns
+PP -> euch
+PP -> ihnen
+PP -> mich
+PP -> dich
+PP -> ihn
+PP -> uns
+PP -> euch
+	
+Z -> oft
+Z -> selten
+Z -> immer
+Z -> nie
+Z -> heute
+
+A -> hungrig
+
+PRE -> auf
+PRE -> in
+PRE -> im
+PRE -> an
+PRE -> unter
+PRE -> ueber
+PRE -> neben
+PRE -> bei
+PRE -> mit
+PRE -> zwischen
+
+OA -> da
+OA -> dort
+OA -> hier

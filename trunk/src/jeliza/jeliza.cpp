@@ -37,547 +37,380 @@
 #include "util.cpp"
 #include "arrays.cpp"
 #include "string_compare.cpp"
+#include "jeliza.h"
 
 using namespace std;
 
+JElizaData jd2;
+JElizaData JEliza::m_jd = jd2;
+
+
+/*
+ * Eine Klasse, die die Antwort beinhaltet
+ * 
+ * answer: Die Antwort
+ * success: Ob die Ántwort erfolgreich bestimmt wurde oder nur geraten war
+ */
 struct Answer {
 	string answer;
 	bool success;
 };
 
-/*
- * The JEliza class
- * 
- * JEliza is a conversation simulator.
- * 
- * This class is the main class of jeliza. To use it, you have to create an instance of
- * "JEliza".
- */
-class JEliza {
-public:
-	int m_sentenceCount;
-	vector<string>* m_sents;
-	string m_file;
-    
-	JEliza() 
-	: m_sentenceCount(0), m_sents(new vector<string>(StringArray(m_sentenceCount).m_vector)), m_file(searchConfigFile()) 
-	{
-		cout << "-> config file: " << m_file << endl;
-		cout << endl;
-	}
-    
-	JEliza(int dummy) 
-	: m_sentenceCount(0), m_sents(new vector<string>(StringArray(m_sentenceCount).m_vector)), m_file(searchConfigFile()) 
-	{
-//		cout << "-> config file: " << m_file << endl;
-//		cout << endl;
-	}
-    
-	~JEliza() {
-		delete(m_sents);
-	}
-	
-	string searchConfigFile() {
-		ifstream tmpin1("JEliza.txt");
-		ifstream tmpin2("/etc/jeliza/JEliza.txt");
-		if (!tmpin1) {
-			return "/etc/jeliza/JEliza.txt";
-		}
-		return "JEliza.txt";
-	}
-    
-	StringArray* getSentences (string savetype) {
-		m_sentenceCount = 0;
-		string buffer;
-		int r = 0;
-		ifstream in2(m_file.c_str());
-		while (in2) {
-			getline(in2, buffer);
-			r++;
-		}
-		StringArray* arr = new StringArray(r);
-		
-		ifstream in(m_file.c_str());
-		if (!in) {
-			cerr << "Fehler beim Oeffnen einer JEliza-Datei" << endl;
-			return arr;
-		}
-		while (in) {
-			getline(in, buffer);
-			if (buffer.size() > 1) {
-				string s("?");
-				if (!Util::contains(buffer, s)) {
-					(*arr)[m_sentenceCount] = Util::strip(buffer);
-					m_sentenceCount++;
-				}
-			}
-		}
-		
-		StringArray* arr2 = new StringArray(m_sentenceCount);
-		for (int x = 0; x < m_sentenceCount; x++) {
-			(*arr2)[x] = (*arr)[x];
-		}
-		
-		delete(arr);
-		return arr2;
-	}
-	
-	void saveSentence (string savetype, string original, string newstring) {
-		ofstream o(m_file.c_str(), ios::app | ios::ate);
-		
-		if (!o) {
-			cerr << "Fehler beim Oeffnen einer JEliza-Datei" << endl;
-			return;
-		}
-		
-		o << newstring << endl;
-		
-		o.close();
-		
-		ofstream o1("subject-verb.txt", ios::app | ios::ate);
-		ofstream o2("verb-object.txt", ios::app | ios::ate);
-		
-		string buffer;
-		
-		ifstream in("verbs.txt");
-		vector<string> verbs;
-		while (in) {
-			getline(in, buffer);
-			buffer = Util::strip(buffer);
-			verbs.push_back(buffer);
-		}
-		
-		SentenceToSubVerbObj(newstring, verbs, o1, o2);
-	}
-	
-	void learn (string orig, string fra) {
-		fra = Util::umwandlung(fra);
-		saveSentence ("file", orig, fra);
-	}
-	
-	void init () {
-		StringArray* sentences = getSentences("file");
-		
-		delete(m_sents);
-		m_sents = new vector<string>(m_sentenceCount);
-		
-		for (int x = 0; x < m_sentenceCount; x++) {
-			string s = (*sentences)[x];
-			s = Util::toLower(s);
-////			cout << "Sentence: " << s << endl;
-			m_sents->push_back(s);
-		}
-		
-		delete(sentences);
-	}
-	
-	Answer askDynamic(string frage) {
-		vector<string> woerter;
-		Util::split(frage, " ", woerter);
-		long double points2;
-		unsigned int y;
-		ifstream u("subject-verb.txt");
-		ifstream v("verb-object.txt");
-		vector<string> s_v;
-		vector<string> v_o;
-		string buffer;
-		vector<string> tmp;
-		vector<string> tmp1;
-		
-		while (u) {
-			getline(u, buffer);
-			buffer = Util::strip(buffer);
-			vector<string> woerter2;
-			Util::split(buffer, " ", woerter2);
-			
-			points2 = 0;
-			
-//			for (y = 0; y < woerter2.size(); y++) {
-//				string wort2 = woerter2[y];
-//
-//				for (y = 0; y < woerter.size(); y++) {
-//					string wort = woerter[y];
-//			
-//					StringCompare sc(wort, wort2);
-//					points2 += sc.getPoints();
-//				}
-//			}
-//			
-//			points2 = points2 / (woerter.size() * woerter2.size());
-//			
-//			if (points2 < 70) {
-//				continue;
-//			}
-			
-			bool drin = false;
-			for (y = 0; y < woerter2.size(); y++) {
-				string wort2 = woerter2[y];
-				
-				if (Util::contains(buffer, wort2)) {
-					drin = true;
-					break;
-				}
-			}
-			
-			if (drin) {
-				s_v.push_back(buffer);
-				Util::SplitString(buffer, string(" -> "), tmp, false);
-				tmp1.push_back(tmp[1]);
-			}
-		}
 
-		while (v) {
-			getline(v, buffer);
-			buffer = Util::strip(buffer);
-			vector<string> woerter2;
-			Util::split(buffer, " ", woerter2);
-			
-			bool drin = false;
-			for (y = 0; y < woerter2.size(); y++) {
-				string wort2 = woerter2[y];
-				
-				if (Util::contains(buffer, wort2)) {
-					drin = true;
-					break;
-				}
-			}
-			
-			for (y = 0; y < tmp1.size(); y++) {
-				string wort2 = tmp1[y];
-				
-				if (Util::contains(buffer, wort2)) {
-					drin = true;
-					break;
-				}
-			}
-			
-			if (drin) {
-				v_o.push_back(buffer);
-			}
-		}
-		
-		string bestStr;
-		long double best;
-		vector<string> tmp2;
-		for (y = 0; y < s_v.size(); y++) {
-			string wort = s_v[y];
-			
-			Util::SplitString(buffer, string(" -> "), tmp, false);
-			
-			bestStr = "";
-			best = 0;
-			for (y = 0; y < v_o.size(); y++) {
-				string wort2 = v_o[y];
-				
-				Util::SplitString(bestStr, string(" -> "), tmp2, false);
-				
-				StringCompare sc(tmp[1], tmp2[0]);
-				if (sc.getPoints() > best) {
-					best = sc.getPoints();
-					bestStr = wort2;
-				}
-			}
-			
-			cout << tmp[0] << " " << tmp[1] << " " << tmp2[1] << endl;
-			
-			
-		}
-		
-		Answer a;
-		a.answer = tmp[0] + " " + tmp[1] + " " + tmp2[1];
-		a.success = true;
-		return a;
+/*
+ * Sucht nach der Datei JEliza.txt
+ */
+string JEliza::searchConfigFile() {
+	ifstream tmpin1("JEliza.txt");
+	ifstream tmpin2("/etc/jeliza/JEliza.txt");
+	if (!tmpin1) {
+		return "/etc/jeliza/JEliza.txt";
+	}
+	return "JEliza.txt";
+}
+	
+/*
+ * Speichert einen Satz in div. Dateien und im RAM
+ */
+void JEliza::saveSentence (string savetype, string original, string newstring) {
+	ofstream o(m_file.c_str(), ios::app | ios::ate);
+	
+	if (!o) {
+		cerr << "Fehler beim Oeffnen einer JEliza-Datei" << endl;
+		return;
 	}
 	
-	void generiere(string sent) {
-		ifstream j("subject-verb.txt");
-		vector<string> xy;
-		string s;
+	o << newstring << endl;
+	
+	o.close();
+	
+	ofstream o1("subject-verb.txt", ios::app | ios::ate);
+	ofstream o2("verb-object.txt", ios::app | ios::ate);
+	
+	string buffer;
+	
+	ifstream in("verbs.txt");
+	vector<string> verbs;
+	while (in) {
+		getline(in, buffer);
+		buffer = Util::strip(buffer);
+		verbs.push_back(buffer);
+	}
+	
+	SentenceToSubVerbObj(newstring, verbs, o1, o2);
+	vorbereiteSent(newstring);
+}
+
+/*
+ * Lernt einen Satz, dh. formt ihn um (ich->du) und ruft saveSentence() auf
+ */
+void JEliza::learn (string orig, string fra) {
+	fra = Util::umwandlung(fra);
+	saveSentence ("file", orig, fra);
+}
+	
+/*
+ * Ehemalige initialisierungsmethode von JEliza
+ */
+void JEliza::init () {
+	cout << "init()" << endl;
+	cout << "Initialisiert" << endl;
+}
+	
+/*
+ * Wird von vorbereite() aufgerufen
+ *
+ * Trennt einen String auf (|) und speichert die beiden Teile (Subjekt-Verb bzw. Verb-Objekt) in dem Entsprechenden Variablen
+ */
+void JEliza::vorbereiteSentence(string sent, string art) {
+	vector<string> temp;
+	Util::split(sent, string("|"), temp);
+	if (temp.size() != 2 || temp.size() != 2) {
+		return;
+	}
+	if (temp[0].size() < 1 || temp[1].size() < 1) {
+		return;
+	}
+	if (art == "sv") {
+		JEliza::m_jd.m_SVs->push_back(sent);
+		JEliza::m_jd.m_SVs_words->push_back(temp);
+	}
+	if (art == "vo") {
+		JEliza::m_jd.m_VOs->push_back(sent);
+		JEliza::m_jd.m_VOs_words->push_back(temp);
+	}
+}
+
+/*
+ * Liest alle Subjekt-Verb bzw. Verb-Objekt Paare ein und ruft vorbereiteSentence() und vorbereiteSent() auf
+ */
+void JEliza::vorbereite() {
+	cout << endl << "- Vorbereite..." << endl;
+	string b;
+	ifstream j("subject-verb.txt");
+	while (j) {
+		getline(j, b);
+		
+		vorbereiteSentence(b, "sv");
+	}
+
+	ifstream v("verb-object.txt");
+	while (v) {
+		getline(v, b);
+		
+		vorbereiteSentence(b, "vo");
+	}
+	
+	string s;
+	string bestStr = "";
+	
+	cout << "- Lade Datenbank ins RAM... " << endl;
+
+	for (unsigned int a = 0; a < JEliza::m_jd.m_SVs->size(); a++) {
+		s = (*JEliza::m_jd.m_SVs)[a];
+		vector<string> s_v = (*JEliza::m_jd.m_SVs_words)[a];
+		
+		for (unsigned int c = 0; c < JEliza::m_jd.m_VOs->size(); c++) {
+			s = (*JEliza::m_jd.m_VOs)[c];
+			vector<string> v_o = (*JEliza::m_jd.m_VOs_words)[c];
+			
+			if (s_v[1] == v_o[0]) {
+				bestStr = s_v[0] + " " + s_v[1] + " " + v_o[1];
+				
+				vorbereiteSent(bestStr);
+			}
+		}
+	}
+	
+	cout << "- Datenbank erfolgreich geladen!" << endl;
+	cout << "- Vorbereitung abgeschlossen!" << endl << endl;
+}
+
+/*
+ * Speichert jedes Wort in einem satz zusammen mit dem Satz in Variablen
+ */
+void JEliza::vorbereiteSent(string bestStr) {
+	bestStr = Util::strip(bestStr);
+	if (bestStr.size() < 2) {
+		return;
+	}
+	
+	vector<string> temp;
+	Util::split(bestStr, string(" "), temp);
+	
+	for (vector<string>::iterator it = temp.begin(); it != temp.end(); it++) {
+		JEliza::m_jd.m_sent_word->push_back(*it);
+		JEliza::m_jd.m_sent_sent->push_back(bestStr);
+	}
+}
+	
+/*
+ * Generiert die Datenbank, die dann von ask() benutzt wird
+ */
+void JEliza::generiere(string sent) {
+	cout << "- Generiere Moegliche Antworten auf \"" << sent << "\":" << endl;
+	
+	string last = "";
+	
+	string sFrageZeichen("?");
+	
+	vector<string> ss;
+	Util::split(sent, string(" "), ss);
+	
+	JElizaData jd;
+	JEliza::m_jd.m_sents = jd.m_sents;
+	
+	string s;
+	long double best = 0;
+	string bestStr = "";
+	bool ok;
+	string sss;
+	
+	for (unsigned int a = 0; a < JEliza::m_jd.m_sent_word->size(); a++) {
+		s = (*JEliza::m_jd.m_sent_word)[a];
+		
+		ok = false;
+		for (unsigned int x = 0; x < ss.size(); x++) {
+			if (s == ss[x]) {
+				ok = true;
+				break;
+			}
+		}
+		
+		if (ok) {
+			generiereSentence((*JEliza::m_jd.m_sent_sent)[a], ss, sFrageZeichen, last);
+		}
+	}
+	
+	m_sentenceCount = JEliza::m_jd.m_sents->size();
+	
+	cout << "- " << m_sentenceCount << " Antworten auf \"" << sent << "\" gefunden!" << endl;
+}
+
+/*
+ * Fügt einen von generiere() generierten Satz zur Datenbank hinzu
+ */
+void JEliza::generiereSentence(string& bestStr, vector<string>& ss, string& sFrageZeichen, string& last) {
+	bestStr = Util::strip(bestStr);
+	if (bestStr.size() > 1) {
+		bool ok = true;
+		if (ok && bestStr != last && !Util::contains(bestStr, sFrageZeichen)) {
+			last = bestStr;
+			JEliza::m_jd.m_sents->push_back(Util::strip(bestStr));
+		}
+	}
+}
+
+/*
+ * Trennt einen Satz in Subjekt, Verb und Objekt auf
+ */
+void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, ofstream& o2) {
+	vector<string> woerter;
+	Util::split(s, " ", woerter);
+	
+	ifstream in("verbs.txt");
+	
+	string verb = "";
+	long double bestVerb = 0;
+	long double points2 = 0;
+	long double points3 = 0;
+	for (unsigned int x = 0; x < verbs.size(); x++) {
+		string buffer = verbs[x];
+		if (buffer.size() > 1) {
+			points2 = 0;
+			points3 = 0;
+			string tempverb = "";
+			for (unsigned int g = 0; g < woerter.size(); g++) {
+				string wort = woerter[g];
+				StringCompare sc(wort, buffer);
+				points2 += sc.getPoints();
+				
+				if (sc.getPoints() > points3) {
+					points3 = sc.getPoints();
+					tempverb = wort;
+				}
+			}
+				
+			points2 = points2 / woerter.size();
+				
+			if (points2 > bestVerb) {
+				bestVerb = points2;
+				verb = tempverb;
+			}
+		}
+	}
+	
+	if (woerter.size() < 15 && bestVerb > 40) {
+		vector<string> k;
+		Util::SplitString(s, verb, k, false);
+		
+		k[0] = Util::strip(k[0]);
+		k[1] = Util::strip(k[1]);
+		s = Util::strip(s);
+		verb = Util::strip(verb);
+		
+		k[0] = Util::replace(k[0], "  ", " ");
+		k[1] = Util::replace(k[1], "  ", " ");
+		s = Util::replace(s, "  ", " ");
+		verb = Util::replace(verb, "  ", " ");
+		
+		if (k[0].size() > 1) {
+			o1 << k[0] << "|" << verb << endl;
+			cout << k[0] << "|" << verb << endl;
+			vorbereiteSentence(k[0] + "|" + verb, "sv");
+		}
+		if (k[1].size() > 1) {
+			o2 << verb << "|" << k[1] << endl;
+			cout << verb << "|" << k[1] << endl;
+			vorbereiteSentence(verb + "|" + k[1], "vo");
+		}
+	}
+}
+	
+/*
+ * Antwortet auf eine Frage
+ */
+string JEliza::ask(string frage) {
+	frage = Util::umwandlung(frage);
+	frage = Util::replace(frage, string("?"), string(""));
+	frage = Util::strip(frage);
+	
+	generiere(frage);
+	
+	cout << "- Suche eine passende Antwort: " << endl;
+	
+	vector<string> woerter;
+	Util::split(frage, " ", woerter);
+	
+	long double best = -1;
+	vector<string>* replies = new vector<string>();
+
+	for (int z = 0; z < m_sentenceCount; z++) {
+		string sentence = (*JEliza::m_jd.m_sents)[z];
+		sentence = Util::strip(sentence);
+		if (sentence.size() < 1) {
+			continue;
+		}
+		
+		vector<string> woerter2;
+		Util::split(sentence, " ", woerter2);
 		string last = "";
 		
-		vector<string> ss;
-		Util::split(sent, string(" "), ss);
-		
-		delete(m_sents);
-		m_sents = new vector<string>();
-		
-		while (j) {
-			getline(j, s);
-			vector<string> s_v;
+		for (unsigned int a = 0; a < woerter2.size(); a++) {
+			string wort2 = woerter2[a];
 			
-			Util::split(s, string("|"), s_v);
+			long double points2 = 0;
 			
-			ifstream v("verb-object.txt");
-			string b;
-			long double best = 0;
-			string bestStr = "";
-			
-			while (v) {
-				getline(v, b);
-				vector<string> v_o;
-				
-				Util::split(b, string("|"), v_o);
-				if (v_o.size() != 2 || s_v.size() != 2) {
-					continue;
-				}
-				if (v_o[0].size() < 1 || s_v[1].size() < 1) {
-					continue;
-				}
-				
-//				StringCompare sc(s_v[1], v_o[0]);
-//				long double x = sc.getPoints();
-				if (s_v[1] == v_o[0]) {
-					best = 100;
-					bestStr = s_v[0] + " " + s_v[1] + " " + v_o[1];
-					bestStr = Util::strip(bestStr);
-					bestStr = " " + bestStr + " ";
-					if (bestStr.size() > 1) {
-						bool ok = false;
-						for (int x = 0; x < ss.size(); x++) {
-							string sss = " " + ss[x] + " ";
-							
-							if (Util::contains(bestStr, sss)) {
-								ok = true;
-								break;
-							}
-						}
-						if (ok && bestStr != last) {
-							xy.push_back(bestStr);
-							last = bestStr;
-							m_sents->push_back(Util::strip(bestStr));
-//							cout << bestStr << endl;
-						}
-					}
-
-				}
-			}
-			v.close();
-		}
-		j.close();
+			for (unsigned int y = 0; y < woerter.size(); y++) {
+				string wort = woerter[y];
 		
-		m_sentenceCount = m_sents->size();
-	}
-	
-	void SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, ofstream& o2) {
-		vector<string> woerter;
-		Util::split(s, " ", woerter);
-		
-		ifstream in("verbs.txt");
-		
-		string verb = "";
-		long double bestVerb = 0;
-		long double points2 = 0;
-		long double points3 = 0;
-
-		for (int x = 0; x < verbs.size(); x++) {
-			string buffer = verbs[x];
-			if (buffer.size() > 1) {
-				points2 = 0;
-				points3 = 0;
-				string tempverb = "";
-				for (int g = 0; g < woerter.size(); g++) {
-					string wort = woerter[g];
-					StringCompare sc(wort, buffer);
-					points2 += sc.getPoints();
-					
-					if (sc.getPoints() > points3) {
-						points3 = sc.getPoints();
-						tempverb = wort;
-					}
-				}
-				
-				points2 = points2 / woerter.size();
-				
-				if (points2 > bestVerb) {
-					bestVerb = points2;
-					verb = tempverb;
-				}
-			}
-		}
-	
-		if (woerter.size() < 15 && bestVerb > 40) {
-			vector<string> k;
-			Util::SplitString(s, verb, k, false);
-			
-			k[0] = Util::strip(k[0]);
-			k[1] = Util::strip(k[1]);
-			s = Util::strip(s);
-			verb = Util::strip(verb);
-			
-			k[0] = Util::replace(k[0], "  ", " ");
-			k[1] = Util::replace(k[1], "  ", " ");
-			s = Util::replace(s, "  ", " ");
-			verb = Util::replace(verb, "  ", " ");
-			
-			if (k[0].size() > 1) {
-				o1 << k[0] << "|" << verb << endl;
-				cout << k[0] << "|" << verb << endl;
-			}
-			if (k[1].size() > 1) {
-				o2 << verb << "|" << k[1] << endl;
-				cout << verb << "|" << k[1] << endl;
-			}
-		}
-
-	}
-	
-	/*
-	 * The answering algorithm
-	 */
-	string ask(string frage) {
-		frage = Util::umwandlung(frage);
-		frage = Util::replace(frage, string("?"), string(""));
-		frage = Util::strip(frage);
-		
-		generiere(frage);
-		
-		vector<string> woerter;
-		Util::split(frage, " ", woerter);
-		
-		long double best = -1;
-		vector<string>* replies = new vector<string>();
-		replies->push_back("");
-
-		for (int z = 0; z < m_sentenceCount; z++) {
-			string sentence = (*m_sents)[z];
-			sentence = Util::strip(sentence);
-			if (sentence.size() == 0) {
-				continue;
+				StringCompare sc(wort, wort2);
+				points2 += sc.getPoints() * wort.size();
 			}
 			
-			vector<string> woerter2;
-			Util::split(sentence, " ", woerter2);
-			string last = "";
+			points2 = points2 / (woerter.size() * frage.size());
 			
-			long double points = 0.0;
-			long double hatWasGebracht = 0.0;
-					
-			for (unsigned int a = 0; a < woerter2.size(); a++) {
-				string wort2 = woerter2[a];
+			if (points2 > best) {
+				best = points2 / 100 * 98;
 				
-				long double points2 = 0;
-				
-				for (unsigned int y = 0; y < woerter.size(); y++) {
-					string wort = woerter[y];
-			
-					StringCompare sc(wort, wort2);
-					points2 += sc.getPoints() * wort.size();
-				}
-				
-				points2 = points2 / (woerter.size() * frage.size());
-				
-				if (points2 > best) {
-					best = points2 / 100 * 98;
-					
-					for (int f = 0; f < points2 / 20; f++) {
+				for (int f = 0; f < points2 / 20; f++) {
+					if (replies->size() == 0) {
+						replies->push_back(sentence);
+					} else {
 						(*replies)[0] = sentence;
 					}
 				}
-				
-					
 			}
 			
+				
 		}
 		
-		string answer = "";
-		if (replies->size() > 0) {
-			cout << "Rate nicht..." << endl;
-			srand((unsigned) time(NULL));
-			int ran = rand() % replies->size();
-			answer = (*replies)[ran];
-		}
-		else if (m_sentenceCount > 0) {
-			cout << "Rate..." << endl;
-			srand((unsigned) time(NULL));
-			int ran = rand() % m_sentenceCount;
-			answer = (*m_sents)[ran];
-			cout << endl;
-		}
-		else {
-			answer = "Erzähl mir mehr darüber!";
-			cout << endl;
-		}
-		
-		//delete(replies);
-		
-		return answer;
 	}
 	
-	/*
-	 * The old answering algorithm
-	 */
-	string askOLD(string frage) { // ####################################### => OLD
-		frage = Util::umwandlung(frage);
-		frage = Util::replace(frage, string("?"), string(""));
-		frage = Util::strip(frage);
-		
-		vector<string> woerter;
-		Util::split(frage, " ", woerter);
-		
-		long double best = -1;
-		vector<string>* replies = new vector<string>();
-
-		for (int z = 0; z < m_sentenceCount; z++) {
-			string sentence = (*m_sents)[z];
-			sentence = Util::strip(sentence);
-			if (sentence.size() == 0) {
-				continue;
-			}
-			
-			vector<string> woerter2;
-			Util::split(sentence, " ", woerter2);
-			string last = "";
-			
-			long double points = 0.0;
-			long double hatWasGebracht = 0.0;
-					
-			for (unsigned int a = 0; a < woerter2.size(); a++) {
-				string wort2 = woerter2[a];
-				
-				long double points2 = 0;
-				
-				for (unsigned int y = 0; y < woerter.size(); y++) {
-					string wort = woerter[y];
-			
-					StringCompare sc(wort, wort2);
-					points2 += sc.getPoints();
-				}
-				
-				points2 = points2 / woerter.size();
-				
-				if (points2 > best) {
-					best = points2;
-					
-					for (int f = 0; f < points2 / 20; f++) {
-						replies->push_back(sentence);
-					}
-				}
-				
-					
-			}
-			
-		}
-		
-		string answer = "";
-		if (replies->size() > 0) {
-			srand((unsigned) time(NULL));
-			int ran = rand() % replies->size();
-			answer = (*replies)[ran];
-		}
-		else if (m_sentenceCount > 0) {
-			srand((unsigned) time(NULL));
-			int ran = rand() % m_sentenceCount;
-			answer = (*m_sents)[ran];
-			cout << endl;
-		}
-		else {
-			answer = "Erzähl mir mehr darüber!";
-			cout << endl;
-		}
-		
-		return answer;
+	string answer = "";
+	if (replies->size() > 0) {
+		srand((unsigned) time(NULL));
+		int ran = rand() % replies->size();
+		answer = (*replies)[ran];
+		cout << "- Eine passende Antwort wurde gefunden, und zwar: \"" << answer << "\"" << endl;
 	}
-};
+	else if (m_sentenceCount > 0) {
+		srand((unsigned) time(NULL));
+		int ran = rand() % m_sentenceCount;
+		answer = (*JEliza::m_jd.m_sents)[ran];
+		cout << "- Keine passende Antwort wurde gefunden => Raten: \"" << answer << "\"" << endl;
+	}
+	else {
+		answer = "Erzähl mir mehr darüber!";
+		cout << "- Die Datenbank ist leer, irgendwas stimmt da nicht. Antwort: \"" << answer << "\"" << endl;
+	}
+	
+	cout << endl;
+
+	return answer;
+}
+	
+
 
 #endif
 

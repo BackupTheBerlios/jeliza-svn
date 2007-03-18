@@ -1654,3 +1654,13 @@ ja|meine
 du|hast
 mir|geht
 wie|geht
+ich|bin
+mir|geht
+wie|geht
+ich|bin
+wie gehts mir ich|machine?
+ja|stimmt
+wer|bin
+ja das merkt|man
+ich|bin
+ja|klar

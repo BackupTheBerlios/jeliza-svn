@@ -64,7 +64,7 @@ public:
         int acc = 0;
         int accBest = 0;
         
-        while (x < s1.size() && x < s2.size()) {
+        while (x < (signed) s1.size() && x < (signed) s2.size()) {
             accBest = accBest + 1;
         
             x++;

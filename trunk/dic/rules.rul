@@ -1,0 +1,55 @@
+S -> NP VP
+S -> NP VP A
+S -> NP A VP
+S -> NP VP Z
+S -> NP Z VP
+S -> N V M N
+
+NP -> N
+NP -> DET N
+NP -> PP N
+NP -> M N
+NP -> M A N
+NP -> P A N
+NP -> PRE P N
+NP -> PRE P A N
+NP -> DET
+NP -> DET A N
+NP -> PP A N
+NP -> AP
+NP -> PRE N
+	
+P -> DET
+P -> M
+P -> PP
+
+NsP -> NP AP V
+
+VP -> V
+VP -> V PP
+VP -> V NP
+VP -> V PP NP
+VP -> V OA
+VP -> V A
+VP -> V A NP
+VP -> V A PP NP
+VP -> V A PP
+VP -> V Z
+VP -> V Z NP
+VP -> V Z PP NP
+VP -> V Z PP
+
+AP -> A
+AP -> Z
+
+END -> A
+END -> Z
+END -> OA
+END -> V
+END -> N
+END -> DET
+END -> M
+END -> PP
+
+
+
