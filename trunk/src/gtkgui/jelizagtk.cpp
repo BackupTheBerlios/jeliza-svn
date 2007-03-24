@@ -249,13 +249,16 @@ void on_einstellungen_activate(Data3& data) {
 	ifstream in("JEliza.txt");
 	string buffer;
 	string all = "";
+	string sFrageZeichen("?");
 	while (in) {
 		getline(in, buffer);
 		buffer = Util::strip(buffer);
 		buffer = Util::replace(buffer, string("\r"), string(""));
 		buffer = Util::replace(buffer, string("\n"), string(""));
-		all += buffer;
-		all += "\n";
+		if (Util::contains(buffer, sFrageZeichen)) {
+			all += buffer;
+			all += "\n";
+		}
 	}
 	in.close();
 	all = toASCII(all);

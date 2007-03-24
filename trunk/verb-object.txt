@@ -2033,3 +2033,8 @@ ziehst|ich?
 nenne|mich JELiza
 nenne|ich dich?
 bin|ich ein mensch?
+ist|eine Pflanze
+ist|ein Baum?
+ist|eine Zeitschrift
+ist|PCWelt?
+ich|das hin?

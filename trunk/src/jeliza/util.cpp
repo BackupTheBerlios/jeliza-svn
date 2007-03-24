@@ -228,14 +228,16 @@ public:
 		
 		for (int y = 0; y < ss.size(); y++) {
 			string word = "-" + ss[y] + "-";
+			string lower = word;
+			lower = Util::toLower(lower);
 			
-			if (Util::contains(word, string("st-"))) {
+			if (Util::contains(word, string("st-")) && word.size() > 7 && word == lower) {
 				string verb2 = Util::replace(word, string("st-"), string("e-"));
 				verb2 = Util::replace(verb2, string("-"), string(""));
 				rep += verb2;
 				rep += " ";
 			}
-			else if (Util::contains(word, string("e-"))) {
+			else if (Util::contains(word, string("e-")) && word.size() > 7 && word == lower) {
 				string verb2 = Util::replace(word, string("e-"), string("st-"));
 				verb2 = Util::replace(verb2, string("-"), string(""));
 				rep += verb2;

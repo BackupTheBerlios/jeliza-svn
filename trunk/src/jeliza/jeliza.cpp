@@ -439,7 +439,7 @@ string JEliza::ask(string frage) {
 		string unuseful_word = " " + unuseful_words[x] + " ";
 		
 		string better_frage = Util::replace(frage, unuseful_word, string(" "));
-		cout << better_frage << endl;
+//		cout << better_frage << endl;
 		
 		if (Util::strip(better_frage).size() > 0) {
 			frage = better_frage;
@@ -452,6 +452,12 @@ string JEliza::ask(string frage) {
 	try {
 		stringstream sst;
 		string str;
+		
+		string divNull = string("/ 0");
+		if (Util::contains(frage, divNull)) {
+			cout << "- Division durch Null!" << endl;
+			return "Tut mir leid, aber durch 0 kann ich nicht teilen!";
+		}
 		
 		sst << rechne(frage);
 		sst >> str;

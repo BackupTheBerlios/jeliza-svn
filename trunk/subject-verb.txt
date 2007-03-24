@@ -1708,3 +1708,10 @@ du|ziehst
 woran|ziehst
 ich|nenne
 wist|nenne
+Ein Baum|ist
+was|ist
+PCWelt|ist
+Was|ist
+Kriegst|ich
+ich kanne nicht|schwimmen
+kanne ich|schwimmen?
