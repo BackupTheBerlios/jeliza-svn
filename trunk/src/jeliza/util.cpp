@@ -213,6 +213,42 @@ public:
 		str = Util::tausche(str, "mine", "yours");
 		str = Util::tausche(str, "am", "are");
 		
+		ifstream in("verbs.txt");
+		vector<string> verbs;
+		string buffer;
+		while (in) {
+			getline(in, buffer);
+			buffer = Util::strip(buffer);
+			verbs.push_back(buffer);
+		}
+		
+		vector<string> ss;
+		Util::split(str, string(" "), ss);
+		string rep = "";
+		
+		for (int y = 0; y < ss.size(); y++) {
+			string word = "-" + ss[y] + "-";
+			
+			if (Util::contains(word, string("st-"))) {
+				string verb2 = Util::replace(word, string("st-"), string("e-"));
+				verb2 = Util::replace(verb2, string("-"), string(""));
+				rep += verb2;
+				rep += " ";
+			}
+			else if (Util::contains(word, string("e-"))) {
+				string verb2 = Util::replace(word, string("e-"), string("st-"));
+				verb2 = Util::replace(verb2, string("-"), string(""));
+				rep += verb2;
+				rep += " ";
+			}
+			else {
+				rep += word;
+				rep += " ";
+			}
+		}
+		
+		str = Util::replace(rep, string("-"), string(""));
+		
 		return str;
 	}
 	

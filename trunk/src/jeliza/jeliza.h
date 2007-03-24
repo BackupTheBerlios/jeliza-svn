@@ -55,6 +55,9 @@ public:
 	bool m_initOk;
 	bool m_destructorOk;
 	int m_countAbbau;
+	vector<string> m_last_questions;
+	vector<string> m_last_answers;
+	vector<string> m_last_answers_second;
 	
 	JElizaData()
 	: m_sents(new vector<string>()),
@@ -71,7 +74,10 @@ public:
 	  m_VOs_words_is(true),
 	  m_initOk(true),
 	  m_destructorOk(false),
-	  m_countAbbau(0)
+	  m_countAbbau(0),
+	  m_last_questions(vector<string>()),
+	  m_last_answers(vector<string>()),
+	  m_last_answers_second(vector<string>())
 	{
 //		cout << "JElizaData" << " initialisiert!" << endl;
 	}
@@ -140,11 +146,12 @@ public:
 	void init ();
 	void vorbereiteSentence(string sent, string art);
 	void vorbereite();
-	void generiere(string sent);
+	bool generiere(string sent);
 	void vorbereiteSent(string bestStr);
 	void generiereSentence(string& bestStr, vector<string>& ss, string& sFrageZeichen, string& last);
 	void SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, ofstream& o2);
 	string ask(string frage);
+	double rechne(string s);
 };
 	
 //JElizaData JEliza::m_jd = JElizaData();

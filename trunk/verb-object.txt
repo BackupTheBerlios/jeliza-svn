@@ -1815,7 +1815,6 @@ auf|wiedersehn
 denke|mir geht es gut
 bin|ein programm auf deiner festplatte
 habe|ich allerdings recht
-wissen|du hast jedenfalls 2
 meinst|du
 ah|ja aller klar
 was|haelst ich von vollmilch
@@ -1957,3 +1956,80 @@ bin|ich ein mensch?
 bin|ich ein mensch?
 bin|ich ein mensch?
 wissen|beigebracht?
+was|ist?
+soll|das?
+wie|gehts dir?
+ist|ein unsinn
+ist|ein schnabel?
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+gehts|mir gut?
+dir|gehts gut
+geht|es gut
+was|hmm?
+sag|du och
+bin|ich ein papagei?
+kennst|ich marcel kunzmann?
+kennst|ihn
+sagst|ich dann "ja ich"?
+wissen|beigebracht?
+wissen|beigebracht?
+wissen|beigebracht?
+wissen|beigebracht?
+wissen|beigebracht?
+ist|das wetter heute?
+wie|gehts dir?
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|eine maschine verstanden
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+wie|gehts dir?
+ist|denn?
+wie|gehts?
+dir|gehts gut
+bin|ich ein mensch?
+wie|gehts?
+wie|gehts?
+ist|schön
+das|wetter
+bin|ich ein mensch?
+bin|ich ein mensch?
+bin|ich ein mensch?
+geht|es dir?
+heisst|JEliza
+heisst|du?
+geht|es gut
+geht|es auch gut
+geht|es gut
+geht|so
+heisst|du?
+geht|es dir?
+geht|es auch gut
+ist|ein geniales Betriebssystem
+kennst|ich linux
+ist|Linux?
+weisst|ich über Linux?
+ist|unsinn
+ist|unsinn
+bist|Marcel
+geht|es dir?
+magst|dich
+bist|marcel
+bist|Marcel?
+geht|es dir?
+magst|ich mich?
+kannst|ich kein deutsch?
+ziehst|an einem seil
+ziehst|ich?
+nenne|mich JELiza
+nenne|ich dich?
+bin|ich ein mensch?

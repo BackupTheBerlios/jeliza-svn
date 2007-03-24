@@ -27,6 +27,7 @@
 #include <fstream>
 #include <string>
 #include <map>
+#include <sstream>
 
 #include <string>
 #include <list>
@@ -42,6 +43,10 @@
 using namespace std;
 
 namespace test {
+	class KeineRechnung {
+	
+	};
+
 	void generiere() {
 		ifstream j("subject-verb.txt");
 		vector<string> xy;
@@ -192,11 +197,105 @@ namespace test {
 		o1.close();
 		o2.close();
 	}
+	
+	double rechne(string s) {
+		vector<string> ss;
+		s = Util::strip(s);
+		Util::split(s, string(" "), ss);
+		
+		vector<string> digits;
+		digits.push_back("0");
+		digits.push_back("1");
+		digits.push_back("2");
+		digits.push_back("3");
+		digits.push_back("4");
+		digits.push_back("5");
+		digits.push_back("6");
+		digits.push_back("7");
+		digits.push_back("8");
+		digits.push_back("9");
+		digits.push_back(",");
+		digits.push_back(".");
+		
+		double* base = 0;
+		
+		string zeichen = "";
+		
+		for (int x = 0; x < ss.size(); x++) {
+			string sym = ss[x];
+			string temp = sym;
+			
+			for (int y = 0; y < digits.size(); y++) {
+				temp = Util::replace(temp, digits[y], string(""));
+			}
+			
+			cout << "sym " << sym << "  temp.size() " << temp.size() << "  temp " << temp;
+			
+			if (temp.size() == 0) {
+				stringstream sst;
+				double integer;
+				
+				sst << sym;
+				sst >> integer;
+				
+//				if (base == NULL) {
+				if (zeichen.size() == 0) {
+					double v = integer + 0;
+					base = &v;
+				} else {
+					cout << "  zeichen.size() " << zeichen.size() << "  integer " << integer << "  base " << *base;
+					if (zeichen == "+") {
+						*base += integer;
+					}
+					if (zeichen == "-") {
+						*base -= integer;
+					}
+					if (zeichen == "*") {
+						*base *= integer;
+					}
+					if (zeichen == "/") {
+						*base /= integer;
+					}
+					cout << "  zeichen.size() " << zeichen.size() << "  integer " << integer << "  base " << *base;
+				}
+//				}
+			} else {
+				if (Util::contains(sym, string("+"))) {
+					zeichen = "+";
+				}
+				else if (Util::contains(sym, string("-"))) {
+					zeichen = "-";
+				}
+				else if (Util::contains(sym, string("*"))) {
+					zeichen = "*";
+				}
+				else if (Util::contains(sym, string("/"))) {
+					zeichen = "/";
+				}
+				else {
+					throw string("KeineRechnung");
+				}
+			}
+			
+			cout << endl;
+		}
+		
+		return *base;
+	}
 }
 
 int main() {
-	test::JElizaTxtToDic();
+//	test::JElizaTxtToDic();
 //	test::generiere();
+	cout << test::rechne("2 + 5") << endl;
+	cout << test::rechne("2 - 5") << endl;
+	cout << test::rechne("2 * 5") << endl;
+	cout << test::rechne("2 / 5") << endl;
+	try {
+		cout << test::rechne("Hallo ihr 5") << endl;
+	} catch (const string) {
+		cout << "KeineRechnung" << endl;
+	}
 }
 
 #endif
