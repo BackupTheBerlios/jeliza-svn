@@ -2043,3 +2043,6 @@ geht|es dir?
 was|kanne du?
 ist|sonnig
 was|ist?
+bin|du?
+bin|JEliza
+bin|du?

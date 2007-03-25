@@ -685,7 +685,8 @@ double JEliza::rechne(string s) {
 	digits.push_back(",");
 	digits.push_back(".");
 	
-	double* base = 0;
+	double u = 0;
+	double* base = &u;
 	
 	string zeichen = "";
 	

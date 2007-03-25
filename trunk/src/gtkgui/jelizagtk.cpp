@@ -255,10 +255,8 @@ void on_einstellungen_activate(Data3& data) {
 		buffer = Util::strip(buffer);
 		buffer = Util::replace(buffer, string("\r"), string(""));
 		buffer = Util::replace(buffer, string("\n"), string(""));
-		if (Util::contains(buffer, sFrageZeichen)) {
-			all += buffer;
-			all += "\n";
-		}
+		all += buffer;
+		all += "\n";
 	}
 	in.close();
 	all = toASCII(all);
