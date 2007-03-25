@@ -999,7 +999,7 @@
 	<widget class="GtkLabel" id="label12">
 	  <property name="visible">True</property>
 	  <property name="label" translatable="yes">
-&lt;big&gt;&lt;big&gt;&lt;big&gt;&lt;big&gt;&lt;b&gt;JEliza 2.1&lt;/b&gt;&lt;/big&gt;&lt;/big&gt;&lt;/big&gt;&lt;/big&gt;</property>
+&lt;big&gt;&lt;big&gt;&lt;big&gt;&lt;big&gt;&lt;b&gt;JEliza 2.2 BETA&lt;/b&gt;&lt;/big&gt;&lt;/big&gt;&lt;/big&gt;&lt;/big&gt;</property>
 	  <property name="use_underline">False</property>
 	  <property name="use_markup">True</property>
 	  <property name="justify">GTK_JUSTIFY_LEFT</property>

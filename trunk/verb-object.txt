@@ -8,14 +8,14 @@ liebe|die PDS.`
 geht|das nicht.
 kenne|dich noch!
 bin|links.
-wie|ein Baum." - Bob Ross
-zeigen|die Baeume ihre Bluetenbrautkleider." - Erhard H. Bellermann, Gedankenreich
-wird|den Himmel gewinnen." - Konfuzius
-setzen|alles logische Denken mechanisch fort. Unlogisches auch." - Unbekannter Autor
-geht|alles schneller nur dauert es lnger." - Unbekannter Autor
-ist|mit Muedigkeit und Muskelkater billig erkauft." - Leo Tolstoi, Tagebuecher, 1884
-sagen|die Schloesser." - Jurij Brzan
-ist|die Summe kleiner Freuden." - Andreas Tenzer
+wie|ein Baum.
+zeigen|die Baeume ihre Bluetenbrautkleider.
+wird|den Himmel gewinnen.
+setzen|alles logische Denken mechanisch fort. Unlogisches auch.
+geht|alles schneller nur dauert es lnger.
+ist|mit Muedigkeit und Muskelkater billig erkauft.
+sagen|die Schloesser.
+ist|die Summe kleiner Freuden.
 liebe|Marihuana!
 sind|die Roten, sagt der Gysi.
 ist|unsere Bundeskanzlerin. Ich finde sie haesslich.
@@ -2038,3 +2038,8 @@ ist|ein Baum?
 ist|eine Zeitschrift
 ist|PCWelt?
 ich|das hin?
+Wie|gehts DIr?
+geht|es dir?
+was|kanne du?
+ist|sonnig
+was|ist?

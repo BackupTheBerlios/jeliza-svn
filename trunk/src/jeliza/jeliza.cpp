@@ -448,6 +448,12 @@ string JEliza::ask(string frage) {
 	
 	frage = Util::strip(frage);
 	
+	// Ist die Frage "leer"?
+	if (frage.size() == 0) {
+		cout << "- Leere Frage!" << endl;
+		return "Hmmm.";
+	}
+	
 	// Ist es eine Rechenaufgabe?
 	try {
 		stringstream sst;
@@ -501,11 +507,13 @@ string JEliza::ask(string frage) {
 		
 		for (unsigned int a = 0; a < woerter2.size(); a++) {
 			string wort2 = woerter2[a];
+			wort2 = Util::toLower(wort2);
 			
 			long double points2 = 0;
 			
 			for (unsigned int y = 0; y < woerter.size(); y++) {
 				string wort = woerter[y];
+				wort = Util::toLower(wort);
 		
 				StringCompare sc(wort, wort2);
 				points2 += sc.getPoints() * wort.size();

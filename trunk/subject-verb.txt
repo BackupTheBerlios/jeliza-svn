@@ -7,14 +7,14 @@ Ich|liebe
 Nein, so|geht
 Ja, ich|kenne
 Ja, ich|bin
-"Denke|wie
-"Wenn der Lenz anklopft|zeigen
-"Wer Baeume pflanzt,|wird
-"Computer|setzen
-"Mit Computer|geht
-"Das Glueck|ist
-"Das Glueck wohnt in den Huetten, -|sagen
-"Das grosse Glueck|ist
+Denke|wie
+Wenn der Lenz anklopft|zeigen
+Wer Baeume pflanzt,|wird
+Computer|setzen
+Mit Computer|geht
+Das Glueck|ist
+Das Glueck wohnt in den Huetten, -|sagen
+Das grosse Glueck|ist
 Ich|liebe
 Wir|sind
 Die Merkel|ist
@@ -1139,7 +1139,7 @@ jo|den
 jo|schu
 was|soll
 du|habe
-das muss \"bin\"|heissen
+das muss \bin\|heissen
 Computer|haben
 dein name|ist
 das|ist
@@ -1646,7 +1646,7 @@ das wetter|ist
 ich|habe
 nein das|kennst
 Ales es noch keine Computer|gab
-"Als es noch keine Computer gab|war
+Als es noch keine Computer gab|war
 ja das|ist
 vielleicht musst ich noch|lernen
 da|war
@@ -1715,3 +1715,6 @@ Was|ist
 Kriegst|ich
 ich kanne nicht|schwimmen
 kanne ich|schwimmen?
+wie|geht
+du hab heute|geduscht
+Es|ist
