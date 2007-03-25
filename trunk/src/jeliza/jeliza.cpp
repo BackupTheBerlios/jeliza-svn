@@ -480,6 +480,44 @@ string JEliza::ask(string frage) {
 	
 	vector<string> woerter;
 	Util::split(frage, " ", woerter);
+	
+	// Unbekannte Woerter?
+	ifstream ifstr("JEliza.txt");
+	vector<string> bekannt;
+	while (ifstr) {
+		string bek;
+		ifstr >> bek;
+		bek = Util::replace(bek, string("?"), string(""));
+		bek = Util::replace(bek, string("!"), string(""));
+		bek = Util::replace(bek, string("."), string(""));
+		bek = Util::replace(bek, string(","), string(""));
+		bek = Util::replace(bek, string(";"), string(""));
+		bek = Util::strip(bek);
+		bek = Util::toLower(bek);
+		bekannt.push_back(bek);
+	}
+	for (int x = 0; x < woerter.size(); x++) {
+		string wort = woerter[x];
+		wort = Util::toLower(wort);
+		
+		bool isBeka = false;
+		
+		for (int y = 0; y < bekannt.size(); y++) {
+			string beka = bekannt[y];
+			
+			if (wort == beka) {
+				isBeka = true;
+				break;
+			}
+		}
+		
+		if (!isBeka) {
+			cout << "- Unbekanntes Wort: " << wort << endl;
+			return "Was bedeutet " + wort + "??";
+		}
+	}
+	
+	
 	long double best = -1;
 	string allanswers = "";
 	

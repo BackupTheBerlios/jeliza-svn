@@ -2046,3 +2046,9 @@ was|ist?
 bin|du?
 bin|JEliza
 bin|du?
+ist|der ersteller deinen datenbank
+ist|der nachnamst vom ersteller deinen datenbank
+ist|der ersteller deinen datenbank
+ist|der Nachname vom Ersteller meiner Datenbank
+haben|einen Vornamen und einen Nachnamen
+ist|Marcel?
