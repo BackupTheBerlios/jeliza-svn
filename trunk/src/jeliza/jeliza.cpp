@@ -496,6 +496,52 @@ string JEliza::ask(string frage) {
 		bek = Util::toLower(bek);
 		bekannt.push_back(bek);
 	}
+	ifstream ifstr2("subject-verb.txt");
+	while (ifstr2) {
+		string bek;
+		ifstr2 >> bek;
+		vector<string> temp;
+		if (Util::contains(bek, string("|"))) {
+			Util::split(bek, "|", temp);
+		} else {
+			temp.push_back(bek);
+		}
+		for (int x = 0; x < temp.size(); x++) {
+			bek = temp[x];
+			
+			bek = Util::replace(bek, string("?"), string(""));
+			bek = Util::replace(bek, string("!"), string(""));
+			bek = Util::replace(bek, string("."), string(""));
+			bek = Util::replace(bek, string(","), string(""));
+			bek = Util::replace(bek, string(";"), string(""));
+			bek = Util::strip(bek);
+			bek = Util::toLower(bek);
+			bekannt.push_back(bek);
+		}
+	}
+	ifstream ifstr3("verb-object.txt");
+	while (ifstr2) {
+		string bek;
+		ifstr3 >> bek;
+		vector<string> temp;
+		if (Util::contains(bek, string("|"))) {
+			Util::split(bek, "|", temp);
+		} else {
+			temp.push_back(bek);
+		}
+		for (int x = 0; x < temp.size(); x++) {
+			bek = temp[x];
+			
+			bek = Util::replace(bek, string("?"), string(""));
+			bek = Util::replace(bek, string("!"), string(""));
+			bek = Util::replace(bek, string("."), string(""));
+			bek = Util::replace(bek, string(","), string(""));
+			bek = Util::replace(bek, string(";"), string(""));
+			bek = Util::strip(bek);
+			bek = Util::toLower(bek);
+			bekannt.push_back(bek);
+		}
+	}
 	for (int x = 0; x < woerter.size(); x++) {
 		string wort = woerter[x];
 		wort = Util::toLower(wort);

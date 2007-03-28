@@ -2052,3 +2052,5 @@ ist|der ersteller deinen datenbank
 ist|der Nachname vom Ersteller meiner Datenbank
 haben|einen Vornamen und einen Nachnamen
 ist|Marcel?
+ist|müll
+ist|müll
