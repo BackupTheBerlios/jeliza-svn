@@ -64,7 +64,7 @@
 			      <signal name="activate" handler="on_new_database_activate" last_modification_time="Sun, 11 Mar 2007 09:46:12 GMT"/>
 
 			      <child internal-child="image">
-				<widget class="GtkImage" id="image48">
+				<widget class="GtkImage" id="image56">
 				  <property name="visible">True</property>
 				  <property name="stock">gtk-new</property>
 				  <property name="icon_size">1</property>
@@ -85,7 +85,7 @@
 			      <signal name="activate" handler="on_new_talk_activate" last_modification_time="Sun, 11 Mar 2007 09:46:12 GMT"/>
 
 			      <child internal-child="image">
-				<widget class="GtkImage" id="image49">
+				<widget class="GtkImage" id="image57">
 				  <property name="visible">True</property>
 				  <property name="stock">gtk-new</property>
 				  <property name="icon_size">1</property>
@@ -110,7 +110,7 @@
 		      <signal name="activate" handler="on_open_activate" last_modification_time="Sat, 10 Mar 2007 14:04:13 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image50">
+			<widget class="GtkImage" id="image58">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-open</property>
 			  <property name="icon_size">1</property>
@@ -131,7 +131,7 @@
 		      <signal name="activate" handler="on_save_activate" last_modification_time="Sat, 10 Mar 2007 14:04:13 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image51">
+			<widget class="GtkImage" id="image59">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-save-as</property>
 			  <property name="icon_size">1</property>
@@ -189,7 +189,7 @@
 		      <signal name="activate" handler="on_new_talk_activate" last_modification_time="Sun, 11 Mar 2007 10:46:33 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image52">
+			<widget class="GtkImage" id="image60">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-close</property>
 			  <property name="icon_size">1</property>
@@ -203,6 +203,12 @@
 		  </child>
 
 		  <child>
+		    <widget class="GtkSeparatorMenuItem" id="trennlinie1">
+		      <property name="visible">True</property>
+		    </widget>
+		  </child>
+
+		  <child>
 		    <widget class="GtkImageMenuItem" id="einstellungen-menuitem">
 		      <property name="visible">True</property>
 		      <property name="label" translatable="yes">Datenbank editieren</property>
@@ -210,9 +216,30 @@
 		      <signal name="activate" handler="on_einstellungen_activate" last_modification_time="Sat, 10 Mar 2007 14:04:13 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image53">
+			<widget class="GtkImage" id="image61">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-edit</property>
+			  <property name="icon_size">1</property>
+			  <property name="xalign">0.5</property>
+			  <property name="yalign">0.5</property>
+			  <property name="xpad">0</property>
+			  <property name="ypad">0</property>
+			</widget>
+		      </child>
+		    </widget>
+		  </child>
+
+		  <child>
+		    <widget class="GtkImageMenuItem" id="load_online">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">Onlinedatenbank laden</property>
+		      <property name="use_underline">True</property>
+		      <signal name="activate" handler="on_load_online_activate" last_modification_time="Fri, 30 Mar 2007 09:43:47 GMT"/>
+
+		      <child internal-child="image">
+			<widget class="GtkImage" id="image62">
+			  <property name="visible">True</property>
+			  <property name="stock">gtk-network</property>
 			  <property name="icon_size">1</property>
 			  <property name="xalign">0.5</property>
 			  <property name="yalign">0.5</property>
@@ -244,7 +271,7 @@
 		      <signal name="activate" handler="on_info_activate" last_modification_time="Sat, 10 Mar 2007 14:04:13 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image54">
+			<widget class="GtkImage" id="image63">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-about</property>
 			  <property name="icon_size">1</property>

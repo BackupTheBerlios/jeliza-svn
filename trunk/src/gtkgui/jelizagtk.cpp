@@ -34,6 +34,7 @@
 #include <unistd.h>
 #include <getopt.h>
 
+#include "socketload.cpp"
 #include "jeliza.h"
 #include "../jeliza/util.cpp"
 #include "../jeliza/arrays.cpp"
@@ -407,6 +408,10 @@ void on_fullscreen_mode_activate(Data4& data) {
 	data.win->show_all_children();
 }
 
+void on_load_online_activate(Data3 data) {
+
+}
+
 MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 : Window(base), refXml(ref)
 {
@@ -462,6 +467,9 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 
 	Gtk::MenuItem* mi9;
 	refXml->get_widget("new_talk2", mi9);
+
+	Gtk::MenuItem* load_online;
+	refXml->get_widget("load_online", load_online);
 
 	Data2 d2;
 	d2.win = this;
@@ -556,6 +564,10 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 		mi4->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_einstellungen_activate), d3));
 	}
 
+	if(load_online) {
+		load_online->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_load_online_activate), d3));
+	}
+
 	if(mi5) {
 		mi5->signal_activate().connect(sigc::bind<Data5>(sigc::ptr_fun(&on_info_activate), d5));
 	}
@@ -604,6 +616,7 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 	if(about_ok) {
 		about_ok->signal_clicked().connect(sigc::bind<Data5>(sigc::ptr_fun(&on_about_ok_clicked), d5));
 	}
+
 
 
 
