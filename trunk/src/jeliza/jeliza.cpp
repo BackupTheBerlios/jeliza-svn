@@ -80,16 +80,13 @@ string JEliza::searchConfigFile() {
  * Speichert einen Satz in div. Dateien und im RAM
  */
 void JEliza::saveSentence (string savetype, string original, string newstring) {
-	ofstream o(m_file.c_str(), ios::app | ios::ate);
-
-	if (!o) {
-		cerr << "Fehler beim Oeffnen einer JEliza-Datei" << endl;
-		return;
-	}
-
-	o << newstring << endl;
-
-	o.close();
+    ofstream o(m_file.c_str(), ios::app | ios::ate);
+    if (!o || newstring.size() < 10) {
+        cerr << "Fehler beim Oeffnen einer JEliza-Datei" << endl;
+    } else {
+        o << newstring << endl;
+        o.close();
+    }
 
 	ofstream o1("subject-verb.txt", ios::app | ios::ate);
 	ofstream o2("verb-object.txt", ios::app | ios::ate);
@@ -285,9 +282,10 @@ bool JEliza::generiere(string sent) {
 		getline(j, b);
 		if (Util::strip(b).size() > 0) {
 			b = Util::strip(b);
+			string b_orig = b;
 			b = Util::toLower(b);
 			if (!Util::contains(b, sFrageZeichen) && !Util::contains(b, sWas) && !Util::contains(b, sWer) && !Util::contains(b, sWie)) {
-				JEliza::m_jd.m_sents->push_back(Util::strip(b));
+				JEliza::m_jd.m_sents->push_back(Util::strip(b_orig));
 			}
 		}
 	}
@@ -320,7 +318,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 	vector<string> woerter;
 	Util::split(s, " ", woerter);
 
-	ifstream in("verbs.txt");
+//	ifstream in("verbs.txt");
 
 	string verb = "";
 	long double bestVerb = 0;
@@ -332,6 +330,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 			points2 = 0;
 			points3 = 0;
 			string tempverb = "";
+			bool brea = false;
 			for (unsigned int g = 0; g < woerter.size(); g++) {
 				string wort = woerter[g];
 				StringCompare sc(wort, buffer);
@@ -352,7 +351,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 		}
 	}
 
-	if (woerter.size() < 15 && bestVerb > 40) {
+	if (verb.size() > 1) { // && bestVerb > 40
 		vector<string> k;
 		Util::SplitString(s, verb, k, false);
 
@@ -561,6 +560,10 @@ Answer JEliza::ask(string frage) {
 				isBeka = true;
 				break;
 			}
+		}
+
+		if (woerter[x] == wort) {
+		    isBeka = true;
 		}
 
 		if (!isBeka) {

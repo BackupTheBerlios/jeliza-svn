@@ -34,7 +34,7 @@
 #include <unistd.h>
 #include <getopt.h>
 
-#include "socketload.cpp"
+#include "../jeliza/socketload.cpp"
 #include "jeliza.h"
 #include "../jeliza/util.cpp"
 #include "../jeliza/arrays.cpp"
@@ -426,6 +426,14 @@ void on_load_online_activate(Data3 data) {
             line = Util::strip(line);
 
             global_jeliza->saveSentence ("file", line, line);
+            ofstream o(global_jeliza->m_file.c_str(), ios::app | ios::ate);
+
+            if (!o) {
+                cerr << "Fehler beim Oeffnen einer JEliza-Datei" << endl;
+            } else {
+                o << line << endl;
+                o.close();
+            }
             cout << "- Learned " << line << endl;
         }
     } else {

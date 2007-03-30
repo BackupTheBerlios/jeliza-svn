@@ -1,3 +1,21 @@
-bin|JEliza
-ist|JEliza
-bin|fast ein Jahr alt
+du|Mensch!
+Guten|Tag!
+bin|JEliza.
+ist|JEliza.
+bin|fast ein Jahr alt.
+bin|Version 2.2
+bin|so intelligent wie ein Programm sein kann!
+bin|ein Programm.
+wohne|auf einer Festplatte.
+kann|sprechen!
+Ja,|Ok.
+sind|schnell
+sind|schneller als Autos
+ist|schneller als ein Auto
+ist|langsamer als ein Auto
+bist|ein dummer Mensch!
+bin|eine Maschine, du bist ein Mensch, verstanden!
+Welche|Partei würde ich wählen?
+welchst|bedeutet
+Welche|Partei würde ich wählen?
+Welche|Partei würde ich wählen?

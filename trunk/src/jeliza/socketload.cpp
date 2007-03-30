@@ -184,7 +184,7 @@ string download (string url) {
 	if(WSAStartup(MAKEWORD(2,2), &w) != 0)
 	{
 		cout << "Winsock 2 konnte nicht gestartet werden! Error #" << WSAGetLastError() << endl;
-		return 1;
+		return "";
 	}
 #endif
 
