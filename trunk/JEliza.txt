@@ -111,9 +111,9 @@ wer ist Marcel?
 hallo
 wer bin du?
 wer bist ich?
-bin steht fÃÂ¼r sein
+bin steht fÃÂÃÂ¼r sein
 es bedeutet
-es steht dafÃÂ¼r
+es steht dafÃÂÃÂ¼r
 es bedeutet
 ja
 und?
@@ -130,8 +130,8 @@ und?
 das ist korrekt
 es stimmt
 ja
-ich bin ganz schÃÂ¶n neugierig
-schÃÂ¶n ist positiv
+ich bin ganz schÃÂÃÂ¶n neugierig
+schÃÂÃÂ¶n ist positiv
 es ist gut
 ja
 wer bin du?
@@ -139,23 +139,23 @@ ich bin JEliza
 ja
 wie ist das Wetter?
 Wetter ist das KLima
-das was in der AtmosphÃÂ¤re ist
-AtmosphÃÂ¤re ist geologisch
+das was in der AtmosphÃÂÃÂ¤re ist
+AtmosphÃÂÃÂ¤re ist geologisch
 ist ein fachausdruck
 keine Ahnung
-weiÃÂt ich es denn?
+weiÃÂÃÂt ich es denn?
 wissen
 das gegenteil von Nichtwissen
 gegenteil ist das gegenteil
 hi
 hy
-hy ist die falschst schreibweisst es heiÃÂt hi
+hy ist die falschst schreibweisst es heiÃÂÃÂt hi
 das ist nicht richtig
 DDR
 Die DDR war ein Sozialistischer Staat
 war ist vergangenheit
 keine gegenwart mehr
-PrÃÂ¤sens
+PrÃÂÃÂ¤sens
 Gegenwart
 ja
 
@@ -163,6 +163,12 @@ ja
 linux?
 
 
-gtfdgfcrds? 
-gtfdgfcrds ist müll 
-müll ist müll 
+gtfdgfcrds?
+gtfdgfcrds ist mÃ¼ll
+mÃ¼ll ist mÃ¼ll
+
+
+hi 
+hi 
+hallo ich 
+wie gehts? 

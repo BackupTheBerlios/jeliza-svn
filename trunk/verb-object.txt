@@ -2054,3 +2054,5 @@ haben|einen Vornamen und einen Nachnamen
 ist|Marcel?
 ist|müll
 ist|müll
+hallo|ich
+wie|gehts?

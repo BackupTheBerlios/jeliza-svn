@@ -2,23 +2,23 @@
  * This is part of JEliza 2.0.
  * Copyright 2006 by Tobias Schulz
  * WWW: http://jeliza.ch.to/
- * 
- * JEliza is free software; you can redistribute it and/or      
- * modify it under the terms of the GNU General Public    
- * License as published by the Free Software Foundation; either  
- * version 2.1 of the License, or (at your option) any later     
- * version.                                                      
- *                                                               
- * JEliza is distributed in the hope that it will be useful, but 
- * WITHOUT ANY WARRANTY; without even the implied warranty of    
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.          
- * See the GNU General Public License for more details.   
- *                                                               
- * You should have received a copy of the GNU GPL               
- * along with JEliza (file "gpl.txt") ; if not, write           
- * to the Free Software Foundation, Inc., 51 Franklin St,        
+ *
+ * JEliza is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later
+ * version.
+ *
+ * JEliza is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU GPL
+ * along with JEliza (file "gpl.txt") ; if not, write
+ * to the Free Software Foundation, Inc., 51 Franklin St,
  * Fifth Floor, Boston, MA  02110-1301  USA
- * 
+ *
  */
 
 #include <iostream>
@@ -39,10 +39,10 @@
 #include "../jeliza/arrays.cpp"
 
 #include <gtkmm.h>
-#include <libglademm.h> 
+#include <libglademm.h>
 
 using namespace std;
-using namespace Gtk; 
+using namespace Gtk;
 
 
 auto_ptr<JEliza> global_jeliza(new JEliza());
@@ -54,10 +54,10 @@ bool vorbereitet = false;
 	string fra = mw->m_entry.get_text();
 	string bestReply = jeliza.ask(fra);
 	jeliza.learn(fra, fra);
-	
+
 	mw->m_textview.get_buffer()->set_text(mw->m_textview.get_buffer()->get_text() + "Mensch: " + fra + "\nJEliza: " + bestReply + "\n");
 	mw->m_entry.set_text("");
-	
+
 	cout << "asked" << endl;
 }*/
 
@@ -66,7 +66,7 @@ class MainWindow : public Gtk::Window {
     public:
         //zugriff auf glade-datei
         Glib::RefPtr<Gnome::Glade::Xml> &refXml;
-       
+
         /*
             wir wollen die fenster informationen aus einer glade-datei laden.
             mittels 'get_widget_derived' (s. main.cpp) kann auf eine abgeleitete
@@ -77,7 +77,7 @@ class MainWindow : public Gtk::Window {
             wir damit die member der klasse aus der glade-datei herauslesen und
             den klassenmembern zuweisen koennen (siehe implementierung des ctor)
         */
-        
+
 	MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &refXml);
 };
 
@@ -92,7 +92,7 @@ string toASCIIreally(string all) {
 	Glib::ustring utf(Glib::convert(" \n\r!\"#$%&'()*+,-./0123456789:;<=>?    @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_    `abcdefghijklmnopqrstuvwxyz{|}~", "UTF-8", "ISO-8859-1"));
 	string ascii(utf);
 //	string ascii = ;
-	
+
 	string allAscii = "";
 	for (int x = 0; x < all.size(); x++) {
 		char array[2];
@@ -103,7 +103,7 @@ string toASCIIreally(string all) {
 			allAscii += y;
 		}
 	}
-	
+
 	return allAscii;
 }
 
@@ -116,99 +116,99 @@ public:
 void on_open_activate(Data2& data) {
 	Gtk::FileChooserDialog dialog("Wissen importieren", Gtk::FILE_CHOOSER_ACTION_OPEN);
 	dialog.set_transient_for(*data.win);
-	
+
 	dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
 	dialog.add_button(Gtk::Stock::OPEN, Gtk::RESPONSE_OK);
 
-	
+
 	Gtk::FileFilter filter_any;
 	filter_any.set_name("Alle Dateien");
 	filter_any.add_pattern("*");
 	dialog.add_filter(filter_any);
 	data.dlg = &dialog;
-	
+
 	JEliza jeliza(1);
 	jeliza.init();
 	string buffer;
 	ofstream o("JEliza.txt", ios::app | ios::ate);
-	
+
 	std::string filename;
 	if (data.dlg->run() == Gtk::RESPONSE_OK) { // RESPONSE_ACCEPT
 		filename = data.dlg->get_filename();
 		Gtk::MessageDialog dia3(*data.win, Glib::ustring(filename + "\nWird nun in die Datenbank geladen"));
-		dia3.run(); 
-		
+		dia3.run();
+
 		ifstream in(filename.c_str());
-		
+
 		while (in) {
 			getline(in, buffer);
 			o << Util::strip(buffer) << "\n" << endl;
 		}
-		
+
 		in.close();
 		Gtk::MessageDialog dia4(*data.win, Glib::ustring(filename + ":\nErfolgreich geladen!"));
-		dia4.run(); 
+		dia4.run();
 	}
-	
+
 	o.close();
 }
 
-void on_save_activate(Data2& data) {  
+void on_save_activate(Data2& data) {
 	Gtk::FileChooserDialog dialog("Wissen exportieren", Gtk::FILE_CHOOSER_ACTION_SAVE);
 	dialog.set_transient_for(*data.win);
-	
+
 	dialog.add_button(Gtk::Stock::CANCEL, Gtk::RESPONSE_CANCEL);
 	dialog.add_button(Gtk::Stock::OPEN, Gtk::RESPONSE_OK);
 
-	
+
 	Gtk::FileFilter filter_any;
 	filter_any.set_name("Alle Dateien");
 	filter_any.add_pattern("*");
 	dialog.add_filter(filter_any);
 	data.dlg = &dialog;
-	
+
 	JEliza jeliza(1);
 	jeliza.init();
 	string buffer;
-	
-	
+
+
 	std::string filename;
 	if (data.dlg->run() == Gtk::RESPONSE_OK) { // RESPONSE_ACCEPT
 		filename = data.dlg->get_filename();
 		Gtk::MessageDialog dia3(*data.win, Glib::ustring("Die Datenbank wird nun nach \n" + filename + "\nexportiert"));
-		dia3.run(); 
-		
+		dia3.run();
+
 		ifstream in("JEliza.txt");
 		ofstream o(filename.c_str());
-		
+
 		while (in) {
 			getline(in, buffer);
 			o << Util::strip(buffer) << "\n" << endl;
 		}
-		
+
 		in.close();
 		o.close();
 		Gtk::MessageDialog dia4(*data.win, Glib::ustring(filename + ":\nErfolgreich exportiert!"));
-		dia4.run(); 
+		dia4.run();
 	}
-	
+
 //	o.close();
 }
 
-void on_close_activate(Data2& data) {  
+void on_close_activate(Data2& data) {
 	data.win->hide();
 }
 
-void on_cut_activate() {  
+void on_cut_activate() {
 }
 
-void on_copy_activate() {  
+void on_copy_activate() {
 }
 
-void on_paste_activate() {  
+void on_paste_activate() {
 }
 
-void on_delete_activate() {  
+void on_delete_activate() {
 }
 
 class Data3 {
@@ -234,7 +234,7 @@ public:
 	Glib::RefPtr<Gtk::TextBuffer::Tag> refTagMatch;
 //	Glib::RefPtr<Gtk::TextBuffer> buf;
 //	auto_ptr<JEliza> jeliza;
-//	
+//
 //	Data4()
 //	: jeliza(new JEliza())
 //	{
@@ -245,7 +245,7 @@ public:
 //	}
 };
 
-void on_einstellungen_activate(Data3& data) {  
+void on_einstellungen_activate(Data3& data) {
 	ifstream in("JEliza.txt");
 	string buffer;
 	string all = "";
@@ -260,14 +260,14 @@ void on_einstellungen_activate(Data3& data) {
 	}
 	in.close();
 	all = toASCII(all);
-	
+
 	data.buf = data.tv->get_buffer();
 	data.buf->set_text(all);
 	data.tv->set_buffer(data.buf);
-	
+
 	data.dialog->show();
 	data.dialog->show_all_children();
-	
+
 //	if (data.dialog->run() == Gtk::RESPONSE_OK) {
 //	}
 }
@@ -276,16 +276,16 @@ void on_okbutton1_clicked(Data3& data) {
 	data.dialog->hide();
 
 	data.buf = data.tv->get_buffer();
-	
+
 	ofstream o("JEliza.txt");
-	
+
 	string all;
 	Gtk::TextBuffer::iterator iter = data.buf->begin();
 	while (iter != data.buf->end()) {
 		all += *iter;
 		++iter;
 	}
-	
+
 	all = toASCII(all);
 	o << all << endl;
 	o.close();
@@ -304,21 +304,21 @@ void on_about_ok_clicked(Data5& data) {
 	data.win->hide();
 }
 
-void on_new_database_activate(Data3& data) {  
-	Gtk::MessageDialog dia3(*data.win, Glib::ustring(toASCII("Soll die aktuelle Datenbank wirklich gelöscht und eine neue angelegt werden?")), true, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_YES_NO, true);
-	
+void on_new_database_activate(Data3& data) {
+	Gtk::MessageDialog dia3(*data.win, Glib::ustring(toASCII("Soll die aktuelle Datenbank wirklich gelÃ¶scht und eine neue angelegt werden?")), true, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_YES_NO, true);
+
 	if (dia3.run() == Gtk::RESPONSE_YES) {
 		ofstream o("JEliza.txt");
 		o << "" << endl;
 		o.close();
 	}
 }
-	
 
-void on_new_talk_activate(Data3& data) {  
+
+void on_new_talk_activate(Data3& data) {
 	data.talk->get_buffer()->set_text("");
 }
-	
+
 class Data1 {
 public:
 	Gtk::Entry* entry;
@@ -326,7 +326,7 @@ public:
 	MainWindow* win;
 	Glib::RefPtr<Gtk::TextBuffer::Tag> refTagMatch;
 //	auto_ptr<JEliza> jeliza;
-//	
+//
 //	Data1()
 //	: jeliza(new JEliza())
 //	{
@@ -339,54 +339,60 @@ public:
 
 void on_Ask_clicked(Data1& data) {
 	global_jeliza->vorbereite();
-	
+
 	Glib::ustring msg;
-	
+
 	if(!data.entry) {
 		Gtk::MessageDialog dia4(*data.win, Glib::ustring("JEliza Error 1"));
-		dia4.run(); 
+		dia4.run();
 	}
 	string fra = data.entry->get_text();
 	msg = toASCII(fra);
-	
-	
-	string bestReply = toASCII(global_jeliza->ask(fra));
+	string bestReply;
+
+	(*global_jeliza) << Question(fra);
+	(*global_jeliza) >> bestReply;
+
+	bestReply = toASCII(bestReply);
 	msg = Glib::ustring(bestReply);
-	global_jeliza->learn(fra, fra);
-	
+	(*global_jeliza) << LearnableSentence(fra);
+
 	data.textview->get_buffer()->set_text(data.textview->get_buffer()->get_text() + Glib::ustring("Mensch: " + fra) + Glib::ustring("\nJEliza: ") + msg + Glib::ustring("\n"));
 	data.entry->set_text("");
-	
+
 	data.textview->get_buffer()->apply_tag(data.refTagMatch, data.textview->get_buffer()->begin(), data.textview->get_buffer()->end());
 	TextBuffer::iterator it = data.textview->get_buffer()->end();
-	
+
 	//cout << "asked1" << endl;
 }
 
 void fs_on_Ask_clicked(Data4& data) {
 	global_jeliza->vorbereite();
-	
+
 	Glib::ustring msg;
-	
+
 	if(!data.entry) {
 		Gtk::MessageDialog dia4(*data.win, Glib::ustring("JEliza Error 2"));
-		dia4.run(); 
+		dia4.run();
 	}
 	string fra = data.entry->get_text();
 	msg = toASCII(fra);
-	
-	
-	string bestReply = toASCII(global_jeliza->ask(fra));
+	string bestReply;
+
+	(*global_jeliza) << Question(fra);
+	(*global_jeliza) >> bestReply;
+
+	bestReply = toASCII(bestReply);
 	msg = Glib::ustring(bestReply);
-	global_jeliza->learn(fra, fra);
-	
-	data.textview->get_buffer()->set_text(Glib::ustring(msg) + Glib::ustring("\n")); // data.textview->get_buffer()->get_text() + "Mensch: " + fra + "\nJEliza: " + 
+	(*global_jeliza) << LearnableSentence(fra);
+
+	data.textview->get_buffer()->set_text(Glib::ustring(msg) + Glib::ustring("\n")); // data.textview->get_buffer()->get_text() + "Mensch: " + fra + "\nJEliza: " +
 	data.entry->set_text("");
-	
+
 	data.textview->get_buffer()->apply_tag(data.refTagMatch, data.textview->get_buffer()->begin(), data.textview->get_buffer()->end());
 	TextBuffer::iterator it = data.textview->get_buffer()->end();
 	//data.textview->scroll_to(it, 0);
-	
+
 	//cout << "asked2" << endl;
 }
 
@@ -401,15 +407,15 @@ void on_fullscreen_mode_activate(Data4& data) {
 	data.win->show_all_children();
 }
 
-MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref) 
+MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 : Window(base), refXml(ref)
-{ 
+{
 	Gtk::Button* btn_on_Ask_clicked;
 	refXml->get_widget("Ask", btn_on_Ask_clicked);
 
 	Gtk::Entry* entry;
 	refXml->get_widget("entry", entry);
-	
+
 	Gtk::TextView* textview;
 	refXml->get_widget("textview2", textview);
 
@@ -459,34 +465,34 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 
 	Data2 d2;
 	d2.win = this;
-	
-	
+
+
 	Gtk::Dialog* dialog;
 	refXml->get_widget("einstellungen", dialog);
-	
+
 	Gtk::TextView* tv2;
 	refXml->get_widget("jelizafilecontent", tv2);
-	
+
 	Data3 d3;
 	d3.win = this;
 	d3.dialog = dialog;
 	d3.tv = tv2;
 	d3.talk = textview;
-	
+
 	Gtk::Button* okbutton1;
 	refXml->get_widget("okbutton1", okbutton1);
-	
+
 	Gtk::Button* cancelbutton1;
 	refXml->get_widget("cancelbutton1", cancelbutton1);
-	
+
 
 
 	Gtk::Window* fullscreen;
 	refXml->get_widget("fullscreen", fullscreen);
-	
+
 	Gtk::TextView* fs_tv;
 	refXml->get_widget("fs_tv", fs_tv);
-	
+
 	Glib::RefPtr<Gtk::TextBuffer::Tag> refTagMatch = Gtk::TextBuffer::Tag::create();
 	refTagMatch->property_size_points() = 30;
 	Glib::RefPtr<Gtk::TextBuffer::TagTable> refTagTable = Gtk::TextBuffer::TagTable::create();
@@ -494,16 +500,16 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 	Glib::RefPtr<Gtk::TextBuffer> refBuffer = Gtk::TextBuffer::create(refTagTable);
 	fs_tv->set_buffer(refBuffer);
 	fs_tv->set_wrap_mode(Gtk::WRAP_WORD);
-	
+
 	Gtk::Entry* fs_entry;
 	refXml->get_widget("fs_entry", fs_entry);
-	
+
 	Gtk::Button* fs_button;
 	refXml->get_widget("fs_button", fs_button);
-	
+
 	Gtk::Button* fs_end;
 	refXml->get_widget("fs_end", fs_end);
-	
+
 	Data4 d4;
 	d4.win = fullscreen;
 	d4.tv = fs_tv;
@@ -516,91 +522,91 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 
 	Gtk::Window* about_dia;
 	refXml->get_widget("about_dia", about_dia);
-	
+
 	Gtk::Button* about_ok;
 	refXml->get_widget("about_ok", about_ok);
-	
+
 
 	Data5 d5;
 	d5.win = about_dia;
-	
+
 
 
 	if(btn_on_Ask_clicked) {
-		btn_on_Ask_clicked->signal_clicked().connect(sigc::bind<Data1>(sigc::ptr_fun(&on_Ask_clicked), d1)); 
+		btn_on_Ask_clicked->signal_clicked().connect(sigc::bind<Data1>(sigc::ptr_fun(&on_Ask_clicked), d1));
 	}
 
 	if(entry) {
-		entry->signal_activate().connect(sigc::bind<Data1>(sigc::ptr_fun(&on_Ask_clicked), d1)); 
+		entry->signal_activate().connect(sigc::bind<Data1>(sigc::ptr_fun(&on_Ask_clicked), d1));
 	}
 
 	if(mi) {
-		mi->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_open_activate), d2)); 
+		mi->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_open_activate), d2));
 	}
-	
+
 	if(mi2) {
-		mi2->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_save_activate), d2)); 
+		mi2->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_save_activate), d2));
 	}
-		
+
 	if(mi3) {
-		mi3->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_close_activate), d2)); 
+		mi3->signal_activate().connect(sigc::bind<Data2>(sigc::ptr_fun(&on_close_activate), d2));
 	}
-		
+
 	if(mi4) {
-		mi4->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_einstellungen_activate), d3)); 
+		mi4->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_einstellungen_activate), d3));
 	}
 
 	if(mi5) {
-		mi5->signal_activate().connect(sigc::bind<Data5>(sigc::ptr_fun(&on_info_activate), d5)); 
+		mi5->signal_activate().connect(sigc::bind<Data5>(sigc::ptr_fun(&on_info_activate), d5));
 	}
 
 	if(mi6) {
-		mi6->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_new_database_activate), d3)); 
+		mi6->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_new_database_activate), d3));
 	}
 
 	if(mi7) {
-		mi7->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_new_talk_activate), d3)); 
+		mi7->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_new_talk_activate), d3));
 	}
 
 	if(mi8) {
-		mi8->signal_activate().connect(sigc::bind<Data4>(sigc::ptr_fun(&on_fullscreen_mode_activate), d4)); 
+		mi8->signal_activate().connect(sigc::bind<Data4>(sigc::ptr_fun(&on_fullscreen_mode_activate), d4));
 	}
 
 	if(mi9) {
-		mi9->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_new_talk_activate), d3)); 
+		mi9->signal_activate().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_new_talk_activate), d3));
 	}
 
 	if(okbutton1) {
-		okbutton1->signal_clicked().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_okbutton1_clicked), d3)); 
+		okbutton1->signal_clicked().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_okbutton1_clicked), d3));
 	}
 
 	if(cancelbutton1) {
-		cancelbutton1->signal_clicked().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_cancelbutton1_clicked), d3)); 
+		cancelbutton1->signal_clicked().connect(sigc::bind<Data3>(sigc::ptr_fun(&on_cancelbutton1_clicked), d3));
 	}
-	
+
 
 	if(fs_button) {
-		fs_button->signal_clicked().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_on_Ask_clicked), d4)); 
+		fs_button->signal_clicked().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_on_Ask_clicked), d4));
 	}
-	
+
 	if(fs_entry) {
-		fs_entry->signal_activate().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_on_Ask_clicked), d4)); 
+		fs_entry->signal_activate().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_on_Ask_clicked), d4));
 	}
-	
+
 	if(fs_end) {
-		fs_end->signal_clicked().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_end_clicked), d4)); 
+		fs_end->signal_clicked().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_end_clicked), d4));
 	}
-	
+
 //	if(fs_entry) {
-//		fs_entry->signal_activate().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_on_Ask_clicked), d4)); 
+//		fs_entry->signal_activate().connect(sigc::bind<Data4>(sigc::ptr_fun(&fs_on_Ask_clicked), d4));
 //	}
 
 	if(about_ok) {
-		about_ok->signal_clicked().connect(sigc::bind<Data5>(sigc::ptr_fun(&on_about_ok_clicked), d5)); 
+		about_ok->signal_clicked().connect(sigc::bind<Data5>(sigc::ptr_fun(&on_about_ok_clicked), d5));
 	}
-	
-	
-	
+
+
+
 	const Glib::ustring jelizaxpm("jeliza16.xpm");
 	this->get_window()->set_icon_name(jelizaxpm);
 
@@ -618,14 +624,14 @@ int main(int argc, char *argv[])
 		all += "\n";
 	}
 	in.close();
-	
+
 	ofstream o("JEliza.txt");
 	o << toASCII(all) << endl;
 	o.close();
 
-	
+
 	Main mainApplication(argc, argv);
-	
+
         try {
 		/*
 			gladedatei oeffnen, um fensterinformationen herauszulesen
@@ -636,7 +642,7 @@ int main(int argc, char *argv[])
 		*/
 		Glib::RefPtr<Gnome::Glade::Xml> refXml = Gnome::Glade::Xml::create("jeliza-glade.glade"); // , "MainWindow"
 		MainWindow* mainWindow(0);
-		
+
 		/*
 			um auf eine instanz zugreifen zu koennen, nutzt man die element-
 			funktion 'get_widget'. Da wir jedoch eine von Gtk::Window
@@ -644,7 +650,7 @@ int main(int argc, char *argv[])
 			aufrufen.
 		*/
 		refXml->get_widget_derived("MainWindow", mainWindow);
-		
+
 		//wenn es eine entsprechende instanz gibt...
 		if(mainWindow) {
 //			mainWindow->fullscreen();
@@ -667,8 +673,8 @@ int main(int argc, char *argv[])
 		cin.get();
 		return 1;
 	}
-    return 0; 
-	
-	
+    return 0;
+
+
 }
 
