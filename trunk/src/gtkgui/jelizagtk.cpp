@@ -409,7 +409,28 @@ void on_fullscreen_mode_activate(Data4& data) {
 }
 
 void on_load_online_activate(Data3 data) {
+    string all = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/JEliza-online.txt");
+    if (all) {
+        ofstream o1("JEliza.txt");
+        o1.close();
+        ofstream o2("subject-verb.txt");
+        o2.close();
+        ofstream o3("verb-object.txt");
+        o3.close();
 
+        vector<string> allVec;
+        Util::split(all, string("\n"), allVec);
+
+        for (int x = 0; x < allVec.size(); x++) {
+            string line = allVec[x];
+            line = Util::strip(line);
+
+            global_jeliza->saveSentence ("file", line, line);
+            cout << "- Learned " << line << endl;
+        }
+    } else {
+        cout << "- Cannot load http://svn.berlios.de/svnroot/repos/jeliza/trunk/JEliza-online.txt" << endl;
+    }
 }
 
 MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
