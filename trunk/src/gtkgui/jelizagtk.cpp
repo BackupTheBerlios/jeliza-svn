@@ -410,7 +410,7 @@ void on_fullscreen_mode_activate(Data4& data) {
 
 void on_load_online_activate(Data3 data) {
     string all = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/JEliza-online.txt");
-    if (all) {
+    if (all.size() > 1) {
         ofstream o1("JEliza.txt");
         o1.close();
         ofstream o2("subject-verb.txt");

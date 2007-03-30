@@ -52,9 +52,8 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
 am_jelizagtk_OBJECTS = jelizagtk-jeliza.$(OBJEXT) \
-	jelizagtk-socketload.$(OBJEXT) jelizagtk-jelizagtk.$(OBJEXT) \
-	jelizagtk-arrays.$(OBJEXT) jelizagtk-string_compare.$(OBJEXT) \
-	jelizagtk-util.$(OBJEXT)
+	jelizagtk-jelizagtk.$(OBJEXT) jelizagtk-arrays.$(OBJEXT) \
+	jelizagtk-string_compare.$(OBJEXT) jelizagtk-util.$(OBJEXT)
 jelizagtk_OBJECTS = $(am_jelizagtk_OBJECTS)
 jelizagtk_DEPENDENCIES =
 DEFAULT_INCLUDES = -I. -I$(srcdir)
@@ -178,7 +177,7 @@ jelizagtk_LDADD = -lm -lgtkmm-2.4  -lgdkmm-2.4  -latkmm-1.6  -lpangomm-1.4  -lca
 jelizagtk_LDFLAGS = -pg
 jelizagtk_CFLAGS = -g -Wall -fPIC -DPIC
 jelizagtk_CPPFLAGS = -pg             -g -Wall -fPIC -DPIC -I/usr/include/gtkmm-2.4 -I./src/jeliza/  -I/usr/lib/gtkmm-2.4/include  -I/usr/include/glibmm-2.4  -I/usr/lib/glibmm-2.4/include  -I/usr/include/gdkmm-2.4  -I/usr/lib/gdkmm-2.4/include  -I/usr/include/pangomm-1.4  -I/usr/include/atkmm-1.6  -I/usr/include/gtk-2.0  -I/usr/include/sigc++-2.0  -I/usr/lib/sigc++-2.0/include  -I/usr/include/glib-2.0  -I/usr/lib/glib-2.0/include  -I/usr/lib/gtk-2.0/include  -I/usr/include/cairomm-1.0  -I/usr/include/pango-1.0  -I/usr/include/cairo  -I/usr/include/freetype2  -I/usr/include/atk-1.0  -I/usr/include/libglademm-2.4
-jelizagtk_SOURCES = ./src/jeliza/jeliza.h ./src/jeliza/jeliza.cpp ./src/jeliza/socketload.cpp ./src/gtkgui/jelizagtk.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp
+jelizagtk_SOURCES = ./src/jeliza/jeliza.h ./src/jeliza/jeliza.cpp ./src/gtkgui/jelizagtk.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp
 LD_LIBRARY_PATH = .:./lib
 WIN_LD_LIBRARY_PATH = .:./lib:/media/hdb5/data/Dev-Cpp/lib
 all: all-am
@@ -254,7 +253,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-arrays.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-jeliza.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-jelizagtk.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-socketload.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-string_compare.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-util.Po@am__quote@
 
@@ -285,20 +283,6 @@ jelizagtk-jeliza.obj: ./src/jeliza/jeliza.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/jeliza.cpp' object='jelizagtk-jeliza.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`
-
-jelizagtk-socketload.o: ./src/jeliza/socketload.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-socketload.o -MD -MP -MF "$(DEPDIR)/jelizagtk-socketload.Tpo" -c -o jelizagtk-socketload.o `test -f './src/jeliza/socketload.cpp' || echo '$(srcdir)/'`./src/jeliza/socketload.cpp; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-socketload.Tpo" "$(DEPDIR)/jelizagtk-socketload.Po"; else rm -f "$(DEPDIR)/jelizagtk-socketload.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/socketload.cpp' object='jelizagtk-socketload.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-socketload.o `test -f './src/jeliza/socketload.cpp' || echo '$(srcdir)/'`./src/jeliza/socketload.cpp
-
-jelizagtk-socketload.obj: ./src/jeliza/socketload.cpp
-@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-socketload.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-socketload.Tpo" -c -o jelizagtk-socketload.obj `if test -f './src/jeliza/socketload.cpp'; then $(CYGPATH_W) './src/jeliza/socketload.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/socketload.cpp'; fi`; \
-@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-socketload.Tpo" "$(DEPDIR)/jelizagtk-socketload.Po"; else rm -f "$(DEPDIR)/jelizagtk-socketload.Tpo"; exit 1; fi
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='./src/jeliza/socketload.cpp' object='jelizagtk-socketload.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-socketload.obj `if test -f './src/jeliza/socketload.cpp'; then $(CYGPATH_W) './src/jeliza/socketload.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/socketload.cpp'; fi`
 
 jelizagtk-jelizagtk.o: ./src/gtkgui/jelizagtk.cpp
 @am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-jelizagtk.o -MD -MP -MF "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" -c -o jelizagtk-jelizagtk.o `test -f './src/gtkgui/jelizagtk.cpp' || echo '$(srcdir)/'`./src/gtkgui/jelizagtk.cpp; \
