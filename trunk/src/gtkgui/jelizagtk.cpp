@@ -673,9 +673,9 @@ int main(int argc, char *argv[])
 
         ofstream o1("JEliza.txt");
         o1.close();
-        ofstream o2("subject-verb.txt");
+        ofstream o2("subject-verb-online.txt");
         o2.close();
-        ofstream o3("verb-object.txt");
+        ofstream o3("verb-object-online.txt");
         o3.close();
 
 

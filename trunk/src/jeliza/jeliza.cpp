@@ -244,8 +244,8 @@ bool JEliza::generiere(string sent) {
 
 	string sFrageZeichen("?");
 	string sWas("was");
-	string sWer("was");
-	string sWie("was");
+	string sWer("wer");
+	string sWie("wie");
 
 	Util::split(sent, string(" "), JEliza::m_jd.m_last_sentence_words);
 	if (JEliza::m_jd.m_last_sentence_words.size() > 60) {
@@ -665,36 +665,30 @@ Answer JEliza::ask(string frage) {
 		Util::split(sentence, " ", woerter2);
 		string last = "";
 
+        long double points2 = 0;
+
 		for (unsigned int a = 0; a < woerter2.size(); a++) {
 			string wort2 = woerter2[a];
 			wort2 = Util::toLower(wort2);
-
-            long double points2 = 0;
 
 			for (unsigned int y = 0; y < woerter.size(); y++) {
 				string wort = woerter[y];
 				wort = Util::toLower(wort);
 
-//				StringCompare sc(wort, wort2);
-                if (wort == wort2) {
-                    points2 += 1000 * wort.size() * 1.2;
-                }
+				StringCompare sc(wort, wort2);
+                points2 += sc.getPoints() * sc.getPoints();
 			}
+		}
 
-            points2 = points2 / (woerter.size() * frage.size());
+        points2 = points2 / (woerter.size() * woerter2.size());
 
 //		cout << points2 << " " << frage << " " << sentence << endl;
 
-            if (points2 > best && last_answer != sentence) {
-
-                best = points2 / 100 * 98;
-
-                second_reply = reply;
-                reply = sentence;
-
-            }
-
-		}
+        if (points2 > best && last_answer != sentence) {
+            best = points2 / 100 * 98;
+            second_reply = reply;
+            reply = sentence;
+        }
 	}
 
 	if (JEliza::m_jd.m_last_answers_second.size() > 1 && best < 5) {
