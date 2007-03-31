@@ -246,7 +246,7 @@ bool JEliza::generiere(string sent) {
                 );
 	}
 	for (int x = 0; x < JEliza::m_jd.m_last_sentence_words.size(); x++) {
-	    cout << " - Wort: " << JEliza::m_jd.m_last_sentence_words[x] << endl;
+	    cout << "- Wort: " << JEliza::m_jd.m_last_sentence_words[x] << endl;
 	}
 
 	JElizaData jd;
@@ -354,6 +354,9 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 			if (points2 > bestVerb) {
 				bestVerb = points2;
 				verb = tempverb;
+				if (bestVerb > 85) {
+				    break;
+				}
 			}
 		}
 	}
@@ -386,10 +389,83 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 }
 
 /*
- * Antwortet auf eine Frage
+ * Trennt einen Satz in Subjekt, Verb und Objekt auf
  */
-Answer JEliza::ask(string frage) {
-	frage = Util::replace(frage, string("-"), string("refdrefdrefzthgred4t4"));
+vector<string> JEliza::trenne_SubVerbObj(string s, vector<string> verbs) {
+	vector<string> woerter;
+	Util::split(s, " ", woerter);
+
+//	ifstream in("verbs.txt");
+
+	string verb = "";
+	string verb2 = "";
+	long double bestVerb = 0;
+	long double points2 = 0;
+	long double points3 = 0;
+	for (unsigned int x = 0; x < verbs.size(); x++) {
+		string buffer = verbs[x];
+		if (buffer.size() > 1) {
+			points2 = 0;
+			points3 = 0;
+			string tempverb = "";
+			string tempverb2 = "";
+			bool brea = false;
+			for (unsigned int g = 0; g < woerter.size(); g++) {
+				string wort = woerter[g];
+				StringCompare sc(wort, buffer);
+				points2 += sc.getPoints();
+
+				if (sc.getPoints() > points3) {
+					points3 = sc.getPoints();
+					tempverb = wort;
+					tempverb2 = buffer;
+				}
+			}
+
+			points2 = points2 / woerter.size();
+
+			if (points2 > bestVerb) {
+				bestVerb = points2;
+				verb = tempverb;
+				verb2 = tempverb2;
+
+				if (bestVerb > 75) {
+				    break;
+				}
+			}
+		}
+	}
+
+	if (verb.size() > 1) { // && bestVerb > 40
+		vector<string> k;
+		Util::SplitString(s, verb, k, false);
+
+		k[0] = Util::strip(k[0]);
+		k[1] = Util::strip(k[1]);
+		s = Util::strip(s);
+		verb = Util::strip(verb);
+		verb2 = Util::strip(verb2);
+
+		k[0] = Util::replace(k[0], "  ", " ");
+		k[1] = Util::replace(k[1], "  ", " ");
+		s = Util::replace(s, "  ", " ");
+		verb = Util::replace(verb, "  ", " ");
+
+		if (k[0].size() > 1 && k[1].size() > 1) {
+		    vector<string> ret;
+		    ret.push_back(k[0]);
+		    ret.push_back(verb);
+		    ret.push_back(verb2);
+		    ret.push_back(k[1]);
+		    return ret;
+		}
+	}
+	vector<string> ret;
+	return ret;
+}
+
+string JEliza::ohne_muell(string frage) {
+    frage = Util::replace(frage, string("-"), string("refdrefdrefzthgred4t4"));
 	frage = Util::replace(frage, string("refdrefdrefzthgred4t4"), string("-"));
 	frage = Util::replace(frage, string("?"), string(""));
 	frage = Util::replace(frage, string("!"), string(""));
@@ -405,7 +481,6 @@ Answer JEliza::ask(string frage) {
 	frage = Util::replace(frage, string("/"), string(" ztrgftredrefd "));
 	frage = Util::replace(frage, string("ztrgftredrefd"), string("/"));
 	frage = Util::replace(frage, string("  "), string(" "));
-	frage = Util::umwandlung(frage);
 	frage = " " + frage + " ";
 
 	vector<string> unuseful_words;
@@ -440,6 +515,18 @@ Answer JEliza::ask(string frage) {
 	unuseful_words.push_back("ansonsten");
 	unuseful_words.push_back("noch");
 
+	unuseful_words.push_back("fast");
+	unuseful_words.push_back("bald");
+	unuseful_words.push_back("sehr");
+	unuseful_words.push_back("na");
+	unuseful_words.push_back("bisschen");
+	unuseful_words.push_back("bischen");
+	unuseful_words.push_back("hald");
+	unuseful_words.push_back("halt");
+	unuseful_words.push_back("eben");
+	unuseful_words.push_back("oder");
+	unuseful_words.push_back("und");
+
 	unuseful_words.push_back("of");
 	unuseful_words.push_back("from");
 	unuseful_words.push_back("by");
@@ -459,6 +546,126 @@ Answer JEliza::ask(string frage) {
 	}
 
 	frage = Util::strip(frage);
+	return frage;
+}
+
+bool is_similar(string s1, string s2) {
+    s1 = Util::toLower(s1);
+    s1 = Util::strip(s1);
+
+    s2 = Util::toLower(s2);
+    s2 = Util::strip(s2);
+
+    if (s1 == s2) {
+        return true;
+    }
+    if (Util::contains(s1, s2)) {
+        return true;
+    }
+    if (Util::contains(s2, s1)) {
+        return true;
+    }
+    return false;
+}
+
+Answer JEliza::answer_logical(string frage) {
+    frage = Util::strip(frage);
+    cout << "- Suche nach einer logischen Antwort auf \"" << frage << "\"" << endl;
+
+    ifstream in2("verbs.txt");
+	vector<string> verbs;
+	string buffer;
+	while (in2) {
+		getline(in2, buffer);
+		buffer = Util::strip(buffer);
+		verbs.push_back(buffer);
+	}
+
+    vector<string> parts = trenne_SubVerbObj(frage, verbs);
+    if (parts.size() < 1) {
+        cout << "- Kein Verb gefunden in: \"" << frage << "\"" << endl;
+        return Answer("");
+    }
+
+    string parts_0 = ohne_muell(parts[0]);
+    parts_0 = Util::toLower(parts_0);
+    string parts_3 = ohne_muell(parts[3]);
+    parts_3 = Util::toLower(parts_3);
+
+    if (parts[0].size() < 1 || parts[1].size() < 1 || parts[2].size() < 1 || parts[3].size() < 1) {
+        cout << "- Unvollstaendiger Satzteil in: \"" << frage << "\"" << endl;
+        return Answer("");
+    }
+
+    vector<string> meinungen;
+
+    ifstream in("JEliza.txt");
+    string temp;
+    while (in) {
+        getline (in, temp);
+
+        if (!Util::contains(temp, parts[1]) && !Util::contains(temp, parts[2])) {
+            continue;
+        }
+
+        temp = Util::replace(temp, string("?"), string(""));
+        temp = Util::replace(temp, string("!"), string(""));
+        temp = Util::replace(temp, string("."), string(""));
+
+        if (temp.size() > 25) {
+            continue;
+        }
+
+        temp = Util::strip(temp);
+
+        vector<string> parts2 = trenne_SubVerbObj(temp, verbs);
+
+        if (parts2.size() < 1) {
+            continue;
+        }
+
+        if (parts2[0].size() < 1 || parts2[1].size() < 1 || parts2[2].size() < 1 || parts2[3].size() < 1) {
+            continue;
+        }
+
+        string parts2_0 = ohne_muell(parts2[0]);
+        parts2_0 = Util::toLower(parts2_0);
+        string parts2_3 = ohne_muell(parts2[3]);
+        parts2_3 = Util::toLower(parts2_3);
+
+        cout << parts_0 << "/" << parts2_0 << "/" << parts_3 << "/" << parts2_3 << endl;
+        if (is_similar(parts_0, parts2_0) || is_similar(parts_3, parts2_3)
+                || is_similar(parts_0, parts2_3) || is_similar(parts_3, parts2_0)) {
+            meinungen.push_back("Ich dachte immer, " + parts2[0] + " " + parts2[1] + " " + parts2[3] + "??");
+            meinungen.push_back(parts2[1] + " " + parts2[0] + " nicht " + parts2[3] + "?");
+            meinungen.push_back(parts2[0] + " " + parts2[1] + " doch " + parts2[3] + ", oder?");
+            meinungen.push_back(parts2[0] + " " + parts2[1] + " doch " + parts2[3] + ", nicht wahr?");
+            meinungen.push_back("Ich ging immer davon aus, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + "!");
+        }
+    }
+
+    for (int x = 0; x < meinungen.size(); x++) {
+        cout << "- Meinung: " << meinungen[x] << endl;
+    }
+
+    if (meinungen.size() < 1) {
+        return Answer("");
+    }
+
+    srand((unsigned) time(NULL));
+	int random = rand() % meinungen.size();
+	Answer answer = Answer(meinungen[random]);
+	return answer;
+}
+
+
+
+/*
+ * Antwortet auf eine Frage
+ */
+Answer JEliza::ask(string frage) {
+    frage = ohne_muell(frage);
+	frage = Util::umwandlung(frage);
 
 	// Ist die Frage "leer"?
 	if (frage.size() == 0) {
@@ -638,6 +845,14 @@ Answer JEliza::ask(string frage) {
 		reply = al_reply;
     }
 */
+
+    Answer logical_ans = answer_logical(frage);
+    if (logical_ans.m_ans.size() > 2) {
+        cout << "- Logische Antwort gefunden: " << logical_ans.m_ans << endl;
+        return logical_ans;
+    }
+
+    cout << "- Keine logische Antwort gefunden, suche eine unlogische..." << endl;
 
 
     // ALter Algo

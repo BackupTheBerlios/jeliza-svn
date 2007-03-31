@@ -199,6 +199,9 @@ public:
 	void vorbereiteSent(string bestStr);
 	void generiereSentence(string& bestStr, vector<string>& ss, string& sFrageZeichen, string& last);
 	void SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, ofstream& o2);
+	vector<string> trenne_SubVerbObj(string s, vector<string> verbs);
+	string ohne_muell(string frage);
+	Answer answer_logical(string frage);
 	Answer ask(string frage);
 	double rechne(string s);
 };

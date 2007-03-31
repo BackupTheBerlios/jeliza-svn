@@ -398,10 +398,14 @@ Ich|wohne
 Ich|kann
 Mir|gehts
 Mir|geht
+Das Wetter|ist
+Weil die Sonne scheint|ist
 
 
-wer|bin
-wer|bist
-wer|bin
-wer|bin
-wer|bin
+so|ist
+so|ist
+so|ist
+so|ist
+ja|klar
+das|kann
+du habs mir ja|beigebracht

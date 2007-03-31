@@ -28,6 +28,7 @@
 #include <fstream>
 #include <string>
 #include <map>
+#include <ext/hash_map>
 
 #include <string>
 #include <list>
@@ -39,10 +40,7 @@
 #include "arrays.cpp"
 
 using namespace std;
-
-
-
-
+using namespace __gnu_cxx;
 
 
 

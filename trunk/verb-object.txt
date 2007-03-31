@@ -430,10 +430,14 @@ wohne|auf einer Festplatte.
 kann|sprechen!
 gehts|gut!
 geht|es gut!
+ist|schoen weil die Sonne scheint!
+ist|das Wetter schoen!
 
 
-bin|du?
-bist|ich?
-bin|ich?
-bin|ich ?
-bin|ich ?
+ist|es
+ist|es
+ist|es
+ist|es
+was|wille du?
+kann|jeder
+ja|du
