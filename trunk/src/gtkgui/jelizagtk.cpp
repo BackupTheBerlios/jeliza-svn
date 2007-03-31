@@ -409,29 +409,21 @@ void on_fullscreen_mode_activate(Data4& data) {
 }
 
 void on_load_online_activate(Data3 data) {
-    string all = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/JEliza-online.txt");
-    if (all.size() > 1) {
-        vector<string> allVec;
-        Util::split(all, string("\n"), allVec);
+    string all1 = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/JEliza-online.txt");
+    string all2 = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/subject-verb-online.txt");
+    string all3 = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/verb-object-online.txt");
 
-        for (int x = 0; x < allVec.size(); x++) {
-            string line = allVec[x];
-            line = Util::strip(line);
+    ofstream o1("JEliza.txt");
+    o1 << all1 << endl;
+    o1.close();
 
-            global_jeliza->saveSentence ("file", line, line);
-            ofstream o(global_jeliza->m_file.c_str(), ios::app | ios::ate);
+    ofstream o2("subject-verb.txt");
+    o2 << all2 << endl;
+    o2.close();
 
-            if (!o) {
-                cerr << "Fehler beim Oeffnen einer JEliza-Datei (gtkgui.cpp)" << endl;
-            } else {
-                o << line << endl;
-                o.close();
-            }
-            cout << "- Learned " << line << endl;
-        }
-    } else {
-        cout << "- Cannot load http://svn.berlios.de/svnroot/repos/jeliza/trunk/JEliza-online.txt" << endl;
-    }
+    ofstream o3("verb-object.txt");
+    o3 << all3 << endl;
+    o3.close();
 }
 
 MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)

@@ -190,7 +190,7 @@ void JEliza::vorbereite() {
 			s = (*JEliza::m_jd.m_VOs)[c];
 			vector<string> v_o = (*JEliza::m_jd.m_VOs_words)[c];
 
-			if (s_v[1] == v_o[0]) {
+			if (Util::toLower(s_v[1]) == Util::toLower(v_o[0])) {
 				bestStr = s_v[0] + " " + s_v[1] + " " + v_o[1];
 
 				vorbereiteSent(bestStr);
@@ -665,11 +665,11 @@ Answer JEliza::ask(string frage) {
 		Util::split(sentence, " ", woerter2);
 		string last = "";
 
-		long double points2 = 0;
-
 		for (unsigned int a = 0; a < woerter2.size(); a++) {
 			string wort2 = woerter2[a];
 			wort2 = Util::toLower(wort2);
+
+            long double points2 = 0;
 
 			for (unsigned int y = 0; y < woerter.size(); y++) {
 				string wort = woerter[y];
@@ -677,25 +677,24 @@ Answer JEliza::ask(string frage) {
 
 //				StringCompare sc(wort, wort2);
                 if (wort == wort2) {
-                    points2 += 100 * wort.size() * 1.2;
+                    points2 += 1000 * wort.size() * 1.2;
                 }
 			}
 
+            points2 = points2 / (woerter.size() * frage.size());
+
+//		cout << points2 << " " << frage << " " << sentence << endl;
+
+            if (points2 > best && last_answer != sentence) {
+
+                best = points2 / 100 * 98;
+
+                second_reply = reply;
+                reply = sentence;
+
+            }
+
 		}
-
-		points2 = points2 / (woerter.size() * frage.size() * woerter2.size());
-
-		cout << points2 << " " << frage << " " << sentence << endl;
-
-        if (points2 > best && last_answer != sentence) {
-
-			best = points2 / 100 * 98;
-
-			second_reply = reply;
-			reply = sentence;
-
-		}
-
 	}
 
 	if (JEliza::m_jd.m_last_answers_second.size() > 1 && best < 5) {

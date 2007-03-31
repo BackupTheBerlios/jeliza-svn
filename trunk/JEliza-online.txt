@@ -12,6 +12,8 @@ Ich bin so intelligent wie ein Programm sein kann!
 Ich bin ein Programm.
 Ich wohne auf einer Festplatte.
 Ich kann sprechen!
+Mir gehts gut!
+Mir geht es gut!
 
 Ja, klar!
 Ja, Ok.
@@ -501,3 +503,20 @@ Ein bisschen Bi schadet nie!
 Microsoft ist Profitgierig.
 Wenige Menschen denken, und doch wollen alle entscheiden.
 Wenn eine Frau nicht spricht, soll man sie auf keinen Fall un
+
+Hallo, du Mensch!
+Hi!
+Guten Tag!
+Morgen!
+Guten Morgen!
+
+Ich bin JEliza.
+Mein Name ist JEliza.
+Ich bin fast ein Jahr alt.
+Ich bin Version 2.2
+Ich bin so intelligent wie ein Programm sein kann!
+Ich bin ein Programm.
+Ich wohne auf einer Festplatte.
+Ich kann sprechen!
+Mir gehts gut!
+Mir geht es gut!
