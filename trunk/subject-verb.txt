@@ -400,3 +400,8 @@ Mir|gehts
 Mir|geht
 
 
+wer|bin
+wer|bist
+wer|bin
+wer|bin
+wer|bin

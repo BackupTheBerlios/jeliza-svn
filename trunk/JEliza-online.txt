@@ -521,3 +521,6 @@ Ich wohne auf einer Festplatte.
 Ich kann sprechen!
 Mir gehts gut!
 Mir geht es gut!
+
+Das Wetter ist schoen weil die Sonne scheint!
+Weil die Sonne scheint ist das Wetter schoen!

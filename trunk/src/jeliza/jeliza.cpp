@@ -201,8 +201,8 @@ void JEliza::vorbereite() {
 void JEliza::vorbereiteSent(string bestStr) {
 	string sFrageZeichen("?");
 	string sWas("was");
-	string sWer("was");
-	string sWie("was");
+	string sWer("wer");
+	string sWie("wie");
 
 	if (Util::contains(bestStr, sFrageZeichen) || Util::contains(bestStr, sWas) || Util::contains(bestStr, sWer) || Util::contains(bestStr, sWie)) {
 		return;
@@ -212,8 +212,6 @@ void JEliza::vorbereiteSent(string bestStr) {
 	if (bestStr.size() < 2) {
 		return;
 	}
-
-//	cout << 3 << bestStr << endl;
 
 	vector<string> temp;
 	Util::split(bestStr, string(" "), temp);
@@ -392,7 +390,6 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
  */
 Answer JEliza::ask(string frage) {
 	frage = Util::replace(frage, string("-"), string("refdrefdrefzthgred4t4"));
-	frage = Util::umwandlung(frage);
 	frage = Util::replace(frage, string("refdrefdrefzthgred4t4"), string("-"));
 	frage = Util::replace(frage, string("?"), string(""));
 	frage = Util::replace(frage, string("!"), string(""));
@@ -408,6 +405,7 @@ Answer JEliza::ask(string frage) {
 	frage = Util::replace(frage, string("/"), string(" ztrgftredrefd "));
 	frage = Util::replace(frage, string("ztrgftredrefd"), string("/"));
 	frage = Util::replace(frage, string("  "), string(" "));
+	frage = Util::umwandlung(frage);
 	frage = " " + frage + " ";
 
 	vector<string> unuseful_words;

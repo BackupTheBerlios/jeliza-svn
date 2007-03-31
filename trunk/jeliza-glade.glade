@@ -10,7 +10,7 @@
   <property agent="glademm" name="cxx_visibility">public</property>
   <property name="visible">True</property>
   <property name="has_focus">True</property>
-  <property name="title" translatable="yes">JEliza 2.1</property>
+  <property name="title" translatable="yes">JEliza 2.2 beta</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>

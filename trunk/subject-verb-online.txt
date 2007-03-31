@@ -398,3 +398,5 @@ Ich|wohne
 Ich|kann
 Mir|gehts
 Mir|geht
+Das Wetter|ist
+Weil die Sonne scheint|ist

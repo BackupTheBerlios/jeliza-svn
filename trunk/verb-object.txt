@@ -432,3 +432,8 @@ gehts|gut!
 geht|es gut!
 
 
+bin|du?
+bist|ich?
+bin|ich?
+bin|ich ?
+bin|ich ?
