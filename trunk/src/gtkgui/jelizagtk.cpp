@@ -411,13 +411,6 @@ void on_fullscreen_mode_activate(Data4& data) {
 void on_load_online_activate(Data3 data) {
     string all = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/JEliza-online.txt");
     if (all.size() > 1) {
-        ofstream o1("JEliza.txt");
-        o1.close();
-        ofstream o2("subject-verb.txt");
-        o2.close();
-        ofstream o3("verb-object.txt");
-        o3.close();
-
         vector<string> allVec;
         Util::split(all, string("\n"), allVec);
 
@@ -654,8 +647,75 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 
 }
 
+void saveSentence_online (JEliza jel, string newstring) {
+    ofstream o("JEliza.txt", ios::app | ios::ate);
+    if (!o) {
+        cerr << "Fehler beim Oeffnen einer JEliza-Datei (jeliza.cpp)" << endl;
+    } else if (newstring.size() < 10) {
+        cerr << "Satz hat zu wenig Woerter (< 10): " << newstring << endl;
+    } else {
+        o << newstring << endl;
+        o.close();
+    }
+
+	ofstream o1("subject-verb-online.txt", ios::app | ios::ate);
+	ofstream o2("verb-object-online.txt", ios::app | ios::ate);
+
+	string buffer;
+
+	ifstream in("verbs.txt");
+	vector<string> verbs;
+	while (in) {
+		getline(in, buffer);
+		buffer = Util::strip(buffer);
+		verbs.push_back(buffer);
+	}
+
+	jel.SentenceToSubVerbObj(newstring, verbs, o1, o2);
+}
+
 int main(int argc, char *argv[])
 {
+    if (argc > 1) {
+        JEliza jel(1);
+
+        ofstream o1("JEliza.txt");
+        o1.close();
+        ofstream o2("subject-verb.txt");
+        o2.close();
+        ofstream o3("verb-object.txt");
+        o3.close();
+
+
+        vector<string> allVec;
+        ifstream ifstr("JEliza-online.txt");
+        string temp;
+        while (ifstr) {
+            getline(ifstr, temp);
+            temp = Util::strip(temp);
+
+            allVec.push_back(temp);
+        }
+
+        for (int x = 0; x < allVec.size(); x++) {
+            string line = allVec[x];
+            line = Util::strip(line);
+
+            saveSentence_online (jel, line);
+            ofstream o(global_jeliza->m_file.c_str(), ios::app | ios::ate);
+
+            if (!o) {
+                cerr << "Fehler beim Oeffnen einer JEliza-Datei (gtkgui.cpp)" << endl;
+            } else {
+                o << line << endl;
+                o.close();
+            }
+            cout << "- Learned " << line << endl;
+        }
+        return 0;
+    }
+
+
 	ifstream in("JEliza.txt");
 	string buffer;
 	string all = "";

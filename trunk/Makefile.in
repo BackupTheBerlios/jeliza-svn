@@ -51,7 +51,10 @@ CONFIG_CLEAN_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
-am_jelizagtk_OBJECTS = jelizagtk-jeliza.$(OBJEXT) \
+am_jelizagtk_OBJECTS = jelizagtk-Console.$(OBJEXT) \
+	jelizagtk-Dictionary.$(OBJEXT) jelizagtk-Model.$(OBJEXT) \
+	jelizagtk-stdafx.$(OBJEXT) jelizagtk-Swap.$(OBJEXT) \
+	jelizagtk-Tree.$(OBJEXT) jelizagtk-jeliza.$(OBJEXT) \
 	jelizagtk-jelizagtk.$(OBJEXT) jelizagtk-arrays.$(OBJEXT) \
 	jelizagtk-string_compare.$(OBJEXT) jelizagtk-util.$(OBJEXT)
 jelizagtk_OBJECTS = $(am_jelizagtk_OBJECTS)
@@ -176,8 +179,8 @@ AM_CPPFLAGS = -g -Wall -fPIC -DPIC -Isrc/socket
 jelizagtk_LDADD = -lm -lgtkmm-2.4  -lgdkmm-2.4  -latkmm-1.6  -lpangomm-1.4  -lcairomm-1.0  -lglibmm-2.4  -lsigc-2.0   -latk-1.0  -lgdk_pixbuf-2.0  -lpangocairo-1.0  -lcairo  -lpangoft2-1.0  -lfontconfig  -lfreetype  -lz  -lpango-1.0  -lm  -lgobject-2.0  -lgmodule-2.0  -lglib-2.0  -lglade-2.0 -lglademm-2.4
 jelizagtk_LDFLAGS = -pg
 jelizagtk_CFLAGS = -g -Wall -fPIC -DPIC
-jelizagtk_CPPFLAGS = -pg             -g -Wall -fPIC -DPIC -I/usr/include/gtkmm-2.4 -I./src/jeliza/  -I/usr/lib/gtkmm-2.4/include  -I/usr/include/glibmm-2.4  -I/usr/lib/glibmm-2.4/include  -I/usr/include/gdkmm-2.4  -I/usr/lib/gdkmm-2.4/include  -I/usr/include/pangomm-1.4  -I/usr/include/atkmm-1.6  -I/usr/include/gtk-2.0  -I/usr/include/sigc++-2.0  -I/usr/lib/sigc++-2.0/include  -I/usr/include/glib-2.0  -I/usr/lib/glib-2.0/include  -I/usr/lib/gtk-2.0/include  -I/usr/include/cairomm-1.0  -I/usr/include/pango-1.0  -I/usr/include/cairo  -I/usr/include/freetype2  -I/usr/include/atk-1.0  -I/usr/include/libglademm-2.4
-jelizagtk_SOURCES = ./src/jeliza/jeliza.h ./src/jeliza/jeliza.cpp ./src/gtkgui/jelizagtk.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp
+jelizagtk_CPPFLAGS = -pg             -g -Wall -fPIC -DPIC -I/usr/include/gtkmm-2.4 -Isrc/engine -I./src/jeliza/  -I/usr/lib/gtkmm-2.4/include  -I/usr/include/glibmm-2.4  -I/usr/lib/glibmm-2.4/include  -I/usr/include/gdkmm-2.4  -I/usr/lib/gdkmm-2.4/include  -I/usr/include/pangomm-1.4  -I/usr/include/atkmm-1.6  -I/usr/include/gtk-2.0  -I/usr/include/sigc++-2.0  -I/usr/lib/sigc++-2.0/include  -I/usr/include/glib-2.0  -I/usr/lib/glib-2.0/include  -I/usr/lib/gtk-2.0/include  -I/usr/include/cairomm-1.0  -I/usr/include/pango-1.0  -I/usr/include/cairo  -I/usr/include/freetype2  -I/usr/include/atk-1.0  -I/usr/include/libglademm-2.4
+jelizagtk_SOURCES = src/engine/Console.cpp src/engine/Console.h src/engine/Defs.h src/engine/Dictionary.cpp src/engine/Dictionary.h src/engine/Funcs.h src/engine/Model.cpp src/engine/Model.h src/engine/stdafx.cpp src/engine/stdafx.h src/engine/Swap.cpp src/engine/Swap.h src/engine/Tree.cpp src/engine/Tree.h ./src/jeliza/jeliza.h ./src/jeliza/jeliza.cpp ./src/gtkgui/jelizagtk.cpp ./src/jeliza/arrays.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp
 LD_LIBRARY_PATH = .:./lib
 WIN_LD_LIBRARY_PATH = .:./lib:/media/hdb5/data/Dev-Cpp/lib
 all: all-am
@@ -250,9 +253,15 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-Console.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-Dictionary.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-Model.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-Swap.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-Tree.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-arrays.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-jeliza.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-jelizagtk.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-stdafx.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-string_compare.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jelizagtk-util.Po@am__quote@
 
@@ -269,6 +278,90 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+jelizagtk-Console.o: src/engine/Console.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Console.o -MD -MP -MF "$(DEPDIR)/jelizagtk-Console.Tpo" -c -o jelizagtk-Console.o `test -f 'src/engine/Console.cpp' || echo '$(srcdir)/'`src/engine/Console.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Console.Tpo" "$(DEPDIR)/jelizagtk-Console.Po"; else rm -f "$(DEPDIR)/jelizagtk-Console.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Console.cpp' object='jelizagtk-Console.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Console.o `test -f 'src/engine/Console.cpp' || echo '$(srcdir)/'`src/engine/Console.cpp
+
+jelizagtk-Console.obj: src/engine/Console.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Console.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-Console.Tpo" -c -o jelizagtk-Console.obj `if test -f 'src/engine/Console.cpp'; then $(CYGPATH_W) 'src/engine/Console.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Console.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Console.Tpo" "$(DEPDIR)/jelizagtk-Console.Po"; else rm -f "$(DEPDIR)/jelizagtk-Console.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Console.cpp' object='jelizagtk-Console.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Console.obj `if test -f 'src/engine/Console.cpp'; then $(CYGPATH_W) 'src/engine/Console.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Console.cpp'; fi`
+
+jelizagtk-Dictionary.o: src/engine/Dictionary.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Dictionary.o -MD -MP -MF "$(DEPDIR)/jelizagtk-Dictionary.Tpo" -c -o jelizagtk-Dictionary.o `test -f 'src/engine/Dictionary.cpp' || echo '$(srcdir)/'`src/engine/Dictionary.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Dictionary.Tpo" "$(DEPDIR)/jelizagtk-Dictionary.Po"; else rm -f "$(DEPDIR)/jelizagtk-Dictionary.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Dictionary.cpp' object='jelizagtk-Dictionary.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Dictionary.o `test -f 'src/engine/Dictionary.cpp' || echo '$(srcdir)/'`src/engine/Dictionary.cpp
+
+jelizagtk-Dictionary.obj: src/engine/Dictionary.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Dictionary.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-Dictionary.Tpo" -c -o jelizagtk-Dictionary.obj `if test -f 'src/engine/Dictionary.cpp'; then $(CYGPATH_W) 'src/engine/Dictionary.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Dictionary.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Dictionary.Tpo" "$(DEPDIR)/jelizagtk-Dictionary.Po"; else rm -f "$(DEPDIR)/jelizagtk-Dictionary.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Dictionary.cpp' object='jelizagtk-Dictionary.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Dictionary.obj `if test -f 'src/engine/Dictionary.cpp'; then $(CYGPATH_W) 'src/engine/Dictionary.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Dictionary.cpp'; fi`
+
+jelizagtk-Model.o: src/engine/Model.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Model.o -MD -MP -MF "$(DEPDIR)/jelizagtk-Model.Tpo" -c -o jelizagtk-Model.o `test -f 'src/engine/Model.cpp' || echo '$(srcdir)/'`src/engine/Model.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Model.Tpo" "$(DEPDIR)/jelizagtk-Model.Po"; else rm -f "$(DEPDIR)/jelizagtk-Model.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Model.cpp' object='jelizagtk-Model.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Model.o `test -f 'src/engine/Model.cpp' || echo '$(srcdir)/'`src/engine/Model.cpp
+
+jelizagtk-Model.obj: src/engine/Model.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Model.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-Model.Tpo" -c -o jelizagtk-Model.obj `if test -f 'src/engine/Model.cpp'; then $(CYGPATH_W) 'src/engine/Model.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Model.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Model.Tpo" "$(DEPDIR)/jelizagtk-Model.Po"; else rm -f "$(DEPDIR)/jelizagtk-Model.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Model.cpp' object='jelizagtk-Model.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Model.obj `if test -f 'src/engine/Model.cpp'; then $(CYGPATH_W) 'src/engine/Model.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Model.cpp'; fi`
+
+jelizagtk-stdafx.o: src/engine/stdafx.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-stdafx.o -MD -MP -MF "$(DEPDIR)/jelizagtk-stdafx.Tpo" -c -o jelizagtk-stdafx.o `test -f 'src/engine/stdafx.cpp' || echo '$(srcdir)/'`src/engine/stdafx.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-stdafx.Tpo" "$(DEPDIR)/jelizagtk-stdafx.Po"; else rm -f "$(DEPDIR)/jelizagtk-stdafx.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/stdafx.cpp' object='jelizagtk-stdafx.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-stdafx.o `test -f 'src/engine/stdafx.cpp' || echo '$(srcdir)/'`src/engine/stdafx.cpp
+
+jelizagtk-stdafx.obj: src/engine/stdafx.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-stdafx.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-stdafx.Tpo" -c -o jelizagtk-stdafx.obj `if test -f 'src/engine/stdafx.cpp'; then $(CYGPATH_W) 'src/engine/stdafx.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/stdafx.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-stdafx.Tpo" "$(DEPDIR)/jelizagtk-stdafx.Po"; else rm -f "$(DEPDIR)/jelizagtk-stdafx.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/stdafx.cpp' object='jelizagtk-stdafx.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-stdafx.obj `if test -f 'src/engine/stdafx.cpp'; then $(CYGPATH_W) 'src/engine/stdafx.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/stdafx.cpp'; fi`
+
+jelizagtk-Swap.o: src/engine/Swap.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Swap.o -MD -MP -MF "$(DEPDIR)/jelizagtk-Swap.Tpo" -c -o jelizagtk-Swap.o `test -f 'src/engine/Swap.cpp' || echo '$(srcdir)/'`src/engine/Swap.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Swap.Tpo" "$(DEPDIR)/jelizagtk-Swap.Po"; else rm -f "$(DEPDIR)/jelizagtk-Swap.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Swap.cpp' object='jelizagtk-Swap.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Swap.o `test -f 'src/engine/Swap.cpp' || echo '$(srcdir)/'`src/engine/Swap.cpp
+
+jelizagtk-Swap.obj: src/engine/Swap.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Swap.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-Swap.Tpo" -c -o jelizagtk-Swap.obj `if test -f 'src/engine/Swap.cpp'; then $(CYGPATH_W) 'src/engine/Swap.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Swap.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Swap.Tpo" "$(DEPDIR)/jelizagtk-Swap.Po"; else rm -f "$(DEPDIR)/jelizagtk-Swap.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Swap.cpp' object='jelizagtk-Swap.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Swap.obj `if test -f 'src/engine/Swap.cpp'; then $(CYGPATH_W) 'src/engine/Swap.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Swap.cpp'; fi`
+
+jelizagtk-Tree.o: src/engine/Tree.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Tree.o -MD -MP -MF "$(DEPDIR)/jelizagtk-Tree.Tpo" -c -o jelizagtk-Tree.o `test -f 'src/engine/Tree.cpp' || echo '$(srcdir)/'`src/engine/Tree.cpp; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Tree.Tpo" "$(DEPDIR)/jelizagtk-Tree.Po"; else rm -f "$(DEPDIR)/jelizagtk-Tree.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Tree.cpp' object='jelizagtk-Tree.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Tree.o `test -f 'src/engine/Tree.cpp' || echo '$(srcdir)/'`src/engine/Tree.cpp
+
+jelizagtk-Tree.obj: src/engine/Tree.cpp
+@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-Tree.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-Tree.Tpo" -c -o jelizagtk-Tree.obj `if test -f 'src/engine/Tree.cpp'; then $(CYGPATH_W) 'src/engine/Tree.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Tree.cpp'; fi`; \
+@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/jelizagtk-Tree.Tpo" "$(DEPDIR)/jelizagtk-Tree.Po"; else rm -f "$(DEPDIR)/jelizagtk-Tree.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/engine/Tree.cpp' object='jelizagtk-Tree.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-Tree.obj `if test -f 'src/engine/Tree.cpp'; then $(CYGPATH_W) 'src/engine/Tree.cpp'; else $(CYGPATH_W) '$(srcdir)/src/engine/Tree.cpp'; fi`
 
 jelizagtk-jeliza.o: ./src/jeliza/jeliza.cpp
 @am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-jeliza.o -MD -MP -MF "$(DEPDIR)/jelizagtk-jeliza.Tpo" -c -o jelizagtk-jeliza.o `test -f './src/jeliza/jeliza.cpp' || echo '$(srcdir)/'`./src/jeliza/jeliza.cpp; \

@@ -40,6 +40,13 @@
 #include "string_compare.cpp"
 #include "jeliza.h"
 
+#include "Defs.h"
+#include "Swap.h"
+#include "Tree.h"
+#include "Dictionary.h"
+#include "Model.h"
+
+
 using namespace std;
 
 JElizaData jd2;
@@ -593,6 +600,57 @@ Answer JEliza::ask(string frage) {
 		last_answer = JEliza::m_jd.m_last_answers[JEliza::m_jd.m_last_answers.size() - 1];
 	}
 
+
+
+/*    ofstream jelizatraining("jeliza.training");
+    for (int z = 0; z < m_sentenceCount; z++) {
+		string sentence = (*JEliza::m_jd.m_sents)[z];
+		sentence = Util::strip(sentence);
+
+		jelizatraining << sentence << endl;
+    }
+
+    string fra;
+    for (int x = 0; x < JEliza::m_jd.m_last_sentence_words.size(); x++) {
+	    fra += JEliza::m_jd.m_last_sentence_words[x] + " ";
+	    fra += JEliza::m_jd.m_last_sentence_words[x] + " ";
+	}
+    fra += frage;
+    fra += frage;
+    fra += frage;
+
+    string buffer;
+    string al_reply;
+
+    Model *mod = new Model();
+	mod->load_personality("");
+	Dictionary *input_words = NULL;
+
+	input_words = mod->make_greeting();
+	al_reply = mod->generate_reply (input_words);
+	Funcs::middle (al_reply);
+
+	if (input_words != NULL) {
+		delete input_words;
+		input_words = NULL;
+	}
+
+    input_words = new Dictionary (fra);
+    Dictionary *input_words_frage = new Dictionary (frage);
+
+    if( input_words->size() != 0 ) {
+        Funcs::upper (fra);
+        Funcs::upper (frage);
+		mod->learn (input_words_frage);
+		al_reply = mod->generate_reply (input_words);
+		Funcs::middle(al_reply);
+		reply = al_reply;
+    }
+*/
+
+
+    // ALter Algo
+
 	for (int z = 0; z < m_sentenceCount; z++) {
 		string sentence = (*JEliza::m_jd.m_sents)[z];
 		sentence = Util::strip(sentence);
@@ -617,8 +675,10 @@ Answer JEliza::ask(string frage) {
 				string wort = woerter[y];
 				wort = Util::toLower(wort);
 
-				StringCompare sc(wort, wort2);
-				points2 += sc.getPoints() * wort.size() * 1.2;
+//				StringCompare sc(wort, wort2);
+                if (wort == wort2) {
+                    points2 += 100 * wort.size() * 1.2;
+                }
 			}
 
 		}
