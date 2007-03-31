@@ -40,13 +40,6 @@
 #include "string_compare.cpp"
 #include "jeliza.h"
 
-#include "Defs.h"
-#include "Swap.h"
-#include "Tree.h"
-#include "Dictionary.h"
-#include "Model.h"
-
-
 using namespace std;
 
 JElizaData jd2;
