@@ -104,6 +104,7 @@ public:
 	vector<string> m_last_questions;
 	vector<string> m_last_answers;
 	vector<string> m_last_answers_second;
+	vector<string> m_last_sentence_words;
 
 	JElizaData()
 	: m_sents(new vector<string>()),
@@ -123,7 +124,8 @@ public:
 	  m_countAbbau(0),
 	  m_last_questions(vector<string>()),
 	  m_last_answers(vector<string>()),
-	  m_last_answers_second(vector<string>())
+	  m_last_answers_second(vector<string>()),
+	  m_last_sentence_words(vector<string>())
 	{
 //		cout << "JElizaData" << " initialisiert!" << endl;
 	}

@@ -731,6 +731,7 @@ distribution: packlinux clean
 	cp *.txt tmp_dist/linux
 	cp gpl.txt tmp_dist/linux
 	cp jeliza.inc.html tmp_dist/linux
+	cp jeliza-glade.glade tmp_dist/linux
 
 	mkdir tmp_dist/src
 	cp -r * tmp_dist/src ; true

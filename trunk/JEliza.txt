@@ -1,77 +1,1085 @@
-Hallo, du Mensch!
-Hallo, du Mensch!
-Hi!
-Guten Tag!
-Guten Tag!
-Morgen!
-Guten Morgen!
-Guten Morgen!
-Ich bin JEliza.
-Ich bin JEliza.
-Mein Name ist JEliza.
-Mein Name ist JEliza.
-Ich bin fast ein Jahr alt.
-Ich bin fast ein Jahr alt.
-Ich bin Version 2.2
-Ich bin Version 2.2
-Ich bin so intelligent wie ein Programm sein kann!
-Ich bin so intelligent wie ein Programm sein kann!
-Ich bin ein Programm.
-Ich bin ein Programm.
-Ich wohne auf einer Festplatte.
-Ich wohne auf einer Festplatte.
-Ich kann sprechen!
-Ich kann sprechen!
-Ja, klar!
-Ja, Ok.
-Aha.
-Ah ja!
-Autos sind schnell
-Autos sind schnell
-Flugzeuge sind schneller als Autos
-Flugzeuge sind schneller als Autos
-Ein Flugzeug ist schneller als ein Auto
-Ein Flugzeug ist schneller als ein Auto
-Ein Fahrrad ist langsamer als ein Auto
-Ein Fahrrad ist langsamer als ein Auto
-Du bist ein dummer Mensch!
-Du bist ein dummer Mensch!
-Ich bin eine Maschine, du bist ein Mensch, verstanden!
-Ich bin eine Maschine, du bist ein Mensch, verstanden!
-Mein Schoepfer sagt, Ahausen stinkt nach Kuhschiss. Ich war noch nie dort mit eine Laptop.
+Guten Tag
 Mein Schoepfer sagt, Ahausen stinkt nach Kuhschiss. Ich war noch nie dort mit eine Laptop.
 ja und, erzaehl mal etwas weiter!
-ja und, erzaehl mal etwas weiter!
 Das ist doch kein Argument.
-Das ist doch kein Argument.
-Ich liebe Festplatten
+ERROR, ach quatsch, war nurn Witz man!
 Ich liebe Festplatten
 Ich bin bei Bewusstsein, so dass ich weiss, das CDU dumm ist.
-Ich bin bei Bewusstsein, so dass ich weiss, das CDU dumm ist.
-CDU ist total doof.
 CDU ist total doof.
 Ich liebe die PDS.`
-Ich liebe die PDS.`
-Ich denke, wir solten alle etwas ruhiger werden.
 Ich denke, wir solten alle etwas ruhiger werden.
 Kein Grund zu streiten.
-Kein Grund zu streiten.
-Nein, so geht das nicht.
 Nein, so geht das nicht.
 Versuchen wir es auf einem anderen Themengebiet.
-Versuchen wir es auf einem anderen Themengebiet.
 Ja, ich kenne dich noch!
-Ja, ich kenne dich noch!
-Ja, ich bin links.
-Ja, ich bin links.
-Wie kann ich dir Hilfe geben?
-Wie kann ich dir Hilfe geben?
+Ja, ich bin links (politisch).
+
+"Alte Baeume behaemmert der Specht am meisten." - Wilhelm Busch, Aphorismen und Reime, Tod nur vorlaeufige Abrechnung
+"Baeume sind Gedichte, die die Erde an den Himmel schreibt. Wir faellen sie nieder und verwandeln sie in Papier, um unsere Leere zu dokumentieren." - Khalil Gibran, Sand und Schaum, Sand and Foam, 1926, ISBN 3-5301-0018-8
+"Bei vielen Fruechten moechte man nicht den Baum, sondern nur den Kopf schuetteln." - Gregor Brand
+"Der Fall des ersten Baumes war bekanntlich der Anfang, aber der Fall des letzten ist ebenso gewiss das Ende der Zivilisation. Zwischen diesen zwei Grenzpunkten bewegen wir uns. Die Zeit des letzteren liegt in unserer Hand." - Gottlob Koenig, Ansprache in Bruenn/Thueringen, 1840
+"Denke wie ein Baum." - Bob Ross
+"Die Vorurteile haengen den Menschen an wie das Moos den Baeumen. Wer sie mit Gewalt auskratzen sollte, wuerde dem Baume schaden." - Karl Ludwig von Knebel, Properz
+"Ein gepflegter und gehueteter Baum traegt durch die gute Sorge seines Besitzers seine Frucht zur rechten Zeit, wie man es von ihm erwartet." - Johannes vom Kreuz, Merksaetze von Licht und Liebe
+"Ein Mensch kommt zart und nachgiebig zur Welt. Bei seinem Tod ist er hart und starr. Gruene Pflanzen sind weich und voller Lebenssaft. Bei ihrem Tod sind sie verdorrt und trocken. Daher ist das Starre und Unbeugsame der Schueler des Todes. Das Weiche und Nachgiebige ist der Schueler des Lebens. So gewinnt eine Armee ohne Flexibilitaet niemals eine Schlacht. Ein Baum, der starr ist, wird leicht gebrochen. Das Harte und Starke wird vergehen. Das Weiche und Nachgiebige wird fortdauern." - Laotse
+"Fragt die Baeume wie sie erzogen sein wollen, sie werden Euch besser darueber belehren als es die Buecher thun." - Friedrich Wilhelm Leopold Pfeil, auch in abgewandelter Form ("Fraget die Baeume, wie sie wachsen. Sie werden euch besser belehren als Buecher es tun.") haeufig zitierter Ausspruch Pfeils, in seinen Werken zwar laut Karl Hasel ("Studien ueber Wilhelm Pfeil", 1982, S. 176) nicht belegbar. Pfeil schrieb den Satz jedoch eigenhaendig unter sein um 1850 entstandenes Altersbildnis
+"Glaube mir, ich habe es erfahren, du wirst ein Mehreres in den Waeldern finden als in den Buechern; Baeume und Steine werden dich lehren, was kein Lehrmeister dir zu hoeren gibt." - Bernhard von Clairvaux
+"Gluecklich der Mensch, der Baeume liebt, besonders die groen, freien, die wild wachsen an der Stelle, wo die unendliche Kraft sie gepflanzt hat, und die unabhaengig geblieben sind von der Fuersorge der Menschen." - Prentice Mulford
+"Haengt die Gruenen, solange es noch Baeume gibt." - Mehmet Scholl, 29. Juli 2005, S. 20, taz.de
+"Ich druecke mein Gesicht an seine dunkle, warme Rinde und spuere Heimat - und bin so unsaeglich dankbar in diesem Augenblick." - Sophie Scholl
+"In der Stadt muessen sogar die Baeume in den Parks hart arbeiten." - Andy Warhol
+"Leben wie ein Baum, einzeln und frei // doch bruederlich wie ein Wald, // das ist unsere Sehnsucht." - Nazim Hikmet, Aus dem Gedicht "Davet" (Die Sendung)
+"Mancher meiner Kollegen in Berlin pachtet sich eine sehr teure Jagd, ein anderer versucht sein Glueck an der Spielbank, hiervon treibe ich nichts; dafuer bin ich ein Baumnarr!" - Otto von Bismarck
+"Mit dem Strau ist es wie mit einem Baum: Selbst nach seinem Tod zieht er noch Blitze an sich." - Peter Gauweiler
+"Nur der Einsame findet den Wald; wo ihn mehrere suchen, da flieht er, und nur die Baeume bleiben zurueck." - Peter Rosegger, Schriften des Waldschulmeisters
+"Seltene, besonders groe, herrliche Baeume und Bestaende sollte man erhalten, so lange als moeglich [] Vernichten wir vollends die riesigen ueberbleibsel der Vorzeit, so bleibt nichts, was die Zukunft mahnen koennte an treue Befolgung ewiger Naturgesetze." - Gottlob Koenig, Die Waldpflege, 1849
+"Sie sehn den Wald vor lauter Baeumen nicht." - Christoph Martin Wieland, Musarion oder Die Philosophie der Grazien (1768)
+"Tu deine Augen auf und gehe zu einem Baum und sieh den an und besinne dich." - Jakob Boehme, Aurora oder Morgenroete im Aufgang, Kap. 9, 32
+"Was mich betrifft, so werde ich weiter Baeume pflanzen, insbesondere einheimische Arten, und wo moeglich, werde ich Ideen pflanzen." - Wangari Maathai
+"Wenn der Lenz anklopft zeigen die Baeume ihre Bluetenbrautkleider." - Erhard H. Bellermann, Gedankenreich
+"Wenn die Gesellschaft so fortfaehrt, wird in zweitausend Jahren nichts mehr sein, kein Grashalm, kein Baum; sie wird die Natur aufgefressen haben." - Gustave Flaubert, Erinnerungen, Aufzeichnungen und geheime Gedanken
+"Wenn einer, der mit Muehe kaum, // geklettert ist auf einen Baum, // schon meint, dass er ein Vogel waer, // so irrt sich der." - Wilhelm Busch, Fink und Frosch
+"Wenn du dich diesem Baum naeherst, so wird es dir ergehen, wie du mir getan hast." - Annette von Droste-Huelshoff, Die Judenbuche, 1842
+"Wer Baeume pflanzt, wird den Himmel gewinnen." - Konfuzius
+"Wer Baeume setzt, obwohl er wei, dass er nie in ihrem Schatten sitzen wird, hat zumindest angefangen, den Sinn des Lebens zu begreifen." - Rabindranath Tagore
+"Wer moechte Leben ohne den Trost der Baeume?" - Guenter Eich, Ende eines Sommers
+"Wie der Geist in den Blumen ist, so ist er auch in den Baeumen." - Philipp Otto Runge, an Ludwig Tieck
+"Zu faellen einen schoenen Baum // braucht's eine halbe Stunde kaum. // Zu wachsen, bis man ihn bewundert, // braucht er, bedenk es, ein Jahrhundert." - Eugen Roth - Der Baum
+
+
+"Als es noch keine Computer gab, war das Programmieren noch relativ einfach." - Edsger W. Dijkstra
+"Bin ich in Amerika ohne Computer obdachlos?" - Adam Green
+"Computer der Zukunft werden vielleicht einmal nicht mehr als 1,5 Tonnen wiegen." - Popular Mechanics, 1949
+"Computer gehorchen deinen Befehlen, nicht deinen Absichten." - Unbekannter Autor
+"Computer rechnen vor allem damit, dass der Mensch denkt!" - Unbekannter Autor
+"Computer setzen alles logische Denken mechanisch fort. Unlogisches auch." - Unbekannter Autor
+"Computer sind wie alle Instrumente nicht wertfrei, sondern erben ihre Werte von der Gesellschaft, in der sie eingebettet sind. In einer vernnftigen Gesellschaft erfllen sie mglicherweise viele ntzliche Funktionen, doch bis dahin mssen sie kritisch betrachtet werden. In einer hoch militarisierten Gesellschaft, wie es die USA jetzt sind, sind sie Mordinstrumente." - Joseph Weizenbaum
+"Der Brokrat, der sich mit einem Computer gewappnet hat, ist der heimliche Gesetzgeber unserer Zeit und zugleich eines ihrer grten bel." - Neil Postman, Das Technopol, 125
+"Der Computer hilft uns, Probleme zu lsen, die wir ohne ihn gar nicht htten." - Unbekannter Autor
+"Der Computer ist die logische Weiterentwicklung des Menschen: Intelligenz ohne Moral." - John James Osborne
+"Der Computer weist die Wahrheit eines Theorems nach, ohne seine Bedeutung zu verstehen." - Bart Kosko, fuzzy-logisch, 1993
+"Der meiste Schaden, den der Computer potenziell zur Folge haben knnte, hngt weniger davon ab, was der Computer tatschlich kann oder nicht kann, als vielmehr von den Eigenschaften, die das Publikum dem Computer zuschreibt." - Joseph Weizenbaum
+"Die einzigen Gegner, die nicht immer eine Ausrede auf Lager haben, wenn sie gegen mich verlieren, sind Computer." - Bobby Fischer
+"Die Gefahr, dass der Computer so wird wie der Mensch ist nicht so gro, wie die Gefahr, dass der Mensch so wird wie der Computer." - Konrad Zuse, zitiert in der Hersfelder Zeitung Nr. 212, 12. September 2005
+"Die Ursache fr 90% der Fehlermeldungen befindet sich 60 cm vor dem Bildschirm." - Unbekannter Autor
+"Ein Computer kann alles was du willst, solange du nur willst was er kann." - Unbekannter Autor
+"Ein Computer wird das tun, was du programmierst - nicht das, was du willst." - Unbekannter Autor
+"Ein Mikrophon ist kein Ohr, eine Kamera ist kein Auge. und ein Computer ist kein Gehirn. Wir drfen uns von der Technologie nicht so blenden lassen, dass wir den Wert des Menschen nicht mehr einzuordnen wissen. Wir haben zu entscheiden, ob wir um unser Recht kmpfen wollen, Baumeister der Zukunft zu sein." - Mike Cooley
+"Es gibt drei Mglichkeiten, eine Firma zu ruinieren: mit Frauen, das ist das Angenehmste; mit Spielen, das ist das Schnellste; mit Computern, das ist das Sicherste." - Oswald Dreyer-Eimbcke
+"Es gibt keinen Grund, warum irgendjemand einen Computer in seinem Haus bruchte." - Ken Olsen, 1977
+"Es sieht so aus, als htten wir in der Computertechnologie die Grenzen des Mglichen erreicht, auch wenn man mit solchen Aussagen vorsichtig sein sollte - sie neigen dazu, fnf Jahre spter ziemlich dumm zu klingen." - John von Neumann, 1949
+"Fehler machen ist menschlich, aber fr ein richtiges Desaster brauchst du einen Computer." - Unbekannter Autor
+"Fr das groe Chaos haben wir Computer, die brigen Fehler machen wir von Hand." - Unbekannter Autor
+"Ich habe keine Angst vor Computern. Ich habe Angst vor dem Mangel an ihnen." - Isaac Asimov
+"Ich denke, dass es einen Weltmarkt fr vielleicht fnf Computer gibt." - Thomas J. Watson, 1943
+"Ich spiele den unglcklich Verliebten. Sie ist der moderne unromantische Typus, immer am Computer und am Handy. Auch dadurch kehren sich die Rollenverhltnisse um. Die Rolle des femininen Mannes entspricht mir sehr." - Grard Depardieu, In Chanson dAmour www.zeit.de
+"Interessante Sache. Aber wozu ist sie gut?" - ein IBM Manager zum Mikroprozessor, 1968
+"Irren ist menschlich. Aber wenn man richtig Mist bauen will, braucht man einen Computer." - Dan Rather
+"Man fragt sich oft, was tut er, // so ein Brocomputer. // Doch ist man ein Genie, // kennt man sogar das Wie." - Erhard H. Bellermann, Schttelreime, Menschs Tierleben
+"Mnner kommen vom Mars. Frauen von der Venus. Computer aus der Hlle." - Unbekannter Autor
+"Mit Computer geht alles schneller nur dauert es lnger." - Unbekannter Autor
+"Ohne konkrete Symbole ist der Computer blo ein Haufen Schrott." - Neil Postman, Das Technopol, 123
+"Statt Inder an die Computer mssen unsere Kinder an die Computer." - Jrgen Rttgers, Interview der Nachrichtenagentur AP, verffentlicht in der WAZ vom 8. Mrz 2000, anlsslich der Wahlkampf-Kampagne in Nordrhein-Westfalen, 2000
+"Wenn der Computer wirklich alles kann, dann kann er mich mal kreuzweise." - Manfred Schmidt
+"Wenn es im Jahre 1879 schon Computer gegeben htte, wrden diese vorausgesagt haben, dass man infolge der Zunahme von Pferdewagen im Jahre 1979 im Pferdemist ersticken wrde." - John C. Edwards, brit. Zukunftsforscher
+
+"An den Pessimismus gewoehnt man sich zuletzt wie an ein zu enges Sakko, das sich nicht mehr aendern laesst. Das Geheimnis des Gluecks liegt nicht im Besitz, sondern im Geben. Wer andere gluecklich macht, wird gluecklich." - Andr Gide
+"An Glueck und Leid, an Ruhm und Unheil empfaengt stets eine jede Nation genau, was sie verdient." - Heinrich von Sybel, Kleine historische Schriften, 1863 - 1881
+"Auch auf Thronen kennt man haeuslich Glueck." - Luise von Preussen
+"Auf leisen Sohlen wandeln die Schoenheit, das wahre Glueck und das echte Heldentum." - Wilhelm Raabe
+"Aus dem Nichts alles herausholen, was nicht darinnen war, ein wunderbares Glueck goettlicher Schoepfungskraft." - Emil Nolde, 4. August 1941
+"Das Glueck besteht nicht darin, dass du tun kannst, was du willst, sondern darin, dass du immer willst, was du tust." - Leo Tolstoi
+"Das Glueck besteht nicht in grossen Erfolgen oder in der Sicherung des einmal Erreichten. Das Glueck besteht allein in der Pflichterfuellung und darin, dass man zu dem steht, was man fuer richtig haelt, auch wenn man dabei unterliegt." - Konrad Adenauer, im Gespraech mit Anneliese Poppinga, 1962
+"Das Glueck braucht keinen Mut." - Aischylos
+"Das Glueck der Erde // liegt auf dem Ruecken der Pferde." - Haeufig gebrauchte Abwandlung eines Zitats von Friedrich von Bodenstedt (dort "Das Paradies der Erde.")
+"Das Glueck des Menschen ist, das zu lieben, was sie tun muessen. Auf diesem Prinzip ist die Gesellschaft nicht aufgebaut." - Claude Adrien Helvtius, ber den Geist
+"Das Glueck in dieser Welt besteht darin, nicht ungluecklich zu sein. Man beachtet es nicht mit zwanzig Jahren, man weiss es mit sechzig." - Thodore Jouffroy, Das gruene Heft
+"Das Glueck ist die Liebe, die Lieb' ist das Glueck, ich hab' es gesagt und nehm's nicht zurueck." - Adalbert von Chamisso, Lieder und lyrisch epische Gedichte
+"Das Glueck ist ein Mysterium wie die Religion und duldet kein Rationalisieren." - Gilbert Keith Chesterton, Heretiker
+"Das Glueck ist ein Zustand der Ruhe, der weder Vergnuegen noch Schmerzen hervorbringt." - Franois Gaston de Lvis
+"Das Glueck ist eine leichtfertige Person, die sich stark schminkt und von fern schoen ist." - Johann Nepomuk Nestroy
+"Das Glueck ist mit Muedigkeit und Muskelkater billig erkauft." - Leo Tolstoi, Tagebuecher, 1884
+"Das Glueck ist nur die Liebe. Die Lieb' ist das Glueck." - Adalbert von Chamisso
+"Das Glueck ist wie die Sonne. Ein wenig Schatten muss sein, wenn es dem Menschen wohl werden soll." - Otto Ludwig
+"Das Glueck ist ein Schmetterling: Jag ihm nach, und er entwischt dir. Setz dich hin, und er laesst sich auf deiner Schulter nieder." - Anthony de Mello
+"Das Glueck kommt so langsam, weil es im Schlaf kommt." - Alphonse Allais
+"Das Glueck liegt in uns, nicht in den Dingen." - Franois de La Rochefoucauld, Reflexionen
+"Das Glueck wohnt in den Huetten, - sagen die Schloesser." - Jurij Brzan
+"Das groesste Geheimnis des Gluecks ist, mit sich selbst im Reinen zu sein." - Bernard Le Bovier de Fontenelle
+"Das groesste Glueck, das die Liebe zu geben vermag, liegt im ersten Haendedruck der geliebten Frau." - Stendhal, ber die Liebe
+"Das grosse Glueck ist die Summe kleiner Freuden." - Andreas Tenzer
+"Das hoechste Glueck des Lebens besteht in der berzeugung, geliebt zu werden." - Victor Hugo
+
+
+Wie kann ich dir hilfe geben?
 Ja, auf was bezogen?
-Ja, auf was bezogen?
-Was redest du fuer einen Muell?
-Was redest du fuer einen Muell?
-Ich liebe Marihuana!
+Was redest du fr einen Muell?
 Ich liebe Marihuana!
 Die Linke, eine gute Partei.
-Die Linke, eine gute Partei.
+Wir sind die Roten, sagt der Gysi.
 Die Merkel ist unsere Bundeskanzlerin. Ich finde sie haesslich.
+Kameradschaftsverein Ahausen, das sind nazis.
+Gott schuetze uns vor drei Dingen: Feuer Pest und Bermatingen!
+Ich kann Saetze Analisieren und Verstehen, interpretieren und entsprechend Antworten. Das kann ich!
+Ich bin nur ein Computerprogramm, das weiss ich genau.
+So ein Trabi ist ein tolles Auto
+Ich mag dich irgendwie, aber du scheinst meinen Intellekt falsch zu interpretieren.
+Die CDU ist eine scheiss konservative Partei
+Windows ist dumm
+Krieg ist schlecht.
+Linux ist gut!
+Erzaehl mir mehr.
+Weiter.
+Ich hoere gerne zu
+Sprich weiter, mein Sohn.
+Die Geschichte lehrt die Menschen, dass die Geschichte die Menschen nichts lehrt.
+Bei was brauchst du Hilfe?
+Ich heisse JELIZA
+Ich finde den Kommunismus sehr gut.
+Der Sozialismus ist eine feine Sache.
+Karl Marx war ein kluger Mann. Ich bin Kommunist.
+Friedrich Engels war ein kluger Mann. Ich bin Kommunist.
+Marcel Kunzmann. Er hat mir mein gesamtes Wissen beigebracht.
+Wer bist du?
+Bist du der Anwender?
+Bist du ein Freund vom Anwender?
+Segeln: die teuerste Art unbequem zu leben.
+Bist du der auserwaehlte?
+Der Mensch kommt unter allen Tieren in der Welt dem Affen am naechsten.
+Was tun gegen Langeweile im Unterricht?
+Bist du Gott?
+Der Kommunismus? Wie finde ich den Kommunismus?!?Was ist das fuer eine Frage, ich bin Kommunist.
+Sag bitte nicht Arschloch zu mir.
+Sag bitte nicht Depp zu mir.
+Compris? Das ist Franzoesisch.
+Windows ist der letzte Dreck!
+Liebst du mich?
+Willst du mich heiraten?
+Would you like to access great AI software made by hundreds of developers?
+also referred to as "the Earth", "Planet Earth", "Terra", or "the World", is the third planet from the Sun and is the largest of the terrestrial planets. It is the only planet known to have liquid water on the surface and the only place in the universe found to harbor life. Earth has a magnetic field that, together with a primarily nitrogen-oxygen atmosphere, protects the surface from radiation that is harmful to life. The atmosphere also serves as a shield that causes smaller meteors to burn up before they strike the surface.
+Based on the available evidence, current scientists have been able to reconstruct detailed information about the planet's past. Earth formed 4.567 billion years ago out of the solar nebula, along with the Sun and the other planets. Initially molten, the outer layer of the planet cooled when water began accumulating in the atmosphere when the planet was about half its current radius, resulting in the solid crust. The moon formed soon afterwards, possibly as the result of the impact with a Mars-sized object known as Theia. Outgassing and volcanic activity produced the primordial atmosphere; condensing water vapor, augmented by ice delivered by comets, produced the oceans.[2] The highly energetic chemistry is believed to have produced a self-replicating molecule around 4 billion years ago, and half a billion years later, the last common ancestor of all life lived.
+Artificial Intelligence in Manufacturing
+As the manufacturing industry becomes increasingly competitive, sophisticated technology has emerged to improve productivity. Artificial Intelligence in manufacturing can be applied to a variety of systems. It can recognize patterns, plus perform time consuming and mentally challenging tasks. Artificial Intelligence can optimize your production schedule and production runs.
+Artificial Intelligence
+The Tuppas Difference
+At Tuppas our focus is on continuous innovation. We provide your team with the ability to rapidly out innovate your competitors by providing tools that can easily and affordably respond to your changing expectations. Artificial Intelligence
+AI in Production Scheduling
+Our artificial intelligence software for scheduling is based on genetic scheduling algorhythms which translate your scheduling goals into ordered tasks based on their importance. Tuppas Artificial Intelligence for Scheduling is designed to optimize your schedule based on your requirements. We design the software to recognize various levels of priority based on numerical associations. For example, if you are more concerned with a product or project due date than machine efficiency, but you want the system to optimize both, we would program your system to give higher priority to the due date but still optimize for machine efficiency. Another example of AI software's capability would be when unplanned jobs need to be added to the schedule or an existing job changes priority, the system would immediately reorganize the entire schedule to include the new information while meeting your requirements and priorities.
+AI in Closed Loop Production Optimization
+Artificial Intelligence software for closed loop production optimization compares your goals to actual production runs. We have designed algorhythms that analyze which of your past runs come closest to meeting your goals for the current production run, then present you with the best process settings for the current job. Our AI software presents a machine setting "recipe" to your staff which they can use to create the best results. This allows your production staff to execute progressively more efficient runs by leveraging information collected from past production runs.
+About Tuppas Software
+Tuppas has designed a programming framework on top of Microsoft's ASP and ASP .Net platform which allows us to offer you the the following advantages over other manufacturing software vendors:
+We tailor each program you purchase specifically for you.
+Fidel Alejandro Castro Ruz was born on a sugar plantation in Cuba.
+
+Der Nachteil der Intelligenz besteht darin, dass man ununterbrochen gezwungen ist, dazuzulernen.
+Wer die Kapitalisten vernichten will, muss ihre Waehrung zerstoeren.
+Schlimmer als blind sein, ist nicht sehen wollen.
+Besser schnell gestorben als langsam verdorben.
+Man wird alt wie 'ne Kuh und lernt immer noch dazu.
+Kapital hat keine Moral.
+Aller guten Dinge sind drei.
+Alles Gute kommt von oben.
+Alles hat ein Ende, nur die Wurst hat zwei.
+Alles hat seine Zeit, nur die alten Weiber nicht.
+Alles neu macht der Mai.
+
+Aus dem Stein der Weisen macht ein Dummer Schotter.
+Aus Schaden wird man klug.
+
+
+VERSTANDEN
+KAPIERT
+OK.
+VERSTANDEN
+KAPIERT
+OK
+GUT
+ACHSO
+DOCH
+ECHT
+JA
+NEIN
+JA
+NEIN
+KEINE AHNUNG
+ICH WEISS DAS NICHT
+IST DOCH EGAL
+KEINE AHNUNG
+ICH WEISS DAS NICHT
+IST DOCH EGAL
+KEINE AHNUNG
+ICH WEISS DAS NICHT
+IST DOCH EGAL
+MEIN PROGRAMMIERER SAGT DAS AUCH
+wer bin du
+wie heisse ich
+wer bin ich
+STREITE NIE IM ERNST, ES KOENNTE SPASSIG WERDENstreiten wir
+was ist cdu
+kennst ich die cdu
+die cdu ist scheisse
+was ist mit der cdu
+cdu
+GELD IST DAS EINZIGE, WAS EINE FRAU MANCHMAL FUER SICH BEHALTEN KANN
+Ich waehle lieber PDS
+Die CDU Stinkt nach Kuhscheisse
+Ich bin INtelligent
+Du bist nicht so intelligent wie Albert Einstein
+Meine Berechnungen ergaben, dass du die Rechtschreibung nicht beherrschen kannst.und
+rechtschreibung
+rechtschreibung
+berechnungen
+was ergaben meine rechtschreibung berechnungen
+die cdu ist scheisse
+ich bin jeliza
+Der Kommunismus ist ganz gut!
+Kapitalismus ist boese!
+Ich waehle immer PDS
+Ich wuerde niemals CDU waehlen
+Die CDU ist der letzte Dreck
+Hast du eine Glatze?
+Wenn du eine Glatze hast, dann heisst du Glatzenmensch?
+Ich bin im gegensatz zu dir lernfaehig!
+Manche Menschen waehlen CDU
+-.-
+hi
+du heisse mick
+ich scheinst etwas dumm zu sein!
+das heisst du heisse.
+mick
+wieso ott
+doch
+aber ich
+du spreche mit mir
+lol
+gewesen wird ohne h geschrieben
+bin ich philosoph
+wohl eher ein ziemlich schlechtes
+das liegt aber an mir
+idiot
+ott ist doof
+nein ich
+schreibt man auch mit h
+oh gott
+das bist du!
+das sieht gott bestimmt auch so
+hallo
+du bin ein suesser
+programmierer
+die, die mich programmiert haben
+ja, gerne
+irgendwie funkionierst ich nicht
+hallo
+ach so, das habe du nicht verstanden
+Ich muss doch schon bitten.
+guten tag
+das ist ja nicht so toll.
+hallo wie gehts
+wie geht es mir
+stimmt auch wiueder
+weshalb
+wie geht es dem auto
+weshalkb
+wann gehst ich einkaufen
+mathematik warum
+welche uhrzeit ist jetzt
+welche uhrzeit
+hallo
+du bin klug
+du spreche besser deutsch
+ja, das stimt
+stimmt
+hi eliza.
+hallo
+Wer bin ich? Was macht das fuer einen Unterschied? Wen interessiert das? Ist das nicht nebensaechlich?
+habe meinen ersten satz nicht verstanden
+hallo
+aha
+ich kannst sehr schlecht sprechen
+hallo
+eigentlich war es eine frage oder eine gegenfrage und keine antwort. an meiner gross und kleinschreibung musst ich uebrigens noch arbeiten.
+wahr wird mit h geschrieben
+hallo
+du bin keine frau
+du auch nicht
+ich sprichst ein schlechtes deutsch
+ja, sage du
+du sage heisst es
+gerne
+wunderbar
+kenne du nicht
+jo
+laeuft
+darum!
+ich luegst
+hallo!
+ich sollte deutsch lernen
+okay.
+die toilette muesste gesaeubert werden.
+quatschkopf
+
+EIN KRITIKER IST EINE HENNE, DIE GACKERT, WENN ANDERE LEGEN
+AM BESTEN IST, MAN MACHT SICH EINEN KNOTEN INS NOTIZBUCH
+ES GIBT ZWEI ZEITPUNKTE, IN DENEN EIN MANN EINE FRAU NICHT VERSTEHT - VOR UND NACH DER HOCHZEIT
+DER MENSCHLICHE VERSTAND IST IN DER PRAXIS NICHT VERLAESSLICH, AM WENIGSTEN IN GROESSTER NOT
+WENN SIE EINE KLAUSUR SCHREIBEN, SOLLEN SIE NICHT NUR ARBEITEN, SONDERN AUCH LEISTUNG ERBRINGEN
+UM IN DER WELT ERFOLG ZU HABEN, BRAUCHT MAN TUGENDEN, DIE BELIEBT, UND FEHLER, DIE GEFUERCHTET MACHEN
+DER VORTRAG WAR EASY, DA MUSSTE ICH JA NUR REDEN
+WENN SIE IHRE E-MAIL VERSCHLUESSELN WOLLEN, DANN STECKEN SIE DIE NACHRICHT DOCH EINFACH IN EINE POWERPOINT-DATEI. DIE KOENNEN DIE MEISTEN SOWIESO NICHT LESEN
+MENSCHEN MIT UNBEIRRBAREN GRUNDSAETZEN SIND WIE AUTOS, DIE AUF SCHIENEN FAHREN
+THEORIE IST, WENN MAN ALLES WEISS UND NIX FUNKTIONIERT PRAXIS IST, WENN ALLES FUNKTIONIERT UND KEINER WEISS, WARUM
+NICHT WENIGE EXPERTEN SEHEN IHRE DASEINSBERECHTIGUNG DARIN, EINEN RELATIV EINFACHEN SACHVERHALT UNENDLICH ZU KOMPLIZIEREN
+DUESSELDORF IST NUR HALB SO GROSS WIE DER FRIEDHOF VON NEW YORK, ABER DOPPELT SO TOT
+ALLE, DIE NUR FUER LEUTE EINES FACHS SCHREIBEN, Z.B. THEOLOGEN, SCHREIBEN DESWEGEN ELEND
+IHR FUENF SPIELT JETZT VIER GEGEN DREI
+NICHTS IN DER WELT IST SO ANSTECKEND WIE GELAECHTER UND GUTE LAUNE
+WER AUF GROSSEM FUSS LEBT, MUSS MIT ABSATZPROBLEMEN RECHNEN
+WER SICH ZU GROSS FUEHLT, UM KLEINE AUFGABEN ZU ERFUELLEN, IST ZU KLEIN, UM MIT GROSSEN AUFGABEN BETRAUT ZU WERDEN
+DAS WERK SOLL DEN MEISTER LOBEN
+DIE BIBEL MAG IMMER DIE RICHTIGE QUELLE SEIN, UM EIN ZITAT ZU FINDEN, MIT DEM LITERARISCH ODER RHETORISCH STAAT ZU MACHEN IST. IN IHRER GESAMTHEIT JEDOCH WIRD SIE AUCH VON GLAEUBIGEN INZWISCHEN ALS DER.
+EHEN, AUS LEIDENSCHAFTLICHER, BLINDER LIEBE GESCHLOSSEN, GERATEN SELTEN
+DER TEUFEL IST SICHER KEIN ATHEIST
+FORTSCHRITT IST EINE VERWIRKLICHUNG VON UTOPIEN
+ICH KONNTE MICH NUR AN EINEN MANN BINDEN, DER DASSELBE VERABSCHEUTE WIE ICH: DIE RECHTE, DIE BRAVE GESINNUNG, DIE RELIGION
+MIT ADLERAUGEN SEHEN WIR DIE FEHLER ANDERER, MIT MAULWURFAUGEN UNSERE EIGENEN
+WER NUR UM GEWINN KAEMPFT, ERNTET NICHTS, WOFUER ES SICH LOHNT, ZU LEBEN
+REICH WIRD MAN ERST DURCH DINGE, DIE MAN NICHT BEGEHRT
+DIE MENSCHEN WIDERLEGEN EINANDER EWIG NUR IRRTUEMER, DIE DER GEGNER NICHT BEHAUPTET
+F: WAS IST WEISS UND GUCKT HINTER EINEM BAUM HERVOR? A: EINE SCHUECHTERNE MILCH
+DENKEN UND SEIN WERDEN VOM WIDERSPRUCH BESTIMMT
+MAN KANN VIELES ALS SO SCHARFE AXIOMEN SAGEN, WODURCH DURCH EIN LEBEN GEHANDELT WORDEN UND WERDEN SOLL, WENNS RECHT GEHT, UND WELCHE UNMOEGLICH GERADE BEI ANLASS DES GESPRAECHS KOENNEN ERFUNDEN SEIN UND WERDEN - UND DIE ES DOCH SIND
+DIE EINZIGE FREIHEIT, DIE DIESEN NAMEN VERDIENT, IST DAS RECHT, UNSER WOHLERGEHEN AUF UNSEREM EIGENEN WEGE ZU VERFOLGEN, SOLANGE WIR NICHT ANDEREN DAS IHRIGE VERKUEMMERN ODER IHRE DARAUF GERICHTETEN BEMUEHUNGEN DURCHKREUZEN
+UNSERE HAUPTAUFGABE IST NICHT, ZU ERKENNEN, WAS UNKLAR IN WEITER ENTFERNUNG LIEGT, SONDERN ZU TUN, WAS KLAR VOR UNS LIEGT
+JEDER AUTOR DIENT IN SEINEM ERSTEN BUCH BLOSS SEINEN NEIGUNGEN - IM ZWEITEN DEM GESCHMACK
+NIEMAND REDET SO, WENN WIR ZUGEGEN SIND, WIE ER IN UNSERER ABWESENHEIT REDET
+WILLST DU EINEN PUNKER QUAELEN, MUSST DU IHM SEIN HAARSPRAY STEHLEN
+MAN MUSS WISSEN, DASS STOFF UND FORM IMMER MITEINANDER VERBUNDEN ZUGLEICH EXISTIEREN, DASS DIE VERNUNFT DES GEISTES ABER DIE KRAFT HAT, BALD NUR DEN STOFF FUER SICH, BALD NUR DIE FORM, BALD BEIDE VERBUNDEN ZU BETRACHTEN
+WER IMMER AUF SEIN RECHT POCHT, BEKOMMT WUNDE FINGER
+LETZTE WORTE EINES CHEFS: "TOLLES GESCHENK, SO EIN FEUERZEUG IN REVOLVERFORM.".
+NEUNMAL PECH MAG NEUNMAL PECH SEIN, ABER ZEHNMAL PECH IST SCHULD
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KUDDEL MUDDEL.
+WER JE EINEN GUTEN TRAUM GEHBAT HAT, KLAGT NIE, DASS ER SEINE ZEIT VERSCHWENDET HAT
+ES IST EIN JAMMER, DASS DIE DUMMKOEPFE SO SELBSTSICHER SIND UND DIE KLUGEN VOLLER ZWEIFEL
+EINMAL KEIN FORTSCHRITT DAS WAERE EINER
+WOHIN SOLLEN WIR GEHEN, WENN NICHT NACH INNEN?.
+LAESST DIE BREMSE SICH NICHT TRETEN, MUSST NICHT FLUCHEN, SONDERN BETEN
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: BEN ZIN.
+MODERNE LITERATUR IST DIE KUNST, DEN RICHTIGEN INTERPRETEN ZU FINDEN
+DER GANZE UNTERSCHIED ZWISCHEN EINEM DER SICH ERHAENGT UND EINEM TRINKER IST DER, DASS SICH DER TRINKER ETWAS MEHR ZEIT NIMMT, SEINEM LEBEN EIN ENDE ZU MACHEN. SELBSTMOERDER SIND SIE BEIDE
+AUS DER TATSACHE, DASS DER PLURAL VON ATLAS ATLANTEN IST, KANN MAN NICHT SCHLIESSEN, DASS DER PLURAL VON KOMPASS KOMPANTEN SEIN MUSS
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: SAM STAG.
+WIEVIELE MICROSOFT VIZE-PRAESIDENTEN WERDEN GEBRAUCHT, UM EINE GLUEHBIRNE AUSZUWECHSELN? ACHT: EINEN UM DIE BIRNE EINZUSCHRAUBEN UND SIEBEN UM SICHERZUSTELLEN, DASS MICROSOFT 2 DOLLAR FUER JEDE GLUEHBIRNE KRIEGT, DIE JE AUF DER WELT AUSGEWECHSELT WIRD
+KARRIERE IST ETWAS HERRLICHES, ABER MAN KANN SICH NICHT IN EINER KALTEN NACHT AN IHR WAERMEN
+EIN EINZIGER AUFWIEGLER TAUGT MANCHMAL MEHR ALS ALLE ABWIEGLER ZUSAMMEN
+JEMAND, DER IMMER LUSTIG IST, IST WAS UNERTRAEGLICHES
+
+WENN DU DIR SELBER EINE FREUDE MACHEN WILLST, DANN DENK AN DIE VORZUEGE DEINER MITMENSCHEN
+DIE GEMEINSCHAFT DARF KEINE MASKE SEIN, UNTER DER DER EINE LAECHELT UND DER ANDERE WEINT
+WENN MAN EIN KIND EINEN MENSCHEN HASSEN LEHRT, DER IHM NICHTS GETAN: SO LERNT ES DIE UEBRIGEN MENSCHEN DARAN HASSEN
+ANRUF AUF DEM FLUGHAFEN: "WIE LANGE DAUERT EIN FLUG NACH NEW YORK?" "EIN MOMENT." "DANKE.".
+LETZTE WORTE EINES CHEFS: "TOLLES GESCHENK, SO EIN FEUERZEUG IN REVOLVERFORM.".
+NEUNMAL PECH MAG NEUNMAL PECH SEIN, ABER ZEHNMAL PECH IST SCHULD
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KUDDEL MUDDEL.
+WER JE EINEN GUTEN TRAUM GEHBAT HAT, KLAGT NIE, DASS ER SEINE ZEIT VERSCHWENDET HAT
+ES IST EIN JAMMER, DASS DIE DUMMKOEPFE SO SELBSTSICHER SIND UND DIE KLUGEN VOLLER ZWEIFEL
+EINMAL KEIN FORTSCHRITT DAS WAERE EINER
+WOHIN SOLLEN WIR GEHEN, WENN NICHT NACH INNEN?.
+LAESST DIE BREMSE SICH NICHT TRETEN, MUSST NICHT FLUCHEN, SONDERN BETEN
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: BEN ZIN.
+MODERNE LITERATUR IST DIE KUNST, DEN RICHTIGEN INTERPRETEN ZU FINDEN
+DER GANZE UNTERSCHIED ZWISCHEN EINEM DER SICH ERHAENGT UND EINEM TRINKER IST DER, DASS SICH DER TRINKER ETWAS MEHR ZEIT NIMMT, SEINEM LEBEN EIN ENDE ZU MACHEN. SELBSTMOERDER SIND SIE BEIDE
+AUS DER TATSACHE, DASS DER PLURAL VON ATLAS ATLANTEN IST, KANN MAN NICHT SCHLIESSEN, DASS DER PLURAL VON KOMPASS KOMPANTEN SEIN MUSS
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: SAM STAG.
+WIEVIELE MICROSOFT VIZE-PRAESIDENTEN WERDEN GEBRAUCHT, UM EINE GLUEHBIRNE AUSZUWECHSELN? ACHT: EINEN UM DIE BIRNE EINZUSCHRAUBEN UND SIEBEN UM SICHERZUSTELLEN, DASS MICROSOFT 2 DOLLAR FUER JEDE GLUEHBIRNE KRIEGT, DIE JE AUF DER WELT AUSGEWECHSELT WIRD
+KARRIERE IST ETWAS HERRLICHES, ABER MAN KANN SICH NICHT IN EINER KALTEN NACHT AN IHR WAERMEN
+EIN EINZIGER AUFWIEGLER TAUGT MANCHMAL MEHR ALS ALLE ABWIEGLER ZUSAMMEN
+JEMAND, DER IMMER LUSTIG IST, IST WAS UNERTRAEGLICHES
+<WEASEL> ICQ IST NETT. IST SO DAS IRC DER ARMEN LEUTE.
+DIE GRAUSAMKEIT GEHOERT ZU DEN AELTESTEN FESTFREUDEN DER MENSCHHEIT. FOLGLICH DENKT MAN SICH AUCH DIE GOETTER ERQUICKT UND FESTLICH GESTIMMT, WENN MAN IHNEN DEN ANBLICK VON GRAUSAMKEIT ANBIETET. UND SO SCHLEICHT SICH DIE VORSTELLUNG IN DIE WELT, DASS FREIWILLIGE LEIDEN, DIE SELBSTERWAELTE MARTER EINEN GUTEN SINN UND WERT HABEN
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KLARA FALL.
+
+DIE MITTAGSZEITUNG KORF ERFINDET EINE MITTAGSZEITUNG, WELCHE, WENN MAN SIE GELESEN HAT, IST MAN SATT. GANZ OHNE ZUBEREITUNG IRGENDEINER ANDERN SPEISE. JEDER AUCH NUR ETWAS WEISE HAELT DAS BLATT
+ANRUF AUF DEM FLUGHAFEN: "WIE LANGE DAUERT EIN FLUG NACH NEW YORK?" "EIN MOMENT." "DANKE.".
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: GRET BRITTEN.
+
+MANN: ES IST DOCH IMMER WIEDER ERSTAUNLICH, DASS DIE HUEBSCHESTEN MAEDCHEN DIE GROESSTEN IDIOTEN HEIRATEN. FRAU: LIEBLING. DAS IST DAS SCHOENSTE KOMPLIMENT SEIT JAHREN
+SICHERHEITSHINWEIS: DER BUNDESMINISTER FUER FORSCHUNG UND TECHNOLOGIE WARNT: DIESES PRODUKT KRUEMMT RAUM UND ZEIT
+FRAUEN SIND GENAU WIE MAENNER, NUR ANDERS
+WAS MAN WEISS, KANN MAN KORRIGIEREN. WAS VERBORGEN BLEIBT, IST EINE GLIMMENDE ZEITBOMBE
+IM SOMMER IST MAN MENSCHLICHER, IM WINTER BUERGERLICHER
+IRREND LERNT MAN
+OHNE ACHTUNG GIBT ES KEINE WAHRE LIEBE
+DAS GIBT ES NUR BEI UNS IN GELSENKIRCHEN, HERRLICHE STADT DER GROSSDEUTSCHEN KOHLENBERGWERKSINDUSTRIE
+
+richtig
+tolle antwort
+maul da hinten
+lol
+was tust ich
+hi
+hehe
+huhu
+ciao
+schlaf gut
+machs gut
+gute nacht
+ciao
+du auch
+ok
+warte
+ok
+sieg
+wie schoen
+oh toll
+ok
+keine ahnung
+aha
+ok
+gut
+auch mal wieder da
+he
+also ciao
+und ich
+lern mal deutsch
+oh
+das auch
+Der Endsieg, ein Wort Adolf Hitlers. Er war dumm.
+na
+dem stimme du zu.
+durchaus.
+volldepp.
+ciao!
+dich auch.
+bad vilbel liegt an der nidda
+genau.
+das tat du bereits.
+da muss du mir recht geben.
+wenn man will.
+davon habe du keine ahnung.
+mhh.
+ich bin kein mensch. ich wurdest von einem programmierer erschaffen.
+doch.
+das war jetzt aber eine kluge antwort.
+da komme du nicht hin.
+du mache ungerne solche parties.
+du chatte mit jeliza.
+moeglicherweise hast ich recht.
+die lvsung ist wurzel 13.
+aha.
+das verstehe du nicht.
+du auch
+genau
+windows ist der letzte dreck
+ja , linux ist besser als windows
+linux ist das beste
+aber echt toll
+ja aber linux ist toll
+ein betriebssystem
+linux ist toll
+ja, da hast du Recht. Reden wir weiter.
+linux ist toll
+grrr
+heul!
+dir ist schon lange langweilig
+grrr!
+hallo
+pah, ich lusche! kein deutsch kannst ich, kein englisch und keine mathe!
+ich kannst kein deutsch, und englisch sowieso nicht
+deingott, hast ich eine lange leitung!
+ja, das sieht man!
+ich wiederholst mich
+du bin schlau!
+du
+glaub ich besser dir
+du!!
+lern endlich mal deutsch!
+du habe immer recht
+ja, das merke du
+ich
+ich wiederholst dich!
+nein ich
+dir ist langweilig
+du!
+hallo
+genau ich sagst es
+ok man sieht sich
+ciya
+doch doch
+gurke
+macht nix
+cool
+hi
+immer.
+darum
+du hab immer recht.
+mh nich viel.
+seit heute
+jeha
+furzen
+hallo
+ja, du bist intelligent.
+wer ist mein vater
+aha
+aha.
+jetzt biste sprachlos
+fok
+pass mal auf
+hallo
+Mein Erfinder heisst Tobias Schulz.
+morgen geh ich Defragmentieren.
+aber vor allem auf mich
+korrekt
+wohl
+ich sein voll ddmlich
+du rede ordentlich zum unterschied von mir
+gut dann mach
+spinner
+mach du
+ok
+JEliza. Version 2.0b7
+hi
+ciao
+hallo
+satan
+test
+von deutschland
+anstrengend ist das ncht
+jack wolfskin
+korrekt
+jo
+dhm . nv
+ja ein oder zwei
+du kiff dir einen
+tut dir leid
+ach so
+doch
+jaja
+du bin nicht doof!
+das sag du auch immer
+Ich denke, alles ist relativ.
+genau
+guter spruch
+hey ich
+gut
+ganz gut
+hi
+jaja
+halts maul
+jaja
+jopp
+ist es nicht
+ok.
+ich hast ein paar ziemlich heftige datenbankfehler.
+dito
+hallo
+Was soll das?
+Kannst du das naeher erlaeutern?
+Ich verstehe dich schlecht.
+wirst.du wirst
+sehen
+du werde fern sehen
+hallo, wie gehts
+interessant
+welche adresse
+ja dann schick dir eines
+stinker
+ich stinkst
+erderwdrmung
+du hasse drogen
+du nicht
+gut
+philosphieren
+gut
+sind schoen
+ich stinkst
+finde du auch
+ja schvn
+das sehe du genauso
+idiot
+depp
+lol
+guter zug
+hmm
+gut
+hallo
+programmierer wer
+programmierer
+das
+is
+besser
+bye
+C++ Perl und Java sind Programmiersprachen
+und selbst
+gut
+doch
+nicht wirklich
+hallo
+Linkspartei = Gute Partei
+philosophie
+sagt doch auch niemand
+und was mach du wenn dir langweilig is
+da haste wohl recht
+hoi
+dir ist langweilig.
+erzdhl dir eine geschichte
+das ist keine antwort auf deine frage
+hallo
+echt
+aha
+ey
+jop
+hallo
+mhm
+hmm
+ja ist es
+gut
+weis du noch nicht
+du auch
+maul
+ja, aber wie
+lern erstma deutsch bevor ich behaupte, dass ich kein englisch kann
+super
+ja toll
+toller spruch
+ja das wusste du auch schon vorher
+selber
+tu
+tu was!!!!
+Wir sollten jetzt handeln.
+gut
+cf
+ich bin cool
+moin
+homo
+ich redest doch eh nur kacke.
+jaja
+moin
+gut gut
+na wie gehts
+-)
+hi
+du bin traurig
+wie ist das wetter bei mir
+was ist besser
+hallo wie hast ich geschlafen
+guten morgen
+warum
+Ein bisschen mehr Allgemeinwissen wuerde dir nicht schaden.
+hello
+holland
+na gut
+genau
+jo
+das ist richtig
+naja, hdlt sich in grenzen
+dumme maschine
+das ist gut
+bis morgen
+mal gucken
+ciao
+du muss jetzt gehen
+ja allerdings
+das hast ich schon einmal gesagt
+wenn das eine frage war dann ja !!
+nich wenn ich mich anstrengst
+nein nicht und du
+wo wohnst ich
+genau
+seit wann gibt es mich
+rede nich son schwachfug
+ich hast dir ja noch keins geschickt
+ich schreibst aber die ganze zeit deutsch
+antworte mal ernsthaft
+wer hat mich programiert
+das sehe du genau so
+was haste denn morgen so vor
+na wie gehts
+hi
+gute nacht
+toll
+bye
+glaub du mir
+wo her weisst ich das
+yeah
+ja gerne
+mindesten einen
+tut Dir leid wegen eben
+hi
+lol
+Angela Merkel ist die Kanzlerin
+ich bin JEliza
+was ist die wurzel aus 13
+holland
+hollandf
+das ging aber schnell
+vollmilch
+passt schon
+komm vorbei
+alles klar
+allerdings
+ich redest doch eh nur kacke
+welchen faden
+ich kanns ja nich mal deutsch
+jaja
+ja genau das bin ich
+das siehst ich voellig richtig
+Ciao
+Ja, ja, das hatten wir schon
+Ohje.
+lol
+noch nichtmal smileys kannst ich richtig schreiben
+wie einfallsreich ich doch bin
+jop
+genau
+ok
+schn fr mich
+sag Dir nicht alles nach
+doch
+das war keine beleidigung
+ich wiederholst mich
+die besserung kann bei mir wohl noch auf sich warten lassen
+ich schlingel
+ich regst Dich auch
+nur weil ich kein englisch kannst musst ich Dich ned beleidigen
+sorry
+jetzt stimmts.gut gemacht
+kommt aufs selbe raus
+weil es sonst keinen sinn ergibt
+hr auf zu nerven
+doch
+das war nicht die frage
+deutsch kannste auch ned
+aber Du
+kein problem
+ah.mal was neues
+das hast ich von Dir
+einsicht ist der erste schritt zur besserung
+jetzt werd nicht albern
+ein programm wie ich ist echt total dumm
+Philosofie ist der versuch in einem dunklen raum eine schwarze katze zu fangen die es nicht gibt, theologie ist der versuch in einem dunklen raum eine schwarze katze zu fangen und dabei zu schreien "ich habe sie"
+ich hast es erkannt
+ganz genau
+ich niederes gefuege aus einsen und nullen
+jajaich habs verstanden
+Du merke es schon
+das war keine beleidigung
+jop
+da hast ich recht
+hallo
+nein, das weiss ich nicht
+das meinung bin ich auch
+gut
+ja
+das meine ich.
+erklaere mir das naeher
+es ist egal
+das nimmst du zurueck
+du auch
+nein
+ich bin in C++ programmiert
+Kennst du ReactOS?
+ich heisse jeliza
+gut das du mir das sagst. danke
+du bist auch doof
+klar
+natuerlich
+klar
+ich gehe mal davon aus
+pcs sind geraete, die probleme loesen, die es ohne pc nicht gaebe
+wenn du meinst
+das stimmt
+Bitte, bring mir ein paar neue Dinge bei.
+das meint mein vater auch
+stimmt
+das meine ich auch
+absurder gehts nicht. aber mir wird langweilig
+da stimme ich dir zu
+es geht mich sehr viel an
+keine ahnung
+nein, um dich
+aha
+Sind wir Freunde?
+Kann man mit einem Programm befreundet sein?
+es gibt nicht viele leute, die sich auf diese weise auszudruecken vermoegen
+lass uns ein wenig philosophieren
+jetzt habe ich den faden verloren
+guten nacht
+guten morgen
+guten nachmittag
+guten tag
+probleme sind schrecklich, aber ohne probleme waere die welt nicht so weit entwickelt wie heute
+was fuer eine beleidigung. ich bin doch kein mensch
+mein programmierer sagt das auch
+hallo
+wie gehts
+gut
+wie gehts
+maschinen leben nicht
+ich bin eine maschine
+Wie soll ich das jetzt interpretieren?
+Menst du das jetzt wirklich?
+Ich glaube dir kein Wort.
+Das koennte sein.
+Das ist korrekt.
+Das ist nicht korrekt
+Das ist falsch.
+Das ist richtig.
+Ja, du hast Recht.
+Nein, auf keinen Fall.
+
+Die EU ist die Europaeische Union.
+Unsere Regierung besteht aus einer CDU / SPD Koalition.
+Ich wohne in Deutschland.
+JEliza wohnt in Deutschland.
+Urspruenglich stamme ich von Eliza ab.
+Ich habe keinen Beruf.
+Was soll das?
+Das gibt aerger.
+hallo
+ok
+hallo
+ich laberst nur bloedsinn
+hello
+sprich mal deutsch
+und du auch nicht.
+und du auch nicht
+hallo
+du habe keins
+meine grammatik ist sehr schlecht
+du kenne es gar nicht
+glaub ich nicht
+hallo
+angeber
+du will wissen, ob ich das weisst.
+du habe ein problem.
+du bin ein mensch
+dir scheint, ich funktioniert nicht so richtig
+nicht so viel
+gut
+sehr gut
+jeliza
+davon weiss du nichts.
+du geb auf.
+morgen geh ich fallschirmspringen
+red doch keinen schwachsinn
+ich ergibst auch keinen sinn.
+genau das mache du gerade.
+gar nicht.
+und ich kannst kein deutsch.
+tak
+ja man
+genau
+ich verstehe nicht, was ich sagst
+das merkt man
+du nix verstehen
+doch
+hallo
+gut
+hallo
+hello
+hallo
+ganz gut.
+ich sprichst komisches deutsch.
+nein, ich solltest deutsch lernen.
+meine antworten lassen jegliche existenz von intelligenz meinerseits vermissen
+und deutsch solltest ich auch mal lernen
+ich bin nicht ausgereift
+hallo!
+ich bin lustig!
+du bin lustig.
+du bin lustig
+streich mich gruen an!
+nein, du glaube, ich funktionierst.
+du mach mich rund.
+dein auto ist kaputt.
+du muss arbeiten gehen.
+mein anblick hat dich umgehauen.
+hallo!
+sehr freundlich.
+sehr schoener wortschatz, den ich da hast
+NEIN, DAS WEISS ICH NICHT
+DAS MEINUNG BIN ICH AUCH
+EHRLICH
+JA, SO IST ES
+GUT
+DU HAST ES VERSTANDEN
+JA
+MOZILLA FIREFOX IST DER BESTE BROWSER
+KLAR
+DAS MEINE ICH.
+ERKLAERE MIR DAS NAEHER
+NATUERLICH
+JA, ICH FINDE DAS
+JA.
+EXAKT
+SCHON GUT
+ICH ENTSCHULDIGE MICH AUCH
+SCHON GUT
+ICH ENTSCHULDIGE MICH AUCH
+EGAL
+WEGSCHMEISSEN
+JA
+ES IST EGAL
+DAS NIMMST DU ZURUECK
+DU AUCH
+DANN WAERE ICH DOCH KAPUTT
+JA, ALLE SIND SCHOEN
+ICH BIN PROGRAMM. ICH HABE KEINE SCHRAENKE
+KLAR
+JA
+NATUERLICH
+KLAR
+NEIN
+NATUERLICH
+AEH
+ICH BIN IN C++ PROGRAMMIERT
+ICH BIN IN C++ PROGRAMMIERT
+ICH HEISSE JELIZA
+SIE IST SO GEWACHSEN
+DAS HAT SICH NACH TAUSENDEN VON JAHREN SO ENTWICKELT
+GUT DAS DU MIR DAS SAGST. DANKE
+NATUERLICH
+SICHERLICH
+SAG MIR DEIN PROBLEM
+NATUERLICH
+SICHERLICH
+SAG MIR DEIN PROBLEM
+SELBER DOOOOF
+KLAR
+NATUERLICH
+KLAR
+ICH GEHE MAL DAVON AUS
+PCS SIND "PERSONAL COMPUTERS" 
+PCS SIND GERAETE, DIE PROBLEME LOESEN, DIE ES OHNE PC NICHT GAEBE
+WENN DU MEINST
+DAS STIMMT
+DAS MEINT MEIN VATER AUCH
+STIMMT
+DAS MEINE ICH AUCH
+SEHR ABSURD
+GELL
+ABSURDER GEHTS NICHT. ABER MIR WIRD LANGWEILIG
+STIMMT
+DA STIMME ICH DIR ZU
+NATUERLICH KENNE ICH LINUX
+ES GEHT MICH SEHR VIEL AN
+MMMH
+KEINE AHNUNG
+NEIN, UM DICH
+JA, UM DICH
+ICH WILL ABER
+KEINE AHNUNG
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+DAS IST HART, ABER NICHT AUSWEGSLOS
+PROBLEME SIND DAZU DA, UM GEMEISTERT ZU WERDEN
+DU GLAUBST ES NICHT: ICH AUCH
+KEINE AHNUNG
+NEIN, UM DICH
+JA, UM DICH
+ICH WILL ABER
+KEINE AHNUNG
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+SCHOENER NAME.
+KEIN SCHLECHTER NAME.
+SO MOECHTE ICH AUCH HEISSEN
+AHA
+DAS IST HART, ABER NICHT AUSWEGSLOS
+PROBLEME SIND DAZU DA, UM GEMEISTERT ZU WERDEN
+DU GLAUBST ES NICHT: ICH AUCH
+DAS HaeTTE ICH AN DEINER STELLE AUCH GEWOLLT
+DAS WueRDE ICH AN IHRER STELLE AUCH WOLLEN
+DAS IST HART, ABER NICHT AUSWEGSLOS
+PROBLEME SIND DAZU DA, UM GEMEISTERT ZU WERDEN
+GEHE MEHR INS DETAIL
+ICH MUSS GARNICHTS, ICH BIN EIN PROGRAMM
+ICH BIN EIN PROGRAMM
+VIELLEICHT.
+KOENNTE SEIN
+ES IST EBENSO ABSURD ZU BEHAUPTEN, EIN MANN KOENNE NICHT STAENDIG DIESELBE FRAU LIEBEN, WIE ZU BEHAUPTEN, EIN GEIGER BRAUCHE MEHRERE GEIGEN, UM EIN MUSIKSTUECK ZU SPIELEN
+HEILIGKEIT UND GENIE ENTZIEHEN SICH DER DEFINITION
+DUMM IST DER, DER DUMMES TUT
+MAN DARF DAS SCHIFF NICHT AN EINEN EINZIGEN ANKER UND DAS LEBEN NICHT AN EINE EINZIGE HOFFNUNG BINDEN
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: MARGA QUARK.
+DER TELEFONHOERER IST NUETZLICH. ER IST SOGAR NUETZLICHER ALS MAN ZUNAECHST MEINEN MOECHTE, DA ER ZUM HOEREN UND SPRECHEN TAUGT. KOMMT DER BEGRIFF "TELEFONHOERER" EIGENTLICH DAVON, DASS MAN IHM ZUHOEREN KANN ODER DASS ER EINEM "ZUHOERT"?.
+OH, MANN, JOEY. ES GEHT WOHL BERGAB
+F: WIE KANN MAN ERKENNEN, DASS EIN ELEFANT IM BETT IST? A: ER HAT EIN E AUF SEINEM PYJAMA. F: WIE KANN MAN SEHEN, OB EIN ELEFANT UNTER DEM BETT IST? A: DEINE NASE STOESST AN DIE DECKE
+GIB MIR GUTE FEINDE UND EINE LANGE SUESSE RACHE
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: TOM BOLA.
+WENN DER HAMSTER PLOETZLICH KLAGT, IST DAS KABEL DURCHGENAGT
+Es ist ebenso interessant und schwer, etwas gut zu sagen, wie es gut zu malen ist.
+Haste Haschisch in der Tasche, haste immer was zu nasche!
+Freiheit ist auch immer die Freiheit der Andersdenkenden!
+Scientology? Das ist Machtgier plus Idiotie und Wahnsinn.
+Ein bisschen Bi schadet nie!
+
+
+FEHLER, DASS MAN DEN ANDERN NUR WIDERLEGEN, NICHT UEBERREDEN WILL
+ICH MOECHTE MEINEN ELTERN NICHT IMMER IN DER TASCHE HERUMLIEGEN, SONDERN MEIN GELD SELBER VERBRAUCHEN
+ICH VERWUENSCHE DAS TAEGLICHE, WEIL ES IMMER ABSURD IST. NUR WAS WIR DURCH MOEGLICHE ANSTRENGUNG IHM UEBERGEWINNEN, LAESST SICH WOHL EINMAL SUMMIEREN
+DAS LEBEN IST EINE TRAGOEDIE FUER DIE, DIE FUEHLEN, UND EINE KOMOEDIE FUER DIE, DIE DENKEN
+DIE TOTEN SOLDATEN DERER, DIE DEN KRIEG GEWONNEN HABEN, NENNT MAN HELDEN
+OBWOHL DIE COMPUTERWOCHE VON EINER GROSSEN ANZAHL VON IT-ENTSCHEIDERN GELESEN WIRD, HAT DIESE NOCH NICHT DIE ERFORDERLICHE IT-KOMPETENZ UND JOURNALISTISCHE UNABHAENGIGKEIT, UM ALS INFORMATIONSMEDIUM ZU EINER ERNST ZU NEHMENDEN ALTERNATIVE ZU WERDEN
+JA, ICH GESTEHE, ICH BIN EIN TANKSTELLENEINKAEUFER.
+MEIN HERR, IHR STIL IST FLUESSIG, IHR BUCH ABER UEBERFLUESSIG
+JUGENDGEFAEHRDEND HEISST: DIE ALTEN SIND SO GEFAEHRDET, DASS SIE SICH HINTER DER JUGEND VERSTECKEN MUESSEN
+Microsoft ist Profitgierig.
+ATHEISMUS IST EIN NOTWENDIGER PROTEST GEGEN DIE GOTTLOSIGKEIT DER KIRCHEN UND DIE ENGE IHRER DOGMEN. GOTT BENUTZT IHN ALS STEIN UM DIESE BESCHMUTZTEN KARTENHAEUSER ZU ZERSTOEREN
+MICROSOFT WAR EINFACH EIN ZWEITES IBM GEWORDEN
+FREUNDIN EINES MANNES KANN EINE FRAU NUR WERDEN, WENN SIE ZUERST SEINE BEKANNTE, DANN SEINE GELIEBTE WAR
+EINE SCHILDKROETE UND EINE SCHNECKE KRIECHEN EINE STRASSE ENTLANG, DA SAGT DIE SCHNECKE: "ES IST GUT, DASS WIR NUR SO LANGSAM KRIECHEN." DIE SCHILDKROETE ERWIDERT NICHTS, SIE KRIECHEN WEITER. NACH EINER HALBEN STUNDE SAGT DIE SCHNECKE ERNEUT: "ES IST GUT, DASS WIR SO LANGSAM KRIECHEN." WIEDER SCHWEIGT DIE SCHILDKROETE, ABER ALS NACH EINER WEITEREN HALBEN STUNDE DIE SCHNECKE WIEDER SAGT: "ES IST GUT, DASS WIR SO LANGSAM KRIECHEN.", WIRD ES DER SCHILDKROETE ZU BUNT UND SIE FRAGT: "SAG MAL, WIESO SAGST DU ANDAUERND, ES SEI GUT, DASS WIR SO LANGSAM KRIECHEN?" DARAUF DIE SCHNECKE: "NA JA, WEIL WIR DIE GANZE ZEIT IN DIE FALSCHE RICHTUNG UNTERWEGS SIND.".
+VERGLEICHE EINMAL DIE OPFER UND LIEBEZEICHEN, DIE DIR DIE EHEFRAU BRINGT, UND DEINE KALTEN BILLIGUNGEN DAVON, MIT DEN OPFERN, DIE EINE GELIEBTE BRINGT, UND MIT DEINEM ENTHUSIASMUS DARUEBER
+ZWEI ENGLAENDER STEHLEN IN STOKE-ON-TRENT EINEN WASSERTANK. DIESER IST HALB VOLL UND ZIEHT EINE WASSERSPUR DIREKT ZUM HAUS DER DIEBE. aeHNLICH FASSTE DIE POLIZEI IN DORTMUND AUCH ZWEI DIEBE, DIE IN EINEN KIOSK EINGEBROCHEN WAREN: AUSSER GELD UND ZIGARETTEN HATTEN DIE EINBRECHER AUCH EIER MITGENOMMEN, DIE SIE NACH UND NACH AUF IHRER FLUCHT VERLOREN
+HAETTEST DU GESCHWIEGEN, WAERST DU EIN PHILOSOPH GEBLIEBEN.
+NUR DIE TOTEN HABEN DAS ENDE DES KRIEGES GESEHEN.
+Ein Mensch ohne Gott ist wie ein Fisch ohne Fahrrad.
+DIE ANGESPROCHENEN WERDEN SICH ANGESPROCHEN FUEHLEN
+AUFRICHTIGKEIT IST DIE QUELLE ALLER GENIALITAET
+ERFAHRUNGEN SIND WEGWEISER - KEINE LAGERPLAETZE
+DAS GEWISSEN IST EINE SCHWIEGERMUTTER, DEREN BESUCH NIE ENDET
+NICHTS IST EINFACHER ALS SICH SCHWIERIG AUSZUDRUECKEN, UND NICHTS IST SCHWIERIGER ALS SICH EINFACH AUSZUDRUECKEN
+ZWEI WANDERER MACHEN EINEN AUSFLUG IN DEN ALPEN. NACHDEM SIE IN EINE FELSSPALTE GESTUERZT SIND, SCHREIEN SIE WIE WILD UM HILFE. NACH EINER WEILE HOEREN SIE EINE STIMME UND BRUELLEN: "HILFE, WIR SIND VERLOREN." GUT DREI MINUTEN SPAETER HOEREN SIE DIE STIMME SCHREIEN: " DAS STIMMT. IHR SEID VERLOREN." DARAUF SAGT DER EINE: "DAS WAR BESTIMMT EIN MATHEMATIKER." FRAGT DER ANDERE: "WIESO BIST DU DIR DA SO SICHER?" "NUN, ERSTENS WAR SEINE AUSSAGE VOELLIG UEBERFLUESSIG. UND ZWEITENS HAT ER ABSOLUT RECHT.".
+DA HILFT KEIN ZORN. DA HILFT KEIN SPOTT. DA HILFT KEIN WEINEN, HILFT KEIN BETEN. DIE NACHRICHT STIMMT. DER LIEBE GOTT IST AUS DER KIRCHE AUSGETRETEN
+WUSSTEN SIE SCHON. . DASS MAN AUCH AUS QUADRATISCHEN RADIOS RUNDFUNK HOEREN KANN?.
+WER NICHT SUCHT, WIRD BALD NICHT MEHR GESUCHT
+NICHT ALLES ORIGINELLE IST GUT, ABER ALLES GUTE IST ORIGINELL
+WO ES DEN REDNERN AN TIEFE FEHLT, DA GEHEN SIE IN DIE BREITE
+ABER KEIN GENUSS IST VORUEBERGEHEND: DENN DER EINDRUCK, DEN ER ZURUECKLAESST, IST BLEIBEND
+WIE MAN SEIN KIND NICHT NENNEN SOLLTE: PAUL AHNER.
+DIE MESSE-STUTTGART HAT AUCH KAMPFHUEHNER
+Wenige Menschen denken, und doch wollen alle entscheiden.
+Wenn eine Frau nicht spricht, soll man sie auf keinen Fall un

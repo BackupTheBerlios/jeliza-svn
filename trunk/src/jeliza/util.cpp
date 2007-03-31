@@ -90,6 +90,15 @@ public:
 		return str;
 	}
 
+	static string toLower_const (const string text) {
+		string str = "";
+
+		for (string::size_type x = 0; x < text.size(); x++) {
+			str += tolower(text[x]);
+		}
+		return str;
+	}
+
 //	static string toLower (const string text) {
 //		toLower(static_cast<string>(text));
 //	}
@@ -140,6 +149,21 @@ public:
 		return in;
 	}
 
+	static string replace_nocase (string& in, string rep, const string wit) {
+		int pos;
+		rep = Util::toLower(rep);
+		while (true) {
+			pos = Util::toLower_const(in).find(rep);
+			if (pos == -1) {
+				break;
+			} else {
+				in.erase(pos, rep.length());
+				in.insert(pos, wit);
+			}
+		}
+		return in;
+	}
+
 	static bool contains (string in, string rep) {
 		in = string(in.c_str());
 		string rep2 = string(rep.c_str());
@@ -174,9 +198,9 @@ public:
 		str = " " + str + " ";
 		s1 = " " + s1 + " ";
 		s2 = " " + s2 + " ";
-		str = Util::replace(str, s1, "6352652630,5,64,4636");
-		str = Util::replace(str, s2, s1);
-		str = Util::replace(str, "6352652630,5,64,4636", s2);
+		str = Util::replace_nocase(str, s1, "6352652630,5,64,4636");
+		str = Util::replace_nocase(str, s2, s1);
+		str = Util::replace_nocase(str, "6352652630,5,64,4636", s2);
 
 		return str.substr(1, str.size() - 1);
 	}

@@ -429,7 +429,7 @@ void on_load_online_activate(Data3 data) {
             ofstream o(global_jeliza->m_file.c_str(), ios::app | ios::ate);
 
             if (!o) {
-                cerr << "Fehler beim Oeffnen einer JEliza-Datei" << endl;
+                cerr << "Fehler beim Oeffnen einer JEliza-Datei (gtkgui.cpp)" << endl;
             } else {
                 o << line << endl;
                 o.close();

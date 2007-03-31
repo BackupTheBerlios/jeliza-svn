@@ -68,11 +68,6 @@ JEliza& operator>> (JEliza& jel, string& ans) {
  * Sucht nach der Datei JEliza.txt
  */
 string JEliza::searchConfigFile() {
-	ifstream tmpin1("JEliza.txt");
-	ifstream tmpin2("/etc/jeliza/JEliza.txt");
-	if (!tmpin1) {
-		return "/etc/jeliza/JEliza.txt";
-	}
 	return "JEliza.txt";
 }
 
@@ -81,8 +76,10 @@ string JEliza::searchConfigFile() {
  */
 void JEliza::saveSentence (string savetype, string original, string newstring) {
     ofstream o(m_file.c_str(), ios::app | ios::ate);
-    if (!o || newstring.size() < 10) {
-        cerr << "Fehler beim Oeffnen einer JEliza-Datei" << endl;
+    if (!o) {
+        cerr << "Fehler beim Oeffnen einer JEliza-Datei (jeliza.cpp)" << endl;
+    } else if (newstring.size() < 10) {
+        cerr << "Satz hat zu wenig Woerter (< 10): " << newstring << endl;
     } else {
         o << newstring << endl;
         o.close();
@@ -102,7 +99,9 @@ void JEliza::saveSentence (string savetype, string original, string newstring) {
 	}
 
 	SentenceToSubVerbObj(newstring, verbs, o1, o2);
-	vorbereiteSent(newstring);
+	if (newstring.size() > 9) {
+        vorbereiteSent(newstring);
+	}
 }
 
 /*
@@ -232,6 +231,7 @@ bool JEliza::generiere(string sent) {
 	cout << "- Generiere Moegliche Antworten auf \"" << sent << "\":" << endl;
 
 	sent = Util::replace(sent, string("?"), string(""));
+	sent = Util::toLower(sent);
 
 	string last = "";
 
@@ -240,8 +240,16 @@ bool JEliza::generiere(string sent) {
 	string sWer("was");
 	string sWie("was");
 
-	vector<string> ss;
-	Util::split(sent, string(" "), ss);
+	Util::split(sent, string(" "), JEliza::m_jd.m_last_sentence_words);
+	if (JEliza::m_jd.m_last_sentence_words.size() > 60) {
+	    JEliza::m_jd.m_last_sentence_words.erase(
+                JEliza::m_jd.m_last_sentence_words.begin(),
+                JEliza::m_jd.m_last_sentence_words.begin() + (JEliza::m_jd.m_last_sentence_words.size() - 59)
+                );
+	}
+	for (int x = 0; x < JEliza::m_jd.m_last_sentence_words.size(); x++) {
+	    cout << " - Wort: " << JEliza::m_jd.m_last_sentence_words[x] << endl;
+	}
 
 	JElizaData jd;
 	JEliza::m_jd.m_sents = jd.m_sents;
@@ -254,6 +262,7 @@ bool JEliza::generiere(string sent) {
 
 	for (unsigned int a = 0; a < JEliza::m_jd.m_sent_word->size(); a++) {
 		s = (*JEliza::m_jd.m_sent_word)[a];
+		s = Util::toLower(s);
 
 //		if (Util::contains(s, sWas) || Util::contains(s, sWer) || Util::contains(s, sWie)) {
 //			cout << 2 << s << endl;
@@ -261,8 +270,8 @@ bool JEliza::generiere(string sent) {
 //		}
 
 		ok = false;
-		for (unsigned int x = 0; x < ss.size(); x++) {
-			if (s == ss[x]) {
+		for (unsigned int x = 0; x < JEliza::m_jd.m_last_sentence_words.size(); x++) {
+			if (s == JEliza::m_jd.m_last_sentence_words[x]) {
 				ok = true;
 				break;
 			}
@@ -270,7 +279,7 @@ bool JEliza::generiere(string sent) {
 
 		if (ok) {
 //			cout << 1 << (*JEliza::m_jd.m_sent_sent)[a] << endl;
-			generiereSentence((*JEliza::m_jd.m_sent_sent)[a], ss, sFrageZeichen, last);
+			generiereSentence((*JEliza::m_jd.m_sent_sent)[a], JEliza::m_jd.m_last_sentence_words, sFrageZeichen, last);
 		}
 	}
 
@@ -598,35 +607,35 @@ Answer JEliza::ask(string frage) {
 		Util::split(sentence, " ", woerter2);
 		string last = "";
 
+		long double points2 = 0;
+
 		for (unsigned int a = 0; a < woerter2.size(); a++) {
 			string wort2 = woerter2[a];
 			wort2 = Util::toLower(wort2);
-
-			long double points2 = 0;
 
 			for (unsigned int y = 0; y < woerter.size(); y++) {
 				string wort = woerter[y];
 				wort = Util::toLower(wort);
 
 				StringCompare sc(wort, wort2);
-				points2 += sc.getPoints() * wort.size();
-			}
-
-			points2 = points2 / (woerter.size() * frage.size());
-
-			if (points2 > best && last_answer != sentence) {
-///				if (reply != sentence) { //&& !Util::contains(allanswers, (*replies)[1])) {
-
-				best = points2 / 100 * 98;
-
-				second_reply = reply;
-				reply = sentence;
-
-//					allanswers = sentence;
-///				}
+				points2 += sc.getPoints() * wort.size() * 1.2;
 			}
 
 		}
+
+		points2 = points2 / (woerter.size() * frage.size() * woerter2.size());
+
+		cout << points2 << " " << frage << " " << sentence << endl;
+
+        if (points2 > best && last_answer != sentence) {
+
+			best = points2 / 100 * 98;
+
+			second_reply = reply;
+			reply = sentence;
+
+		}
+
 	}
 
 	if (JEliza::m_jd.m_last_answers_second.size() > 1 && best < 5) {
