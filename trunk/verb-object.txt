@@ -446,3 +446,35 @@ bin|du?
 bin|du?
 bin|du?
 bin|du?
+ist|es
+ist|es
+ist|es
+ist|es
+ist|es
+ist|es
+ist|es
+ist|es
+wie|gehts?
+wie|gehts?
+ist|es gut
+ist|es gut
+aeh|nein
+aeh|nein
+habe|es ja auch gesagt
+habe|es ja auch gesagt
+denn|noch?
+denn|noch?
+nicht|weiter???
+nicht|weiter???
+wo|hin?
+wo|hin?
+ich|Linux?
+ich|Linux?
+kenne|ich Linux?
+kenne|ich Linux?
+bist|nicht Linux
+bist|nicht Linux
+ist|los?
+ist|los?
+bist|nicht Linux ich schwachsinn
+bist|nicht Linux ich schwachsinn

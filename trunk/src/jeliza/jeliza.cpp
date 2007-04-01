@@ -600,6 +600,11 @@ Answer JEliza::answer_logical(string frage) {
     string parts_3 = ohne_muell(parts[3]);
     parts_3 = Util::toLower(parts_3);
 
+    string parts_1 = ohne_muell(parts[1]);
+    parts_1 = Util::toLower(parts_1);
+    string parts_2 = ohne_muell(parts[2]);
+    parts_2 = Util::toLower(parts_2);
+
     if (parts[0].size() < 1 || parts[1].size() < 1 || parts[2].size() < 1 || parts[3].size() < 1) {
         cout << "- Unvollstaendiger Satzteil in: \"" << frage << "\"" << endl;
         return Answer("");
@@ -607,7 +612,64 @@ Answer JEliza::answer_logical(string frage) {
 
     vector<string> meinungen;
 
-    ifstream in("JEliza.txt");
+    string s;
+    for (unsigned int a = 0; a < JEliza::m_jd.m_SVs->size(); a++) {
+		s = (*JEliza::m_jd.m_SVs)[a];
+		vector<string> s_v = (*JEliza::m_jd.m_SVs_words)[a];
+
+		if (parts_1 != s_v[1] && parts_2 != s_v[1]) {
+		    continue;
+		}
+
+		for (unsigned int c = 0; c < JEliza::m_jd.m_VOs->size(); c++) {
+			s = (*JEliza::m_jd.m_VOs)[c];
+			vector<string> v_o = (*JEliza::m_jd.m_VOs_words)[c];
+
+            if (parts_1 != v_o[0] && parts_2 != v_o[0]) {
+                continue;
+            }
+
+            vector<string> parts2;
+            parts2.push_back(s_v[0]);
+            parts2.push_back(parts_1);
+            parts2.push_back(parts_2);
+            parts2.push_back(v_o[1]);
+
+            string parts2_0 = ohne_muell(s_v[0]);
+            parts2_0 = Util::toLower(parts2_0);
+            string parts2_3 = ohne_muell(v_o[1]);
+            parts2_3 = Util::toLower(parts2_3);
+
+            if (parts2[0].size() < 1 || parts2[1].size() < 1 || parts2[2].size() < 1 || parts2[3].size() < 1) {
+                continue;
+            }
+
+            if (is_similar(parts_0, parts2_0) && is_similar(parts_3, parts2_3)) {
+                continue;
+            }
+
+//            cout << parts_0 << "/" << parts2_0 << "/" << parts_3 << "/" << parts2_3 << endl;
+            if (is_similar(parts_0, parts2_0) || is_similar(parts_3, parts2_3)
+                    || is_similar(parts_0, parts2_3) || is_similar(parts_3, parts2_0)) {
+                meinungen.push_back("Ich dachte immer, " + parts2[0] + " " + parts2[1] + " " + parts2[3] + "??");
+                meinungen.push_back(parts2[1] + " " + parts2[0] + " nicht " + parts2[3] + "?");
+                meinungen.push_back("Nein, " + parts2[0] + " " + parts2[1] + " " + parts2[3] + ".");
+                meinungen.push_back(parts2[0] + " " + parts2[1] + " doch " + parts2[3] + ", oder?");
+                meinungen.push_back(parts2[0] + " " + parts2[1] + " doch " + parts2[3] + ", nicht wahr?");
+                meinungen.push_back("Ich ging immer davon aus, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + "!");
+                meinungen.push_back(parts2[0] + " " + parts2[1] + " " + parts2[3] + "! Stimmt das etwa nicht?");
+                meinungen.push_back(parts2[0] + " " + parts2[1] + " " + parts2[3] + "! Das stimmt doch, oder?");
+                meinungen.push_back(parts2[1] + " " + parts2[0] + " wirklich " + parts2[3] + "?");
+                meinungen.push_back("Ich weiss nur, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + ".");
+                meinungen.push_back("Meine Berechnungen ergaben, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + "!!");
+                meinungen.push_back("Kann durchaus sein.");
+                meinungen.push_back("Das glaube ich nicht.");
+
+            }
+		}
+	}
+
+    /*ifstream in("JEliza.txt");
     string temp;
     while (in) {
         getline (in, temp);
@@ -636,33 +698,12 @@ Answer JEliza::answer_logical(string frage) {
             continue;
         }
 
-        string parts2_0 = ohne_muell(parts2[0]);
-        parts2_0 = Util::toLower(parts2_0);
-        string parts2_3 = ohne_muell(parts2[3]);
-        parts2_3 = Util::toLower(parts2_3);
-
-        cout << parts_0 << "/" << parts2_0 << "/" << parts_3 << "/" << parts2_3 << endl;
-        if (is_similar(parts_0, parts2_0) || is_similar(parts_3, parts2_3)
-                || is_similar(parts_0, parts2_3) || is_similar(parts_3, parts2_0)) {
-            meinungen.push_back("Ich dachte immer, " + parts2[0] + " " + parts2[1] + " " + parts2[3] + "??");
-            meinungen.push_back(parts2[1] + " " + parts2[0] + " nicht " + parts2[3] + "?");
-            meinungen.push_back("Nein, " + parts2[0] + " " + parts2[1] + " " + parts2[3] + ".");
-            meinungen.push_back(parts2[0] + " " + parts2[1] + " doch " + parts2[3] + ", oder?");
-            meinungen.push_back(parts2[0] + " " + parts2[1] + " doch " + parts2[3] + ", nicht wahr?");
-            meinungen.push_back("Ich ging immer davon aus, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + "!");
-            meinungen.push_back(parts2[0] + " " + parts2[1] + " " + parts2[3] + "! Stimmt das etwa nicht?");
-            meinungen.push_back(parts2[0] + " " + parts2[1] + " " + parts2[3] + "! Das stimmt doch, oder?");
-            meinungen.push_back(parts2[1] + " " + parts2[0] + " wirklich " + parts2[3] + "?");
-            meinungen.push_back("Ich weiss nur, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + ".");
-            meinungen.push_back("Meine Berechnungen ergaben, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + "!!");
-            meinungen.push_back("Kann durchaus sein.");
-            meinungen.push_back("Das glaube ich nicht.");
         }
-    }
+    }*/
 
-    for (int x = 0; x < meinungen.size(); x++) {
-        cout << "- Meinung: " << meinungen[x] << endl;
-    }
+//    for (int x = 0; x < meinungen.size(); x++) {
+//        cout << "- Meinung: " << meinungen[x] << endl;
+//    }
 
     if (meinungen.size() < 1) {
         return Answer("");
