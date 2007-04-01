@@ -441,3 +441,8 @@ ist|es
 was|wille du?
 kann|jeder
 ja|du
+bin|du?
+bin|du?
+bin|du?
+bin|du?
+bin|du?

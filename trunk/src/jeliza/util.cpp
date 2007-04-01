@@ -276,8 +276,17 @@ public:
 		}
 
 		str = Util::replace(rep, string("-"), string(""));
+		str = Util::replace(str, string("eise"), string("eisse"));
 
 		return str;
+	}
+
+	static int max (int a, int b) {
+	    return ((a>b ? a : b));
+	}
+
+	static int min (int a, int b) {
+	    return ((a<b ? a : b));
 	}
 
 };

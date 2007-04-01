@@ -328,6 +328,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 //	ifstream in("verbs.txt");
 
 	string verb = "";
+	string verb2 = "";
 	long double bestVerb = 0;
 	long double points2 = 0;
 	long double points3 = 0;
@@ -337,6 +338,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 			points2 = 0;
 			points3 = 0;
 			string tempverb = "";
+			string tempverb2 = "";
 			bool brea = false;
 			for (unsigned int g = 0; g < woerter.size(); g++) {
 				string wort = woerter[g];
@@ -346,6 +348,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 				if (sc.getPoints() > points3) {
 					points3 = sc.getPoints();
 					tempverb = wort;
+					tempverb2 = buffer;
 				}
 			}
 
@@ -354,6 +357,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 			if (points2 > bestVerb) {
 				bestVerb = points2;
 				verb = tempverb;
+				verb2 = tempverb2;
 				if (bestVerb > 85) {
 				    break;
 				}
@@ -361,7 +365,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 		}
 	}
 
-	if (verb.size() > 1) { // && bestVerb > 40
+	if (verb.size() > 1 && verb == Util::toLower(verb)) { // && bestVerb > 40
 		vector<string> k;
 		Util::SplitString(s, verb, k, false);
 
@@ -377,12 +381,16 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 
 		if (k[0].size() > 1) {
 			o1 << k[0] << "|" << verb << endl;
+			o1 << k[0] << "|" << verb2 << endl;
 			cout << k[0] << "|" << verb << endl;
+			cout << k[0] << "|" << verb2 << endl;
 			vorbereiteSentence(k[0] + "|" + verb, "sv");
 		}
 		if (k[1].size() > 1) {
 			o2 << verb << "|" << k[1] << endl;
-			cout << verb << "|" << k[1] << endl;
+			o2 << verb << "|" << k[1] << endl;
+			cout << verb2 << "|" << k[1] << endl;
+			cout << verb2 << "|" << k[1] << endl;
 			vorbereiteSentence(verb + "|" + k[1], "vo");
 		}
 	}
@@ -436,7 +444,7 @@ vector<string> JEliza::trenne_SubVerbObj(string s, vector<string> verbs) {
 		}
 	}
 
-	if (verb.size() > 1) { // && bestVerb > 40
+	if (verb.size() > 1 && verb == Util::toLower(verb)) { // && bestVerb > 40
 		vector<string> k;
 		Util::SplitString(s, verb, k, false);
 
@@ -638,9 +646,17 @@ Answer JEliza::answer_logical(string frage) {
                 || is_similar(parts_0, parts2_3) || is_similar(parts_3, parts2_0)) {
             meinungen.push_back("Ich dachte immer, " + parts2[0] + " " + parts2[1] + " " + parts2[3] + "??");
             meinungen.push_back(parts2[1] + " " + parts2[0] + " nicht " + parts2[3] + "?");
+            meinungen.push_back("Nein, " + parts2[0] + " " + parts2[1] + " " + parts2[3] + ".");
             meinungen.push_back(parts2[0] + " " + parts2[1] + " doch " + parts2[3] + ", oder?");
             meinungen.push_back(parts2[0] + " " + parts2[1] + " doch " + parts2[3] + ", nicht wahr?");
             meinungen.push_back("Ich ging immer davon aus, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + "!");
+            meinungen.push_back(parts2[0] + " " + parts2[1] + " " + parts2[3] + "! Stimmt das etwa nicht?");
+            meinungen.push_back(parts2[0] + " " + parts2[1] + " " + parts2[3] + "! Das stimmt doch, oder?");
+            meinungen.push_back(parts2[1] + " " + parts2[0] + " wirklich " + parts2[3] + "?");
+            meinungen.push_back("Ich weiss nur, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + ".");
+            meinungen.push_back("Meine Berechnungen ergaben, dass " + parts2[0] + " " + parts2[3] + " " + parts2[1] + "!!");
+            meinungen.push_back("Kann durchaus sein.");
+            meinungen.push_back("Das glaube ich nicht.");
         }
     }
 

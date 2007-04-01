@@ -5,6 +5,7 @@ Morgen!
 Guten Morgen!
 
 Ich bin JEliza.
+Ich heisse JEliza.
 Mein Name ist JEliza.
 Ich bin fast ein Jahr alt.
 Ich bin Version 2.2
@@ -511,6 +512,8 @@ Morgen!
 Guten Morgen!
 
 Ich bin JEliza.
+Ich heisse JEliza.
+Ich heise JEliza.
 Mein Name ist JEliza.
 Ich bin fast ein Jahr alt.
 Ich bin Version 2.2

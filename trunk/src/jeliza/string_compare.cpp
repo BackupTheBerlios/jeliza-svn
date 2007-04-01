@@ -56,7 +56,7 @@ class StringCompare {
 
 public:
 	StringCompare (string s1, string s2)
-	: points( ( compare(s1, s2) + compare(s2, s1) ) / 2)
+	: points((compare(s1, s2) + compare(s2, s1)) / 2)
 	{
 	}
 
@@ -152,6 +152,13 @@ public:
         if (s1 == s2) {
             return 1000.0;
         }
+
+        long double tmp;
+        tmp = Util::max(s1_size, s2_size);
+        tmp /= Util::min(s1_size, s2_size);
+
+        acc *= tmp;
+        accBest *= tmp;
 
 ////        cout << "acc     " << acc << endl;
 ////        cout << "accBest " << accBest << endl;
