@@ -278,7 +278,9 @@ bool JEliza::generiere(string sent) {
 	bool ok;
 	string sss;
 
-	for (unsigned int a = 0; a < JEliza::m_jd.m_sent_word->size(); a++) {
+    // Hier muss noch die Geschwindigkiet optimiert werden:
+
+	/*for (unsigned int a = 0; a < JEliza::m_jd.m_sent_word->size(); a++) {
 		s = (*JEliza::m_jd.m_sent_word)[a];
 		s = Util::toLower(s);
 
@@ -299,7 +301,7 @@ bool JEliza::generiere(string sent) {
 //			cout << 1 << (*JEliza::m_jd.m_sent_sent)[a] << endl;
 			generiereSentence((*JEliza::m_jd.m_sent_sent)[a], JEliza::m_jd.m_last_sentence_words, sFrageZeichen, last);
 		}
-	}
+	}*/
 
 	bool found = (JEliza::m_jd.m_sents->size() > 0) ? true : false;
 
@@ -307,12 +309,12 @@ bool JEliza::generiere(string sent) {
 	ifstream j("JEliza.txt");
 	while (j) {
 		getline(j, b);
-		if (Util::strip(b).size() > 0) {
-			b = Util::strip(b);
+		b = Util::strip(b);
+		if (b.size() > 0) {
 			string b_orig = b;
 			b = Util::toLower(b);
 			if (!Util::contains(b, sFrageZeichen) && !Util::contains(b, sWas) && !Util::contains(b, sWer) && !Util::contains(b, sWie)) {
-				JEliza::m_jd.m_sents->push_back(Util::strip(b_orig));
+				JEliza::m_jd.m_sents->push_back(b_orig);
 			}
 		}
 	}
@@ -561,6 +563,12 @@ string JEliza::ohne_muell(string frage) {
 	unuseful_words.push_back("between");
 	unuseful_words.push_back("what");
 	unuseful_words.push_back("when");
+
+	unuseful_words.push_back("ein");
+	unuseful_words.push_back("eine");
+	unuseful_words.push_back("einer");
+	unuseful_words.push_back("eines");
+	unuseful_words.push_back("einem");
 
 	for (int x = 0; x < unuseful_words.size(); x++) {
 		string unuseful_word = " " + unuseful_words[x] + " ";

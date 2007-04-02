@@ -25,6 +25,7 @@
 #include <fstream>
 #include <string>
 #include <map>
+#include <queue>
 
 #include <string>
 #include <list>
@@ -42,9 +43,15 @@
 #include <gtkmm.h>
 #include <libglademm.h>
 
+#include <glib/gthread.h>
+#include <glibmm/thread.h>
+#include <glibmm.h>
+
 using namespace std;
 using namespace Gtk;
 
+int main(int argc, char *argv[]);
+int main_2(int argc, char *argv[]);
 
 class Request {
 public:
@@ -55,18 +62,51 @@ public:
     Gtk::TextView* textview;
     Glib::RefPtr<Gtk::TextBuffer::Tag> refTagMatch;
     string m_ans;
+    string todo;
+
+    Request()
+    : m_ans(string("")), todo("")
+    {
+    }
 };
+
+string toASCIIreally(string all);
+string toASCII_2(string all);
+string toASCII(string all);
+
+
+class MainWindow : public Gtk::Window {
+public:
+    //zugriff auf glade-datei
+    Glib::RefPtr<Gnome::Glade::Xml> &refXml;
+
+	MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &refXml);
+	void thread_worker();
+	void answer();
+	void launch_threads();
+};
+
+int main(int argc, char *argv[]) {
+    g_thread_init(NULL);
+    if (!Glib::thread_supported()) {
+        Glib::thread_init();
+    }
+
+    main_2(argc, argv);
+}
 
 
 auto_ptr<JEliza> global_jeliza(new JEliza());
 bool vorbereitet = false;
 
 Glib::Thread* jeliza_thread;
-vector<Request> jeliza_requests;
+Request jeliza_request;
+Request temp_req;
 
 
 Glib::StaticMutex mutex = GLIBMM_STATIC_MUTEX_INIT;
-Glib::Dispatcher jeliza_dispatcher;
+Glib::Dispatcher* jeliza_dispatcher;
+//unsigned int verarbeitete_requests = 0;
 
 string toASCIIreally(string all);
 
@@ -392,15 +432,6 @@ void durchsuche_nach_unbekanntem (string all) {
     }
 }
 
-class MainWindow : public Gtk::Window {
-public:
-    //zugriff auf glade-datei
-    Glib::RefPtr<Gnome::Glade::Xml> &refXml;
-
-	MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &refXml);
-	void thread_worker();
-	void answer();
-};
 
 
 class Data2 {
@@ -447,6 +478,13 @@ void on_open_activate(Data2& data) {
 	}
 
 	o.close();
+
+    {
+        Glib::Mutex::Lock lock(mutex);
+        Request r;
+        r.todo = "vorbereiten";
+        jeliza_request = r;
+    }
 }
 
 void on_save_activate(Data2& data) {
@@ -585,6 +623,13 @@ void on_okbutton1_clicked(Data3& data) {
 	all = toASCII(all);
 	o << all << endl;
 	o.close();
+
+    {
+        Glib::Mutex::Lock lock(mutex);
+        Request r;
+        r.todo = "vorbereiten";
+        jeliza_request = r;
+    }
 }
 
 void on_cancelbutton1_clicked(Data3& data) {
@@ -608,6 +653,13 @@ void on_new_database_activate(Data3& data) {
 		o << "" << endl;
 		o.close();
 	}
+
+    {
+        Glib::Mutex::Lock lock(mutex);
+        Request r;
+        r.todo = "vorbereiten";
+        jeliza_request = r;
+    }
 }
 
 
@@ -650,8 +702,12 @@ void on_Ask_clicked(Data1& data) {
 	r.entry = data.entry;
 	r.refTagMatch = data.refTagMatch;
 	r.textview = data.textview;
+    r.todo = "ask";
 
-	jeliza_requests.push_back(r);
+    {
+        Glib::Mutex::Lock lock(mutex);
+        jeliza_request = r;
+    }
 
 	/*(*global_jeliza) << Question(fra);
 	(*global_jeliza) >> bestReply;
@@ -680,7 +736,22 @@ void fs_on_Ask_clicked(Data4& data) {
 	msg = toASCII(fra);
 	string bestReply;
 
-	durchsuche_nach_unbekanntem (fra);
+	Request r;
+	r.m_ques = Question(fra);
+	r.m_learn = LearnableSentence(fra);
+	r.entry = data.entry;
+	r.refTagMatch = data.refTagMatch;
+	r.textview = data.textview;
+    r.todo = "ask";
+
+    {
+        Glib::Mutex::Lock lock(mutex);
+        jeliza_request = r;
+    }
+
+
+
+	/*durchsuche_nach_unbekanntem (fra);
 
 	(*global_jeliza) << Question(fra);
 	(*global_jeliza) >> bestReply;
@@ -693,7 +764,7 @@ void fs_on_Ask_clicked(Data4& data) {
 	data.entry->set_text("");
 
 	data.textview->get_buffer()->apply_tag(data.refTagMatch, data.textview->get_buffer()->begin(), data.textview->get_buffer()->end());
-	TextBuffer::iterator it = data.textview->get_buffer()->end();
+	TextBuffer::iterator it = data.textview->get_buffer()->end();*/
 	//data.textview->scroll_to(it, 0);
 
 	//cout << "asked2" << endl;
@@ -726,48 +797,66 @@ void on_load_online_activate(Data3 data) {
     ofstream o3("verb-object.txt");
     o3 << all3 << endl;
     o3.close();
+
+    {
+        Glib::Mutex::Lock lock(mutex);
+        Request r;
+        r.todo = "vorbereiten";
+        jeliza_request = r;
+    }
 }
 
 void MainWindow::answer() {
-    Request& r = (*(jeliza_requests.begin()));
+    {
+        Glib::Mutex::Lock lock(mutex);
 
-    Glib::ustring msg = Glib::ustring(r.m_ans);
+        Request r = temp_req;
 
-    r.textview->get_buffer()->set_text(r.textview->get_buffer()->get_text()
-            + Glib::ustring("Mensch: " + r.m_ques.m_ques) + Glib::ustring("\nJEliza: ") + msg + Glib::ustring("\n"));
-	r.entry->set_text("");
+        if (r.todo == "vorbereiten") {
+            cerr << "JEliza Error 2" << endl;
+        }
 
-	r.textview->get_buffer()->apply_tag(r.refTagMatch, r.textview->get_buffer()->begin(),
-            r.textview->get_buffer()->end());
-	TextBuffer::iterator it = r.textview->get_buffer()->end();
+        Glib::ustring msg = Glib::ustring(r.m_ans);
+
+        r.textview->get_buffer()->set_text(r.textview->get_buffer()->get_text()
+                + Glib::ustring("Mensch: " + r.m_ques.m_ques) + Glib::ustring("\nJEliza: ") + msg + Glib::ustring("\n"));
+        r.entry->set_text("");
+
+        r.textview->get_buffer()->apply_tag(r.refTagMatch, r.textview->get_buffer()->begin(),
+                r.textview->get_buffer()->end());
+    }
 }
 
 void MainWindow::thread_worker() {
-    global_jeliza->vorbereite();
-
-    cout << "- Datenbank wurde vorbereitet " << endl;
-
     while (true) {
         {
             Glib::Mutex::Lock lock(mutex);
-            if (jeliza_requests.size() > 0) {
-                vector<Request>::iterator it = jeliza_requests.begin();
+            Request r = jeliza_request;
+            if (r.todo.size() > 0) {
+                cout << "Neuer Request" << endl;
+                jeliza_request.todo = string("");
 
-                Question ques = (*it).m_ques;
-                LearnableSentence learn = (*it).m_learn;
-                string bestReply;
+                if (r.todo.size() > 5) {
+                    global_jeliza->vorbereite();
 
-                durchsuche_nach_unbekanntem (ques.m_ques);
+                    cout << "- Datenbank wurde vorbereitet " << endl;
+                } else {
+                    Question ques = r.m_ques;
+                    LearnableSentence learn = r.m_learn;
+                    string bestReply;
 
-                (*global_jeliza) << ques;
-                (*global_jeliza) >> (*it).m_ans;
+                    durchsuche_nach_unbekanntem (ques.m_ques);
 
-                (*it).m_ans = toASCII_2((*it).m_ans);
-                (*global_jeliza) << learn;
+                    (*global_jeliza) << ques;
+                    r.m_ans = "";
+                    (*global_jeliza) >> r.m_ans;
 
-                jeliza_dispatcher();
+                    r.m_ans = toASCII_2(r.m_ans);
+                    (*global_jeliza) << learn;
 
-                jeliza_requests.erase(it, it+1);
+                    temp_req = r;
+                    (*jeliza_dispatcher)();
+                }
             }
         }
         Glib::usleep(1000000);
@@ -985,10 +1074,18 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 	const Glib::ustring jelizaxpm("jeliza16.xpm");
 	this->get_window()->set_icon_name(jelizaxpm);
 
+    launch_threads();
+}
 
-    jeliza_dispatcher.connect (sigc::mem_fun(*this, &MainWindow::answer));
-
+void MainWindow::launch_threads () {
     jeliza_thread = Glib::Thread::create (sigc::mem_fun(*this, &MainWindow::thread_worker), true);
+
+    {
+        Glib::Mutex::Lock lock(mutex);
+        Request r;
+        r.todo = "vorbereiten";
+        jeliza_request = r;
+    }
 }
 
 void saveSentence_online (JEliza jel, string newstring) {
@@ -1018,8 +1115,8 @@ void saveSentence_online (JEliza jel, string newstring) {
 	jel.SentenceToSubVerbObj(newstring, verbs, o1, o2);
 }
 
-int main(int argc, char *argv[])
-{
+
+int main_2(int argc, char *argv[]) {
     if (argc > 1) {
         JEliza jel(1);
 
@@ -1060,71 +1157,18 @@ int main(int argc, char *argv[])
     }
 
 
-	ifstream in("JEliza.txt");
-	string buffer;
-	string all = "";
-	while (in) {
-		getline(in, buffer);
-		buffer = Util::strip(buffer);
-		all += Util::replace(buffer, string("\r"), string(""));
-		all += "\n";
-	}
-	in.close();
-
-	ofstream o("JEliza.txt");
-	o << toASCII(all) << endl;
-	o.close();
-
 
 	Main mainApplication(argc, argv);
 
-        try {
-		/*
-			gladedatei oeffnen, um fensterinformationen herauszulesen
-			der zweite parameter gibt an, dass wir lediglich das fenster
-			mit diesem namen instanziieren wollen. wuerden wir diesen
-			parameter weglassen, so wuerden saemtliche, in der datei
-			definierten, fenster instanziiert werden
-		*/
-		Glib::RefPtr<Gnome::Glade::Xml> refXml = Gnome::Glade::Xml::create("jeliza-glade.glade"); // , "MainWindow"
-		MainWindow* mainWindow(0);
+    try {
+        Glib::RefPtr<Gnome::Glade::Xml> refXml = Gnome::Glade::Xml::create("jeliza-glade.glade"); // , "MainWindow"
+        MainWindow* mainWindow(0);
 
-		/*
-			um auf eine instanz zugreifen zu koennen, nutzt man die element-
-			funktion 'get_widget'. Da wir jedoch eine von Gtk::Window
-			abgeleitete Klasse nutzen, muessen wir 'get_widget_derived'
-			aufrufen.
-		*/
-		refXml->get_widget_derived("MainWindow", mainWindow);
+        refXml->get_widget_derived("MainWindow", mainWindow);
 
-/*        cout << "- Lade DB und Untersuche nach Unbekannten Woertern..." << endl;
-		ifstream in("JEliza.txt");
-        string buffer;
-        string all = "";
-        while (in) {
-            getline(in, buffer);
-            buffer = Util::replace(buffer, string("\n"), string(" "));
-            all += Util::replace(buffer, string("\r"), string(" "));
-        }
-        in.close();
-		ifstream in2("subject-verb.txt");
-        while (in2) {
-            getline(in2, buffer);
-            buffer = Util::replace(buffer, string("\n"), string(" "));
-            all += Util::replace(buffer, string("\r"), string(" "));
-        }
-        in2.close();
-		ifstream in3("verb-object.txt");
-        while (in3) {
-            getline(in3, buffer);
-            buffer = Util::replace(buffer, string("\n"), string(" "));
-            all += Util::replace(buffer, string("\r"), string(" "));
-        }
-        in3.close();
-
-
-        durchsuche_nach_unbekanntem (all);*/
-
+        Glib::Dispatcher jeliza_dispatcher2;
+        jeliza_dispatcher = &jeliza_dispatcher2;
+        (*jeliza_dispatcher).connect (sigc::mem_fun(*mainWindow, &MainWindow::answer));
 
 		//wenn es eine entsprechende instanz gibt...
 		if(mainWindow) {
@@ -1132,17 +1176,9 @@ int main(int argc, char *argv[])
 			Main::run(*mainWindow); //...dann koennen wir das fenster nun anzeigen
 		}
 		else {
-			/*
-			...oder es konnte es aus irgendwelchen gruenden nicht
-			nicht dem zeiger 'mainWindow' zugewiesen werden?
-			*/
 			cout << "Hauptfenster konnte nicht geladen werden!" << endl;
 			return 1;
 		}
-	/*
-		falls beim parsen der glade-datei ein problem gibt, dann wird
-		eine exception geschmissen, die wir abfangen sollten
-	*/
 	} catch(Gnome::Glade::Xml::Error& xmlError) {
 		cout << xmlError.what() << endl;
 		cin.get();
@@ -1152,4 +1188,3 @@ int main(int argc, char *argv[])
 
 
 }
-
