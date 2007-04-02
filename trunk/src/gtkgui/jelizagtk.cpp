@@ -46,47 +46,53 @@ using namespace std;
 using namespace Gtk;
 
 
-auto_ptr<JEliza> global_jeliza(new JEliza());
-bool vorbereitet = false;
+class Request {
+public:
 
-/*void AskJEliza() {
-	JEliza jeliza(1);
-	jeliza.init();
-	string fra = mw->m_entry.get_text();
-	string bestReply = jeliza.ask(fra);
-	jeliza.learn(fra, fra);
-
-	mw->m_textview.get_buffer()->set_text(mw->m_textview.get_buffer()->get_text() + "Mensch: " + fra + "\nJEliza: " + bestReply + "\n");
-	mw->m_entry.set_text("");
-
-	cout << "asked" << endl;
-}*/
-
-
-class MainWindow : public Gtk::Window {
-    public:
-        //zugriff auf glade-datei
-        Glib::RefPtr<Gnome::Glade::Xml> &refXml;
-
-        /*
-            wir wollen die fenster informationen aus einer glade-datei laden.
-            mittels 'get_widget_derived' (s. main.cpp) kann auf eine abgeleitete
-            klasse zugegriffen werden. zum instanziieren ruft 'get_widget_derived'
-            einen CTor auf, welcher eben diese signatur haben muss. 'base' ist
-            hierbei der c-typ (gtk+) und enthaelt bereits alle relervanten
-            informationen ueber das fenster. 'refXml' ist hierbei wichtig, da
-            wir damit die member der klasse aus der glade-datei herauslesen und
-            den klassenmembern zuweisen koennen (siehe implementierung des ctor)
-        */
-
-	MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &refXml);
+    Question m_ques;
+    LearnableSentence m_learn;
+    Gtk::Entry* entry;
+    Gtk::TextView* textview;
+    Glib::RefPtr<Gtk::TextBuffer::Tag> refTagMatch;
+    string m_ans;
 };
 
 
+auto_ptr<JEliza> global_jeliza(new JEliza());
+bool vorbereitet = false;
+
+Glib::Thread* jeliza_thread;
+vector<Request> jeliza_requests;
+
+
+Glib::StaticMutex mutex = GLIBMM_STATIC_MUTEX_INIT;
+Glib::Dispatcher jeliza_dispatcher;
+
+string toASCIIreally(string all);
+
 string toASCII(string all) {
 	Glib::ustring utf(Glib::convert(all, "UTF-8", "ISO-8859-1"));
-	string utf2(utf);
 	return utf;
+}
+
+string toASCII_2(string all) {
+	all = Util::replace(all, "Ã¼", "ue");
+	all = Util::replace(all, "Ã", "ss");
+	all = Util::replace(all, "Ã¤", "ae");
+	all = Util::replace(all, "ü", "ue");
+	all = Util::replace(all, "ß", "ss");
+	all = Util::replace(all, "ä", "ae");
+	all = Util::replace(all, "ö", "oe");
+	all = Util::replace(all, "Ü", "Ue");
+	all = Util::replace(all, "Ä", "Ae");
+	all = Util::replace(all, "Ö", "Oe");
+	all = Util::replace(all, "Ã¢ÂÂ", "\"");
+	all = Util::replace(all, "Ã¢ÂÂ", "\"");
+	all = Util::replace(all, "&lt;/br&gt;", " ");
+
+    all = toASCIIreally(all);
+
+	return all;
 }
 
 string toASCIIreally(string all) {
@@ -107,6 +113,295 @@ string toASCIIreally(string all) {
 
 	return allAscii;
 }
+
+string wikipedia (string wort, bool rec = false) {
+    wort = Util::replace(wort, string(" "), string("_"));
+
+    string url = "http://de.wikipedia.org/w/index.php?title=" + wort + "&action=edit";
+    cout << "Url: \"" << url << "\"" << endl;
+    download(url);
+
+    ifstream ifstr("download.php");
+    string all;
+    string temp;
+    while (ifstr) {
+		getline(ifstr, temp);
+//		temp = Util::strip(temp);
+
+		all += toASCII_2(temp);
+		all += "\n";
+    }
+
+    vector<string> lines;
+    Util::split(all, string("\n"), lines);
+
+    bool inRichtigemBereich = false;
+    int inKlammer = 0;
+    string satz = "";
+    for (int x = 0; x < lines.size(); x++) {
+        string line = lines[x];
+        line = Util::strip(line);
+
+        if (Util::contains(line, "cols='80'")) {
+//            cout << "inRichtigemBereich = true; " << line << endl;
+            inRichtigemBereich = true;
+            line = line.substr(line.find(">") + 1, line.size() - line.find(">") - 1);
+        }
+
+        if (inRichtigemBereich && Util::contains(line, string("{{"))) {
+            inKlammer++;
+        }
+
+        if (inRichtigemBereich && Util::contains(line, string("{|"))) {
+            inKlammer++;
+        }
+
+        if (inRichtigemBereich && inKlammer == 0 && line.size() > 0) {
+//            cout << "cout << satz << endl; " << line << endl;
+            satz = "";
+
+            line = Util::replace(line, string("'"), string(""));
+
+            int inKlammer2 = 0;
+            for (int y = 0; y < line.size(); y++) {
+                char ch = line[y];
+
+                if (ch == '(') {
+                    inKlammer2++;
+                }
+
+                if (inKlammer2 == 0) {
+                    satz += ch;
+                }
+
+                if (ch == ')') {
+                    inKlammer2--;
+                }
+            }
+
+            inKlammer2 = 0;
+            string tempStr = "";
+            string satz2 = satz + " ";
+            satz = "";
+            for (int y = 0; y < satz2.size(); y++) {
+                char ch = satz2[y];
+
+                if (ch == '[' && satz2[y+1] == '[') {
+                    inKlammer2++;
+                    y++;
+                }
+
+                if (inKlammer2 == 0) {
+                    satz += ch;
+                }
+
+                if (ch == '|') {
+                    tempStr = "";
+                }
+
+                if (inKlammer2 > 0 && ch != '|' && ch != '[' && ch != ']') {
+                    tempStr += ch;
+                }
+
+                if (ch == ']' && satz2[y+1] == ']') {
+                    inKlammer2--;
+                    satz += tempStr;
+                    tempStr = "";
+                    y++;
+                }
+            }
+
+            satz = "-" + Util::replace(satz, string("  "), string(" ")) + "-";
+            satz = Util::replace(satz, string("."), string("ekdnkecolesl"));
+            satz = Util::replace(satz, string("ekdnkecolesl"), string("-.-"));
+            if (Util::contains(satz, "-</textarea> -")) {
+                satz = "";
+                break;
+            }
+
+            string satzlower = Util::toLower(satz);
+            if (Util::contains(satzlower, "#redirect") && !rec) {
+                satz = Util::replace_nocase(satz, string("#redirect"), string(""));
+                satz = Util::strip(satz);
+                satz = Util::replace(satz, string("-"), string(""));
+                satz = Util::replace(satz, string("  "), string(" "));
+                satz = Util::strip(satz);
+                return wikipedia(satz, true);
+            }
+            else if (Util::contains(satzlower, "#redirect") && !rec) {
+                return "";
+            }
+
+            vector<string> temp;
+            Util::split(satz, string("."), temp);
+
+            vector<string> temp2;
+            Util::split(satz, string(" "), temp2);
+
+//            cout << temp[0] << endl;
+
+            if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
+                satz = Util::strip(temp[0]) + ". " + Util::strip(temp[1]) + ".";
+            } else if (temp[0].size() < 12) {
+                satz = "";
+            } else if (temp2.size() < 7) {
+                satz = "";
+            } else if (Util::contains(satz, string(":"))) {
+                satz = "";
+            } else {
+                satz = Util::strip(temp[0]) + ".";
+            }
+
+            satz = Util::replace(satz, string("-"), string(""));
+            satz = Util::replace(satz, string("  "), string(" "));
+
+            break;
+        }
+
+        if (inRichtigemBereich && inKlammer > 0 && Util::contains(line, string("}}"))) {
+            inKlammer--;
+        }
+
+        if (inRichtigemBereich && inKlammer > 0 && Util::contains(line, string("|}"))) {
+            inKlammer--;
+        }
+    }
+
+    return satz;
+}
+
+string search_in_wikipedia(string wort) {
+    wort = Util::strip(wort);
+    wort = Util::toLower(wort);
+    string orig_wort = wort;
+    string firstchar = string(Util::toUpper(wort.substr(0, 1)));
+    wort = wort.substr(1, wort.size());
+    wort = firstchar + wort;
+    wort = Util::strip(wort);
+
+    string satz;
+
+    if (wort.size() < 3) {
+        return "";
+    }
+
+    cout << "- Wort zum Nachschlagen: " << wort << endl;
+    satz = wikipedia(wort);
+    if (satz.size() < 1) {
+        cout << "- Wort zum Nachschlagen: " << orig_wort << endl;
+        satz = wikipedia(orig_wort);
+        if (satz.size() < 1) {
+            cout << "- Wort zum Nachschlagen: " << Util::toUpper(orig_wort) << endl;
+            satz = wikipedia(Util::toUpper(orig_wort));
+        }
+    }
+    return satz;
+}
+
+
+void durchsuche_nach_unbekanntem (string all) {
+    cout << "- Entferne Muell..." << endl;
+    all = Util::replace(all, string("."), string(" "));
+    all = Util::replace(all, string(","), string(" "));
+    all = Util::replace(all, string(";"), string(" "));
+    all = Util::replace(all, string("-"), string(" "));
+    all = Util::replace(all, string("+"), string(" "));
+    all = Util::replace(all, string("-"), string(" "));
+    all = Util::replace(all, string(")"), string(" "));
+    all = Util::replace(all, string("("), string(" "));
+    all = Util::replace(all, string("?"), string(" "));
+    all = Util::replace(all, string("!"), string(" "));
+    all = Util::replace(all, string("  "), string(" "));
+//        all = Util::toLower(all);
+
+    vector<string> woerter;
+    Util::split(all, string(" "), woerter);
+
+    cout << "- Lade alle Woerter die nicht in der Wikipedia sind..." << endl;
+    ifstream in4("not_in_wikipedia.txt");
+	vector<string> not_in_wikipedia;
+	string buffer;
+    while (in4) {
+        getline(in4, buffer);
+        buffer = Util::strip(buffer);
+        if (buffer.size() < 1) {
+            continue;
+        }
+        buffer = Util::toLower(buffer);
+        not_in_wikipedia.push_back(buffer);
+    }
+    in4.close();
+
+    cout << "- Lade alle Woerter die schon aus der Wikipedia geholt wurden..." << endl;
+    ifstream in5("schon_aus_wikipedia.txt");
+	vector<string> schon_aus_wikipedia;
+    while (in5) {
+        getline(in5, buffer);
+        buffer = Util::strip(buffer);
+        if (buffer.size() < 1) {
+            continue;
+        }
+        buffer = Util::toLower(buffer);
+        schon_aus_wikipedia.push_back(buffer);
+    }
+    in5.close();
+
+    cout << "- Suche in Wikipedia nach unbekannten Woertern..." << endl;
+    for (vector<string>::iterator it = woerter.begin(); it != woerter.end(); it++) {
+        if ((*it) == Util::toLower((*it)) || (*it) == Util::toUpper((*it))) {
+            continue;
+        }
+
+        bool schon = false;
+        for (vector<string>::iterator ite = not_in_wikipedia.begin(); ite != not_in_wikipedia.end(); ite++) {
+            if (Util::toLower(*it) == Util::toLower(*ite)) {
+                schon = true;
+                break;
+            }
+        }
+        if (!schon) {
+            for (vector<string>::iterator ite = schon_aus_wikipedia.begin(); ite != schon_aus_wikipedia.end(); ite++) {
+                if (Util::toLower(*it) == Util::toLower(*ite)) {
+                    schon = true;
+                    break;
+                }
+            }
+        }
+        if (!schon) {
+            cout << "- Suche nach einer Definition fuer \"" << (*it) << "\" in der Wikipedia" << endl;
+            string definition = search_in_wikipedia((*it));
+            if (definition.size() < 2) {
+                ofstream of("not_in_wikipedia.txt", ios::app | ios::ate);
+                of << (*it) << endl;
+                of.close();
+                not_in_wikipedia.push_back((*it));
+            } else {
+                ofstream of("schon_aus_wikipedia.txt", ios::app | ios::ate);
+                of << (*it) << endl;
+                of.close();
+                schon_aus_wikipedia.push_back((*it));
+                JEliza jel(1);
+                jel.saveSentence("file", definition, definition);
+            }
+//            } else if ( (*it) != Util::toLower((*it)) && (*it) != Util::toUpper((*it))) {
+//                ofstream of("not_in_wikipedia.txt", ios::app | ios::ate);
+//                of << (*it) << endl;
+//                of.close();
+//                not_in_wikipedia.push_back((*it));
+        }
+    }
+}
+
+class MainWindow : public Gtk::Window {
+public:
+    //zugriff auf glade-datei
+    Glib::RefPtr<Gnome::Glade::Xml> &refXml;
+
+	MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &refXml);
+	void thread_worker();
+	void answer();
+};
+
 
 class Data2 {
 public:
@@ -339,8 +634,6 @@ public:
 };
 
 void on_Ask_clicked(Data1& data) {
-	global_jeliza->vorbereite();
-
 	Glib::ustring msg;
 
 	if(!data.entry) {
@@ -351,7 +644,16 @@ void on_Ask_clicked(Data1& data) {
 	msg = toASCII(fra);
 	string bestReply;
 
-	(*global_jeliza) << Question(fra);
+	Request r;
+	r.m_ques = Question(fra);
+	r.m_learn = LearnableSentence(fra);
+	r.entry = data.entry;
+	r.refTagMatch = data.refTagMatch;
+	r.textview = data.textview;
+
+	jeliza_requests.push_back(r);
+
+	/*(*global_jeliza) << Question(fra);
 	(*global_jeliza) >> bestReply;
 
 	bestReply = toASCII(bestReply);
@@ -362,14 +664,12 @@ void on_Ask_clicked(Data1& data) {
 	data.entry->set_text("");
 
 	data.textview->get_buffer()->apply_tag(data.refTagMatch, data.textview->get_buffer()->begin(), data.textview->get_buffer()->end());
-	TextBuffer::iterator it = data.textview->get_buffer()->end();
+	TextBuffer::iterator it = data.textview->get_buffer()->end();*/
 
 	//cout << "asked1" << endl;
 }
 
 void fs_on_Ask_clicked(Data4& data) {
-	global_jeliza->vorbereite();
-
 	Glib::ustring msg;
 
 	if(!data.entry) {
@@ -379,6 +679,8 @@ void fs_on_Ask_clicked(Data4& data) {
 	string fra = data.entry->get_text();
 	msg = toASCII(fra);
 	string bestReply;
+
+	durchsuche_nach_unbekanntem (fra);
 
 	(*global_jeliza) << Question(fra);
 	(*global_jeliza) >> bestReply;
@@ -424,6 +726,52 @@ void on_load_online_activate(Data3 data) {
     ofstream o3("verb-object.txt");
     o3 << all3 << endl;
     o3.close();
+}
+
+void MainWindow::answer() {
+    Request& r = (*(jeliza_requests.begin()));
+
+    Glib::ustring msg = Glib::ustring(r.m_ans);
+
+    r.textview->get_buffer()->set_text(r.textview->get_buffer()->get_text()
+            + Glib::ustring("Mensch: " + r.m_ques.m_ques) + Glib::ustring("\nJEliza: ") + msg + Glib::ustring("\n"));
+	r.entry->set_text("");
+
+	r.textview->get_buffer()->apply_tag(r.refTagMatch, r.textview->get_buffer()->begin(),
+            r.textview->get_buffer()->end());
+	TextBuffer::iterator it = r.textview->get_buffer()->end();
+}
+
+void MainWindow::thread_worker() {
+    global_jeliza->vorbereite();
+
+    cout << "- Datenbank wurde vorbereitet " << endl;
+
+    while (true) {
+        {
+            Glib::Mutex::Lock lock(mutex);
+            if (jeliza_requests.size() > 0) {
+                vector<Request>::iterator it = jeliza_requests.begin();
+
+                Question ques = (*it).m_ques;
+                LearnableSentence learn = (*it).m_learn;
+                string bestReply;
+
+                durchsuche_nach_unbekanntem (ques.m_ques);
+
+                (*global_jeliza) << ques;
+                (*global_jeliza) >> (*it).m_ans;
+
+                (*it).m_ans = toASCII_2((*it).m_ans);
+                (*global_jeliza) << learn;
+
+                jeliza_dispatcher();
+
+                jeliza_requests.erase(it, it+1);
+            }
+        }
+        Glib::usleep(1000000);
+    }
 }
 
 MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
@@ -637,6 +985,10 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 	const Glib::ustring jelizaxpm("jeliza16.xpm");
 	this->get_window()->set_icon_name(jelizaxpm);
 
+
+    jeliza_dispatcher.connect (sigc::mem_fun(*this, &MainWindow::answer));
+
+    jeliza_thread = Glib::Thread::create (sigc::mem_fun(*this, &MainWindow::thread_worker), true);
 }
 
 void saveSentence_online (JEliza jel, string newstring) {
@@ -744,6 +1096,35 @@ int main(int argc, char *argv[])
 			aufrufen.
 		*/
 		refXml->get_widget_derived("MainWindow", mainWindow);
+
+/*        cout << "- Lade DB und Untersuche nach Unbekannten Woertern..." << endl;
+		ifstream in("JEliza.txt");
+        string buffer;
+        string all = "";
+        while (in) {
+            getline(in, buffer);
+            buffer = Util::replace(buffer, string("\n"), string(" "));
+            all += Util::replace(buffer, string("\r"), string(" "));
+        }
+        in.close();
+		ifstream in2("subject-verb.txt");
+        while (in2) {
+            getline(in2, buffer);
+            buffer = Util::replace(buffer, string("\n"), string(" "));
+            all += Util::replace(buffer, string("\r"), string(" "));
+        }
+        in2.close();
+		ifstream in3("verb-object.txt");
+        while (in3) {
+            getline(in3, buffer);
+            buffer = Util::replace(buffer, string("\n"), string(" "));
+            all += Util::replace(buffer, string("\r"), string(" "));
+        }
+        in3.close();
+
+
+        durchsuche_nach_unbekanntem (all);*/
+
 
 		//wenn es eine entsprechende instanz gibt...
 		if(mainWindow) {

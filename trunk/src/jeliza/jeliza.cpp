@@ -76,9 +76,13 @@ string JEliza::searchConfigFile() {
  */
 void JEliza::saveSentence (string savetype, string original, string newstring) {
     ofstream o(m_file.c_str(), ios::app | ios::ate);
+
+    vector<string> temp;
+    Util::split(newstring, string(" "), temp);
+
     if (!o) {
         cerr << "Fehler beim Oeffnen einer JEliza-Datei (jeliza.cpp)" << endl;
-    } else if (newstring.size() < 10) {
+    } else if (temp.size() < 3) {
         cerr << "Satz hat zu wenig Woerter (< 10): " << newstring << endl;
     } else {
         o << newstring << endl;
@@ -99,7 +103,7 @@ void JEliza::saveSentence (string savetype, string original, string newstring) {
 	}
 
 	SentenceToSubVerbObj(newstring, verbs, o1, o2);
-	if (newstring.size() > 9) {
+	if (temp.size() > 2) {
         vorbereiteSent(newstring);
 	}
 }
@@ -160,12 +164,20 @@ void JEliza::vorbereite() {
 	while (j) {
 		getline(j, b);
 
+		if (b.size() > 40) {
+		    continue;
+		}
+
 		vorbereiteSentence(b, "sv");
 	}
 
 	ifstream v("verb-object.txt");
 	while (v) {
 		getline(v, b);
+
+		if (b.size() > 40) {
+		    continue;
+		}
 
 		vorbereiteSentence(b, "vo");
 	}
@@ -179,9 +191,17 @@ void JEliza::vorbereite() {
 		s = (*JEliza::m_jd.m_SVs)[a];
 		vector<string> s_v = (*JEliza::m_jd.m_SVs_words)[a];
 
+		if (s_v[0].size() < 5) {
+		    continue;
+		}
+
 		for (unsigned int c = 0; c < JEliza::m_jd.m_VOs->size(); c++) {
 			s = (*JEliza::m_jd.m_VOs)[c];
 			vector<string> v_o = (*JEliza::m_jd.m_VOs_words)[c];
+
+            if (v_o[1].size() < 5) {
+                continue;
+            }
 
 			if (Util::toLower(s_v[1]) == Util::toLower(v_o[0])) {
 				bestStr = s_v[0] + " " + s_v[1] + " " + v_o[1];
@@ -358,7 +378,7 @@ void JEliza::SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, 
 				bestVerb = points2;
 				verb = tempverb;
 				verb2 = tempverb2;
-				if (bestVerb > 85) {
+				if (bestVerb > 75) {
 				    break;
 				}
 			}

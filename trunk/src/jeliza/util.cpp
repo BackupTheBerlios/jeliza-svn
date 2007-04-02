@@ -90,6 +90,15 @@ public:
 		return str;
 	}
 
+	static string toUpper (string text) {
+		string str = "";
+
+		for (string::size_type x = 0; x < text.size(); x++) {
+			str += toupper(text[x]);
+		}
+		return str;
+	}
+
 	static string toLower_const (const string text) {
 		string str = "";
 

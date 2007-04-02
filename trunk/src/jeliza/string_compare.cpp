@@ -88,7 +88,7 @@ public:
                 continue;
             }
 
-            y = x + 2;
+/*            y = x + 2;
             if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
                 acc++;
                 continue;
@@ -110,7 +110,7 @@ public:
             if (y < s2_size && s1[x] == s2[y] && s1_size > 6) {
                 acc++;
                 continue;
-            }
+            }*/
 
             y = x - 1;
             if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
@@ -118,7 +118,7 @@ public:
                 continue;
             }
 
-            y = x - 2;
+            /*y = x - 2;
             if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
                 acc++;
                 continue;
@@ -140,7 +140,7 @@ public:
             if (y < s2_size && s1[x] == s2[y] && s1_size > 6) {
                 acc++;
                 continue;
-            }
+            }*/
 
         }
 

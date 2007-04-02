@@ -470,7 +470,7 @@ string download (string url) {
     string temp;
     while (ifstr) {
 		getline(ifstr, temp);
-		temp = Util::strip(temp);
+//		temp = Util::strip(temp);
 
 		all += temp;
 		all += "\n";
