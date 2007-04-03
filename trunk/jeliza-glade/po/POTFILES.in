@@ -1,4 +1,0 @@
-# List of source files containing translatable strings.
-./src/jeliza-glade.cc
-./src/MainWindow_glade.cc
-./src/MainWindow.cc
