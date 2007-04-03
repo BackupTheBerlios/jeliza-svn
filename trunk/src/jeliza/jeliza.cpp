@@ -28,6 +28,7 @@
 #include "arrays.cpp"
 #include "string_compare.cpp"
 #include "jeliza.h"
+#include "jdb.cpp"
 
 using namespace std;
 
