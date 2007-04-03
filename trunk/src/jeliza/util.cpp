@@ -24,16 +24,9 @@
  *
  */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <map>
 
-#include <string>
-#include <list>
+#include "defs.h"
 
-#include <time.h>
-#include <vector>
 
 using namespace std;
 
@@ -81,6 +74,7 @@ public:
 //		return ret;
 	}
 
+#ifndef string
 	static string toLower (string& text) {
 		string str = "";
 
@@ -107,6 +101,19 @@ public:
 		}
 		return str;
 	}
+#else
+	static string toLower (string text) {
+		return text.lowercase();
+	}
+
+	static string toUpper (string text) {
+		return text.uppercase();
+	}
+
+	static string toLower_const (const string text) {
+		return text.lowercase();
+	}
+#endif
 
 //	static string toLower (const string text) {
 //		toLower(static_cast<string>(text));
@@ -155,6 +162,12 @@ public:
 				in.insert(pos, wit);
 			}
 		}
+		return in;
+	}
+
+	static string replace_save (string in, const string rep, const string wit) {
+		in = Util::replace(in, rep, string("iknlkmgncdrkhjikmpljwuxgbeikjenxcurnj"));
+		in = Util::replace(in, string("iknlkmgncdrkhjikmpljwuxgbeikjenxcurnj"), wit);
 		return in;
 	}
 

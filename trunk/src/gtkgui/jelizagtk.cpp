@@ -21,31 +21,19 @@
  *
  */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <map>
-#include <queue>
-
-#include <string>
-#include <list>
-
-#include <time.h>
-#include <vector>
-#include <unistd.h>
-#include <getopt.h>
-
-#include "../jeliza/socketload.cpp"
-#include "jeliza.h"
-#include "../jeliza/util.cpp"
-#include "../jeliza/arrays.cpp"
-
 #include <gtkmm.h>
 #include <libglademm.h>
 
 #include <glib/gthread.h>
 #include <glibmm/thread.h>
 #include <glibmm.h>
+
+#include "defs.h"
+
+#include "../jeliza/socketload.cpp"
+#include "jeliza.h"
+#include "../jeliza/util.cpp"
+#include "../jeliza/arrays.cpp"
 
 using namespace std;
 using namespace Gtk;

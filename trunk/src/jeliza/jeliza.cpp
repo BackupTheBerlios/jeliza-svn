@@ -23,18 +23,7 @@
  *
  */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <map>
-#include <sstream>
-
-#include <string>
-#include <list>
-
-#include <time.h>
-#include <vector>
-
+#include "defs.h"
 #include "util.cpp"
 #include "arrays.cpp"
 #include "string_compare.cpp"
@@ -164,7 +153,7 @@ void JEliza::vorbereite() {
 	while (j) {
 		getline(j, b);
 
-		if (b.size() > 40) {
+		if (b.size() > 75) {
 		    continue;
 		}
 
@@ -175,7 +164,7 @@ void JEliza::vorbereite() {
 	while (v) {
 		getline(v, b);
 
-		if (b.size() > 40) {
+		if (b.size() > 75) {
 		    continue;
 		}
 
@@ -435,6 +424,7 @@ vector<string> JEliza::trenne_SubVerbObj(string s, vector<string> verbs) {
 	for (unsigned int x = 0; x < verbs.size(); x++) {
 		string buffer = verbs[x];
 		if (buffer.size() > 1) {
+		    string buffer_lower = Util::toLower(buffer);
 			points2 = 0;
 			points3 = 0;
 			string tempverb = "";
@@ -442,6 +432,7 @@ vector<string> JEliza::trenne_SubVerbObj(string s, vector<string> verbs) {
 			bool brea = false;
 			for (unsigned int g = 0; g < woerter.size(); g++) {
 				string wort = woerter[g];
+				string wort_lower = Util::toLower(wort);
 				StringCompare sc(wort, buffer);
 				points2 += sc.getPoints();
 
@@ -570,6 +561,10 @@ string JEliza::ohne_muell(string frage) {
 	unuseful_words.push_back("eines");
 	unuseful_words.push_back("einem");
 
+	unuseful_words.push_back("fr");
+	unuseful_words.push_back("für");
+	unuseful_words.push_back("fuer");
+
 	for (int x = 0; x < unuseful_words.size(); x++) {
 		string unuseful_word = " " + unuseful_words[x] + " ";
 
@@ -586,6 +581,10 @@ string JEliza::ohne_muell(string frage) {
 }
 
 bool is_similar(string s1, string s2) {
+    if (s1 == s2) {
+        return true;
+    }
+
     s1 = Util::toLower(s1);
     s1 = Util::strip(s1);
 
@@ -633,6 +632,8 @@ Answer JEliza::answer_logical(string frage) {
     string parts_2 = ohne_muell(parts[2]);
     parts_2 = Util::toLower(parts_2);
 
+    cout << "- Verb ist " << parts_1 << " bzw. " << parts_2 << endl;
+
     if (parts[0].size() < 1 || parts[1].size() < 1 || parts[2].size() < 1 || parts[3].size() < 1) {
         cout << "- Unvollstaendiger Satzteil in: \"" << frage << "\"" << endl;
         return Answer("");
@@ -645,7 +646,7 @@ Answer JEliza::answer_logical(string frage) {
 		s = (*JEliza::m_jd.m_SVs)[a];
 		vector<string> s_v = (*JEliza::m_jd.m_SVs_words)[a];
 
-		if (parts_1 != s_v[1] && parts_2 != s_v[1]) {
+		if (parts_1 != s_v[1]) {
 		    continue;
 		}
 
@@ -653,9 +654,15 @@ Answer JEliza::answer_logical(string frage) {
 			s = (*JEliza::m_jd.m_VOs)[c];
 			vector<string> v_o = (*JEliza::m_jd.m_VOs_words)[c];
 
-            if (parts_1 != v_o[0] && parts_2 != v_o[0]) {
+            if (parts_1 != v_o[0]) {
                 continue;
             }
+
+            if (!is_similar(parts_0, s) || !is_similar(parts_3, s)) {
+                continue;
+            }
+
+            cout << s << endl;
 
             vector<string> parts2;
             parts2.push_back(s_v[0]);
@@ -672,7 +679,7 @@ Answer JEliza::answer_logical(string frage) {
                 continue;
             }
 
-            if (is_similar(parts_0, parts2_0) && is_similar(parts_3, parts2_3)) {
+            if (!is_similar(parts_0, parts2_0) || !is_similar(parts_3, parts2_3)) {
                 continue;
             }
 
@@ -729,9 +736,9 @@ Answer JEliza::answer_logical(string frage) {
         }
     }*/
 
-//    for (int x = 0; x < meinungen.size(); x++) {
-//        cout << "- Meinung: " << meinungen[x] << endl;
-//    }
+    for (int x = 0; x < meinungen.size(); x++) {
+        cout << "- Meinung: " << meinungen[x] << endl;
+    }
 
     if (meinungen.size() < 1) {
         return Answer("");

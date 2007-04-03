@@ -638,13 +638,31 @@ ist|das Wetter schoen!
 ist|das Wetter schoen!
 
 
-ist|es
-ist|es
-ist|sie nicht
-ist|sie nicht
-wie|gehts?
-wie|gehts?
-wie|gehts?
-wie|gehts?
-ein|Elfenbeinturm?
-ein|Elfenbeinturm?
+ist|eine physikalische Theorie, die das Verhalten der Materie im atomaren und subatomaren Bereich beschreibt.
+ist|eine physikalische Theorie, die das Verhalten der Materie im atomaren und subatomaren Bereich beschreibt.
+ist|Quantenphysik?
+ist|Quantenphysik?
+ist|eine physikalische Theorie, die das Verhalten der Materie im atomaren und subatomaren Bereich beschreibt.
+ist|eine physikalische Theorie, die das Verhalten der Materie im atomaren und subatomaren Bereich beschreibt.
+ist|Quantenmechanik?
+ist|Quantenmechanik?
+ist|die Quantenmechanik?
+ist|die Quantenmechanik?
+ist|Quantenmechanik
+ist|Quantenmechanik
+ist|quantenmechanik für eine theorie?
+ist|quantenmechanik für eine theorie?
+ist|Quantenmechanik für eine Theorie?
+ist|Quantenmechanik für eine Theorie?
+ist|ein Baum?
+ist|ein Baum?
+wird|in der Regel 6080&amp;nbsp;m hoch.
+wird|in der Regel 6080&amp;nbsp;m hoch.
+ist|ein Baum?
+ist|ein Baum?
+ist|ein Riesenmammutbaum?
+ist|ein Riesenmammutbaum?
+ist|ein Riesenmammutbaum?
+ist|ein Riesenmammutbaum?
+ist|ein Xylophon?
+ist|ein Xylophon?

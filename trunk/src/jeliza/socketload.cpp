@@ -26,6 +26,9 @@
 
 #include "util.cpp"
 
+#include "defs.h"
+
+
 using namespace std;
 
 std::runtime_error CreateSocketError()

@@ -24,16 +24,8 @@
  *
  */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <map>
 
-#include <string>
-#include <list>
-
-#include <time.h>
-#include <vector>
+#include "defs.h"
 
 using namespace std;
 
