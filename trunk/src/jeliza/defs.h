@@ -2,6 +2,8 @@
 #define JELIZA_defs 1
 
 
+#include "verbs.h"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -19,5 +21,7 @@
 
 #define JELIZA_VERSION "2.2 beta"
 
+typedef vector<DBSentence> DB;
+typedef vector<string> answers;
 
 #endif

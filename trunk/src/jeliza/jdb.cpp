@@ -1,5 +1,5 @@
-#ifndef JELIZA
-#define JELIZA 1
+#ifndef JELIZA_JDB
+#define JELIZA_JDB 1
 /*
  * This is part of JEliza 2.0.
  * Copyright 2006 by Tobias Schulz
@@ -104,6 +104,27 @@ public:
         string tempprio;
         sst >> tempprio;
 
+        string all = "";
+
+        all += " <fact>\n";
+        all += printPart ("prefix>   ", temp, prefix);
+        all += printPart ("subject>  ", temp, subject);
+        all += printPart ("verb>     ", temp, verb);
+        all += printPart ("object>   ", temp, object);
+        all += printPart ("suffix>   ", temp, suffix);
+        all += printPart ("feeling>  ", temp, feeling);
+        all += printPart ("priority> ", temp, tempprio);
+        all += " </fact>\n\n";
+    }
+
+    void toXMLPrint() {
+        string temp = "";
+
+        stringstream sst;
+        sst << priority;
+        string tempprio;
+        sst >> tempprio;
+
         cout << " <fact>" << endl;
         printPart ("prefix>   ", temp, prefix);
         printPart ("subject>  ", temp, subject);
@@ -116,12 +137,22 @@ public:
         cout << endl;
     }
 
-    void printPart (string str, string temp, string wert) {
+    string printPart (string str, string temp, string wert) {
         cout << "  <" << str << wert << "  " << "</" << str << endl;
+        return "  <" + str + wert + "  " + "</" + str;
+    }
+
+    void strip() {
+        prefix = Util::strip(prefix);
+        subject = Util::strip(subject);
+        verb = Util::strip(verb);
+        object = Util::strip(object);
+        suffix = Util::strip(suffix);
+        feeling = Util::strip(feeling);
     }
 };
 
-void parseJDB (string file) {
+DB parseJDB (string file) {
     ifstream i(file.c_str());
 
     string buffer;
@@ -133,58 +164,33 @@ void parseJDB (string file) {
             continue;
         }
 
-        all += Util::strip(buffer) + "\n";
+        all += buffer + "\n";
     }
 
-    string all2 = all;
-    all = "";
-    bool in_tag = false;
-    string in_tag_temp = "";
-	for (int x = 0; x < all2.size(); x++) {
-		char array[2];
-		array[0] = all2[x];
-		array[1] = '\0';
-		string y(array);
-
-		if (y == string("<")) {
-		    in_tag = false;
-		    all += Util::strip(in_tag_temp);
-		    in_tag_temp = "";
-		}
-
-		if (!in_tag) {
-			all += y;
-		}
-
-		if (in_tag) {
-			in_tag_temp += y;
-		}
-
-		if (y == string(">")) {
-		    in_tag = true;
-		}
-	}
-
-    all = Util::replace(all, string("\r"), string(""));
+//    cout << "!" << endl;
+    /*all = Util::replace(all, string("\r"), string(""));
     all = Util::replace_save(all, string("<"), string("\n<"));
     all = Util::replace_save(all, string(">"), string(">\n"));
     all = Util::replace_save(all, string("\n\n"), string("\n"));
+    cout << "?" << endl;*/
 
     vector<string> lines;
-    Util::split(all, string("\n"), lines);
+    Util::split(all, string("\n\r<>"), lines);
 
 
-    vector<DBSentence> sents;
+    DB sents;
 
     for (vector<string>::iterator it = lines.begin(); it != lines.end(); it++) {
         *it = Util::strip(*it);
+//        cout << ",";
     }
+    cout << endl;
 
     DBSentence act_sent;
     for (vector<string>::iterator it = lines.begin(); it != lines.end(); it++) {
         string line = *it;
 
-        if (Util::contains(line, "<priority>")) {
+        if (line == "priority") {
             stringstream sst;
             sst << *(it + 1);
             int t;
@@ -193,49 +199,50 @@ void parseJDB (string file) {
             it += 2;
         }
 
-        if (Util::contains(line, "<subject>")) {
+        else if (line == "subject") {
             act_sent.subject = *(it + 1);
             it += 2;
         }
 
-        if (Util::contains(line, "<verb>")) {
+        else if (line == "verb") {
             act_sent.verb = *(it + 1);
             it += 2;
         }
 
-        if (Util::contains(line, "<object>")) {
+        else if (line == "object") {
             act_sent.object = *(it + 1);
             it += 2;
         }
 
-        if (Util::contains(line, "<feeling>")) {
+        else if (line == "feeling") {
             act_sent.feeling = *(it + 1);
             it += 2;
         }
 
-        if (Util::contains(line, "<prefix>")) {
+        else if (line == "prefix") {
             act_sent.prefix = *(it + 1);
             it += 2;
         }
 
-        if (Util::contains(line, "<suffix>")) {
+        else if (line == "suffix") {
             act_sent.suffix = *(it + 1);
             it += 2;
         }
 
 
-        if (Util::contains(line, "</fact>")) {
+        else if (line == "/fact") {
+            act_sent.strip();
             sents.push_back(act_sent);
             act_sent = DBSentence();
+            cout << ".";
         }
     }
+    cout << endl << endl;
 
-    for (vector<DBSentence>::iterator it = sents.begin(); it != sents.end(); it++) {
-        (*it).print();
-    }
+    return sents;
 }
 
-DBSentence toDBSentence (string buffer, JEliza jel, vector<string> verbs) {
+DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs) {
     vector<string> parts = jel.trenne_SubVerbObj(buffer, verbs);
 
     DBSentence act_sent;
@@ -278,14 +285,8 @@ void convertOldDB() {
 
     JEliza jel(1);
 
-    ifstream in2("verbs.txt");
-	vector<string> verbs;
+    vector<string> verbs = verbs::getVerbs();
 	string buffer;
-	while (in2) {
-		getline(in2, buffer);
-		buffer = Util::strip(buffer);
-		verbs.push_back(toASCII_2_2(buffer));
-	}
 
     cout << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" << endl << endl << "<jdb>" << endl;
 
@@ -297,10 +298,25 @@ void convertOldDB() {
             continue;
         }
 
-        toDBSentence(buffer, jel, verbs).toXML();
+        toDBSentence(toASCII_2_2(buffer), jel, verbs).toXML();
     }
 
     cout << "</jdb>" << endl;
+}
+
+void saveDB(string file, JEliza& jel, DB db) {
+    ofstream o(file.c_str());
+
+    vector<string> verbs = verbs::getVerbs();
+	string buffer;
+
+    o << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" << endl << endl << "<jdb>" << endl;
+
+    for (BD::iterator it = db.begin(); it != db.end(); it++) {
+        o << toDBSentence(toASCII_2_2(*it), jel, verbs).toXML() << endl;
+    }
+
+    o << "</jdb>" << endl;
 }
 
 }

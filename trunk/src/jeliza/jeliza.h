@@ -26,8 +26,10 @@
 
 
 #include "defs.h"
+#include "jdb.cpp"
 
 using namespace std;
+
 
 
 class Answer {
@@ -78,13 +80,7 @@ public:
 
 class JElizaData {
 public:
-	auto_ptr<vector<string> > m_sents;
-	auto_ptr<vector<string> > m_SVs;
-	auto_ptr<vector<string> > m_VOs;
-	auto_ptr<vector<vector<string> > > m_SVs_words;
-	auto_ptr<vector<vector<string> > > m_VOs_words;
-	auto_ptr<vector<string> > m_sent_word;
-	auto_ptr<vector<string> > m_sent_sent;
+	auto_ptr<DB> m_sents;
 	bool m_sents_is;
 	bool m_SVs_is;
 	bool m_VOs_is;
@@ -99,13 +95,7 @@ public:
 	vector<string> m_last_sentence_words;
 
 	JElizaData()
-	: m_sents(new vector<string>()),
-	  m_SVs(new vector<string>()),
-	  m_VOs(new vector<string>()),
-	  m_SVs_words(new vector<vector<string> >()),
-	  m_VOs_words(new vector<vector<string> >()),
-	  m_sent_word(new vector<string>()),
-	  m_sent_sent(new vector<string>()),
+	: m_sents(new DB()),
 	  m_sents_is(true),
 	  m_SVs_is(true),
 	  m_VOs_is(true),
@@ -161,20 +151,17 @@ public:
 class JEliza {
 public:
 	int m_sentenceCount;
-	string m_file;
 	static JElizaData m_jd;
 	bool m_schonVorbereitet;
 	Answer m_aktuell_answer;
 
 	JEliza()
-	: m_sentenceCount(0), m_file(searchConfigFile()), m_schonVorbereitet(false)
+	: m_sentenceCount(0), m_schonVorbereitet(false)
 	{
-		cout << "-> config file: " << m_file << endl;
-		cout << endl;
 	}
 
 	JEliza(int dummy)
-	: m_sentenceCount(0), m_file(searchConfigFile()), m_schonVorbereitet(false)
+	: m_sentenceCount(0), m_schonVorbereitet(false)
 	{
 	}
 
@@ -185,17 +172,16 @@ public:
 	void saveSentence (string savetype, string original, string newstring);
 	void learn (string fra);
 	void init ();
-	void vorbereiteSentence(string sent, string art);
-	void vorbereite();
-	bool generiere(string sent);
-	void vorbereiteSent(string bestStr);
-	void generiereSentence(string& bestStr, vector<string>& ss, string& sFrageZeichen, string& last);
-	void SentenceToSubVerbObj(string s, vector<string> verbs, ofstream& o1, ofstream& o2);
-	vector<string> trenne_SubVerbObj(string s, vector<string> verbs);
-	string ohne_muell(string frage);
-	Answer answer_logical(string frage);
-	Answer ask(string frage);
-	double rechne(string s);
+	void vorbereiteSentence (string sent, string art);
+	void vorbereite ();
+//	bool generiere (string sent);
+//	void generiereSentence (string& bestStr, vector<string>& ss, string& sFrageZeichen, string& last);
+//	void SentenceToSubVerbObj (string s, vector<string> verbs, ofstream& o1, ofstream& o2);
+	vector<string> trenne_SubVerbObj (string s, vector<string> verbs);
+	string ohne_muell (string frage);
+	Answer answer_logical (string frage);
+	Answer ask (string frage);
+	double rechne (string s);
 };
 
 //JElizaData JEliza::m_jd = JElizaData();
