@@ -150,8 +150,15 @@ answers jdb::DBSentence::genSentences(bool withFix = false) {
     } else if (withFix) {
         ans.push_back(prefix + " " + subject + " " + verb + " " + object + " " + suffix);
     }
-    ans.push_back(prefix + " " + subject + " " + verb + " " + object);
-    ans.push_back(subject + " " + verb + " " + object + " " + suffix);
+    string temp;
+    temp = Util::strip(prefix + " " + subject + " " + verb + " " + object);
+    if (temp.size() > 1) {
+        ans.push_back(temp);
+    }
+    temp = Util::strip(subject + " " + verb + " " + object + " " + suffix);
+    if (temp.size() > 1) {
+        ans.push_back(temp);
+    }
 
     return ans;
 }
@@ -190,6 +197,8 @@ jdb::DB parseJDB (string file) {
 //        cout << ",";
     }
     cout << endl;
+
+    JEliza jel(1);
 
     jdb::DBSentence act_sent;
     for (vector<string>::iterator it = lines.begin(); it != lines.end(); it++) {
@@ -241,7 +250,10 @@ jdb::DB parseJDB (string file) {
 
         else if (line == "/fact") {
             act_sent.strip();
-            sents.push_back(act_sent);
+            if (jel.isQuestion(act_sent.prefix) == 0 && jel.isQuestion(act_sent.suffix) == 0
+                    && jel.isQuestion(act_sent.object) == 0) {
+                sents.push_back(act_sent);
+            }
             act_sent = jdb::DBSentence();
             cout << ".";
         }
@@ -257,19 +269,28 @@ jdb::DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs) 
     jdb::DBSentence act_sent;
 
     if (parts.size() > 1) {
-        cout << "parts.size() > 1" << parts[0] << "|"  << parts[1] << "|"  << parts[2] << "|"  << parts[2] << endl;
+        cout << "parts.size() > 1 " << parts[0] << "|"  << parts[1] << "|"  << parts[2] << "|"  << parts[2] << endl;
         string prefix = "";
+        cout << "1";
         if (Util::contains(parts[0], ",")) {
+            cout << "2";
             int n = parts[0].find(",");
+            cout << "3";
             prefix = parts[0].substr(0, n);
+            cout << "4";
             parts[0] = parts[0].substr(n+1, parts[0].size());
         }
+        cout << "5";
         string suffix = "";
         if (Util::contains(parts[3], ",")) {
+            cout << "6";
             int n = parts[3].find(",");
+            cout << "7";
             suffix = parts[3].substr(n+1, parts[3].size());
+            cout << "8";
             parts[3] = parts[3].substr(0, n);
         }
+        cout << "9";
         act_sent.subject = Util::strip(parts[0]);
         act_sent.verb = Util::strip(parts[1]);
         act_sent.object = Util::strip(parts[3]);

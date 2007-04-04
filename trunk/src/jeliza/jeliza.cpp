@@ -452,6 +452,15 @@ Answer JEliza::answer_logical_question_type_1 (string frage, string orig_fra) {
     dbs.verb = ohne_muell(dbs.verb);
     dbs.verb = Util::toLower(dbs.verb);
 
+
+    if (dbs.object.size() > 2) {
+        string definition = search_in_wikipedia(dbs.object);
+        if (definition.size() > 2) {
+            return Answer(definition);
+        }
+    }
+
+
     cout << "- Verb ist " << dbs.verb << endl;
 
     dbs.print();

@@ -287,6 +287,7 @@ namespace jdb {
     void saveDB(string file, JEliza& jel, jdb::DB db);
 }
 
+string search_in_wikipedia(string wort);
 
 #endif
 

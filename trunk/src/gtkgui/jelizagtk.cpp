@@ -152,6 +152,44 @@ string toASCIIreally(string all) {
 	return allAscii;
 }
 
+string ohneEckKlammer (string satz, bool withPipeInBrackets) {
+    int inKlammer2 = 0;
+    string tempStr = "";
+    string satz2 = satz + " ";
+    satz = "";
+    for (int y = 0; y < satz2.size(); y++) {
+        char ch = satz2[y];
+
+        if (ch == '[' && satz2[y+1] == '[') {
+            inKlammer2++;
+            y++;
+        }
+
+        if (inKlammer2 == 0) {
+            satz += ch;
+        }
+
+        if (ch == '|') {
+            tempStr = "";
+        }
+
+        if (inKlammer2 > 0 && ch != '|' && ch != '[' && ch != ']') {
+            tempStr += ch;
+        }
+
+        if (ch == ']' && satz2[y+1] == ']') {
+            inKlammer2--;
+            if (withPipeInBrackets) {
+                satz += tempStr;
+            }
+            tempStr = "";
+            y++;
+        }
+    }
+
+    return Util::strip(satz);
+}
+
 string wikipedia (string wort, bool rec = false) {
     wort = Util::replace(wort, string(" "), string("_"));
 
@@ -179,11 +217,20 @@ string wikipedia (string wort, bool rec = false) {
     for (int x = 0; x < lines.size(); x++) {
         string line = lines[x];
         line = Util::strip(line);
+        string sline = "-" + line + "-";
 
         if (Util::contains(line, "cols='80'")) {
 //            cout << "inRichtigemBereich = true; " << line << endl;
             inRichtigemBereich = true;
             line = line.substr(line.find(">") + 1, line.size() - line.find(">") - 1);
+        }
+
+        if (inRichtigemBereich) {
+            cout << inKlammer << " " << line << endl;
+        }
+
+        if (ohneEckKlammer(satz, false).size() < 2) {
+            continue;
         }
 
         if (inRichtigemBereich && Util::contains(line, string("{{"))) {
@@ -217,37 +264,7 @@ string wikipedia (string wort, bool rec = false) {
                 }
             }
 
-            inKlammer2 = 0;
-            string tempStr = "";
-            string satz2 = satz + " ";
-            satz = "";
-            for (int y = 0; y < satz2.size(); y++) {
-                char ch = satz2[y];
-
-                if (ch == '[' && satz2[y+1] == '[') {
-                    inKlammer2++;
-                    y++;
-                }
-
-                if (inKlammer2 == 0) {
-                    satz += ch;
-                }
-
-                if (ch == '|') {
-                    tempStr = "";
-                }
-
-                if (inKlammer2 > 0 && ch != '|' && ch != '[' && ch != ']') {
-                    tempStr += ch;
-                }
-
-                if (ch == ']' && satz2[y+1] == ']') {
-                    inKlammer2--;
-                    satz += tempStr;
-                    tempStr = "";
-                    y++;
-                }
-            }
+            satz = ohneEckKlammer(satz, true);
 
             satz = "-" + Util::replace(satz, string("  "), string(" ")) + "-";
             satz = Util::replace(satz, string("."), string("ekdnkecolesl"));
@@ -303,10 +320,21 @@ string wikipedia (string wort, bool rec = false) {
         if (inRichtigemBereich && inKlammer > 0 && Util::contains(line, string("|}"))) {
             inKlammer--;
         }
+
+        if (inRichtigemBereich) {
+            cout << inKlammer << " " << line << endl;
+        }
+
+//        if (inRichtigemBereich) {
+//           if (inRichtigemBereich && Util::contains(sline, string("]]-"))) {
+//                inKlammer--;
+//            }
+//        }
     }
 
     return satz;
 }
+
 
 string search_in_wikipedia(string wort) {
     wort = Util::strip(wort);
@@ -356,7 +384,7 @@ void durchsuche_nach_unbekanntem (string all) {
     Util::split(all, string(" "), woerter);
 
     cout << "- Lade alle Woerter die nicht in der Wikipedia sind..." << endl;
-    ifstream in4("not_in_wikipedia.txt");
+    ifstream in4("not_in_wikipedia.tmp");
 	vector<string> not_in_wikipedia;
 	string buffer;
     while (in4) {
@@ -371,7 +399,7 @@ void durchsuche_nach_unbekanntem (string all) {
     in4.close();
 
     cout << "- Lade alle Woerter die schon aus der Wikipedia geholt wurden..." << endl;
-    ifstream in5("schon_aus_wikipedia.txt");
+    ifstream in5("schon_aus_wikipedia.tmp");
 	vector<string> schon_aus_wikipedia;
     while (in5) {
         getline(in5, buffer);
@@ -409,12 +437,12 @@ void durchsuche_nach_unbekanntem (string all) {
             cout << "- Suche nach einer Definition fuer \"" << (*it) << "\" in der Wikipedia" << endl;
             string definition = search_in_wikipedia((*it));
             if (definition.size() < 2) {
-                ofstream of("not_in_wikipedia.txt", ios::app | ios::ate);
+                ofstream of("not_in_wikipedia.tmp", ios::app | ios::ate);
                 of << (*it) << endl;
                 of.close();
                 not_in_wikipedia.push_back((*it));
             } else {
-                ofstream of("schon_aus_wikipedia.txt", ios::app | ios::ate);
+                ofstream of("schon_aus_wikipedia.tmp", ios::app | ios::ate);
                 of << (*it) << endl;
                 of.close();
                 schon_aus_wikipedia.push_back((*it));
@@ -424,7 +452,7 @@ void durchsuche_nach_unbekanntem (string all) {
                 jel.saveSentence(x);
             }
 //            } else if ( (*it) != Util::toLower((*it)) && (*it) != Util::toUpper((*it))) {
-//                ofstream of("not_in_wikipedia.txt", ios::app | ios::ate);
+//                ofstream of("not_in_wikipedia.tmp", ios::app | ios::ate);
 //                of << (*it) << endl;
 //                of.close();
 //                not_in_wikipedia.push_back((*it));

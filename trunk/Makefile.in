@@ -38,7 +38,7 @@ bin_PROGRAMS = jelizagtk$(EXEEXT)
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(top_srcdir)/configure AUTHORS COPYING \
-	ChangeLog INSTALL NEWS compile depcomp install-sh missing \
+	ChangeLog INSTALL NEWS depcomp install-sh missing \
 	mkinstalldirs
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -797,34 +797,28 @@ packlinux:
 	cp jeliza.inc.html dist/linux
 	cp JEliza.txt dist/linux
 
-distribution: packlinux clean
+distribution: clean
 	mkdir tmp_dist ; true
 	rm -rf tmp_dist
 	mkdir tmp_dist
 
-	cp -r bin/gtk-jeliza tmp_dist/windows
-#	mkdir tmp_dist/windows
-#	mv tmp_dist/windows/bin/jeliza.exe tmp_dist/windows/ ; true
-#	i586-mingw32msvc-strip tmp_dist/windows/jeliza.exe
-#	cp ../gui-addon/JElizaWX.exe tmp_dist/windows
-#	cp ../gui-addon/transla* tmp_dist/windows
-#	cp ../gui-addon/version.ver tmp_dist/windows
-	cp JEliza.txt tmp_dist/windows
-	cp gpl.txt tmp_dist/windows
-	cp Benutzerhandbuch.*  tmp_dist/windows
-#	cp jeliza.inc.html tmp_dist/windows
+	cp -r bin/gtk-jeliza tmp_dist/windows ; true
+	cp JEliza.txt tmp_dist/windows ; true
+	cp gpl.txt tmp_dist/windows ; true
+	cp Benutzerhandbuch.*  tmp_dist/windows ; true
+	cp *.xml tmp_dist/windows ; true
 
-	mkdir tmp_dist/linux
-	cp dist/linux/bin/jeliza tmp_dist/linux
-	strip tmp_dist/linux/jeliza
-	cp jelizagtk tmp_dist/linux/
-	cp JEliza.txt tmp_dist/linux
-	cp *.txt tmp_dist/linux
-	cp gpl.txt tmp_dist/linux
-	cp jeliza.inc.html tmp_dist/linux
-	cp jeliza-glade.glade tmp_dist/linux
+	mkdir tmp_dist/linux ; true
+	cp dist/linux/bin/jeliza tmp_dist/linux ; true
+	strip tmp_dist/linux/jeliza ; true
+	cp jelizagtk tmp_dist/linux/ ; true
+	cp *.txt tmp_dist/linux ; true
+	cp gpl.txt tmp_dist/linux ; true
+	cp jeliza.inc.html tmp_dist/linux ; true
+	cp jeliza-glade.glade tmp_dist/linux ; true
+	cp *.xml tmp_dist/linux ; true
 
-	mkdir tmp_dist/src
+	mkdir tmp_dist/src ; true
 	cp -r * tmp_dist/src ; true
 	rm -rf tmp_dist/src/compile_tmp* ; true
 	rm -rf tmp_dist/src/tmp_dist ; true
