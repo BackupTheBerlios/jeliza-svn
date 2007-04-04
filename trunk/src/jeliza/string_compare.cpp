@@ -36,59 +36,40 @@
 #include <time.h>
 #include <vector>
 
-#include "util.cpp"
-#include "arrays.cpp"
+#include "defs.h"
 
 using namespace std;
 using namespace __gnu_cxx;
 
 
 
-class StringCompare {
-	long double points;
-	int x;
-	int acc;
-	int accBest;
-	unsigned int y;
-	int s1_size;
-	int s2_size;
-	long double res;
+long double StringCompare::getPoints() {
+	return points;
+}
+long double StringCompare::compare (string s1, string s2) {
+    x = -1;
+    acc = 0;
+    accBest = 0;
 
-public:
-	StringCompare (string s1, string s2)
-	: points((compare(s1, s2) + compare(s2, s1)) / 2)
-	{
-	}
+    s1_size = (signed) s1.size();
+    s2_size = (signed) s2.size();
 
-	long double getPoints() {
-		return points;
-	}
+    while (x < s1_size && x < s2_size) {
+        accBest = accBest + 1;
 
-    long double compare (string s1, string s2) {
-        x = -1;
-        acc = 0;
-        accBest = 0;
+        x++;
 
-        s1_size = (signed) s1.size();
-        s2_size = (signed) s2.size();
+        if (s1[x] == s2[x]) {
+            acc++;
+            continue;
+        }
 
-        while (x < s1_size && x < s2_size) {
-            accBest = accBest + 1;
-
-            x++;
-
-            if (s1[x] == s2[x]) {
-                acc++;
-                continue;
-            }
-
-            y = x + 1;
-            if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
-                acc++;
-                continue;
-            }
-
-/*            y = x + 2;
+        y = x + 1;
+        if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
+            acc++;
+            continue;
+        }
+/*           y = x + 2;
             if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
                 acc++;
                 continue;
@@ -112,11 +93,11 @@ public:
                 continue;
             }*/
 
-            y = x - 1;
-            if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
-                acc++;
-                continue;
-            }
+        y = x - 1;
+        if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
+            acc++;
+            continue;
+        }
 
             /*y = x - 2;
             if (y < s2_size && s1[x] == s2[y] && s1_size > 3) {
@@ -142,39 +123,38 @@ public:
                 continue;
             }*/
 
-        }
+    }
 
-        if (s1_size == s2_size) {
-            acc++;
-            accBest++;
-        }
+    if (s1_size == s2_size) {
+        acc++;
+        accBest++;
+    }
 
-        if (s1 == s2) {
-            return 1000.0;
-        }
+    if (s1 == s2) {
+        return 1000.0;
+    }
 
-        long double tmp;
-        tmp = Util::max(s1_size, s2_size);
-        tmp /= Util::min(s1_size, s2_size);
+    long double tmp;
+    tmp = Util::max(s1_size, s2_size);
+    tmp = tmp / Util::min(s1_size, s2_size);
 
-        acc *= tmp;
-        accBest *= tmp;
+//    acc /= tmp;
+//    accBest = tmp;
 
 ////        cout << "acc     " << acc << endl;
 ////        cout << "accBest " << accBest << endl;
 
-        res = 0.0;
-        if (accBest > 0 and acc > 0) {
-            res = 100 / accBest * acc;
-        }
-        if (res > 100) {
-            res = 100.0;
-        }
-
-        return res;
+    res = 0.0;
+    if (accBest > 0 and acc > 0) {
+        res = 100 / accBest * acc;
+//        res /= tmp;
+    }
+    if (res > 100) {
+        res = 100.0;
     }
 
-};
+    return res;
+}
 
 
 #endif

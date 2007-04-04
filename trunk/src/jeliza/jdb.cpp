@@ -1,5 +1,6 @@
 #ifndef JELIZA_JDB
 #define JELIZA_JDB 1
+
 /*
  * This is part of JEliza 2.0.
  * Copyright 2006 by Tobias Schulz
@@ -24,10 +25,6 @@
  */
 
 #include "defs.h"
-#include "util.cpp"
-#include "arrays.cpp"
-#include "string_compare.cpp"
-#include "jeliza.h"
 
 namespace jdb {
 
@@ -36,7 +33,7 @@ string toASCIIreally_2(string all) {
 //	string ascii = ;
 
 	string allAscii = "";
-	for (int x = 0; x < all.size(); x++) {
+	for (unsigned int x = 0; x < all.size(); x++) {
 		char array[2];
 		array[0] = all[x];
 		array[1] = '\0';
@@ -69,90 +66,98 @@ string toASCII_2_2(string all) {
 	return all;
 }
 
-class DBSentence {
-public:
-    string subject;
-    string verb;
-    string object;
-    string prefix;
-    string suffix;
-    string feeling;
-    unsigned int priority;
 
-    DBSentence ()
-    : subject(string("")), verb(string("")), object(string("")), prefix(string("")), suffix(string("")),
-      feeling(string("normal")), priority(50)
-    {
+void jdb::DBSentence::print() {
+    cout << "Subject:   " << subject << endl;
+    cout << "Verb:      " << verb << endl;
+    cout << "Object:    " << object << endl;
+    cout << "Prefix:    " << prefix << endl;
+    cout << "Suffix:    " << suffix << endl;
+    cout << "Feeling:   " << feeling << endl;
+    cout << "Priority:  " << priority << endl;
+    cout << "Category:  " << category << endl;
+    cout << endl;
+}
+
+string jdb::DBSentence::toXML() {
+    string temp = "";
+
+    stringstream sst;
+    sst << priority;
+    string tempprio;
+    sst >> tempprio;
+
+    string all = "";
+
+    all += " <fact>\n";
+    all += printPart ("prefix>   ", temp, prefix);
+    all += printPart ("subject>  ", temp, subject);
+    all += printPart ("verb>     ", temp, verb);
+    all += printPart ("object>   ", temp, object);
+    all += printPart ("suffix>   ", temp, suffix);
+    all += printPart ("feeling>  ", temp, feeling);
+    all += printPart ("priority> ", temp, tempprio);
+    all += printPart ("category> ", temp, category);
+    all += " </fact>\n\n";
+
+    return all;
+}
+
+void jdb::DBSentence::toXMLPrint() {
+    string temp = "";
+
+    stringstream sst;
+    sst << priority;
+    string tempprio;
+    sst >> tempprio;
+
+    cout << " <fact>" << endl;
+    printPart ("prefix>   ", temp, prefix);
+    printPart ("subject>  ", temp, subject);
+    printPart ("verb>     ", temp, verb);
+    printPart ("object>   ", temp, object);
+    printPart ("suffix>   ", temp, suffix);
+    printPart ("feeling>  ", temp, feeling);
+    printPart ("priority> ", temp, tempprio);
+    printPart ("category> ", temp, category);
+
+    cout << " </fact>" << endl;
+    cout << endl;
+}
+
+string jdb::DBSentence::printPart (string str, string temp, string wert) {
+//    cout << "  <" << str << wert << "  " << "</" << str << endl;
+    return "  <" + str + wert + "  " + "</" + str + "\n";
+}
+
+void jdb::DBSentence::strip() {
+    prefix = Util::strip(prefix);
+    subject = Util::strip(subject);
+    verb = Util::strip(verb);
+    object = Util::strip(object);
+    suffix = Util::strip(suffix);
+    feeling = Util::strip(feeling);
+    category = Util::strip(category);
+}
+
+answers jdb::DBSentence::genSentences(bool withFix = false) {
+    strip();
+
+    answers ans;
+
+    if (subject.size() > 2 && verb.size() > 2 && object.size() > 1) {
+        ans.push_back(subject + " " + verb + " " + object);
+    } else if (withFix) {
+        ans.push_back(prefix + " " + subject + " " + verb + " " + object + " " + suffix);
     }
+    ans.push_back(prefix + " " + subject + " " + verb + " " + object);
+    ans.push_back(subject + " " + verb + " " + object + " " + suffix);
 
-    void print() {
-        cout << "Subject: " << subject << endl;
-        cout << "Verb: " << verb << endl;
-        cout << "Object: " << object << endl;
-        cout << "Prefix: " << prefix << endl;
-        cout << "Suffix: " << suffix << endl;
-        cout << "Feeling: " << feeling << endl;
-        cout << "Priority: " << priority << endl;
-        cout << endl;
-    }
+    return ans;
+}
 
-    void toXML() {
-        string temp = "";
 
-        stringstream sst;
-        sst << priority;
-        string tempprio;
-        sst >> tempprio;
-
-        string all = "";
-
-        all += " <fact>\n";
-        all += printPart ("prefix>   ", temp, prefix);
-        all += printPart ("subject>  ", temp, subject);
-        all += printPart ("verb>     ", temp, verb);
-        all += printPart ("object>   ", temp, object);
-        all += printPart ("suffix>   ", temp, suffix);
-        all += printPart ("feeling>  ", temp, feeling);
-        all += printPart ("priority> ", temp, tempprio);
-        all += " </fact>\n\n";
-    }
-
-    void toXMLPrint() {
-        string temp = "";
-
-        stringstream sst;
-        sst << priority;
-        string tempprio;
-        sst >> tempprio;
-
-        cout << " <fact>" << endl;
-        printPart ("prefix>   ", temp, prefix);
-        printPart ("subject>  ", temp, subject);
-        printPart ("verb>     ", temp, verb);
-        printPart ("object>   ", temp, object);
-        printPart ("suffix>   ", temp, suffix);
-        printPart ("feeling>  ", temp, feeling);
-        printPart ("priority> ", temp, tempprio);
-        cout << " </fact>" << endl;
-        cout << endl;
-    }
-
-    string printPart (string str, string temp, string wert) {
-        cout << "  <" << str << wert << "  " << "</" << str << endl;
-        return "  <" + str + wert + "  " + "</" + str;
-    }
-
-    void strip() {
-        prefix = Util::strip(prefix);
-        subject = Util::strip(subject);
-        verb = Util::strip(verb);
-        object = Util::strip(object);
-        suffix = Util::strip(suffix);
-        feeling = Util::strip(feeling);
-    }
-};
-
-DB parseJDB (string file) {
+jdb::DB parseJDB (string file) {
     ifstream i(file.c_str());
 
     string buffer;
@@ -178,7 +183,7 @@ DB parseJDB (string file) {
     Util::split(all, string("\n\r<>"), lines);
 
 
-    DB sents;
+    jdb::DB sents;
 
     for (vector<string>::iterator it = lines.begin(); it != lines.end(); it++) {
         *it = Util::strip(*it);
@@ -186,7 +191,7 @@ DB parseJDB (string file) {
     }
     cout << endl;
 
-    DBSentence act_sent;
+    jdb::DBSentence act_sent;
     for (vector<string>::iterator it = lines.begin(); it != lines.end(); it++) {
         string line = *it;
 
@@ -229,11 +234,15 @@ DB parseJDB (string file) {
             it += 2;
         }
 
+        else if (line == "category") {
+            act_sent.category = *(it + 1);
+            it += 2;
+        }
 
         else if (line == "/fact") {
             act_sent.strip();
             sents.push_back(act_sent);
-            act_sent = DBSentence();
+            act_sent = jdb::DBSentence();
             cout << ".";
         }
     }
@@ -242,12 +251,13 @@ DB parseJDB (string file) {
     return sents;
 }
 
-DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs) {
+jdb::DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs) {
     vector<string> parts = jel.trenne_SubVerbObj(buffer, verbs);
 
-    DBSentence act_sent;
+    jdb::DBSentence act_sent;
 
     if (parts.size() > 1) {
+        cout << "parts.size() > 1" << parts[0] << "|"  << parts[1] << "|"  << parts[2] << "|"  << parts[2] << endl;
         string prefix = "";
         if (Util::contains(parts[0], ",")) {
             int n = parts[0].find(",");
@@ -267,6 +277,7 @@ DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs) {
         act_sent.suffix = Util::strip(suffix);
     }
     else {
+        cout << "parts.size() == 0" << endl;
         string prefix = buffer;
         string suffix = "";
         if (Util::contains(buffer, ",")) {
@@ -304,7 +315,7 @@ void convertOldDB() {
     cout << "</jdb>" << endl;
 }
 
-void saveDB(string file, JEliza& jel, DB db) {
+void saveDB(string file, JEliza& jel, jdb::DB db) {
     ofstream o(file.c_str());
 
     vector<string> verbs = verbs::getVerbs();
@@ -312,8 +323,19 @@ void saveDB(string file, JEliza& jel, DB db) {
 
     o << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" << endl << endl << "<jdb>" << endl;
 
-    for (BD::iterator it = db.begin(); it != db.end(); it++) {
-        o << toDBSentence(toASCII_2_2(*it), jel, verbs).toXML() << endl;
+    o << " <feelings>" << endl
+      << "  <feeling>happy</happy>" << endl
+      << "  <feeling>angry</angry>" << endl
+      << "  <feeling>bored</bored>" << endl
+      << "  <feeling>scared</scared>" << endl
+      << "  <feeling>curiously</curiously>" << endl
+      << "  <feeling>normal</normal>" << endl
+      << " </feelings>" << endl
+      << endl;
+
+
+    for (DB::iterator it = db.begin(); it != db.end(); it++) {
+        o << toASCII_2_2((*it).toXML()) << endl;
     }
 
     o << "</jdb>" << endl;

@@ -25,12 +25,14 @@
  */
 
 
-#include "defs.h"
-#include "jdb.cpp"
 
 using namespace std;
 
+namespace verbs {
 
+vector<string> getVerbs();
+
+}
 
 class Answer {
 public:
@@ -78,9 +80,44 @@ public:
     }
 };
 
+
+namespace jdb {
+    typedef vector<string> answers;
+
+    class DBSentence {
+    public:
+        string subject;
+        string verb;
+        string object;
+        string prefix;
+        string suffix;
+        string feeling;
+        string category;
+        unsigned int priority;
+
+        DBSentence ()
+        : subject(string("")), verb(string("")), object(string("")), prefix(string("")), suffix(string("")),
+          feeling(string("normal")), category("normal"), priority(50)
+        {
+        }
+
+        void print();
+        string toXML();
+        void toXMLPrint();
+        string printPart (string str, string temp, string wert);
+        void strip();
+        answers genSentences(bool);
+    };
+
+    typedef vector<jdb::DBSentence> DB;
+
+    jdb::DB parseJDB (string file);
+}
+
+
 class JElizaData {
 public:
-	auto_ptr<DB> m_sents;
+	auto_ptr<jdb::DB> m_sents;
 	bool m_sents_is;
 	bool m_SVs_is;
 	bool m_VOs_is;
@@ -95,7 +132,7 @@ public:
 	vector<string> m_last_sentence_words;
 
 	JElizaData()
-	: m_sents(new DB()),
+	: m_sents(new jdb::DB()),
 	  m_sents_is(true),
 	  m_SVs_is(true),
 	  m_VOs_is(true),
@@ -169,7 +206,7 @@ public:
 	}
 
 	string searchConfigFile();
-	void saveSentence (string savetype, string original, string newstring);
+	void saveSentence (jdb::answers anss);
 	void learn (string fra);
 	void init ();
 	void vorbereiteSentence (string sent, string art);
@@ -179,7 +216,9 @@ public:
 //	void SentenceToSubVerbObj (string s, vector<string> verbs, ofstream& o1, ofstream& o2);
 	vector<string> trenne_SubVerbObj (string s, vector<string> verbs);
 	string ohne_muell (string frage);
-	Answer answer_logical (string frage);
+	Answer answer_logical (string frage, string);
+	Answer answer_logical_question_type_1 (string, string);
+	unsigned int isQuestion (string ques);
 	Answer ask (string frage);
 	double rechne (string s);
 };
@@ -197,7 +236,56 @@ JEliza& operator<< (JEliza& jel, const LearnableSentence& fra);
  */
 JEliza& operator>> (JEliza& jel, string& ans);
 
+namespace Util {
+    void split (string& text, string separators, vector<string>& words);
+    void SplitString (string text, string separators, vector<string>& words, bool includeEmpties);
+    string toLower (string text);
+    string toUpper (string text);
+    string toLower_const (const string text);
+    void trim(string& str);
+    string strip (string text);
+    string replace (string& in, const string rep, const string wit);
+    string replace_save (string in, const string rep, const string wit);
+	string replace_nocase (string& in, string rep, const string wit);
+	bool contains (string in, string rep);
+	string tausche (string str, string s1, string s2);
+	string umwandlung (string str);
+    int max (int a, int b);
+    int min (int a, int b);
+}
 
+
+
+
+class StringCompare {
+	long double points;
+	int x;
+	long double acc;
+	long double accBest;
+	int y;
+	int s1_size;
+	int s2_size;
+	long double res;
+
+public:
+	StringCompare (string s1, string s2)
+	: points((compare(s1, s2) + compare(s2, s1)) / 2)
+	{
+	}
+
+	long double getPoints();
+	long double compare (string s1, string s2);
+};
+
+/*
+ * Die Downloadfunktion aus socketload.cpp
+ */
+string download (string url);
+
+namespace jdb {
+    jdb::DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs);
+    void saveDB(string file, JEliza& jel, jdb::DB db);
+}
 
 
 #endif

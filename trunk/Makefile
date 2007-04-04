@@ -52,8 +52,12 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
 am_jelizagtk_OBJECTS = jelizagtk-jeliza.$(OBJEXT) \
-	jelizagtk-jelizagtk.$(OBJEXT) jelizagtk-arrays.$(OBJEXT) \
-	jelizagtk-util.$(OBJEXT)
+	jelizagtk-verbs.$(OBJEXT) jelizagtk-jdb.$(OBJEXT) \
+	jelizagtk-string_compare.$(OBJEXT) jelizagtk-util.$(OBJEXT) \
+	jelizagtk-ques_empty.$(OBJEXT) jelizagtk-ques_math.$(OBJEXT) \
+	jelizagtk-ques_logical.$(OBJEXT) \
+	jelizagtk-ques_similar.$(OBJEXT) \
+	jelizagtk-socketload.$(OBJEXT) jelizagtk-jelizagtk.$(OBJEXT)
 jelizagtk_OBJECTS = $(am_jelizagtk_OBJECTS)
 jelizagtk_DEPENDENCIES =
 DEFAULT_INCLUDES = -I. -I$(srcdir)
@@ -64,10 +68,6 @@ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 CXXLD = $(CXX)
 CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
 	-o $@
-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-CCLD = $(CC)
-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 SOURCES = $(jelizagtk_SOURCES)
 DIST_SOURCES = $(jelizagtk_SOURCES)
 ETAGS = etags
@@ -177,7 +177,7 @@ jelizagtk_LDADD = -lm -lgtkmm-2.4  -lgdkmm-2.4  -latkmm-1.6  -lpangomm-1.4  -lca
 jelizagtk_LDFLAGS = -pg
 jelizagtk_CFLAGS = -g -Wall -fPIC -DPIC
 jelizagtk_CPPFLAGS = -pg             -g -Wall -fPIC -DPIC -I/usr/include/gtkmm-2.4 -Isrc/engine -I./src/jeliza/  -I/usr/lib/gtkmm-2.4/include  -I/usr/include/glibmm-2.4  -I/usr/lib/glibmm-2.4/include  -I/usr/include/gdkmm-2.4  -I/usr/lib/gdkmm-2.4/include  -I/usr/include/pangomm-1.4  -I/usr/include/atkmm-1.6  -I/usr/include/gtk-2.0  -I/usr/include/sigc++-2.0  -I/usr/lib/sigc++-2.0/include  -I/usr/include/glib-2.0  -I/usr/lib/glib-2.0/include  -I/usr/lib/gtk-2.0/include  -I/usr/include/cairomm-1.0  -I/usr/include/pango-1.0  -I/usr/include/cairo  -I/usr/include/freetype2  -I/usr/include/atk-1.0  -I/usr/include/libglademm-2.4
-jelizagtk_SOURCES = ./src/jeliza/jeliza.h ./src/jeliza/jeliza.cpp ./src/gtkgui/jelizagtk.cpp ./src/jeliza/arrays.cpp ./src/jeliza/util.cpp
+jelizagtk_SOURCES = ./src/jeliza/jeliza.cpp ./src/jeliza/verbs.cpp ./src/jeliza/jdb.cpp ./src/jeliza/string_compare.cpp ./src/jeliza/util.cpp ./src/jeliza/modules/ques_empty.cpp ./src/jeliza/modules/ques_math.cpp ./src/jeliza/modules/ques_logical.cpp ./src/jeliza/modules/ques_similar.cpp ./src/jeliza/socketload.cpp ./src/gtkgui/jelizagtk.cpp
 #  ./src/jeliza/string_compare.cpp
 LD_LIBRARY_PATH = .:./lib
 WIN_LD_LIBRARY_PATH = .:./lib:/media/hdb5/data/Dev-Cpp/lib
@@ -251,10 +251,17 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/jelizagtk-arrays.Po
+include ./$(DEPDIR)/jelizagtk-jdb.Po
 include ./$(DEPDIR)/jelizagtk-jeliza.Po
 include ./$(DEPDIR)/jelizagtk-jelizagtk.Po
+include ./$(DEPDIR)/jelizagtk-ques_empty.Po
+include ./$(DEPDIR)/jelizagtk-ques_logical.Po
+include ./$(DEPDIR)/jelizagtk-ques_math.Po
+include ./$(DEPDIR)/jelizagtk-ques_similar.Po
+include ./$(DEPDIR)/jelizagtk-socketload.Po
+include ./$(DEPDIR)/jelizagtk-string_compare.Po
 include ./$(DEPDIR)/jelizagtk-util.Po
+include ./$(DEPDIR)/jelizagtk-verbs.Po
 
 .cpp.o:
 	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
@@ -284,33 +291,47 @@ jelizagtk-jeliza.obj: ./src/jeliza/jeliza.cpp
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-jeliza.obj `if test -f './src/jeliza/jeliza.cpp'; then $(CYGPATH_W) './src/jeliza/jeliza.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jeliza.cpp'; fi`
 
-jelizagtk-jelizagtk.o: ./src/gtkgui/jelizagtk.cpp
-	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-jelizagtk.o -MD -MP -MF "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" -c -o jelizagtk-jelizagtk.o `test -f './src/gtkgui/jelizagtk.cpp' || echo '$(srcdir)/'`./src/gtkgui/jelizagtk.cpp; \
-	then mv -f "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" "$(DEPDIR)/jelizagtk-jelizagtk.Po"; else rm -f "$(DEPDIR)/jelizagtk-jelizagtk.Tpo"; exit 1; fi
-#	source='./src/gtkgui/jelizagtk.cpp' object='jelizagtk-jelizagtk.o' libtool=no \
+jelizagtk-verbs.o: ./src/jeliza/verbs.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-verbs.o -MD -MP -MF "$(DEPDIR)/jelizagtk-verbs.Tpo" -c -o jelizagtk-verbs.o `test -f './src/jeliza/verbs.cpp' || echo '$(srcdir)/'`./src/jeliza/verbs.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-verbs.Tpo" "$(DEPDIR)/jelizagtk-verbs.Po"; else rm -f "$(DEPDIR)/jelizagtk-verbs.Tpo"; exit 1; fi
+#	source='./src/jeliza/verbs.cpp' object='jelizagtk-verbs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-jelizagtk.o `test -f './src/gtkgui/jelizagtk.cpp' || echo '$(srcdir)/'`./src/gtkgui/jelizagtk.cpp
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-verbs.o `test -f './src/jeliza/verbs.cpp' || echo '$(srcdir)/'`./src/jeliza/verbs.cpp
 
-jelizagtk-jelizagtk.obj: ./src/gtkgui/jelizagtk.cpp
-	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-jelizagtk.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" -c -o jelizagtk-jelizagtk.obj `if test -f './src/gtkgui/jelizagtk.cpp'; then $(CYGPATH_W) './src/gtkgui/jelizagtk.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/gtkgui/jelizagtk.cpp'; fi`; \
-	then mv -f "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" "$(DEPDIR)/jelizagtk-jelizagtk.Po"; else rm -f "$(DEPDIR)/jelizagtk-jelizagtk.Tpo"; exit 1; fi
-#	source='./src/gtkgui/jelizagtk.cpp' object='jelizagtk-jelizagtk.obj' libtool=no \
+jelizagtk-verbs.obj: ./src/jeliza/verbs.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-verbs.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-verbs.Tpo" -c -o jelizagtk-verbs.obj `if test -f './src/jeliza/verbs.cpp'; then $(CYGPATH_W) './src/jeliza/verbs.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/verbs.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-verbs.Tpo" "$(DEPDIR)/jelizagtk-verbs.Po"; else rm -f "$(DEPDIR)/jelizagtk-verbs.Tpo"; exit 1; fi
+#	source='./src/jeliza/verbs.cpp' object='jelizagtk-verbs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-jelizagtk.obj `if test -f './src/gtkgui/jelizagtk.cpp'; then $(CYGPATH_W) './src/gtkgui/jelizagtk.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/gtkgui/jelizagtk.cpp'; fi`
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-verbs.obj `if test -f './src/jeliza/verbs.cpp'; then $(CYGPATH_W) './src/jeliza/verbs.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/verbs.cpp'; fi`
 
-jelizagtk-arrays.o: ./src/jeliza/arrays.cpp
-	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-arrays.o -MD -MP -MF "$(DEPDIR)/jelizagtk-arrays.Tpo" -c -o jelizagtk-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp; \
-	then mv -f "$(DEPDIR)/jelizagtk-arrays.Tpo" "$(DEPDIR)/jelizagtk-arrays.Po"; else rm -f "$(DEPDIR)/jelizagtk-arrays.Tpo"; exit 1; fi
-#	source='./src/jeliza/arrays.cpp' object='jelizagtk-arrays.o' libtool=no \
+jelizagtk-jdb.o: ./src/jeliza/jdb.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-jdb.o -MD -MP -MF "$(DEPDIR)/jelizagtk-jdb.Tpo" -c -o jelizagtk-jdb.o `test -f './src/jeliza/jdb.cpp' || echo '$(srcdir)/'`./src/jeliza/jdb.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-jdb.Tpo" "$(DEPDIR)/jelizagtk-jdb.Po"; else rm -f "$(DEPDIR)/jelizagtk-jdb.Tpo"; exit 1; fi
+#	source='./src/jeliza/jdb.cpp' object='jelizagtk-jdb.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-arrays.o `test -f './src/jeliza/arrays.cpp' || echo '$(srcdir)/'`./src/jeliza/arrays.cpp
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-jdb.o `test -f './src/jeliza/jdb.cpp' || echo '$(srcdir)/'`./src/jeliza/jdb.cpp
 
-jelizagtk-arrays.obj: ./src/jeliza/arrays.cpp
-	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-arrays.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-arrays.Tpo" -c -o jelizagtk-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`; \
-	then mv -f "$(DEPDIR)/jelizagtk-arrays.Tpo" "$(DEPDIR)/jelizagtk-arrays.Po"; else rm -f "$(DEPDIR)/jelizagtk-arrays.Tpo"; exit 1; fi
-#	source='./src/jeliza/arrays.cpp' object='jelizagtk-arrays.obj' libtool=no \
+jelizagtk-jdb.obj: ./src/jeliza/jdb.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-jdb.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-jdb.Tpo" -c -o jelizagtk-jdb.obj `if test -f './src/jeliza/jdb.cpp'; then $(CYGPATH_W) './src/jeliza/jdb.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jdb.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-jdb.Tpo" "$(DEPDIR)/jelizagtk-jdb.Po"; else rm -f "$(DEPDIR)/jelizagtk-jdb.Tpo"; exit 1; fi
+#	source='./src/jeliza/jdb.cpp' object='jelizagtk-jdb.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-arrays.obj `if test -f './src/jeliza/arrays.cpp'; then $(CYGPATH_W) './src/jeliza/arrays.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/arrays.cpp'; fi`
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-jdb.obj `if test -f './src/jeliza/jdb.cpp'; then $(CYGPATH_W) './src/jeliza/jdb.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/jdb.cpp'; fi`
+
+jelizagtk-string_compare.o: ./src/jeliza/string_compare.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-string_compare.o -MD -MP -MF "$(DEPDIR)/jelizagtk-string_compare.Tpo" -c -o jelizagtk-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-string_compare.Tpo" "$(DEPDIR)/jelizagtk-string_compare.Po"; else rm -f "$(DEPDIR)/jelizagtk-string_compare.Tpo"; exit 1; fi
+#	source='./src/jeliza/string_compare.cpp' object='jelizagtk-string_compare.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-string_compare.o `test -f './src/jeliza/string_compare.cpp' || echo '$(srcdir)/'`./src/jeliza/string_compare.cpp
+
+jelizagtk-string_compare.obj: ./src/jeliza/string_compare.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-string_compare.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-string_compare.Tpo" -c -o jelizagtk-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-string_compare.Tpo" "$(DEPDIR)/jelizagtk-string_compare.Po"; else rm -f "$(DEPDIR)/jelizagtk-string_compare.Tpo"; exit 1; fi
+#	source='./src/jeliza/string_compare.cpp' object='jelizagtk-string_compare.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-string_compare.obj `if test -f './src/jeliza/string_compare.cpp'; then $(CYGPATH_W) './src/jeliza/string_compare.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/string_compare.cpp'; fi`
 
 jelizagtk-util.o: ./src/jeliza/util.cpp
 	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-util.o -MD -MP -MF "$(DEPDIR)/jelizagtk-util.Tpo" -c -o jelizagtk-util.o `test -f './src/jeliza/util.cpp' || echo '$(srcdir)/'`./src/jeliza/util.cpp; \
@@ -325,6 +346,90 @@ jelizagtk-util.obj: ./src/jeliza/util.cpp
 #	source='./src/jeliza/util.cpp' object='jelizagtk-util.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-util.obj `if test -f './src/jeliza/util.cpp'; then $(CYGPATH_W) './src/jeliza/util.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/util.cpp'; fi`
+
+jelizagtk-ques_empty.o: ./src/jeliza/modules/ques_empty.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-ques_empty.o -MD -MP -MF "$(DEPDIR)/jelizagtk-ques_empty.Tpo" -c -o jelizagtk-ques_empty.o `test -f './src/jeliza/modules/ques_empty.cpp' || echo '$(srcdir)/'`./src/jeliza/modules/ques_empty.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-ques_empty.Tpo" "$(DEPDIR)/jelizagtk-ques_empty.Po"; else rm -f "$(DEPDIR)/jelizagtk-ques_empty.Tpo"; exit 1; fi
+#	source='./src/jeliza/modules/ques_empty.cpp' object='jelizagtk-ques_empty.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-ques_empty.o `test -f './src/jeliza/modules/ques_empty.cpp' || echo '$(srcdir)/'`./src/jeliza/modules/ques_empty.cpp
+
+jelizagtk-ques_empty.obj: ./src/jeliza/modules/ques_empty.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-ques_empty.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-ques_empty.Tpo" -c -o jelizagtk-ques_empty.obj `if test -f './src/jeliza/modules/ques_empty.cpp'; then $(CYGPATH_W) './src/jeliza/modules/ques_empty.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/modules/ques_empty.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-ques_empty.Tpo" "$(DEPDIR)/jelizagtk-ques_empty.Po"; else rm -f "$(DEPDIR)/jelizagtk-ques_empty.Tpo"; exit 1; fi
+#	source='./src/jeliza/modules/ques_empty.cpp' object='jelizagtk-ques_empty.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-ques_empty.obj `if test -f './src/jeliza/modules/ques_empty.cpp'; then $(CYGPATH_W) './src/jeliza/modules/ques_empty.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/modules/ques_empty.cpp'; fi`
+
+jelizagtk-ques_math.o: ./src/jeliza/modules/ques_math.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-ques_math.o -MD -MP -MF "$(DEPDIR)/jelizagtk-ques_math.Tpo" -c -o jelizagtk-ques_math.o `test -f './src/jeliza/modules/ques_math.cpp' || echo '$(srcdir)/'`./src/jeliza/modules/ques_math.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-ques_math.Tpo" "$(DEPDIR)/jelizagtk-ques_math.Po"; else rm -f "$(DEPDIR)/jelizagtk-ques_math.Tpo"; exit 1; fi
+#	source='./src/jeliza/modules/ques_math.cpp' object='jelizagtk-ques_math.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-ques_math.o `test -f './src/jeliza/modules/ques_math.cpp' || echo '$(srcdir)/'`./src/jeliza/modules/ques_math.cpp
+
+jelizagtk-ques_math.obj: ./src/jeliza/modules/ques_math.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-ques_math.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-ques_math.Tpo" -c -o jelizagtk-ques_math.obj `if test -f './src/jeliza/modules/ques_math.cpp'; then $(CYGPATH_W) './src/jeliza/modules/ques_math.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/modules/ques_math.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-ques_math.Tpo" "$(DEPDIR)/jelizagtk-ques_math.Po"; else rm -f "$(DEPDIR)/jelizagtk-ques_math.Tpo"; exit 1; fi
+#	source='./src/jeliza/modules/ques_math.cpp' object='jelizagtk-ques_math.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-ques_math.obj `if test -f './src/jeliza/modules/ques_math.cpp'; then $(CYGPATH_W) './src/jeliza/modules/ques_math.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/modules/ques_math.cpp'; fi`
+
+jelizagtk-ques_logical.o: ./src/jeliza/modules/ques_logical.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-ques_logical.o -MD -MP -MF "$(DEPDIR)/jelizagtk-ques_logical.Tpo" -c -o jelizagtk-ques_logical.o `test -f './src/jeliza/modules/ques_logical.cpp' || echo '$(srcdir)/'`./src/jeliza/modules/ques_logical.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-ques_logical.Tpo" "$(DEPDIR)/jelizagtk-ques_logical.Po"; else rm -f "$(DEPDIR)/jelizagtk-ques_logical.Tpo"; exit 1; fi
+#	source='./src/jeliza/modules/ques_logical.cpp' object='jelizagtk-ques_logical.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-ques_logical.o `test -f './src/jeliza/modules/ques_logical.cpp' || echo '$(srcdir)/'`./src/jeliza/modules/ques_logical.cpp
+
+jelizagtk-ques_logical.obj: ./src/jeliza/modules/ques_logical.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-ques_logical.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-ques_logical.Tpo" -c -o jelizagtk-ques_logical.obj `if test -f './src/jeliza/modules/ques_logical.cpp'; then $(CYGPATH_W) './src/jeliza/modules/ques_logical.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/modules/ques_logical.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-ques_logical.Tpo" "$(DEPDIR)/jelizagtk-ques_logical.Po"; else rm -f "$(DEPDIR)/jelizagtk-ques_logical.Tpo"; exit 1; fi
+#	source='./src/jeliza/modules/ques_logical.cpp' object='jelizagtk-ques_logical.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-ques_logical.obj `if test -f './src/jeliza/modules/ques_logical.cpp'; then $(CYGPATH_W) './src/jeliza/modules/ques_logical.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/modules/ques_logical.cpp'; fi`
+
+jelizagtk-ques_similar.o: ./src/jeliza/modules/ques_similar.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-ques_similar.o -MD -MP -MF "$(DEPDIR)/jelizagtk-ques_similar.Tpo" -c -o jelizagtk-ques_similar.o `test -f './src/jeliza/modules/ques_similar.cpp' || echo '$(srcdir)/'`./src/jeliza/modules/ques_similar.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-ques_similar.Tpo" "$(DEPDIR)/jelizagtk-ques_similar.Po"; else rm -f "$(DEPDIR)/jelizagtk-ques_similar.Tpo"; exit 1; fi
+#	source='./src/jeliza/modules/ques_similar.cpp' object='jelizagtk-ques_similar.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-ques_similar.o `test -f './src/jeliza/modules/ques_similar.cpp' || echo '$(srcdir)/'`./src/jeliza/modules/ques_similar.cpp
+
+jelizagtk-ques_similar.obj: ./src/jeliza/modules/ques_similar.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-ques_similar.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-ques_similar.Tpo" -c -o jelizagtk-ques_similar.obj `if test -f './src/jeliza/modules/ques_similar.cpp'; then $(CYGPATH_W) './src/jeliza/modules/ques_similar.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/modules/ques_similar.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-ques_similar.Tpo" "$(DEPDIR)/jelizagtk-ques_similar.Po"; else rm -f "$(DEPDIR)/jelizagtk-ques_similar.Tpo"; exit 1; fi
+#	source='./src/jeliza/modules/ques_similar.cpp' object='jelizagtk-ques_similar.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-ques_similar.obj `if test -f './src/jeliza/modules/ques_similar.cpp'; then $(CYGPATH_W) './src/jeliza/modules/ques_similar.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/modules/ques_similar.cpp'; fi`
+
+jelizagtk-socketload.o: ./src/jeliza/socketload.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-socketload.o -MD -MP -MF "$(DEPDIR)/jelizagtk-socketload.Tpo" -c -o jelizagtk-socketload.o `test -f './src/jeliza/socketload.cpp' || echo '$(srcdir)/'`./src/jeliza/socketload.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-socketload.Tpo" "$(DEPDIR)/jelizagtk-socketload.Po"; else rm -f "$(DEPDIR)/jelizagtk-socketload.Tpo"; exit 1; fi
+#	source='./src/jeliza/socketload.cpp' object='jelizagtk-socketload.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-socketload.o `test -f './src/jeliza/socketload.cpp' || echo '$(srcdir)/'`./src/jeliza/socketload.cpp
+
+jelizagtk-socketload.obj: ./src/jeliza/socketload.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-socketload.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-socketload.Tpo" -c -o jelizagtk-socketload.obj `if test -f './src/jeliza/socketload.cpp'; then $(CYGPATH_W) './src/jeliza/socketload.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/socketload.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-socketload.Tpo" "$(DEPDIR)/jelizagtk-socketload.Po"; else rm -f "$(DEPDIR)/jelizagtk-socketload.Tpo"; exit 1; fi
+#	source='./src/jeliza/socketload.cpp' object='jelizagtk-socketload.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-socketload.obj `if test -f './src/jeliza/socketload.cpp'; then $(CYGPATH_W) './src/jeliza/socketload.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/jeliza/socketload.cpp'; fi`
+
+jelizagtk-jelizagtk.o: ./src/gtkgui/jelizagtk.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-jelizagtk.o -MD -MP -MF "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" -c -o jelizagtk-jelizagtk.o `test -f './src/gtkgui/jelizagtk.cpp' || echo '$(srcdir)/'`./src/gtkgui/jelizagtk.cpp; \
+	then mv -f "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" "$(DEPDIR)/jelizagtk-jelizagtk.Po"; else rm -f "$(DEPDIR)/jelizagtk-jelizagtk.Tpo"; exit 1; fi
+#	source='./src/gtkgui/jelizagtk.cpp' object='jelizagtk-jelizagtk.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-jelizagtk.o `test -f './src/gtkgui/jelizagtk.cpp' || echo '$(srcdir)/'`./src/gtkgui/jelizagtk.cpp
+
+jelizagtk-jelizagtk.obj: ./src/gtkgui/jelizagtk.cpp
+	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jelizagtk-jelizagtk.obj -MD -MP -MF "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" -c -o jelizagtk-jelizagtk.obj `if test -f './src/gtkgui/jelizagtk.cpp'; then $(CYGPATH_W) './src/gtkgui/jelizagtk.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/gtkgui/jelizagtk.cpp'; fi`; \
+	then mv -f "$(DEPDIR)/jelizagtk-jelizagtk.Tpo" "$(DEPDIR)/jelizagtk-jelizagtk.Po"; else rm -f "$(DEPDIR)/jelizagtk-jelizagtk.Tpo"; exit 1; fi
+#	source='./src/gtkgui/jelizagtk.cpp' object='jelizagtk-jelizagtk.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(jelizagtk_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jelizagtk-jelizagtk.obj `if test -f './src/gtkgui/jelizagtk.cpp'; then $(CYGPATH_W) './src/gtkgui/jelizagtk.cpp'; else $(CYGPATH_W) '$(srcdir)/./src/gtkgui/jelizagtk.cpp'; fi`
 uninstall-info-am:
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)

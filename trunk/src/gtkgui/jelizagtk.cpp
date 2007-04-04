@@ -21,22 +21,32 @@
  *
  */
 
-#include <gtkmm.h>
+//#include <gtkmm.h>
+#include <gtkmm/main.h>
+#include <gtkmm/menubar.h>
+#include <gtkmm/menu.h>
+#include <gtkmm/menuitem.h>
+#include <gtkmm/entry.h>
+#include <gtkmm/textview.h>
+#include <gtkmm/button.h>
+#include <gtkmm/window.h>
+#include <gtkmm/filechooserdialog.h>
+#include <gtkmm/messagedialog.h>
+#include <gtkmm/stock.h>
+//#include <gtkmm/.h>
 #include <libglademm.h>
 
 #include <glib/gthread.h>
 #include <glibmm/thread.h>
-#include <glibmm.h>
+//#include <glibmm.h>
+#include <glibmm/unicode.h>
+#include <glibmm/ustring.h>
 
 #include "defs.h"
 
-#include "../jeliza/socketload.cpp"
-#include "jeliza.h"
-#include "../jeliza/util.cpp"
-#include "../jeliza/arrays.cpp"
-
 using namespace std;
 using namespace Gtk;
+using namespace jdb;
 
 int main(int argc, char *argv[]);
 int main_2(int argc, char *argv[]);
@@ -409,7 +419,9 @@ void durchsuche_nach_unbekanntem (string all) {
                 of.close();
                 schon_aus_wikipedia.push_back((*it));
                 JEliza jel(1);
-                jel.saveSentence("file", definition, definition);
+                answers x;
+                x.push_back(definition);
+                jel.saveSentence(x);
             }
 //            } else if ( (*it) != Util::toLower((*it)) && (*it) != Util::toUpper((*it))) {
 //                ofstream of("not_in_wikipedia.txt", ios::app | ios::ate);
@@ -445,7 +457,7 @@ void on_open_activate(Data2& data) {
 	JEliza jeliza(1);
 	jeliza.init();
 	string buffer;
-	ofstream o("JEliza.txt", ios::app | ios::ate);
+
 
 	std::string filename;
 	if (data.dlg->run() == Gtk::RESPONSE_OK) { // RESPONSE_ACCEPT
@@ -453,19 +465,17 @@ void on_open_activate(Data2& data) {
 		Gtk::MessageDialog dia3(*data.win, Glib::ustring(filename + "\nWird nun in die Datenbank geladen"));
 		dia3.run();
 
-		ifstream in(filename.c_str());
+		jdb::DB tmpDB = jdb::parseJDB(filename);
 
-		while (in) {
-			getline(in, buffer);
-			o << Util::strip(buffer) << "\n" << endl;
+		for (jdb::DB::iterator it = tmpDB.begin(); it != tmpDB.end(); it++) {
+		    JEliza::m_jd.m_sents->push_back(*it);
 		}
 
-		in.close();
+		jdb::saveDB("jeliza-standard.xml", *global_jeliza, *JEliza::m_jd.m_sents);
+
 		Gtk::MessageDialog dia4(*data.win, Glib::ustring(filename + ":\nErfolgreich geladen!"));
 		dia4.run();
 	}
-
-	o.close();
 
     {
         Glib::Mutex::Lock lock(mutex);
@@ -500,16 +510,8 @@ void on_save_activate(Data2& data) {
 		Gtk::MessageDialog dia3(*data.win, Glib::ustring("Die Datenbank wird nun nach \n" + filename + "\nexportiert"));
 		dia3.run();
 
-		ifstream in("JEliza.txt");
-		ofstream o(filename.c_str());
+		jdb::saveDB(filename, *global_jeliza, *JEliza::m_jd.m_sents);
 
-		while (in) {
-			getline(in, buffer);
-			o << Util::strip(buffer) << "\n" << endl;
-		}
-
-		in.close();
-		o.close();
 		Gtk::MessageDialog dia4(*data.win, Glib::ustring(filename + ":\nErfolgreich exportiert!"));
 		dia4.run();
 	}
@@ -568,7 +570,7 @@ public:
 };
 
 void on_einstellungen_activate(Data3& data) {
-	ifstream in("JEliza.txt");
+	ifstream in("jeliza-standard.xml");
 	string buffer;
 	string all = "";
 	string sFrageZeichen("?");
@@ -599,7 +601,7 @@ void on_okbutton1_clicked(Data3& data) {
 
 	data.buf = data.tv->get_buffer();
 
-	ofstream o("JEliza.txt");
+	ofstream o("jeliza-standard.xml");
 
 	string all;
 	Gtk::TextBuffer::iterator iter = data.buf->begin();
@@ -637,8 +639,8 @@ void on_new_database_activate(Data3& data) {
 	Gtk::MessageDialog dia3(*data.win, Glib::ustring(toASCII("Soll die aktuelle Datenbank wirklich gelöscht und eine neue angelegt werden?")), true, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_YES_NO, true);
 
 	if (dia3.run() == Gtk::RESPONSE_YES) {
-		ofstream o("JEliza.txt");
-		o << "" << endl;
+		ofstream o("jeliza-standard.xml");
+		o << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" << endl << endl << "<jdb>" << endl << "</jdb>" << endl;
 		o.close();
 	}
 
@@ -1076,74 +1078,7 @@ void MainWindow::launch_threads () {
     }
 }
 
-void saveSentence_online (JEliza jel, string newstring) {
-    ofstream o("JEliza.txt", ios::app | ios::ate);
-    if (!o) {
-        cerr << "Fehler beim Oeffnen einer JEliza-Datei (jeliza.cpp)" << endl;
-    } else if (newstring.size() < 10) {
-        cerr << "Satz hat zu wenig Woerter (< 10): " << newstring << endl;
-    } else {
-        o << newstring << endl;
-        o.close();
-    }
-
-	ofstream o1("subject-verb-online.txt", ios::app | ios::ate);
-	ofstream o2("verb-object-online.txt", ios::app | ios::ate);
-
-	string buffer;
-
-	ifstream in("verbs.txt");
-	vector<string> verbs;
-	while (in) {
-		getline(in, buffer);
-		buffer = Util::strip(buffer);
-		verbs.push_back(buffer);
-	}
-
-	jel.SentenceToSubVerbObj(newstring, verbs, o1, o2);
-}
-
-
 int main_2(int argc, char *argv[]) {
-    if (argc > 1) {
-        JEliza jel(1);
-
-        ofstream o1("JEliza.txt");
-        o1.close();
-        ofstream o2("subject-verb-online.txt");
-        o2.close();
-        ofstream o3("verb-object-online.txt");
-        o3.close();
-
-
-        vector<string> allVec;
-        ifstream ifstr("JEliza-online.txt");
-        string temp;
-        while (ifstr) {
-            getline(ifstr, temp);
-            temp = Util::strip(temp);
-
-            allVec.push_back(temp);
-        }
-
-        for (int x = 0; x < allVec.size(); x++) {
-            string line = allVec[x];
-            line = Util::strip(line);
-
-            saveSentence_online (jel, line);
-            ofstream o(global_jeliza->m_file.c_str(), ios::app | ios::ate);
-
-            if (!o) {
-                cerr << "Fehler beim Oeffnen einer JEliza-Datei (gtkgui.cpp)" << endl;
-            } else {
-                o << line << endl;
-                o.close();
-            }
-            cout << "- Learned " << line << endl;
-        }
-        return 0;
-    }
-
 
 
 	Main mainApplication(argc, argv);

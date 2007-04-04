@@ -24,8 +24,6 @@
 #include <time.h>
 #include <vector>
 
-#include "util.cpp"
-
 #include "defs.h"
 
 

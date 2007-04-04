@@ -30,288 +30,253 @@
 
 using namespace std;
 
-class Util {
-public:
-	static void split (string& text, string separators, vector<string>& words) {
-		int n = text.length();
-		int start, stop;
+namespace Util {
 
-		start = text.find_first_not_of(separators);
-		while ((start >= 0) && (start < n)) {
-			stop = text.find_first_of(separators, start);
-			if ((stop < 0) || (stop > n)) stop = n;
-			words.push_back(text.substr(start, stop - start));
-			start = text.find_first_not_of(separators, stop+1);
+void split (string& text, string separators, vector<string>& words) {
+	int n = text.length();
+	int start, stop;
+
+	start = text.find_first_not_of(separators);
+	while ((start >= 0) && (start < n)) {
+		stop = text.find_first_of(separators, start);
+		if ((stop < 0) || (stop > n)) stop = n;
+		words.push_back(text.substr(start, stop - start));
+		start = text.find_first_not_of(separators, stop+1);
+	}
+}
+
+void SplitString (string text, string separators, vector<string>& words, bool includeEmpties) {
+	vector<string> ret;
+	text = " " + text + " ";
+	separators = strip(separators);
+	text = replace(text, " " + separators + " ", " #escxds#dscddwe#acs#ewaWAQaqA ");
+	separators = strip(" #escxds#dscddwe#acs#ewaWAQaqA ");
+
+	vector<string> h;
+	split(text, " ", h);
+	string temp = "";
+
+	for (unsigned int x = 0; x < h.size(); x++) {
+		string u = h[x];
+
+		if (u == separators) {
+			ret.push_back(temp);
+			temp = "";
+		} else if (temp.size() == 0) {
+			temp += u;
+		} else {
+			temp += " " + u;
 		}
 	}
+	ret.push_back(temp);
 
-	static void SplitString (string text, string separators, vector<string>& words, bool includeEmpties) {
-		vector<string> ret;
-		text = " " + text + " ";
-		separators = Util::strip(separators);
-		text = Util::replace(text, " " + separators + " ", " #escxds#dscddwe#acs#ewaWAQaqA ");
-		separators = Util::strip(" #escxds#dscddwe#acs#ewaWAQaqA ");
-
-		vector<string> h;
-		Util::split(text, " ", h);
-		string temp = "";
-
-		for (unsigned int x = 0; x < h.size(); x++) {
-			string u = h[x];
-
-			if (u == separators) {
-				ret.push_back(temp);
-				temp = "";
-			} else if (temp.size() == 0) {
-				temp += u;
-			} else {
-				temp += " " + u;
-			}
-		}
-		ret.push_back(temp);
-
-		words = ret;
+	words = ret;
 //		return ret;
+}
+
+ string toLower (string text) {
+	string str = "";
+
+	for (string::size_type x = 0; x < text.size(); x++) {
+		str += tolower(text[x]);
 	}
+	return str;
+}
 
-#ifndef string
-	static string toLower (string& text) {
-		string str = "";
+ string toUpper (string text) {
+	string str = "";
 
-		for (string::size_type x = 0; x < text.size(); x++) {
-			str += tolower(text[x]);
+	for (string::size_type x = 0; x < text.size(); x++) {
+		str += toupper(text[x]);
+	}
+	return str;
+}
+
+ string toLower_const (const string text) {
+	string str = "";
+
+	for (string::size_type x = 0; x < text.size(); x++) {
+		str += tolower(text[x]);
+	}
+	return str;
+}
+
+
+ void trim(string& str) {
+	string::size_type pos = str.find_last_not_of(' ');
+	if(pos != string::npos) {
+		str.erase(pos + 1);
+		pos = str.find_first_not_of(' ');
+		if(pos != string::npos)  {
+			str.erase(0, pos);
 		}
-		return str;
+	}
+	else {
+		str.erase(str.begin(), str.end());
+	}
+}
+
+ string strip (string text) {
+	string txt = replace(text, string("\n"), string(""));
+	txt = replace(txt, string("\r"), string(""));
+
+	string txt2 = txt;
+	trim(txt);
+	while (txt != txt2) {
+		txt2 = txt;
+		trim(txt);
 	}
 
-	static string toUpper (string text) {
-		string str = "";
+	return txt;
+}
 
-		for (string::size_type x = 0; x < text.size(); x++) {
-			str += toupper(text[x]);
+ string replace (string& in, const string rep, const string wit) {
+	int pos;
+	while (true) {
+		pos = in.find(rep);
+		if (pos == -1) {
+			break;
+		} else {
+			in.erase(pos, rep.length());
+			in.insert(pos, wit);
 		}
-		return str;
 	}
+	return in;
+}
 
-	static string toLower_const (const string text) {
-		string str = "";
+ string replace_save (string in, const string rep, const string wit) {
+	in = replace(in, rep, string("iknlkmgncdrkhjikmpljwuxgbeikjenxcurnj"));
+	in = replace(in, string("iknlkmgncdrkhjikmpljwuxgbeikjenxcurnj"), wit);
+	return in;
+}
 
-		for (string::size_type x = 0; x < text.size(); x++) {
-			str += tolower(text[x]);
+ string replace_nocase (string& in, string rep, const string wit) {
+	int pos;
+	rep = toLower(rep);
+	while (true) {
+		pos = toLower_const(in).find(rep);
+		if (pos == -1) {
+			break;
+		} else {
+			in.erase(pos, rep.length());
+			in.insert(pos, wit);
 		}
-		return str;
 	}
-#else
-	static string toLower (string text) {
-		return text.lowercase();
+	return in;
+}
+
+ bool contains (string in, string rep) {
+	in = string(in.c_str());
+	string rep2 = string(rep.c_str());
+
+	string input = string(in.c_str());
+	string input2 = string(input.c_str());
+	string in2 = replace(input, rep2, "");
+//		cout << endl << "input" << input << endl << "in2" << in2 << endl << endl;
+	if (input2.size() == in2.size()) {
+		return 0;
+	}
+	return 1;
+}
+
+
+
+ string tausche (string str, string s1, string s2) {
+	str = " " + str + " ";
+	s1 = " " + s1 + " ";
+	s2 = " " + s2 + " ";
+	str = replace_nocase(str, s1, "6352652630,5,64,4636");
+	str = replace_nocase(str, s2, s1);
+	str = replace_nocase(str, "6352652630,5,64,4636", s2);
+
+	return str.substr(1, str.size() - 1);
+}
+
+ string umwandlung (string str) {
+	str = replace(str, ".", "");
+	str = replace(str, ",", "");
+	str = replace(str, "-", "");
+	str = replace(str, ";", "");
+	str = replace(str, "!", "");
+
+	str = tausche(str, "ich", "du");
+	str = tausche(str, "mein", "dein");
+	str = tausche(str, "meine", "deine");
+	str = tausche(str, "meins", "deins");
+	str = tausche(str, "meiner", "deiner");
+	str = tausche(str, "meinem", "deinem");
+	str = tausche(str, "mir", "dir");
+	str = tausche(str, "mich", "dich");
+	str = tausche(str, "bin", "bist");
+
+		//str = replace(str, "habe", "hab");
+//		str = replace(str, "habee", "habe");
+
+	str = tausche(str, "habe", "hast");
+		//str = replace(str, "hab", "habe");
+
+	str = replace(str, "wieso", "warum");
+	str = replace(str, "weshalb", "warum");
+
+	str = tausche(str, "warum", "weil");
+	str = tausche(str, "i", "you");
+	str = tausche(str, "my", "your");
+	str = tausche(str, "mine", "yours");
+	str = tausche(str, "am", "are");
+
+	ifstream in("verbs.txt");
+	vector<string> verbs;
+	string buffer;
+	while (in) {
+		getline(in, buffer);
+		buffer = strip(buffer);
+		verbs.push_back(buffer);
 	}
 
-	static string toUpper (string text) {
-		return text.uppercase();
-	}
+	vector<string> ss;
+	split(str, string(" "), ss);
+	string rep = "";
 
-	static string toLower_const (const string text) {
-		return text.lowercase();
-	}
-#endif
+	for (unsigned int y = 0; y < ss.size(); y++) {
+		string word = "-" + ss[y] + "-";
+		string lower = word;
+		lower = toLower(lower);
 
-//	static string toLower (const string text) {
-//		toLower(static_cast<string>(text));
-//	}
-
-	static void trim(string& str) {
-		string::size_type pos = str.find_last_not_of(' ');
-		if(pos != string::npos) {
-			str.erase(pos + 1);
-			pos = str.find_first_not_of(' ');
-			if(pos != string::npos)  {
-				str.erase(0, pos);
-			}
+		if (contains(word, string("st-")) && word.size() > 7 && word == lower) {
+			string verb2 = replace(word, string("st-"), string("e-"));
+			verb2 = replace(word, string("ee-"), string("hoire-"));
+			verb2 = replace(word, string("hoire-"), string("e-"));
+			verb2 = replace(verb2, string("-"), string(""));
+			rep += verb2;
+			rep += " ";
+		}
+		else if (contains(word, string("e-")) && word.size() > 7 && word == lower) {
+			string verb2 = replace(word, string("e-"), string("st-"));
+			verb2 = replace(verb2, string("-"), string(""));
+			rep += verb2;
+			rep += " ";
 		}
 		else {
-			str.erase(str.begin(), str.end());
+			rep += word;
+			rep += " ";
 		}
 	}
 
-	static string strip (string text) {
-		string txt = replace(text, string("\n"), string(""));
-		txt = replace(txt, string("\r"), string(""));
+	str = replace(rep, string("-"), string(""));
+	str = replace(str, string("eise"), string("eisse"));
 
-		string txt2 = txt;
-		Util::trim(txt);
-		while (txt != txt2) {
-			txt2 = txt;
-			Util::trim(txt);
-		}
+	return str;
+}
 
-		return txt;
-	}
+ int max (int a, int b) {
+    return ((a>b ? a : b));
+}
 
-//	static string strip (const string text) const {
-//		strip(static_cast<string>(text));
-//	}
+ int min (int a, int b) {
+    return ((a<b ? a : b));
+}
 
-	static string replace (string& in, const string rep, const string wit) {
-		int pos;
-		while (true) {
-			pos = in.find(rep);
-			if (pos == -1) {
-				break;
-			} else {
-				in.erase(pos, rep.length());
-				in.insert(pos, wit);
-			}
-		}
-		return in;
-	}
-
-	static string replace_save (string in, const string rep, const string wit) {
-		in = Util::replace(in, rep, string("iknlkmgncdrkhjikmpljwuxgbeikjenxcurnj"));
-		in = Util::replace(in, string("iknlkmgncdrkhjikmpljwuxgbeikjenxcurnj"), wit);
-		return in;
-	}
-
-	static string replace_nocase (string& in, string rep, const string wit) {
-		int pos;
-		rep = Util::toLower(rep);
-		while (true) {
-			pos = Util::toLower_const(in).find(rep);
-			if (pos == -1) {
-				break;
-			} else {
-				in.erase(pos, rep.length());
-				in.insert(pos, wit);
-			}
-		}
-		return in;
-	}
-
-	static bool contains (string in, string rep) {
-		in = string(in.c_str());
-		string rep2 = string(rep.c_str());
-
-		string input = string(in.c_str());
-		string input2 = string(input.c_str());
-		string in2 = replace(input, rep2, "");
-//		cout << endl << "input" << input << endl << "in2" << in2 << endl << endl;
-		if (input2.size() == in2.size()) {
-			return 0;
-		}
-		return 1;
-	}
-
-//	static string replace (string& in, string rep, string wit) {
-//		return replace(in, static_cast<const string>(rep), static_cast<const string>(wit));
-//	}
-
-/*
-		string text = string(txt);
-		size_t pos = text.find(fnd);
-		while (pos != string::npos) {
-			text.replace(pos, pos + fnd.length(), rep);
-			pos = text.find(fnd, pos);
-		}
-		return text;
-
-*/
-
-
-	static string tausche (string str, string s1, string s2) {
-		str = " " + str + " ";
-		s1 = " " + s1 + " ";
-		s2 = " " + s2 + " ";
-		str = Util::replace_nocase(str, s1, "6352652630,5,64,4636");
-		str = Util::replace_nocase(str, s2, s1);
-		str = Util::replace_nocase(str, "6352652630,5,64,4636", s2);
-
-		return str.substr(1, str.size() - 1);
-	}
-
-	static string umwandlung (string str) {
-		str = Util::replace(str, ".", "");
-		str = Util::replace(str, ",", "");
-		str = Util::replace(str, "-", "");
-		str = Util::replace(str, ";", "");
-		str = Util::replace(str, "!", "");
-
-		str = Util::tausche(str, "ich", "du");
-		str = Util::tausche(str, "mein", "dein");
-		str = Util::tausche(str, "meine", "deine");
-		str = Util::tausche(str, "meins", "deins");
-		str = Util::tausche(str, "meiner", "deiner");
-		str = Util::tausche(str, "meinem", "deinem");
-		str = Util::tausche(str, "mir", "dir");
-		str = Util::tausche(str, "mich", "dich");
-		str = Util::tausche(str, "bin", "bist");
-
-		//str = Util::replace(str, "habe", "hab");
-//		str = Util::replace(str, "habee", "habe");
-
-		str = Util::tausche(str, "habe", "hast");
-		//str = Util::replace(str, "hab", "habe");
-
-		str = Util::replace(str, "wieso", "warum");
-		str = Util::replace(str, "weshalb", "warum");
-
-		str = Util::tausche(str, "warum", "weil");
-		str = Util::tausche(str, "i", "you");
-		str = Util::tausche(str, "my", "your");
-		str = Util::tausche(str, "mine", "yours");
-		str = Util::tausche(str, "am", "are");
-
-		ifstream in("verbs.txt");
-		vector<string> verbs;
-		string buffer;
-		while (in) {
-			getline(in, buffer);
-			buffer = Util::strip(buffer);
-			verbs.push_back(buffer);
-		}
-
-		vector<string> ss;
-		Util::split(str, string(" "), ss);
-		string rep = "";
-
-		for (int y = 0; y < ss.size(); y++) {
-			string word = "-" + ss[y] + "-";
-			string lower = word;
-			lower = Util::toLower(lower);
-
-			if (Util::contains(word, string("st-")) && word.size() > 7 && word == lower) {
-				string verb2 = Util::replace(word, string("st-"), string("e-"));
-				verb2 = Util::replace(word, string("ee-"), string("hoire-"));
-				verb2 = Util::replace(word, string("hoire-"), string("e-"));
-				verb2 = Util::replace(verb2, string("-"), string(""));
-				rep += verb2;
-				rep += " ";
-			}
-			else if (Util::contains(word, string("e-")) && word.size() > 7 && word == lower) {
-				string verb2 = Util::replace(word, string("e-"), string("st-"));
-				verb2 = Util::replace(verb2, string("-"), string(""));
-				rep += verb2;
-				rep += " ";
-			}
-			else {
-				rep += word;
-				rep += " ";
-			}
-		}
-
-		str = Util::replace(rep, string("-"), string(""));
-		str = Util::replace(str, string("eise"), string("eisse"));
-
-		return str;
-	}
-
-	static int max (int a, int b) {
-	    return ((a>b ? a : b));
-	}
-
-	static int min (int a, int b) {
-	    return ((a<b ? a : b));
-	}
-
-};
+}
 
 #endif
 
