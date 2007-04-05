@@ -526,7 +526,7 @@ Answer JEliza::answer_logical_question_type_1 (string frage, string orig_fra) {
             continue;
         }
 
-        answers anss = sent.genSentences(true);
+        answers anss = orig.genSentences(true);
         for (answers::iterator it = anss.begin(); it != anss.end(); it++) {
             meinungen.push_back(*it);
         }

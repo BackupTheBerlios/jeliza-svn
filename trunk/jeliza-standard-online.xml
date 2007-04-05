@@ -55,7 +55,7 @@
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
-  <category> greeting  </category> 
+  <category> normal  </category> 
  </fact>
 
 
@@ -67,7 +67,7 @@
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 100  </priority> 
-  <category> greeting  </category> 
+  <category> normal  </category> 
  </fact>
 
 
@@ -4938,7 +4938,7 @@
   <object>   fast ein Jahr alt.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
+  <priority> 100  </priority> 
   <category> normal  </category> 
  </fact>
 

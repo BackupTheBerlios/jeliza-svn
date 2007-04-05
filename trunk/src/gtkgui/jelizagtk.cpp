@@ -309,7 +309,45 @@ answers wikipedia (string wort, int count, bool rec = false, bool with_newlines 
                 }
             }
 
+            line = satz;
+            satz = "";
+            inKlammer2 = 0;
+            for (int y = 0; y < line.size(); y++) {
+                char ch = line[y];
+
+                if (ch == '<') {
+                    inKlammer2++;
+                }
+
+                if (inKlammer2 == 0) {
+                    satz += ch;
+                }
+
+                if (ch == '>') {
+                    inKlammer2--;
+                }
+            }
+
             satz = ohneEckKlammer(satz, true);
+
+            line = satz;
+            satz = "";
+            inKlammer2 = 0;
+            for (int y = 0; y < line.size(); y++) {
+                char ch = line[y];
+
+                if (ch == '[') {
+                    inKlammer2++;
+                }
+
+                if (inKlammer2 == 0) {
+                    satz += ch;
+                }
+
+                if (ch == ']') {
+                    inKlammer2--;
+                }
+            }
 
             satz = "-" + Util::replace(satz, string("  "), string(" ")) + "-";
             satz = Util::replace(satz, string("."), string("ekdnkecolesl"));
