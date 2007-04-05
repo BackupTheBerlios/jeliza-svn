@@ -10,17 +10,6 @@
   <feeling>normal</normal>
  </feelings>
 
- <fact>
-  <prefix>   Hallo  </prefix>   
-  <subject>    </subject>  
-  <verb>     du  </verb>     
-  <object>   Mensch!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 100  </priority> 
-  <category> greeting  </category> 
- </fact>
-
 
  <fact>
   <prefix>   Hallo  </prefix>   
