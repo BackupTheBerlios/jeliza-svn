@@ -25,8 +25,8 @@
  <fact>
   <prefix>   Hallo  </prefix>   
   <subject>    </subject>  
-  <verb>     du  </verb>     
-  <object>   Mensch!  </object>   
+  <verb>       </verb>     
+  <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 100  </priority> 
@@ -9021,6 +9021,7 @@
   <category> normal  </category> 
  </fact>
 
+
  <fact>
   <prefix>     </prefix>   
   <subject>  Bush ist  </subject>  
@@ -9051,6 +9052,18 @@
   <verb>     hat  </verb>     
   <object>   die Firma erstmals 1981 das Betriebssystem MSDOS vorgestellt.  </object>   
   <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Busen steht fuer:\n1. Brust im allgemeinen Sinn\n2. Weibliche Brueste beim Mensch\n3. Dekollet  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>   der Bereich zwischen Hals und Bruesten und die Vertiefung zwischen denselben\n4. Meerbusen\n5. Bucht (nur als Hinterglied von Meerbusen und zusammengesetzten geografischen Namen)\n6. t;!--* Busen (Volk), antiker Iran ...--gt;\n7. Buseno, Gemeinde im Kanton Graubuenden (CH), deutscher Namen  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
