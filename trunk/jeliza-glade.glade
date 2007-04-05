@@ -242,6 +242,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="editable">False</property>
+                <property name="wrap_mode">GTK_WRAP_WORD</property>
               </widget>
             </child>
           </widget>
@@ -276,6 +277,8 @@
                           <widget class="GtkEntry" id="entry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
+                            <property name="has_focus">True</property>
+                            <property name="is_focus">True</property>
                             <signal name="enter_notify_event" handler="on_entry_enter_notify_event"/>
                           </widget>
                         </child>

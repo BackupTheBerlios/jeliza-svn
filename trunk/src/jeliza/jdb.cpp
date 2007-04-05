@@ -127,6 +127,10 @@ void jdb::DBSentence::toXMLPrint() {
 
 string jdb::DBSentence::printPart (string str, string temp, string wert) {
 //    cout << "  <" << str << wert << "  " << "</" << str << endl;
+
+    temp = Util::replace(temp, string("\n"), string("\\n"));
+    temp = Util::replace(temp, string("\r"), string(""));
+
     return "  <" + str + wert + "  " + "</" + str + "\n";
 }
 
@@ -138,6 +142,14 @@ void jdb::DBSentence::strip() {
     suffix = Util::strip(suffix);
     feeling = Util::strip(feeling);
     category = Util::strip(category);
+
+    prefix = Util::replace(prefix, string("\\n"), string("\n"));
+    subject = Util::replace(subject, string("\\n"), string("\n"));
+    verb = Util::replace(verb, string("\\n"), string("\n"));;
+    object = Util::replace(object, string("\\n"), string("\n"));
+    suffix = Util::replace(suffix, string("\\n"), string("\n"));
+    feeling = Util::replace(feeling, string("\\n"), string("\n"));
+    category = Util::replace(category, string("\\n"), string("\n"));
 }
 
 answers jdb::DBSentence::genSentences(bool withFix = false) {
@@ -264,6 +276,7 @@ jdb::DB parseJDB (string file) {
 }
 
 jdb::DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs) {
+    buffer = Util::replace(buffer, string("\n"), string("\\n"));
     vector<string> parts = jel.trenne_SubVerbObj(buffer, verbs);
 
     jdb::DBSentence act_sent;

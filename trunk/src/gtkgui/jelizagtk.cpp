@@ -202,7 +202,7 @@ string ohneEckKlammer (string satz, bool withPipeInBrackets) {
     return Util::strip(satz);
 }
 
-string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
+answers wikipedia (string wort, int count, bool rec = false, bool with_newlines = false) {
     wort = Util::replace(wort, string(" "), string("_"));
 
     string url = "http://de.wikipedia.org/w/index.php?title=" + wort + "&action=edit";
@@ -223,6 +223,8 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
     vector<string> lines;
     Util::split(all, string("\n"), lines);
 
+    answers saetze;
+
     bool inRichtigemBereich = false;
     bool liste = false;
     int listenIndex = 0;
@@ -239,12 +241,17 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
         }
 
         string sline = "-" + line + "-";
+        string ssline = "-----" + line + "-----";
 
         if (inRichtigemBereich) {
             cout << inKlammer << " " << line << endl;
         }
 
-        if (Util::contains(sline, "-[[")) {
+        if (Util::contains(ssline, "textarea")) {
+            break;
+        }
+
+        if (Util::contains(ssline, "----[[")) {
             continue;
         }
 
@@ -255,6 +262,7 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
                 sst << listenIndex;
                 string j;
                 sst >> j;
+                satz += "*_____*";
                 satz += "\n";
                 satz += j;
                 satz += ". ";
@@ -262,7 +270,11 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
                 satz += line;
                 continue;
             } else {
-                break;
+                saetze.push_back(satz);
+                satz = "";
+                if (saetze.size() >= count) {
+                    break;
+                }
             }
         }
 
@@ -302,7 +314,7 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
             satz = "-" + Util::replace(satz, string("  "), string(" ")) + "-";
             satz = Util::replace(satz, string("."), string("ekdnkecolesl"));
             satz = Util::replace(satz, string("ekdnkecolesl"), string("-.-"));
-            if (Util::contains(satz, "-</textarea> -")) {
+            if (Util::contains(satz, "-</textarea>")) {
                 satz = "";
                 break;
             }
@@ -314,10 +326,10 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
                 satz = Util::replace(satz, string("-"), string(""));
                 satz = Util::replace(satz, string("  "), string(" "));
                 satz = Util::strip(satz);
-                return wikipedia(satz, true);
+                return wikipedia(satz, true, with_newlines);
             }
             else if (Util::contains(satzlower, "#redirect") && !rec) {
-                return "";
+                return answers();
             }
 
             vector<string> temp;
@@ -328,7 +340,7 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
 
 //            cout << temp[0] << endl;
 
-            if (!with_newlines) {
+/*            if (!with_newlines) {
                 cout << "with_newlines == false " << line << " | " << satz << endl;
 
                 if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
@@ -347,21 +359,37 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
 
                 break;
             }
-            else {
-                cout << liste << "with_newlines == true " << line << " | " << satz << endl;
+            else {*/
+            cout << liste << "with_newlines == true " << line << " | " << satz << endl;
 
-                if (Util::contains(satz, string(":")) || temp[0].size() < 12 || temp2.size() < 7) {
-                    satz = satz;
-                } else if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
-                    satz = Util::strip(temp[0]) + ". " + Util::strip(temp[1]) + ".";
-                } else {
-                    satz = Util::strip(temp[0]) + ".";
-                }
+            if (Util::contains(satz, string(":")) || temp[0].size() < 12 || temp2.size() < 7) {
+                satz = satz;
                 satz = Util::replace(satz, string("-"), string(""));
                 satz = Util::replace(satz, string("  "), string(" "));
 
                 liste = true;
+            } else if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
+                satz = Util::strip(temp[0]) + ". " + Util::strip(temp[1]) + ".";
+                satz = Util::replace(satz, string("-"), string(""));
+                satz = Util::replace(satz, string("  "), string(" "));
+
+                saetze.push_back(satz);
+                satz = "";
+                if (saetze.size() >= count) {
+                    break;
+                }
+            } else {
+                satz = Util::strip(temp[0]) + ".";
+                satz = Util::replace(satz, string("-"), string(""));
+                satz = Util::replace(satz, string("  "), string(" "));
+
+                saetze.push_back(satz);
+                satz = "";
+                if (saetze.size() >= count) {
+                    break;
+                }
             }
+//            }
 
         }
 
@@ -384,11 +412,19 @@ string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
 //        }
     }
 
-    return satz;
+    (*JELIZA_PROGRESS) += 4;
+
+    answers saetze2;
+    for (answers::iterator it = saetze.begin(); it != saetze.end(); it++) {
+        cout << *it << endl;
+        saetze2.push_back(Util::replace(*it, string("*_____*"), string("")));
+    }
+
+    return saetze2;
 }
 
 
-string search_in_wikipedia(string wort) {
+/*string search_in_wikipedia(string wort) {
     wort = Util::strip(wort);
     wort = Util::toLower(wort);
     string orig_wort = wort;
@@ -405,10 +441,13 @@ string search_in_wikipedia(string wort) {
 
     cout << "- Wort zum Nachschlagen: " << wort << endl;
     satz = wikipedia(wort, false, false);
+    (*JELIZA_PROGRESS) += 6;
     if (satz.size() < 1) {
         cout << "- Wort zum Nachschlagen: " << orig_wort << endl;
         satz = wikipedia(orig_wort, false, false);
+        (*JELIZA_PROGRESS) += 6;
         if (satz.size() < 1) {
+            (*JELIZA_PROGRESS) += 6;
             cout << "- Wort zum Nachschlagen: " << Util::toUpper(orig_wort) << endl;
             satz = wikipedia(Util::toUpper(orig_wort), false, false);
         }
@@ -420,8 +459,12 @@ string search_in_wikipedia(string wort) {
     satz = Util::replace(satz, string("\n"), string(""));
     satz = Util::replace(satz, string("\r"), string(""));
 
+    (*JELIZA_PROGRESS) += 2;
+
+    satz = Util::strip(satz);
+
     return satz;
-}
+}*/
 
 string search_in_wikipedia_with_newlines(string wort) {
     wort = Util::strip(wort);
@@ -432,28 +475,37 @@ string search_in_wikipedia_with_newlines(string wort) {
     wort = firstchar + wort;
     wort = Util::strip(wort);
 
-    string satz;
+    answers satz;
 
     if (wort.size() < 1) {
         return "";
     }
 
     cout << "- Wort zum Nachschlagen: " << wort << endl;
-    satz = wikipedia(wort, false, true);
+    satz = wikipedia(wort, 1, false, true);
     if (satz.size() < 1) {
         cout << "- Wort zum Nachschlagen: " << orig_wort << endl;
-        satz = wikipedia(orig_wort, false, true);
+        satz = wikipedia(orig_wort, 1, false, true);
         if (satz.size() < 1) {
             cout << "- Wort zum Nachschlagen: " << Util::toUpper(orig_wort) << endl;
-            satz = wikipedia(Util::toUpper(orig_wort), false, true);
+            satz = wikipedia(Util::toUpper(orig_wort), 1, false, true);
         }
     }
 
-    satz = Util::replace(satz, string("&"), string(""));
-    satz = Util::replace(satz, string("amp;"), string("&"));
-    satz = Util::replace(satz, string("nbsp;"), string("&"));
+    string rsatz = "";
+    if (satz.size() > 0) {
+        rsatz = satz[0];
+    }
 
-    return satz;
+    rsatz = Util::replace(rsatz, string("&"), string(""));
+    rsatz = Util::replace(rsatz, string("amp;"), string("&"));
+    rsatz = Util::replace(rsatz, string("nbsp;"), string("&"));
+
+    (*JELIZA_PROGRESS) += 2;
+
+    rsatz = Util::strip(rsatz);
+
+    return rsatz;
 }
 
 
@@ -527,7 +579,7 @@ void durchsuche_nach_unbekanntem (string all) {
         }
         if (!schon) {
             cout << "- Suche nach einer Definition fuer \"" << (*it) << "\" in der Wikipedia" << endl;
-            string definition = search_in_wikipedia((*it));
+            string definition = search_in_wikipedia_with_newlines((*it));
             if (definition.size() < 2) {
                 ofstream of("not_in_wikipedia.tmp", ios::app | ios::ate);
                 of << (*it) << endl;
@@ -889,6 +941,10 @@ void MainWindow::answer() {
 
         r.textview->get_buffer()->apply_tag(r.refTagMatch, r.textview->get_buffer()->begin(),
                 r.textview->get_buffer()->end());
+
+        Gtk::TextBuffer::iterator itee = r.textview->get_buffer()->end();
+        Glib::RefPtr<TextBuffer::Mark> ma = r.textview->get_buffer()->create_mark (Glib::ustring("endmark"), itee, false);
+        r.textview->scroll_to(ma);
     }
 }
 
@@ -932,6 +988,7 @@ void MainWindow::thread_work_helper() {
         o1 << all1 << endl;
         o1.close();
     } else if (r.todo.size() > 5) {
+        global_jeliza.reset(new JEliza());
         global_jeliza->vorbereite();
 
         cout << "- Datenbank wurde vorbereitet " << endl;

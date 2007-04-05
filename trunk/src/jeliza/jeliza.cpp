@@ -457,21 +457,25 @@ Answer JEliza::answer_logical_question_type_1 (string frage, string orig_fra) {
     dbs.verb = Util::toLower(dbs.verb);
 
 
-    (*JELIZA_PROGRESS) = 30;
-    if (dbs.object.size() > 0 && !Util::contains(dbs_orig.verb, "bin")) {
+    (*JELIZA_PROGRESS) = 26;
+    if (dbs.object.size() > 0 && !Util::contains(Util::toLower(dbs_orig.verb), "bin")
+            && (Util::contains(dbs.subject, "was") || Util::contains(dbs.subject, "wer"))) {
         string definition = search_in_wikipedia_with_newlines(dbs.object);
         if (definition.size() > 2) {
             return Answer(definition);
         }
     }
 
+    if (Util::contains(Util::toLower(orig_fra), "bin") || Util::contains(Util::toLower(orig_fra), "bist")) {
+        return Answer("");
+    }
 
     cout << "- Verb ist " << dbs.verb << endl;
 
     dbs.print();
     dbs_orig.print();
 
-    (*JELIZA_PROGRESS) = 40;
+    (*JELIZA_PROGRESS) = 46;
 
     if (dbs_orig.subject.size() < 1 || dbs_orig.object.size() < 1 || dbs_orig.verb.size() < 1) {
         cout << "- Unvollstaendiger Satzteil in: \"" << frage << "\"" << endl;

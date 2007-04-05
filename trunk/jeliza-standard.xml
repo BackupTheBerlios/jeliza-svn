@@ -17,7 +17,19 @@
   <object>   Mensch!  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 35  </priority> 
+  <priority> 100  </priority> 
+  <category> greeting  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Hallo  </prefix>   
+  <subject>    </subject>  
+  <verb>     du  </verb>     
+  <object>   Mensch!  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -29,7 +41,7 @@
   <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -41,7 +53,7 @@
   <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -53,7 +65,7 @@
   <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 40  </priority> 
+  <priority> 50  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -65,7 +77,7 @@
   <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -77,7 +89,7 @@
   <object>   JEliza.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -89,7 +101,7 @@
   <object>   JEliza.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -125,7 +137,7 @@
   <object>   Version 2.2  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> normal  </category> 
  </fact>
 
@@ -173,7 +185,7 @@
   <object>   gut!  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> normal  </category> 
  </fact>
 
@@ -9009,12 +9021,23 @@
   <category> normal  </category> 
  </fact>
 
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Bush ist  </subject>  
+  <verb>     siehe  </verb>     
+  <object>   dort Etymologie und bekannte Namenstraeger  </object>   
+  <suffix>   englische Rockband der Richtung Alternative-Rock  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  so  </subject>  
+  <subject>  George  </subject>  
   <verb>     ist  </verb>     
-  <object>   es  </object>   
+  <object>   die englische Variante des maennlichen Vornamens Georg.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -9024,33 +9047,9 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  so  </subject>  
-  <verb>     ist  </verb>     
-  <object>   es  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  so  </subject>  
-  <verb>     ist  </verb>     
-  <object>   es  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  so  </subject>  
-  <verb>     ist  </verb>     
-  <object>   es  </object>   
+  <subject>  Nach anfaenglichen Erfolgen mit einem BASICInterpreter Ende der 70er Jahre  </subject>  
+  <verb>     hat  </verb>     
+  <object>   die Firma erstmals 1981 das Betriebssystem MSDOS vorgestellt.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 

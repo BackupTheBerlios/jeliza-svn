@@ -116,7 +116,7 @@ void SplitString (string text, string separators, vector<string>& words, bool in
 	}
 }
 
- string strip (string text) {
+/*string strip (string text) {
 	string txt = replace(text, string("\n"), string(""));
 	txt = replace(txt, string("\r"), string(""));
 
@@ -126,6 +126,32 @@ void SplitString (string text, string separators, vector<string>& words, bool in
 		txt2 = txt;
 		trim(txt);
 	}
+
+	return txt;
+}*/
+
+string strip (string text) {
+	text = replace(text, string("\r"), string(""));
+    do {
+        text = "rkewfdneokwjdseowlj" + text + "zhrtzhftfhvcderthjhgf";
+
+        text = replace(text, string("rkewfdneokwjdseowlj\n"), string(""));
+        text = replace(text, string("rkewfdneokwjdseowlj "), string(""));
+
+        text = replace(text, string("\nzhrtzhftfhvcderthjhgf"), string(""));
+        text = replace(text, string(" zhrtzhftfhvcderthjhgf"), string(""));
+    } while (!Util::contains(text, "rkewfdneokwjdseowlj") && !Util::contains(text, "zhrtzhftfhvcderthjhgf"));
+
+    text = replace(text, string("zhrtzhftfhvcderthjhgf"), string(""));
+    text = replace(text, string("rkewfdneokwjdseowlj"), string(""));
+
+    string txt = text;
+
+    string txt2;
+    do {
+		txt2 = txt;
+		trim(txt);
+	} while (txt != txt2);
 
 	return txt;
 }

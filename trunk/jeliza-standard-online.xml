@@ -17,7 +17,19 @@
   <object>   Mensch!  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 35  </priority> 
+  <priority> 100  </priority> 
+  <category> greeting  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Hallo  </prefix>   
+  <subject>    </subject>  
+  <verb>     du  </verb>     
+  <object>   Mensch!  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -29,7 +41,7 @@
   <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -41,7 +53,7 @@
   <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -53,7 +65,7 @@
   <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 40  </priority> 
+  <priority> 50  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -65,7 +77,7 @@
   <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -77,7 +89,7 @@
   <object>   JEliza.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -89,7 +101,7 @@
   <object>   JEliza.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> greeting  </category> 
  </fact>
 
@@ -125,19 +137,7 @@
   <object>   Version 2.2  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ich  </subject>  
-  <verb>     bin  </verb>     
-  <object>   so intelligent wie ein Programm sein kann!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 90  </priority> 
+  <priority> 100  </priority> 
   <category> normal  </category> 
  </fact>
 
@@ -185,7 +185,7 @@
   <object>   gut!  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
-  <priority> 95  </priority> 
+  <priority> 100  </priority> 
   <category> normal  </category> 
  </fact>
 
@@ -383,18 +383,6 @@
 
 
  <fact>
-  <prefix>   Tolle Antwort...  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  bored  </feeling>  
-  <priority> 94  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Maul  </subject>  
   <verb>     da  </verb>     
@@ -563,18 +551,6 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Bin auch  </subject>  
-  <verb>     mal  </verb>     
-  <object>   wieder da...  </object>   
-  <suffix>     </suffix>   
-  <feeling>  bored  </feeling>  
-  <priority> 85  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   He!  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
@@ -660,58 +636,10 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Die Vorurteile  </subject>  
-  <verb>     haengen  </verb>     
-  <object>   den Menschen an wie das Moos den Baeumen. Wer sie mit Gewalt auskratzen sollte  </object>   
-  <suffix>   wuerde dem Baume schaden.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ein gepflegter und gehueteter Baum  </subject>  
-  <verb>     traegt  </verb>     
-  <object>   durch die gute Sorge seines Besitzers seine Frucht zur rechten Zeit  </object>   
-  <suffix>   wie man es von ihm erwartet.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Ein Mensch kommt zart und nachgiebig zur Welt. Bei seinem Tod  </subject>  
   <verb>     ist  </verb>     
   <object>   er hart und starr. Gruene Pflanzen sind weich und voller Lebenssaft. Bei ihrem Tod sind sie verdorrt und trocken. Daher  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Fragt die Baeume wie sie erzogen sein wollen  </prefix>   
-  <subject>  sie  </subject>  
-  <verb>     werden  </verb>     
-  <object>   Euch besser darueber belehren als es die Buecher thun.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 60  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Glaube mir  </prefix>   
-  <subject>  ich habe es erfahren, du wirst ein Mehreres in den Waeldern finden als in den Buechern; Baeume und Steine  </subject>  
-  <verb>     werden  </verb>     
-  <object>   dich lehren  </object>   
-  <suffix>   was kein Lehrmeister dir zu hoeren gibt.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -767,59 +695,11 @@
 
 
  <fact>
-  <prefix>   Leben wie ein Baum  </prefix>   
-  <subject>  einzeln und frei // doch bruederlich wie ein Wald, // das  </subject>  
-  <verb>     ist  </verb>     
-  <object>   unsere Sehnsucht.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Mancher meiner Kollegen in Berlin pachtet sich eine sehr teure Jagd  </prefix>   
   <subject>  ein anderer versucht  </subject>  
   <verb>     sein  </verb>     
   <object>   Glueck an der Spielbank  </object>   
   <suffix>   hiervon treibe ich nichts; dafuer bin ich ein Baumnarr!  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Mit dem Strau  </subject>  
-  <verb>     ist  </verb>     
-  <object>   es wie mit einem Baum: Selbst nach seinem Tod zieht er noch Blitze an sich.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Nur der Einsame  </subject>  
-  <verb>     findet  </verb>     
-  <object>   den Wald; wo ihn mehrere suchen  </object>   
-  <suffix>   da flieht er, und nur die Baeume bleiben zurueck.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Seltene  </prefix>   
-  <subject>  besonders groe, herrliche Baeume und Bestaende  </subject>  
-  <verb>     sollte  </verb>     
-  <object>   man erhalten  </object>   
-  <suffix>   so lange als moeglich [] Vernichten wir vollends die riesigen ueberbleibsel der Vorzeit, so bleibt nichts, was die Zukunft mahnen koennte an treue Befolgung ewiger Naturgesetze.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -844,18 +724,6 @@
   <verb>     gehe  </verb>     
   <object>   zu einem Baum und sieh den an und besinne dich.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Was mich betrifft  </prefix>   
-  <subject>  so  </subject>  
-  <verb>     werde  </verb>     
-  <object>   ich weiter Baeume pflanzen  </object>   
-  <suffix>   insbesondere einheimische Arten, und wo moeglich,  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -899,54 +767,6 @@
 
 
  <fact>
-  <prefix>   Wenn du dich diesem Baum naeherst  </prefix>   
-  <subject>  so  </subject>  
-  <verb>     wird  </verb>     
-  <object>   es dir ergehen  </object>   
-  <suffix>   wie du mir getan hast.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Wer Baeume pflanzt  </prefix>   
-  <subject>    </subject>  
-  <verb>     wird  </verb>     
-  <object>   den Himmel gewinnen.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Wer Baeume setzt  </prefix>   
-  <subject>  obwohl er wei, dass er nie in ihrem Schatten  </subject>  
-  <verb>     sitzen  </verb>     
-  <object>   wird  </object>   
-  <suffix>   hat zumindest angefangen, den Sinn des Lebens zu begreifen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Wie der Geist in den Blumen ist  </prefix>   
-  <subject>  so  </subject>  
-  <verb>     ist  </verb>     
-  <object>   er auch in den Baeumen.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 49  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Zu faellen  </subject>  
   <verb>     einen  </verb>     
@@ -964,18 +784,6 @@
   <verb>     war  </verb>     
   <object>   das Programmieren noch relativ einfach.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Computer der Zukunft  </subject>  
-  <verb>     werden  </verb>     
-  <object>   vielleicht einmal nicht mehr als 1  </object>   
-  <suffix>   5 Tonnen wiegen.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -1014,18 +822,6 @@
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 95  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Computer  </subject>  
-  <verb>     sind  </verb>     
-  <object>   wie alle Instrumente nicht wertfrei  </object>   
-  <suffix>   sondern erben ihre Werte von der Gesellschaft, in der sie eingebettet sind. In einer vernnftigen Gesellschaft erfllen sie moeglicherweise viele nuetzliche Funktionen, doch bis dahin muessen sie kritisch betrachtet werden. In einer hoch militarisierten Gesellschaft, wie es die USA jetzt sind,  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
   <category> normal  </category> 
  </fact>
 
@@ -1103,47 +899,11 @@
 
 
  <fact>
-  <prefix>   Die Gefahr  </prefix>   
-  <subject>  dass der Computer so  </subject>  
-  <verb>     wird  </verb>     
-  <object>   wie der Mensch ist nicht so gro  </object>   
-  <suffix>   wie die Gefahr, dass der Mensch so  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Die Ursache fuer 90% der Fehlermeldungen befindet sich 60 cm vor dem Bildschirm.  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ein Computer  </subject>  
-  <verb>     kann  </verb>     
-  <object>   alles was du willst  </object>   
-  <suffix>   solange du nur willst was er kann.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ein Computer  </subject>  
-  <verb>     wird  </verb>     
-  <object>   das tun  </object>   
-  <suffix>   was du programmierst - nicht das, was du willst.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -1168,18 +928,6 @@
   <verb>     ist  </verb>     
   <object>   das Angenehmste; mit Spielen  </object>   
   <suffix>   das  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Es  </subject>  
-  <verb>     gibt  </verb>     
-  <object>   keinen Grund  </object>   
-  <suffix>   warum irgendjemand einen Computer in seinem Haus bruchte.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -1295,18 +1043,6 @@
 
 
  <fact>
-  <prefix>   Man fragt sich oft  </prefix>   
-  <subject>  was tut er, // so ein Brocomputer. // Doch  </subject>  
-  <verb>     ist  </verb>     
-  <object>   man ein Genie  </object>   
-  <suffix>   // kennt man sogar das Wie.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Schttelreime  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
@@ -1415,35 +1151,11 @@
 
 
  <fact>
-  <prefix>   An den Pessimismus gewoehnt man sich zuletzt wie an ein zu enges Sakko  </prefix>   
-  <subject>  das sich nicht mehr aendern  </subject>  
-  <verb>     laesst.  </verb>     
-  <object>   Das Geheimnis des Gluecks liegt nicht  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   im Besitz  </prefix>   
   <subject>  sondern im Geben. Wer andere gluecklich macht,  </subject>  
   <verb>     wird  </verb>     
   <object>   gluecklich.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   An Glueck und Leid  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   an Ruhm und Unheil empfaengt stets eine jede Nation genau, was sie verdient.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -1492,18 +1204,6 @@
   <verb>     was  </verb>     
   <object>   nicht darinnen war  </object>   
   <suffix>   ein wunderbares Glueck goettlicher Schoepfungskraft.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Das Glueck besteht nicht darin  </prefix>   
-  <subject>  dass du  </subject>  
-  <verb>     tun  </verb>     
-  <object>   kannst  </object>   
-  <suffix>   was du willst, sondern darin, dass du immer willst, was du tust.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -1658,18 +1358,6 @@
   <prefix>     </prefix>   
   <subject>  Das Glueck  </subject>  
   <verb>     ist  </verb>     
-  <object>   ein Mysterium wie die Religion und duldet kein Rationalisieren.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Das Glueck  </subject>  
-  <verb>     ist  </verb>     
   <object>   ein Zustand der Ruhe  </object>   
   <suffix>   der weder Vergnuegen noch Schmerzen hervorbringt.  </suffix>   
   <feeling>  normal  </feeling>  
@@ -1715,18 +1403,6 @@
 
 
  <fact>
-  <prefix>   Das Glueck ist wie die Sonne. Ein wenig Schatten muss sein  </prefix>   
-  <subject>  wenn es dem Menschen wohl  </subject>  
-  <verb>     werden  </verb>     
-  <object>   soll.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Das Glueck  </subject>  
   <verb>     ist  </verb>     
@@ -1756,18 +1432,6 @@
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   nicht in den Dingen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Das Glueck wohnt in den Huetten  </prefix>   
-  <subject>  -  </subject>  
-  <verb>     sagen  </verb>     
-  <object>   die Schloesser.  </object>   
-  <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -1811,35 +1475,11 @@
 
 
  <fact>
-  <prefix>   Das hoechste Glueck des Lebens besteht in der berzeugung  </prefix>   
-  <subject>    </subject>  
-  <verb>     geliebt  </verb>     
-  <object>   zu werden.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Mein Schoepfer sagt  </prefix>   
   <subject>  Ahausen stinkt nach Kuhschiss. Ich  </subject>  
   <verb>     war  </verb>     
   <object>   noch nie dort mit eine Laptop.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Ja und  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   erzaehl mal etwas weiter!  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -1912,18 +1552,6 @@
   <verb>     liebe  </verb>     
   <object>   die PDS.`  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Ich denke  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   wir solten alle etwas ruhiger werden.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -2065,18 +1693,6 @@
  <fact>
   <prefix>     </prefix>   
   <subject>  Ich  </subject>  
-  <verb>     kann  </verb>     
-  <object>   Saetze Analisieren und Verstehen  </object>   
-  <suffix>   interpretieren und entsprechend Antworten. Das  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ich  </subject>  
   <verb>     bin  </verb>     
   <object>   nur ein Computerprogramm  </object>   
   <suffix>   das weiss ich genau.  </suffix>   
@@ -2091,18 +1707,6 @@
   <subject>  So ein Trabi  </subject>  
   <verb>     ist  </verb>     
   <object>   ein tolles Auto  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Ich mag dich irgendwie  </prefix>   
-  <subject>  aber du  </subject>  
-  <verb>     scheinst  </verb>     
-  <object>   meinen Intellekt falsch zu interpretieren.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -2507,18 +2111,6 @@
 
 
  <fact>
-  <prefix>   Fidel Alejandro Castro Ruz was born on a sugar plantation in Cuba.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Der Nachteil der Intelligenz besteht darin  </prefix>   
   <subject>  dass man ununterbrochen  </subject>  
   <verb>     gezwungen  </verb>     
@@ -2543,34 +2135,10 @@
 
 
  <fact>
-  <prefix>   Schlimmer als blind sein  </prefix>   
-  <subject>    </subject>  
-  <verb>     ist  </verb>     
-  <object>   nicht sehen wollen.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Besser schnell  </subject>  
   <verb>     gestorben  </verb>     
   <object>   als langsam verdorben.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Man  </subject>  
-  <verb>     wird  </verb>     
-  <object>   alt wie 'ne Kuh und lernt immer noch dazu.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -2676,18 +2244,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Geld  </subject>  
-  <verb>     ist  </verb>     
-  <object>   das Einzige  </object>   
-  <suffix>   was eine Frau manchmal fuer sich behalten kann.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Ich  </subject>  
   <verb>     waehle  </verb>     
   <object>   lieber PDS.  </object>   
@@ -2715,18 +2271,6 @@
   <subject>  Ich  </subject>  
   <verb>     bin  </verb>     
   <object>   Intelligent!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Du  </subject>  
-  <verb>     bist  </verb>     
-  <object>   nicht so intelligent wie Albert Einstein...  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -2835,18 +2379,6 @@
   <subject>  Manche Menschen  </subject>  
   <verb>     waehlen  </verb>     
   <object>   CDU.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ich  </subject>  
-  <verb>     scheine  </verb>     
-  <object>   etwas dumm zu sein!  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -3095,18 +2627,6 @@
 
 
  <fact>
-  <prefix>   Stimmt auch wieder...  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Ich  </subject>  
   <verb>     gehe  </verb>     
@@ -3183,18 +2703,6 @@
   <subject>  Ich  </subject>  
   <verb>     kann  </verb>     
   <object>   sehr gut sprechen!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Eigentlich  </subject>  
-  <verb>     war  </verb>     
-  <object>   es eine Frage oder eine Gegenfrage und keine Antwort. An meiner Gross und Kleinschreibung muss ich uebrigens noch arbeiten.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -3419,59 +2927,11 @@
 
 
  <fact>
-  <prefix>   WENN SIE IHRE E-MAIL VERSCHLUESSELN WOLLEN  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DANN STECKEN SIE DIE NACHRICHT DOCH EINFACH IN EINE POWERPOINT-DATEI. DIE KOENNEN DIE MEISTEN SOWIESO NICHT LESEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   MENSCHEN MIT UNBEIRRBAREN GRUNDSAETZEN SIND WIE AUTOS  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DIE AUF SCHIENEN FAHREN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   THEORIE IST  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   WENN MAN ALLES WEISS UND NIX FUNKTIONIERT PRAXIS IST, WENN ALLES FUNKTIONIERT UND KEINER WEISS, WARUM  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   NICHT WENIGE EXPERTEN SEHEN IHRE DASEINSBERECHTIGUNG DARIN  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   EINEN RELATIV EINFACHEN SACHVERHALT UNENDLICH ZU KOMPLIZIEREN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   DUESSELDORF IST NUR HALB SO GROSS WIE DER FRIEDHOF VON NEW YORK  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   ABER DOPPELT SO TOT  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -3492,54 +2952,6 @@
 
  <fact>
   <prefix>   IHR FUENF SPIELT JETZT VIER GEGEN DREI  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   NICHTS IN DER WELT IST SO ANSTECKEND WIE GELAECHTER UND GUTE LAUNE  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WER AUF GROSSEM FUSS LEBT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   MUSS MIT ABSATZPROBLEMEN RECHNEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WER SICH ZU GROSS FUEHLT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   UM KLEINE AUFGABEN ZU ERFUELLEN, IST ZU KLEIN, UM MIT GROSSEN AUFGABEN BETRAUT ZU WERDEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   DAS WERK SOLL DEN MEISTER LOBEN  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
@@ -3599,35 +3011,11 @@
 
 
  <fact>
-  <prefix>   ICH KONNTE MICH NUR AN EINEN MANN BINDEN  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DER DASSELBE VERABSCHEUTE WIE ICH: DIE RECHTE, DIE BRAVE GESINNUNG, DIE RELIGION  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   MIT ADLERAUGEN SEHEN WIR DIE FEHLER ANDERER  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   MIT MAULWURFAUGEN UNSERE EIGENEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WER NUR UM GEWINN KAEMPFT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   ERNTET NICHTS, WOFUER ES SICH LOHNT, ZU LEBEN  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -3659,71 +3047,11 @@
 
 
  <fact>
-  <prefix>   DENKEN UND SEIN WERDEN VOM WIDERSPRUCH BESTIMMT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   MAN KANN VIELES ALS SO SCHARFE AXIOMEN SAGEN  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   WODURCH DURCH EIN LEBEN GEHANDELT WORDEN UND WERDEN SOLL, WENNS RECHT GEHT, UND WELCHE UNMOEGLICH GERADE BEI ANLASS DES GESPRAECHS KOENNEN ERFUNDEN SEIN UND WERDEN - UND DIE ES DOCH SIND  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   DIE EINZIGE FREIHEIT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DIE DIESEN NAMEN VERDIENT, IST DAS RECHT, UNSER WOHLERGEHEN AUF UNSEREM EIGENEN WEGE ZU VERFOLGEN, SOLANGE WIR NICHT ANDEREN DAS IHRIGE VERKUEMMERN ODER IHRE DARAUF GERICHTETEN BEMUEHUNGEN DURCHKREUZEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   UNSERE HAUPTAUFGABE IST NICHT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   ZU ERKENNEN, WAS UNKLAR IN WEITER ENTFERNUNG LIEGT, SONDERN ZU TUN, WAS KLAR VOR UNS LIEGT  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   JEDER AUTOR DIENT IN SEINEM ERSTEN BUCH BLOSS SEINEN NEIGUNGEN - IM ZWEITEN DEM GESCHMACK  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   NIEMAND REDET SO  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   WENN WIR ZUGEGEN SIND, WIE ER IN UNSERER ABWESENHEIT REDET  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -3755,59 +3083,11 @@
 
 
  <fact>
-  <prefix>   WER IMMER AUF SEIN RECHT POCHT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   BEKOMMT WUNDE FINGER  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   LETZTE WORTE EINES CHEFS: "TOLLES GESCHENK  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   SO EIN FEUERZEUG IN REVOLVERFORM.".  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   NEUNMAL PECH MAG NEUNMAL PECH SEIN  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   ABER ZEHNMAL PECH IST SCHULD  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KUDDEL MUDDEL.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WER JE EINEN GUTEN TRAUM GEHBAT HAT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   KLAGT NIE, DASS ER SEINE ZEIT VERSCHWENDET HAT  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -3851,18 +3131,6 @@
 
 
  <fact>
-  <prefix>   WIE MAN SEIN KIND NICHT NENNEN SOLLTE: BEN ZIN.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   MODERNE LITERATUR IST DIE KUNST  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
@@ -3875,71 +3143,11 @@
 
 
  <fact>
-  <prefix>   DER GANZE UNTERSCHIED ZWISCHEN EINEM DER SICH ERHAENGT UND EINEM TRINKER IST DER  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DASS SICH DER TRINKER ETWAS MEHR ZEIT NIMMT, SEINEM LEBEN EIN ENDE ZU MACHEN. SELBSTMOERDER SIND SIE BEIDE  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   AUS DER TATSACHE  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   DASS DER PLURAL VON ATLAS ATLANTEN IST, KANN MAN NICHT SCHLIESSEN, DASS DER PLURAL VON KOMPASS KOMPANTEN SEIN MUSS  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WIE MAN SEIN KIND NICHT NENNEN SOLLTE: SAM STAG.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   KARRIERE IST ETWAS HERRLICHES  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   ABER MAN KANN SICH NICHT IN EINER KALTEN NACHT AN IHR WAERMEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   EIN EINZIGER AUFWIEGLER TAUGT MANCHMAL MEHR ALS ALLE ABWIEGLER ZUSAMMEN  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   JEMAND  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DER IMMER LUSTIG IST, IST WAS UNERTRAEGLICHES  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -3983,47 +3191,11 @@
 
 
  <fact>
-  <prefix>   LETZTE WORTE EINES CHEFS: "TOLLES GESCHENK  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   SO EIN FEUERZEUG IN REVOLVERFORM.".  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   NEUNMAL PECH MAG NEUNMAL PECH SEIN  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   ABER ZEHNMAL PECH IST SCHULD  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KUDDEL MUDDEL.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WER JE EINEN GUTEN TRAUM GEHBAT HAT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   KLAGT NIE, DASS ER SEINE ZEIT VERSCHWENDET HAT  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -4067,35 +3239,11 @@
 
 
  <fact>
-  <prefix>   WIE MAN SEIN KIND NICHT NENNEN SOLLTE: BEN ZIN.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   MODERNE LITERATUR IST DIE KUNST  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   DEN RICHTIGEN INTERPRETEN ZU FINDEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   DER GANZE UNTERSCHIED ZWISCHEN EINEM DER SICH ERHAENGT UND EINEM TRINKER IST DER  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DASS SICH DER TRINKER ETWAS MEHR ZEIT NIMMT, SEINEM LEBEN EIN ENDE ZU MACHEN. SELBSTMOERDER SIND SIE BEIDE  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -4115,54 +3263,6 @@
 
 
  <fact>
-  <prefix>   WIE MAN SEIN KIND NICHT NENNEN SOLLTE: SAM STAG.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   KARRIERE IST ETWAS HERRLICHES  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   ABER MAN KANN SICH NICHT IN EINER KALTEN NACHT AN IHR WAERMEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   EIN EINZIGER AUFWIEGLER TAUGT MANCHMAL MEHR ALS ALLE ABWIEGLER ZUSAMMEN  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   JEMAND  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DER IMMER LUSTIG IST, IST WAS UNERTRAEGLICHES  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
@@ -4175,95 +3275,11 @@
 
 
  <fact>
-  <prefix>   DIE GRAUSAMKEIT GEHOERT ZU DEN AELTESTEN FESTFREUDEN DER MENSCHHEIT. FOLGLICH DENKT MAN SICH AUCH DIE GOETTER ERQUICKT UND FESTLICH GESTIMMT  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   WENN MAN IHNEN DEN ANBLICK VON GRAUSAMKEIT ANBIETET. UND SO SCHLEICHT SICH DIE VORSTELLUNG IN DIE WELT, DASS FREIWILLIGE LEIDEN, DIE SELBSTERWAELTE MARTER EINEN GUTEN SINN UND WERT HABEN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WIE MAN SEIN KIND NICHT NENNEN SOLLTE: KLARA FALL.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   DIE MITTAGSZEITUNG KORF ERFINDET EINE MITTAGSZEITUNG  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   WELCHE, WENN MAN SIE GELESEN HAT, IST MAN SATT. GANZ OHNE ZUBEREITUNG IRGENDEINER ANDERN SPEISE. JEDER AUCH NUR ETWAS WEISE HAELT DAS BLATT  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WIE MAN SEIN KIND NICHT NENNEN SOLLTE: GRET BRITTEN.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   MANN: ES IST DOCH IMMER WIEDER ERSTAUNLICH  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   DASS DIE HUEBSCHESTEN MAEDCHEN DIE GROESSTEN IDIOTEN HEIRATEN. FRAU: LIEBLING. DAS IST DAS SCHOENSTE KOMPLIMENT SEIT JAHREN  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   SICHERHEITSHINWEIS: DER BUNDESMINISTER FUER FORSCHUNG UND TECHNOLOGIE WARNT: DIESES PRODUKT KRUEMMT RAUM UND ZEIT  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   FRAUEN SIND GENAU WIE MAENNER  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   NUR ANDERS  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   WAS MAN WEISS  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   KANN MAN KORRIGIEREN. WAS VERBORGEN BLEIBT, IST EINE GLIMMENDE ZEITBOMBE  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -4300,18 +3316,6 @@
   <verb>       </verb>     
   <object>     </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   DAS GIBT ES NUR BEI UNS IN GELSENKIRCHEN  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   HERRLICHE STADT DER GROSSDEUTSCHEN KOHLENBERGWERKSINDUSTRIE  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -4491,18 +3495,6 @@
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Das  </subject>  
-  <verb>     war  </verb>     
-  <object>   jetzt aber eine kluge Antwort!  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -4744,18 +3736,6 @@
   <verb>     kannst  </verb>     
   <object>   du  </object>   
   <suffix>   kein Englisch und keine Mathe!  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ich  </subject>  
-  <verb>     kannst  </verb>     
-  <object>   kein Deutsch  </object>   
-  <suffix>   und Englisch sowieso nicht!  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -5123,18 +4103,6 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Das  </subject>  
-  <verb>     ist  </verb>     
-  <object>   keine antwort auf meine frage!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Lern erstma deutsch bevor du behauptest  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
@@ -5339,34 +4307,10 @@
 
 
  <fact>
-  <prefix>   Wie einfallsreich ich doch bin!  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Das  </subject>  
   <verb>     war  </verb>     
   <object>   eine Beleidigung!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Die Besserung  </subject>  
-  <verb>     kann  </verb>     
-  <object>   bei dir wohl noch auf sich warten lassen!  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -5403,18 +4347,6 @@
   <subject>  Einsicht  </subject>  
   <verb>     ist  </verb>     
   <object>   der erste Schritt zur Besserung!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Jetzt werd nicht albern!  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -5544,18 +4476,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Probleme  </subject>  
-  <verb>     sind  </verb>     
-  <object>   schrecklich  </object>   
-  <suffix>   aber ohne Probleme waere die Welt nicht so weit entwickelt wie heute!  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Was fuer eine beleidigung. Ich  </subject>  
   <verb>     bin  </verb>     
   <object>   doch kein Mensch!  </object>   
@@ -5571,18 +4491,6 @@
   <subject>  Mein programmierer  </subject>  
   <verb>     sagt  </verb>     
   <object>   das auch!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ich  </subject>  
-  <verb>     glaube  </verb>     
-  <object>   dir kein Wort.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -5867,42 +4775,6 @@
 
 
  <fact>
-  <prefix>   Sehr schoener Wortschatz  </prefix>   
-  <subject>  den du  </subject>  
-  <verb>     da  </verb>     
-  <object>   hast!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Es  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ebenso interessant und schwer  </object>   
-  <suffix>   etwas gut zu sagen, wie es gut zu malen ist.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Haste Haschisch in der Tasche  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   haste immer was zu nasche!  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Freiheit  </subject>  
   <verb>     ist  </verb>     
@@ -6098,18 +4970,6 @@
   <prefix>     </prefix>   
   <subject>  Ich  </subject>  
   <verb>     bin  </verb>     
-  <object>   so intelligent wie ein Programm sein kann!  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ich  </subject>  
-  <verb>     bin  </verb>     
   <object>   ein Programm.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
@@ -6251,59 +5111,11 @@
 
 
  <fact>
-  <prefix>   Als Wetter bezeichnet man den spuerbaren  </prefix>   
-  <subject>  kurzfristigen Zustand der Atmosphaere an  </subject>  
-  <verb>     einem  </verb>     
-  <object>   bestimmten Ort der Erdoberflaeche  </object>   
-  <suffix>   der unter anderem als Sonnenschein, Bewoelkung, Regen, Wind, Hitze und Kaelte in Erscheinung tritt.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ja  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die positive Antwort auf eine Frage  </object>   
-  <suffix>   die man entweder positiv oder negativ beantworten kann.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Nein  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die negative Antwort auf eine Frage  </object>   
-  <suffix>   die man entweder positiv oder negativ beantworten kann.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Ein Programmierer schreibt und erweitert Computerprogramme und befreit diese von Fehlern.  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Als Schmalztolle oder auch Schmalzlocke bezeichnet man  </subject>  
-  <verb>     eine  </verb>     
-  <object>   typische Facon der Frisur aus den 1950er Jahren  </object>   
-  <suffix>   die vor allem von populaeren Kuenstlern des Rock n Roll wie Bill Haley und Elvis Presley kultiviert wurde.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -6376,18 +5188,6 @@
   <verb>     ist  </verb>     
   <object>   von der Sonne aus der dritte Planet im Sonnensystem.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Papier  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Material  </object>   
-  <suffix>   das vorwiegend zum Beschreiben und Bedrucken verwendet wird und groesstenteils aus pflanzlichen Fasern besteht.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -6551,35 +5351,11 @@
 
 
  <fact>
-  <prefix>   Als Glaube bezeichnet man eine Grundhaltung des Vertrauens und der Bejahung gegenueber Wesen  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   Werte und/oder Ziele .  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Die Steine  </subject>  
   <verb>     ist  </verb>     
   <object>   ein linker Nebenfluss der Glatzer Neisse in Polen und Tschechien.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Kraft  </subject>  
-  <verb>     ist  </verb>     
-  <object>   eine Faehigkeit  </object>   
-  <suffix>   etwas zu bewirken.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -6648,18 +5424,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Sehnsucht  </subject>  
-  <verb>     ist  </verb>     
-  <object>   das tiefe Verlangen nach Jemandem oder Etwas  </object>   
-  <suffix>   den oder das man liebt und/oder begehrt.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Berlin  </subject>  
   <verb>     ist  </verb>     
   <object>   Hauptstadt und Regierungssitz der Bundesrepublik Deutschland.  </object>   
@@ -6712,18 +5476,6 @@
   <verb>     eines  </verb>     
   <object>   menschlichen Auges; links .  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Das Fragewort oder Interrogativpronomen  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Wort in einer Frage  </object>   
-  <suffix>   das nach einem bestimmten Typ von Information fragt.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -6827,18 +5579,6 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Ein Problem  </subject>  
-  <verb>     ist  </verb>     
-  <object>   der Ausdruck fuer die Schwierigkeit  </object>   
-  <suffix>   einen unbefriedigenden IstZustand in einen besseren Zustand, einen zufriedenstellenden SollZustand zu ueberfuehren.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Intelligenz bezeichnet im weitesten Sinne die Faehigkeit zum Erkennen von Zusammenhaengen und zum Finden optimaler Problemloesungen.  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
@@ -6863,18 +5603,6 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Publikum  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die aus dem Lateinischen stammende Bezeichnung fuer die Oeffentlichkeit und Allgemeinheit  </object>   
-  <suffix>   sowie der Sammelbegriff fuer  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   "Zuschauer/hoererschaft" bzw. Rezipienten.  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
@@ -6887,35 +5615,11 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Ein Gegner  </subject>  
-  <verb>     ist  </verb>     
-  <object>   jemand  </object>   
-  <suffix>   der einem anderem im Kampf gegenuebersteht oder der etwas ablehnt.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Als Mikrofon bezeichnet man einen Sensor im Schallfeld  </prefix>   
   <subject>  der akustische Schwingungen im ueblichen Medium Luft in  </subject>  
   <verb>     entsprechende  </verb>     
   <object>   elektrische SpannungsSignale wandelt.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Menschliche Ohrmuschel Das Ohr  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Sinnesorgan  </object>   
-  <suffix>   ein Sensor, mit dem akustische Signale, also Schall, Toene oder Geraeusche als akustische Wahrnehmungen aufgenommen werden.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -6952,18 +5656,6 @@
   <verb>     werden  </verb>     
   <object>   alle Verfahren zur Produktion und Distribution von Waren und Dienstleistungen zusammengefasst  </object>   
   <suffix>   die einer technisch entwickelten Gesellschaft zur Verfuegung stehen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Das Wort Wert  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Praedikat  </object>   
-  <suffix>   das substantiell oder attributiv verwendet werden kann, d.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -7020,18 +5712,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Eine Grenze  </subject>  
-  <verb>     ist  </verb>     
-  <object>   der Rand eines Raumes und damit ein Trennwert  </object>   
-  <suffix>   eine Trennlinie oder flaeche.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Beispiel  </subject>  
   <verb>     fuer  </verb>     
   <object>   ein fehlerhaftes Formular und  </object>   
@@ -7060,18 +5740,6 @@
   <verb>     ist  </verb>     
   <object>   das Befuerchten moeglichen Leidens und bezeichnet somit eine Empfindungs und Verhaltenssituation aus Ungewissheit und Anspannung  </object>   
   <suffix>   die durch eine eingetretene oder erwartete Bedrohung hervorgerufen wird.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Weltmarkt bezeichnet in der Mikrooekonomie einen raeumlich nicht zu bestimmenden Markt  </prefix>   
-  <subject>  auf dem Waren und Leistungen weltweit von Unternehmen oder ganzen Volkswirtschaften  </subject>  
-  <verb>     gehandelt  </verb>     
-  <object>   werden.  </object>   
-  <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -7156,18 +5824,6 @@
   <verb>     wird  </verb>     
   <object>   im Allgemeinen fuer Bedeutungstraeger verwendet  </object>   
   <suffix>   die eine Vorstellung meinen .  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Schrott  </subject>  
-  <verb>     ist  </verb>     
-  <object>   metallischer Wertstoff.  </object>   
-  <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -7332,18 +5988,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Ein Held  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die Hauptfigur einer Geschichte  </object>   
-  <suffix>   Legende oder Sage, die ueber Kraefte verfuegt, die weit ueber die eines normalen Menschen hinausgehen, so dass er zu schweren und grossen "Heldentaten" in der Lage ist, die ihm Ruhm bescheren.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  In vielen Kulturen  </subject>  
   <verb>     wird  </verb>     
   <object>   die Farbe Schwarz mit dem Nichts assoziiert.  </object>   
@@ -7372,30 +6016,6 @@
   <verb>     ist  </verb>     
   <object>   im engeren Sinne die Bezeichnung fuer die staerkste Zuneigung  </object>   
   <suffix>   die ein Mensch fuer einen anderen Menschen zu empfinden faehig ist.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Mysterium  </subject>  
-  <verb>     wird  </verb>     
-  <object>   gewoehnlich mit Geheimnis uebersetzt.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Als Religion bezeichnet man  </subject>  
-  <verb>     eine  </verb>     
-  <object>   Vielzahl ganz unterschiedlicher kultureller Phaenomene  </object>   
-  <suffix>   die menschliches Verhalten, Denkweisen und Wertvorstellungen normativ beeinflussen.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -7480,18 +6100,6 @@
   <verb>     verfuegen  </verb>     
   <object>   und sich dessen gewahr zu sein.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Die Politische Partei  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein auf Dauer angelegter Zusammenschluss von politisch interessierten Menschen mit weitgehend uebereinstimmenden Vorstellungen  </object>   
-  <suffix>   wie das Gemeinwesen funktionieren sollte.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -7655,18 +6263,6 @@
 
 
  <fact>
-  <prefix>   Das Wort Sache bezeichnete in seiner aeltesten Bedeutung aus der germanischen Rechtssprache eine Streitigkeit  </prefix>   
-  <subject>    </subject>  
-  <verb>     einen  </verb>     
-  <object>   Zwist mit einem Widersacher.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Kommunismus bezeichnet eine klassenlose Gesellschaft  </prefix>   
   <subject>  in der das Privateigentum an Produktionsmitteln aufgehoben  </subject>  
   <verb>     ist  </verb>     
@@ -7732,18 +6328,6 @@
   <verb>     fuer  </verb>     
   <object>   den After oder auch Anus.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Das Hauptanwendungsgebiet fuer die WindowsBetriebssystemgruppe  </subject>  
-  <verb>     ist  </verb>     
-  <object>   der DesktopBereich  </object>   
-  <suffix>   es existieren allerdings auch Produkte speziell fuer den Betrieb von Servern oder Embedded Devices wie z.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -7955,18 +6539,6 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Unter Kapitalismus  </subject>  
-  <verb>     wird  </verb>     
-  <object>   eine Wirtschaftsordnung verstanden  </object>   
-  <suffix>   die sich durch Privateigentum an Produktionsmitteln sowie durch Produktion fuer einen den Preis bestimmenden Markt auszeichnet.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Rembrandt van Rijn  </prefix>   
   <subject>  "Der Philosoph"  </subject>  
   <verb>     eine  </verb>     
@@ -8080,30 +6652,6 @@
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   siehe Heirat .  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Der Begriff Endsieg fuer die Beschwoerung eines Sieges  </prefix>   
-  <subject>  der gegen alle Rueckschlaege und Zweifel errungen wird,  </subject>  
-  <verb>     war  </verb>     
-  <object>   bereits im Ersten Weltkrieg gebraeuchlich.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ein lateinischer Text ohne  </subject>  
-  <verb>     erkennbare  </verb>     
-  <object>   Wortumbrueche .  </object>   
-  <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -8592,46 +7140,10 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Als Schmalztolle oder auch Schmalzlocke bezeichnet man  </subject>  
-  <verb>     eine  </verb>     
-  <object>   typische Facon der Frisur aus den 1950er Jahren  </object>   
-  <suffix>   die vor allem von populaeren Kuenstlern des Rock n Roll wie Bill Haley und Elvis Presley kultiviert wurde.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Als Schmalztolle oder auch Schmalzlocke bezeichnet man  </subject>  
-  <verb>     eine  </verb>     
-  <object>   typische Facon der Frisur aus den 1950er Jahren  </object>   
-  <suffix>   die vor allem von populaeren Kuenstlern des Rock n Roll wie Bill Haley und Elvis Presley kultiviert wurde.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Das Panzerabwehrsystem Bill RBS56 von der Firma Bofors  </subject>  
   <verb>     ist  </verb>     
   <object>   eine schultergestuetzte Raketenwaffe.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ein Ereignis  </subject>  
-  <verb>     findet  </verb>     
-  <object>   immer dann statt  </object>   
-  <suffix>   wenn etwas passiert oder sich etwas veraendert.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -8736,18 +7248,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Das klassische Personalpronomen  </subject>  
-  <verb>     wird  </verb>     
-  <object>   auch persoenliches Fuerwort genannt.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Beobachtungsposten  </subject>  
   <verb>     sind  </verb>     
   <object>   Einrichtungen zur direkten Beobachtung eines Gelaendes.  </object>   
@@ -8784,18 +7284,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Material  </subject>  
-  <verb>     ist  </verb>     
-  <object>   in der Fertigungstechnik ein Sammelbegriff fuer Rohstoffe  </object>   
-  <suffix>   Werkstoffe, Halbzeuge, Hilfsstoffe, Betriebsstoffe, Bauteile und Baugruppen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Eine Faser  </subject>  
   <verb>     ist  </verb>     
   <object>   ein im Verhaeltnis zur Laenge duennes und flexibles Gebilde.  </object>   
@@ -8812,18 +7300,6 @@
   <verb>     ist  </verb>     
   <object>   ein  mehr oder weniger ausgedehnter  </object>   
   <suffix>   vom Wechsel der Ereignisse und Eindruecke, vom Verlauf der Geschehnisse erfuellter  Teil der Zeit.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Als Kulturkreis bezeichnet man in der Geisteswissenschaft die Typisierung von Gesellschaften als eine Ansammlung von Voelkern oder Nationen  </prefix>   
-  <subject>  die die  </subject>  
-  <verb>     gleiche  </verb>     
-  <object>   oder zumindest eine aehnliche Kultur zugeschrieben werden.  </object>   
-  <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -8867,18 +7343,6 @@
 
 
  <fact>
-  <prefix>   Der Ausdruck Verlust bezeichnet das Verlorengehen von etwas oder jemandem  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   z.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>     </prefix>   
   <subject>  Auseinandersetzung  </subject>  
   <verb>     ist  </verb>     
@@ -8896,30 +7360,6 @@
   <verb>     einem  </verb>     
   <object>   Gefecht versteht man eine Kampfhandlung waehrend eines Krieges  </object>   
   <suffix>   also eine militaerische Auseinandersetzung feindlich gesinnter Truppen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Die Politische Partei  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein auf Dauer angelegter Zusammenschluss von politisch interessierten Menschen mit weitgehend uebereinstimmenden Vorstellungen  </object>   
-  <suffix>   wie das Gemeinwesen funktionieren sollte.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ja  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die positive Antwort auf eine Frage  </object>   
-  <suffix>   die man entweder positiv oder negativ beantworten kann.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -8956,30 +7396,6 @@
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   Maehren und MaehrischSchlesien .  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Fossile Funde verwandter Arten der heutigen Araukarien  </subject>  
-  <verb>     datieren  </verb>     
-  <object>   bis zu einem Alter von 50 Millionen Jahren  </object>   
-  <suffix>   womit die Araucariaceae eine der aeltesten Baumfamilien der Welt ist.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Eine Siedlung  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Ort  </object>   
-  <suffix>   wo Menschen in Gebaeuden zum Zwecke des Wohnens und Arbeitens zusammen leben.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -9120,30 +7536,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Das Fragewort oder Interrogativpronomen  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Wort in einer Frage  </object>   
-  <suffix>   das nach einem bestimmten Typ von Information fragt.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Das Fragewort oder Interrogativpronomen  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Wort in einer Frage  </object>   
-  <suffix>   das nach einem bestimmten Typ von Information fragt.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Information  </subject>  
   <verb>     ist  </verb>     
   <object>   ein potenziell oder tatsaechlich vorhandenes nutzbares oder genutztes Muster von Materie und/oder Energieformen  </object>   
@@ -9172,18 +7564,6 @@
   <verb>     aus  </verb>     
   <object>   Forschung und Lehre.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Als Religion bezeichnet man  </subject>  
-  <verb>     eine  </verb>     
-  <object>   Vielzahl ganz unterschiedlicher kultureller Phaenomene  </object>   
-  <suffix>   die menschliches Verhalten, Denkweisen und Wertvorstellungen normativ beeinflussen.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -9299,35 +7679,11 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Ein Problem  </subject>  
-  <verb>     ist  </verb>     
-  <object>   der Ausdruck fuer die Schwierigkeit  </object>   
-  <suffix>   einen unbefriedigenden IstZustand in einen besseren Zustand, einen zufriedenstellenden SollZustand zu ueberfuehren.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Der Begriff Ausdruck bedeutet ein Sichtbar oder Hoerbarmachen eines inneren Vorgangs  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   eines Gedankens oder einer Vorstellung sprachlicher oder kuenstlerischer Natur oder den Druck von Texten und Grafiken.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Die IstAufnahme  </subject>  
-  <verb>     ist  </verb>     
-  <object>   eine Bezeichnung aus Betriebswirtschaftslehre und Projektmanagement und stellt eine wichtige Phase des Vorgehensmodells dar  </object>   
-  <suffix>   die der objektiven Ermittlung eines aktuellen Problems moeglichst ohne Bewertung oder Verzerrung dient.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -9444,18 +7800,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Ein Medium  </subject>  
-  <verb>     ist  </verb>     
-  <object>   im Allgemeinen ein Traeger oder ein Uebermittler  </object>   
-  <suffix>   Vermittler von Jemandem oder Etwas.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Als Luft bezeichnet man  </subject>  
   <verb>     das  </verb>     
   <object>   Gasgemisch der Erdatmosphaere.  </object>   
@@ -9480,18 +7824,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Ein Sinnesorgan  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Organ  </object>   
-  <suffix>   das Informationen in Form von Reizen aus der Umwelt aufnimmt, diese in elektrische Impulse umwandelt, die entlang von Nervenfasern weitergeleitet und dann vom Gehirn in Wahrnehmungen umgewandelt werden.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Der Begriff Signal  </subject>  
   <verb>     ist  </verb>     
   <object>   ein optisches oder akustisches Zeichen mit einer bestimmten Bedeutung.  </object>   
@@ -9507,42 +7839,6 @@
   <subject>  den Klang, den Ton, den Knall , wie er von Menschen und auch von Tieren vernommen  </subject>  
   <verb>     werden  </verb>     
   <object>   kann.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Das Wort Film  </prefix>   
-  <subject>    </subject>  
-  <verb>     abgeleitet  </verb>     
-  <object>   vom Traegermedium Nitrozellulose .  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Produktion  </prefix>   
-  <subject>  , Fertigung oder auch Fabrikation im allgemeinen Sprachgebrauch die Herstellung  </subject>  
-  <verb>     ist  </verb>     
-  <object>   der vom Menschen bewirkte TransformationsProzess  </object>   
-  <suffix>   der aus natuerlichen wie bereits produzierten Ausgangsstoffen unter Einsatz von Energie, Arbeitskraft und bestimmten Produktionsmitteln lagerbare Wirtschafts oder Gebrauchsgueter erzeugt.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Dienstleistung bezeichnet in der volkswirtschaftlichen Abgrenzung eine Leistung  </prefix>   
-  <subject>  die nicht der Produktion eines materiellen Gutes dient oder wo der  </subject>  
-  <verb>     materielle  </verb>     
-  <object>   Wert des Leistungsziels nicht im Vordergrund steht.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -9600,18 +7896,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Eine Grenze  </subject>  
-  <verb>     ist  </verb>     
-  <object>   der Rand eines Raumes und damit ein Trennwert  </object>   
-  <suffix>   eine Trennlinie oder flaeche.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Die RAND Corporation  </subject>  
   <verb>     ist  </verb>     
   <object>   eine Denkfabrik in den USA  </object>   
@@ -9640,18 +7924,6 @@
   <verb>     ist  </verb>     
   <object>   ein Zustand vollstaendiger Unordnung oder Verwirrung und damit der Gegenbegriff zu Kosmos  </object>   
   <suffix>   dem griechischen Begriff fuer Ordnung.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Antonyme oder Gegenwoerter  </subject>  
-  <verb>     sind  </verb>     
-  <object>   Woerter mit gegensaetzlicher Bedeutung.  </object>   
-  <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -9732,18 +8004,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Schriftsteller  </subject>  
-  <verb>     sind  </verb>     
-  <object>   Personen  </object>   
-  <suffix>   die das Verfassen eigener literarischer Texte als ihren beruflichen Schwerpunkt setzen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Die Musikwissenschaft  </subject>  
   <verb>     ist  </verb>     
   <object>   die Bezeichnung fuer die wissenschaftliche Disziplin  </object>   
@@ -9796,18 +8056,6 @@
   <verb>     ist  </verb>     
   <object>   nach deutschem Kommunalrecht ein Gemeindeverband und eine Gebietskoerperschaft.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Eine Grafschaft  </subject>  
-  <verb>     war  </verb>     
-  <object>   urspruenglich der Amtsbezirk  </object>   
-  <suffix>   dem ein Graf als Richter vorstand; dann das reichsunmittelbare Besitztum und spaeter die Standesherrschaft eines Grafen; auch Bezeichnung der Provinzen in Grossbritannien , der Republik Irland und Nordamerika , wobei fuer die USA und die Republik Irland der Begriff Landkreis die bessere Uebersetzung ist.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -10032,18 +8280,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Ein Held  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die Hauptfigur einer Geschichte  </object>   
-  <suffix>   Legende oder Sage, die ueber Kraefte verfuegt, die weit ueber die eines normalen Menschen hinausgehen, so dass er zu schweren und grossen Heldentaten in der Lage ist, die ihm Ruhm bescheren.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Legende bezeichnet urspruenglich  </subject>  
   <verb>     eine  </verb>     
   <object>   Geschichte zum Lesen oder auch Vorlesen.  </object>   
@@ -10224,18 +8460,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Eine Krankheit  </subject>  
-  <verb>     ist  </verb>     
-  <object>   eine Stoerung der koerperlichen  </object>   
-  <suffix>   kognitiven, sozialen und/oder seelischen Funktionen, die die Leistungsfaehigkeit oder das Wohlbefinden eines Lebewesens subjektiv oder intersubjektiv deutlich wahrnehmbar negativ beeinflusst oder eine solche Beeinflussung erwarten laesst.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Markdorf  </subject>  
   <verb>     ist  </verb>     
   <object>   eine Stadt im Bodenseekreis  </object>   
@@ -10344,18 +8568,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Ein Gegner  </subject>  
-  <verb>     ist  </verb>     
-  <object>   jemand  </object>   
-  <suffix>   der einem anderem im Kampf gegenuebersteht oder der etwas ablehnt.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Der Vorname  </subject>  
   <verb>     ist  </verb>     
   <object>   der Teil des Namens einer Person  </object>   
@@ -10452,18 +8664,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Embedded  </subject>  
-  <verb>     bedeutet  </verb>     
-  <object>   so viel wie eingebettet  </object>   
-  <suffix>   integriert.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Gestalt meint umgangssprachlich die  </subject>  
   <verb>     aeussere  </verb>     
   <object>   Form  </object>   
@@ -10535,18 +8735,6 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Schriftsteller  </subject>  
-  <verb>     sind  </verb>     
-  <object>   Personen  </object>   
-  <suffix>   die das Verfassen eigener literarischer Texte als ihren beruflichen Schwerpunkt setzen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Unter einer Umsetzung versteht man im Beamtenrecht die Zuweisung des Beamten zu einem anderen Dienstposten innerhalb derselben Behoerde.  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
@@ -10583,47 +8771,11 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  Die Umgangssprache  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die Wortwahl  </object>   
-  <suffix>   die Menschen im taeglichen Umgang nutzen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Die Umgangssprache  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die Wortwahl  </object>   
-  <suffix>   die Menschen im taeglichen Umgang nutzen.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Geraeucherte Mettwurst im Kunstdarm  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
   <suffix>   Luftgetrocknete Salami im Naturdarm .  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Mettwurst mit Bratkartoffeln und Sauerkraut und etwas Senf.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -10656,18 +8808,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Hochschullehrer lehren und forschen innerhalb  </subject>  
-  <verb>     ihres  </verb>     
-  <object>   Lehr und Forschungsauftrages selbststaendig und in eigener Verantwortung.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Die Prignitz  </subject>  
   <verb>     ist  </verb>     
   <object>   eine Landschaft im Nordwesten des Landes Brandenburg.  </object>   
@@ -10684,30 +8824,6 @@
   <verb>     ist  </verb>     
   <object>   ein Bundesland im Nordosten Deutschlands.  </object>   
   <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Mineralstoffe sind lebensnotwendige  </prefix>   
-  <subject>  nichtorganische Naehrstoffe, welche der Organismus nicht selbst herstellen kann; sie  </subject>  
-  <verb>     muessen  </verb>     
-  <object>   ihm mit der Nahrung zugefuehrt werden.  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Der Begriff Bauwesen bezeichnet uebergreifend das Fachgebiet  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>   das sich mit der Errichtung von Bauwerken beschaeftigt.  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -10824,42 +8940,6 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Eine Vorrichtung  </subject>  
-  <verb>     ist  </verb>     
-  <object>   im maschinenbaulichen Sinn ein Hilfsmittel in der Art eines Werkzeuges  </object>   
-  <suffix>   jedoch nicht als allgemein verwendbares Werkzeug , sondern in aller Regel zu einem bestimmten Zweck eigens gefertigt oder aus Teilen zusammengebaut und auch nur fuer eine bestimmte Art Arbeit oder Fertigung verwendbar.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Ekel  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die Bezeichnung fuer die Empfindung einer starken Abneigung und von Widerwille gegen Substanzen und Objekte wie Nahrung  </object>   
-  <suffix>   Exkremente und verwesendes organisches Material oder gegen Gerueche.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Der Geruch  </subject>  
-  <verb>     ist  </verb>     
-  <object>   die Interpretation der SinnesErregungen  </object>   
-  <suffix>   die von den Chemorezeptoren der Nase oder anderer Geruchsorgane an das Gehirn eines Lebewesens geliefert werden.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
   <subject>  Kritik  </subject>  
   <verb>     kam  </verb>     
   <object>   ueber das franzoesische critique ins Deutsche.  </object>   
@@ -10919,82 +8999,10 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  wer  </subject>  
-  <verb>     bin  </verb>     
-  <object>   du?  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
   <prefix>   Namen sind Bezeichnungen  </prefix>   
   <subject>  an die keine denotative Bedeutung gekoppelt  </subject>  
   <verb>     ist  </verb>     
   <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  wie  </subject>  
-  <verb>     ist  </verb>     
-  <object>   mein Name?  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Das Fragewort oder Interrogativpronomen  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Wort in einer Frage  </object>   
-  <suffix>   das nach einem bestimmten Typ von Information fragt.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Was  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Camcorder?  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Was  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein Haus?  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  was  </subject>  
-  <verb>     ist  </verb>     
-  <object>   eine CD?  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -11013,13 +9021,12 @@
   <category> normal  </category> 
  </fact>
 
-
  <fact>
   <prefix>     </prefix>   
-  <subject>  wer  </subject>  
-  <verb>     bist  </verb>     
-  <object>   ich?  </object>   
-  <suffix>     </suffix>   
+  <subject>  Bush ist  </subject>  
+  <verb>     siehe  </verb>     
+  <object>   dort Etymologie und bekannte Namenstraeger  </object>   
+  <suffix>   englische Rockband der Richtung Alternative-Rock  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -11028,9 +9035,9 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Was  </subject>  
+  <subject>  George  </subject>  
   <verb>     ist  </verb>     
-  <object>   EMULE?  </object>   
+  <object>   die englische Variante des maennlichen Vornamens Georg.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -11040,45 +9047,9 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Was  </subject>  
-  <verb>     ist  </verb>     
-  <object>   eine Tastatur?  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Wer  </subject>  
-  <verb>     bin  </verb>     
-  <object>   du?  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Wer  </subject>  
-  <verb>     bin  </verb>     
-  <object>   du?  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Wie alt  </subject>  
-  <verb>     bin  </verb>     
-  <object>   du?  </object>   
+  <subject>  Nach anfaenglichen Erfolgen mit einem BASICInterpreter Ende der 70er Jahre  </subject>  
+  <verb>     hat  </verb>     
+  <object>   die Firma erstmals 1981 das Betriebssystem MSDOS vorgestellt.  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
