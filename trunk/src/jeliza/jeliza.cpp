@@ -546,6 +546,22 @@ Answer JEliza::answer_logical_question_type_1 (string frage, string orig_fra) {
 	return answer;
 }
 
+string JEliza::getGreeting () {
+    DB db = jdb::parseJDB("jeliza-standard.xml");
+
+    answers greetings;
+    for (DB::iterator it = db.begin(); it != db.end(); it++) {
+        if (Util::contains(it->category, "greeting")) {
+            greetings.push_back(it->genSentences(true)[0]);
+        }
+    }
+
+    srand((unsigned) time(NULL));
+	int random = rand() % greetings.size();
+	string answer = greetings[random];
+	return answer;
+}
+
 unsigned int JEliza::isQuestion (string ques) {
     ques = Util::toLower(ques);
     if (Util::contains(ques, string("was"))) {

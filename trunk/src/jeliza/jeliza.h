@@ -221,7 +221,7 @@ public:
 	unsigned int isQuestion (string ques);
 	Answer ask (string frage);
 	double rechne (string s);
-	string JEliza:getGreeting ();
+	string getGreeting ();
 };
 
 //JElizaData JEliza::m_jd = JElizaData();

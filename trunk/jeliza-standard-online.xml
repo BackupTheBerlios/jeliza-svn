@@ -79,7 +79,7 @@
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 100  </priority> 
-  <category> greeting  </category> 
+  <category> normal  </category> 
  </fact>
 
 
@@ -91,7 +91,7 @@
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 100  </priority> 
-  <category> greeting  </category> 
+  <category> normal  </category> 
  </fact>
 
 

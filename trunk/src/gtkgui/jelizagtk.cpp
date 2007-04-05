@@ -1107,7 +1107,7 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 	refXml->get_widget("fs_tv", fs_tv);
 
 	Glib::RefPtr<Gtk::TextBuffer::Tag> refTagMatch = Gtk::TextBuffer::Tag::create();
-	refTagMatch->property_size_points() = 30;
+	refTagMatch->property_size_points() = 28;
 	Glib::RefPtr<Gtk::TextBuffer::TagTable> refTagTable = Gtk::TextBuffer::TagTable::create();
 	refTagTable->add(refTagMatch);
 	Glib::RefPtr<Gtk::TextBuffer> refBuffer = Gtk::TextBuffer::create(refTagTable);
@@ -1226,6 +1226,9 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 	}
 
 
+    d1.textview->get_buffer()->set_text(Glib::ustring("JEliza: ") + global_jeliza->getGreeting() + Glib::ustring("\n"));
+    d1.textview->get_buffer()->apply_tag(d1.refTagMatch, d1.textview->get_buffer()->begin(),
+            d1.textview->get_buffer()->end());
 
 
 	const Glib::ustring jelizaxpm("jeliza16.xpm");
