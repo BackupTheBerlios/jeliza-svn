@@ -69,6 +69,10 @@ void JEliza::saveSentence (answers anss) {
 	vorbereite();
 
     for (answers::iterator it = anss.begin(); it != anss.end(); it++) {
+        if (isQuestion(*it) == 0) {
+            continue;
+        }
+
         vector<string> temp;
         Util::split(*it, string(" "), temp);
 

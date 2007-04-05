@@ -217,7 +217,6 @@ string wikipedia (string wort, bool rec = false) {
     for (int x = 0; x < lines.size(); x++) {
         string line = lines[x];
         line = Util::strip(line);
-        string sline = "-" + line + "-";
 
         if (Util::contains(line, "cols='80'")) {
 //            cout << "inRichtigemBereich = true; " << line << endl;
@@ -225,11 +224,13 @@ string wikipedia (string wort, bool rec = false) {
             line = line.substr(line.find(">") + 1, line.size() - line.find(">") - 1);
         }
 
+        string sline = "-" + line + "-";
+
         if (inRichtigemBereich) {
             cout << inKlammer << " " << line << endl;
         }
 
-        if (ohneEckKlammer(satz, false).size() < 2) {
+        if (Util::contains(sline, "-[[")) {
             continue;
         }
 
@@ -361,6 +362,11 @@ string search_in_wikipedia(string wort) {
             satz = wikipedia(Util::toUpper(orig_wort));
         }
     }
+
+    satz = Util::replace(satz, string("&"), string(""));
+    satz = Util::replace(satz, string("amp;"), string("&"));
+    satz = Util::replace(satz, string("nbsp;"), string("&"));
+
     return satz;
 }
 

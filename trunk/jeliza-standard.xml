@@ -9035,10 +9035,10 @@
 
 
  <fact>
-  <prefix>     </prefix>   
-  <subject>  was  </subject>  
-  <verb>     ist  </verb>     
-  <object>   ein camcorder?  </object>   
+  <prefix>   Als Fernseher oder Fernsehgeraet bezeichnet man ein Geraet zum Empfang und zur Wiedergabe von Fernsehsignalen.  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -9048,9 +9048,9 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  was  </subject>  
+  <subject>  Was  </subject>  
   <verb>     ist  </verb>     
-  <object>   ein camcorder?  </object>   
+  <object>   ein Fernseher?  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
