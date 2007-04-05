@@ -393,66 +393,252 @@ string download (string url) {
 		}
 		cout << endl << "Finished!" << endl;
 
-/*		ifstream ifstr(filename.c_str());
-		string all;
-		string temp;
-		int inTable = 0;
-		bool anfangOk = false;
-		int inImg = false;
-		while (ifstr) {
-			getline(ifstr, temp);
+	}
+	catch(exception& e)
+	{
+		cout << endl;
+		cerr << e.what() << endl;
+	}
 
-			if ((Util::contains(temp, string("table")) && !Util::contains(temp, string("/table")))) {
-				inTable++;
-			}
-			if (!inImg && Util::contains(temp, string("div")) && Util::contains(temp, string("img"))) {
-			    inImg = true;
-			}
-//			cout << inTable << endl;
-			if (inTable < 1 && anfangOk && !inImg) {
-				string tmp = Util::replace(temp, string("<li"), string("\n - <l22i"));
-				tmp = Util::replace(tmp, string("<l22i"), string("<li"));
+#ifdef linux
+	close(Socket); // Verbindung beenden
+#else
+	closesocket(Socket); // Windows-Variante
+#endif
 
-                tmp = Util::strip(tmp);
-                tmp = ohneHtml(tmp);
-                tmp = Util::strip(tmp);
-                if (tmp.size() > 1) {
-                    all += tmp;
-                    all += "#";
-                }
-			} else {
-			    cout << 1 << inImg << " " << temp << endl;
-			}
-			if (Util::contains(temp, string("/table"))) {
-                inTable--;
-			}
-			if (Util::contains(temp, string("/div")) && inImg && !Util::contains(temp, string("img"))) {
-                inImg = false;
-			    cout << 2 << inImg << " " << temp << endl;
-			}
+    ifstream ifstr(filename.c_str());
+    string all;
+    string temp;
+    while (ifstr) {
+		getline(ifstr, temp);
+//		temp = Util::strip(temp);
 
-			if (Util::contains(temp, string("<!-- start content -->"))) {
-				anfangOk = true;
+		all += temp;
+		all += "\n";
+    }
+
+    return all;
+}
+
+string download_with_pbar (string url) {
+	using namespace std;
+
+	string URL = url;
+
+#ifndef linux
+	WSADATA w;
+	if(WSAStartup(MAKEWORD(2,2), &w) != 0)
+	{
+		cout << "Winsock 2 konnte nicht gestartet werden! Error #" << WSAGetLastError() << endl;
+		return "";
+	}
+#endif
+
+	RemoveHttp(URL);
+
+	string filename;
+
+	string hostname = RemoveHostname(URL);
+
+	hostent* phe = gethostbyname(hostname.c_str());
+
+	if(phe == NULL)
+	{
+		cout << "Host konnte nicht aufgeloest werden!" << endl;
+		return "";
+	}
+
+	if(phe->h_addrtype != AF_INET)
+	{
+		cout << "Ungueltiger Adresstyp!" << endl;
+		return "";
+	}
+
+	if(phe->h_length != 4)
+	{
+		cout << "Ungueltiger IP-Typ!" << endl;
+		return "";
+	}
+
+	int Socket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+	if(Socket == -1)
+	{
+		cout << "Socket konnte nicht erstellt werden!" << endl;
+		return "";
+	}
+
+	sockaddr_in service;
+	service.sin_family = AF_INET;
+	service.sin_port = htons(80); // Das HTTP-Protokoll benutzt Port 80
+
+	char** p = phe->h_addr_list; // p mit erstem Listenelement initialisieren
+	int result; // Ergebnis von connect
+	do
+	{
+		if(*p == NULL) // Ende der Liste
+		{
+			cout << "Verbindung fehlgschlagen!" << endl;
+			return "";
+		}
+
+//		char xyz[4];
+//		xyz[0] = 66;
+//		xyz[1] = 230;
+//		xyz[2] = 200;
+//		xyz[3] = 100;
+
+//		service.sin_addr.s_addr = *reinterpret_cast<unsigned long*>(xyz);
+		service.sin_addr.s_addr = *reinterpret_cast<unsigned long*>(*p);
+		++p;
+		result = connect(Socket, reinterpret_cast<sockaddr*>(&service), sizeof(service));
+	}
+	while(result == -1);
+
+	cout << "Verbindung erfolgreich!" << endl;
+
+	string request = "GET ";
+	request += URL;	// z.B. /faq/index.html
+	request += " HTTP/1.1\n";
+	request += "Host: " + hostname + "\n";
+	request += "User-Agent: Mozilla/5.0 (X11; U; Linux i686; de; rv:1.8.1.2) Gecko/20060601 Firefox/2.0.0.2 (Ubuntu-edgy)\n";
+	request += "Connection: close\n\n";
+
+	try
+	{
+		SendAll(Socket, request.c_str(), request.size());
+
+		int code = 100; // 100 = Continue
+		string Protokoll;
+		stringstream firstLine; // Die erste Linie ist anders aufgebaut als der Rest
+		while(code == 100)
+		{
+			GetLine(Socket, firstLine);
+			firstLine >> Protokoll;
+			firstLine >> code;
+			if(code == 100)
+			{
+				GetLine(Socket, firstLine); // Leere Zeile nach Continue ignorieren
+			}
+		}
+		cout << "Protokoll: " << Protokoll << endl;
+
+		if(code != 200)
+		{
+			firstLine.ignore(); // Leerzeichen nach dem Statuscode ignorieren
+			string msg;
+			getline(firstLine, msg);
+			cout << "Error #" << code << " - " << msg << endl;
+			return "";
+		}
+
+		bool chunked = false;
+		const int noSizeGiven = -1;
+		int size = noSizeGiven;
+
+		while(true)
+		{
+			stringstream sstream;
+			GetLine(Socket, sstream);
+			if(sstream.str() == "\r") // Header zu Ende?
+			{
+				break;
+			}
+			string left; // Das was links steht
+			sstream >> left;
+			sstream.ignore(); // ignoriert Leerzeichen
+			if(left == "Content-Length:")
+			{
+				sstream >> size;
+			}
+			if(left == "Transfer-Encoding:")
+			{
+				string transferEncoding;
+				sstream >> transferEncoding;
+				if(transferEncoding == "chunked")
+				{
+					chunked = true;
+				}
 			}
 		}
 
-		string noHtml = all;
-//		cout << all << endl << endl;
-//		cout << noHtml << endl << endl;
-		noHtml = Util::strip(noHtml);
-		vector<string> parts;
-		Util::split(noHtml, string("#"), parts);
+		filename = "download" + GetFileEnding(URL);
+		cout << "Filename: " << filename << endl;
+		fstream fout(filename.c_str(), ios::binary | ios::out);
+		if(!fout)
+		{
+			cout << "Could Not Create File!" << endl;
+			return "";
+		}
+		int recvSize = 0; // Empfangene Bytes insgesamt
+		char buf[1024];
+		int bytesRecv = -1; // Empfangene Bytes des letzten recv
 
-//		cout << parts[0] << endl;
+		if(size != noSizeGiven) // Wenn die Größe über Content-length gegeben wurde
+		{
+			cout << "0%";
+			while(recvSize < size)
+			{
+				if((bytesRecv = recv(Socket, buf, sizeof(buf), 0)) <= 0)
+				{
+					throw CreateSocketError();
+				}
+				recvSize += bytesRecv;
+				fout.write(buf, bytesRecv);
+				cout << "\r" << recvSize * 100 / size << "%" << flush; // Mit \r springen wir an den Anfang der Zeile
+				(*JELIZA_PROGRESS) = recvSize * 100.0 / size;
+			}
+		}
+		else
+		{
+			if(!chunked)
+			{
+				cout << "Downloading... (Unknown Filesize)" << endl;
+				while(bytesRecv != 0) // Wenn recv 0 zurück gibt, wurde die Verbindung beendet
+				{
+					if((bytesRecv = recv(Socket, buf, sizeof(buf), 0)) < 0)
+					{
+						throw CreateSocketError();
+					}
+					fout.write(buf, bytesRecv);
+				}
+			}
+			else
+			{
+				cout << "Downloading... (Chunked)" << endl;
+				while(true)
+				{
+					stringstream sstream;
+					GetLine(Socket, sstream);
+					int chunkSize = -1;
+					sstream >> hex >> chunkSize; // Größe des nächsten Parts einlesen
+					if(chunkSize <= 0)
+					{
+						break;
+					}
+					cout << "Downloading Part (" << chunkSize << " Bytes)... " << endl;
+					recvSize = 0; // Vor jeder Schleife wieder auf 0 setzen
+					while(recvSize < chunkSize)
+					{
+						int bytesToRecv = chunkSize - recvSize;
+						if((bytesRecv = recv(Socket, buf, bytesToRecv > sizeof(buf) ? sizeof(buf) : bytesToRecv, 0)) <= 0)
+						{
+							throw CreateSocketError();
+						}
+						recvSize += bytesRecv;
+						fout.write(buf, bytesRecv);
+						cout << "\r" << recvSize * 100 / chunkSize << "%" << flush;
+					}
+					cout << endl;
+					for(int i = 0; i < 2; ++i)
+					{
+						char temp;
+						recv(Socket, &temp, 1, 0);
+					}
+				}
+			}
+		}
+		cout << endl << "Finished!" << endl;
 
-        for (vector<string>::iterator it = parts.begin(); it != parts.end(); it++) {
-            string p = Util::strip(*it);
-            cout << "  " << p << endl;
-            if (p.size() > 5) {
-                cout << p << endl;
-                break;
-            }
-        }*/
 	}
 	catch(exception& e)
 	{

@@ -69,7 +69,7 @@ void JEliza::saveSentence (answers anss) {
 	vorbereite();
 
     for (answers::iterator it = anss.begin(); it != anss.end(); it++) {
-        if (isQuestion(*it) == 0) {
+        if (isQuestion(*it) != 0) {
             continue;
         }
 
@@ -457,8 +457,9 @@ Answer JEliza::answer_logical_question_type_1 (string frage, string orig_fra) {
     dbs.verb = Util::toLower(dbs.verb);
 
 
-    if (dbs.object.size() > 2) {
-        string definition = search_in_wikipedia(dbs.object);
+    (*JELIZA_PROGRESS) = 30;
+    if (dbs.object.size() > 0 && !Util::contains(dbs_orig.verb, "bin")) {
+        string definition = search_in_wikipedia_with_newlines(dbs.object);
         if (definition.size() > 2) {
             return Answer(definition);
         }
@@ -470,6 +471,8 @@ Answer JEliza::answer_logical_question_type_1 (string frage, string orig_fra) {
     dbs.print();
     dbs_orig.print();
 
+    (*JELIZA_PROGRESS) = 40;
+
     if (dbs_orig.subject.size() < 1 || dbs_orig.object.size() < 1 || dbs_orig.verb.size() < 1) {
         cout << "- Unvollstaendiger Satzteil in: \"" << frage << "\"" << endl;
         return Answer("");
@@ -478,9 +481,15 @@ Answer JEliza::answer_logical_question_type_1 (string frage, string orig_fra) {
     answers meinungen;
 
     string s;
+    int ssize = JEliza::m_jd.m_sents->size();
+    int x = 0;
     for (DB::iterator it = JEliza::m_jd.m_sents->begin(); it != JEliza::m_jd.m_sents->end(); it++) {
         DBSentence orig = *it;
 		DBSentence sent = *it;
+
+		x++;
+
+		(*JELIZA_PROGRESS) += 8.0 / ssize * x;
 
 		if (sent.genSentences(true)[0].size() > 60) {
 		    continue;
@@ -576,12 +585,16 @@ unsigned int JEliza::isQuestion (string ques) {
  */
 Answer JEliza::ask(string frage) {
     string orig_fra = frage;
+    (*JELIZA_PROGRESS) = 2;
     frage = ohne_muell(frage);
+    (*JELIZA_PROGRESS) = 3;
 	frage = Util::umwandlung(frage);
 
 	cout << "- Suche eine passende Antwort: " << endl;
 
     Answer ans;
+
+    (*JELIZA_PROGRESS) = 5;
 
     // Modul Empty
     ModQues_Empty mod_empty(*this, *JEliza::m_jd.m_sents);
@@ -590,12 +603,16 @@ Answer JEliza::ask(string frage) {
         return ans;
     }
 
+    (*JELIZA_PROGRESS) = 10;
+
     // Modul Math
     ModQues_Math mod_math(*this, *JEliza::m_jd.m_sents);
     ans = mod_math.get(frage);
     if (ans.m_ans.size() > 0) {
         return ans;
     }
+
+    (*JELIZA_PROGRESS) = 15;
 
     // Modul Logical
     ModQues_Logical mod_logical(*this, *JEliza::m_jd.m_sents);
@@ -604,9 +621,14 @@ Answer JEliza::ask(string frage) {
         return ans;
     }
 
+    (*JELIZA_PROGRESS) = 60;
+
     // Modul Similar
     ModQues_Similar mod_similar(*this, *JEliza::m_jd.m_sents);
     ans = mod_similar.get(frage);
+
+    (*JELIZA_PROGRESS) = 95;
+
     return ans;
 }
 

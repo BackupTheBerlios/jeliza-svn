@@ -33,6 +33,7 @@
 #include <gtkmm/filechooserdialog.h>
 #include <gtkmm/messagedialog.h>
 #include <gtkmm/stock.h>
+#include <gtkmm/progressbar.h>
 //#include <gtkmm/.h>
 #include <libglademm.h>
 
@@ -77,11 +78,14 @@ class MainWindow : public Gtk::Window {
 public:
     //zugriff auf glade-datei
     Glib::RefPtr<Gnome::Glade::Xml> &refXml;
+    Gtk::ProgressBar* m_pbar;
 
 	MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &refXml);
 	void thread_worker();
+	void thread_work_helper();
 	void answer();
 	void launch_threads();
+	void jeliza_dispatcher_pulse();
 };
 
 int main(int argc, char *argv[]) {
@@ -89,6 +93,9 @@ int main(int argc, char *argv[]) {
     if (!Glib::thread_supported()) {
         Glib::thread_init();
     }
+
+    double JELIZA_PROGRESS2 = 0.0;
+    JELIZA_PROGRESS = &JELIZA_PROGRESS2;
 
     main_2(argc, argv);
 }
@@ -98,12 +105,17 @@ auto_ptr<JEliza> global_jeliza(new JEliza());
 bool vorbereitet = false;
 
 Glib::Thread* jeliza_thread;
+Glib::Thread* jeliza_helper_thread;
 Request jeliza_request;
 Request temp_req;
+bool readyForNewRequests = true;
+
+double* JELIZA_PROGRESS;
 
 
 Glib::StaticMutex mutex = GLIBMM_STATIC_MUTEX_INIT;
 Glib::Dispatcher* jeliza_dispatcher;
+Glib::Dispatcher* jeliza_dispatcher_pulse;
 //unsigned int verarbeitete_requests = 0;
 
 string toASCIIreally(string all);
@@ -190,7 +202,7 @@ string ohneEckKlammer (string satz, bool withPipeInBrackets) {
     return Util::strip(satz);
 }
 
-string wikipedia (string wort, bool rec = false) {
+string wikipedia (string wort, bool rec = false, bool with_newlines = false) {
     wort = Util::replace(wort, string(" "), string("_"));
 
     string url = "http://de.wikipedia.org/w/index.php?title=" + wort + "&action=edit";
@@ -212,6 +224,8 @@ string wikipedia (string wort, bool rec = false) {
     Util::split(all, string("\n"), lines);
 
     bool inRichtigemBereich = false;
+    bool liste = false;
+    int listenIndex = 0;
     int inKlammer = 0;
     string satz = "";
     for (int x = 0; x < lines.size(); x++) {
@@ -232,6 +246,24 @@ string wikipedia (string wort, bool rec = false) {
 
         if (Util::contains(sline, "-[[")) {
             continue;
+        }
+
+        if (inRichtigemBereich && liste && line.size() > 1) {
+            if (Util::contains(line, "* ")) {
+                listenIndex++;
+                stringstream sst;
+                sst << listenIndex;
+                string j;
+                sst >> j;
+                satz += "\n";
+                satz += j;
+                satz += ". ";
+                line = ohneEckKlammer(line.substr(2, line.size() - 2), true);
+                satz += line;
+                continue;
+            } else {
+                break;
+            }
         }
 
         if (inRichtigemBereich && Util::contains(line, string("{{"))) {
@@ -296,22 +328,41 @@ string wikipedia (string wort, bool rec = false) {
 
 //            cout << temp[0] << endl;
 
-            if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
-                satz = Util::strip(temp[0]) + ". " + Util::strip(temp[1]) + ".";
-            } else if (temp[0].size() < 12) {
-                satz = "";
-            } else if (temp2.size() < 7) {
-                satz = "";
-            } else if (Util::contains(satz, string(":"))) {
-                satz = "";
-            } else {
-                satz = Util::strip(temp[0]) + ".";
+            if (!with_newlines) {
+                cout << "with_newlines == false " << line << " | " << satz << endl;
+
+                if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
+                    satz = Util::strip(temp[0]) + ". " + Util::strip(temp[1]) + ".";
+                } else if (temp[0].size() < 12) {
+                    satz = "";
+                } else if (temp2.size() < 7) {
+                    satz = "";
+                } else if (Util::contains(satz, string(":"))) {
+                    satz = "";
+                } else {
+                    satz = Util::strip(temp[0]) + ".";
+                }
+                satz = Util::replace(satz, string("-"), string(""));
+                satz = Util::replace(satz, string("  "), string(" "));
+
+                break;
+            }
+            else {
+                cout << liste << "with_newlines == true " << line << " | " << satz << endl;
+
+                if (Util::contains(satz, string(":")) || temp[0].size() < 12 || temp2.size() < 7) {
+                    satz = satz;
+                } else if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
+                    satz = Util::strip(temp[0]) + ". " + Util::strip(temp[1]) + ".";
+                } else {
+                    satz = Util::strip(temp[0]) + ".";
+                }
+                satz = Util::replace(satz, string("-"), string(""));
+                satz = Util::replace(satz, string("  "), string(" "));
+
+                liste = true;
             }
 
-            satz = Util::replace(satz, string("-"), string(""));
-            satz = Util::replace(satz, string("  "), string(" "));
-
-            break;
         }
 
         if (inRichtigemBereich && inKlammer > 0 && Util::contains(line, string("}}"))) {
@@ -348,18 +399,53 @@ string search_in_wikipedia(string wort) {
 
     string satz;
 
-    if (wort.size() < 3) {
+    if (wort.size() < 1) {
         return "";
     }
 
     cout << "- Wort zum Nachschlagen: " << wort << endl;
-    satz = wikipedia(wort);
+    satz = wikipedia(wort, false, false);
     if (satz.size() < 1) {
         cout << "- Wort zum Nachschlagen: " << orig_wort << endl;
-        satz = wikipedia(orig_wort);
+        satz = wikipedia(orig_wort, false, false);
         if (satz.size() < 1) {
             cout << "- Wort zum Nachschlagen: " << Util::toUpper(orig_wort) << endl;
-            satz = wikipedia(Util::toUpper(orig_wort));
+            satz = wikipedia(Util::toUpper(orig_wort), false, false);
+        }
+    }
+
+    satz = Util::replace(satz, string("&"), string(""));
+    satz = Util::replace(satz, string("amp;"), string("&"));
+    satz = Util::replace(satz, string("nbsp;"), string("&"));
+    satz = Util::replace(satz, string("\n"), string(""));
+    satz = Util::replace(satz, string("\r"), string(""));
+
+    return satz;
+}
+
+string search_in_wikipedia_with_newlines(string wort) {
+    wort = Util::strip(wort);
+    wort = Util::toLower(wort);
+    string orig_wort = wort;
+    string firstchar = string(Util::toUpper(wort.substr(0, 1)));
+    wort = wort.substr(1, wort.size());
+    wort = firstchar + wort;
+    wort = Util::strip(wort);
+
+    string satz;
+
+    if (wort.size() < 1) {
+        return "";
+    }
+
+    cout << "- Wort zum Nachschlagen: " << wort << endl;
+    satz = wikipedia(wort, false, true);
+    if (satz.size() < 1) {
+        cout << "- Wort zum Nachschlagen: " << orig_wort << endl;
+        satz = wikipedia(orig_wort, false, true);
+        if (satz.size() < 1) {
+            cout << "- Wort zum Nachschlagen: " << Util::toUpper(orig_wort) << endl;
+            satz = wikipedia(Util::toUpper(orig_wort), false, true);
         }
     }
 
@@ -732,21 +818,6 @@ void on_Ask_clicked(Data1& data) {
         Glib::Mutex::Lock lock(mutex);
         jeliza_request = r;
     }
-
-	/*(*global_jeliza) << Question(fra);
-	(*global_jeliza) >> bestReply;
-
-	bestReply = toASCII(bestReply);
-	msg = Glib::ustring(bestReply);
-	(*global_jeliza) << LearnableSentence(fra);
-
-	data.textview->get_buffer()->set_text(data.textview->get_buffer()->get_text() + Glib::ustring("Mensch: " + fra) + Glib::ustring("\nJEliza: ") + msg + Glib::ustring("\n"));
-	data.entry->set_text("");
-
-	data.textview->get_buffer()->apply_tag(data.refTagMatch, data.textview->get_buffer()->begin(), data.textview->get_buffer()->end());
-	TextBuffer::iterator it = data.textview->get_buffer()->end();*/
-
-	//cout << "asked1" << endl;
 }
 
 void fs_on_Ask_clicked(Data4& data) {
@@ -772,26 +843,6 @@ void fs_on_Ask_clicked(Data4& data) {
         Glib::Mutex::Lock lock(mutex);
         jeliza_request = r;
     }
-
-
-
-	/*durchsuche_nach_unbekanntem (fra);
-
-	(*global_jeliza) << Question(fra);
-	(*global_jeliza) >> bestReply;
-
-	bestReply = toASCII(bestReply);
-	msg = Glib::ustring(bestReply);
-	(*global_jeliza) << LearnableSentence(fra);
-
-	data.textview->get_buffer()->set_text(Glib::ustring(msg) + Glib::ustring("\n")); // data.textview->get_buffer()->get_text() + "Mensch: " + fra + "\nJEliza: " +
-	data.entry->set_text("");
-
-	data.textview->get_buffer()->apply_tag(data.refTagMatch, data.textview->get_buffer()->begin(), data.textview->get_buffer()->end());
-	TextBuffer::iterator it = data.textview->get_buffer()->end();*/
-	//data.textview->scroll_to(it, 0);
-
-	//cout << "asked2" << endl;
 }
 
 void fs_end_clicked(Data4& data) {
@@ -806,22 +857,12 @@ void on_fullscreen_mode_activate(Data4& data) {
 }
 
 void on_load_online_activate(Data3 data) {
-    string all1 = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/JEliza-online.txt");
-    string all2 = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/subject-verb-online.txt");
-    string all3 = download("http://svn.berlios.de/svnroot/repos/jeliza/trunk/verb-object-online.txt");
-
-    ofstream o1("JEliza.txt");
-    o1 << all1 << endl;
-    o1.close();
-
-    ofstream o2("subject-verb.txt");
-    o2 << all2 << endl;
-    o2.close();
-
-    ofstream o3("verb-object.txt");
-    o3 << all3 << endl;
-    o3.close();
-
+    {
+        Glib::Mutex::Lock lock(mutex);
+        Request r;
+        r.todo = "load_online";
+        jeliza_request = r;
+    }
     {
         Glib::Mutex::Lock lock(mutex);
         Request r;
@@ -858,33 +899,65 @@ void MainWindow::thread_worker() {
             Request r = jeliza_request;
             if (r.todo.size() > 0) {
                 cout << "Neuer Request" << endl;
-                jeliza_request.todo = string("");
+                readyForNewRequests = false;
+                jeliza_helper_thread = Glib::Thread::create (sigc::mem_fun(*this, &MainWindow::thread_work_helper), true);
 
-                if (r.todo.size() > 5) {
-                    global_jeliza->vorbereite();
+                while (!readyForNewRequests) {
+                    jeliza_dispatcher_pulse();
 
-                    cout << "- Datenbank wurde vorbereitet " << endl;
-                } else {
-                    Question ques = r.m_ques;
-                    LearnableSentence learn = r.m_learn;
-                    string bestReply;
-
-                    durchsuche_nach_unbekanntem (ques.m_ques);
-
-                    (*global_jeliza) << ques;
-                    r.m_ans = "";
-                    (*global_jeliza) >> r.m_ans;
-
-                    r.m_ans = toASCII_2(r.m_ans);
-                    (*global_jeliza) << learn;
-
-                    temp_req = r;
-                    (*jeliza_dispatcher)();
+                    Glib::usleep(100000);
                 }
+                (*JELIZA_PROGRESS) = 0.0;
+                jeliza_dispatcher_pulse();
             }
         }
         Glib::usleep(1000000);
     }
+}
+
+void MainWindow::jeliza_dispatcher_pulse() {
+    m_pbar->set_fraction((*JELIZA_PROGRESS) / 100.0);
+}
+
+void MainWindow::thread_work_helper() {
+    Request r = jeliza_request;
+    jeliza_request.todo = string("");
+
+    if (Util::contains(r.todo, "online")) {
+        (*JELIZA_PROGRESS) = 0.0;
+        jeliza_dispatcher_pulse();
+        string all1 = download_with_pbar("http://svn.berlios.de/svnroot/repos/jeliza/trunk/jeliza-standard-online.xml");
+
+        ofstream o1("jeliza-standard.xml");
+        o1 << all1 << endl;
+        o1.close();
+    } else if (r.todo.size() > 5) {
+        global_jeliza->vorbereite();
+
+        cout << "- Datenbank wurde vorbereitet " << endl;
+
+    } else {
+        Question ques = r.m_ques;
+        LearnableSentence learn = r.m_learn;
+        string bestReply;
+
+        durchsuche_nach_unbekanntem (ques.m_ques);
+
+        (*global_jeliza) << ques;
+        r.m_ans = "";
+        (*global_jeliza) >> r.m_ans;
+
+        r.m_ans = toASCII_2(r.m_ans);
+        (*global_jeliza) << learn;
+
+        temp_req = r;
+        (*jeliza_dispatcher)();
+    }
+
+    (*JELIZA_PROGRESS) = 100.0;
+    Glib::usleep(250000);
+
+    readyForNewRequests = true;
 }
 
 MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
@@ -1013,6 +1086,9 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 	Data5 d5;
 	d5.win = about_dia;
 
+	refXml->get_widget("progressbar", m_pbar);
+
+
 
 
 	if(btn_on_Ask_clicked) {
@@ -1126,6 +1202,12 @@ int main_2(int argc, char *argv[]) {
         Glib::Dispatcher jeliza_dispatcher2;
         jeliza_dispatcher = &jeliza_dispatcher2;
         (*jeliza_dispatcher).connect (sigc::mem_fun(*mainWindow, &MainWindow::answer));
+
+        Glib::Dispatcher jeliza_dispatcher_pulse2;
+        jeliza_dispatcher_pulse = &jeliza_dispatcher_pulse2;
+        (*jeliza_dispatcher_pulse).connect (sigc::mem_fun(*mainWindow, &MainWindow::jeliza_dispatcher_pulse));
+
+
 
 		//wenn es eine entsprechende instanz gibt...
 		if(mainWindow) {

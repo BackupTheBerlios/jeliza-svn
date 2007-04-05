@@ -9023,22 +9023,10 @@
 
 
  <fact>
-  <prefix>   == Vor der Einfuehrung von Camcorder == .  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>   Als Fernseher oder Fernsehgeraet bezeichnet man ein Geraet zum Empfang und zur Wiedergabe von Fernsehsignalen.  </prefix>   
-  <subject>    </subject>  
-  <verb>       </verb>     
-  <object>     </object>   
+  <prefix>     </prefix>   
+  <subject>  so  </subject>  
+  <verb>     ist  </verb>     
+  <object>   es  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
@@ -9048,9 +9036,21 @@
 
  <fact>
   <prefix>     </prefix>   
-  <subject>  Was  </subject>  
+  <subject>  so  </subject>  
   <verb>     ist  </verb>     
-  <object>   ein Fernseher?  </object>   
+  <object>   es  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  so  </subject>  
+  <verb>     ist  </verb>     
+  <object>   es  </object>   
   <suffix>     </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 

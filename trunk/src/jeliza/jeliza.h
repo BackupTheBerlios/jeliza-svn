@@ -280,14 +280,18 @@ public:
 /*
  * Die Downloadfunktion aus socketload.cpp
  */
-string download (string url);
+string download (string);
+string download_with_pbar (string);
 
 namespace jdb {
     jdb::DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs);
     void saveDB(string file, JEliza& jel, jdb::DB db);
 }
 
-string search_in_wikipedia(string wort);
+string search_in_wikipedia (string);
+string search_in_wikipedia_with_newlines (string);
+
+extern double* JELIZA_PROGRESS;
 
 #endif
 
