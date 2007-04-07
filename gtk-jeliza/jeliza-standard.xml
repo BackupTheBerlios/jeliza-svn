@@ -10,6 +10,7 @@
   <feeling>normal</normal>
  </feelings>
 
+
  <fact>
   <prefix>   Hallo  </prefix>   
   <subject>    </subject>  
@@ -9047,71 +9048,11 @@
 
 
  <fact>
-  <prefix>   Busen steht fuer:  </prefix>   
+  <prefix>   Busen steht fuer:\n1. Brust im allgemeinen Sinn\n2. Weibliche Brueste beim Mensch\n3. Dekollet  </prefix>   
   <subject>    </subject>  
   <verb>       </verb>     
   <object>     </object>   
-  <suffix>   der Bereich zwischen Hals und Bruesten und die Vertiefung zwischen denselben  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  Als Baum  </subject>  
-  <verb>     wird  </verb>     
-  <object>   in der Botanik eine ausdauernde Pflanze bezeichnet  </object>   
-  <suffix>   die einen deutlich erkennbar aufrechten, verholzten Stamm besitzt, der aus einer Wurzel emporsteigt und an dem sich oberirdisch Aeste befinden.  </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  ich  </subject>  
-  <verb>     bin  </verb>     
-  <object>   dumm  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  ich  </subject>  
-  <verb>     bsit  </verb>     
-  <object>   klug  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  ich  </subject>  
-  <verb>     bin  </verb>     
-  <object>   dumm  </object>   
-  <suffix>     </suffix>   
-  <feeling>  normal  </feeling>  
-  <priority> 50  </priority> 
-  <category> normal  </category> 
- </fact>
-
-
- <fact>
-  <prefix>     </prefix>   
-  <subject>  ich  </subject>  
-  <verb>     bin  </verb>     
-  <object>   klug  </object>   
-  <suffix>     </suffix>   
+  <suffix>   der Bereich zwischen Hals und Bruesten und die Vertiefung zwischen denselben\n4. Meerbusen\n5. Bucht (nur als Hinterglied von Meerbusen und zusammengesetzten geografischen Namen)\n6. t;!--* Busen (Volk), antiker Iran ...--gt;\n7. Buseno, Gemeinde im Kanton Graubuenden (CH), deutscher Namen  </suffix>   
   <feeling>  normal  </feeling>  
   <priority> 50  </priority> 
   <category> normal  </category> 
@@ -9119,3 +9060,5 @@
 
 
 </jdb>
+
+

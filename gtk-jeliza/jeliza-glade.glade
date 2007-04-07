@@ -338,9 +338,52 @@
                       </widget>
                     </child>
                     <child>
-                      <widget class="GtkProgressBar" id="progressbar">
+                      <widget class="GtkVBox" id="vbox6">
                         <property name="visible">True</property>
-                        <property name="show_text">True</property>
+                        <child>
+                          <widget class="GtkExpander" id="expander1">
+                            <property name="visible">True</property>
+                            <child>
+                              <widget class="GtkScrolledWindow" id="scrolledwindow1">
+                                <property name="visible">True</property>
+                                <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                                <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                                <property name="shadow_type">GTK_SHADOW_IN</property>
+                                <child>
+                                  <widget class="GtkTextView" id="logview">
+                                    <property name="width_request">100</property>
+                                    <property name="height_request">220</property>
+                                    <property name="visible">True</property>
+                                    <property name="pixels_above_lines">2</property>
+                                    <property name="pixels_below_lines">2</property>
+                                    <property name="tooltip" translatable="yes">Log Meldungen</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label1">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Log-Meldungen</property>
+                              </widget>
+                              <packing>
+                                <property name="type">label_item</property>
+                              </packing>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="padding">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkStatusbar" id="statusbar">
+                            <property name="visible">True</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
                       </widget>
                       <packing>
                         <property name="position">1</property>
