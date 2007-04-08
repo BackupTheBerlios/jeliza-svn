@@ -7,7 +7,7 @@
     <property name="height_request">400</property>
     <property name="visible">True</property>
     <property name="has_focus">True</property>
-    <property name="title" translatable="yes">JEliza 2.2 beta</property>
+    <property name="title" translatable="yes">JEliza 2.2 Beta (Easter Edition)</property>
     <property name="icon">jeliza16.ico</property>
     <child>
       <widget class="GtkVBox" id="vbox1">
