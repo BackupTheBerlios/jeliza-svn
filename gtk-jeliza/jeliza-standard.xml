@@ -2794,4 +2794,16 @@
  </fact>
 
 
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  du  </subject>  
+  <verb>     bist  </verb>     
+  <object>   ein mesch hehe  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
 </jdb>
