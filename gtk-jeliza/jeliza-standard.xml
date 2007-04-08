@@ -9370,4 +9370,3268 @@
  </fact>
 
 
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ein Mehrbenutzersystem oder MultiuserSystem  </subject>  
+  <verb>     ist  </verb>     
+  <object>   ein Betriebssystem  </object>   
+  <suffix>   das die Faehigkeit hat, Arbeitsumgebungen fuer verschiedene Benutzer bereitstellen und voneinander abgrenzen zu koennen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Rechner  </subject>  
+  <verb>     waren  </verb>     
+  <object>   frueher vor allem in Universitaeten und wenigen Grossbetrieben in Gebrauch  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Zu ihrer Bedienung dienten Terminals  </prefix>   
+  <subject>  die nur aus einer Tastatur und einem Bildschirm bestanden und mit dem Hauptrechner verbunden  </subject>  
+  <verb>     waren  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Bereitstellung der Datentraeger und das Starten dieser quot;Jobsquot;  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   von Bedienungspersonal vorgenommen  </object>   
+  <suffix>   damit die Administratoren ihren eigentlichen Aufgaben nachgehen konnten  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Um Fehlbedienungen auszuschliessen erhielt  </subject>  
+  <verb>     dieses  </verb>     
+  <object>   Personal nur eingeschraenkte Rechte  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Mehrbenutzerfaehigkeit eines Betriebssystems  </subject>  
+  <verb>     wird  </verb>     
+  <object>   durch ein Buendel von Einzelmassnahmen erreicht  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Darunter  </subject>  
+  <verb>     fallen  </verb>     
+  <object>   beispielsweise die Verwaltung privater Arbeitsverzeichnisse und persoenlicher Voreinstellungen fuer die einzelnen Benutzer  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Auf MehrbenutzerSystemen erwarten Benutzer auch ein Konzept fuer das Management von Zugriffsrechten auf gespeicherte Daten und andere Systemressourcen  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Historisch  </subject>  
+  <verb>     gab  </verb>     
+  <object>   es jedoch durchaus auch Computer  </object>   
+  <suffix>   an denen verschiedene Benutzer in eigenen Arbeitsumgebungen zeitlich nacheinander, jedoch nicht gleichzeitig arbeiten konnten  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  So  </subject>  
+  <verb>     koennen  </verb>     
+  <object>   sich viele verschiedene Nutzer in aller Welt ueber das Internet mit dem Rechner verbinden  </object>   
+  <suffix>   einloggen und gleichzeitig an der selben Maschine arbeiten  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Diese Loesung entstand vor allem aus Kostengruenden  </prefix>   
+  <subject>  denn frueher  </subject>  
+  <verb>     waren  </verb>     
+  <object>   Einzelrechner sehr teuer  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Konsole von Linux oder UNIXSystemen  </subject>  
+  <verb>     wird  </verb>     
+  <object>   allerdings noch heute als quot;Terminalquot; bezeichnet  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ein Betriebssystem  </subject>  
+  <verb>     ist  </verb>     
+  <object>   die Software  </object>   
+  <suffix>   die die Verwendung eines Computers ermoeglicht  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Jedoch  </subject>  
+  <verb>     sind  </verb>     
+  <object>   die so genannten BatchSysteme ein guter Ansatz zur Betrachtung der Systementwicklung  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Diese riesigen Systeme wurden von nur einer Person dem Operator bedient oder besser  </subject>  
+  <verb>     gesagt  </verb>     
+  <object>   gefuettert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Programmierer  </subject>  
+  <verb>     fertigten  </verb>     
+  <object>   Lochkarten an und uebergaben den Kartenstapel dem Operator  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser  </subject>  
+  <verb>     liess  </verb>     
+  <object>   die Karten von der Maschine einlesen und haendigte den Programmierern anschliessend die Ergebnisse in ausgedruckter Form aus  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Lediglich ein Kontrollprogramm wurde im Speicher  </subject>  
+  <verb>     gehalten  </verb>     
+  <object>   und sorgte fuer den reibungslosen Ablauf  </object>   
+  <suffix>   indem es die Kontrolle an die momentan auszufuehrenden Programme uebergab  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Im PCBereich  </subject>  
+  <verb>     sind  </verb>     
+  <object>   derzeit die meistgenutzten Betriebssysteme die verschiedenen Varianten von Microsoft Windows  </object>   
+  <suffix>   Apple Mac OS X, Linux , ZETA, OS/2 bzw  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Programme zur Initialisierung und Ansteuerung dieser Geraete bezeichnet man zusammenfassend als Geraetetreiber  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Er  </subject>  
+  <verb>     kann  </verb>     
+  <object>   dann nach Ablauf einer Zeitspanne oder periodisch den Prozessor unterbrechen und ihn zur Abarbeitung einer eigenen Routine veranlassen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Da Unterbrechungen asynchron auftreten  </prefix>   
+  <subject>    </subject>  
+  <verb>     sind  </verb>     
+  <object>   komplexe Verhaeltnisse hinsichtlich der Datenstrukturen zu beruecksichtigen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Genaue Kenntnisse des Bausteins  </prefix>   
+  <subject>  der Computerhardware und des Prozessors  </subject>  
+  <verb>     sind  </verb>     
+  <object>   erforderlich  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die einzelnen Komponenten  </prefix>   
+  <subject>  die an diesem Prozess beteiligt sind,  </subject>  
+  <verb>     fasst  </verb>     
+  <object>   man unter dem Begriff Rechnerarchitektur zusammen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Ueber einen Systemruf  </prefix>   
+  <subject>  zum Beispiel alarm,  </subject>  
+  <verb>     wird  </verb>     
+  <object>   jedem Programm darueber hinaus ein eigener virtueller Zeitgeber zur Verfuegung gestellt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Das Betriebssystem  </subject>  
+  <verb>     zaehlt  </verb>     
+  <object>   die Unterbrechungen des OriginalZeitgebers und informiert Programme  </object>   
+  <suffix>   die den alarmSystemruf verwendeten  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Der interne Speicher  </subject>  
+  <verb>     wird  </verb>     
+  <object>   in Bloecke aufgeteilt und den entsprechenden Programmen zur Verfuegung gestellt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ueber virtuellen Speicher  </subject>  
+  <verb>     wird  </verb>     
+  <object>   bei vielen Systemen jedem Programm ein kontinuierlicher Bereich zur Verfuegung gestellt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser Speicher  </subject>  
+  <verb>     ist  </verb>     
+  <object>   physikalisch nicht zusammenhaengend  </object>   
+  <suffix>   es koennen sogar unbenutzte Teile auf den externen Speicher ausgelagert sein  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Der virtuelle Speicher eines Programms kann sogar groesser als der reale Speicher  </subject>  
+  <verb>     sein  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Als Grafische Benutzeroberflaeche  </subject>  
+  <verb>     wird  </verb>     
+  <object>   generell eine Bildschirmausgabe beschrieben  </object>   
+  <suffix>   wenn sie ueber einen Prompt hinausgeht  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Grafikkarte als Hardware  </subject>  
+  <verb>     ist  </verb>     
+  <object>   fuer den Programmierer und Anwender vollkommen verborgen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Mit der Einfuehrung der Modellreihe System/360 von IBM  </subject>  
+  <verb>     fuehrte  </verb>     
+  <object>   IBM 1964 das Betriebssystem OS/360 ein  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Es  </subject>  
+  <verb>     war  </verb>     
+  <object>   das erste Betriebssystem  </object>   
+  <suffix>   das modellreihenuebergreifend eingesetzt wurde  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Inspiriert von den Arbeiten an Multics startete eine Gruppe um Ken Thompson und Dennis Ritchie an den Bell Laboratories von AT&T 1969 mit der Entwicklung von Unix  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Unix  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   in den Jahren 19721974 bis auf wenige Teile in der hoeheren Programmiersprache C mit dem Ziel der Portabilitaet neu implementiert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Diese  </subject>  
+  <verb>     konnten  </verb>     
+  <object>   neben nuetzlichen Aufgaben auch Spiele ausfuehren  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Hardware bestand aus  </subject>  
+  <verb>     einem  </verb>     
+  <object>   8BitProzessor mit bis zu 64KB RAM  </object>   
+  <suffix>   einer Tastatur und  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Einer der populaersten dieser Computer  </subject>  
+  <verb>     war  </verb>     
+  <object>   der Commodore C64 mit dem Mikroprozessor 6510  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Drucker  </prefix>   
+  <subject>  Kassetteninterface initialisierte und  </subject>  
+  <verb>     ueber  </verb>     
+  <object>   ein Kanalkonzept teilweise abstrahierte  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Natuerlich  </subject>  
+  <verb>     sind  </verb>     
+  <object>   weder Kernel  </object>   
+  <suffix>   Speicher oder sonstiger Hardwareschutz vorhanden  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Viele Programme  </prefix>   
+  <subject>  vor allem auch Spiele, setzten sich ueber das BIOS hinweg und  </subject>  
+  <verb>     griffen  </verb>     
+  <object>   direkt auf entsprechende Hardware zu  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Mitte der 1990er Jahre steckte Apple in einer tiefen Krise; die Firma  </subject>  
+  <verb>     schien  </verb>     
+  <object>   kurz vor dem Ruin  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ein dringliches Problem  </subject>  
+  <verb>     war  </verb>     
+  <object>   dabei  </object>   
+  <suffix>   dass Apples Betriebssystem als veraltet betrachtet wurde und Apple sich nach Alternativen umzusehen begann  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Nach dem Scheitern des wichtigsten Projektes fuer ein modernes Betriebssystem mit dem Codenamen Copland sah sich Apple gezwungen  </prefix>   
+  <subject>  Ausschau nach einem fuer die eigenen Zwecke verwendungsfaehigen Nachfolger fuer das eigene Betriebssystem zu  </subject>  
+  <verb>     halten  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Zuerst  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   vermutet  </object>   
+  <suffix>   dass Apple die Firma Be Incorporated, mit ihrem auch auf Macs lauffaehigen Betriebssystem BeOS, uebernehmen wuerde  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Uebernahmeverhandlungen scheiterten jedoch im November 1996  </prefix>   
+  <subject>  da der fruehere AppleManager und Chef von Be JeanLouis Gasse im Falle einer Uebernahme 300 Millionen USDollar und  </subject>  
+  <verb>     einen  </verb>     
+  <object>   Sitz im Vorstand verlangte  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ueberraschend uebernahm Apple  </subject>  
+  <verb>     dann  </verb>     
+  <object>   noch im Dezember 1996 die Firma NeXT des AppleGruenders Steve Jobs und deren Betriebssystem NeXTStep/OPENSTEP fuer 400 Millionen USDollar  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Das den neuen Erfordernissen angepasste und optisch aktualisierte NeXTStep  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   dann unter dem Namen Mac OS X ein grosser Erfolg  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Mit der Uebernahme von NeXT  </subject>  
+  <verb>     zog  </verb>     
+  <object>   bei Apple auch eine neue Firmenkultur ein  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Avie Tevanian  </prefix>   
+  <subject>  auch  </subject>  
+  <verb>     ein  </verb>     
+  <object>   NeXTMitarbeiter  </object>   
+  <suffix>   uebernahm die Entwicklungsabteilung  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Jobs beendete die Lizenzierung des Betriebssystems an andere Hersteller und  </subject>  
+  <verb>     stellte  </verb>     
+  <object>   die Produktion des Newton ein  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch sie verfuegten  </subject>  
+  <verb>     ueber  </verb>     
+  <object>   ein eingebautes BIOS zur Initialisierung und Abstraktion der Hardware  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Im Gegensatz zum BIOS  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   auf BASIC jedoch in den kompatiblen Rechnern anderer Firmen verzichtet  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Sie  </subject>  
+  <verb>     erlauben  </verb>     
+  <object>   vielfaches Schreiben und Lesen einzeln adressierbarer 512ByteBloecke  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Benutzung  </subject>  
+  <verb>     wird  </verb>     
+  <object>   durch ein Disk Operating System vereinfacht  </object>   
+  <suffix>   das ein abstraktes Dateikonzept bereitstellt  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Eine Diskette kann viele Dateien enthalten  </prefix>   
+  <subject>  die ueber Namen erreichbar  </subject>  
+  <verb>     sind  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  MSDOS  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   mit einem Satz von Programmen und einem Kommandointerpreter ausgeliefert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Es laeuft als portables Betriebssystem auf verschiedenen Rechnerarchitekturen  </prefix>   
+  <subject>    </subject>  
+  <verb>     wurde  </verb>     
+  <object>   aber zunaechst fuer PCs mit Intel80386Prozessor entwickelt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Dies kommt zustande  </prefix>   
+  <subject>  da insbesondere der Prozessor durch Warten belastet  </subject>  
+  <verb>     wird  </verb>     
+  <object>   anstatt durch eine in der Hardware durchaus vorhandene geschickte Unterbrechungsverwaltung auf Ereignisse zu reagieren  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Linux verwendet daher nach dem Starten des Systems  </subject>  
+  <verb>     eigene  </verb>     
+  <object>   Geraetetreiber  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Prozesse  </subject>  
+  <verb>     laufen  </verb>     
+  <object>   im Benutzermodus  </object>   
+  <suffix>   waehrend der Kernel im KernelModus arbeitet  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Privilegien im Benutzermodus  </subject>  
+  <verb>     sind  </verb>     
+  <object>   sehr eingeschraenkt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Abstraktion und Speicherschutz  </subject>  
+  <verb>     sind  </verb>     
+  <object>   nahezu vollkommen  </object>   
+  <suffix>   ein direkter Zugriff wird nur sehr selten und unter genau kontrollierten Bedingungen gestattet  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  durch einen Fehler das System zum Absturz  </subject>  
+  <verb>     bringen  </verb>     
+  <object>   kann  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser ConsumerZweig  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   mit der Veroeffentlichung von Windows Millennium abgeschlossen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Programme  </prefix>   
+  <subject>  die direkt auf die Hardware zugreifen,  </subject>  
+  <verb>     blieben  </verb>     
+  <object>   aber aussen vor  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ohne die Moeglichkeit  </subject>  
+  <verb>     eines  </verb>     
+  <object>   direkten Zugriffs auf die Grafikhardware bzw  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  treiber  </subject>  
+  <verb>     war  </verb>     
+  <object>   die Programmierung von leistungsfaehigen Actionspielen zunaechst auf die aelteren WindowsVersionen beschraenkt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Ein Computer  </prefix>   
+  <subject>  auch Rechner genannt,  </subject>  
+  <verb>     ist  </verb>     
+  <object>   ein Apparat  </object>   
+  <suffix>   der Informationen mit Hilfe einer programmierbaren Rechenvorschrift verarbeiten kann  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  In der Folge  </subject>  
+  <verb>     etablierte  </verb>     
+  <object>   sich Computer als Gattungsbegriff fuer diese neuartigen Maschinen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  In den heutigen Computern  </subject>  
+  <verb>     sind  </verb>     
+  <object>   die ALU und die Steuereinheit meistens zu einem Baustein verschmolzen  </object>   
+  <suffix>   der so genannten CPU  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Wesentlich in der VonNeumannArchitektur ist  </prefix>   
+  <subject>  dass sich Programm und Daten einen Speicherbereich  </subject>  
+  <verb>     teilen  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Sie  </subject>  
+  <verb>     liest  </verb>     
+  <object>   diesen aus dem Speicher aus  </object>   
+  <suffix>   erkennt zum Beispiel 65, erkennt dies als Springe  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Ein/Ausgabeeinheiten schliesslich  </subject>  
+  <verb>     sind  </verb>     
+  <object>   dafuer zustaendig  </object>   
+  <suffix>   die initialen Programme in die Speicherzellen einzugeben und dem Benutzer die Ergebnisse der Berechnung anzuzeigen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  das Interpretieren einer  </subject>  
+  <verb>     gedrueckten  </verb>     
+  <object>   Tastaturtaste als Buchstabe A und damit als Zahl 65  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  In einem modernen Computer  </subject>  
+  <verb>     arbeiten  </verb>     
+  <object>   sehr viele dieser Programmebenen ueber bzw  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Computertechnologie entwickelte sich im Vergleich zu anderen Elektrogeraeten sehr schnell  </prefix>   
+  <subject>    </subject>  
+  <verb>     siehe  </verb>     
+  <object>   Hauptartikel Computergeschichte  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Unix bezeichnet im allgemeinen Sprachgebrauch Betriebssysteme  </prefix>   
+  <subject>  die entweder ihren Ursprung im Unixsystem von AT&T der 70er  </subject>  
+  <verb>     haben  </verb>     
+  <object>   oder dessen Konzepte implementieren  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  BSD  </subject>  
+  <verb>     basierte  </verb>     
+  <object>   zwar urspruenglich auf BellLabsQuelltexten  </object>   
+  <suffix>   diese wurden jedoch bis Mitte der 90er vollstaendig entfernt  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Eine Vielzahl von Programmen inklusive  </subject>  
+  <verb>     eines  </verb>     
+  <object>   CEntwicklungssystems und  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Unix  </subject>  
+  <verb>     ist  </verb>     
+  <object>   historisch eng mit der Programmiersprache C verknuepft beide verhalfen sich gegenseitig zum Durchbruch  </object>   
+  <suffix>   und so  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Geschichtlich  </subject>  
+  <verb>     ist  </verb>     
+  <object>   Unix die aeltere Schreibweise  </object>   
+  <suffix>   die Schreibweise UNIX tauchte erst spaeter auf aus rein aesthetischen Gruenden  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  lt;! heute  </subject>  
+  <verb>     haben  </verb>     
+  <object>   sie unterschiedliche bedeutungen  </object>   
+  <suffix>   ausfuehren  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Preise der IEEE fuer die POSIXDokumentation sind sehr hoch  </prefix>   
+  <subject>  die Veroeffentlichung  </subject>  
+  <verb>     ist  </verb>     
+  <object>   durch Urheberrecht untersagt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser Standard  </subject>  
+  <verb>     ist  </verb>     
+  <object>   offen  </object>   
+  <suffix>   im Internet frei verfuegbar und akzeptiert Vorschlaege von jedem  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Unix  </subject>  
+  <verb>     hatte  </verb>     
+  <object>   damit den Charakter eines freien  </object>   
+  <suffix>   portablen Betriebssystems  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Universitaet Berkeley entwickelte eine  </subject>  
+  <verb>     eigene  </verb>     
+  <object>   Distribution mit wesentlichen Erweiterungen  </object>   
+  <suffix>   die Berkeley Software Distribution  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Viele Firmen lizenzierten den UNIXQuellcode und brachten ihre eigenen Varianten auf den Markt  </prefix>   
+  <subject>  selbst Microsoft  </subject>  
+  <verb>     hatte  </verb>     
+  <object>   mit Xenix einige Zeit ein Unix im Angebot  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  1987  </subject>  
+  <verb>     erschien  </verb>     
+  <object>   das Lehrsystem Minix  </object>   
+  <suffix>   entwickelt von Andrew S  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Minix  </subject>  
+  <verb>     war  </verb>     
+  <object>   ein UnixKlon mit Mikrokernel  </object>   
+  <suffix>   CCompiler, Editor und vielen Kommandos, das auf anspruchsloser PCHardware lief  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Es  </subject>  
+  <verb>     war  </verb>     
+  <object>   zwar kommerziell und proprietaer  </object>   
+  <suffix>   hatte aber einen sehr niedrigen Preis  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   4BSDLite die letzte Version ihrer Distribution  </prefix>   
+  <subject>  die von AT&TQuellcode befreit  </subject>  
+  <verb>     war  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Dieses bildete zusammen mit 386BSD die Grundlage fuer NetBSD  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>   FreeBSD und kurz darauf OpenBSD  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ein weiteres UnixDerivat  </subject>  
+  <verb>     ist  </verb>     
+  <object>   LUnix  </object>   
+  <suffix>   welches ein Unixaehnliches System auf Commodore C64 oder C128 zur Verfuegung stellt  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Linux  </subject>  
+  <verb>     ist  </verb>     
+  <object>   ein freies und MultiplattformMehrbenutzerBetriebssystem fuer Computer  </object>   
+  <suffix>   das Unix aehnlich  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Erstmals eingesetzt  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   Linux 1991 nach der GNUGPLLizenzierung des LinuxKernels  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Das 1983 von Richard Stallman ins Leben gerufene GNUProjekt  </subject>  
+  <verb>     hatte  </verb>     
+  <object>   das Ziel  </object>   
+  <suffix>   ein UNIXaehnliches, POSIXkompatibles Betriebssystem zu schaffen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die ebenso freie Berkeley Software Distribution  </prefix>   
+  <subject>  die sich in den 80er Jahren entwickelt hatte,  </subject>  
+  <verb>     war  </verb>     
+  <object>   in einen Rechtsstreit mit ungewissem Ausgang verwickelt und  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Damit stand Anfang der Neunziger kein vollstaendiges  </prefix>   
+  <subject>  freies System zur Verfuegung, welches fuer Entwickler interessant  </subject>  
+  <verb>     gewesen  </verb>     
+  <object>   waere  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Linux  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   zu dieser Zeit noch unter einer eigenen Lizenz veroeffentlicht  </object>   
+  <suffix>   die die kommerzielle Nutzung verbot  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Schnell merkte Torvalds aber  </prefix>   
+  <subject>  dass diese hinderlich war, und entschied sich dazu, allen Entwicklern moeglichst grossen Freiraum zu  </subject>  
+  <verb>     geben  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Er und  </subject>  
+  <verb>     seine  </verb>     
+  <object>   Mitautoren stellten daraufhin 1992 Linux unter die GNU GPL  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Somit  </subject>  
+  <verb>     konnte  </verb>     
+  <object>   man Linux in GNU integrieren und dies als das erste freie Betriebssystem vertreiben  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser Schritt  </subject>  
+  <verb>     machte  </verb>     
+  <object>   das System fuer eine noch groessere Zahl von Entwicklern interessanter  </object>   
+  <suffix>   da es fuer diese die Modifizierung und Verbreitung vereinfachte  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Entwicklung des LinuxKernels  </subject>  
+  <verb>     wird  </verb>     
+  <object>   noch immer von Torvalds organisiert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser  </subject>  
+  <verb>     ist  </verb>     
+  <object>   dafuer bei der gemeinnuetzigen Linux Foundation angestellt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ebenso  </subject>  
+  <verb>     hat  </verb>     
+  <object>   eine weltweite Entwickler und Nutzergemeinde  </object>   
+  <suffix>   gern auch Community genannt, eine Vielzahl an weiterer Software und Dokumentation rund um Linux erstellt, welche die Einsatzmoeglichkeiten von Linux ausgedehnt haben  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Hinzu kommt die zunehmende Unterstuetzung durch Hersteller proprietaerer Software  </prefix>   
+  <subject>  die ebenfalls mehr und mehr Programme fuer Linux  </subject>  
+  <verb>     anbieten  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Gemein  </subject>  
+  <verb>     ist  </verb>     
+  <object>   allen Modellen  </object>   
+  <suffix>   dass sie sich stark ueber das Internet vernetzt haben und dort einen Grossteil der Organisation und Absprache treffen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Der Prozess  </prefix>   
+  <subject>  der im Jahr 2007 noch immer andauert,  </subject>  
+  <verb>     wird  </verb>     
+  <object>   im Artikel SCO gegen Linux chronologisch dokumentiert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Bezeichnung Linux wurde von Linus Torvalds anfaenglich nur fuer den Kernel genutzt  </prefix>   
+  <subject>  der Software eine Schnittstelle zur Verfuegung stellt, mit der sie auf die Hardware zugreifen kann, ohne sie genauer zu  </subject>  
+  <verb>     kennen  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Der LinuxKernel  </subject>  
+  <verb>     ist  </verb>     
+  <object>   ein in der Programmiersprache C geschriebener monolithischer Betriebssystemkern  </object>   
+  <suffix>   der es ermoeglicht, nur die fuer die jeweilige Hardware noetigen Treiber zu laden  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Bei den einzelnen technischen Vorgaengen orientiert sich das Design von Linux  </subject>  
+  <verb>     stark  </verb>     
+  <object>   an seinem Vorbild Unix  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die dort zu findende Version  </subject>  
+  <verb>     ist  </verb>     
+  <object>   der jeweilige Referenzkernel  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Eine Besonderheit  </subject>  
+  <verb>     stellt  </verb>     
+  <object>   dabei das aus vier Zahlen bestehende Versionsnummernschema dar  </object>   
+  <suffix>   z  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Es  </subject>  
+  <verb>     gibt  </verb>     
+  <object>   Auskunft ueber die exakte Version und damit auch ueber die Faehigkeiten des entsprechenden Kernels  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Von den vier Zahlen  </subject>  
+  <verb>     wird  </verb>     
+  <object>   die letzte fuer Fehlerbehebungen und Bereinigungen geaendert  </object>   
+  <suffix>   nicht aber fuer neue Funktionen oder tiefgreifende Aenderungen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Aus diesem Grund  </subject>  
+  <verb>     wird  </verb>     
+  <object>   sie auch nur selten mit angegeben  </object>   
+  <suffix>   wenn man beispielsweise KernelVersionen vergleicht  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Gleiches gilt fuer die ersten beiden Zahlen  </prefix>   
+  <subject>  bei diesen  </subject>  
+  <verb>     muessen  </verb>     
+  <object>   die Aenderungen und neuen Funktionen jedoch drastischer ausfallen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Da die erste Zahl aber zuletzt 1996 geaendert wurde  </prefix>   
+  <subject>    </subject>  
+  <verb>     gibt  </verb>     
+  <object>   die zweite Zahl faktisch Auskunft ueber grosse  </object>   
+  <suffix>   tiefgreifende Aenderungen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  4 und Andrew Morton  </subject>  
+  <verb>     fuer  </verb>     
+  <object>   den aktuellen stabilen Kernel 2  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Eine der wichtigsten Aenderungen  </subject>  
+  <verb>     war  </verb>     
+  <object>   dabei die Verbesserung des sogenannten Schedulers  </object>   
+  <suffix>   den Ingo Molnar fuer den 2  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Er  </subject>  
+  <verb>     hat  </verb>     
+  <object>   die Faehigkeit  </object>   
+  <suffix>   das Zuweisen von Prozessorzeit zu unterschiedlichen Prozessen unabhaengig von der Anzahl der Prozesse gleich rasch zu erledigen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Damit  </subject>  
+  <verb>     wird  </verb>     
+  <object>   der Aufwand zur Ressourcenverteilung des Systems unabhaengig von der Zahl der laufenden Programme  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ebenso verfuegt der neue Kernel  </subject>  
+  <verb>     ueber  </verb>     
+  <object>   ein deutlich verbessertes System der Dateiueberwachung  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   fuer DesktopSuchmaschinen wichtig ist  </prefix>   
+  <subject>  die daraufhin ihren Index in Bezug auf diese Datei aktualisieren  </subject>  
+  <verb>     muessen  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Das Betriebssystem Linux  </subject>  
+  <verb>     ist  </verb>     
+  <object>   eine Zusammenstellung verschiedener Software  </object>   
+  <suffix>   die je nach Bedingung unterschiedlich sein kann  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die so entstehenden Distributionen unterscheiden  </subject>  
+  <verb>     sich  </verb>     
+  <object>   teilweise sehr deutlich  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Hinter den meisten  </prefix>   
+  <subject>  vor allen Dingen kleinen Distributionen  </subject>  
+  <verb>     stehen  </verb>     
+  <object>   heutzutage ueber das Internet koordinierte Projekte Freiwilliger  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch der Einsatzbereich der einzelnen Distributionen differenzierte sich mit der Zeit  </subject>  
+  <verb>     stark  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Vom DesktopPC ueber ServerInstallationen und LiveCDs bis hin zu Distributionen zu technischen Forschungszwecken  </subject>  
+  <verb>     ist  </verb>     
+  <object>   alles vertreten  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Zusammensetzung einer ueblichen LinuxDistribution fuer den DesktopPC umfasst eine grosse Zahl von Softwarekomponenten  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>   die das taegliche Arbeiten ermoeglichen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Eines der Hauptprobleme fuer Anfaenger  </subject>  
+  <verb>     ist,  </verb>     
+  <object>   zwischen der grossen Anzahl der zur Verfuegung stehenden Distributionen die geeignetste herauszufiltern  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch  </subject>  
+  <verb>     kann  </verb>     
+  <object>   die Politik des Projekts oder der Firma hinter der Distribution  </object>   
+  <suffix>   z  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Vielfalt der Distributionen  </prefix>   
+  <subject>  die teilweise verschiedene binaere Formate, eigene Verzeichnisstrukturen und aehnliche Unterschiede aufweisen,  </subject>  
+  <verb>     fuehrt  </verb>     
+  <object>   zu einem Grad an Inkompatibilitaet zwischen den Distributionen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Trotz des umfangreichen Angebots wird Linux im DesktopBereich noch eher zoegerlich eingesetzt  </prefix>   
+  <subject>  da das System sich vom vorherrschenden Konkurrenten unterscheidet und deswegen eine gewisse Einarbeitungszeit noetig  </subject>  
+  <verb>     ist  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch unter den Distributionen  </subject>  
+  <verb>     sind  </verb>     
+  <object>   einige Vorgehensweisen nicht einheitlich geregelt  </object>   
+  <suffix>   darunter die Art der Softwareinstallation  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Hinzu kommt  </prefix>   
+  <subject>  dass die beiden weit verbreiteten Benutzeroberflaechen GNOME und KDE unterschiedliche Benutzerrichtlinien  </subject>  
+  <verb>     haben  </verb>     
+  <object>   und deswegen Programme der einen Oberflaeche in der anderen fremdartig erscheinen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Der modulare Aufbau des LinuxSystems ermoeglicht zusaetzlich das Betreiben kompakter  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>   dedizierter Server  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ausserdem  </subject>  
+  <verb>     hat  </verb>     
+  <object>   die Portierung von Linux auf verschiedenste Hardwarekomponenten dazu gefuehrt  </object>   
+  <suffix>   dass Linux alle bekannten Serverarchitekturen unterstuetzt  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auf IBMGrossrechnern der aktuellen ZSeries  </subject>  
+  <verb>     laeuft  </verb>     
+  <object>   Linux wahlweise nativ  </object>   
+  <suffix>   mittels PR/SM in bis zu 30 LPARs oder in jeder davon unter z/VM in potenziell unbegrenzt vielen, real einigen zehntausend virtuellen Maschinen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch NASSpeichersysteme oder WLANRouter  </subject>  
+  <verb>     koennen  </verb>     
+  <object>   Linux als Betribssystem nutzen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Fuer alle Einsatzbereiche spricht  </prefix>   
+  <subject>  dass Linux nicht auf eine HardwareArchitektur festgelegt  </subject>  
+  <verb>     ist  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Wuermer und Viren koennen sich immer nur auf dem Teil der LinuxSysteme verbreiten  </prefix>   
+  <subject>  auf deren Hardware sie zugeschnitten  </subject>  
+  <verb>     sind  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Jeder  </subject>  
+  <verb>     kann  </verb>     
+  <object>   also den Quellcode studieren  </object>   
+  <suffix>   untersuchen und anpassen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Dies fuehrt unter anderem auch dazu  </prefix>   
+  <subject>  dass der Quelltext von mehr Menschen studiert wird, als dies bei proprietaerer Software der Fall  </subject>  
+  <verb>     sein  </verb>     
+  <object>   kann  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Vom technischen Gesichtspunkt her verfuegt Linux  </subject>  
+  <verb>     ueber  </verb>     
+  <object>   viele Faehigkeiten  </object>   
+  <suffix>   die eine sicherheitstechnisch anspruchsvolle Umgebung erfordert  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Zusaetzlich implementieren  </subject>  
+  <verb>     viele  </verb>     
+  <object>   aktuelle Distributionen auch MandatoryAccessControlKonzepte mit Hilfe der SELinuxTechnik  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Neben den Ausstellungen aller namhaften Firmen und Projekte aus dem LinuxUmfeld wird den Besuchern auch ein Vortragsprogramm zu verschiedenen Themen  </subject>  
+  <verb>     geboten  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Der LinuxTag selbst existiert seit 1996 und  </subject>  
+  <verb>     zog  </verb>     
+  <object>   zuletzt jaehrlich mehr als 10  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Neben den allgemeinen Messen und Kongressen  </subject>  
+  <verb>     findet  </verb>     
+  <object>   jedes Jahr das LUGCamp statt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieses  </subject>  
+  <verb>     wird  </verb>     
+  <object>   seit dem Jahre 2000 von Linux Benutzern aus dem Raum Flensburg bis hin zur Schweiz organisiert und besucht  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Neben den bereits angesprochenen Problemen  </prefix>   
+  <subject>  die sich aus der nur bedingten Kompatibilitaet der LinuxDistributionen ergeben,  </subject>  
+  <verb>     gibt  </verb>     
+  <object>   es weitere Kritik und Probleme rund um Linux  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dies  </subject>  
+  <verb>     wird  </verb>     
+  <object>   je nach Problem mittels sinnvoller Vorkonfiguration  </object>   
+  <suffix>   Automatisierung oder durch spezielle Programme zur Systemkonfiguration zu erreichen versucht  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Linux  </subject>  
+  <verb>     ist  </verb>     
+  <object>   ein freies und MultiplattformMehrbenutzerBetriebssystem fuer Computer  </object>   
+  <suffix>   das Unix aehnlich  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Erstmals eingesetzt  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   Linux 1991 nach der GNUGPLLizenzierung des LinuxKernels  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Das 1983 von Richard Stallman ins Leben gerufene GNUProjekt  </subject>  
+  <verb>     hatte  </verb>     
+  <object>   das Ziel  </object>   
+  <suffix>   ein UNIXaehnliches, POSIXkompatibles Betriebssystem zu schaffen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die ebenso freie Berkeley Software Distribution  </prefix>   
+  <subject>  die sich in den 80er Jahren entwickelt hatte,  </subject>  
+  <verb>     war  </verb>     
+  <object>   in einen Rechtsstreit mit ungewissem Ausgang verwickelt und  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Damit stand Anfang der Neunziger kein vollstaendiges  </prefix>   
+  <subject>  freies System zur Verfuegung, welches fuer Entwickler interessant  </subject>  
+  <verb>     gewesen  </verb>     
+  <object>   waere  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Linux  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   zu dieser Zeit noch unter einer eigenen Lizenz veroeffentlicht  </object>   
+  <suffix>   die die kommerzielle Nutzung verbot  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Schnell merkte Torvalds aber  </prefix>   
+  <subject>  dass diese hinderlich war, und entschied sich dazu, allen Entwicklern moeglichst grossen Freiraum zu  </subject>  
+  <verb>     geben  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Er und  </subject>  
+  <verb>     seine  </verb>     
+  <object>   Mitautoren stellten daraufhin 1992 Linux unter die GNU GPL  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Somit  </subject>  
+  <verb>     konnte  </verb>     
+  <object>   man Linux in GNU integrieren und dies als das erste freie Betriebssystem vertreiben  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser Schritt  </subject>  
+  <verb>     machte  </verb>     
+  <object>   das System fuer eine noch groessere Zahl von Entwicklern interessanter  </object>   
+  <suffix>   da es fuer diese die Modifizierung und Verbreitung vereinfachte  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Entwicklung des LinuxKernels  </subject>  
+  <verb>     wird  </verb>     
+  <object>   noch immer von Torvalds organisiert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser  </subject>  
+  <verb>     ist  </verb>     
+  <object>   dafuer bei der gemeinnuetzigen Linux Foundation angestellt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ebenso  </subject>  
+  <verb>     hat  </verb>     
+  <object>   eine weltweite Entwickler und Nutzergemeinde  </object>   
+  <suffix>   gern auch Community genannt, eine Vielzahl an weiterer Software und Dokumentation rund um Linux erstellt, welche die Einsatzmoeglichkeiten von Linux ausgedehnt haben  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Hinzu kommt die zunehmende Unterstuetzung durch Hersteller proprietaerer Software  </prefix>   
+  <subject>  die ebenfalls mehr und mehr Programme fuer Linux  </subject>  
+  <verb>     anbieten  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Gemein  </subject>  
+  <verb>     ist  </verb>     
+  <object>   allen Modellen  </object>   
+  <suffix>   dass sie sich stark ueber das Internet vernetzt haben und dort einen Grossteil der Organisation und Absprache treffen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Der Prozess  </prefix>   
+  <subject>  der im Jahr 2007 noch immer andauert,  </subject>  
+  <verb>     wird  </verb>     
+  <object>   im Artikel SCO gegen Linux chronologisch dokumentiert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Bezeichnung Linux wurde von Linus Torvalds anfaenglich nur fuer den Kernel genutzt  </prefix>   
+  <subject>  der Software eine Schnittstelle zur Verfuegung stellt, mit der sie auf die Hardware zugreifen kann, ohne sie genauer zu  </subject>  
+  <verb>     kennen  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Der LinuxKernel  </subject>  
+  <verb>     ist  </verb>     
+  <object>   ein in der Programmiersprache C geschriebener monolithischer Betriebssystemkern  </object>   
+  <suffix>   der es ermoeglicht, nur die fuer die jeweilige Hardware noetigen Treiber zu laden  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Bei den einzelnen technischen Vorgaengen orientiert sich das Design von Linux  </subject>  
+  <verb>     stark  </verb>     
+  <object>   an seinem Vorbild Unix  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die dort zu findende Version  </subject>  
+  <verb>     ist  </verb>     
+  <object>   der jeweilige Referenzkernel  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Eine Besonderheit  </subject>  
+  <verb>     stellt  </verb>     
+  <object>   dabei das aus vier Zahlen bestehende Versionsnummernschema dar  </object>   
+  <suffix>   z  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Es  </subject>  
+  <verb>     gibt  </verb>     
+  <object>   Auskunft ueber die exakte Version und damit auch ueber die Faehigkeiten des entsprechenden Kernels  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Von den vier Zahlen  </subject>  
+  <verb>     wird  </verb>     
+  <object>   die letzte fuer Fehlerbehebungen und Bereinigungen geaendert  </object>   
+  <suffix>   nicht aber fuer neue Funktionen oder tiefgreifende Aenderungen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Aus diesem Grund  </subject>  
+  <verb>     wird  </verb>     
+  <object>   sie auch nur selten mit angegeben  </object>   
+  <suffix>   wenn man beispielsweise KernelVersionen vergleicht  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Gleiches gilt fuer die ersten beiden Zahlen  </prefix>   
+  <subject>  bei diesen  </subject>  
+  <verb>     muessen  </verb>     
+  <object>   die Aenderungen und neuen Funktionen jedoch drastischer ausfallen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Da die erste Zahl aber zuletzt 1996 geaendert wurde  </prefix>   
+  <subject>    </subject>  
+  <verb>     gibt  </verb>     
+  <object>   die zweite Zahl faktisch Auskunft ueber grosse  </object>   
+  <suffix>   tiefgreifende Aenderungen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  4 und Andrew Morton  </subject>  
+  <verb>     fuer  </verb>     
+  <object>   den aktuellen stabilen Kernel 2  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Eine der wichtigsten Aenderungen  </subject>  
+  <verb>     war  </verb>     
+  <object>   dabei die Verbesserung des sogenannten Schedulers  </object>   
+  <suffix>   den Ingo Molnar fuer den 2  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Er  </subject>  
+  <verb>     hat  </verb>     
+  <object>   die Faehigkeit  </object>   
+  <suffix>   das Zuweisen von Prozessorzeit zu unterschiedlichen Prozessen unabhaengig von der Anzahl der Prozesse gleich rasch zu erledigen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Damit  </subject>  
+  <verb>     wird  </verb>     
+  <object>   der Aufwand zur Ressourcenverteilung des Systems unabhaengig von der Zahl der laufenden Programme  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ebenso verfuegt der neue Kernel  </subject>  
+  <verb>     ueber  </verb>     
+  <object>   ein deutlich verbessertes System der Dateiueberwachung  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   fuer DesktopSuchmaschinen wichtig ist  </prefix>   
+  <subject>  die daraufhin ihren Index in Bezug auf diese Datei aktualisieren  </subject>  
+  <verb>     muessen  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Das Betriebssystem Linux  </subject>  
+  <verb>     ist  </verb>     
+  <object>   eine Zusammenstellung verschiedener Software  </object>   
+  <suffix>   die je nach Bedingung unterschiedlich sein kann  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die so entstehenden Distributionen unterscheiden  </subject>  
+  <verb>     sich  </verb>     
+  <object>   teilweise sehr deutlich  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Hinter den meisten  </prefix>   
+  <subject>  vor allen Dingen kleinen Distributionen  </subject>  
+  <verb>     stehen  </verb>     
+  <object>   heutzutage ueber das Internet koordinierte Projekte Freiwilliger  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch der Einsatzbereich der einzelnen Distributionen differenzierte sich mit der Zeit  </subject>  
+  <verb>     stark  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Vom DesktopPC ueber ServerInstallationen und LiveCDs bis hin zu Distributionen zu technischen Forschungszwecken  </subject>  
+  <verb>     ist  </verb>     
+  <object>   alles vertreten  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Zusammensetzung einer ueblichen LinuxDistribution fuer den DesktopPC umfasst eine grosse Zahl von Softwarekomponenten  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>   die das taegliche Arbeiten ermoeglichen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Eines der Hauptprobleme fuer Anfaenger  </subject>  
+  <verb>     ist,  </verb>     
+  <object>   zwischen der grossen Anzahl der zur Verfuegung stehenden Distributionen die geeignetste herauszufiltern  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch  </subject>  
+  <verb>     kann  </verb>     
+  <object>   die Politik des Projekts oder der Firma hinter der Distribution  </object>   
+  <suffix>   z  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Vielfalt der Distributionen  </prefix>   
+  <subject>  die teilweise verschiedene binaere Formate, eigene Verzeichnisstrukturen und aehnliche Unterschiede aufweisen,  </subject>  
+  <verb>     fuehrt  </verb>     
+  <object>   zu einem Grad an Inkompatibilitaet zwischen den Distributionen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Trotz des umfangreichen Angebots wird Linux im DesktopBereich noch eher zoegerlich eingesetzt  </prefix>   
+  <subject>  da das System sich vom vorherrschenden Konkurrenten unterscheidet und deswegen eine gewisse Einarbeitungszeit noetig  </subject>  
+  <verb>     ist  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch unter den Distributionen  </subject>  
+  <verb>     sind  </verb>     
+  <object>   einige Vorgehensweisen nicht einheitlich geregelt  </object>   
+  <suffix>   darunter die Art der Softwareinstallation  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Hinzu kommt  </prefix>   
+  <subject>  dass die beiden weit verbreiteten Benutzeroberflaechen GNOME und KDE unterschiedliche Benutzerrichtlinien  </subject>  
+  <verb>     haben  </verb>     
+  <object>   und deswegen Programme der einen Oberflaeche in der anderen fremdartig erscheinen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Der modulare Aufbau des LinuxSystems ermoeglicht zusaetzlich das Betreiben kompakter  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>   dedizierter Server  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ausserdem  </subject>  
+  <verb>     hat  </verb>     
+  <object>   die Portierung von Linux auf verschiedenste Hardwarekomponenten dazu gefuehrt  </object>   
+  <suffix>   dass Linux alle bekannten Serverarchitekturen unterstuetzt  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auf IBMGrossrechnern der aktuellen ZSeries  </subject>  
+  <verb>     laeuft  </verb>     
+  <object>   Linux wahlweise nativ  </object>   
+  <suffix>   mittels PR/SM in bis zu 30 LPARs oder in jeder davon unter z/VM in potenziell unbegrenzt vielen, real einigen zehntausend virtuellen Maschinen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch NASSpeichersysteme oder WLANRouter  </subject>  
+  <verb>     koennen  </verb>     
+  <object>   Linux als Betribssystem nutzen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Fuer alle Einsatzbereiche spricht  </prefix>   
+  <subject>  dass Linux nicht auf eine HardwareArchitektur festgelegt  </subject>  
+  <verb>     ist  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Wuermer und Viren koennen sich immer nur auf dem Teil der LinuxSysteme verbreiten  </prefix>   
+  <subject>  auf deren Hardware sie zugeschnitten  </subject>  
+  <verb>     sind  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Jeder  </subject>  
+  <verb>     kann  </verb>     
+  <object>   also den Quellcode studieren  </object>   
+  <suffix>   untersuchen und anpassen  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Dies fuehrt unter anderem auch dazu  </prefix>   
+  <subject>  dass der Quelltext von mehr Menschen studiert wird, als dies bei proprietaerer Software der Fall  </subject>  
+  <verb>     sein  </verb>     
+  <object>   kann  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Vom technischen Gesichtspunkt her verfuegt Linux  </subject>  
+  <verb>     ueber  </verb>     
+  <object>   viele Faehigkeiten  </object>   
+  <suffix>   die eine sicherheitstechnisch anspruchsvolle Umgebung erfordert  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Zusaetzlich implementieren  </subject>  
+  <verb>     viele  </verb>     
+  <object>   aktuelle Distributionen auch MandatoryAccessControlKonzepte mit Hilfe der SELinuxTechnik  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Neben den Ausstellungen aller namhaften Firmen und Projekte aus dem LinuxUmfeld wird den Besuchern auch ein Vortragsprogramm zu verschiedenen Themen  </subject>  
+  <verb>     geboten  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Der LinuxTag selbst existiert seit 1996 und  </subject>  
+  <verb>     zog  </verb>     
+  <object>   zuletzt jaehrlich mehr als 10  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Neben den allgemeinen Messen und Kongressen  </subject>  
+  <verb>     findet  </verb>     
+  <object>   jedes Jahr das LUGCamp statt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieses  </subject>  
+  <verb>     wird  </verb>     
+  <object>   seit dem Jahre 2000 von Linux Benutzern aus dem Raum Flensburg bis hin zur Schweiz organisiert und besucht  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Neben den bereits angesprochenen Problemen  </prefix>   
+  <subject>  die sich aus der nur bedingten Kompatibilitaet der LinuxDistributionen ergeben,  </subject>  
+  <verb>     gibt  </verb>     
+  <object>   es weitere Kritik und Probleme rund um Linux  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dies  </subject>  
+  <verb>     wird  </verb>     
+  <object>   je nach Problem mittels sinnvoller Vorkonfiguration  </object>   
+  <suffix>   Automatisierung oder durch spezielle Programme zur Systemkonfiguration zu erreichen versucht  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ein Betriebssystem  </subject>  
+  <verb>     ist  </verb>     
+  <object>   die Software  </object>   
+  <suffix>   die die Verwendung eines Computers ermoeglicht  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Jedoch  </subject>  
+  <verb>     sind  </verb>     
+  <object>   die so genannten BatchSysteme ein guter Ansatz zur Betrachtung der Systementwicklung  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Diese riesigen Systeme wurden von nur einer Person dem Operator bedient oder besser  </subject>  
+  <verb>     gesagt  </verb>     
+  <object>   gefuettert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Programmierer  </subject>  
+  <verb>     fertigten  </verb>     
+  <object>   Lochkarten an und uebergaben den Kartenstapel dem Operator  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser  </subject>  
+  <verb>     liess  </verb>     
+  <object>   die Karten von der Maschine einlesen und haendigte den Programmierern anschliessend die Ergebnisse in ausgedruckter Form aus  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Lediglich ein Kontrollprogramm wurde im Speicher  </subject>  
+  <verb>     gehalten  </verb>     
+  <object>   und sorgte fuer den reibungslosen Ablauf  </object>   
+  <suffix>   indem es die Kontrolle an die momentan auszufuehrenden Programme uebergab  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Im PCBereich  </subject>  
+  <verb>     sind  </verb>     
+  <object>   derzeit die meistgenutzten Betriebssysteme die verschiedenen Varianten von Microsoft Windows  </object>   
+  <suffix>   Apple Mac OS X, Linux , ZETA, OS/2 bzw  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Programme zur Initialisierung und Ansteuerung dieser Geraete bezeichnet man zusammenfassend als Geraetetreiber  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Er  </subject>  
+  <verb>     kann  </verb>     
+  <object>   dann nach Ablauf einer Zeitspanne oder periodisch den Prozessor unterbrechen und ihn zur Abarbeitung einer eigenen Routine veranlassen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Da Unterbrechungen asynchron auftreten  </prefix>   
+  <subject>    </subject>  
+  <verb>     sind  </verb>     
+  <object>   komplexe Verhaeltnisse hinsichtlich der Datenstrukturen zu beruecksichtigen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Genaue Kenntnisse des Bausteins  </prefix>   
+  <subject>  der Computerhardware und des Prozessors  </subject>  
+  <verb>     sind  </verb>     
+  <object>   erforderlich  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die einzelnen Komponenten  </prefix>   
+  <subject>  die an diesem Prozess beteiligt sind,  </subject>  
+  <verb>     fasst  </verb>     
+  <object>   man unter dem Begriff Rechnerarchitektur zusammen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Ueber einen Systemruf  </prefix>   
+  <subject>  zum Beispiel alarm,  </subject>  
+  <verb>     wird  </verb>     
+  <object>   jedem Programm darueber hinaus ein eigener virtueller Zeitgeber zur Verfuegung gestellt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Das Betriebssystem  </subject>  
+  <verb>     zaehlt  </verb>     
+  <object>   die Unterbrechungen des OriginalZeitgebers und informiert Programme  </object>   
+  <suffix>   die den alarmSystemruf verwendeten  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Der interne Speicher  </subject>  
+  <verb>     wird  </verb>     
+  <object>   in Bloecke aufgeteilt und den entsprechenden Programmen zur Verfuegung gestellt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ueber virtuellen Speicher  </subject>  
+  <verb>     wird  </verb>     
+  <object>   bei vielen Systemen jedem Programm ein kontinuierlicher Bereich zur Verfuegung gestellt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser Speicher  </subject>  
+  <verb>     ist  </verb>     
+  <object>   physikalisch nicht zusammenhaengend  </object>   
+  <suffix>   es koennen sogar unbenutzte Teile auf den externen Speicher ausgelagert sein  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Der virtuelle Speicher eines Programms kann sogar groesser als der reale Speicher  </subject>  
+  <verb>     sein  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Als Grafische Benutzeroberflaeche  </subject>  
+  <verb>     wird  </verb>     
+  <object>   generell eine Bildschirmausgabe beschrieben  </object>   
+  <suffix>   wenn sie ueber einen Prompt hinausgeht  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Grafikkarte als Hardware  </subject>  
+  <verb>     ist  </verb>     
+  <object>   fuer den Programmierer und Anwender vollkommen verborgen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Mit der Einfuehrung der Modellreihe System/360 von IBM  </subject>  
+  <verb>     fuehrte  </verb>     
+  <object>   IBM 1964 das Betriebssystem OS/360 ein  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Es  </subject>  
+  <verb>     war  </verb>     
+  <object>   das erste Betriebssystem  </object>   
+  <suffix>   das modellreihenuebergreifend eingesetzt wurde  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Inspiriert von den Arbeiten an Multics startete eine Gruppe um Ken Thompson und Dennis Ritchie an den Bell Laboratories von AT&T 1969 mit der Entwicklung von Unix  </prefix>   
+  <subject>    </subject>  
+  <verb>       </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Unix  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   in den Jahren 19721974 bis auf wenige Teile in der hoeheren Programmiersprache C mit dem Ziel der Portabilitaet neu implementiert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Diese  </subject>  
+  <verb>     konnten  </verb>     
+  <object>   neben nuetzlichen Aufgaben auch Spiele ausfuehren  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Hardware bestand aus  </subject>  
+  <verb>     einem  </verb>     
+  <object>   8BitProzessor mit bis zu 64KB RAM  </object>   
+  <suffix>   einer Tastatur und  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Einer der populaersten dieser Computer  </subject>  
+  <verb>     war  </verb>     
+  <object>   der Commodore C64 mit dem Mikroprozessor 6510  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Drucker  </prefix>   
+  <subject>  Kassetteninterface initialisierte und  </subject>  
+  <verb>     ueber  </verb>     
+  <object>   ein Kanalkonzept teilweise abstrahierte  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Natuerlich  </subject>  
+  <verb>     sind  </verb>     
+  <object>   weder Kernel  </object>   
+  <suffix>   Speicher oder sonstiger Hardwareschutz vorhanden  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Viele Programme  </prefix>   
+  <subject>  vor allem auch Spiele, setzten sich ueber das BIOS hinweg und  </subject>  
+  <verb>     griffen  </verb>     
+  <object>   direkt auf entsprechende Hardware zu  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Mitte der 1990er Jahre steckte Apple in einer tiefen Krise; die Firma  </subject>  
+  <verb>     schien  </verb>     
+  <object>   kurz vor dem Ruin  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ein dringliches Problem  </subject>  
+  <verb>     war  </verb>     
+  <object>   dabei  </object>   
+  <suffix>   dass Apples Betriebssystem als veraltet betrachtet wurde und Apple sich nach Alternativen umzusehen begann  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Nach dem Scheitern des wichtigsten Projektes fuer ein modernes Betriebssystem mit dem Codenamen Copland sah sich Apple gezwungen  </prefix>   
+  <subject>  Ausschau nach einem fuer die eigenen Zwecke verwendungsfaehigen Nachfolger fuer das eigene Betriebssystem zu  </subject>  
+  <verb>     halten  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Zuerst  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   vermutet  </object>   
+  <suffix>   dass Apple die Firma Be Incorporated, mit ihrem auch auf Macs lauffaehigen Betriebssystem BeOS, uebernehmen wuerde  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Die Uebernahmeverhandlungen scheiterten jedoch im November 1996  </prefix>   
+  <subject>  da der fruehere AppleManager und Chef von Be JeanLouis Gasse im Falle einer Uebernahme 300 Millionen USDollar und  </subject>  
+  <verb>     einen  </verb>     
+  <object>   Sitz im Vorstand verlangte  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ueberraschend uebernahm Apple  </subject>  
+  <verb>     dann  </verb>     
+  <object>   noch im Dezember 1996 die Firma NeXT des AppleGruenders Steve Jobs und deren Betriebssystem NeXTStep/OPENSTEP fuer 400 Millionen USDollar  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Das den neuen Erfordernissen angepasste und optisch aktualisierte NeXTStep  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   dann unter dem Namen Mac OS X ein grosser Erfolg  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Mit der Uebernahme von NeXT  </subject>  
+  <verb>     zog  </verb>     
+  <object>   bei Apple auch eine neue Firmenkultur ein  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Avie Tevanian  </prefix>   
+  <subject>  auch  </subject>  
+  <verb>     ein  </verb>     
+  <object>   NeXTMitarbeiter  </object>   
+  <suffix>   uebernahm die Entwicklungsabteilung  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Jobs beendete die Lizenzierung des Betriebssystems an andere Hersteller und  </subject>  
+  <verb>     stellte  </verb>     
+  <object>   die Produktion des Newton ein  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Auch sie verfuegten  </subject>  
+  <verb>     ueber  </verb>     
+  <object>   ein eingebautes BIOS zur Initialisierung und Abstraktion der Hardware  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Im Gegensatz zum BIOS  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   auf BASIC jedoch in den kompatiblen Rechnern anderer Firmen verzichtet  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Sie  </subject>  
+  <verb>     erlauben  </verb>     
+  <object>   vielfaches Schreiben und Lesen einzeln adressierbarer 512ByteBloecke  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Benutzung  </subject>  
+  <verb>     wird  </verb>     
+  <object>   durch ein Disk Operating System vereinfacht  </object>   
+  <suffix>   das ein abstraktes Dateikonzept bereitstellt  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Eine Diskette kann viele Dateien enthalten  </prefix>   
+  <subject>  die ueber Namen erreichbar  </subject>  
+  <verb>     sind  </verb>     
+  <object>     </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  MSDOS  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   mit einem Satz von Programmen und einem Kommandointerpreter ausgeliefert  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Es laeuft als portables Betriebssystem auf verschiedenen Rechnerarchitekturen  </prefix>   
+  <subject>    </subject>  
+  <verb>     wurde  </verb>     
+  <object>   aber zunaechst fuer PCs mit Intel80386Prozessor entwickelt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Dies kommt zustande  </prefix>   
+  <subject>  da insbesondere der Prozessor durch Warten belastet  </subject>  
+  <verb>     wird  </verb>     
+  <object>   anstatt durch eine in der Hardware durchaus vorhandene geschickte Unterbrechungsverwaltung auf Ereignisse zu reagieren  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Linux verwendet daher nach dem Starten des Systems  </subject>  
+  <verb>     eigene  </verb>     
+  <object>   Geraetetreiber  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Prozesse  </subject>  
+  <verb>     laufen  </verb>     
+  <object>   im Benutzermodus  </object>   
+  <suffix>   waehrend der Kernel im KernelModus arbeitet  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Die Privilegien im Benutzermodus  </subject>  
+  <verb>     sind  </verb>     
+  <object>   sehr eingeschraenkt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Abstraktion und Speicherschutz  </subject>  
+  <verb>     sind  </verb>     
+  <object>   nahezu vollkommen  </object>   
+  <suffix>   ein direkter Zugriff wird nur sehr selten und unter genau kontrollierten Bedingungen gestattet  </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  durch einen Fehler das System zum Absturz  </subject>  
+  <verb>     bringen  </verb>     
+  <object>   kann  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Dieser ConsumerZweig  </subject>  
+  <verb>     wurde  </verb>     
+  <object>   mit der Veroeffentlichung von Windows Millennium abgeschlossen  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>   Programme  </prefix>   
+  <subject>  die direkt auf die Hardware zugreifen,  </subject>  
+  <verb>     blieben  </verb>     
+  <object>   aber aussen vor  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  Ohne die Moeglichkeit  </subject>  
+  <verb>     eines  </verb>     
+  <object>   direkten Zugriffs auf die Grafikhardware bzw  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
+ <fact>
+  <prefix>     </prefix>   
+  <subject>  treiber  </subject>  
+  <verb>     war  </verb>     
+  <object>   die Programmierung von leistungsfaehigen Actionspielen zunaechst auf die aelteren WindowsVersionen beschraenkt  </object>   
+  <suffix>     </suffix>   
+  <feeling>  normal  </feeling>  
+  <priority> 50  </priority> 
+  <category> normal  </category> 
+ </fact>
+
+
 </jdb>
