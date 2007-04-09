@@ -93,12 +93,7 @@ void SplitString (string text, string separators, vector<string>& words, bool in
 }
 
  string toLower_const (const string text) {
-	string str = "";
-
-	for (string::size_type x = 0; x < text.size(); x++) {
-		str += tolower(text[x]);
-	}
-	return str;
+	return Util::toLower (text);
 }
 
 
@@ -133,12 +128,16 @@ void SplitString (string text, string separators, vector<string>& words, bool in
 string strip (string text) {
 	text = replace(text, string("\r"), string(""));
     do {
-        text = "rkewfdneokwjdseowlj" + text + "zhrtzhftfhvcderthjhgf";
+        text = string("rkewfdneokwjdseowlj").append(text.append(string("zhrtzhftfhvcderthjhgf")));
 
         text = replace(text, string("rkewfdneokwjdseowlj\n"), string(""));
-        text = replace(text, string("rkewfdneokwjdseowlj "), string(""));
-
         text = replace(text, string("\nzhrtzhftfhvcderthjhgf"), string(""));
+    } while (!Util::contains(text, "rkewfdneokwjdseowlj") && !Util::contains(text, "zhrtzhftfhvcderthjhgf"));
+
+    do {
+        text = string("rkewfdneokwjdseowlj").append(text.append(string("zhrtzhftfhvcderthjhgf")));
+
+        text = replace(text, string("rkewfdneokwjdseowlj "), string(""));
         text = replace(text, string(" zhrtzhftfhvcderthjhgf"), string(""));
     } while (!Util::contains(text, "rkewfdneokwjdseowlj") && !Util::contains(text, "zhrtzhftfhvcderthjhgf"));
 
@@ -178,28 +177,25 @@ string strip (string text) {
 
  string replace_nocase (string& in, string rep, const string wit) {
 	int pos;
+	string in2 = toLower(in);
 	rep = toLower(rep);
 	while (true) {
-		pos = toLower_const(in).find(rep);
+		pos = in2.find(rep);
 		if (pos == -1) {
 			break;
 		} else {
 			in.erase(pos, rep.length());
 			in.insert(pos, wit);
+			in2.erase(pos, rep.length());
+			in2.insert(pos, wit);
 		}
 	}
 	return in;
 }
 
  bool contains (string in, string rep) {
-	in = string(in.c_str());
-	string rep2 = string(rep.c_str());
-
-	string input = string(in.c_str());
-	string input2 = string(input.c_str());
-	string in2 = replace(input, rep2, "");
-//		cout << endl << "input" << input << endl << "in2" << in2 << endl << endl;
-	if (input2.size() == in2.size()) {
+	int pos = in.find(rep);
+    if (pos == -1) {
 		return 0;
 	}
 	return 1;

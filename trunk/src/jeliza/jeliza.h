@@ -107,6 +107,7 @@ namespace jdb {
         string printPart (string str, string temp, string wert);
         void strip();
         answers genSentences(bool);
+        answers genSentences_all(bool);
     };
 
     typedef vector<jdb::DBSentence> DB;
@@ -130,6 +131,8 @@ public:
 	vector<string> m_last_answers;
 	vector<string> m_last_answers_second;
 	vector<string> m_last_sentence_words;
+	jdb::DBSentence m_last_ques;
+	jdb::DBSentence m_last_ans;
 
 	JElizaData()
 	: m_sents(new jdb::DB()),
@@ -146,32 +149,32 @@ public:
 	  m_last_answers_second(vector<string>()),
 	  m_last_sentence_words(vector<string>())
 	{
-//		cout << "JElizaData" << " initialisiert!" << endl;
+//		clogger << "JElizaData" << " initialisiert!" << endl;
 	}
 
 	~JElizaData()
 	{
-//		cout << "JElizaData" << " Destruktor... (OK?=" << m_initOk << ")" << endl;
+//		clogger << "JElizaData" << " Destruktor... (OK?=" << m_initOk << ")" << endl;
 		abbau();
 	}
 
 	void abbau() {
 		m_countAbbau++;
-//		cout << "Abbau Beginn No" << m_countAbbau << endl;
+//		clogger << "Abbau Beginn No" << m_countAbbau << endl;
 		if (m_initOk && !m_destructorOk) {
-//			cout << "JElizaData wird zerstoert:" << endl;
+//			clogger << "JElizaData wird zerstoert:" << endl;
 			m_sents_is = false;
 			m_SVs_is = false;
 			m_VOs_is = false;
 			m_SVs_words_is = false;
 			m_VOs_words_is = false;
-//			cout << "JElizaData" << " zerstoert" << endl;
+//			clogger << "JElizaData" << " zerstoert" << endl;
 		} else {
-//			cout << "Komischer Destruktoraufruf" << endl;
+//			clogger << "Komischer Destruktoraufruf" << endl;
 		}
 		m_initOk = false;
 		m_destructorOk = true;
-//		cout << "Abbau Ende" << endl;
+//		clogger << "Abbau Ende" << endl;
 	}
 };
 
@@ -293,6 +296,60 @@ string search_in_wikipedia (string);
 string search_in_wikipedia_with_newlines (string);
 
 extern double* JELIZA_PROGRESS;
+
+extern void jeliza_pulse();
+
+
+vector<string> wikipedia (string, int, bool, bool);
+vector<string> wikipedia_article (string, int, bool, bool);
+
+string toASCIIreally(string all);
+string toASCII_2(string all);
+
+string search_in_wikipedia_with_newlines (string);
+jdb::answers search_in_wikipedia_acticle (string);
+jdb::answers search_in_wikipedia_random ();
+
+class JElizaManager {
+public:
+    JEliza m_jel;
+
+    JElizaManager()
+    { }
+
+    string greet();
+
+    JEliza& operator* ();
+
+    JElizaManager& operator>> (string&);
+};
+
+
+/*
+ * Die << und >> Operatoren
+ */
+JElizaManager& operator<< (JElizaManager&, string);
+JElizaManager& operator<< (JElizaManager&, jdb::answers);
+
+extern jdb::answers wikipedia_words;
+
+
+void log(string);
+
+class Logger {
+public:
+
+};
+
+Logger& operator<< (Logger, string);
+
+extern string log_all;
+
+extern ofstream clogger;
+
+extern bool offline_mode;
+extern bool www_surf_mode;
+
 
 #endif
 

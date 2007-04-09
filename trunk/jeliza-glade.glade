@@ -7,7 +7,7 @@
     <property name="height_request">400</property>
     <property name="visible">True</property>
     <property name="has_focus">True</property>
-    <property name="title" translatable="yes">JEliza 2.2 beta</property>
+    <property name="title" translatable="yes">JEliza 2.2 RC</property>
     <property name="icon">jeliza16.ico</property>
     <child>
       <widget class="GtkVBox" id="vbox1">
@@ -197,6 +197,52 @@
               </widget>
             </child>
             <child>
+              <widget class="GtkMenuItem" id="menuitem1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Internet</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu1">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkCheckMenuItem" id="www_surf">
+                        <property name="visible">True</property>
+                        <property name="active">True</property>
+                        <property name="label" translatable="yes">Im WWW surfen</property>
+                        <property name="use_underline">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkCheckMenuItem" id="off_mode">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Offlinemodus</property>
+                        <property name="use_underline">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkSeparatorMenuItem" id="separatormenuitem2">
+                        <property name="visible">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkMenuItem" id="save_arin">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Artikelinformationen Speichern</property>
+                        <property name="use_underline">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkMenuItem" id="load_arin">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Artikelinformationen Speichern</property>
+                        <property name="use_underline">True</property>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
               <widget class="GtkMenuItem" id="menuitem7">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Hilfe</property>
@@ -314,7 +360,6 @@
                                       <widget class="GtkLabel" id="label9">
                                         <property name="visible">True</property>
                                         <property name="xalign">0</property>
-                                        <property name="yalign">0</property>
                                         <property name="label" translatable="yes"> Fragen </property>
                                         <property name="use_underline">True</property>
                                       </widget>
@@ -338,9 +383,52 @@
                       </widget>
                     </child>
                     <child>
-                      <widget class="GtkProgressBar" id="progressbar">
+                      <widget class="GtkVBox" id="vbox6">
                         <property name="visible">True</property>
-                        <property name="show_text">True</property>
+                        <child>
+                          <widget class="GtkExpander" id="expander1">
+                            <property name="visible">True</property>
+                            <child>
+                              <widget class="GtkScrolledWindow" id="scrolledwindow1">
+                                <property name="visible">True</property>
+                                <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                                <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+                                <property name="shadow_type">GTK_SHADOW_IN</property>
+                                <child>
+                                  <widget class="GtkTextView" id="logview">
+                                    <property name="width_request">100</property>
+                                    <property name="height_request">220</property>
+                                    <property name="visible">True</property>
+                                    <property name="pixels_above_lines">2</property>
+                                    <property name="pixels_below_lines">2</property>
+                                    <property name="tooltip" translatable="yes">Log Meldungen</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                            </child>
+                            <child>
+                              <widget class="GtkLabel" id="label1">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Log-Meldungen</property>
+                              </widget>
+                              <packing>
+                                <property name="type">label_item</property>
+                              </packing>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="padding">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="GtkStatusbar" id="statusbar">
+                            <property name="visible">True</property>
+                          </widget>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
                       </widget>
                       <packing>
                         <property name="position">1</property>
@@ -687,8 +775,6 @@
     </child>
   </widget>
   <widget class="GtkWindow" id="about_dia">
-    <property name="width_request">350</property>
-    <property name="height_request">320</property>
     <property name="title" translatable="yes">Über JEliza</property>
     <property name="type_hint">GDK_WINDOW_TYPE_HINT_UTILITY</property>
     <child>
@@ -697,8 +783,6 @@
         <child>
           <widget class="GtkLabel" id="label12">
             <property name="visible">True</property>
-            <property name="xalign">0</property>
-            <property name="yalign">0</property>
             <property name="label" translatable="yes">
 &lt;big&gt;&lt;big&gt;&lt;big&gt;&lt;big&gt;&lt;b&gt;JEliza 2.2 BETA&lt;/b&gt;&lt;/big&gt;&lt;/big&gt;&lt;/big&gt;&lt;/big&gt;</property>
             <property name="use_markup">True</property>
@@ -711,12 +795,10 @@
         <child>
           <widget class="GtkLabel" id="label13">
             <property name="visible">True</property>
-            <property name="xalign">0</property>
-            <property name="yalign">0</property>
             <property name="label" translatable="yes">
 &lt;b&gt;Autoren:&lt;/b&gt;
-Tobias Schulz (Programmierer)
-Marcel Kunzmann (Betatester und Datenbankautor)
+   Tobias Schulz (Programmierer)   
+   Marcel Kunzmann (Betatester und Datenbankautor)   
 
 &lt;b&gt;Lizenz:&lt;/b&gt;
 GNU General Public Lizenz
@@ -725,7 +807,8 @@ GNU General Public Lizenz
 an jeliza@gmx.net
 
 &lt;b&gt;Website:&lt;/b&gt;
-http://jeliza.berlios.de/</property>
+http://jeliza.berlios.de/
+</property>
             <property name="use_markup">True</property>
             <property name="justify">GTK_JUSTIFY_CENTER</property>
           </widget>

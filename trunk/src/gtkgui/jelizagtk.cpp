@@ -34,6 +34,7 @@
 #include <gtkmm/messagedialog.h>
 #include <gtkmm/stock.h>
 #include <gtkmm/progressbar.h>
+#include <gtkmm/statusbar.h>
 //#include <gtkmm/.h>
 #include <libglademm.h>
 
@@ -69,27 +70,28 @@ public:
     }
 };
 
-string toASCIIreally(string all);
-string toASCII_2(string all);
-string toASCII(string all);
-
-
 class MainWindow : public Gtk::Window {
 public:
     //zugriff auf glade-datei
     Glib::RefPtr<Gnome::Glade::Xml> &refXml;
-    Gtk::ProgressBar* m_pbar;
+    Gtk::TextView* m_log;
+    Gtk::Statusbar* m_status;
 
 	MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &refXml);
 	void thread_worker();
 	void thread_work_helper();
 	void answer();
 	void launch_threads();
-	void jeliza_dispatcher_pulse();
+	void jeliza_dispatcher_pulse_method();
+	void jeliza_dispatcher_log();
 };
 
 int main(int argc, char *argv[]) {
-    g_thread_init(NULL);
+    Glib::thread_init();
+
+    if (!Glib::thread_supported()) {
+        g_thread_init(NULL);
+    }
     if (!Glib::thread_supported()) {
         Glib::thread_init();
     }
@@ -97,11 +99,16 @@ int main(int argc, char *argv[]) {
     double JELIZA_PROGRESS2 = 0.0;
     JELIZA_PROGRESS = &JELIZA_PROGRESS2;
 
+
+
+//    cout << download("http://de.wikipedia.org/wiki/Spezial:Zuf%C3%A4llige_Seite") << endl;
+//    return 0;
+
     main_2(argc, argv);
 }
 
 
-auto_ptr<JEliza> global_jeliza(new JEliza());
+JElizaManager global_jeliza = JElizaManager();
 bool vorbereitet = false;
 
 Glib::Thread* jeliza_thread;
@@ -111,537 +118,46 @@ Request temp_req;
 bool readyForNewRequests = true;
 
 double* JELIZA_PROGRESS;
+double JELIZA_PROGRESS_AKTUELL = 0;
 
+answers log_meldungen;
+
+MainWindow* mainWindow(0);
+
+int count_loop;
+
+int verbrauchte_seconds;
 
 Glib::StaticMutex mutex = GLIBMM_STATIC_MUTEX_INIT;
 Glib::Dispatcher* jeliza_dispatcher;
 Glib::Dispatcher* jeliza_dispatcher_pulse;
-//unsigned int verarbeitete_requests = 0;
+Glib::Dispatcher* jeliza_dispatcher_log;
 
-string toASCIIreally(string all);
+CheckMenuItem* offline_item;
 
-string toASCII(string all) {
-	Glib::ustring utf(Glib::convert(all, "UTF-8", "ISO-8859-1"));
-	return utf;
+CheckMenuItem* www_surf_item;
+
+void log(string str) {
+    {
+        Glib::Mutex::Lock lock(mutex);
+
+        if (log_meldungen.size() > 200) {
+            log_meldungen.erase(log_meldungen.begin(), log_meldungen.begin() + 10);
+        }
+        log_meldungen.push_back(str);
+
+        string all;
+        for (answers::iterator it = log_meldungen.begin(); it != log_meldungen.end(); it++) {
+            all += *it;
+            all += "\n";
+        }
+        log_all = all;
+
+        (*jeliza_dispatcher_log)();
+    }
+//    r.textview->get_buffer()->set_text(r.textview->get_buffer()->get_text()
+//                + Glib::ustring("Mensch: " + r.m_ques.m_ques) + Glib::ustring("\nJEliza: ") + msg + Glib::ustring("\n"));
 }
-
-string toASCII_2(string all) {
-	all = Util::replace(all, "Ã¼", "ue");
-	all = Util::replace(all, "Ã", "ss");
-	all = Util::replace(all, "Ã¤", "ae");
-	all = Util::replace(all, "ü", "ue");
-	all = Util::replace(all, "ß", "ss");
-	all = Util::replace(all, "ä", "ae");
-	all = Util::replace(all, "ö", "oe");
-	all = Util::replace(all, "Ü", "Ue");
-	all = Util::replace(all, "Ä", "Ae");
-	all = Util::replace(all, "Ö", "Oe");
-	all = Util::replace(all, "Ã¢ÂÂ", "\"");
-	all = Util::replace(all, "Ã¢ÂÂ", "\"");
-	all = Util::replace(all, "&lt;/br&gt;", " ");
-
-    all = toASCIIreally(all);
-
-	return all;
-}
-
-string toASCIIreally(string all) {
-	Glib::ustring utf(Glib::convert(" \n\r!\"#$%&'()*+,-./0123456789:;<=>?    @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_    `abcdefghijklmnopqrstuvwxyz{|}~", "UTF-8", "ISO-8859-1"));
-	string ascii(utf);
-//	string ascii = ;
-
-	string allAscii = "";
-	for (int x = 0; x < all.size(); x++) {
-		char array[2];
-		array[0] = all[x];
-		array[1] = '\0';
-		string y(array);
-		if (Util::contains(ascii, y)) {
-			allAscii += y;
-		}
-	}
-
-	return allAscii;
-}
-
-string ohneEckKlammer (string satz, bool withPipeInBrackets) {
-    int inKlammer2 = 0;
-    string tempStr = "";
-    string satz2 = satz + " ";
-    satz = "";
-    for (int y = 0; y < satz2.size(); y++) {
-        char ch = satz2[y];
-
-        if (ch == '[' && satz2[y+1] == '[') {
-            inKlammer2++;
-            y++;
-        }
-
-        if (inKlammer2 == 0) {
-            satz += ch;
-        }
-
-        if (ch == '|') {
-            tempStr = "";
-        }
-
-        if (inKlammer2 > 0 && ch != '|' && ch != '[' && ch != ']') {
-            tempStr += ch;
-        }
-
-        if (ch == ']' && satz2[y+1] == ']') {
-            inKlammer2--;
-            if (withPipeInBrackets) {
-                satz += tempStr;
-            }
-            tempStr = "";
-            y++;
-        }
-    }
-
-    return Util::strip(satz);
-}
-
-answers wikipedia (string wort, int count, bool rec = false, bool with_newlines = false) {
-    wort = Util::replace(wort, string(" "), string("_"));
-
-    string url = "http://de.wikipedia.org/w/index.php?title=" + wort + "&action=edit";
-    cout << "Url: \"" << url << "\"" << endl;
-    download(url);
-
-    ifstream ifstr("download.php");
-    string all;
-    string temp;
-    while (ifstr) {
-		getline(ifstr, temp);
-//		temp = Util::strip(temp);
-
-		all += toASCII_2(temp);
-		all += "\n";
-    }
-
-    vector<string> lines;
-    Util::split(all, string("\n"), lines);
-
-    answers saetze;
-
-    bool inRichtigemBereich = false;
-    bool liste = false;
-    int listenIndex = 0;
-    int inKlammer = 0;
-    string satz = "";
-    for (int x = 0; x < lines.size(); x++) {
-        string line = lines[x];
-        line = Util::strip(line);
-
-        if (Util::contains(line, "cols='80'")) {
-//            cout << "inRichtigemBereich = true; " << line << endl;
-            inRichtigemBereich = true;
-            line = line.substr(line.find(">") + 1, line.size() - line.find(">") - 1);
-        }
-
-        string sline = "-" + line + "-";
-        string ssline = "-----" + line + "-----";
-
-        if (inRichtigemBereich) {
-            cout << inKlammer << " " << line << endl;
-        }
-
-        if (Util::contains(ssline, "textarea")) {
-            break;
-        }
-
-        if (Util::contains(ssline, "----[[")) {
-            continue;
-        }
-
-        if (inRichtigemBereich && liste && line.size() > 1) {
-            if (Util::contains(line, "* ")) {
-                listenIndex++;
-                stringstream sst;
-                sst << listenIndex;
-                string j;
-                sst >> j;
-                satz += "*_____*";
-                satz += "\n";
-                satz += j;
-                satz += ". ";
-                line = ohneEckKlammer(line.substr(2, line.size() - 2), true);
-                satz += line;
-                continue;
-            } else {
-                saetze.push_back(satz);
-                satz = "";
-                if (saetze.size() >= count) {
-                    break;
-                }
-            }
-        }
-
-        if (inRichtigemBereich && Util::contains(line, string("{{"))) {
-            inKlammer++;
-        }
-
-        if (inRichtigemBereich && Util::contains(line, string("{|"))) {
-            inKlammer++;
-        }
-
-        if (inRichtigemBereich && inKlammer == 0 && line.size() > 0) {
-//            cout << "cout << satz << endl; " << line << endl;
-            satz = "";
-
-            line = Util::replace(line, string("'"), string(""));
-
-            int inKlammer2 = 0;
-            for (int y = 0; y < line.size(); y++) {
-                char ch = line[y];
-
-                if (ch == '(') {
-                    inKlammer2++;
-                }
-
-                if (inKlammer2 == 0) {
-                    satz += ch;
-                }
-
-                if (ch == ')') {
-                    inKlammer2--;
-                }
-            }
-
-            line = satz;
-            satz = "";
-            inKlammer2 = 0;
-            for (int y = 0; y < line.size(); y++) {
-                char ch = line[y];
-
-                if (ch == '<') {
-                    inKlammer2++;
-                }
-
-                if (inKlammer2 == 0) {
-                    satz += ch;
-                }
-
-                if (ch == '>') {
-                    inKlammer2--;
-                }
-            }
-
-            satz = ohneEckKlammer(satz, true);
-
-            line = satz;
-            satz = "";
-            inKlammer2 = 0;
-            for (int y = 0; y < line.size(); y++) {
-                char ch = line[y];
-
-                if (ch == '[') {
-                    inKlammer2++;
-                }
-
-                if (inKlammer2 == 0) {
-                    satz += ch;
-                }
-
-                if (ch == ']') {
-                    inKlammer2--;
-                }
-            }
-
-            satz = "-" + Util::replace(satz, string("  "), string(" ")) + "-";
-            satz = Util::replace(satz, string("."), string("ekdnkecolesl"));
-            satz = Util::replace(satz, string("ekdnkecolesl"), string("-.-"));
-            if (Util::contains(satz, "-</textarea>")) {
-                satz = "";
-                break;
-            }
-
-            string satzlower = Util::toLower(satz);
-            if (Util::contains(satzlower, "#redirect") && !rec) {
-                satz = Util::replace_nocase(satz, string("#redirect"), string(""));
-                satz = Util::strip(satz);
-                satz = Util::replace(satz, string("-"), string(""));
-                satz = Util::replace(satz, string("  "), string(" "));
-                satz = Util::strip(satz);
-                return wikipedia(satz, true, with_newlines);
-            }
-            else if (Util::contains(satzlower, "#redirect") && !rec) {
-                return answers();
-            }
-
-            vector<string> temp;
-            Util::split(satz, string("."), temp);
-
-            vector<string> temp2;
-            Util::split(satz, string(" "), temp2);
-
-//            cout << temp[0] << endl;
-
-/*            if (!with_newlines) {
-                cout << "with_newlines == false " << line << " | " << satz << endl;
-
-                if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
-                    satz = Util::strip(temp[0]) + ". " + Util::strip(temp[1]) + ".";
-                } else if (temp[0].size() < 12) {
-                    satz = "";
-                } else if (temp2.size() < 7) {
-                    satz = "";
-                } else if (Util::contains(satz, string(":"))) {
-                    satz = "";
-                } else {
-                    satz = Util::strip(temp[0]) + ".";
-                }
-                satz = Util::replace(satz, string("-"), string(""));
-                satz = Util::replace(satz, string("  "), string(" "));
-
-                break;
-            }
-            else {*/
-            cout << liste << "with_newlines == true " << line << " | " << satz << endl;
-
-            if (Util::contains(satz, string(":")) || temp[0].size() < 12 || temp2.size() < 7) {
-                satz = satz;
-                satz = Util::replace(satz, string("-"), string(""));
-                satz = Util::replace(satz, string("  "), string(" "));
-
-                liste = true;
-            } else if ((temp[0].size() < 15 || Util::contains(temp[0], string("bzw-"))) && temp.size() > 1) {
-                satz = Util::strip(temp[0]) + ". " + Util::strip(temp[1]) + ".";
-                satz = Util::replace(satz, string("-"), string(""));
-                satz = Util::replace(satz, string("  "), string(" "));
-
-                saetze.push_back(satz);
-                satz = "";
-                if (saetze.size() >= count) {
-                    break;
-                }
-            } else {
-                satz = Util::strip(temp[0]) + ".";
-                satz = Util::replace(satz, string("-"), string(""));
-                satz = Util::replace(satz, string("  "), string(" "));
-
-                saetze.push_back(satz);
-                satz = "";
-                if (saetze.size() >= count) {
-                    break;
-                }
-            }
-//            }
-
-        }
-
-        if (inRichtigemBereich && inKlammer > 0 && Util::contains(line, string("}}"))) {
-            inKlammer--;
-        }
-
-        if (inRichtigemBereich && inKlammer > 0 && Util::contains(line, string("|}"))) {
-            inKlammer--;
-        }
-
-        if (inRichtigemBereich) {
-            cout << inKlammer << " " << line << endl;
-        }
-
-//        if (inRichtigemBereich) {
-//           if (inRichtigemBereich && Util::contains(sline, string("]]-"))) {
-//                inKlammer--;
-//            }
-//        }
-    }
-
-    (*JELIZA_PROGRESS) += 4;
-
-    answers saetze2;
-    for (answers::iterator it = saetze.begin(); it != saetze.end(); it++) {
-        cout << *it << endl;
-        saetze2.push_back(Util::replace(*it, string("*_____*"), string("")));
-    }
-
-    return saetze2;
-}
-
-
-/*string search_in_wikipedia(string wort) {
-    wort = Util::strip(wort);
-    wort = Util::toLower(wort);
-    string orig_wort = wort;
-    string firstchar = string(Util::toUpper(wort.substr(0, 1)));
-    wort = wort.substr(1, wort.size());
-    wort = firstchar + wort;
-    wort = Util::strip(wort);
-
-    string satz;
-
-    if (wort.size() < 1) {
-        return "";
-    }
-
-    cout << "- Wort zum Nachschlagen: " << wort << endl;
-    satz = wikipedia(wort, false, false);
-    (*JELIZA_PROGRESS) += 6;
-    if (satz.size() < 1) {
-        cout << "- Wort zum Nachschlagen: " << orig_wort << endl;
-        satz = wikipedia(orig_wort, false, false);
-        (*JELIZA_PROGRESS) += 6;
-        if (satz.size() < 1) {
-            (*JELIZA_PROGRESS) += 6;
-            cout << "- Wort zum Nachschlagen: " << Util::toUpper(orig_wort) << endl;
-            satz = wikipedia(Util::toUpper(orig_wort), false, false);
-        }
-    }
-
-    satz = Util::replace(satz, string("&"), string(""));
-    satz = Util::replace(satz, string("amp;"), string("&"));
-    satz = Util::replace(satz, string("nbsp;"), string("&"));
-    satz = Util::replace(satz, string("\n"), string(""));
-    satz = Util::replace(satz, string("\r"), string(""));
-
-    (*JELIZA_PROGRESS) += 2;
-
-    satz = Util::strip(satz);
-
-    return satz;
-}*/
-
-string search_in_wikipedia_with_newlines(string wort) {
-    wort = Util::strip(wort);
-    wort = Util::toLower(wort);
-    string orig_wort = wort;
-    string firstchar = string(Util::toUpper(wort.substr(0, 1)));
-    wort = wort.substr(1, wort.size());
-    wort = firstchar + wort;
-    wort = Util::strip(wort);
-
-    answers satz;
-
-    if (wort.size() < 1) {
-        return "";
-    }
-
-    cout << "- Wort zum Nachschlagen: " << wort << endl;
-    satz = wikipedia(wort, 1, false, true);
-    if (satz.size() < 1) {
-        cout << "- Wort zum Nachschlagen: " << orig_wort << endl;
-        satz = wikipedia(orig_wort, 1, false, true);
-        if (satz.size() < 1) {
-            cout << "- Wort zum Nachschlagen: " << Util::toUpper(orig_wort) << endl;
-            satz = wikipedia(Util::toUpper(orig_wort), 1, false, true);
-        }
-    }
-
-    string rsatz = "";
-    if (satz.size() > 0) {
-        rsatz = satz[0];
-    }
-
-    rsatz = Util::replace(rsatz, string("&"), string(""));
-    rsatz = Util::replace(rsatz, string("amp;"), string("&"));
-    rsatz = Util::replace(rsatz, string("nbsp;"), string("&"));
-
-    (*JELIZA_PROGRESS) += 2;
-
-    rsatz = Util::strip(rsatz);
-
-    return rsatz;
-}
-
-
-void durchsuche_nach_unbekanntem (string all) {
-    cout << "- Entferne Muell..." << endl;
-    all = Util::replace(all, string("."), string(" "));
-    all = Util::replace(all, string(","), string(" "));
-    all = Util::replace(all, string(";"), string(" "));
-    all = Util::replace(all, string("-"), string(" "));
-    all = Util::replace(all, string("+"), string(" "));
-    all = Util::replace(all, string("-"), string(" "));
-    all = Util::replace(all, string(")"), string(" "));
-    all = Util::replace(all, string("("), string(" "));
-    all = Util::replace(all, string("?"), string(" "));
-    all = Util::replace(all, string("!"), string(" "));
-    all = Util::replace(all, string("  "), string(" "));
-//        all = Util::toLower(all);
-
-    vector<string> woerter;
-    Util::split(all, string(" "), woerter);
-
-    cout << "- Lade alle Woerter die nicht in der Wikipedia sind..." << endl;
-    ifstream in4("not_in_wikipedia.tmp");
-	vector<string> not_in_wikipedia;
-	string buffer;
-    while (in4) {
-        getline(in4, buffer);
-        buffer = Util::strip(buffer);
-        if (buffer.size() < 1) {
-            continue;
-        }
-        buffer = Util::toLower(buffer);
-        not_in_wikipedia.push_back(buffer);
-    }
-    in4.close();
-
-    cout << "- Lade alle Woerter die schon aus der Wikipedia geholt wurden..." << endl;
-    ifstream in5("schon_aus_wikipedia.tmp");
-	vector<string> schon_aus_wikipedia;
-    while (in5) {
-        getline(in5, buffer);
-        buffer = Util::strip(buffer);
-        if (buffer.size() < 1) {
-            continue;
-        }
-        buffer = Util::toLower(buffer);
-        schon_aus_wikipedia.push_back(buffer);
-    }
-    in5.close();
-
-    cout << "- Suche in Wikipedia nach unbekannten Woertern..." << endl;
-    for (vector<string>::iterator it = woerter.begin(); it != woerter.end(); it++) {
-        if ((*it) == Util::toLower((*it)) || (*it) == Util::toUpper((*it))) {
-            continue;
-        }
-
-        bool schon = false;
-        for (vector<string>::iterator ite = not_in_wikipedia.begin(); ite != not_in_wikipedia.end(); ite++) {
-            if (Util::toLower(*it) == Util::toLower(*ite)) {
-                schon = true;
-                break;
-            }
-        }
-        if (!schon) {
-            for (vector<string>::iterator ite = schon_aus_wikipedia.begin(); ite != schon_aus_wikipedia.end(); ite++) {
-                if (Util::toLower(*it) == Util::toLower(*ite)) {
-                    schon = true;
-                    break;
-                }
-            }
-        }
-        if (!schon) {
-            cout << "- Suche nach einer Definition fuer \"" << (*it) << "\" in der Wikipedia" << endl;
-            string definition = search_in_wikipedia_with_newlines((*it));
-            if (definition.size() < 2) {
-                ofstream of("not_in_wikipedia.tmp", ios::app | ios::ate);
-                of << (*it) << endl;
-                of.close();
-                not_in_wikipedia.push_back((*it));
-            } else {
-                ofstream of("schon_aus_wikipedia.tmp", ios::app | ios::ate);
-                of << (*it) << endl;
-                of.close();
-                schon_aus_wikipedia.push_back((*it));
-                JEliza jel(1);
-                answers x;
-                x.push_back(definition);
-                jel.saveSentence(x);
-            }
-//            } else if ( (*it) != Util::toLower((*it)) && (*it) != Util::toUpper((*it))) {
-//                ofstream of("not_in_wikipedia.tmp", ios::app | ios::ate);
-//                of << (*it) << endl;
-//                of.close();
-//                not_in_wikipedia.push_back((*it));
-        }
-    }
-}
-
 
 
 class Data2 {
@@ -766,17 +282,6 @@ public:
 	Gtk::TextView* textview;
 	Gtk::Entry* entry;
 	Glib::RefPtr<Gtk::TextBuffer::Tag> refTagMatch;
-//	Glib::RefPtr<Gtk::TextBuffer> buf;
-//	auto_ptr<JEliza> jeliza;
-//
-//	Data4()
-//	: jeliza(new JEliza())
-//	{
-//	}
-//
-//	void init() {
-//		jeliza->init();
-//	}
 };
 
 void on_einstellungen_activate(Data3& data) {
@@ -793,7 +298,7 @@ void on_einstellungen_activate(Data3& data) {
 		all += "\n";
 	}
 	in.close();
-	all = toASCII(all);
+	all = toASCII_2(all);
 
 	data.buf = data.tv->get_buffer();
 	data.buf->set_text(all);
@@ -820,7 +325,7 @@ void on_okbutton1_clicked(Data3& data) {
 		++iter;
 	}
 
-	all = toASCII(all);
+	all = toASCII_2(all);
 	o << all << endl;
 	o.close();
 
@@ -846,7 +351,7 @@ void on_about_ok_clicked(Data5& data) {
 }
 
 void on_new_database_activate(Data3& data) {
-	Gtk::MessageDialog dia3(*data.win, Glib::ustring(toASCII("Soll die aktuelle Datenbank wirklich gelöscht und eine neue angelegt werden?")), true, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_YES_NO, true);
+	Gtk::MessageDialog dia3(*data.win, Glib::ustring(toASCII_2("Soll die aktuelle Datenbank wirklich gelöscht und eine neue angelegt werden?")), true, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_YES_NO, true);
 
 	if (dia3.run() == Gtk::RESPONSE_YES) {
 		ofstream o("jeliza-standard.xml");
@@ -893,7 +398,7 @@ void on_Ask_clicked(Data1& data) {
 		dia4.run();
 	}
 	string fra = data.entry->get_text();
-	msg = toASCII(fra);
+	msg = toASCII_2(fra);
 	string bestReply;
 
 	Request r;
@@ -906,8 +411,14 @@ void on_Ask_clicked(Data1& data) {
 
     {
         Glib::Mutex::Lock lock(mutex);
+
         jeliza_request = r;
+
+        (*JELIZA_PROGRESS) = 2.0;
+        (*jeliza_dispatcher_pulse)();
     }
+
+    jeliza_helper_thread = Glib::Thread::create (sigc::mem_fun(*mainWindow, &MainWindow::thread_work_helper), true);
 }
 
 void fs_on_Ask_clicked(Data4& data) {
@@ -918,7 +429,7 @@ void fs_on_Ask_clicked(Data4& data) {
 		dia4.run();
 	}
 	string fra = data.entry->get_text();
-	msg = toASCII(fra);
+	msg = toASCII_2(fra);
 	string bestReply;
 
 	Request r;
@@ -931,8 +442,14 @@ void fs_on_Ask_clicked(Data4& data) {
 
     {
         Glib::Mutex::Lock lock(mutex);
+
         jeliza_request = r;
+
+        (*JELIZA_PROGRESS) = 2.0;
+        (*jeliza_dispatcher_pulse)();
     }
+
+    jeliza_helper_thread = Glib::Thread::create (sigc::mem_fun(*mainWindow, &MainWindow::thread_work_helper), true);
 }
 
 void fs_end_clicked(Data4& data) {
@@ -947,21 +464,18 @@ void on_fullscreen_mode_activate(Data4& data) {
 }
 
 void on_load_online_activate(Data3 data) {
-    {
-        Glib::Mutex::Lock lock(mutex);
-        Request r;
-        r.todo = "load_online";
-        jeliza_request = r;
-    }
-    {
-        Glib::Mutex::Lock lock(mutex);
-        Request r;
-        r.todo = "vorbereiten";
-        jeliza_request = r;
-    }
+    string all1 = download_with_pbar("http://svn.berlios.de/svnroot/repos/jeliza/trunk/jeliza-standard-online.xml");
+
+    ofstream o1("jeliza-standard.xml");
+    o1 << all1 << endl;
+    o1.close();
 }
 
 void MainWindow::answer() {
+    while (temp_req.m_ans.size() < 1) {
+        Glib::usleep(1000000);
+    }
+
     {
         Glib::Mutex::Lock lock(mutex);
 
@@ -983,76 +497,177 @@ void MainWindow::answer() {
         Gtk::TextBuffer::iterator itee = r.textview->get_buffer()->end();
         Glib::RefPtr<TextBuffer::Mark> ma = r.textview->get_buffer()->create_mark (Glib::ustring("endmark"), itee, false);
         r.textview->scroll_to(ma);
+
+        stringstream sst;
+        sst << verbrauchte_seconds;
+        string z;
+        sst >> z;
+
+        log ("Es wurden " + z + " Sekunden für das Antworten gebraucht.");
+        log ("");
+
+        (*JELIZA_PROGRESS) = 0.0;
+        (*(::jeliza_dispatcher_pulse))();
     }
+}
+
+void jeliza_pulse() {
+//    mainWindow->jeliza_dispatcher_pulse();
 }
 
 void MainWindow::thread_worker() {
+    count_loop = 0;
+
+    Glib::usleep(5000000);
+
     while (true) {
         {
-            Glib::Mutex::Lock lock(mutex);
-            Request r = jeliza_request;
-            if (r.todo.size() > 0) {
-                cout << "Neuer Request" << endl;
-                readyForNewRequests = false;
-                jeliza_helper_thread = Glib::Thread::create (sigc::mem_fun(*this, &MainWindow::thread_work_helper), true);
+            Request r;
 
-                while (!readyForNewRequests) {
-                    jeliza_dispatcher_pulse();
+            {
+                Glib::Mutex::Lock lock(mutex);
 
-                    Glib::usleep(100000);
+                r = jeliza_request;
+            }
+            if (count_loop > 2 && !offline_mode && www_surf_mode) {
+                {
+                    Glib::Mutex::Lock lock(mutex);
+
+                    (*JELIZA_PROGRESS) = 1.0;
+                    (*jeliza_dispatcher_pulse)();
                 }
-                (*JELIZA_PROGRESS) = 0.0;
-                jeliza_dispatcher_pulse();
+
+                answers ans;
+
+                if (wikipedia_words.size() > 0) {
+                    string word = wikipedia_words[0];
+                    answers wikipedia_words2;
+
+                    ans = search_in_wikipedia_acticle(word);
+
+                    for (int g = 1; g < wikipedia_words.size(); g++) {
+                        wikipedia_words2.push_back(wikipedia_words[g]);
+                    }
+                    wikipedia_words = wikipedia_words2;
+
+                } else {
+                    //ans = search_in_wikipedia_random();
+                }
+
+                for (int g = 0; g < ans.size(); g++) {
+                    clogger << "- Neuer Satz: " << ans[g] << endl;
+                }
+
+                global_jeliza << ans;
+
+                {
+                    Glib::Mutex::Lock lock(mutex);
+
+                    (*JELIZA_PROGRESS) = 0.0;
+                    (*jeliza_dispatcher_pulse)();
+                }
             }
         }
-        Glib::usleep(1000000);
+        if (count_loop >= 0) {
+            count_loop++;
+        }
+        Glib::usleep(7000000);
     }
 }
 
-void MainWindow::jeliza_dispatcher_pulse() {
-    m_pbar->set_fraction((*JELIZA_PROGRESS) / 100.0);
+void offline_mode_toggled() {
+    offline_mode = offline_item->get_active();
+}
+
+void www_surf_toggled() {
+    www_surf_mode = www_surf_item->get_active();
+}
+
+void save_arin_activated() {
+    ofstream o("wikipedia_words.tmp");
+    for (int x = 0; x < wikipedia_words.size(); x++) {
+        o << wikipedia_words[x] << " ";
+    }
+}
+
+void load_arin_activated() {
+    ifstream i("wikipedia_words.tmp");
+    wikipedia_words = answers();
+    string s;
+    while (i) {
+        i >> s;
+        if (s.size() > 1) {
+            wikipedia_words.push_back(s);
+        }
+    }
+}
+
+void MainWindow::jeliza_dispatcher_pulse_method() {
+    /*double x = // (*JELIZA_PROGRESS) / 100.0;
+    if (x > 1.05) {
+        x = 0.95;
+    }
+    if ((x > JELIZA_PROGRESS_AKTUELL || x < 0.5) && x != 0) {
+        m_pbar->set_fraction(x);
+        Glib::usleep(300000);
+        m_pbar->set_fraction(x + 0.025);
+        Glib::usleep(300000);
+        m_pbar->set_fraction(x + 0.05);
+        JELIZA_PROGRESS_AKTUELL = x + 0.05;
+    } else if (x == 0) {
+        m_pbar->set_fraction(x);
+    }*/
+
+    {
+        Glib::Mutex::Lock lock(mutex);
+
+        if ((*JELIZA_PROGRESS) == 0.0) {
+            m_status->push("JEliza hört zu...");
+        } else if ((*JELIZA_PROGRESS) == 1.0) {
+            m_status->push("JEliza surft im WWW...");
+        } else {
+            m_status->push("JEliza denkt nach...");
+        }
+    }
+}
+
+void MainWindow::jeliza_dispatcher_log() {
+    {
+        Glib::Mutex::Lock lock(mutex);
+
+        m_log->get_buffer()->set_text(log_all);
+
+        Gtk::TextBuffer::iterator itee = m_log->get_buffer()->end();
+        Glib::RefPtr<TextBuffer::Mark> ma = m_log->get_buffer()->create_mark (Glib::ustring("endmark2"), itee, false);
+        m_log->scroll_to(ma);
+    }
 }
 
 void MainWindow::thread_work_helper() {
-    Request r = jeliza_request;
-    jeliza_request.todo = string("");
+    clock_t start;
+    clock_t end;
+    start = clock();
 
-    if (Util::contains(r.todo, "online")) {
-        (*JELIZA_PROGRESS) = 0.0;
-        jeliza_dispatcher_pulse();
-        string all1 = download_with_pbar("http://svn.berlios.de/svnroot/repos/jeliza/trunk/jeliza-standard-online.xml");
+    count_loop = -1;
+    clogger << "Neuer Request" << endl;
+    count_loop = 0;
+    temp_req = jeliza_request;
+    clogger << "Frage (1): " << temp_req.m_ques.m_ques;
 
-        ofstream o1("jeliza-standard.xml");
-        o1 << all1 << endl;
-        o1.close();
-    } else if (r.todo.size() > 5) {
-        global_jeliza.reset(new JEliza());
-        global_jeliza->vorbereite();
+    global_jeliza << temp_req.m_ques.m_ques;
+    temp_req.m_ans = "";
+    global_jeliza >> temp_req.m_ans;
+    temp_req.m_ans = toASCII_2(temp_req.m_ans);
 
-        cout << "- Datenbank wurde vorbereitet " << endl;
+    end = clock();
+    end -= start;
+    long double x;
+    x = end;
 
-    } else {
-        Question ques = r.m_ques;
-        LearnableSentence learn = r.m_learn;
-        string bestReply;
+    verbrauchte_seconds = x / CLOCKS_PER_SEC;
 
-        durchsuche_nach_unbekanntem (ques.m_ques);
-
-        (*global_jeliza) << ques;
-        r.m_ans = "";
-        (*global_jeliza) >> r.m_ans;
-
-        r.m_ans = toASCII_2(r.m_ans);
-        (*global_jeliza) << learn;
-
-        temp_req = r;
-        (*jeliza_dispatcher)();
-    }
-
-    (*JELIZA_PROGRESS) = 100.0;
-    Glib::usleep(250000);
-
-    readyForNewRequests = true;
+    (*jeliza_dispatcher)();
+    count_loop = 0;
 }
 
 MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
@@ -1181,8 +796,19 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 	Data5 d5;
 	d5.win = about_dia;
 
-	refXml->get_widget("progressbar", m_pbar);
+	refXml->get_widget("statusbar", m_status);
+	refXml->get_widget("logview", m_log);
 
+
+
+	refXml->get_widget("off_mode", offline_item);
+	refXml->get_widget("www_surf", www_surf_item);
+
+
+	Gtk::MenuItem* save_arin;
+	Gtk::MenuItem* load_arin;
+	refXml->get_widget("save_arin", save_arin);
+	refXml->get_widget("load_arin", load_arin);
 
 
 
@@ -1263,8 +889,22 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 		about_ok->signal_clicked().connect(sigc::bind<Data5>(sigc::ptr_fun(&on_about_ok_clicked), d5));
 	}
 
+	if(offline_item) {
+		offline_item->signal_toggled().connect(sigc::ptr_fun(&offline_mode_toggled));
+	}
+	if(www_surf_item) {
+		www_surf_item->signal_toggled().connect(sigc::ptr_fun(&www_surf_toggled));
+	}
 
-    d1.textview->get_buffer()->set_text(Glib::ustring("JEliza: ") + global_jeliza->getGreeting() + Glib::ustring("\n"));
+	if(save_arin) {
+		save_arin->signal_activate().connect(sigc::ptr_fun(&save_arin_activated));
+	}
+	if(load_arin) {
+		load_arin->signal_activate().connect(sigc::ptr_fun(&load_arin_activated));
+	}
+
+
+    d1.textview->get_buffer()->set_text(Glib::ustring("JEliza: ") + global_jeliza.greet() + Glib::ustring("\n"));
     d1.textview->get_buffer()->apply_tag(d1.refTagMatch, d1.textview->get_buffer()->begin(),
             d1.textview->get_buffer()->end());
 
@@ -1277,13 +917,6 @@ MainWindow::MainWindow(GtkWindow* base, Glib::RefPtr<Gnome::Glade::Xml> &ref)
 
 void MainWindow::launch_threads () {
     jeliza_thread = Glib::Thread::create (sigc::mem_fun(*this, &MainWindow::thread_worker), true);
-
-    {
-        Glib::Mutex::Lock lock(mutex);
-        Request r;
-        r.todo = "vorbereiten";
-        jeliza_request = r;
-    }
 }
 
 int main_2(int argc, char *argv[]) {
@@ -1293,7 +926,6 @@ int main_2(int argc, char *argv[]) {
 
     try {
         Glib::RefPtr<Gnome::Glade::Xml> refXml = Gnome::Glade::Xml::create("jeliza-glade.glade"); // , "MainWindow"
-        MainWindow* mainWindow(0);
 
         refXml->get_widget_derived("MainWindow", mainWindow);
 
@@ -1303,7 +935,11 @@ int main_2(int argc, char *argv[]) {
 
         Glib::Dispatcher jeliza_dispatcher_pulse2;
         jeliza_dispatcher_pulse = &jeliza_dispatcher_pulse2;
-        (*jeliza_dispatcher_pulse).connect (sigc::mem_fun(*mainWindow, &MainWindow::jeliza_dispatcher_pulse));
+        (*jeliza_dispatcher_pulse).connect (sigc::mem_fun(*mainWindow, &MainWindow::jeliza_dispatcher_pulse_method));
+
+        Glib::Dispatcher jeliza_dispatcher_log2;
+        jeliza_dispatcher_log = &jeliza_dispatcher_log2;
+        (*jeliza_dispatcher_log).connect (sigc::mem_fun(*mainWindow, &MainWindow::jeliza_dispatcher_log));
 
 
 
@@ -1313,11 +949,11 @@ int main_2(int argc, char *argv[]) {
 			Main::run(*mainWindow); //...dann koennen wir das fenster nun anzeigen
 		}
 		else {
-			cout << "Hauptfenster konnte nicht geladen werden!" << endl;
+			clogger << "Hauptfenster konnte nicht geladen werden!" << endl;
 			return 1;
 		}
 	} catch(Gnome::Glade::Xml::Error& xmlError) {
-		cout << xmlError.what() << endl;
+		clogger << xmlError.what() << endl;
 		cin.get();
 		return 1;
 	}

@@ -68,15 +68,15 @@ string toASCII_2_2(string all) {
 
 
 void jdb::DBSentence::print() {
-    cout << "Subject:   " << subject << endl;
-    cout << "Verb:      " << verb << endl;
-    cout << "Object:    " << object << endl;
-    cout << "Prefix:    " << prefix << endl;
-    cout << "Suffix:    " << suffix << endl;
-    cout << "Feeling:   " << feeling << endl;
-    cout << "Priority:  " << priority << endl;
-    cout << "Category:  " << category << endl;
-    cout << endl;
+    clogger << "Subject:   " << subject << endl;
+    clogger << "Verb:      " << verb << endl;
+    clogger << "Object:    " << object << endl;
+    clogger << "Prefix:    " << prefix << endl;
+    clogger << "Suffix:    " << suffix << endl;
+    clogger << "Feeling:   " << feeling << endl;
+    clogger << "Priority:  " << priority << endl;
+    clogger << "Category:  " << category << endl;
+    clogger << endl;
 }
 
 string jdb::DBSentence::toXML() {
@@ -111,7 +111,7 @@ void jdb::DBSentence::toXMLPrint() {
     string tempprio;
     sst >> tempprio;
 
-    cout << " <fact>" << endl;
+    clogger << " <fact>" << endl;
     printPart ("prefix>   ", temp, prefix);
     printPart ("subject>  ", temp, subject);
     printPart ("verb>     ", temp, verb);
@@ -121,12 +121,12 @@ void jdb::DBSentence::toXMLPrint() {
     printPart ("priority> ", temp, tempprio);
     printPart ("category> ", temp, category);
 
-    cout << " </fact>" << endl;
-    cout << endl;
+    clogger << " </fact>" << endl;
+    clogger << endl;
 }
 
 string jdb::DBSentence::printPart (string str, string temp, string wert) {
-//    cout << "  <" << str << wert << "  " << "</" << str << endl;
+//    clogger << "  <" << str << wert << "  " << "</" << str << endl;
 
     temp = Util::replace(temp, string("\n"), string("\\n"));
     temp = Util::replace(temp, string("\r"), string(""));
@@ -172,6 +172,18 @@ answers jdb::DBSentence::genSentences(bool withFix = false) {
         ans.push_back(temp);
     }
 
+    ans.push_back(prefix + " " + subject + " " + verb + " " + object + " " + suffix);
+
+    return ans;
+}
+
+answers jdb::DBSentence::genSentences_all(bool withFix = false) {
+    strip();
+
+    answers ans;
+
+    ans.push_back(prefix + " " + subject + " " + verb + " " + object + " " + suffix);
+
     return ans;
 }
 
@@ -191,12 +203,12 @@ jdb::DB parseJDB (string file) {
         all += buffer + "\n";
     }
 
-//    cout << "!" << endl;
+//    clogger << "!" << endl;
     /*all = Util::replace(all, string("\r"), string(""));
     all = Util::replace_save(all, string("<"), string("\n<"));
     all = Util::replace_save(all, string(">"), string(">\n"));
     all = Util::replace_save(all, string("\n\n"), string("\n"));
-    cout << "?" << endl;*/
+    clogger << "?" << endl;*/
 
     vector<string> lines;
     Util::split(all, string("\n\r<>"), lines);
@@ -206,9 +218,9 @@ jdb::DB parseJDB (string file) {
 
     for (vector<string>::iterator it = lines.begin(); it != lines.end(); it++) {
         *it = Util::strip(*it);
-//        cout << ",";
+//        clogger << ",";
     }
-    cout << endl;
+    clogger << endl;
 
     JEliza jel(1);
 
@@ -262,15 +274,14 @@ jdb::DB parseJDB (string file) {
 
         else if (line == "/fact") {
             act_sent.strip();
-            if (jel.isQuestion(act_sent.prefix) == 0 && jel.isQuestion(act_sent.suffix) == 0
-                    && jel.isQuestion(act_sent.object) == 0) {
+            if (jel.isQuestion(act_sent.genSentences_all(true)[0]) == 0) {
                 sents.push_back(act_sent);
             }
             act_sent = jdb::DBSentence();
-            cout << ".";
+            clogger << ".";
         }
     }
-    cout << endl << endl;
+    clogger << endl << endl;
 
     return sents;
 }
@@ -282,28 +293,28 @@ jdb::DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs) 
     jdb::DBSentence act_sent;
 
     if (parts.size() > 1) {
-        cout << "parts.size() > 1 " << parts[0] << "|"  << parts[1] << "|"  << parts[2] << "|"  << parts[2] << endl;
+        clogger << "parts.size() > 1 " << parts[0] << "|"  << parts[1] << "|"  << parts[2] << "|"  << parts[2] << endl;
         string prefix = "";
-        cout << "1";
+        clogger << "1";
         if (Util::contains(parts[0], ",")) {
-            cout << "2";
+            clogger << "2";
             int n = parts[0].find(",");
-            cout << "3";
+            clogger << "3";
             prefix = parts[0].substr(0, n);
-            cout << "4";
+            clogger << "4";
             parts[0] = parts[0].substr(n+1, parts[0].size());
         }
-        cout << "5";
+        clogger << "5";
         string suffix = "";
         if (Util::contains(parts[3], ",")) {
-            cout << "6";
+            clogger << "6";
             int n = parts[3].find(",");
-            cout << "7";
+            clogger << "7";
             suffix = parts[3].substr(n+1, parts[3].size());
-            cout << "8";
+            clogger << "8";
             parts[3] = parts[3].substr(0, n);
         }
-        cout << "9";
+        clogger << "9";
         act_sent.subject = Util::strip(parts[0]);
         act_sent.verb = Util::strip(parts[1]);
         act_sent.object = Util::strip(parts[3]);
@@ -311,7 +322,7 @@ jdb::DBSentence toDBSentence (string buffer, JEliza& jel, vector<string> verbs) 
         act_sent.suffix = Util::strip(suffix);
     }
     else {
-        cout << "parts.size() == 0" << endl;
+        clogger << "parts.size() == 0" << endl;
         string prefix = buffer;
         string suffix = "";
         if (Util::contains(buffer, ",")) {
@@ -333,7 +344,7 @@ void convertOldDB() {
     vector<string> verbs = verbs::getVerbs();
 	string buffer;
 
-    cout << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" << endl << endl << "<jdb>" << endl;
+    clogger << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" << endl << endl << "<jdb>" << endl;
 
     while (i) {
         getline (i, buffer);
@@ -346,7 +357,7 @@ void convertOldDB() {
         toDBSentence(toASCII_2_2(buffer), jel, verbs).toXML();
     }
 
-    cout << "</jdb>" << endl;
+    clogger << "</jdb>" << endl;
 }
 
 void saveDB(string file, JEliza& jel, jdb::DB db) {

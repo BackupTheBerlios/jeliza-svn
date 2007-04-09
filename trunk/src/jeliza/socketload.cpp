@@ -104,6 +104,11 @@ std::string GetFileEnding(std::string& URL)
 			break;
 		}
 	}
+
+	if (ending == ".org") {
+	    ending = ".php";
+	}
+
 	return ending;
 }
 
@@ -184,7 +189,7 @@ string download (string url) {
 	WSADATA w;
 	if(WSAStartup(MAKEWORD(2,2), &w) != 0)
 	{
-		cout << "Winsock 2 konnte nicht gestartet werden! Error #" << WSAGetLastError() << endl;
+		clogger << "Winsock 2 konnte nicht gestartet werden! Error #" << WSAGetLastError() << endl;
 		return "";
 	}
 #endif
@@ -199,26 +204,26 @@ string download (string url) {
 
 	if(phe == NULL)
 	{
-		cout << "Host konnte nicht aufgeloest werden!" << endl;
+		clogger << "Host konnte nicht aufgeloest werden!" << endl;
 		return "";
 	}
 
 	if(phe->h_addrtype != AF_INET)
 	{
-		cout << "Ungueltiger Adresstyp!" << endl;
+		clogger << "Ungueltiger Adresstyp!" << endl;
 		return "";
 	}
 
 	if(phe->h_length != 4)
 	{
-		cout << "Ungueltiger IP-Typ!" << endl;
+		clogger << "Ungueltiger IP-Typ!" << endl;
 		return "";
 	}
 
 	int Socket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if(Socket == -1)
 	{
-		cout << "Socket konnte nicht erstellt werden!" << endl;
+		clogger << "Socket konnte nicht erstellt werden!" << endl;
 		return "";
 	}
 
@@ -232,7 +237,7 @@ string download (string url) {
 	{
 		if(*p == NULL) // Ende der Liste
 		{
-			cout << "Verbindung fehlgschlagen!" << endl;
+			clogger << "Verbindung fehlgschlagen!" << endl;
 			return "";
 		}
 
@@ -249,7 +254,7 @@ string download (string url) {
 	}
 	while(result == -1);
 
-	cout << "Verbindung erfolgreich!" << endl;
+	clogger << "Verbindung erfolgreich!" << endl;
 
 	string request = "GET ";
 	request += URL;	// z.B. /faq/index.html
@@ -257,6 +262,7 @@ string download (string url) {
 	request += "Host: " + hostname + "\n";
 	request += "User-Agent: Mozilla/5.0 (X11; U; Linux i686; de; rv:1.8.1.2) Gecko/20060601 Firefox/2.0.0.2 (Ubuntu-edgy)\n";
 	request += "Connection: close\n\n";
+
 
 	try
 	{
@@ -275,20 +281,22 @@ string download (string url) {
 				GetLine(Socket, firstLine); // Leere Zeile nach Continue ignorieren
 			}
 		}
-		cout << "Protokoll: " << Protokoll << endl;
+		clogger << "Protokoll: " << Protokoll << endl;
 
-		if(code != 200)
+		if(code != 200 && code != 302)
 		{
 			firstLine.ignore(); // Leerzeichen nach dem Statuscode ignorieren
 			string msg;
 			getline(firstLine, msg);
-			cout << "Error #" << code << " - " << msg << endl;
+			clogger << "Error #" << code << " - " << msg << endl;
 			return "";
 		}
 
 		bool chunked = false;
 		const int noSizeGiven = -1;
 		int size = noSizeGiven;
+
+        string location = "";
 
 		while(true)
 		{
@@ -305,6 +313,11 @@ string download (string url) {
 			{
 				sstream >> size;
 			}
+			if(left == "Location:")
+			{
+				sstream >> location;
+			}
+			cout << left << "|" << location << endl;
 			if(left == "Transfer-Encoding:")
 			{
 				string transferEncoding;
@@ -316,12 +329,19 @@ string download (string url) {
 			}
 		}
 
+		if (location.size() > 0) {
+		    clogger << "- Weiterleitung zu: " << location << endl;
+		    cout << "- Weiterleitung zu: " << location << endl;
+//		    log("- Weiterleitung zu: " + location);
+		    return download(location);
+		}
+
 		filename = "download" + GetFileEnding(URL);
-		cout << "Filename: " << filename << endl;
+		clogger << "Filename: " << filename << endl;
 		fstream fout(filename.c_str(), ios::binary | ios::out);
 		if(!fout)
 		{
-			cout << "Could Not Create File!" << endl;
+			clogger << "Could Not Create File!" << endl;
 			return "";
 		}
 		int recvSize = 0; // Empfangene Bytes insgesamt
@@ -330,7 +350,7 @@ string download (string url) {
 
 		if(size != noSizeGiven) // Wenn die Größe über Content-length gegeben wurde
 		{
-			cout << "0%";
+			clogger << "0%";
 			while(recvSize < size)
 			{
 				if((bytesRecv = recv(Socket, buf, sizeof(buf), 0)) <= 0)
@@ -339,14 +359,14 @@ string download (string url) {
 				}
 				recvSize += bytesRecv;
 				fout.write(buf, bytesRecv);
-				cout << "\r" << recvSize * 100 / size << "%" << flush; // Mit \r springen wir an den Anfang der Zeile
+				clogger << "\r" << recvSize * 100 / size << "%" << flush; // Mit \r springen wir an den Anfang der Zeile
 			}
 		}
 		else
 		{
 			if(!chunked)
 			{
-				cout << "Downloading... (Unknown Filesize)" << endl;
+				clogger << "Downloading... (Unknown Filesize)" << endl;
 				while(bytesRecv != 0) // Wenn recv 0 zurück gibt, wurde die Verbindung beendet
 				{
 					if((bytesRecv = recv(Socket, buf, sizeof(buf), 0)) < 0)
@@ -358,7 +378,7 @@ string download (string url) {
 			}
 			else
 			{
-				cout << "Downloading... (Chunked)" << endl;
+				clogger << "Downloading... (Chunked)" << endl;
 				while(true)
 				{
 					stringstream sstream;
@@ -369,7 +389,7 @@ string download (string url) {
 					{
 						break;
 					}
-					cout << "Downloading Part (" << chunkSize << " Bytes)... " << endl;
+					clogger << "Downloading Part (" << chunkSize << " Bytes)... " << endl;
 					recvSize = 0; // Vor jeder Schleife wieder auf 0 setzen
 					while(recvSize < chunkSize)
 					{
@@ -380,9 +400,9 @@ string download (string url) {
 						}
 						recvSize += bytesRecv;
 						fout.write(buf, bytesRecv);
-						cout << "\r" << recvSize * 100 / chunkSize << "%" << flush;
+						clogger << "\r" << recvSize * 100 / chunkSize << "%" << flush;
 					}
-					cout << endl;
+					clogger << endl;
 					for(int i = 0; i < 2; ++i)
 					{
 						char temp;
@@ -391,12 +411,12 @@ string download (string url) {
 				}
 			}
 		}
-		cout << endl << "Finished!" << endl;
+		clogger << endl << "Finished!" << endl;
 
 	}
 	catch(exception& e)
 	{
-		cout << endl;
+		clogger << endl;
 		cerr << e.what() << endl;
 	}
 
@@ -429,7 +449,7 @@ string download_with_pbar (string url) {
 	WSADATA w;
 	if(WSAStartup(MAKEWORD(2,2), &w) != 0)
 	{
-		cout << "Winsock 2 konnte nicht gestartet werden! Error #" << WSAGetLastError() << endl;
+		clogger << "Winsock 2 konnte nicht gestartet werden! Error #" << WSAGetLastError() << endl;
 		return "";
 	}
 #endif
@@ -444,26 +464,26 @@ string download_with_pbar (string url) {
 
 	if(phe == NULL)
 	{
-		cout << "Host konnte nicht aufgeloest werden!" << endl;
+		clogger << "Host konnte nicht aufgeloest werden!" << endl;
 		return "";
 	}
 
 	if(phe->h_addrtype != AF_INET)
 	{
-		cout << "Ungueltiger Adresstyp!" << endl;
+		clogger << "Ungueltiger Adresstyp!" << endl;
 		return "";
 	}
 
 	if(phe->h_length != 4)
 	{
-		cout << "Ungueltiger IP-Typ!" << endl;
+		clogger << "Ungueltiger IP-Typ!" << endl;
 		return "";
 	}
 
 	int Socket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if(Socket == -1)
 	{
-		cout << "Socket konnte nicht erstellt werden!" << endl;
+		clogger << "Socket konnte nicht erstellt werden!" << endl;
 		return "";
 	}
 
@@ -477,7 +497,7 @@ string download_with_pbar (string url) {
 	{
 		if(*p == NULL) // Ende der Liste
 		{
-			cout << "Verbindung fehlgschlagen!" << endl;
+			clogger << "Verbindung fehlgschlagen!" << endl;
 			return "";
 		}
 
@@ -494,7 +514,7 @@ string download_with_pbar (string url) {
 	}
 	while(result == -1);
 
-	cout << "Verbindung erfolgreich!" << endl;
+	clogger << "Verbindung erfolgreich!" << endl;
 
 	string request = "GET ";
 	request += URL;	// z.B. /faq/index.html
@@ -520,14 +540,14 @@ string download_with_pbar (string url) {
 				GetLine(Socket, firstLine); // Leere Zeile nach Continue ignorieren
 			}
 		}
-		cout << "Protokoll: " << Protokoll << endl;
+		clogger << "Protokoll: " << Protokoll << endl;
 
 		if(code != 200)
 		{
 			firstLine.ignore(); // Leerzeichen nach dem Statuscode ignorieren
 			string msg;
 			getline(firstLine, msg);
-			cout << "Error #" << code << " - " << msg << endl;
+			clogger << "Error #" << code << " - " << msg << endl;
 			return "";
 		}
 
@@ -562,11 +582,11 @@ string download_with_pbar (string url) {
 		}
 
 		filename = "download" + GetFileEnding(URL);
-		cout << "Filename: " << filename << endl;
+		clogger << "Filename: " << filename << endl;
 		fstream fout(filename.c_str(), ios::binary | ios::out);
 		if(!fout)
 		{
-			cout << "Could Not Create File!" << endl;
+			clogger << "Could Not Create File!" << endl;
 			return "";
 		}
 		int recvSize = 0; // Empfangene Bytes insgesamt
@@ -575,7 +595,7 @@ string download_with_pbar (string url) {
 
 		if(size != noSizeGiven) // Wenn die Größe über Content-length gegeben wurde
 		{
-			cout << "0%";
+			clogger << "0%";
 			while(recvSize < size)
 			{
 				if((bytesRecv = recv(Socket, buf, sizeof(buf), 0)) <= 0)
@@ -584,7 +604,7 @@ string download_with_pbar (string url) {
 				}
 				recvSize += bytesRecv;
 				fout.write(buf, bytesRecv);
-				cout << "\r" << recvSize * 100 / size << "%" << flush; // Mit \r springen wir an den Anfang der Zeile
+				clogger << "\r" << recvSize * 100 / size << "%" << flush; // Mit \r springen wir an den Anfang der Zeile
 				(*JELIZA_PROGRESS) = recvSize * 100.0 / size;
 			}
 		}
@@ -592,7 +612,7 @@ string download_with_pbar (string url) {
 		{
 			if(!chunked)
 			{
-				cout << "Downloading... (Unknown Filesize)" << endl;
+				clogger << "Downloading... (Unknown Filesize)" << endl;
 				while(bytesRecv != 0) // Wenn recv 0 zurück gibt, wurde die Verbindung beendet
 				{
 					if((bytesRecv = recv(Socket, buf, sizeof(buf), 0)) < 0)
@@ -604,7 +624,7 @@ string download_with_pbar (string url) {
 			}
 			else
 			{
-				cout << "Downloading... (Chunked)" << endl;
+				clogger << "Downloading... (Chunked)" << endl;
 				while(true)
 				{
 					stringstream sstream;
@@ -615,7 +635,7 @@ string download_with_pbar (string url) {
 					{
 						break;
 					}
-					cout << "Downloading Part (" << chunkSize << " Bytes)... " << endl;
+					clogger << "Downloading Part (" << chunkSize << " Bytes)... " << endl;
 					recvSize = 0; // Vor jeder Schleife wieder auf 0 setzen
 					while(recvSize < chunkSize)
 					{
@@ -626,9 +646,9 @@ string download_with_pbar (string url) {
 						}
 						recvSize += bytesRecv;
 						fout.write(buf, bytesRecv);
-						cout << "\r" << recvSize * 100 / chunkSize << "%" << flush;
+						clogger << "\r" << recvSize * 100 / chunkSize << "%" << flush;
 					}
-					cout << endl;
+					clogger << endl;
 					for(int i = 0; i < 2; ++i)
 					{
 						char temp;
@@ -637,12 +657,12 @@ string download_with_pbar (string url) {
 				}
 			}
 		}
-		cout << endl << "Finished!" << endl;
+		clogger << endl << "Finished!" << endl;
 
 	}
 	catch(exception& e)
 	{
-		cout << endl;
+		clogger << endl;
 		cerr << e.what() << endl;
 	}
 

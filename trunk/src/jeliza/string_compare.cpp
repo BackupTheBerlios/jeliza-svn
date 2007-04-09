@@ -136,13 +136,15 @@ long double StringCompare::compare (string s1, string s2) {
 
     long double tmp;
     tmp = Util::max(s1_size, s2_size);
-    tmp = tmp / Util::min(s1_size, s2_size);
+    tmp = tmp - Util::min(s1_size, s2_size);
+
+    accBest += tmp;
 
 //    acc /= tmp;
 //    accBest = tmp;
 
-////        cout << "acc     " << acc << endl;
-////        cout << "accBest " << accBest << endl;
+////        clogger << "acc     " << acc << endl;
+////        clogger << "accBest " << accBest << endl;
 
     res = 0.0;
     if (accBest > 0 and acc > 0) {
