@@ -7,7 +7,7 @@
     <property name="height_request">400</property>
     <property name="visible">True</property>
     <property name="has_focus">True</property>
-    <property name="title" translatable="yes">JEliza 2.2 Beta (Easter Edition)</property>
+    <property name="title" translatable="yes">JEliza 2.2 RC</property>
     <property name="icon">jeliza16.ico</property>
     <child>
       <widget class="GtkVBox" id="vbox1">
@@ -192,9 +192,24 @@
                         </child>
                       </widget>
                     </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="menuitem1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Internet</property>
+                <property name="use_underline">True</property>
+                <child>
+                  <widget class="GtkMenu" id="menu1">
+                    <property name="visible">True</property>
                     <child>
-                      <widget class="GtkSeparatorMenuItem" id="separatormenuitem2">
+                      <widget class="GtkCheckMenuItem" id="www_surf">
                         <property name="visible">True</property>
+                        <property name="active">True</property>
+                        <property name="label" translatable="yes">Im WWW surfen</property>
+                        <property name="use_underline">True</property>
                       </widget>
                     </child>
                     <child>
@@ -205,10 +220,21 @@
                       </widget>
                     </child>
                     <child>
-                      <widget class="GtkCheckMenuItem" id="www_surf">
+                      <widget class="GtkSeparatorMenuItem" id="separatormenuitem2">
                         <property name="visible">True</property>
-                        <property name="active">True</property>
-                        <property name="label" translatable="yes">Im WWW surfen</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkMenuItem" id="save_arin">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Artikelinformationen Speichern</property>
+                        <property name="use_underline">True</property>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkMenuItem" id="load_arin">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Artikelinformationen Laden</property>
                         <property name="use_underline">True</property>
                       </widget>
                     </child>
