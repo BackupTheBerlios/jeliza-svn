@@ -3,11 +3,11 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="robots" content="noindex,nofollow" />
-		<meta name="keywords" content="Grossrechner,Grossrechner,Lizenzbestimmungen,Quellenangaben,Urheberrechte beachten,Grossrechner,Liste der IPA-Zeichen,Sonderzeichen" />
+		<meta name="keywords" content="Logitech,Logitech,Lizenzbestimmungen,Quellenangaben,Urheberrechte beachten,Logitech,Liste der IPA-Zeichen,Sonderzeichen" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (Deutsch)" />
 		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
-		<title>Bearbeiten von Grossrechner - Wikipedia</title>
+		<title>Bearbeiten von Logitech - Wikipedia</title>
 		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/skins-1.5/monobook/main.css?61"; /*]]>*/</style>
 		<link rel="stylesheet" type="text/css" media="print" href="/skins-1.5/common/commonPrint.css?61" />
 		<link rel="stylesheet" type="text/css" media="handheld" href="/skins-1.5/monobook/handheld.css?61" />
@@ -27,16 +27,16 @@ var wgServer = "http://de.wikipedia.org";
 var wgCanonicalNamespace = "";
 var wgCanonicalSpecialPageName = false;
 var wgNamespaceNumber = 0;
-var wgPageName = "Grossrechner";
-var wgTitle = "Grossrechner";
-var wgArticleId = "1181337";
+var wgPageName = "Logitech";
+var wgTitle = "Logitech";
+var wgArticleId = "158944";
 var wgIsArticle = false;
 var wgUserName = null;
 var wgUserGroups = null;
 var wgUserLanguage = "de";
 var wgContentLanguage = "de";
 var wgBreakFrames = false;
-var wgCurRevisionId = "12655519";
+var wgCurRevisionId = "29922304";
 /*]]>*/</script>
                 
 		<script type="text/javascript" src="/skins-1.5/common/wikibits.js?61"><!-- wikibits js --></script>
@@ -49,12 +49,12 @@ var wgCurRevisionId = "12655519";
 		<!-- Head Scripts -->
 		<script type="text/javascript" src="/skins-1.5/common/ajax.js?61"></script>
 	</head>
-<body  class="mediawiki ns-0 ltr page-Grossrechner">
+<body  class="mediawiki ns-0 ltr page-Logitech">
 	<div id="globalWrapper">
 		<div id="column-content">
 	<div id="content">
 		<a name="top" id="top"></a>
-				<h1 class="firstHeading">Bearbeiten von Grossrechner</h1>
+				<h1 class="firstHeading">Bearbeiten von Logitech</h1>
 		<div id="bodyContent">
 			<h3 id="siteSub">aus Wikipedia, der freien Enzyklopädie</h3>
 			<div id="contentSub"></div>
@@ -65,8 +65,8 @@ var wgCurRevisionId = "12655519";
 /*<![CDATA[*/
 addButton('/skins-1.5/common/images/button_bold.png','Fetter Text','\'\'\'','\'\'\'','Fetter Text','mw-editbutton-bold');
 addButton('/skins-1.5/common/images/button_italic.png','Kursiver Text','\'\'','\'\'','Kursiver Text','mw-editbutton-italic');
-addButton('/skins-1.5/common/images/button_link.png','Interner Link','[[',']]','Link-Text','mw-editbutton-link');
-addButton('/skins-1.5/common/images/button_extlink.png','Externer Link (http:// beachten)','[',']','http://www.beispiel.de Link-Text','mw-editbutton-extlink');
+addButton('/skins-1.5/common/images/button_link.png','Interner Verweis','[[',']]','Verweistext','mw-editbutton-link');
+addButton('/skins-1.5/common/images/button_extlink.png','Externer Verweis (http:// beachten)','[',']','http://www.beispiel.de Dargestellter Verweistext','mw-editbutton-extlink');
 addButton('/skins-1.5/common/images/button_headline.png','Überschrift','\n== ',' ==\n','Überschrift','mw-editbutton-headline');
 addButton('/skins-1.5/common/images/button_image.png','Bildverweis','[[Bild:',']]','Beispiel.jpg','mw-editbutton-image');
 addButton('/skins-1.5/common/images/button_media.png','Mediendatei-Verweis','[[Media:',']]','Beispiel.ogg','mw-editbutton-media');
@@ -77,18 +77,84 @@ addButton('/skins-1.5/common/images/button_hr.png','Horizontale Linie (sparsam v
 /*]]>*/
 </script>
 </div>
-<form id="editform" name="editform" method="post" action="/w/index.php?title=Grossrechner&amp;action=submit" enctype="multipart/form-data">
+<form id="editform" name="editform" method="post" action="/w/index.php?title=Logitech&amp;action=submit" enctype="multipart/form-data">
 <input type='hidden' value="" name="wpSection" />
-<input type='hidden' value="20070408153142" name="wpStarttime" />
+<input type='hidden' value="20070417154156" name="wpStarttime" />
 
-<input type='hidden' value="20060115215652" name="wpEdittime" />
+<input type='hidden' value="20070331084348" name="wpEdittime" />
 
 <input type='hidden' value="" name="wpScrolltop" id="wpScrolltop" />
 
 
 
 <textarea tabindex='1' accesskey="," name="wpTextbox1" id="wpTextbox1" rows='25'
-cols='80' >#REDIRECT [[Großrechner]]
+cols='80' >[[Bild:Logitech.svg|thumb|Logo]]
+'''Logitech''' ist ein [[1981]] in der [[Schweiz]] gegründetes [[Unternehmen]] mit Niederlassungen in [[Romanel-sur-Morges]] (Schweiz), Zürich (Schweiz),[[Fremont (Kalifornien)]], [[Hong Kong]] (China) und [[Tokio]] (Japan). Produktionsstandort ist Suzhou City in China und [[Hsinchu]] in Taiwan. Logitech stellt Produkte rund um den [[Computer]] her und ist vor allem für seine [[Maus (EDV)|Mäuse]] weltbekannt. Neben Mäusen produziert Logitech unter anderem auch [[Tastatur]]en, [[Trackball]]s, [[Lautsprecher]], [[Headset]]s, [[Webcam]]s, [[Joystick]]s und anderes Computer-Zubehör. Bei kabellosen [[Peripherie]]geräten mit [[digital]]er [[Funktechnik|Funk]]technologie ist Logitech Weltmarktführer. 
+
+== Relevante Geräte ==
+
+*Herbst 2004: Logitech veröffentlichte die weltweit erste [[Lasermaus]], die ''MX&amp;nbsp;1000''.
+
+*Die G15 ist eine speziell für Spiele entwickelte Tastatur, die sogar ein kleines LC-Display z.B. für diverse Statusanzeigen enthält.
+
+*Bei der aktuellen, speziell auf Computerspieler ausgerichteten Maus „G5“ lässt sich wie bei der schon länger erhältlichen MX&amp;nbsp;518 die [[Abtastrate]] verstellen. Bei der G5 kann der Anwender selbst Gewichte einlegen, um die Handhabung zu optimieren. Passend zur G5 wurde u.&amp;nbsp;a. auch die G7 vorgestellt, eine kabellose Variante der G5. Diese Maus besitzt nicht wie üblich einen integrierten Akku oder Batterien, sondern besticht durch schnell austauschbare und extern aufladbare [[Lithium-Ionen-Akku|Lithium-Ionen-Akkus]]. Durch diese Technik wurde das Gewicht der Maus erheblich gesenkt und die Flexibilität gesteigert.
+
+== Geschichte ==
+[[Bild:Maus (EDV) - Logitech - 001.jpg|thumb|Maus von Logitech (MX 700)]]
+[[Bild:LogitechQuickcamPro.jpg|thumb|Webcam von Logitech (QuickCamPro)]]
+[[Bild:Logitech G15.jpg|thumb|''G15'' von Logitech]]
+[[Bild:Logi cmp wikipedia.jpg|thumb|stark asymmetrischer ''Cordless MouseMan Pro'' (199?).
+Noch mit Kugel-Rollen-Abnahme, dritte Taste als Daumentaste.]]
+
+Logitech wurde 1981 von [[Daniel Borel]] und einigen seiner Studienkollegen der [[Stanford University]] auf einem Bauernhof in [[Apples]] in der [[Schweiz]] gegründet. Ursprünglich sollte Logitech ein Softwareunternehmen werden, daher auch der Name Logitech, der auf dem französischen Wort für Software, ''Logiciel'', basiert.
+
+* 1982 stellt Logitech mit der P4-Maus die erste Serienmaus der Welt vor.
+* 1985 erscheint die LogiMouse C7. Sie bezieht Strom direkt aus der [[RS-232]]-Schnittstelle und benötigt keine externe Stromquelle mehr wie das R7-Modell. Die Drei-Tasten-Funktion wird Standard.
+* 1988 Börsengang in Zürich (LOGN). Das Unternehmen zeigt den Scan-Man, einen Handscanner mit 8 Bit Graustufenauflösung.
+* 1989 entwickelt Logitech mit dem Mouse-Man die erste ergonomische Maus, die nicht mehr der bis dahin typisch eckigen Form entspricht.
+* 1991 wird mit dem Cordless Mouse-Man die erste kabellose Funkfrequenz-Maus und mit der KidzMouse die erste speziell für Kinder entworfene Maus vorgestellt.
+* 1992 Einführung des PhotoMan, einer sehr frühen Digitalkamera für unter 1.000 US$
+* 1995 zwei Premieren im Produktsortiment: den VideoMan als erste Webcam und den WingMan als erstes Zubehör speziell für Computerspiele.
+* 1996 verlässt die 100-millionste Maus die Produktionsstätten.
+* 1997 Börsengang in New York an die Nasdaq (LOGI)
+* 1998 wird der erste ''Cordless Desktop'' und die ''Formula Force GP''-Lenkradreihe in den Markt eingeführt. Die Übernahme von Connectix, des Entwicklers der QuickCam-Produktfamilie, legt den Grundstein zur Marktführerschaft im Webcam-Segment. Der Italiener Guerrino de Luca, zuvor als Marketingspezialist beim Computerbauer Apple aktiv, wird der neue CEO von Logitech, während sich Borel in den Aufsichtsrat zurückzieht.
+* 1999 innerhalb von nur drei Jahren hat Logitech die Anzahl der verkauften Mäuse auf 200 Mio. Stück verdoppelt.
+* 2000 ist die nächste Millionenmarke erreicht: zwei Millionen verkaufte kabellose Tastaturen – ein Sprung von einer Million innerhalb eines Jahres.
+* 2001 Übernahme der amerikanischen Firma ''Labtec Inc.'' zur Verbreiterung des Angebots im Lautsprechersegment; die Marktführerschaft ist innerhalb von nur zwei Jahren erreicht. Die erste kabellose optische Maus, der ''Cordless MouseMan Optical'', und der erste Spielkonsolen-Controller, das ''Driving Force''-Lenkrad für die Play-Station2 werden präsentiert.
+* 2002 Einführung des io Personal Digital Pen, eines Schreibsystems, das die digitale Erfassung handschriftlicher Notizen, Zeichnungen und Ideen ermöglicht. Es bietet aber gewohntes Schreiben mit normaler Tintenmine auf speziellem Papier, ist also eine Weiterentwicklung der gewohnten Arbeitsumgebung hin zu &quot;Pen &amp; Paper 2.0&quot;.
+* 2003 werden mit dem Verkauf der 500-millionsten Maus und des millionsten ''Force-Feedback''-Lenkrades die nächsten Rekordmarken erreicht. Zum explodierenden Markt für Eingabegeräte hat der Durchbruch der grafischen Benutzeroberfläche über alle Systeme und Anwendungen hinweg maßgeblich beigetragen. 55% der 900 Mio. verkauften PCs sind mit einer Logitech-Maus ausgerüstet.
+* 2004 Mit der ersten Laser-Maus der Welt, der MX1000, setzt Logitech seine Reihe an Innovationen fort. Seinen Weg ins Wohnzimmer setzt das Unternehmen mit der Universalfernbedienung ''Harmony'' fort, der „Maus fürs Haus“. Die Technik wurde von dem kanadischen Hersteller ''Intrigue Technologies'' entwickelt, den Logitech im April übernahm. Im Juli feiert Logitech die Auslieferung von 50 Mio. kabellosen Produkten. Mit der Einführung spezieller Produkte für Geschäftskunden (engl.: business products) im November will sich Logitech nach OEM und Retail jetzt auch im [[B2B]]-Bereich etablieren.
+* 2006 Logitech bringt die Gamer-Tastatur G15 auf den Markt. Die Tastatur hat ein LC-Display, gewisse Mediatasten, 18 Zusatztasten (welche jeweils 3 Funktionen haben können), eine 3-stufige blaue Beleuchtung sämtlicher Tasten sowie des Displays und einen Schalter, um die Windows-Logo-Taste auszuschalten. Laut Logitech kostet die Tastatur rund 90€, der Straßenpreis beträgt ca. 75€
+
+Logitech hat in den vergangenen zehn Jahren seine ursprünglich nur aus Mäusen bestehende [[Produktpalette]] beträchtlich erweitert. So umfasst das Angebot des Unternehmens derzeit neben Mäusen auch Tastaturen, Trackballs, Webcams, Lautsprecher, Steuergeräte für Computerspiele (engl.: gaming devices) für PC und Spielkonsolen sowie digitale Schreibgeräte, Universalfernbedienungen und Headsets für Spiele, Musik, Internet Chat, Mobiltelefone und für MP3-Player. In den letzten Jahren hat Logitech neben der Erweiterung der Produktpalette auch seine Präsenz im Einzelhandel ausgebaut, da Kunden ihre einfachen Computer um Eingabegeräte erweitern wollen, die mehr Funktionen und kabellose Freiheit bieten. Außerdem sind Zusatzgeräte gefragt, die auf neue Anwendungen wie Spiele, Multimedia oder visuelle Kommunikation über das Internet ausgelegt sind. Das Einzelhandelgeschäft macht heute mehr als 88% des Umsatzes aus.
+
+Das Unternehmen genießt eine starke und wachsende Markenpräsenz in über 65 000 herkömmlichen [[Einzelhandel]]sgeschäften in mehr als 100 Ländern sowie in einer Vielzahl von [[Onlineshop]]s. Damit Logitech seine Modelle in vielen Produktsektoren anbieten kann, verlangt das Geschäftsmodell des Unternehmens die Unterstützung seiner internen Konstruktions- und Fertigungsabteilungen mit zusätzlichen Produkten und Technologien durch eine Kombination von strategischen Übernahmen und Branchenpartnerschaften. Im Geschäftsjahr 2004, das am 31. März endete, überstieg der Jahresumsatz 1,35 Mrd. US$ und bescherte Logitech damit das siebte Rekordjahr in Folge.
+
+== Weblinks ==
+* [http://www.logitech.com/ Offizielle Website von Logitech weltweit mit anschließender Sprachwahl]
+* [http://www.labtec.com/ Offizielle Website von Labtec weltweit mit anschließender Sprachwahl]
+
+==== Artikel ====
+* [http://www.swissinfo.org/ger/wirtschaft/detail/Computermaus_Hersteller_Logitech_machts_vor.html?siteSect=161&amp;sid=6645633 Computermaus-Hersteller Logitech machts vor], [[Swissinfo]], 20. April 2006
+
+[[Kategorie:Hardwarehersteller]]
+[[Kategorie:Markenname]]
+[[Kategorie:Unternehmen (Vereinigte Staaten)]]
+[[Kategorie:Unternehmen (Schweiz)]]
+
+[[da:Logitech]]
+[[en:Logitech]]
+[[es:Logitech]]
+[[fi:Logitech]]
+[[fr:Logitech]]
+[[it:Logitech]]
+[[ja:ロジクール]]
+[[nl:Logitech]]
+[[no:Logitech]]
+[[pl:Logitech]]
+[[simple:Logitech]]
+[[sv:Logitech]]
+[[zh:羅技電子]]
 </textarea>
 		<div id="editpage-copywarn">
 <div id="editpage-copywarn-copywarn" class="hintergrundfarbe2 rahmenfarbe3" style="border-style: solid; font-size: 90%">
@@ -115,7 +181,7 @@ cols='80' >#REDIRECT [[Großrechner]]
 <input id="wpPreview" name="wpPreview" type="submit" tabindex="4" value="Vorschau zeigen" accesskey="p" title="Vorschau der Änderungen an dieser Seite. Bitte vor dem Speichern benutzen! [p]" />
 
 <input id="wpDiff" name="wpDiff" type="submit" tabindex="5" value="Änderungen zeigen" accesskey="v" title="Zeigt Änderungen am Text tabellarisch an [v]" />
-	<span class='editHelp'><a href="/wiki/Grossrechner" title="Grossrechner">Abbrechen</a> | <a target="helpwindow" href="/wiki/Hilfe:Bearbeitungshilfe">Bearbeitungshilfe</a> (wird in einem neuen Fenster geöffnet)</span>
+	<span class='editHelp'><a href="/wiki/Logitech" title="Logitech">Abbrechen</a> | <a target="helpwindow" href="/wiki/Hilfe:Bearbeitungshilfe">Bearbeitungshilfe</a> (wird in einem neuen Fenster geöffnet)</span>
 </div><!-- editButtons -->
 </div><!-- editOptions --><div class="mw-editTools"><p><br />
 </p>
@@ -1716,7 +1782,7 @@ Vietnamesisch:
 <input type='hidden' value="\" name="wpEditToken" />
 <input name="wpAutoSummary" type="hidden" value="d41d8cd98f00b204e9800998ecf8427e" /></form>
 <div class="printfooter">
-Von „<a href="http://de.wikipedia.org/wiki/Grossrechner">http://de.wikipedia.org/wiki/Grossrechner</a>“</div>
+Von „<a href="http://de.wikipedia.org/wiki/Logitech">http://de.wikipedia.org/wiki/Logitech</a>“</div>
 						<!-- end content -->
 			<div class="visualClear"></div>
 		</div>
@@ -1727,10 +1793,10 @@ Von „<a href="http://de.wikipedia.org/wiki/Grossrechner">http://de.wikipedia.o
 		<h5>Diese Seite</h5>
 		<div class="pBody">
 			<ul>
-					 <li id="ca-nstab-main" class="selected"><a href="/wiki/Grossrechner" title="Seiteninhalt anzeigen [c]" accesskey="c">Artikel</a></li>
-					 <li id="ca-talk" class="new"><a href="/w/index.php?title=Diskussion:Grossrechner&amp;action=edit" title="Diskussion zum Seiteninhalt [t]" accesskey="t">Diskussion</a></li>
-					 <li id="ca-edit" class="selected"><a href="/w/index.php?title=Grossrechner&amp;action=edit" title="Seite bearbeiten. Bitte vor dem Speichern die Vorschaufunktion benutzen. [e]" accesskey="e">Seite bearbeiten</a></li>
-					 <li id="ca-history"><a href="/w/index.php?title=Grossrechner&amp;action=history" title="Frühere Versionen dieser Seite [h]" accesskey="h">Versionen/Autoren</a></li>
+					 <li id="ca-nstab-main" class="selected"><a href="/wiki/Logitech" title="Seiteninhalt anzeigen [c]" accesskey="c">Artikel</a></li>
+					 <li id="ca-talk"><a href="/wiki/Diskussion:Logitech" title="Diskussion zum Seiteninhalt [t]" accesskey="t">Diskussion</a></li>
+					 <li id="ca-edit" class="selected"><a href="/w/index.php?title=Logitech&amp;action=edit" title="Seite bearbeiten. Bitte vor dem Speichern die Vorschaufunktion benutzen. [e]" accesskey="e">Seite bearbeiten</a></li>
+					 <li id="ca-history"><a href="/w/index.php?title=Logitech&amp;action=history" title="Frühere Versionen dieser Seite [h]" accesskey="h">Versionen/Autoren</a></li>
 				</ul>
 		</div>
 	</div>
@@ -1738,7 +1804,7 @@ Von „<a href="http://de.wikipedia.org/wiki/Grossrechner">http://de.wikipedia.o
 		<h5>Persönliche Werkzeuge</h5>
 		<div class="pBody">
 			<ul>
-				<li id="pt-login"><a href="/w/index.php?title=Spezial:Anmelden&amp;returnto=Grossrechner" title="Sich einzuloggen wird zwar gerne gesehen, ist aber keine Pflicht. [o]" accesskey="o">Anmelden</a></li>
+				<li id="pt-login"><a href="/w/index.php?title=Spezial:Anmelden&amp;returnto=Logitech" title="Sich einzuloggen wird zwar gerne gesehen, ist aber keine Pflicht. [o]" accesskey="o">Anmelden</a></li>
 			</ul>
 		</div>
 	</div>
@@ -1783,8 +1849,8 @@ Von „<a href="http://de.wikipedia.org/wiki/Grossrechner">http://de.wikipedia.o
 		<h5>Werkzeuge</h5>
 		<div class="pBody">
 			<ul>
-				<li id="t-whatlinkshere"><a href="/wiki/Spezial:Verweisliste/Grossrechner" title="Liste aller Seiten, die hierher zeigen [j]" accesskey="j">Links auf diese Seite</a></li>
-				<li id="t-recentchangeslinked"><a href="/wiki/Spezial:%C3%84nderungen_an_verlinkten_Seiten/Grossrechner" title="Letzte Änderungen an Seiten, die von hier verlinkt sind [k]" accesskey="k">Änderungen an verlinkten Seiten</a></li>
+				<li id="t-whatlinkshere"><a href="/wiki/Spezial:Verweisliste/Logitech" title="Liste aller Seiten, die hierher zeigen [j]" accesskey="j">Links auf diese Seite</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/Spezial:%C3%84nderungen_an_verlinkten_Seiten/Logitech" title="Letzte Änderungen an Seiten, auf die von hier verwiesen wird [k]" accesskey="k">Änderungen an verlinkten Seiten</a></li>
 <li id="t-upload"><a href="/wiki/Spezial:Hochladen" title="Dateien hochladen [u]" accesskey="u">Hochladen</a></li>
 <li id="t-specialpages"><a href="/wiki/Spezial:Spezialseiten" title="Liste aller Spezialseiten [q]" accesskey="q">Spezialseiten</a></li>
 			</ul>
@@ -1805,4 +1871,4 @@ Von „<a href="http://de.wikipedia.org/wiki/Grossrechner">http://de.wikipedia.o
 	
 		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
 </div>
-<!-- Served by srv113 in 0.332 secs. --></body></html>
+<!-- Served by srv103 in 0.330 secs. --></body></html>
